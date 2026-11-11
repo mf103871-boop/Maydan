@@ -5,3 +5,8 @@ public/assets/plus/**/*.svg text eol=lf
 src/shared/fx/audio-candidate-catalog.js text eol=lf
 assets/audio-preview/*.json text eol=lf
 assets/audio-preview/*.enc -text
+
+# Release pins and Warmth receipts must match byte-for-byte on Windows and CI.
+.github/workflows/ios-testflight.yml text eol=lf
+assets/audio-warmth-preview/*.json text eol=lf
+assets/audio-warmth-preview/*.enc -text

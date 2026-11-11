@@ -4,7 +4,8 @@ import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { build } from 'esbuild';
 import { CATS } from '../src/data/categories/index.js';
-import { BANK_EDITORIAL_FIELDS, bankPackagingPlugin, shippedBankPack } from '../scripts/lib/bank-packaging.mjs';
+import { BANK_EDITORIAL_FIELDS, bankPackagingPlugin, shippedBankPack, packedQuestionBank } from '../scripts/lib/bank-packaging.mjs';
+import { unpackQuestionBank } from '../src/data/packed-bank.mjs';
 
 const omit = (question) => Object.fromEntries(Object.entries(question).filter(([key]) => !BANK_EDITORIAL_FIELDS.includes(key)));
 
@@ -14,6 +15,21 @@ test('the shipped pack drops only top-level editorial fields and keeps media cre
     sourceUrl: 'https://source.example', source: 'https://other.example', verified: true, verifiedAt: '2026-09-25', verification: { checkedAt: '2026-09-25' }, difficultyTarget: 0.8 }] };
   assert.deepEqual(shippedBankPack(pack), { id: 'demo', name: 'تجربة', icon: '🧪', qs: [{ qid: 'demo-200-1', p: 200, topic: 'علوم', q: 'سؤال؟', a: 'جواب', alt: ['إجابة'], media }] });
   assert.equal(pack.qs[0].verified, true, 'the source object is not mutated');
+});
+
+test('compact JSON preserves nested keys, numeric arrays, empty values and independent object instances', () => {
+  const value = JSON.parse('{"__proto__":{"safe":true},"constructor":"data","empty":{},"list":[[],[0,1,2],[1,0],false,null,0,""],"qs":[{"q":"سؤال؟","a":"إجابة","p":200,"media":{"sourceUrl":"https://example.test/source","license":"CC BY 4.0"}},{"q":"سؤال؟","a":"إجابة","p":200}]}');
+  const packed = packedQuestionBank(value), decoded = unpackQuestionBank(JSON.parse(JSON.stringify(packed)));
+  assert.deepEqual(decoded, value);
+  assert.equal(Object.getPrototypeOf(decoded), Object.prototype);
+  assert.equal(Object.hasOwn(decoded, '__proto__'), true);
+  assert.notEqual(decoded.qs[0], decoded.qs[1]);
+  decoded.qs[0].a = 'تغيير محلي';
+  assert.equal(value.qs[0].a, 'إجابة');
+  assert.equal(decoded.qs[1].a, 'إجابة');
+  const cycle = {}; cycle.self = cycle;
+  for (const invalid of [cycle, { field: undefined }, { field: NaN }, { field: new Date() }, { field: () => true }])
+    assert.throws(() => packedQuestionBank(invalid), /acyclic JSON/);
 });
 
 test('the bundled bank keeps every playable field of every question and no editorial field', { timeout: 60_000 }, async () => {

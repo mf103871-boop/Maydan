@@ -16,12 +16,16 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { MAFIA_PROTOCOL, MAFIA_RULESET_VERSION } from '../src/online/mafia-shared.js';
 import { MAFIA_SUPPORTED_RULESET_VERSIONS } from '../server/mafia-ruleset-policy.mjs';
+import { hostedRewardedSettings, REWARDED_PREVIEW_QA_UNIT, validRewardedPreviewSetupExpiry } from '../server/rewarded/settings.mjs';
 
 const ROOT = fileURLToPath(new URL('../', import.meta.url));
 const CONFIG = 'wrangler.mafia-preview.jsonc';
 const MIGRATIONS = 'server/migrations';
 const SQL_NAME = /^\d{4}_[a-z0-9_-]+\.sql$/;
 const SHA256 = /^[a-f0-9]{64}$/;
+const REWARDED_VARS = ['REWARDED_ENV', 'REWARDED_PREVIEW_ENABLED', 'REWARDED_ADS_ENABLED',
+  'REWARDED_IOS_AD_UNIT', 'REWARDED_SSV_KEYS', 'REWARDED_PREVIEW_USER_SHA256', 'REWARDED_SSV_SETUP_TOKEN_SHA256',
+  'REWARDED_SSV_SETUP_EXPIRES_AT'];
 export const MAFIA_PREVIEW_TARGET = Object.freeze({
   worker: 'maydan-mafia-preview',
   origin: 'https://maydan-mafia-preview.mf103871.workers.dev',
@@ -105,7 +109,21 @@ export function assertMafiaPreviewConfig(config) {
   keys(config.assets, ['directory', 'binding', 'not_found_handling', 'run_worker_first'], 'Assets');
   check(config.assets.binding === 'ASSETS' && config.assets.directory === 'dist', 'Exact local preview assets required.');
   keys(config.vars, ['APP_ORIGIN', 'EXTRA_ORIGINS', 'APPLE_BUNDLE_ID', 'MAFIA_ENABLED', 'MAFIA_ACCEPT_NEW_MATCHES',
-    'MAFIA_PROGRESS_ENABLED', 'MAFIA_METRICS_ENABLED', 'MAFIA_RANKED_ENABLED', 'MAFIA_COMMUNITY_ENABLED', 'MAFIA_EXPERIMENTAL_ROLES_ENABLED', 'MAFIA_MAX_ACTIVE_ROOMS', 'MAFIA_MAX_VOICE_PARTICIPANTS', 'IOS_UPDATE_POLICY_ENABLED', 'GOOGLE_CLIENT_ID', 'CONNECTION_METRICS_ENABLED', 'CONNECTION_METRICS_SAMPLE_RATE'], 'Variables');
+    'MAFIA_PROGRESS_ENABLED', 'MAFIA_METRICS_ENABLED', 'MAFIA_RANKED_ENABLED', 'MAFIA_COMMUNITY_ENABLED', 'MAFIA_EXPERIMENTAL_ROLES_ENABLED', 'MAFIA_MAX_ACTIVE_ROOMS', 'MAFIA_MAX_VOICE_PARTICIPANTS', 'IOS_UPDATE_POLICY_ENABLED', 'GOOGLE_CLIENT_ID', 'CONNECTION_METRICS_ENABLED', 'CONNECTION_METRICS_SAMPLE_RATE', ...REWARDED_VARS], 'Variables');
+  const vars = config.vars;
+  if (REWARDED_VARS.some(name => Object.hasOwn(vars, name))) {
+    check(vars.REWARDED_ENV === 'ios-preview' && vars.REWARDED_PREVIEW_ENABLED === '1' &&
+      ['0', '1'].includes(vars.REWARDED_ADS_ENABLED) && SHA256.test(vars.REWARDED_PREVIEW_USER_SHA256 || '') &&
+      hostedRewardedSettings(vars, 'ios-preview'), 'Rewarded preview needs one tester and a matching test or owned unit.');
+    check(config.observability?.redact_query_string === true && config.observability?.logs?.invocation_logs === false,
+      'Rewarded preview requires redacted queries and disabled invocation logs.');
+    if (vars.REWARDED_SSV_SETUP_TOKEN_SHA256 !== undefined || vars.REWARDED_SSV_SETUP_EXPIRES_AT !== undefined) {
+      check(SHA256.test(vars.REWARDED_SSV_SETUP_TOKEN_SHA256) && vars.REWARDED_SSV_KEYS === 'production' &&
+        vars.REWARDED_IOS_AD_UNIT === REWARDED_PREVIEW_QA_UNIT && vars.REWARDED_ADS_ENABLED === '0' &&
+        validRewardedPreviewSetupExpiry(vars.REWARDED_SSV_SETUP_EXPIRES_AT),
+      'Google URL setup requires the exact QA unit, a fresh deadline and ad issuance off.');
+    }
+  }
   check(config.vars.APP_ORIGIN === target.origin && config.vars.EXTRA_ORIGINS === 'maydan://app', 'Exact preview origins required.');
   check(config.vars.IOS_UPDATE_POLICY_ENABLED === '0', 'Preview update policy must remain disabled.');
   if (config.vars.CONNECTION_METRICS_ENABLED !== undefined) check(['0', '1'].includes(config.vars.CONNECTION_METRICS_ENABLED), 'Invalid connection metrics gate.');

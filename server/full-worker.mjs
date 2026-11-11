@@ -32,6 +32,20 @@ const SECURITY_HEADERS = {
   'x-frame-options': 'DENY',
   'referrer-policy': 'same-origin',
 };
+const PUBLISHER_ID = /^pub-[0-9]{16}$/;
+
+function appAdsResponse(request, env) {
+  const headers = { 'content-type': 'text/plain; charset=utf-8', 'cache-control': 'no-store', 'x-content-type-options': 'nosniff' };
+  if (!['GET', 'HEAD'].includes(request.method)) {
+    return new Response(null, { status: 405, headers: { ...headers, allow: 'GET, HEAD' } });
+  }
+  const id = env.REWARDED_ADMOB_PUBLISHER_ID;
+  if (typeof id !== 'string' || !PUBLISHER_ID.test(id) || id === 'pub-3940256099942544') {
+    return new Response(null, { status: 404, headers });
+  }
+  headers['cache-control'] = 'public, max-age=300';
+  return new Response(request.method === 'HEAD' ? null : `google.com, ${id}, DIRECT, f08c47fec0942fa0\n`, { headers });
+}
 // workerd only accepts function exports from the entry module, so the policy is
 // read through a helper instead of exported as a constant.
 export function securityHeaders() { return { ...SECURITY_HEADERS }; }
@@ -45,13 +59,14 @@ export function secured(response) {
 export default {
   async fetch(request, env, context) {
     const url = new URL(request.url);
+    if (url.pathname === '/app-ads.txt') return appAdsResponse(request, env);
     if(url.pathname==='/studio' || url.pathname.startsWith('/studio/') || url.pathname==='/api/studio' || url.pathname.startsWith('/api/studio/')){
       const studio=await studioSiteResponse(request,env);if(studio)return studio;
     }
     if (['/api/legal/privacy', '/api/legal/privacy/'].includes(url.pathname) && ['GET', 'HEAD'].includes(request.method)) {
       return privacyPageResponse(request.method);
     }
-    if (['/api/legal/support', '/api/legal/support/'].includes(url.pathname)) return supportPageResponse(request.method);
+    if (['/api/legal/support', '/api/legal/support/'].includes(url.pathname)) return supportPageResponse(request.method, env);
     if (url.pathname === '/api' || url.pathname.startsWith('/api/') || url.pathname === '/health') {
       // أصل الموقع نفسه دائمًا مسموح، ويُضاف إليه EXTRA_ORIGINS (مخطط تطبيق iOS مثلًا).
       const extra = String(env.EXTRA_ORIGINS || '').split(',').map((value) => value.trim()).filter(Boolean);

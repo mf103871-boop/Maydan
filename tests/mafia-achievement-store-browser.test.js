@@ -22,6 +22,9 @@ test('Chromium and WebKit: real authenticated Store equips an earned item withou
       key: `store:${crypto.randomUUID()}`, eventId: `online:${crypto.randomUUID()}`, rulesetVersion: 1,
       startedAt: finishedAt - 200_000, finishedAt, notBefore: finishedAt + 30_000, mode: 'classic', capacity: 6, participantCount: 6, visibility: 'public', draw: false,
       results: [{ userId: user.id, roleId: 'citizen', initialFaction: 'town', faction: 'town', won: false, forfeited: false, eliminatedAt: null }] });
+    const earned = await cosmeticsFor(app.env, user.id);
+    assert.equal(earned.plusActive, false);
+    assert.ok(earned.grants.some(grant => grant.itemId === 'noir.frame' && grant.source === 'mafia_achievement' && grant.achievementId === 'mafia_first_qualified'), 'the actual qualified result must issue the first-match cosmetic license');
     const entry = `import React from'react';import{createRoot}from'react-dom/client';
       import{Store}from'./src/platform/screens/Store.jsx';import{AccountContext,NULL_ACCOUNT}from'./src/shared/account/context.js';
       import{ProfileContext}from'./src/profiles/ProfileProvider.jsx';import{request}from'./src/shared/account/api.js';
@@ -38,7 +41,7 @@ test('Chromium and WebKit: real authenticated Store equips an earned item withou
     const publicRoot = path.resolve('public');
     server = createServer(async (req, res) => {
       if (req.url === '/bundle.js') { res.setHeader('content-type', 'text/javascript'); res.end(built.outputFiles[0].contents); return; }
-      if (req.url?.startsWith('/assets/plus/v1/')) {
+      if (/^\/assets\/plus\/v[123]\//.test(req.url || '')) {
         const filename = path.resolve(publicRoot, '.' + req.url);
         if (filename.startsWith(publicRoot + path.sep)) { try { res.setHeader('content-type', req.url.endsWith('.svg') ? 'image/svg+xml' : 'image/webp'); res.end(await readFile(filename)); return; } catch { res.writeHead(404); res.end(); return; } }
       }
@@ -52,29 +55,35 @@ test('Chromium and WebKit: real authenticated Store equips an earned item withou
       const browser = await engine.launch({ headless: true });
       try {
         const page = await browser.newPage({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' });
-        const errors = [], writes = [], external = [];
+        const errors = [], writes = [], external = [], billing = [];
         page.on('pageerror', error => errors.push(error.message));
-        page.on('request', req => { if (req.url() === app.url + '/api/me/cosmetics' && req.method() === 'PATCH') writes.push(req.postDataJSON()); });
+        page.on('request', req => { if (req.url() === app.url + '/api/me/cosmetics' && req.method() === 'PATCH') writes.push(req.postDataJSON()); if (/\/api\/(?:billing|apple|paddle)|\/checkout(?:\?|$)/.test(req.url())) billing.push(req.url()); });
         await page.route('**/*', async route => {
           const url = new URL(route.request().url());
           if (![origin, app.url].includes(url.origin)) { external.push(url.origin + url.pathname); await route.abort(); return; }
           await route.continue();
         });
         await page.goto(origin);
-        const inventory = page.locator('[data-design-id="earned-cosmetics"]'); await inventory.waitFor();
-        assert.match(await inventory.innerText(), /إنجاز مافيا: أول مباراة/);
+        await page.getByRole('button', { name: 'مقتنياتي', exact: true }).click();
+        const inventory = page.locator('[data-design-id="store-product"][data-item-id="noir.frame"]'); await inventory.waitFor();
+        assert.match(await inventory.innerText(), /إطار ليلة مافيا/);
+        assert.match(await inventory.innerText(), /ملك دائم/);
         assert.doesNotMatch(await inventory.innerText(), /noir\.frame|mafia_first_qualified/);
         for (const [width, height] of [[320, 568], [390, 844], [844, 390]]) {
           await page.setViewportSize({ width, height });
           assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), `${name} ${width}: overflow`);
           await inventory.screenshot({ path: path.join(proof, `${name}-${width}.png`) });
         }
-        await inventory.getByRole('button', { name: 'استخدام المكتسب', exact: true }).click();
+        await inventory.getByRole('button', { name: 'استخدام', exact: true }).click();
         await inventory.getByRole('button', { name: 'مستخدم الآن', exact: true }).waitFor();
         assert.deepEqual(writes, [{ selection: { frameId: 'noir.frame' }, revision: 0 }]);
         assert.equal((await cosmeticsFor(app.env, user.id)).effective.frameId, 'noir.frame');
+        const rejected = await fetch(app.url + '/api/me/cosmetics', { method: 'PATCH', headers: { Origin: origin, Authorization: 'Bearer ' + session.token, 'Content-Type': 'application/json' }, body: JSON.stringify({ selection: { avatarId: 'artist.avatar' }, revision: 1 }) });
+        assert.equal(rejected.status, 402); assert.equal((await rejected.json()).error, 'PLUS_REQUIRED');
+        assert.equal((await cosmeticsFor(app.env, user.id)).effective.avatarId, null, 'an earned frame must not grant another cosmetic capability');
         assert.equal((await app.env.DB.prepare('SELECT COUNT(*) n FROM subscriptions').first()).n, 0);
         assert.deepEqual(await page.evaluate(() => window.paywalls), []);
+        assert.deepEqual(billing, [], 'equipping an achievement license must not invoke a checkout or billing path');
         assert.deepEqual(external, []); assert.deepEqual(errors, []); await page.close();
       } finally { await browser.close(); }
     }

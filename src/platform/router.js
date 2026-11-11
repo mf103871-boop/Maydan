@@ -5,6 +5,7 @@ import { getGameModeSupport } from '../shared/game-mode-support.mjs';
 
 const ROUTES = [
   ['home', /^\/?$/],
+  ['game-entry', /^\/entry\/(badeeha|beep|mamnoo|jabeen|fabraka|meenfina|ersomha|mafia)$/],
   ['mafia-tutorial', /^\/tutorial\/mafia$/],
   ['game', /^\/game\/([a-z0-9-]+)$/],
   ['play', /^\/play\/([a-z0-9-]+)$/],
@@ -45,7 +46,15 @@ export function parseHash(hash) {
 const listeners = new Set();
 let current = typeof location !== 'undefined' ? parseHash(location.hash) : parseHash('');
 const routeLocation = route => {
+  if (typeof __MAYDAN_REWARDED_PREVIEW__ !== 'undefined' && __MAYDAN_REWARDED_PREVIEW__ && route.params.rewarded === '1') {
+    if (route.name === 'play' && route.params.id === 'badeeha') return `${route.path}?mode=local&rewarded=1`;
+    if (route.name === 'online' && route.params.id === 'meenfina') return `${route.path}?rewarded=1`;
+  }
+  if (route.name === 'store' && ['collections','library','membership','presets'].includes(route.params.tab)) return `${route.path}?tab=${route.params.tab}`;
+  if (route.name === 'settings' && ['audio','display','account','help'].includes(route.params.section)) return `${route.path}?section=${route.params.section}`;
+  if (route.name === 'about' && route.params.view === 'credits') return `${route.path}?view=credits`;
   if (route.name === 'room' && route.params.watch === '1') return `${route.path}?watch=1`;
+  if (route.name === 'online' && route.params.joinOnly === '1') return `${route.path}?mode=online&joinOnly=1`;
   // A specialty lesson and its hub share a pathname, but they are distinct
   // training sessions. Restore that context through Back, dialogs and guards.
   if (route.name === 'mafia-tutorial') {

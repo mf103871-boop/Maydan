@@ -1,4 +1,6 @@
 import { Avatar, TrophyArtwork, ClayStage } from '../brand/art.jsx';
+import { ProfileAvatar } from '../../profiles/ProfileAvatar.jsx';
+import { PlayerName } from '../../profiles/PlayerIdentity.jsx';
 // المكونات المشتركة: زر، بطاقة، شارة، نافذة، ورقة سفلية، تنبيه، حلقة تقدم، لوحة نتائج، منصة تتويج، شاشة.
 import React, { useEffect, useLayoutEffect, useRef, useState, useCallback, createContext, useContext } from 'react';
 import { createPortal } from 'react-dom';
@@ -130,7 +132,7 @@ export function ModalCloseButton({ onClick, ...props }) {
   return <Button {...props} onClick={(e) => { if (requestClose) requestClose(); else if (onClick) onClick(e); }} />;
 }
 
-export function Modal({ title, onClose, children, footer = null, closeLabel = 'إغلاق', className = '', ...designProps }) {
+export function Modal({ title, onClose, children, footer = null, closeLabel = 'إغلاق', className = '', placement = 'center', ...designProps }) {
   const ref = useRef(null);
   const [host, anchor, syncVars] = useDialogHost();
   // الإغلاق يمرّ بحالة is-closing (خروج قصير) ثم يستدعي onClose؛ صفر مهلة تحت تقليل الحركة.
@@ -138,8 +140,9 @@ export function Modal({ title, onClose, children, footer = null, closeLabel = '�
   // عند الفتح فقط: كل تصيير يمرّر onClose جديدة، فلو اعتمد التأثير عليها لسُحب
   // التركيز من الحقل بعد كل حرف يُكتب.
   useDialogInteraction(ref,host,syncVars,requestClose);
+  const docked = placement === 'bottom';
   const tree = (
-    <div className={`modal-layer ${closing ? 'is-closing' : ''}`} role="presentation" onClick={requestClose}>
+    <div className={`modal-layer ${closing ? 'is-closing' : ''} ${docked ? 'is-docked' : ''}`} role="presentation" onClick={requestClose}>
       <section ref={ref} data-design-screen="system.dialog" className={`modal ${className}`} role="dialog" aria-modal="true" aria-label={title} tabIndex={-1} onClick={(e) => e.stopPropagation()} {...designProps}>
         <div data-design-id="header" className="modal-head">
           <h2>{title}</h2>
@@ -154,12 +157,12 @@ export function Modal({ title, onClose, children, footer = null, closeLabel = '�
   return <><span ref={anchor} hidden aria-hidden="true" />{host ? createPortal(provided, host) : provided}</>;
 }
 
-export function ConfirmModal({ title, message, confirmLabel = 'نعم', cancelLabel = 'لا', danger = false, onConfirm, onCancel }) {
+export function ConfirmModal({ title, message, confirmLabel = 'نعم', cancelLabel = 'لا', danger = false, onConfirm, onCancel, confirmSound, placement = 'center', className = '' }) {
+  const docked = placement === 'bottom';
+  const confirm = <Button data-design-id="confirm" data-sound={confirmSound} data-design-required="true" variant={docked ? 'ghost' : danger ? 'danger' : 'primary'} size="lg" full onClick={onConfirm}>{confirmLabel}</Button>;
+  const cancel = <ModalCloseButton data-design-id="cancel" data-design-required="true" variant={docked ? 'primary' : 'ghost'} full onClick={onCancel}>{cancelLabel}</ModalCloseButton>;
   return (
-    <Modal title={title} onClose={onCancel} className={danger ? 'is-danger' : ''} footer={<>
-      <Button data-design-id="confirm" data-design-required="true" variant={danger ? 'danger' : 'primary'} size="lg" full onClick={onConfirm}>{confirmLabel}</Button>
-      <ModalCloseButton data-design-id="cancel" data-design-required="true" variant="ghost" full onClick={onCancel}>{cancelLabel}</ModalCloseButton>
-    </>}>
+    <Modal title={title} onClose={onCancel} placement={placement} className={[className, danger && !docked ? 'is-danger' : ''].filter(Boolean).join(' ')} footer={docked ? <>{cancel}{confirm}</> : <>{confirm}{cancel}</>}>
       <p className="muted" style={{ lineHeight: 1.7 }}>{message}</p>
     </Modal>
   );
@@ -293,8 +296,8 @@ export function Scoreboard({ entries, unit = '', ...rest }) {
         const bumped = (bumps.current.get(e.id) || 0) > now - 600;
         return (
           <div key={e.id} className={`score-row ${e.score === max && max > 0 ? 'is-leader' : ''}`} style={{ '--row-color': e.color, '--n': i }}>
-            <ClayStage className="clay-static no-contact"><Avatar player={e} className="avatar" /></ClayStage>
-            <span className="name">{e.name}</span>
+            <ClayStage className="clay-static no-contact">{e.profile ? <ProfileAvatar user={e.profile} size={36} /> : <Avatar player={e} className="avatar" />}</ClayStage>
+            <span className="name"><PlayerName user={e.profile} name={e.name} card={!!e.profile} badge={!!e.profile} compact /></span>
             {e.delta ? <span className="delta" key={`${e.score}-${e.delta}`}>+{e.delta}</span> : null}
             <span className={`score ${bumped ? 'is-bumped' : ''}`} key={e.score}><CountUp value={e.score} from={from} duration={600} />{unit}</span>
           </div>
@@ -339,7 +342,7 @@ export function Podium({ entries, title, unit = '', ...domProps }) {
   const heights = { 0: 92, 1: 66, 2: 48 };
   const winners = sorted.filter((e) => ranking(e) === ranking(sorted[0]));
   const heading = title || (winners.length > 1 ? 'تعادل جميل!' : `فاز ${sorted[0].name}`);
-  // التسلسل: الأعمدة تصعد 3→2→1 (الفائز آخرًا)، ثم دفعة قصاصات صغيرة عند عمود الفائز (~1.1s).
+  // الأسماء والنتائج تظهر فورًا؛ الاحتفال على الرسوم فقط دون إخفاء المعلومة.
   const winnerRef = useRef(null);
   useEffect(() => {
     const t = setTimeout(() => {
@@ -357,9 +360,9 @@ export function Podium({ entries, title, unit = '', ...domProps }) {
           const rank = sorted.indexOf(e);
           return (
             <div key={e.id} ref={rank === 0 ? winnerRef : null} data-rank={sorted.findIndex((entry) => ranking(entry) === ranking(e)) + 1} className="podium-col" style={{ '--col-color': e.color, '--delay': `${(2 - rank) * 260 + 300}ms`, '--h': `${heights[rank]}px` }}>
-              <ClayStage className="avatar-wrap"><Avatar player={e} className="avatar" /></ClayStage>
-              <span className="name">{e.name}</span>
-              <div className="block"><span className="rank" aria-label="الترتيب">{sorted.findIndex((entry) => ranking(entry) === ranking(e)) + 1}</span><span><CountUp value={e.score} delay={(2 - rank) * 260 + 600} />{unit}</span></div>
+              <ClayStage className="avatar-wrap">{e.profile ? <ProfileAvatar user={e.profile} size={64} /> : <Avatar player={e} className="avatar" />}</ClayStage>
+              <span className="name"><PlayerName user={e.profile} name={e.name} card={!!e.profile} badge={!!e.profile} compact /></span>
+              <div className="block"><span className="rank" aria-label="الترتيب">{sorted.findIndex((entry) => ranking(entry) === ranking(e)) + 1}</span><span className="count-up">{e.score}{unit}</span></div>
             </div>
           );
         })}

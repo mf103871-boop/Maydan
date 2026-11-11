@@ -51,7 +51,7 @@ export function createSocialNotificationAudio(sound) {
   };
   return {
     setIdentity,
-    emit(notification, { owner, scope = 'direct', messageId, muted = false, guard } = {}) {
+    emit(notification, { owner, scope = 'direct', messageId, muted = false, guard, at } = {}) {
       setIdentity(owner);
       if (!owner || notification?.userId !== owner || notification?.id == null) return false;
       const kind = notification.type === 'request' ? 'social.invite' : 'social.message';
@@ -61,7 +61,7 @@ export function createSocialNotificationAudio(sound) {
       seen.add(id);
       while (seen.size > 512) seen.delete(seen.values().next().value);
       const epoch = generation;
-      return sound.emit?.(kind, { id, muted, guard: () => identity === owner && generation === epoch && (typeof guard !== 'function' || guard()) }) ?? false;
+      return sound.emit?.(kind, { id, muted, ...(Number.isFinite(at)?{at}:{}),guard: () => identity === owner && generation === epoch && (typeof guard !== 'function' || guard()) }) ?? false;
     },
   };
 }

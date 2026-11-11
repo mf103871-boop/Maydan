@@ -16,7 +16,8 @@ test('coverage inventory preserves every node and exact conditional explanation 
   // A deliberate coverage/content change must update this semantic baseline;
   // whitespace, constant names and sharing structure do not affect it.
   const semantics = JSON.stringify({ DESIGN_CONDITIONAL_NODE_REASONS, DESIGN_RENDERED_NODE_IDS });
-  assert.equal(createHash('sha256').update(semantics).digest('hex'), '94a9bab66f6d3b959607abd615e1e8a7d73896223a3b00eae5d36474c65fdfd9');
+  // Secret voting now exposes an explicit submit action before passing the phone.
+  assert.equal(createHash('sha256').update(semantics).digest('hex'), '2b9dee072717631ef07260e878bf28fb98a55fe0b153d8fa0bc43d28313b4235');
 });
 
 test('semantic scene registry has stable unique identities and the eight actual games', () => {
@@ -30,6 +31,13 @@ test('semantic scene registry has stable unique identities and the eight actual 
     for (const node of screen.nodes) assert.equal(getNodeDefinition(screen.id, node.id), node);
   }
   assert.deepEqual([...new Set(DESIGN_SCENES.map(scene => scene.game).filter(Boolean))].sort(), ['badeeha','beep','ersomha','fabraka','jabeen','mafia','mamnoo','meenfina']);
+  assert.equal(getScreenDefinition('council.scene'),null,'the rejected seated3D scene is not an editor/runtime surface');
+  assert.equal(DESIGN_SCREENS.some(screen=>screen.nodes.some(node=>node.id.startsWith('council-'))),false);
+  assert.equal(getNodeDefinition('store','store-legacy-toggle').required,true,'legacy ownership disclosure remains protected');
+  const retiredSetup = getNodeDefinition('online.entry','setup-presets-toggle');
+  assert.equal(retiredSetup.retired,true,'removed saved-session controls remain compatibility records only');
+  assert.match(retiredSetup.coverageReason,/Retired saved-session setup disclosure/);
+  assert.equal(DESIGN_RENDERED_NODE_IDS['online.entry'].includes('setup-presets-toggle'),false,'no placeholder preset control is claimed as rendered');
 });
 
 test('local UI rebuild preserves retired saved-design IDs while protecting real mode and safety actions', () => {
@@ -194,3 +202,34 @@ test('registry exposes rendered semantic nodes or explicitly documented conditio
   }
 });
 
+
+
+test('Badeeha visual boards use six categories and real balanced tier cells', () => {
+  const local = createDesignFixture('badeeha.board').badeeha;
+  assert.equal(local.selectedCategories.length, 6);
+  assert.equal(new Set(local.selectedCategories).size, 6);
+  assert.equal(Object.values(local.deck).flat().length, 30);
+  assert.equal(new Set(Object.values(local.deck).flat().map(q => q.qid)).size, 30);
+  for (const category of local.selectedCategories) {
+    assert.deepEqual(local.deck[category].map(q => q.p), [200, 400, 600, 800, 1000]);
+    assert.ok(local.deck[category].every(q => q.q && q.a && !q.qid.startsWith('design-')));
+  }
+  assert.equal(local.deck[local.current.categoryId][local.current.index].p, 600);
+  assert.equal(local.finalResult.total, 30);
+  const online = createDesignFixture('online.badeeha.question').state;
+  assert.equal(online.settings.categories.length, 6);
+  const cells = Object.values(online.settings.deck).flat();
+  assert.equal(cells.length, 20);
+  assert.equal(new Set(cells.map(q => q.qid)).size, 20);
+  assert.deepEqual([...new Set(cells.map(q => q.p))].sort((a,b)=>a-b), [200, 400, 600, 800]);
+  for (const column of Object.values(online.settings.deck)) assert.equal(new Set(column.map(q => q.p)).size, column.length);
+  assert.deepEqual(online.settings.deck[online.current.categoryId][online.current.index], { qid: online.current.qid, p: 600 });
+});
+
+test('Badeeha local board renders all thirty cells, without leaking answers into the board', () => {
+  const fixture = createDesignFixture('badeeha.board').badeeha;
+  const html = renderer.renderScene('badeeha.board');
+  assert.equal((html.match(/class="m-board-category"/g) || []).length, 6);
+  assert.equal((html.match(/data-design-id="tier"/g) || []).length, 30);
+  for (const q of Object.values(fixture.deck).flat()) assert.ok(!html.includes(q.q), 'board should expose point cells, not question text');
+});

@@ -1,6 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { PlatformApp } from './platform/PlatformApp.jsx';
+import { configureIntegratedPreviewAudio } from './shared/fx/integrated-preview-audio.js';
 
 const rootElement = document.getElementById('root');
 
@@ -32,6 +33,10 @@ function armRuntimeErrorHandlers() {
 }
 
 try {
+  if (typeof __MAYDAN_WARMTH_PREVIEW__ !== 'undefined' && __MAYDAN_WARMTH_PREVIEW__) {
+    // A runtime audio failure stays silent; it must not hide a playable game.
+    configureIntegratedPreviewAudio({ pack: __MAYDAN_WARMTH_PACK__, baseUrl: '/audio-warmth-preview/' });
+  }
   const appRoot = createRoot(rootElement, {
     onUncaughtError: (error) => showFatal(error),
     onCaughtError: (error) => log('[ميدان]', error),

@@ -16,6 +16,8 @@ test('local review rejects foreign origins and DNS-rebinding Host headers', () =
     { host: '127.0.0.1:4178', origin: 'https://attacker.example' },
     { host: '127.0.0.1:4178', origin: 'null' },
     { host: '127.0.0.1:4178', origin: 'http://127.0.0.1:8789' },
+    { host: '127.0.0.1:4178', 'sec-fetch-site': 'cross-site' },
+    { host: '127.0.0.1:4178', origin: 'http://127.0.0.1:4178', 'sec-fetch-site': 'cross-site' },
   ]) assert.equal(localRequestAllowed({ headers }, 4178), false);
 });
 

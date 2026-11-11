@@ -53,7 +53,7 @@ export function MafiaRewardSummary({ server, accountId, receipt, clockOffset=0, 
   if(!enabled)return null;
   const reward=shown?.data;
   return <section className="mafia-reward-summary" aria-label="مكافأة المباراة" aria-live="polite">
-    <h3>رحلتك في مافيا</h3>
+    <header><h3>رحلتك في مافيا</h3><small>لحسابك فقط</small></header>
     {shown?.status==='processed'?<>
       <strong className="mafia-reward-xp">{reward.xpAwarded>0?`+${arabicNumber(reward.xpAwarded)} خبرة`:'دون خبرة إضافية'}</strong>
       <p>{reward.participationGranted?`إكمال مؤهل لإتقان دور ${MAFIA_ROLES[reward.roleId].name}.`:exclusionText(reward.exclusionReason)}</p>

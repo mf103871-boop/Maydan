@@ -8,6 +8,9 @@ import { mulberry32, randInt } from '../src/shared/lib/rng.js';
 import { fakeStorage, seeded } from './helpers.js';
 import { renderServiceWorker, audioCueAssets } from '../scripts/lib.mjs';
 import { SAMPLE_BANK } from '../src/shared/fx/sample-bank.js';
+import { CANDIDATE_EFFECTS } from '../src/shared/fx/audio-candidate-catalog.js';
+import { PREVIEW_ORIGIN } from '../scripts/audio/private-preview.mjs';
+import { validateWarmthManifest } from '../scripts/audio/warmth-preview.mjs';
 import { readFileSync } from 'node:fs';
 
 test('storage: نطاق لكل لعبة، JSON، ومسح بالنطاق فقط', () => {
@@ -129,10 +132,32 @@ test('createNoRepeat.seek: إعادة بناء المصدر بنفس البذر�
 
 test('renderServiceWorker: قائمة المؤثرات تأتي من manifest البناء، والموسيقى لا تُخزَّن مسبقًا', () => {
   const src = readFileSync(new URL('../public/sw.js', import.meta.url), 'utf8');
-  const out = renderServiceWorker(src, { id: '9.9.9-abcdef01', fabrakaImages: ['./media/fabraka-v3/x.webp?v=1'], audioCues: audioCueAssets() });
-  assert.ok(!out.includes('__BUILD_ID__') && out.includes('maydan-platform-9.9.9-abcdef01'));
-  assert.ok(!out.includes('/*__AUDIO_CUES__*/'), 'placeholder replaced');
-  for (const entry of Object.values(SAMPLE_BANK)) assert.ok(out.includes(`"./${entry.url}"`), `${entry.url} precached`);
-  assert.ok(!out.includes('audio/music/'));
-  assert.ok(out.includes('./media/fabraka-v3/x.webp?v=1'));
+  const warmth = validateWarmthManifest(JSON.parse(readFileSync(new URL('../assets/audio-warmth-preview/manifest.json', import.meta.url), 'utf8'))).runtimePack;
+  const legacy = Object.values(SAMPLE_BANK).map(entry => `./${entry.url}`);
+  const candidates = Object.values(CANDIDATE_EFFECTS).map(entry => `./${entry.url}`);
+  const warmthCues = Object.values(warmth.assets).filter(entry => entry.kind === 'effect').map(entry => `./audio-warmth-preview/${entry.file.url}`);
+  const music = Object.values(warmth.assets).filter(entry => entry.kind === 'music').map(entry => `./audio-warmth-preview/${entry.file.url}`);
+  const keys = ['MAYDAN_WARMTH_PREVIEW', 'MAYDAN_PRIVATE_AUDIO_PREVIEW', 'IOS_RELEASE_ENVIRONMENT', 'MAYDAN_ROOMS_URL'];
+  const previous = Object.fromEntries(keys.map(key => [key, process.env[key]]));
+  try {
+    for (const [mode, privateFlag, warmthFlag, expected] of [
+      ['production', '0', '0', legacy],
+      ['older private preview', '1', '0', [...legacy, ...candidates]],
+      ['Warmth private preview', '1', '1', warmthCues],
+    ]) {
+      Object.assign(process.env, { MAYDAN_PRIVATE_AUDIO_PREVIEW: privateFlag, MAYDAN_WARMTH_PREVIEW: warmthFlag, IOS_RELEASE_ENVIRONMENT: 'mafia-preview', MAYDAN_ROOMS_URL: PREVIEW_ORIGIN });
+      const cues = audioCueAssets();
+      assert.deepEqual([...cues].sort(), [...new Set(expected)].sort(), `${mode}: only the selected effect bank`);
+      const out = renderServiceWorker(src, { id: '9.9.9-abcdef01', fabrakaImages: ['./media/fabraka-v3/x.webp?v=1'], audioCues: cues });
+      assert.ok(!out.includes('__BUILD_ID__') && out.includes('maydan-platform-9.9.9-abcdef01'));
+      assert.ok(!out.includes('/*__AUDIO_CUES__*/'), 'placeholder replaced');
+      for (const url of expected) assert.ok(out.includes(JSON.stringify(url)), `${mode}: ${url} precached`);
+      if (warmthFlag === '1') for (const url of [...legacy, ...candidates]) assert.ok(!out.includes(JSON.stringify(url)), 'Warmth never precaches an old fallback');
+      for (const url of music) assert.ok(!out.includes(JSON.stringify(url)), `${mode}: long music is streamed, not precached`);
+      assert.ok(!out.includes('audio/music/'));
+      assert.ok(out.includes('./media/fabraka-v3/x.webp?v=1'));
+    }
+  } finally {
+    for (const key of keys) if (previous[key] === undefined) delete process.env[key]; else process.env[key] = previous[key];
+  }
 });

@@ -6,6 +6,7 @@ import { initialState as meenInitial } from '../games/meenfina/logic.js';
 import { initialState as fabInitial, TRUTH_ID, roundBreakdown } from '../games/fabraka/logic.js';
 import { MAFIA_ROLES, MAFIA_TIMERS } from '../online/mafia-shared.js';
 import { CATS } from '../data/categories/index.js';
+import badeehaLogic from '../games/badeeha/logic.js';
 
 export const DESIGN_SCENES = Object.freeze(DESIGN_SCREENS.map(screen => Object.freeze({
   id: screen.id, screenId: screen.id, label: screen.label, group: screen.group,
@@ -55,9 +56,14 @@ export function createDesignFixture(id, { now = DESIGN_FIXTURE_TIME } = {}) {
     state.breakdown = roundBreakdown(state); state.roundScores = Object.fromEntries(Object.entries(state.breakdown).map(([key, value]) => [key, value.points]));
     fixture.state = state;
   } else if (scene.game === 'badeeha' && scene.mode !== 'online') {
-    const bteams = teams.map(t => ({ ...t, score: t.id === teams[0].id ? 600 : 400, correct: 2, steals: 0, tools: { double: true, two: true, switch: true } }));
-    const record = { id: 'design-result', teams: bteams, winner: bteams[0].name, answered: 8, total: 12, mode: 'expert', date: now, at: now, early: false };
-    fixture.badeeha = { screen: scene.phase, teams: bteams, selectedCategories: ['general'], current: { categoryId: 'general', index: 0 }, deck: { general: [{ qid: 'design-badeeha', p: 600, q: 'أي حيوان بحري له ثلاثة قلوب؟', a: 'الأخطبوط', alt: [], type: 'text' }] }, finalResult: record, results: [record], revealed: false };
+    const bteams = teams.map(t => ({ ...t, score: t.id === teams[0].id ? 600 : 400, correct: 2, steals: 0, tools: { double: true, two: true, time: true } }));
+    const selectedCategories = ['general', 'geo', 'science', 'animals', 'history', 'food'];
+    // Use the actual dealer with a fixed random source: six real categories,
+    // thirty unique cells, and each expert tier represented in every column.
+    const deck = badeehaLogic.buildDeck(CATS, selectedCategories, {}, badeehaLogic.MODES.expert.tiers, 30, () => .5);
+    for (const questions of Object.values(deck)) questions.sort((a, b) => a.p - b.p);
+    const record = { id: 'design-result', teams: bteams, winner: bteams[0].name, answered: 30, total: 30, mode: 'expert', date: now, at: now, early: false };
+    fixture.badeeha = { screen: scene.phase, teams: bteams, selectedCategories, current: { categoryId: 'general', index: 2 }, deck, finalResult: record, results: [record], revealed: false };
   }
   if (scene.id.startsWith('online.') || scene.game === 'ersomha') {
     const members = players.map((p, i) => ({ ...p, ready: true, connected: true, left: false, score: i ? 100 : 250, stats: { truths: 1, fooled: 2, laughs: 1 }, profile: { avatarPreset: ['fox','lion','owl','rocket'][i], theme: 'teal' } }));
@@ -97,13 +103,15 @@ export function createDesignFixture(id, { now = DESIGN_FIXTURE_TIME } = {}) {
       const clueCategory = CATS.find(category => category.qs.some(q => q.type === 'hints' && q.p === 600));
       const clue = clueCategory.qs.find(q => q.type === 'hints' && q.p === 600);
       const selected = [clueCategory, ...CATS.filter(category => category.id !== clueCategory.id).slice(0, 5)];
-      const deck = Object.fromEntries(selected.map((category, index) => [category.id, category.qs.filter(q => q.p <= 800).slice(0, index < 2 ? 4 : 3).map(q => ({ qid: q.qid, p: q.p }))]));
-      deck[clueCategory.id][0] = { qid: clue.qid, p: clue.p };
+      const dealt = badeehaLogic.buildDeck(CATS, selected.map(category => category.id), {}, badeehaLogic.MODES.standard.tiers, 20, () => .5);
+      const deck = Object.fromEntries(Object.entries(dealt).map(([categoryId, questions]) => [categoryId, questions.sort((a, b) => a.p - b.p).map(q => ({ qid: q.qid, p: q.p }))]));
+      const clueIndex = deck[clueCategory.id].findIndex(q => q.p === clue.p);
+      deck[clueCategory.id][clueIndex] = { qid: clue.qid, p: clue.p };
       state.settings = { mode: 'standard', roundSize: 20, timer: 60, categories: selected.map(category => category.id), deck };
       state.rounds = 20; state.turnId = members[0].id;
       state.teams = members.map(m => ({ id: m.id, score: m.score, correct: 1, steals: 0, tools: { double: true, two: true, time: true } }));
       state.used = []; state.hintsUsed = 0; state.effect = { double: false, two: false }; state.verdict = null; state.canUndo = true;
-      state.current = ['question','reveal'].includes(state.phase) ? { categoryId: clueCategory.id, index: 0, qid: clue.qid, p: clue.p } : null;
+      state.current = ['question','reveal'].includes(state.phase) ? { categoryId: clueCategory.id, index: clueIndex, qid: clue.qid, p: clue.p } : null;
       state.deadlineAt = state.phase === 'question' ? now + 45_000 : null;
       fixture.me = members[0];
     } else if (game === 'ersomha') {

@@ -1,0 +1,29 @@
+.profile-screen[data-profile-skin=base] .profile-card{box-shadow:inset 0 1px #fff,0 5px 0 #d4c7b336,0 14px 30px #4a2c2010;border-color:#d7c2a0;background:linear-gradient(135deg,#fffdf4,#f1f7ef)}
+.profile-screen[data-profile-skin=base] .profile-section{background:linear-gradient(135deg,#fffdf4,#f8f2e6);box-shadow:inset 0 1px #fff,0 3px 0 #d4c7b329}
+.profile-screen[data-profile-skin=sahra]{--surface:#1c3b42;--stroke:#a48b5f;--stroke-strong:#d0af6d;--text:#fff2d5;--muted:#dfd2b8;--plum:#fff2d5;--accent:#f0c46d;color:#fff2d5;background:radial-gradient(ellipse at 12% 14%,#2e4a4544,transparent 50%),linear-gradient(150deg,#12373c,#2b293d);border-inline:1px solid #d1b36b44;min-height:100dvh}
+.profile-screen[data-profile-skin=sahra] .profile-card{border-color:#c8a66b;background:linear-gradient(140deg,#173d43,#2b2d43);box-shadow:inset 0 1px #eacb8c77,0 6px 0 #0b1c2677,0 16px 32px #06161944;position:relative;isolation:isolate}
+.profile-screen[data-profile-skin=sahra] .profile-cover-art{background-image:linear-gradient(#102d4322,#112b43a6),var(--profile-skin-art);background-size:cover;background-position:center 30%}
+.profile-screen[data-profile-skin=sahra] .profile-cover{border-bottom:2px solid #d2aa5e;aspect-ratio:2.7}
+.profile-screen[data-profile-skin=sahra] .profile-cover::after{content:'';position:absolute;inset:9px;border:1px solid #f7d99a6b;border-radius:17px;pointer-events:none;z-index:1}
+.profile-screen[data-profile-skin=sahra] .profile-identity{background:linear-gradient(150deg,#244a4944,#30273e55);padding-top:6px}
+.profile-screen[data-profile-skin=sahra] .profile-owner-edit,.profile-screen[data-profile-skin=sahra] .profile-share-button{background:linear-gradient(#fff0c6,#dcbf7a);color:#3c2b30;border-color:#efcf85;box-shadow:inset 0 1px #fff,0 3px #8a672b;min-height:44px}
+.profile-screen[data-profile-skin=sahra] .profile-section,.profile-screen[data-profile-skin=sahra] .profile-identity-library,.profile-screen[data-profile-skin=sahra] .profile-tip{background:linear-gradient(130deg,#1a4146,#2c3045);border-color:#ab8e59;box-shadow:inset 0 1px #f2dba530,0 4px 0 #0e263888;color:#fff2d5}
+.profile-screen[data-profile-skin=sahra] :is(.profile-identity-library h2,.profile-identity-library p,.profile-showcase-label,.profile-showcase-empty,.profile-identity-library-head h2,.profile-tip h3,.profile-tip p,.profile-stat-label,.profile-stat-value){color:inherit}
+.profile-screen[data-profile-skin=sahra] .profile-featured-badge{background:#d5b5751f;border-color:#c8a66b;color:#ffe3a1;box-shadow:0 2px 0 #0d2832}
+.profile-screen[data-profile-skin=sahra] .profile-section-heading{border-bottom:1px solid #d9be7f40;padding-bottom:13px}
+.profile-screen[data-profile-skin=sahra] .profile-achievement{border-color:#b89d6c66;background:#152e3899}
+.profile-screen[data-profile-skin=sahra] .profile-achievement.is-locked{opacity:1}
+.profile-screen[data-profile-skin=sahra] .profile-achievement.is-locked .profile-achievement-icon{opacity:.7}
+.profile-screen[data-profile-skin=sahra] .profile-achievement.is-locked h3{color:#f0e1c9}
+.profile-screen[data-profile-skin=sahra] :is(.profile-progress-text,.profile-achievement.is-locked .profile-achievement-state){color:#ddcdb6}
+.profile-screen[data-profile-skin=sahra] .profile-achievement-state{color:#91e9b2}
+.profile-screen[data-profile-skin=sahra] .profile-progress{background:#61716f}
+.profile-screen[data-profile-skin=sahra] .profile-progress>span{background:#f0c46d}
+.profile-screen[data-profile-skin=sahra] .profile-earned-title{background:#d5b57522;color:#ffe1a1;border-color:#c8a66b}
+.profile-screen[data-profile-skin=sahra] .profile-presence.is-online{color:#91e9b2}.profile-screen[data-profile-skin=sahra] .profile-presence.is-online>i{background:#91e9b2}
+.profile-screen[data-profile-skin=sahra] .profile-bio.is-empty{color:#d7c9d4}
+.profile-screen[data-profile-skin=sahra] .profile-contact-actions>.btn-primary{--btn-bg:linear-gradient(#0c8f91,#096365);--btn-fg:#fff7df;--btn-border:#f3d78e}
+.profile-screen[data-profile-skin=sahra] .profile-name-row .player-name-card:not(.is-equipped){color:#fff0cc}
+.store-preview-profile[data-profile-skin=sahra]{background:linear-gradient(140deg,#173d43,#302c43);color:#fff2d5;border:1px solid #c8a66b}.store-preview-profile[data-profile-skin=sahra] .store-preview-person{background:linear-gradient(#193f43,#302b40);color:#fff2d5}.store-preview-profile[data-profile-skin=sahra] .store-preview-person small{color:#e7d5ae}
+.store-preview-profile[data-profile-skin=sahra] .store-preview-cover{background-image:var(--profile-skin-art);background-size:cover;background-position:center 25%;border-bottom:2px solid #d4ae64}
+.store-preview-profile-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:12px}.store-preview-profile-panels>div{border:1px solid #c7af76;padding:12px;border-radius:14px;background:#ffffff0d;display:grid;gap:5px;font-size:11px}.store-preview-profile-panels strong{font-size:17px;color:inherit}

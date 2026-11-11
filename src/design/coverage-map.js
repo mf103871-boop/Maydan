@@ -65,8 +65,8 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "online.mafia.safety": Object.freeze(["block-exit","close","content","header","report-category","report-details","submit"]),
   "online.mafia.setup": Object.freeze(["capacity","mode-choice","mode-option","room-name","rules","visibility","voice-mode"]),
   "online.mafia.directory": Object.freeze(["rules","create-public-room","directory-options","directory-mode","directory-next","directory-previous","directory-status","directory-voice","profile","profile-footer","quick-join","refresh","room","room-join","room-observe","rooms","toolbar"]),
-  "online.mafia.lobby": Object.freeze(["chat","close","composer","content","event","header","invite","message-input","messages","player-rail","player-seat","players","ready","room-settings","room-theme","rules","send","start","voice","voice-join"]),
-  "online.mafia.role": Object.freeze(["audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
+  "online.mafia.lobby": Object.freeze(["chat","close","composer","content","event","header","invite","message-input","messages","player-rail","player-seat","players","ready","room-settings","rules","send","start","voice","voice-join"]),
+  "online.mafia.role": Object.freeze(["reveal-private-card","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
   "online.mafia.opening": Object.freeze(["audio-output","chat","composer","event","header","mafia-tools","message-input","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
   "online.mafia.night": Object.freeze(["ability","ability-submit","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
   "online.mafia.dawn": Object.freeze(["audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
@@ -91,19 +91,20 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "online.mafia.night.leader": Object.freeze(["ability","ability-submit","audio-output","chat","composer","event","header","mafia-tools","message-input","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
   "online.mafia.clues": Object.freeze(["actions","close","content","header","reports","tab.council"]),
   "online.mafia.notes": Object.freeze(["actions","close","content","header","notebook","notes-input","tab.council"]),
-  "home": Object.freeze(["brand","footer","game-card.badeeha","game-card.mafia","game-card.beep","game-card.ersomha","game-card.fabraka","game-card.jabeen","game-card.mamnoo","game-card.meenfina","games","header","privacy-link","profile","refunds-link","terms-link","title"]),
+  "home": Object.freeze(["brand","footer","game-card.badeeha","game-card.mafia","game-card.beep","game-card.ersomha","game-card.fabraka","game-card.jabeen","game-card.mamnoo","game-card.meenfina","games","header","home-search-open","privacy-link","profile","refunds-link","requests-open","terms-link","title"]),
   "home.game-mode": Object.freeze(["close","content","header","local-mode","online-mode","sheet-drag-handle"]),
   "game-details": Object.freeze(["actions","back","facts","game-description","game-icon","game-name","hero","skip-instructions","steps","title","topbar"]),
-  "players": Object.freeze(["add-player","avatar-choice","avatar-picker","back","name-input","player-remove","player-row","players","title","topbar"]),
-  "settings": Object.freeze(["about","clear-data","manage-roster","music-volume","plus-store","pricing-link","privacy-link","refunds-link","setting","setting-toggle","settings-account","settings-audio","settings-experience","settings-local","settings-privacy","settings-support","share-reports","sound-test","sound-volume","terms-link","title","topbar"]),
-  "account.card": Object.freeze(["account-delete","account-signin","account-signout","profile","purchase","restore","title"]),
-  "store": Object.freeze(["artwork","collection","collection-preview","collection-use","collections","plus-details","plus-retry","store-empty","title","topbar"]),
+  "players": Object.freeze(["add-player","back","friends","player-edit","player-remove","player-row","players","title","topbar"]),
+  "settings": Object.freeze(["about","back","clear-data","credits-open","home","manage-roster","music-volume","plus-store","pricing-link","privacy-link","refunds-link","segment-option","setting","setting-toggle","settings-account","settings-audio","settings-experience","settings-index-return","settings-local","settings-privacy","settings-section-jump","settings-support","share-reports","sound-test","sound-volume","support-link","terms-link","title","topbar"]),
+  "account.card": Object.freeze(["account-delete","account-signin","account-signout","continue","profile","purchase","restore","title"]),
+  "store": Object.freeze(["artwork","collections","item-preview","item-use","plus-details","plus-retry","profile","store-membership","store-navigation","store-product","store-reset","store-tab-collections","store-tab-library","store-tab-membership","title","topbar"]),
+  "store.preview": Object.freeze(["header","close","content","product-preview","item-use","collection-use","store-detail-actions"]),
   "about": Object.freeze(["back","license-link","pricing-link","privacy-link","refunds-link","show-all","source-link","terms-link","title","topbar"]),
   "audio-credits": Object.freeze(["content","license-link","source-link"]),
   "legal": Object.freeze(["back","support-link","title","topbar"]),
   "play-setup": Object.freeze(["actions","add-player","player-choice","players","players-setup","start"]),
   "badeeha.home": Object.freeze(["actions","history","intro","rules","start","title"]),
-  "badeeha.setup": Object.freeze(["back","categories-reset","category-card","category-filter","category-search","clear-history","favorite","header","mode-choice","random-categories","round-size","start","team-count","team-name","timer-length","title"]),
+  "badeeha.setup": Object.freeze(["back","categories-reset","category-card","category-filter","category-search","clear-history","favorite","header","mode-choice","random-categories","round-size","setup-jump","start","team-count","team-name","timer-length","title"]),
   "badeeha.board": Object.freeze(["actions","finish","header","score-cards","scoreboard","tier","undo"]),
   "badeeha.question": Object.freeze(["answer","answer-toggle","cancel","category","header","judge","judge-nobody","judge-team","options-list","pause","question","report","reveal","timer","tool","tools","turn"]),
   "badeeha.result": Object.freeze(["actions","history","setup","share-result","start"]),
@@ -114,8 +115,8 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "beep.three.over": Object.freeze(["actions","exit","options","podium","restart"]),
   "beep.bomb.intro": Object.freeze(["intro","lives","players","start"]),
   "beep.bomb.prompt": Object.freeze(["bomb","continue","lives","players","prompt","turn"]),
-  "beep.bomb.boom": Object.freeze(["continue","lives","results"]),
-  "beep.bomb.over": Object.freeze(["actions","exit","options","podium","restart"]),
+  "beep.bomb.boom": Object.freeze(["continue","lives","players","results"]),
+  "beep.bomb.over": Object.freeze(["actions","exit","lives","options","players","podium","restart"]),
   "mamnoo.intro": Object.freeze(["intro","scoreboard","start"]),
   "mamnoo.play": Object.freeze(["actions","category","correct","header","options-list","question","skip","timer","word","wrong"]),
   "mamnoo.roundEnd": Object.freeze(["continue","intro","results","scoreboard"]),
@@ -127,7 +128,7 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "meenfina.local.intro": Object.freeze(["intro","scoreboard","start"]),
   "meenfina.local.countdown": Object.freeze(["question"]),
   "meenfina.local.pick": Object.freeze(["option","options-list","question","skip","submit"]),
-  "meenfina.local.vote": Object.freeze(["option","options-list","question"]),
+  "meenfina.local.vote": Object.freeze(["option","options-list","question","submit"]),
   "meenfina.local.result": Object.freeze(["continue","question","results"]),
   "meenfina.local.over": Object.freeze(["exit","options","podium","restart"]),
   "fabraka.local.intro": Object.freeze(["header","intro","pause","scoreboard","start"]),
@@ -140,9 +141,9 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "fabraka.local.reveal": Object.freeze(["header","pause","question","reveal","reveal-card"]),
   "fabraka.local.roundEnd": Object.freeze(["continue","header","pause","round-scores"]),
   "fabraka.local.over": Object.freeze(["exit","options","podium","restart"]),
-  "online.entry": Object.freeze(["avatar-choice","avatar-picker","categories-reset","category-choice","cycles","difficulty","entry","entry-create","entry-join","entry-mode","entry-public","name-input","room-code","room-name","room-visibility","setup-presets-toggle","start"]),
+  "online.entry": Object.freeze(["avatar-choice","avatar-picker","categories-reset","category-choice","cycles","difficulty","entry","entry-create","entry-join","entry-mode","entry-public","name-input","room-code","room-name","room-visibility","start"]),
   ...Object.fromEntries(['badeeha','ersomha','fabraka','meenfina'].map(game => [`online.${game}.directory`, Object.freeze(['toolbar','create-public-room','entry-join','refresh','directory-options','rooms','room','room-join','directory-previous','directory-next','profile-footer','profile'])])),
-  "online.lobby": Object.freeze(["allow-replay","appearance-toggle","categories-reset","category-choice","cycles","difficulty","header","invite","invite-code","invite-copy","invite-qr","invite-share","invite-toggle","member","member-remove","players","ready","room-settings","room-theme","rules-toggle","save","start"]),
+  "online.lobby": Object.freeze(["allow-replay","categories-reset","category-choice","cycles","difficulty","header","invite","invite-code","invite-copy","invite-qr","invite-share","invite-toggle","member","member-remove","players","ready","room-settings","rules-toggle","save","start"]),
   "online.chrome": Object.freeze(["connection","exit","room-actions","title","topbar"]),
   "online.meenfina.vote": Object.freeze(["abstain","option","options-list","question","scoreboard","submit","timer","vote-panel"]),
   "online.meenfina.result": Object.freeze(["continue","players","question","scoreboard"]),
@@ -160,7 +161,7 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "online.badeeha.reveal": Object.freeze(["answer","category","judge","judge-nobody","judge-team","prompt","question","round","scoreboard","turn"]),
   "online.badeeha.over": Object.freeze(["podium","restart"]),
   "ersomha.select.drawer": Object.freeze(["header","report","timer","title","word-choice","word-choices"]),
-  "ersomha.select.guesser": Object.freeze(["header","report","timer","title"]),
+  "ersomha.select.guesser": Object.freeze(["header","players","report","timer","title"]),
   "ersomha.draw.drawer": Object.freeze(["aside","camera-controls","camera-hand","camera-view","canvas","canvas-panel","clear","color","drawing-tools","eraser","focus-toggle","guesses","header","mic-note","orientation","palette","pen","players","redo","report","timer","title","tools-more","undo","width","widths","word-banner"]),
   "ersomha.draw.guesser": Object.freeze(["aside","canvas","canvas-panel","guess-form","guess-input","guess-send","guesses","header","players","report","timer","title","word-banner"]),
   "ersomha.result.drawer": Object.freeze(["aside","canvas","canvas-panel","guesses","header","players","report","results","timer","title","word-banner"]),
@@ -170,13 +171,13 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "social.list": Object.freeze(["account-signin","add-friend","code","favorite","friend-accept","friend-avatar","friend-chat","friend-filter","friend-reject","friend-row","group-row","header","list","new-group","preferences","profile","retry","search","search-input","tab.chats","tab.friends","tab.groups","tab.requests","tabs"]),
   "social.conversation": Object.freeze(["account-signin","back","call","composer","game-invite","header","menu","message","message-input","messages","preferences","profile","retry","send"]),
   "social.voice": Object.freeze(["composer","header","menu","message","message-input","messages","profile","record","send","voice-message","voice-play"]),
-  "social.group-editor": Object.freeze(["actions","avatar-choice","cancel","close","content","group-name","header","leave-group","member","member-picker","member-role","member-transfer","members","save"]),
+  "social.group-editor": Object.freeze(["actions","avatar-choice","cancel","close","content","group-manage","group-name","header","leave-group","member","member-picker","member-role","member-transfer","members","save"]),
   "social.invite": Object.freeze(["actions","cancel","close","content","header","room-code","submit"]),
-  "social.preferences": Object.freeze(["close","content","header","notification-enable","notification-setting","notification-toggle"]),
+  "social.preferences": Object.freeze(["actions","close","content","continue","header","notification-enable","notification-setting","notification-toggle"]),
   "social.search": Object.freeze(["add-friend","close","content","header","profile","search-input"]),
   "social.action": Object.freeze(["actions","cancel","close","confirm","content","header","message-input"]),
   "social.call": Object.freeze(["call-collapse","call-drag","close","content","end-call","friend-chat","header","mute","participants","speaker"]),
-  "profile": Object.freeze(["account-signin","achievement","achievements","back","badges","bio","code","contact","cover","edit","friend-chat","header","identity","menu","name","plus-store","retry","share","stat","stats","title"]),
+  "profile": Object.freeze(["account-signin","achievement","achievements","back","badges","bio","code","contact","cover","edit","friend-chat","header","home","identity","menu","name","plus-store","profile-library","profile-store","profile-tab-achievements","profile-tab-stats","profile-visitor-preview","retry","share","stat","stats","title"]),
   "profile.editor": Object.freeze(["actions","avatar-choice","avatar-upload","badge-choice","bio-input","cancel","close","content","cover-upload","edit-section","field","header","name-input","save","theme-choice","title-select"]),
   "profile.crop": Object.freeze(["actions","cancel","close","content","crop","header","save","zoom","zoom-input"]),
   "profile.safety": Object.freeze(["actions","cancel","close","content","field","header","report-details","report-reason","submit"]),
@@ -185,7 +186,7 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "system.dialog": Object.freeze(["actions","cancel","close","confirm","content","header"]),
   "system.sheet": Object.freeze(["cancel","close","confirm","content","header","sheet-drag-handle"]),
   "account.paywall": Object.freeze(["legal","legal-privacy","legal-refunds","legal-terms","plan-option","products","purchase","restore"]),
-  "account.signin": Object.freeze(["close","content","header","privacy-note","providers","sheet-drag-handle","signin-apple","signin-google"]),
+  "account.signin": Object.freeze(["close","content","header","privacy-link","privacy-note","providers","sheet-drag-handle","signin-apple","signin-google","terms-link"]),
   "play-setup.teams": Object.freeze(["actions","segment-option","start","team-count","team-name","team-row","teams-setup"]),
   "setup.add-player": Object.freeze(["actions","add-player","avatar-choice","avatar-picker","close","content","header","name-input"]),
   "setup.pass-phone": Object.freeze(["continue","player-name","privacy","privacy-hint","title"]),
@@ -212,7 +213,52 @@ const conditionalNodeReasons = {
     "header":"The training exit confirmation owns the common dialog heading and close area only during an explicit exit request."
   },
   "online.mafia.lobby": {"event":"Waiting-room event cards appear only when a public event is supplied by the server; a fresh lobby has no dawn or elimination from a prior match."},
-  "store": {"earned-cosmetics":"Displayed only for an authenticated owner with a server-issued permanent cosmetic grant; the isolated default store fixture has no earned license. Ownership labels and access to equipping earned items must remain visible."},
+  "store": {
+      "plus-retry":"Store catalog or inventory failure reveals this retry action; the standard fixture has a successful catalog.",
+      "plus-details":"The membership tab opens the existing subscription sheet for its optional cosmetic features.",
+      "store-membership":"The membership tab presents the subscription disclosure; the default store opens the collections tab.",
+      "collection": "Retired collection story selector: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-tab-presets": "Retired saved-session tab: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-presets-open": "Retired saved-session discovery: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-presets-retry": "Retired saved-session retry: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-preset": "Retired saved-session rows: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-preset-open": "Retired saved-session apply: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-preset-delete": "Retired saved-session delete: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-game-setup": "Retired saved-session game shortcuts: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-monthly": "Retired monthly reward: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-monthly-preview": "Retired monthly reward preview: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "permanent-quote": "Retired separate purchase quote: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "test-checkout-confirm": "Retired test checkout: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-quote-panel": "Retired checkout detail panel: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-quote-price": "Retired test price: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-test-disclosure": "Retired test purchase disclosure: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-inventory-refresh": "Retired checkout reconciliation: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-entrance-play": "Retired room entrance preview: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-preview-surface": "Retired room/chat preview switcher: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-search": "Retired catalog search: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-search-clear": "Retired catalog search clear: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-category": "Retired catalog category filter: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-library-filter": "Retired legacy catalog filter: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-badge": "Retired separate membership badge toggle: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-transition-toggle": "Retired old membership transition details: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "plus-transition-open": "Retired old transition link: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-signin": "Retired old library sign-in shortcut: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-empty-open": "Retired old story navigation: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "earned-cosmetics": "Owned legacy licenses appear read-only in the actual library tab; membership narrowing never erases prior permanent ownership.",
+      "store-legacy-toggle": "The actual legacy-license disclosure is mounted only when the current owner has licenses outside the new profile/frame library.",
+      "collection-preview": "The empty library offers this existing return action to the profile/frame collection; the populated default collection does not duplicate it.",
+      "collection-use": "Retired collection apply on the main store: the actual profile/frame pair action belongs only to the real store.preview modal."
+  },
+  "store.preview": {
+      "permanent-quote": "Retired separate purchase quote: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "test-checkout-confirm": "Retired test checkout: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-quote-panel": "Retired checkout detail panel: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-quote-price": "Retired test price: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-test-disclosure": "Retired test purchase disclosure: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-inventory-refresh": "Retired checkout reconciliation: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-entrance-play": "Retired room entrance preview: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant.",
+      "store-preview-surface": "Retired room/chat preview switcher: membership now exposes only profile appearance and photo frames. This saved-design identity has no mounted control and cannot create a grant."
+  },
   "online.mafia.tools": {},
   "online.mafia.spectator": {},
   "online.mafia.history": {"loading":"Displayed only while the authenticated history request is pending for this account.","error":"Displayed when the history request fails; old account data is never retained as a fallback.","empty":"Displayed only after the server returns a successful empty result for this account."},
@@ -245,13 +291,24 @@ const conditionalNodeReasons = {
     "presence": reasonRetiredHome, "tools": reasonRetiredHome, "rooms": reasonRetiredHome, "roster": reasonRetiredHome,
     "pricing-link": "Web accounts show the pricing link; the iPhone fixture intentionally omits web checkout.",
     "groups": reasonGroups,
-    "group-card": reasonGroups
+    "group-card": reasonGroups,
+    "search-input":"The local game filter is available only while the search action in the home header is expanded."
+  },
+  "players": {
+    "avatar-choice":"Saved design compatibility: avatar choices appear in the separate add or edit player dialog.",
+    "avatar-picker":"Saved design compatibility: the avatar picker is now inside the local player dialog.",
+    "name-input":"Saved design compatibility: the player name field is now inside the local player dialog."
   },
   "game-details": {
     "local": reasonMovedMode, "online": reasonMovedMode,
+    "game-icon": "Saved design compatibility: the title and instruction icons now identify this screen; it no longer uses a decorative hero icon.",
     "home": "MissingGame renders the home action only for an unknown game link."
   },
-  "settings": {},
+  "settings": {
+    "plus-transition-open":"The active subscriber's existing transition notice links to the Store; ordinary guest and unsubscribed settings fixtures do not mount that notice.",
+    "pricing-link":"The pricing link is visible in help for a web billing account; the standard account fixture models an iPhone.",
+    "share-reports":"The help section offers report sharing only when this device has saved reports to share."
+  },
   ...Object.fromEntries(['badeeha','ersomha','fabraka','meenfina'].map(game => [`online.${game}.directory`, directoryConditional])),
   "badeeha.home": {
     "resume": reasonResume,
@@ -314,7 +371,12 @@ const conditionalNodeReasons = {
     "title": reasonHome
   },
   "online.lobby": {
-    "host-handover": "Shown only to a Mafia host while another seat is connected; the waiting-room fixture is an Ersomha room."
+    "host-handover": "Shown only to a Mafia host while another seat is connected; the waiting-room fixture is an Ersomha room.",
+    "invite":"The actual room invitation opens in a dialog; the lobby keeps this legacy styling key for saved designs.",
+    "invite-code":"The actual room invitation opens in a dialog; the lobby keeps this legacy styling key for saved designs.",
+    "invite-copy":"The actual room invitation opens in a dialog; the lobby keeps this legacy styling key for saved designs.",
+    "invite-qr":"The actual room invitation opens in a dialog; the lobby keeps this legacy styling key for saved designs.",
+    "invite-share":"The actual room invitation opens in a dialog; the lobby keeps this legacy styling key for saved designs."
   },
   "online.chrome": {"observer-join":"Shown only for an authenticated delayed observer when the authoritative snapshot permits promotion to a waiting seat.",
     "dropped": reasonDropped,
@@ -394,7 +456,8 @@ const conditionalNodeReasons = {
     "game-invite-join": reasonGameInviteCard
   },
   "social.group-editor": {
-    "member-select": "Only friends outside the group and pending invitations are selectable; the baseline group already contains its sample friends."
+    "member-select": "Only friends outside the group and pending invitations are selectable; the baseline group already contains its sample friends.",
+    "member-transfer":"The owner may transfer ownership to an eligible other member; the overview and non-owner views do not show this action."
   },
   "social.invite": {
     "game-choice": reasonGameChoice,
@@ -405,7 +468,8 @@ const conditionalNodeReasons = {
   "social.preferences": {
     "members": reasonMembers,
     "member": reasonMembers,
-    "unblock": reasonMembers
+    "unblock": reasonMembers,
+    "notification-enable":"On iPhone, the real permission action appears only when supported notifications are ready to request."
   },
   "social.search": {
     "friend-chat": "Search returns this action only for an existing friend; other results show the add-friend action."
@@ -436,6 +500,15 @@ const conditionalNodeReasons = {
     "legal-pricing": "Web checkout alone shows its pricing policy link; the baseline fixture is iPhone."
   },
   "system.dialog": {
+    "save":"The local player editor exposes its save action after opening a specific player or starting a new roster entry.",
+    "name-input":"The local player editor shows a name field only after opening its add or edit dialog.",
+    "avatar-choice":"The local player editor provides optional avatar choices after its add or edit dialog opens.",
+    "avatar-picker":"The local player editor provides its avatar picker only after the edit or add dialog opens.",
+    "invite":"Opening a real room invitation displays its card inside the dialog; general dialogs contain other content.",
+    "invite-code":"Room invitation dialogs display the server-issued room code for players who prefer typing the code.",
+    "invite-copy":"Room invitation dialogs let players copy the actual generated join URL.",
+    "invite-qr":"Room invitation dialogs render the QR when the real join URL has been encoded.",
+    "invite-share":"Room invitation dialogs open the existing in-app friend invitation flow.",
     "member-host": "The Mafia host's handover dialog lists each other connected seat as a choice; the generic fixture is a confirmation.",
     "rules": reasonRules,
     "score-cards": reasonRules,
@@ -447,6 +520,10 @@ const conditionalNodeReasons = {
     "share-link": reasonRules
   }
 };
+// Explicit compatibility records for features removed by the profile/frame-only request.
+conditionalNodeReasons['online.entry'] = { ...conditionalNodeReasons['online.entry'], 'setup-presets-toggle':'Retired saved-session setup disclosure retained for saved-design compatibility: game entry no longer mounts saved-session controls after membership was limited to profile appearance and photo frames. Existing saved records remain untouched.' };
+conditionalNodeReasons.profile = { ...conditionalNodeReasons.profile, 'profile-presets':'Retired saved-session discovery: the profile now links only to its appearance and photo-frame library; old session records are preserved without this action.' };
+for (const screen of ['online.lobby','online.mafia.lobby']) conditionalNodeReasons[screen] = { ...conditionalNodeReasons[screen], 'room-theme':'Retired room-theme picker: membership no longer changes room appearance; the normal room and historical data remain intact.', 'appearance-toggle':'Retired room-appearance disclosure: the original game interface no longer offers paid room styling or a seated council.' };
 const liveCouncil = /^online\.mafia\.(?:role|opening|night(?:\..+)?|dawn|discussion|nomination|defense|verdict|spectator)$/;
 const legacyPrivateCouncilIds = ['audio-output','mafia-tools','mute','phase-title','player-rail','player-seat','players','role-card','role-toggle','tab.clues','tab.notes','tabs','timer','voice','voice-leave'];
 export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze(Object.fromEntries(Object.entries(conditionalNodeReasons).map(([screen, reasons]) => {
@@ -454,6 +531,7 @@ export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze(Object.fromEntries(
   if (liveCouncil.test(screen)) {
     next.ability = reasonAbility;
     next.narrative = 'The legacy standalone phase narrative is retained for saved-design compatibility; the dense live layout now renders authorized event cards inside the public timeline instead.';
+    if (/^online\.mafia\.(?:night(?:\..+)?|nomination)$/.test(screen)) next.target = 'Only a living actor with an authorized action sees its eligible targets after opening the decision. The list never adds targets outside the server projection.';
     next['action-open'] = 'The real decision trigger appears only for a living assigned player with authoritative actions in this phase; opening it never submits the decision.';
     next['event-overlay'] = 'A noninteractive visual effect is mounted only for a fresh authorized public event, never for the initial snapshot or a private role event.';
     next['load-older'] = 'The current permitted channel shows this real pagination action only when its local visible window omits older authorized messages.';
@@ -464,6 +542,7 @@ export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze(Object.fromEntries(
   }
   if (screen === 'online.mafia.directory') {
     Object.assign(next, directoryConditional);
+    next['directory-filter-apply'] = 'Closes the expanded Mafia filters after their actual selections have updated the visible room list.';
     for (const id of ['actions','header']) next[id] = 'Retired oversized directory heading/action wrapper retained for saved-design compatibility; the real compact toolbar now owns room creation, refresh and entry actions.';
   }
   if (['online.mafia.over','online.mafia.closed'].includes(screen)) {

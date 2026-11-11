@@ -1,0 +1,345 @@
+{
+  "version": 2,
+  "assets": {
+    "/assets/plus/v2/sahra-frame.webp": {
+      "sha256": "9204595a69fa37ccb6f1e8cfd420382ab7caf49545205ad60d2db6b0c6a50765",
+      "bytes": 48634,
+      "width": 512,
+      "height": 512,
+      "kind": "frame"
+    },
+    "/assets/plus/v2/sahra-frame-medium.webp": {
+      "sha256": "4481541596d961a2184472964601a86b381e0e3a475eebe3bdfab9760064ad0e",
+      "bytes": 13954,
+      "width": 192,
+      "height": 192,
+      "kind": "frame",
+      "lod": "medium"
+    },
+    "/assets/plus/v2/sahra-frame-small.svg": {
+      "sha256": "71f2b2bbd96f392f4a6372039d0bc806c163c280e4c5db12f0cf0204fe32b359",
+      "bytes": 641,
+      "width": 64,
+      "height": 64,
+      "kind": "frame",
+      "lod": "small",
+      "design": "original simplified vector silhouette"
+    },
+    "/assets/plus/v2/sahra-avatar.webp": {
+      "sha256": "61b931fade486aa3aa042d0e1c35ca761bb2952b2e11764d6b4f49f1c73ff4b3",
+      "bytes": 62732,
+      "width": 512,
+      "height": 512,
+      "kind": "avatar"
+    },
+    "/assets/plus/v2/artist-avatar.webp": {
+      "sha256": "b719f5b3db58ed4ffa34f5ceb76e310630accd91aeea9be24798bb70378491cf",
+      "bytes": 54000,
+      "width": 512,
+      "height": 512,
+      "kind": "avatar"
+    },
+    "/assets/plus/v2/noir-avatar.webp": {
+      "sha256": "24885e4837cb102deb2091dc3775062f76eefd595e8053cb45e1bea95d035698",
+      "bytes": 41342,
+      "width": 512,
+      "height": 512,
+      "kind": "avatar"
+    },
+    "/assets/plus/v2/sahra-cover.webp": {
+      "sha256": "1c5442797c33b6375891a5f588ab978cfc8025d77e8904620b54a3a695fa85da",
+      "bytes": 144172,
+      "width": 1200,
+      "height": 480,
+      "kind": "cover"
+    },
+    "/assets/plus/v2/artist-cover.webp": {
+      "sha256": "920a5623ebd8cd4647533869672432a41197b2c4d3867ee269cba83ea5135fc5",
+      "bytes": 86642,
+      "width": 1200,
+      "height": 480,
+      "kind": "cover"
+    },
+    "/assets/plus/v2/noir-cover.webp": {
+      "sha256": "64072543d22bdb38b644bbf717f443952a503e3bd60931226bced22959e48d02",
+      "bytes": 108938,
+      "width": 1200,
+      "height": 480,
+      "kind": "cover"
+    },
+    "/assets/plus/v2/signature-frame.webp": {
+      "sha256": "3201239d9e14b2303380c7acccaeb5c79bbacd9a390c13c4eb4c9aceadcb03d2",
+      "bytes": 50620,
+      "width": 512,
+      "height": 512,
+      "kind": "frame"
+    },
+    "/assets/plus/v2/signature-frame-medium.webp": {
+      "sha256": "fb5476850374f28c7a56f8b7b93730dcfb30dc089c47e4df68a1770e797198b4",
+      "bytes": 14026,
+      "width": 192,
+      "height": 192,
+      "kind": "frame",
+      "lod": "medium"
+    },
+    "/assets/plus/v2/signature-frame-small.svg": {
+      "sha256": "d86539d625dcdcd001c5e5c3a1ea4fb19303c216bc38c1af838913f79ad50e76",
+      "bytes": 645,
+      "width": 64,
+      "height": 64,
+      "kind": "frame",
+      "lod": "small",
+      "design": "original simplified vector silhouette"
+    },
+    "/assets/plus/v2/artist-frame.webp": {
+      "sha256": "a08c4df19a8a77ed99544dc6506690d0ad47005993e74aeec68ac7c7e01460c3",
+      "bytes": 57560,
+      "width": 512,
+      "height": 512,
+      "kind": "frame"
+    },
+    "/assets/plus/v2/artist-frame-medium.webp": {
+      "sha256": "a31095c7306e1103a937f622e7d8faea21693391ef65935b9e2cc405775afa05",
+      "bytes": 14196,
+      "width": 192,
+      "height": 192,
+      "kind": "frame",
+      "lod": "medium"
+    },
+    "/assets/plus/v2/artist-frame-small.svg": {
+      "sha256": "05543f03963af7cdc884b3ce33a68d1c58bab5263af44d5f1a87d1ca1b3163ef",
+      "bytes": 587,
+      "width": 64,
+      "height": 64,
+      "kind": "frame",
+      "lod": "small",
+      "design": "original simplified vector silhouette"
+    },
+    "/assets/plus/v2/noir-frame.webp": {
+      "sha256": "b12613cb23b9477c7b029b8ea36471da6d860e3bc7512447d6b54bb9c328c210",
+      "bytes": 40072,
+      "width": 512,
+      "height": 512,
+      "kind": "frame"
+    },
+    "/assets/plus/v2/noir-frame-medium.webp": {
+      "sha256": "ee43c116af35be7caa284a205633b37b28cccefa75a9474d9720f376c018c282",
+      "bytes": 11534,
+      "width": 192,
+      "height": 192,
+      "kind": "frame",
+      "lod": "medium"
+    },
+    "/assets/plus/v2/noir-frame-small.svg": {
+      "sha256": "d7b22fad6efb70acbdc28f57033e4ad67049b6fbb79b5c9c4d8accfd3de99feb",
+      "bytes": 583,
+      "width": 64,
+      "height": 64,
+      "kind": "frame",
+      "lod": "small",
+      "design": "original simplified vector silhouette"
+    },
+    "/assets/plus/v2/sahra-room.webp": {
+      "sha256": "9a7458d5903ae167476a6fdb95b1a78e6dcee81f3ec5dff4c37233bbaaa9d382",
+      "bytes": 120294,
+      "width": 960,
+      "height": 640,
+      "kind": "room"
+    },
+    "/assets/plus/v2/artist-room.webp": {
+      "sha256": "4c953c8a05335ab5dc83918ae29a8c275b8474f161f1b5b50b9b398b69bdb880",
+      "bytes": 105992,
+      "width": 960,
+      "height": 640,
+      "kind": "room"
+    },
+    "/assets/plus/v2/noir-room.webp": {
+      "sha256": "ec3b7a8cbe40e8b1d575d160bbed66782bbaf13dacc012384c94f7f2da8408da",
+      "bytes": 74794,
+      "width": 960,
+      "height": 640,
+      "kind": "room"
+    },
+    "/assets/plus/v2/sahra-table.webp": {
+      "sha256": "efff68c7718169ba02218f41406ce318b9a83b369722db58f572522a1136aab9",
+      "bytes": 38038,
+      "width": 640,
+      "height": 400,
+      "kind": "table"
+    },
+    "/assets/plus/v2/artist-table.webp": {
+      "sha256": "4e7589313c427ec0a894f636817394942aaab688fde851e9e22b47dc9227d773",
+      "bytes": 31712,
+      "width": 640,
+      "height": 400,
+      "kind": "table"
+    },
+    "/assets/plus/v2/noir-table.webp": {
+      "sha256": "7f4543a4b36314cf411e92de0275011d492cd559492fd58842558f1eeb3787db",
+      "bytes": 34828,
+      "width": 640,
+      "height": 400,
+      "kind": "table"
+    },
+    "/assets/plus/v2/sahra-name-card.webp": {
+      "sha256": "ca82f51c7b70b046e816d9e3d7c85995cb468b8e3a0c6b7962f0caece7bfe78a",
+      "bytes": 6956,
+      "width": 900,
+      "height": 200,
+      "kind": "nameColor",
+      "design": "original vector name plate, not a cover crop"
+    },
+    "/assets/plus/v2/sahra-entrance.webp": {
+      "sha256": "901a8d4a9769d205f2f78a5a0d8b7471478dfb8c977773c368d27d50cae236a0",
+      "bytes": 24662,
+      "width": 500,
+      "height": 240,
+      "kind": "entrance",
+      "design": "original vector sparkle overlay; runtime animation is separate"
+    },
+    "/assets/plus/v2/artist-name-card.webp": {
+      "sha256": "238671636fcc8d1e844a57c65abb51e0e698d2631e1eb090d29e785c049d1549",
+      "bytes": 6146,
+      "width": 900,
+      "height": 200,
+      "kind": "nameColor",
+      "design": "original vector name plate, not a cover crop"
+    },
+    "/assets/plus/v2/artist-entrance.webp": {
+      "sha256": "f6e1822b92b41ba974d419548fab10e99444d1e91365390909b958339d512b11",
+      "bytes": 27498,
+      "width": 500,
+      "height": 240,
+      "kind": "entrance",
+      "design": "original vector sparkle overlay; runtime animation is separate"
+    },
+    "/assets/plus/v2/noir-name-card.webp": {
+      "sha256": "7cafd27e68161ba1b8d7da6387bcae4af702fafbe5365da1e1e38fe2dc79337e",
+      "bytes": 6630,
+      "width": 900,
+      "height": 200,
+      "kind": "nameColor",
+      "design": "original vector name plate, not a cover crop"
+    },
+    "/assets/plus/v2/noir-entrance.webp": {
+      "sha256": "ab2ff01e789d908ae0fad14dc11337d41c2a3ca27f1ebcf7896268aa6fc9c050",
+      "bytes": 26682,
+      "width": 500,
+      "height": 240,
+      "kind": "entrance",
+      "design": "original vector sparkle overlay; runtime animation is separate"
+    },
+    "/assets/plus/v2/profile-sahra-background.webp": {
+      "sha256": "db36746e46a1bed91a25416594e003ab0d2c39c37078f4c2bce064f547d6fc94",
+      "source": "original Maydan profile backdrop retained with a profile-specific runtime URL",
+      "bytes": 172166,
+      "kind": "profileSkin",
+      "height": 683,
+      "width": 1024
+    }
+  },
+  "provenance": {
+    "generator": "OpenAI image_gen",
+    "design": "Maydan original local Plus study",
+    "billing": "not configured",
+    "avatars": "static portraits; no animated-avatar claim",
+    "sourceMasters": [
+      {
+        "name": "sahra-frame.png",
+        "sha256": "601c1b6f5ce533e61eee6f1c0db59088b5a838f8f5725be0186c1218c0051080",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "name": "sahra-avatar.png",
+        "sha256": "b783245b738faaf9f040bf486fba5c3d543ef0459686d8bbc989fba0d1cb99df",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "name": "artist-avatar.png",
+        "sha256": "4119942af1f1492db4626dc085064bf1e5a5a83a554491b9f8c2dd1d8a73397c",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "name": "noir-avatar.png",
+        "sha256": "602550ee5e2bf3c01697eb146ac783bf3f171f06711a4d3166f2565edc559022",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "name": "sahra-cover.png",
+        "sha256": "4f1478d9ab3eeea118fae66d0bd7b4fffbcc6074ab5c7a0a6175ea7ccc21a0d7",
+        "width": 1983,
+        "height": 793
+      },
+      {
+        "name": "artist-cover.png",
+        "sha256": "f3a27e468cf4e6f38a53fde53da0c4280d38fabc979fe05f4f84ecb054278b9e",
+        "width": 1983,
+        "height": 793
+      },
+      {
+        "name": "noir-cover.png",
+        "sha256": "4c1f1b726c1e63cdffcdd4eccd55171bfb56335ccb038bb5cf707d5d32b40f9a",
+        "width": 1983,
+        "height": 793
+      },
+      {
+        "name": "signature-frame.png",
+        "sha256": "a8abaf8393690062be2a1c5d36968b4fa8560f1a72ab716f0b38c71862733c67",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "name": "artist-frame.png",
+        "sha256": "c7224a1146a90d9b487ba3f79e681558895e8512804f6226e8beb3c6e1b5bce2",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "name": "noir-frame.png",
+        "sha256": "ff2c1e9dbdd91255f6836812902164805ded32c2d058df51c0c11ecd2c638750",
+        "width": 1254,
+        "height": 1254
+      },
+      {
+        "name": "sahra-room.png",
+        "sha256": "b962f2375c621dca1544f6978d6c831fede9bbbd0df41a19ac591990d3e55e0b",
+        "width": 1536,
+        "height": 1024
+      },
+      {
+        "name": "artist-room.png",
+        "sha256": "09af6c7a8571737afd89576ea718f8c48fda824ba8b5254092a27a3fdf761fa7",
+        "width": 1536,
+        "height": 1024
+      },
+      {
+        "name": "noir-room.png",
+        "sha256": "21e2997bd7cc942f068ff4c7f8d7b4880ade889de681b8cc9cd05dac510da5c9",
+        "width": 1536,
+        "height": 1024
+      },
+      {
+        "name": "sahra-table.png",
+        "sha256": "96c255ac05e9f917efca528c918e7e8a08eda6821beffbe0fdd723eee97a16c5",
+        "width": 1672,
+        "height": 941
+      },
+      {
+        "name": "artist-table.png",
+        "sha256": "9206a1dfd2af57a8f9e1c8dff66d3213547b44e439eff3776a887c271b59ab85",
+        "width": 1663,
+        "height": 946
+      },
+      {
+        "name": "noir-table.png",
+        "sha256": "132ac159ad8ef140b019d9ef052c14cf3000d4460cda5d20ea9a9600a5a955b2",
+        "width": 1774,
+        "height": 887
+      }
+    ]
+  }
+}

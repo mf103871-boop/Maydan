@@ -1,20 +1,27 @@
-import { cp, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { appendFile, cp, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import sharp from 'sharp';
 import { migrateHtml, nativeConfig } from './native.mjs';
 import { resolveNativeBuildOrigin } from './release-environment.mjs';
+import { resolveRewardedBuild } from './rewarded-config.mjs';
+import { generateSignedRewardedProject } from './rewarded-preview.mjs';
+import { resolveReleaseFeatures, writePreparedFeatures } from './release-features.mjs';
 
 // الغلاف يتصل بخادم الغرف والحسابات المنشور (يُبدَّل بـ MAYDAN_ROOMS_URL)؛ يُضبط قبل
 // استيراد أدوات البناء لأن esbuild يقرأ المتغير عند إعداد الخيارات.
 const apiOrigin = resolveNativeBuildOrigin(process.env);
+const rewarded = resolveRewardedBuild(process.env);
+resolveReleaseFeatures(process.env);
 process.env.MAYDAN_ROOMS_URL = apiOrigin;
-const { buildOnce, ROOT, DIST } = await import('../lib.mjs');
+const { buildOnce, esbuildOptions, ROOT, DIST } = await import('../lib.mjs');
 
 // Build from this checkout on every invocation; never ship a stale copied bank.
-const build = await buildOnce({ minify: true, includeStudio: false });
-const destination = path.join(ROOT, 'ios/Maydan/www');
-await rm(destination, { recursive: true, force: true });
+const build = await buildOnce({ minify: true, includeStudio: false, version: process.env.IOS_VERSION, rewardedPreview: Boolean(rewarded) });
+const defines = esbuildOptions({ rewardedPreview: Boolean(rewarded) }).define;
+const projectDir = rewarded ? await generateSignedRewardedProject(process.env) : path.join(ROOT, 'ios');
+const destination = path.join(projectDir, 'Maydan/www');
+if (!rewarded) await rm(destination, { recursive: true, force: true });
 await mkdir(destination, { recursive: true });
 await cp(DIST, destination, { recursive: true });
 
@@ -35,10 +42,15 @@ async function verifyDirectory(source, target) {
 
 const files = await verifyDirectory(DIST, destination);
 // ملفان خاصان بالغلاف لا يوجدان في dist: إعداد الغلاف وصفحة انتقال المحفوظات.
-await writeFile(path.join(destination, 'native-config.json'), `${JSON.stringify(nativeConfig({ apiOrigin }), null, 2)}\n`, 'utf8');
+const config = nativeConfig({ apiOrigin });
+if (rewarded) config.rewarded = { mode: rewarded.mode, appId: rewarded.appId, adUnit: rewarded.adUnit,
+  ...(rewarded.testVersion ? { testVersion: rewarded.testVersion } : {}) };
+await writeFile(path.join(destination, 'native-config.json'), `${JSON.stringify(config, null, 2)}\n`, 'utf8');
 await writeFile(path.join(destination, 'migrate.html'), migrateHtml(), 'utf8');
+const features = await writePreparedFeatures({ projectDir, destination, build, defines });
+console.log(`Prepared release feature receipt SHA-256 ${features.sha256}; ${features.evidence}`);
 // Derive Xcode's required slots from the approved release artwork.
-const iconDirectory = path.join(ROOT, 'ios/Maydan/Assets.xcassets/AppIcon.appiconset');
+const iconDirectory = path.join(projectDir, 'Maydan/Assets.xcassets/AppIcon.appiconset');
 const sourceIcon = await readFile(path.join(iconDirectory, 'icon-1024.png'));
 const catalog = JSON.parse(await readFile(path.join(iconDirectory, 'Contents.json'), 'utf8'));
 const generated = new Map();
@@ -51,4 +63,7 @@ for (const slot of catalog.images) {
   generated.set(slot.filename, side);
 }
 const hash = createHash('sha256').update(await readFile(path.join(destination, 'index.html'))).digest('hex');
+const relativeProjectDir = path.relative(ROOT, projectDir).split(path.sep).join('/');
+if (rewarded) console.log(`iOS Rewarded project (${rewarded.mode}): ${relativeProjectDir}/Maydan.xcodeproj`);
+if (process.env.GITHUB_ENV) await appendFile(process.env.GITHUB_ENV, `IOS_PROJECT_DIR=${relativeProjectDir}\n`);
 console.log(`iOS resources ready: ${files} files; ${build.buildId}; HTML SHA-256 ${hash}; API ${apiOrigin}`);

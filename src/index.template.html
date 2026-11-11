@@ -19,14 +19,13 @@
 <!--PRELOAD-->
 <style>
 <!--TOKENS_CSS-->
-#boot{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#087D89;background:radial-gradient(520px 340px at 50% 38%,#F0E0F7 0%,#FFF7E7 48%,#FFF7E7 100%)}
-#boot .mark{width:112px;height:112px;display:block;object-fit:cover;border:0;border-radius:30px;background:#FFF7E7;box-shadow:inset 0 2px 0 #FFFFFF66,0 5px 0 #6A3A8A,0 14px 30px rgba(91,61,36,.18);animation:boot-in .4s cubic-bezier(.2,.8,.3,1) both}
-@keyframes boot-in{from{opacity:0;transform:translateY(8px) scale(.94)}}
-@media (prefers-reduced-motion: reduce){#boot .mark,#boot .ring{animation:none}}
-#boot .name{font-size:24px;font-weight:900;margin:0}
-#boot .ring{width:28px;height:28px;border:3px solid rgba(245,184,46,.2);border-top-color:#087D89;border-radius:50%;animation:boot-spin .85s linear infinite}
-#boot small{color:#77677C;font-size:13px}
-@keyframes boot-spin{to{transform:rotate(360deg)}}
+#boot{min-height:100dvh;display:grid;align-content:center;justify-items:center;gap:16px;color:#35213d;background:#fff5e6;text-align:center}
+#boot .mark{display:grid;place-items:center;width:88px;height:88px;border-radius:20px;background:linear-gradient(135deg,#ffdfbf,#fce3c9)}
+#boot .name{font-size:27px;font-weight:900;margin:0}
+#boot .track{width:min(75%,300px);height:12px;overflow:hidden;border-radius:99px;background:#e4d2e8}
+#boot .track::after{content:"";display:block;width:34%;height:100%;border-radius:inherit;background:#087d89;animation:boot-load 1.2s ease-in-out infinite alternate}
+@keyframes boot-load{to{transform:translateX(-190%)}}
+@media (prefers-reduced-motion:reduce){#boot .track::after{animation:none}}
 #fatal{position:fixed;inset:0;display:none;padding:24px;background:#FFFCF4;color:#A52C37;font-size:14px;line-height:2;overflow:auto;z-index:9999}
 #fatal pre{margin:0 0 18px;font:inherit;white-space:pre-wrap;word-break:break-word}
 #fatal .acts{display:grid;gap:10px;max-width:420px}
@@ -35,7 +34,7 @@
 </style>
 </head>
 <body>
-<div id="root"><div id="boot" role="status" aria-live="polite" aria-label="جارٍ تجهيز ميدان"><img class="mark" src="icons/icon-192.png" width="112" height="112" alt=""><p class="name">ميدان</p><small>ألعاب جمعتنا</small><div class="ring" aria-hidden="true"></div><small>تجهز الساحة…</small></div></div>
+<div id="root"><div id="boot" role="status" aria-live="polite"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="58" height="58" fill="none" stroke="#422a37" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path fill="#f9cf55" d="M12 4.5a5.4 5.4 0 0 0-3.4 9.6c.9.7 1.4 1.6 1.4 2.9h4c0-1.3.5-2.2 1.4-2.9A5.4 5.4 0 0 0 12 4.5Z"/><path fill="#ad7863" d="M10 17h4v2.5h-4z"/><path d="M11 21h2M12 1v1M4.5 3.5l1 1M2 9h2m16 0h2m-3.5-5.5-1 1M4 15l1.4-.8m14.6.8-1.4-.8"/></svg></span><p class="name">جارٍ تجهيز ميدان</p><span class="track" aria-hidden="true"></span></div></div>
 <noscript>تحتاج ميدان إلى تفعيل JavaScript في المتصفح لتشغيل الألعاب.</noscript>
 <div id="fatal" role="alert">
 <pre id="fatal-detail"></pre>

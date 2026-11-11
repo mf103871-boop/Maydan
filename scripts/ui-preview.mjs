@@ -14,6 +14,7 @@ import { GAME_MODE_SUPPORT } from '../src/shared/game-mode-support.mjs';
 import { createLocalPreviewRooms } from './ui-preview/rooms.mjs';
 
 export function localRequestAllowed(request, port) {
+  if (request.headers['sec-fetch-site'] === 'cross-site') return false;
   const allowed = new Set([`127.0.0.1:${port}`, `localhost:${port}`, `[::1]:${port}`]);
   if (!allowed.has(request.headers.host)) return false;
   const origin = request.headers.origin;
@@ -33,14 +34,21 @@ export function localAssetPath(root, pathname) {
 const json = (res, value, status = 200) => { res.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' }); res.end(JSON.stringify(value)); };
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.m4a': 'audio/mp4', '.mp3': 'audio/mpeg', '.ogg': 'audio/ogg', '.wav': 'audio/wav', '.woff2': 'font/woff2', '.webmanifest': 'application/manifest+json' };
 
-export async function startUIReview({ port = 4178, apiPort = 8789, build = true, watchSource = true } = {}) {
+export async function startUIReview({ port = 4178, apiPort = 8789, build = true, watchSource = true, requestHook = null, localVars = {}, assetRoot = DIST, rewardedMode = null } = {}) {
   if (![port, apiPort].every(x => Number.isInteger(x) && x > 1024 && x < 65536) || port === apiPort) throw Error('Choose distinct local ports');
+  if (Object.entries(localVars).some(([key,value]) => key !== 'PLUS_COMMERCE_LOCAL_PREVIEW' || value !== '1')) throw Error('Only the isolated Plus lab marker may extend local runtime variables');
+  if (rewardedMode !== null && !['simulation', 'native'].includes(rewardedMode)) throw Error('Invalid local Rewarded mode');
   const origins = [`http://127.0.0.1:${port}`, `http://localhost:${port}`, `http://127.0.0.1:${apiPort}`];
-  const backend = await startLocalServer({ port: apiPort, host: '127.0.0.1', origins: origins.join(','), vars: {
+  const backendOrigins = rewardedMode === 'native' ? [...origins, 'maydan://app'] : origins;
+  const rewardVars = rewardedMode ? { REWARDED_ENV: 'local', REWARDED_PREVIEW_ENABLED: '1', REWARDED_ADS_ENABLED: '1',
+    ...(rewardedMode === 'native' ? { REWARDED_LOCAL_NATIVE: '1' } : {}) } : {};
+  const backend = await startLocalServer({ port: apiPort, host: '127.0.0.1', origins: backendOrigins.join(','), vars: {
     SESSION_SECRET: randomBytes(32).toString('hex'), AUTH_DEV_FAKE: '1', PADDLE_ENV: 'sandbox',
     APP_ORIGIN: origins[0], MAFIA_ENABLED: '1', MAFIA_ACCEPT_NEW_MATCHES: '1',
     MAFIA_PROGRESS_ENABLED: '1', MAFIA_MAX_ACTIVE_ROOMS: '8', MAFIA_MAX_VOICE_PARTICIPANTS: '80',
     ONLINE_PUBLIC_DIRECTORY_ENABLED: '1', IOS_UPDATE_POLICY_ENABLED: '0',
+    ...localVars,
+    ...rewardVars,
     // Real provider audio is intentionally absent; this preview never contacts LiveKit.
   } });
   const actors = new Map(), roomLab = createLocalPreviewRooms(backend, origins[0]);
@@ -94,11 +102,15 @@ export async function startUIReview({ port = 4178, apiPort = 8789, build = true,
     const upstream = http.request({ hostname: '127.0.0.1', port: apiPort, method: req.method, path: req.url, headers: req.headers }, response => { res.writeHead(response.statusCode, response.headers); response.pipe(res); });
     upstream.on('error', () => { if (!res.headersSent) json(res, { error: 'LOCAL_API_UNAVAILABLE' }, 503); else res.destroy(); }); req.pipe(upstream);
   }
+  const permitted = req => localRequestAllowed(req, port) ||
+    (rewardedMode === 'native' && req.headers.host === `127.0.0.1:${port}` &&
+      req.headers.origin === 'maydan://app' && req.url.startsWith('/api/'));
   const server = http.createServer(async (req, res) => {
-    if (!localRequestAllowed(req, port)) return json(res, { error: 'LOCAL_ONLY' }, 403);
+    if (!permitted(req)) return json(res, { error: 'LOCAL_ONLY' }, 403);
     try {
       const url = new URL(req.url, origins[0]);
       if (!origins.slice(0, 2).includes(url.origin)) return json(res, { error: 'LOCAL_ONLY' }, 403);
+      if (requestHook && await requestHook({ req, res, url, backend, actor, bodyOf, json, origins })) return;
       if (url.pathname === '/__preview__/meta' && req.method === 'GET') return json(res, { localOnly: true, phoneAccessible: false, origin: origins[0], revision, building: !!building, buildError, modeSupport: GAME_MODE_SUPPORT, actors: names.slice(0, 8), providerVoice: false });
       if (url.pathname === '/__preview__/login' && req.method === 'POST') return json(res, await actor(Number((await bodyOf(req)).index ?? 0)));
       if (url.pathname === '/__preview__/seed' && req.method === 'POST') { await bodyOf(req); return json(res, await roomLab.seed(actor)); }
@@ -119,7 +131,7 @@ export async function startUIReview({ port = 4178, apiPort = 8789, build = true,
       let file;
       if (['/__preview__/', '/__preview__', '/__preview__/index.html'].includes(url.pathname)) file = path.join(ROOT, 'scripts/ui-preview/index.html');
       else if (['/__preview__/review.js', '/__preview__/review.css'].includes(url.pathname)) file = path.join(ROOT, 'scripts/ui-preview', path.basename(url.pathname));
-      else { if (building) await building; file = localAssetPath(DIST, url.pathname === '/__preview__/scene' || url.pathname === '/' ? '/index.html' : url.pathname); }
+      else { if (building) await building; file = localAssetPath(assetRoot, url.pathname === '/__preview__/scene' || url.pathname === '/' ? '/index.html' : url.pathname); }
       const info = await stat(file); if (!info.isFile()) throw Error('Not a file');
       let content = await readFile(file);
       // Bundled art/fonts/audio use ./assets and ./audio. The review scene is
@@ -132,7 +144,7 @@ export async function startUIReview({ port = 4178, apiPort = 8789, build = true,
     }
   });
   server.on('upgrade', (req, socket, head) => {
-    if (!localRequestAllowed(req, port) || !req.url.startsWith('/api/')) { socket.destroy(); return; }
+    if (!permitted(req) || !req.url.startsWith('/api/')) { socket.destroy(); return; }
     const upstream = net.connect({ host: '127.0.0.1', port: apiPort }, () => {
       upstream.write(`${req.method} ${req.url} HTTP/${req.httpVersion}\r\n${req.rawHeaders.reduce((text, value, i) => text + (i % 2 ? `${value}\r\n` : `${value}: `), '')}\r\n`);
       if (head.length) upstream.write(head); socket.pipe(upstream); upstream.pipe(socket);

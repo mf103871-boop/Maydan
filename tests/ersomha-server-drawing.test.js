@@ -49,6 +49,22 @@ test('a failed persistent delta never changes the published board, sequence or d
   storage.fail = null; const saved = await apply(storage, { board, head }, batch(1));
   assert.equal(saved.board.seq, 1); assert.equal(prepareErsomhaDrawing(room(), saved.board, 'p0', batch(1)).duplicate, true);
 });
+test('the first qualifying ink and the account activity marker commit together', async () => {
+  const storage = new Storage();
+  const board = emptyErsomhaDrawing(room());
+  const head = await checkpointErsomhaDrawing(storage, board);
+  const change = prepareErsomhaDrawing(room(), board, 'p0', batch(1));
+  const markedRoom = { ...room(), statsMatch: { progressionActors: ['p0'] } };
+  storage.fail = 'room';
+  await assert.rejects(persistErsomhaDrawing(storage, change.board, change.event, head, markedRoom), /unavailable/);
+  assert.equal((await loadErsomhaDrawing(storage, room())).board.seq, 0);
+  assert.equal(await storage.get('room'), undefined);
+
+  storage.fail = null;
+  await persistErsomhaDrawing(storage, change.board, change.event, head, markedRoom);
+  assert.equal((await loadErsomhaDrawing(storage, room())).board.seq, 1);
+  assert.deepEqual(await storage.get('room'), markedRoom);
+});
 test('compaction bounds the durable delta log and resync fragments long strokes without losing points', async () => {
   const storage = new Storage(); let state = { board: emptyErsomhaDrawing(room()), head: null };
   for (let n = 0; n < 100; n++) state = await apply(storage, state, batch(n, { strokeId: 'long-stroke', end: n === 99,

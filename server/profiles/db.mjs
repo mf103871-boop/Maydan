@@ -5,6 +5,7 @@ import { earnedState, imageUrl, publicName, gameOf, EMPTY_STATS } from './model.
 import { liveAccountSql, approvedImageSql } from '../moderation/access.mjs';
 import { effectiveCosmetics, effectiveCosmeticsMany } from '../plus/access.mjs';
 import { assertSocialAllowed, noMafiaMediaLeaseSql } from '../mafia-access.mjs';
+import { ACCOUNT_REWARD_VERSION, LOCAL_REWARD_PLAN, accountProgressionEnabled, accountRewardStatements, progressionFor } from '../account-progression.mjs';
 
 const stmt = (env, sql, ...args) => env.DB.prepare(sql).bind(...args);
 const first = (env, sql, ...args) => stmt(env, sql, ...args).first();
@@ -96,6 +97,7 @@ export async function profileFor(env, viewerId, targetId, now = Date.now()) {
   const result=view(row, viewerId, earned, now);
   result.cosmetics=await effectiveCosmetics(env,targetId,now);
   if(viewerId===targetId) result.imageReviews=await imageReviews(env,targetId);
+  if (accountProgressionEnabled(env)) result.progression = await progressionFor(env,viewerId,targetId);
   return result;
 }
 export async function searchProfiles(env, viewerId, query, now = Date.now()) {
@@ -196,7 +198,7 @@ function recountStats(env,userId) {
     WHERE player_stats.local_sessions!=excluded.local_sessions OR player_stats.online_matches!=excluded.online_matches
       OR player_stats.online_wins!=excluded.online_wins OR player_stats.online_draws!=excluded.online_draws`,userId,userId,userId,userId);
 }
-export async function recordOnlineResult(env,{userId,eventId,game,won,draw,finishedAt}) {
+export async function recordOnlineResult(env,{userId,eventId,game,won,draw,finishedAt,notBefore,progressionPlan}) {
   if (!['meenfina','fabraka','ersomha','badeeha','mafia'].includes(game) || typeof eventId !== 'string' || !/^online:[A-Za-z0-9:_-]{1,170}$/.test(eventId)
     || typeof won !== 'boolean' || typeof draw !== 'boolean' || (won && draw) || (game==='meenfina' && (won || draw))
     || !Number.isSafeInteger(finishedAt) || finishedAt<=0 || finishedAt>Date.now()+60_000) fail('INVALID',400);
@@ -206,13 +208,16 @@ export async function recordOnlineResult(env,{userId,eventId,game,won,draw,finis
     stmt(env, `INSERT OR IGNORE INTO player_events(user_id,event_id,source,game,won,draw,created_at) SELECT ?,?,'online',?,?,?,? WHERE ${live('?')}`,
       userId,eventId,game,won?1:0,draw?1:0,finishedAt,userId,userId),
     recountStats(env,userId),bumpIfChanged(env,userId), ...profileAchievementStatements(env,userId),
+    ...accountRewardStatements(env,{userId,eventId,source:'online',game,finishedAt,notBefore,plan:progressionPlan}),
   ]);
   return changed(result[0]);
 }
 export async function startLocalSession(env,userId,game,now=Date.now()) {
   gameOf(game); const id=crypto.randomUUID(); const day=Math.floor(now/86_400_000)*86_400_000;
-  const result=await stmt(env, `INSERT INTO player_sessions(id,user_id,game,started_at) SELECT ?,?,?,? WHERE ${live('?')}
-    AND (SELECT COUNT(*) FROM player_sessions WHERE user_id=? AND started_at>=? AND started_at<?)<24`,id,userId,game,now,userId,userId,userId,day,day+86_400_000).run();
+  const policy = accountProgressionEnabled(env) && game !== 'ersomha' ? ACCOUNT_REWARD_VERSION : null;
+  const result=await stmt(env, `INSERT INTO player_sessions(id,user_id,game,started_at${policy ? ',progression_reward_version' : ''})
+    SELECT ?,?,?,?${policy ? ',?' : ''} WHERE ${live('?')}
+    AND (SELECT COUNT(*) FROM player_sessions WHERE user_id=? AND started_at>=? AND started_at<?)<24`,id,userId,game,now,...(policy ? [policy] : []),userId,userId,userId,day,day+86_400_000).run();
   if(!changed(result)) fail('RATE_LIMIT',429);
   return id;
 }
@@ -221,6 +226,7 @@ export async function completeLocalSession(env,userId,id,now=Date.now()) {
   if(!session) fail('NOT_FOUND',404);
   if(now-session.started_at<30_000) fail('SESSION_TOO_SHORT',409);
   const eventId=`local:${id}`; const day=Math.floor(now/86_400_000)*86_400_000;
+  const plan = session.progression_reward_version === ACCOUNT_REWARD_VERSION ? LOCAL_REWARD_PLAN : null;
   const result=await env.DB.batch([
     stmt(env, `INSERT OR IGNORE INTO player_events(user_id,event_id,source,game,created_at)
       SELECT user_id,?,'local',game,? FROM player_sessions WHERE id=? AND user_id=? AND completed_at IS NULL
@@ -228,12 +234,13 @@ export async function completeLocalSession(env,userId,id,now=Date.now()) {
       AND (SELECT COUNT(*) FROM player_events e WHERE e.user_id=? AND source='local' AND created_at>=? AND created_at<?)<24`,eventId,now,id,userId,now-30_000,userId,day,day+86_400_000),
     stmt(env, `UPDATE player_sessions SET completed_at=COALESCE(completed_at,(SELECT created_at FROM player_events WHERE user_id=? AND event_id=?)) WHERE id=? AND user_id=?`,userId,eventId,id,userId),
     recountStats(env,userId),bumpIfChanged(env,userId,now),...profileAchievementStatements(env,userId,now),
+    ...accountRewardStatements(env,{userId,eventId,source:'local',game:session.game,plan,now}),
   ]);
   if(!changed(result[0]) && !(await first(env,'SELECT event_id FROM player_events WHERE user_id=? AND event_id=?',userId,eventId))) {
     if(!(await isLiveAccount(env,userId))) fail('NOT_FOUND',404);
     fail('RATE_LIMIT',429);
   }
-  return { counted: changed(result[0]) };
+  return { counted: changed(result[0]), ...(plan && accountProgressionEnabled(env) ? { progressionEventId: eventId } : {}) };
 }
 export function profileDeleteStatements(env,userId) {
   return ['player_images','player_profiles','player_stats','player_events','player_sessions','player_achievements','moderation_image_reviews','moderation_image_approvals']

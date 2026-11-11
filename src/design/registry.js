@@ -135,6 +135,9 @@ const socialNodes = [
   node('block', 'الحظر', 'button', { required: true }), node('report', 'الإبلاغ', 'button', { required: true }),
 ];
 const profileNodes = [
+  node('profile-library','اكتشاف المقتنيات والجلسات','container',{required:true,editableText:false,editableIcon:false}),
+  node('profile-presets','فتح جلساتي الجاهزة','button',{editableText:false,editableIcon:false}),
+  node('profile-store','فتح متجر المقتنيات','button',{editableText:false,editableIcon:false}),
   node('avatar-choice','قالب الشخصية','button',{repeat:true}),node('theme-choice','قالب لون الملف','button',{repeat:true}),node('badge-choice','قالب الشارة','button',{repeat:true}),
   node('avatar-upload','رفع الصورة الشخصية','button'),node('avatar-remove','حذف الصورة الشخصية','button'),node('cover-upload','رفع الغلاف','button'),node('cover-remove','حذف الغلاف','button'),
   node('field','قالب حقل الملف','container',{repeat:true,editableText:false}),
@@ -149,12 +152,43 @@ const profileNodes = [
   node('report', 'الإبلاغ', 'button', { required: true }),
 ];
 
+// Price, license and membership meaning belongs to the account/server. Studio
+// may style these surfaces, but cannot rewrite a grant, conceal consent or turn
+// a local test into an apparent real purchase.
+const storeNodes = [
+  node('store-legacy-toggle','عرض تراخيص سابقة محفوظة','button',{required:true,editableText:false,editableIcon:false}),
+  node('plus-transition-open','اكتشاف مزايا بلس الحالية','button',{editableText:false,editableIcon:false}),
+  ...[['store-tab-collections','تخصيص المظهر'],['store-tab-membership','ميدان بلس'],['store-tab-library','مقتنياتي الدائمة'],['store-tab-presets','جلساتي الجاهزة']].map(([id,label])=>node(id,label,'button',{required:true,editableText:false,editableIcon:false})),
+  ...[['store-membership','استحقاق مكتبة بلس'],['store-navigation','تنقل المتجر'],['store-monthly','القطعة الشهرية المؤهلة'],['store-detail-actions','الاستخدام والاقتناء'],['store-quote-panel','تفاصيل عرض الاقتناء'],['product-preview','معاينة الهوية الفعلية']].map(([id,label])=>node(id,label,'container',{required:true,editableText:false,editableIcon:false})),
+  node('store-product','قالب قطعة المتجر','container',{repeat:true,required:true,editableText:false,editableIcon:false}),
+  node('store-preset','قالب جلسة محفوظة','container',{repeat:true,editableText:false,editableIcon:false}),
+  node('store-search','بحث المتجر','input',{editableText:false,editableIcon:false}),
+  node('store-badge','إظهار شارة العضوية','input',{required:true,editableText:false,editableIcon:false}),
+  ...[['store-category','فئة قطع المتجر'],['store-library-filter','نطاق مقتنياتي'],['store-preview-surface','موضع المعاينة'],['store-preset-open','فتح إعدادات الجلسة'],['store-preset-delete','حذف جلسة محفوظة'],['store-game-setup','فتح إعدادات اللعبة']].map(([id,label])=>node(id,label,'button',{repeat:true,editableText:false,editableIcon:false,required:id==='store-preview-surface'})),
+  ...[['item-preview','معاينة القطعة قبل استخدامها'],['item-use','استخدام القطعة المخولة']].map(([id,label])=>node(id,label,'button',{repeat:true,required:true,editableText:false,editableIcon:false})),
+  ...[['permanent-quote','قراءة عرض الاقتناء الدائم'],['test-checkout-confirm','تأكيد اقتناء محلي تجريبي'],['store-reset','استعادة المظهر المجاني'],['store-inventory-refresh','التحقق من نتيجة الاقتناء']].map(([id,label])=>node(id,label,'button',{required:true,editableText:false,editableIcon:false})),
+  ...[['store-transition-toggle','تفاصيل انتقال بلس'],['store-search-clear','مسح بحث المتجر'],['store-signin','الدخول لمقتنياتي'],['store-empty-open','عرض مجموعات المتجر'],['store-monthly-preview','معاينة قطعة الشهر'],['store-presets-open','اكتشاف جلساتي الجاهزة'],['store-presets-retry','إعادة تحميل الجلسات'],['store-entrance-play','تشغيل معاينة ترحيب الدخول']].map(([id,label])=>node(id,label,'button',{editableText:false,editableIcon:false})),
+  node('store-quote-price','قيمة اختبار من عرض الخادم','text',{required:true,editableText:false,editableIcon:false}),
+  node('store-test-disclosure','إفصاح الاقتناء المحلي غير المالي','text',{required:true,editableText:false,editableIcon:false}),
+];
+
 // Native control templates and fixed semantic sections. Repeated controls preserve
 // their list flow; account identity, answers and stateful labels are never copy-editable.
 const extraNodes = [
+  node('setup-jump','الانتقال إلى قسم الإعداد','button',{repeat:true,editableText:false}),
+  node('settings-section-jump','فتح مجموعة إعدادات','button',{repeat:true,editableText:false}),
+  node('settings-index-return','العودة إلى قائمة الإعدادات','button',{editableText:false}),
+  node('credits-open','فتح المصادر والتراخيص','button',{editableText:false}),
+  node('player-edit','تعديل لاعب من الدفتر','button',{repeat:true,editableText:false}),
+  node('friends','الأصدقاء','button',{editableText:false}),
+  node('requests-open','فتح طلبات الصداقة والدعوات','button',{editableText:false}),
+  node('home-search-open','إظهار البحث عن لعبة','button',{editableText:false}),
+  node('profile-tab-achievements','تبويب الإنجازات','button',{editableText:false}),
+  node('profile-tab-stats','تبويب الإحصاءات','button',{editableText:false}),
+  node('profile-visitor-preview','معاينة الملف كزائر','button',{editableText:false}),
   ...[['about','عن ميدان'],['abstain','الامتناع'],['categories-reset','إعادة ضبط الفئات'],['entry-create','إنشاء غرفة'],['entry-join','دخول برمز'],['funny-clear','إلغاء ترشيح الضحك'],['notification-enable','طلب إذن التنبيهات'],['show-all','عرض القائمة الكاملة'],['sound-test','تجربة الصوت'],['call-collapse','طي المكالمة'],['call-open','فتح أدوات المكالمة'],['resume-audio','استعادة صوت المكالمة'],['unblock','إلغاء الحظر'],['retry','إعادة المحاولة'],['setup','تغيير إعداد المباراة'],['download-pack','تنزيل وسائط الحزمة'],['audio-play','تشغيل صوت السؤال'],['audio-restart','تشغيل من البداية'],['tiles-reveal','كشف قطعة'],['media-retry','إعادة تحميل الوسائط'],['tilt-retry','إعادة تفعيل الميلان']].map(([id,label]) => node(id,label,'button',{editableText:false})),
   ...[['category-choice','قالب اختيار الفئة'],['category-filter','قالب مرشح الفئات'],['friend-filter','قالب مرشح الأصدقاء'],['member-remove','إزالة عضو'],['member-host','قالب المضيف الجديد'],['member-transfer','نقل ملكية اللّمّة'],['player-remove','حذف لاعب'],['game-choice','قالب لعبة الدعوة'],['friend-accept','قبول الصداقة'],['friend-reject','رفض الصداقة'],['friend-cancel','إلغاء طلب الصداقة'],['group-accept','قبول دعوة اللّمّة'],['group-reject','رفض دعوة اللّمّة'],['segment-option','قالب اختيار الإعداد'],['plan-option','قالب خطة الاشتراك']].map(([id,label]) => node(id,label,'button',{repeat:true})),
-  ...[['answer-input','كتابة الإجابة'],['answer-aliases','الإجابات البديلة'],['bio-input','كتابة النبذة'],['category-search','البحث في الفئات'],['cycles','عدد دورات الرسم'],['difficulty','مستوى الأفكار'],['round-count','عدد جولات الغرفة'],['member-role','صلاحية العضو'],['member-select','اختيار عضو للدعوة'],['notification-toggle','قالب مفتاح التنبيهات'],['report-details','تفاصيل البلاغ'],['report-reason','سبب البلاغ'],['search-input','نص البحث'],['title-select','اختيار اللقب'],['zoom-input','تكبير الصورة'],['allow-replay','السماح بإعادة الأفكار'],['audio-output','مخرج صوت المكالمة'],['share-link','رابط الملف الشخصي'],['setting-funny','جائزة الضحك'],['setting-double','مضاعفة الجولة الأخيرة']].map(([id,label]) => node(id,label,'input',{repeat:['member-role','member-select','notification-toggle'].includes(id)})),
+  ...[['answer-input','كتابة الإجابة'],['answer-aliases','الإجابات البديلة'],['bio-input','كتابة النبذة'],['category-search','البحث في الفئات'],['cycles','عدد دورات الرسم'],['difficulty','مستوى الأفكار'],['round-count','عدد جولات الغرفة'],['member-role','صلاحية العضو'],['member-select','اختيار عضو للدعوة'],['notification-toggle','قالب مفتاح التنبيهات'],['report-details','تفاصيل البلاغ'],['report-reason','سبب البلاغ'],['search-input','نص البحث'],['title-select','اختيار اللقب'],['zoom-input','تكبير الصورة'],['allow-replay','السماح بإعادة الأفكار'],['audio-output','مخرج صوت المكالمة'],['share-link','رابط المشاركة'],['setting-funny','جائزة الضحك'],['setting-double','مضاعفة الجولة الأخيرة']].map(([id,label]) => node(id,label,'input',{repeat:['member-role','member-select','notification-toggle'].includes(id)})),
   ...[['vote-panel','لوحة التصويت'],['setting-mode','نمط اللعب'],['setting-duration','مدة الجولة'],['setting-rounds','عدد الجولات'],['setting-cycles','دورات الأصحاب'],['setting-style','نوع الأسئلة'],['setting-write-time','مدة الكتابة'],['setting-discussion-time','مدة النقاش']].map(([id,label]) => node(id,label)),
   ...[['tab.friends','تبويب الأصدقاء'],['tab.chats','تبويب المحادثات'],['tab.groups','تبويب اللّمات'],['tab.requests','تبويب الطلبات'],['game-choice.mafia','اختيار مافيا ميدان'],['game-choice.badeeha','اختيار بَديهة'],['game-choice.ersomha','اختيار ارسمها'],['game-choice.fabraka','اختيار فبركة'],['game-choice.meenfina','اختيار مين فينا']].map(([id,label]) => node(id,label,'button')),
   ...[['source-link','رابط المصدر'],['license-link','رابط الترخيص']].map(([id,label]) => node(id,label,'button',{repeat:true,editableText:false,editableIcon:false})),
@@ -171,6 +205,8 @@ const extraNodes = [
 
 
 const mafiaNodes = [
+  node('reveal-private-card', 'فتح بطاقة الدور السرية', 'button', { required: true, editableText: false, editableIcon: false }),
+  node('directory-filter-apply', 'عرض المجالس المصفّاة', 'button', { editableText: false, editableIcon: false }),
   node('action-open', 'فتح القرار الحالي وتأكيده', 'button', { required: true, editableText: false, editableIcon: false }),
   node('timeline-toggle', 'إظهار سجل المجلس بعد النهاية', 'button', { required: true, editableText: false, editableIcon: false }),
   node('event-overlay', 'تأثير حدث عام مصرح', 'container', { editableText: false, editableIcon: false }),
@@ -202,6 +238,7 @@ const phaseLabels = { home:'البداية',setup:'الإعداد',board:'لوح
 const screen = (id, label, group, nodes, states = {}) => Object.freeze({ id, label: label.split(' · ').map(part => phaseLabels[part] || part).join(' · '), group, nodes: Object.freeze(dedupe([...common, ...nodes])), ...states });
 const definitions = [];
 for (const [id, label] of [['home', 'الألعاب'], ['game-details', 'تفاصيل اللعبة'], ['players', 'دفتر اللاعبين'], ['settings', 'الإعدادات'], ['store', 'المتجر'], ['about', 'عن ميدان'], ['audio-credits', 'مصادر الصوت'], ['legal', 'الشروط والخصوصية'], ['play-setup', 'إعداد اللاعبين والفرق']]) definitions.push(screen(id, label, 'المنصة', id === 'play-setup' ? [...platformNodes, ...gameNodes] : platformNodes));
+definitions.push(screen('store.preview','معاينة قطعة أو طقم','المتجر',[...platformNodes,...storeNodes]));
 definitions.push(screen('home.game-mode', 'اختيار نمط اللعبة', 'المنصة', platformNodes));
 for (const phase of ['home', 'setup', 'board', 'question', 'result', 'history']) definitions.push(screen(`badeeha.${phase}`, `بديهة · ${phase}`, 'بديهة', gameNodes, { game: 'badeeha', phase }));
 for (const [mode, phases] of [['three', ['intro', 'prompt', 'judge', 'over']], ['bomb', ['intro', 'prompt', 'boom', 'over']]]) for (const phase of phases) definitions.push(screen(`beep.${mode}.${phase}`, `بيب · ${mode} · ${phase}`, 'بيب', gameNodes, { game: 'beep', phase, mode }));
@@ -247,7 +284,7 @@ for (const [id,label] of [['beep','بيب'],['mamnoo','ممنوع'],['jabeen','�
 // Only expose elements that the real components render. The coverage map is
 // verified against all preview fixtures; exceptional state-dependent elements
 // carry a precise reason instead of pretending every screen has every control.
-const allNodes = new Map(dedupe([...common,...platformNodes,...gameNodes,...onlineNodes,...drawNodes,...socialNodes,...profileNodes,...accountNodes,...extraNodes,...mafiaNodes]).map(value => [value.id,value]));
+const allNodes = new Map(dedupe([...common,...platformNodes,...gameNodes,...onlineNodes,...drawNodes,...socialNodes,...profileNodes,...accountNodes,...extraNodes,...mafiaNodes,...storeNodes]).map(value => [value.id,value]));
 const dynamicLabels = new Set(['presence','roster','game-name','game-description','start','continue','submit','skip','correct','wrong','reveal','answer-toggle','ready','history','hint','assistance','setup','options']);
 const statefulTitles = new Set(['game-details','shell.game-frame','online.chrome','profile',...definitions.filter(value => value.id.startsWith('ersomha.')).map(value => value.id)]);
 export const DESIGN_SCREENS = Object.freeze(definitions.map(definition => {
@@ -273,6 +310,10 @@ export const DESIGN_SCREENS = Object.freeze(definitions.map(definition => {
     if (definition.id === 'system.dialog' && id === 'report') Object.assign(patch,{repeat:true,editableText:false});
     if (id === 'search') Object.assign(patch,{kind:'container',editableText:false});
     if (id === 'team-count' && definition.id === 'play-setup.teams') Object.assign(patch,{kind:'container',repeat:false,editableText:false});
+    if (['store','store.preview','profile','online.entry','online.lobby','online.mafia.lobby'].includes(definition.id) && conditional[id]?.startsWith('Retired ')) patch.retired = true;
+    if (definition.id === 'store' && ['earned-cosmetics','plus-details'].includes(id)) Object.assign(patch,{required:true,editableText:false,editableIcon:false});
+    if (definition.id === 'store' && id === 'collection') Object.assign(patch,{kind:'button',repeat:true,editableText:false,editableIcon:false});
+    if (definition.id === 'store.preview' && id === 'collection-use') Object.assign(patch,{required:true,repeat:false,editableText:false,editableIcon:false});
     return Object.freeze({...value,...patch,...(conditional[id] ? {coverageReason:conditional[id]} : {})});
   });
   return Object.freeze({...definition,nodes:Object.freeze(nodes)});

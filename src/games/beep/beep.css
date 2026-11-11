@@ -39,12 +39,8 @@
 .beep-lives .is-lost { opacity: .7; }
 @keyframes heart-break { 0%, 100% { transform: none; } 50% { transform: scale(1.4) rotate(20deg); } }
 
-/* ── القنبلة: قرص حامل (brand.css يملك لونه وحلقته الحمراء الثابتة)؛ يدقّ، وعند الاحمرار يهتز الرسم وتومض شرارة ذهبية على رأس الفتيل.
-   الشرارة بإحداثيات فيزيائية (right) لأن الرسم لا يُقلب مع RTL. حلقتا هذه الشاشة: الدقّ + الاهتزاز. ── */
+/* القنبلة تنبض بإيقاع ثابت طوال الفتيل المخفي، دون علامة مرتبطة بالوقت المتبقي. */
 .beep-bomb { --contact-inset: 24%; --contact-y: 14px; --contact-h: 12px; animation: beep-tick 1s ease-in-out infinite; }
-.beep-bomb.is-hot { animation-duration: .5s; }
-.beep-bomb.is-hot > .clay-lift { animation: ui-wobble .5s ease-in-out infinite; }
-.beep-bomb.is-hot::before { content: ""; position: absolute; z-index: 2; top: 9%; right: 13%; width: 28px; height: 28px; border-radius: 50%; pointer-events: none; background: radial-gradient(circle, #fff 0 25%, #FFC94D 60%, #FFC94D00); box-shadow: 0 0 14px 4px #FFC94D88; animation: clay-spark .45s linear infinite; }
 .beep-bomb > .clay-lift { position: relative; z-index: 1; }
 @keyframes beep-tick { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 
@@ -66,3 +62,78 @@
 .beep-judge .btn { min-height: 92px; font-size: 22px; flex-direction: column; gap: 4px; }
 .beep-judge .btn span { font-size: 34px; }
 .beep-actions { display: grid; gap: 10px; }
+
+/* Timed requests are readable on their first frame; animation belongs to preparation.
+   Bomb appearance is constant throughout the hidden fuse. */
+.screen.beep > .beep-prompt.is-live { animation: none !important; transform: none; opacity: 1; }
+.screen.beep > .timer { animation: none !important; }
+.beep:has(.beep-bomb) { gap: 10px; }
+.beep:has(.beep-bomb) .beep-bomb { width: 96px; height: 96px; justify-self: center; }
+.beep:has(.beep-bomb) .beep-prompt { min-height: 120px; padding: 16px; }
+.beep:has(.beep-bomb) > [data-design-id=continue] { position: sticky; bottom: calc(10px + env(safe-area-inset-bottom, 0px)); z-index: 3; }
+@media (orientation: landscape) and (max-height: 520px) {
+  .beep:has(.beep-bomb) { grid-template-columns: minmax(110px,.45fr) minmax(0,1fr); align-items: center; }
+  .beep:has(.beep-bomb) .beep-turn, .beep:has(.beep-bomb) .beep-players { grid-column: 1 / -1; }
+  .beep:has(.beep-bomb) .beep-bomb { grid-column: 1; grid-row: 2; }
+  .beep:has(.beep-bomb) .beep-prompt { grid-column: 2; grid-row: 2; }
+  .beep:has(.beep-bomb) > [data-design-id=continue] { grid-column: 1 / -1; }
+}
+
+/* Bounded, readable phase layouts shared by the two variants. */
+.beep-setup .card:not(.resume-card) { background: transparent; box-shadow: none; border-color: #e6d7c4; }
+.beep-setup .segment { gap: 6px; }
+.beep-phase-heading { display: flex; align-items: center; justify-content: center; gap: 8px; padding-block: 4px 9px; color: #35174d; font-size: clamp(24px, 6vw, 33px); font-weight: 900; text-align: center; }
+.beep-phase-heading svg { width: 25px; height: 25px; color: #9269ad; }
+.beep-intro { gap: 10px; padding: 8px 0 14px; }
+.beep-intro .big .clay-avatar, .beep-intro .big .clay-art { width: clamp(86px, 23vw, 122px); height: clamp(86px, 23vw, 122px); }
+.beep-player-ribbon, .beep-round-label { background: #e9d6ed; color: #39194f; border-radius: 999px; padding: 4px 14px; overflow-wrap: anywhere; }
+.beep-player-ribbon { font-size: 20px; }
+.beep-round-label { font-size: 13px; background: #f0e4ef; }
+.beep-instruction { width: 100%; background: #faf0f0; border: 1px solid #d7bce3; border-radius: 15px; padding: 13px; }
+.beep-instruction strong { display: block; font-size: 24px; line-height: 1.25; color: #37174f; }
+.beep-instruction p { margin-top: 6px; color: #624c66; font-size: 14px; }
+.beep-turn-timed, .beep-turn-bomb { border: 0; box-shadow: none; background: #f0e5f2; animation: none; padding: 7px 11px; }
+.beep-turn-timed b { min-width: 0; overflow-wrap: anywhere; }
+.beep-turn-timed .timer { margin-inline-start: auto; flex: none; }
+.beep-turn-timed .timer-num { font-size: 23px; }
+.beep-turn-timed .timer-sub { font-size: 9px; }
+.screen.beep .beep-turn-bomb .beep-bomb { width: 54px; height: 54px; margin: 0; margin-inline-start: auto; background: none; border: 0; box-shadow: none; flex: none; }
+.screen.beep .beep-turn-bomb .beep-bomb .clay-art { width: 54px; height: 54px; }
+.beep-turn-bomb .beep-bomb::after { display: none; }
+.screen.beep .beep-prompt { border-radius: 17px; padding: 17px 14px; background: #fcf3f8; border-color: #d8b8e6; box-shadow: none; line-height: 1.4; }
+.screen.beep .beep-prompt.is-live { min-height: clamp(155px, 32svh, 248px); }
+.beep-prompt small { justify-self: center; background: #f0e1ef; color: #523563; border-radius: 999px; padding: 2px 10px; }
+.beep-judgment { color: #34174c; font-size: clamp(23px, 5.3vw, 30px); text-align: center; text-wrap: balance; font-weight: 900; }
+.beep-judge .btn { min-height: 75px; flex-direction: row; border-radius: 15px; }
+.beep-judge .btn span { display: none; }
+.beep-score-panel { width: 100%; padding: 10px; border: 1px solid #e4d6c8; border-radius: 16px; background: #fff9ef; }
+.beep-score-panel h3 { text-align: center; margin: 0 0 7px; font-size: 14px; font-weight: 900; color: #422253; }
+.beep-score-panel .beep-players { display: grid; grid-template-columns: repeat(auto-fit, minmax(87px, 1fr)); gap: 6px; }
+.beep-score-panel .beep-chip { display: grid; justify-items: center; gap: 3px; padding: 5px; min-width: 0; border-radius: 12px; box-shadow: none; overflow-wrap: anywhere; text-align: center; }
+.beep-chip .clay-avatar, .beep-victim .clay-avatar { width: 34px; height: 34px; }
+.beep-score-panel .beep-roster-rows { grid-template-columns: 1fr; }
+.beep-roster-rows .beep-chip { display: flex; gap: 8px; text-align: start; }
+.beep-roster-rows .beep-lives, .beep-victim .beep-lives { margin-inline-start: auto; }
+.beep-lives { color: #bf344f; font-size: 20px; }
+.beep-lives .is-lost, .beep-lives .is-broken { color: #785465; }
+.beep-rules { display: grid; gap: 5px; width: 100%; }
+.beep-rules p { display: flex; align-items: center; justify-content: center; gap: 7px; padding: 7px 8px; border-radius: 12px; background: #eee2f0; color: #452755; font-size: 14px; }
+.beep-rules svg { width: 18px; height: 18px; flex: none; }
+.screen.beep .beep-boom { position: static; z-index: auto; display: grid; gap: 14px; padding: 8px 0; background: transparent; }
+.beep-boom .inner { width: 100%; animation: none; }
+.beep-boom .inner h2 { font-size: clamp(25px, 6vw, 34px); }
+.beep-boom .big .clay-art { width: 110px; height: 110px; }
+.beep-boom .inner p { width: 100%; border-radius: 11px; background: #f1e5ef; padding: 7px; }
+.beep-victim { display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px 11px; border: 1px solid #dcb47a; border-radius: 13px; background: #fff4df; }
+.beep-victim strong { overflow-wrap: anywhere; }
+.beep-boom .beep-victim .beep-lives { font-size: 23px; }
+.beep-bomb-winner { display: grid; justify-items: center; gap: 8px; padding: 12px; }
+.beep-bomb-winner .clay-avatar { width: 125px; height: 125px; background: #ffe9ae; border-radius: 50%; }
+.beep-bomb-winner strong { width: min(260px, 100%); background: #ffdfa1; border: 1px solid #d7a047; border-radius: 12px; color: #59380c; padding: 8px; text-align: center; font-size: 27px; overflow-wrap: anywhere; }
+@media (orientation: landscape) and (max-height: 520px) {
+  .screen.beep.beep-bomb-prompt { display: grid; grid-template-columns: minmax(0, 1fr) minmax(158px, .58fr); align-items: start; }
+  .screen.beep.beep-bomb-prompt .beep-turn { grid-column: 1 / -1; }
+  .screen.beep.beep-bomb-prompt .beep-prompt { grid-column: 1; grid-row: auto; min-height: 98px; }
+  .screen.beep.beep-bomb-prompt .beep-score-panel { grid-column: 2; }
+  .screen.beep.beep-bomb-prompt .beep-bomb { grid-column: auto; grid-row: auto; }
+}

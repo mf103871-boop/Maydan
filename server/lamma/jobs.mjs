@@ -18,11 +18,19 @@ export async function drainJobs(env,now=Date.now(),onlyRoom=null) {
         // LiveKit rejects nbf strictly before the cutoff; include tokens issued
         // in this same second. Rejoining waits until that cutoff is valid.
         const cutoff=Math.floor(Date.now()/1000)+1;
-        await providerRequest(env,'RemoveParticipant',{room:p.room,identity:p.identity,revoke_token_ts:cutoff});
+        await providerRequest(env,'RemoveParticipant',{room:p.room,identity:p.identity,revoke_token_ts:cutoff},{strictRevocation:true});
         await run(env,'UPDATE social_call_participants SET revoked_before=MAX(revoked_before,?) WHERE user_id=? AND call_id IN (SELECT id FROM social_calls WHERE room_name=?)',cutoff,p.identity,p.room);
         done=true;
       }
-      else if(row.kind==='lk_delete') { await providerRequest(env,'DeleteRoom',{room:p.room});done=true; }
+      else if(row.kind==='lk_delete') {
+        // Another drainer can hold a participant job which this pass skipped.
+        // Deleting the room disconnects clients but does not prove their tokens
+        // were revoked. Keep deletion queued until every same-room revocation
+        // has completed, including leased or backoff-delayed jobs.
+        if(!await first(env,"SELECT 1 FROM social_jobs WHERE kind='lk_remove' AND json_extract(payload,'$.room')=?",p.room)) {
+          await providerRequest(env,'DeleteRoom',{room:p.room});done=true;
+        }
+      }
     } catch { /* failure is retained, not logged with device tokens or content */ }
     if(done) await run(env,'DELETE FROM social_jobs WHERE id=? AND lease_id=?',row.id,lease);
     else await run(env,'UPDATE social_jobs SET attempts=attempts+1,due_at=?,lease_until=0,lease_id=NULL WHERE id=? AND lease_id=?',Date.now()+Math.min(3600000,10000*2**Math.min(row.attempts,8)),row.id,lease);

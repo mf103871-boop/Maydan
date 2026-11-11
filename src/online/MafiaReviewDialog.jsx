@@ -30,7 +30,7 @@ export function MafiaReviewDialog({matchKey,onClose}) {
   const members=review?.players.map(player=>({id:player.seat,name:seat(player.seat)}))||[];
   const eventText=event=>mafiaEventText({...event,playerId:event.actorSeat,targetId:event.targetSeat,targetIds:event.targetSeats,destinationIds:event.destinationSeats,
     recruiterId:event.recruiterSeat,nomineeId:event.nomineeSeat,votes:Object.fromEntries((event.votes||[]).map(vote=>[vote.seat,vote.approve]))},members);
-  return <Modal className="mafia-noir mafia-history-dialog" title="مراجعة المباراة" onClose={onClose}><style>{css}</style><div className="mafia-history stack" dir="rtl">
+  return <Modal className="mafia-noir mafia-history-dialog mafia-paper-dialog" title="مراجعة المباراة" onClose={onClose}><style>{css}</style><div className="mafia-history stack" dir="rtl">
     <p>راجع أدوار المقاعد وأحداث المباراة المكتملة. تتاح المراجعة للمشاركين خلال {ar(30)} يومًا.</p>
     {shown.loading&&<p role="status">نحمّل المراجعة…</p>}
     {shown.error&&<><p role="alert">تعذّر تحميل المراجعة. تحقق من الاتصال ثم حاول مجددًا.</p><Button onClick={()=>setRetry(value=>value+1)}>إعادة المحاولة</Button></>}

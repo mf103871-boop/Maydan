@@ -21,6 +21,10 @@ import { requireMafiaNewMatches } from './mafia-ruleset-policy.mjs';
 import { routeDrawingReports } from './ersomha-reports.mjs';
 import { routeDesign, isPublicDesignAssetPath } from './design/router.mjs';
 import { routePlus } from './plus/router.mjs';
+import { rewardedWebhook, routeRewarded } from './rewarded/router.mjs';
+import { gameplayTicketsEnabled, gameplayEntryEnabled, requireGameplayCapability } from './rewarded/settings.mjs';
+import { gameplayOffer } from '../src/shared/account/gameplay-policy.mjs';
+import { freeBadeehaRoom } from './rewarded/badeeha-free.mjs';
 import { routeTutorials } from './tutorials/router.mjs';
 import { routeOnlineDirectory, cleanupOnlineDirectory } from './online-directory.mjs';
 import { withRequestMetrics } from './performance.mjs';
@@ -99,6 +103,7 @@ export async function routeRequest(request, env, context) {
 async function routeMeasuredRequest(request, env, context) {
   const url = new URL(request.url);
   if (url.pathname === '/api/app-policy/ios') return iosAppPolicy(request, env);
+  const rewardedCallback = url.pathname === '/api/rewarded/ssv';
   if(url.pathname==='/api/social/livekit/webhook'){try{return await liveKitWebhook(request,env);}catch(error){return errorResponse(error);}}
   // HEAD keeps `curl -I` and uptime monitors working; it must not fall through
   // to the origin check and answer 403/404.
@@ -110,10 +115,10 @@ async function routeMeasuredRequest(request, env, context) {
   // إعادة توجيه المزوّدات وwebhooks تصل بلا Origin: فحص الأصل لا ينطبق عليها،
   // وحمايتها هي توقيع المزوّد نفسه (state موقّع، HMAC، أو JWS من آبل).
   const publicImage = ['GET', 'HEAD'].includes(request.method) && (isPublicProfileImagePath(url.pathname) || isPublicDesignAssetPath(url.pathname));
-  if (!origin && !isPublicAccountPath(url.pathname) && !publicImage) return json({ error: 'ORIGIN' }, 403);
+  if (!origin && !isPublicAccountPath(url.pathname) && !publicImage && !rewardedCallback) return json({ error: 'ORIGIN' }, 403);
   const headers = origin ? { 'access-control-allow-origin': origin, vary: 'Origin',
     'access-control-allow-methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
-    'access-control-allow-headers': 'Content-Type, Authorization, Range, X-Design-Name',
+    'access-control-allow-headers': 'Content-Type, Authorization, Range, X-Design-Name, X-Maydan-Gameplay-Capability',
     'access-control-expose-headers': 'x-maydan-session',
     'access-control-max-age': '600' } : {};
   if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
@@ -135,9 +140,11 @@ async function routeMeasuredRequest(request, env, context) {
     const limited = await target.fetch(new Request('https://internal/limit', { method: 'POST', body: JSON.stringify({ kind }) }));
     if (!limited.ok) fail(code, 429);
   }
+  if (rewardedCallback) return rewardedWebhook(request, env, url, charge);
   try {
     // الحسابات أولًا: مساراتها تحت /api/ ولا تتقاطع مع تعبير الغرف.
-    response = await routePlus(request, env, url, charge)
+    response = await routeRewarded(request, env, url)
+      || await routePlus(request, env, url, charge)
       || await routeTutorials(request, env, url, charge)
       || await routeOnlineDirectory(request, env, url, charge)
       || await routeMafia(request, env, url, charge)
@@ -159,6 +166,7 @@ async function routeMeasuredRequest(request, env, context) {
       charged = create ? kind : null;
       if (create) {
         const input = await readJson(request, 4096, createLimit);
+        requireGameplayCapability(env, input.capabilities?.gameplayAccess);
         await credentials(input); // Validate before allocating a room.
         if (input.game === 'ersomha' && input.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
         if (input.game === 'badeeha' && input.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
@@ -168,7 +176,16 @@ async function routeMeasuredRequest(request, env, context) {
         const gate = await roomGate(request, env, input);
         // Ignore any account ID supplied by the client. The seat's account
         // association comes only from the authenticated bearer session.
-        input.accountUserId = gate?.userId || null;
+        const policyOffer = gameplayTicketsEnabled(env) &&
+          !(input.game === 'badeeha' && !gameplayEntryEnabled(env) && freeBadeehaRoom(input.settings))
+          ? gameplayOffer(input.game || 'meenfina', 'online') : null;
+        if (gameplayTicketsEnabled(env)) {
+          if (input.rewardedOffer != null && input.rewardedOffer !== policyOffer?.id) fail('REWARDED_UNAVAILABLE', 403);
+          input.rewardedOffer = policyOffer?.id || null;
+        }
+        input.accountUserId = gate?.userId || (policyOffer
+          ? (await readSession(env, request, { rotate: false }))?.user.id : null);
+        if (policyOffer && !input.accountUserId) fail('AUTH_REQUIRED', 401);
         if(input.accountUserId&&env.DB&&await env.DB.prepare('SELECT 1 FROM mafia_observer_memberships WHERE user_id=? AND expires_at>?').bind(input.accountUserId,Date.now()).first())fail('MAFIA_OBSERVER_ACTIVE',409);
         input.roomTrialGate = gate;
         // Attempt 0 stays derived from the token so a retried creation is idempotent

@@ -37,7 +37,14 @@ const render = await import(pathToFileURL(path.join(dir, 'render.mjs')));
 test('actual podium renders survivor first and distinct second/third places with zero-heart losers', () => {
   const html = render.podium(standings(bomb()));
   assert.ok(html.includes('فاز الناجي'));
-  const columns = [...html.matchAll(/data-rank="(\d+)"[\s\S]*?<span class="name">([^<]+)<\/span>/g)].map(m => [m[1], m[2]]);
+  const ranked = [...html.matchAll(/data-rank="(\d+)" class="podium-col"/g)];
+  const columns = ranked.map((m, index) => {
+    // PlayerName nests the visible name in bdi. Never read into the next column.
+    const column = html.slice(m.index, ranked[index + 1]?.index ?? html.length);
+    const names = [...column.matchAll(/<span class="name">[\s\S]*?<bdi>([^<]+)<\/bdi>/g)];
+    assert.equal(names.length, 1, 'each podium column has exactly one visible player name');
+    return [m[1], names[0][1]];
+  });
   assert.deepEqual(columns, [['2', 'خرج لاحقًا'], ['1', 'الناجي'], ['3', 'خرج أولًا']]);
   const ordinary = render.podium([{ id: 'a', name: 'أول', score: 10 }, { id: 'b', name: 'ثان', score: 10 }]);
   assert.ok(ordinary.includes('تعادل جميل!'), 'score-only games keep their established tie behavior');

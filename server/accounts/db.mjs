@@ -1,6 +1,6 @@
 // طبقة D1 رقيقة: كل استعلامات الحسابات في مكان واحد، بلا SQL مبعثر في المسارات.
 // تستعمل فقط prepare().bind().first()/all()/run() كي يعمل غلاف node:sqlite المحلي بالواجهة نفسها.
-import { TRIAL_GAMES } from '../../src/shared/account/config.js';
+import { GAMEPLAY_TRIAL_GAMES as TRIAL_GAMES } from '../../src/shared/account/config.js';
 import { mafiaDeleteStatements } from '../mafia-results.mjs';
 import { failure } from './errors.mjs';
 import { paddleEnvironmentOf } from './billing-environment.mjs';
@@ -216,7 +216,7 @@ export const releaseAccountDeletion = (env, userId, attemptId) => run(env, 'DELE
 
 // ── الحذف المتسلسل ──────────────────────────────────────────────────────────
 export async function deleteUser(env, userId) {
-  const statements = ['sessions', 'auth_codes', 'trials', 'online_room_trial_claims', 'subscriptions', 'paddle_customers', 'paddle_customers_scoped', 'paddle_checkouts', 'account_deletions', 'identities', 'plus_cosmetics', 'plus_setup_presets', 'mafia_tutorial_status']
+  const statements = ['sessions', 'auth_codes', 'trials', 'online_room_trial_claims', 'subscriptions', 'paddle_customers', 'paddle_customers_scoped', 'paddle_checkouts', 'account_deletions', 'identities', 'plus_cosmetics', 'plus_setup_presets', 'plus_inventory_grants', 'plus_monthly_windows', 'plus_commerce_events', 'plus_commerce_orders', 'mafia_tutorial_status']
     .map((table) => statement(env, `DELETE FROM ${table} WHERE user_id = ?`, [userId]));
   // This additive directory is off until its migration is applied. Remove the
   // derived membership locator explicitly, including on D1 without FK cascades.

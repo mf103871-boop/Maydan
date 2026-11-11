@@ -1,0 +1,39 @@
+.game-entry-screen { width:100%; max-width:472px; margin-inline:auto; padding-bottom:max(24px,env(safe-area-inset-bottom)); }
+.rewarded-entry-card { position:relative; isolation:isolate; padding:20px; gap:12px; overflow:hidden; border:1px solid #e3d2bb; border-radius:30px; background:linear-gradient(155deg,#fffdf8 0%,#fff8ee 68%,#f8edf9 100%); box-shadow:0 7px 0 #ddccb5,0 16px 32px #65452612; }
+.rewarded-entry-card::before { content:""; position:absolute; z-index:-1; inset:0 0 auto; height:230px; pointer-events:none; background:radial-gradient(ellipse at 50% 48%,#d3efeb 0%,#f0e5f647 49%,transparent 72%); }
+.rewarded-entry-header { display:flex; flex-direction:column; align-items:center; text-align:center; gap:8px; }
+.rewarded-entry-kicker { display:flex; align-items:center; justify-content:center; gap:9px; color:#725f77; font-size:12px; font-weight:700; }
+.rewarded-entry-kicker span { color:#ad7a31; }
+.rewarded-entry-art { width:100%; height:132px; display:grid; place-items:center; pointer-events:none; }
+.rewarded-entry-art img { width:210px; height:140px; max-width:100%; object-fit:contain; filter:drop-shadow(0 8px 8px #3d37531a); }
+.rewarded-entry-game { color:#086a74; background:#e3f1ec; border:1px solid #c7e4dc; border-radius:100px; padding:3px 14px; font-size:13px; font-weight:800; }
+.rewarded-entry-header h2 { margin:0; color:#42244f; font-size:29px; font-weight:900; line-height:1.35; }
+.rewarded-entry-header p { max-width:310px; margin:0; color:#6d586c; font-size:15px; line-height:1.65; }
+.rewarded-entry-benefits { display:flex; flex-wrap:wrap; justify-content:center; gap:5px 11px; margin:2px 0 4px; font-size:11px; font-weight:800; color:#47655e; }
+.rewarded-entry-benefits span::before { content:'✓'; margin-inline-end:4px; color:#087d70; }
+.rewarded-entry-explanation { margin:0; text-align:center; font-size:12px; line-height:1.7; color:#7a697a; }
+.rewarded-entry-status { margin:0; padding:10px 12px; border:1px solid #e1d8c9; border-radius:14px; background:#fffdf8c9; color:#5c4665; font-size:13px; line-height:1.65; text-align:center; }
+.rewarded-entry-card[data-entry-access="ticket"] .rewarded-entry-status,.rewarded-entry-card[data-entry-access="trial"] .rewarded-entry-status { background:#eaf5ec; border-color:#c6dfcd; color:#245e46; }
+.rewarded-entry-status[data-state="error"],.rewarded-entry-status[data-state="unavailable"],.rewarded-entry-status[data-state="noAds"] { background:#fff1e8; border-color:#ecd4c0; color:#874a35; }
+.rewarded-entry-card .btn { width:100%; min-height:48px; height:auto; padding:11px 16px; border-radius:16px; font-size:16px; line-height:1.45; }
+.rewarded-entry-card .btn.btn-accent { color:#fff; background:linear-gradient(160deg,#159da0,#087782); border:1px solid #077480; box-shadow:inset 0 2px 0 #ffffff65,0 4px 0 #075d67,0 8px 16px #087d8920; }
+.rewarded-entry-card .btn:not(.btn-ghost):not(.btn-accent) { color:#543267; border-color:#ceb5dd; background:linear-gradient(#fcf4ff,#ecdcf6); box-shadow:inset 0 2px 0 #fff,0 3px 0 #c7b2cf; }
+.rewarded-entry-card .btn.btn-ghost { color:#6e587a; font-size:13px; box-shadow:none; background:transparent; }
+.rewarded-entry-card .btn:disabled { opacity:.58; box-shadow:none; }
+.rewarded-entry-card .btn:focus-visible { outline:3px solid #754291; outline-offset:4px; }
+.rewarded-entry-card .btn:active:not(:disabled) { transform:translateY(1px); }
+@media(max-width:359px) { .rewarded-entry-card { padding:16px; }.rewarded-entry-header h2 { font-size:26px; }.rewarded-entry-art { height:110px; }.rewarded-entry-art img { width:180px; height:120px; } }
+@media(max-height:520px) and (orientation:landscape) { .rewarded-entry-art { height:72px; }.rewarded-entry-art img { width:116px; height:78px; }.rewarded-entry-card { gap:10px; } }
+@media(min-width:640px) and (max-height:520px) and (orientation:landscape) {
+  .game-entry-screen { max-width:760px; }
+  .rewarded-entry-card { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:6px 24px; padding:16px; align-items:center; }
+  .rewarded-entry-header { grid-column:1; grid-row:1 / span 8; align-self:center; gap:6px; }
+  .rewarded-entry-card > :not(header):not(style) { grid-column:2; }
+  .rewarded-entry-header h2 { font-size:25px; }
+  .rewarded-entry-header p { font-size:13px; }
+  .rewarded-entry-explanation { font-size:11px; }
+  .rewarded-entry-status { padding:7px 10px; font-size:12px; }
+  .rewarded-entry-card .btn { min-height:44px; padding:8px 12px; font-size:14px; }
+  .rewarded-entry-card .btn.btn-ghost { font-size:12px; }
+}
+@media(prefers-reduced-motion:reduce) { .rewarded-entry-card .btn { transition:none; }.rewarded-entry-card .btn:active:not(:disabled) { transform:none; } }

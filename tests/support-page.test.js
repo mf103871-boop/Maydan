@@ -4,7 +4,7 @@ import { supportPageResponse } from '../server/legal/support.mjs';
 import fullWorker from '../server/full-worker.mjs';
 
 test('support is standalone public GET/HEAD through the existing worker-first API routes', async () => {
-  const env = new Proxy({}, { get() { throw new Error('Support must not load assets, sessions or storage'); } });
+  const env = new Proxy({}, { get(_, key) { if (key === 'GAMEPLAY_ACCESS_POLICY') return undefined; throw new Error('Support must not load assets, sessions or storage'); } });
   for (const path of ['/api/legal/support', '/api/legal/support/']) for (const method of ['GET', 'HEAD']) {
     const response = await fullWorker.fetch(new Request(`https://maydan.test${path}`, { method }), env);
     assert.equal(response.status, 200);
@@ -15,6 +15,22 @@ test('support is standalone public GET/HEAD through the existing worker-first AP
   }
 });
 
+test('entry policy support describes all-game before-mode tickets without changing legacy support', async () => {
+  const legacy = await supportPageResponse().text();
+  assert.match(legacy, /وعشر حزم بديهة الأساسية/);
+  const env = new Proxy({ GAMEPLAY_ACCESS_POLICY: 'game-entry-ticket-v2' }, {
+    get(target, key) { if (key === 'GAMEPLAY_ACCESS_POLICY') return target[key]; throw new Error('Support must read configuration only'); },
+  });
+  const response = await fullWorker.fetch(new Request('https://maydan.test/api/legal/support/'), env);
+  const html = await response.text();
+  assert.match(html, /بما فيها جميع حزم بديهة/);
+  assert.match(html, /من بطاقة اللعبة قبل اختيار طريقة اللعب/);
+  assert.match(html, /الانضمام إلى غرف الآخرين مجاني مع المضيف/);
+  assert.doesNotMatch(html, /وعشر حزم بديهة الأساسية/);
+  assert.equal(await supportPageResponse('HEAD', env).text(), '');
+  assert.deepEqual([...supportPageResponse('HEAD', env).headers], [...response.headers]);
+});
+
 test('support covers purchases, deletion, call recovery, notification controls and real contact', async () => {
   const response = supportPageResponse(); const html = await response.text();
   assert.match(html, /<html lang="ar" dir="rtl">/);
@@ -22,7 +38,12 @@ test('support covers purchases, deletion, call recovery, notification controls a
   assert.match(html, /<main aria-labelledby="support-title">/);
   for (const value of ['استعادة المشتريات', 'حذف الحساب', 'لا يلغي اشتراك Apple تلقائيًا', 'TestFlight', 'Bluetooth', 'الميكروفون', 'الإشعارات', 'لا نسجّل محتوى المكالمات', 'mailto:mf103871@gmail.com', '/api/legal/privacy/', '/#/terms']) assert.ok(html.includes(value), value);
   assert.doesNotMatch(html, /<script\b|<iframe\b|<img\b|\bsrc=|@import|url\(/i);
-  for (const [, href] of html.matchAll(/href="([^"]+)"/g)) assert.ok(href.startsWith('https://maydan-game.mf103871.workers.dev/') || href === 'mailto:mf103871@gmail.com');
+  const deletionLink = `mailto:mf103871@gmail.com?subject=${encodeURIComponent('طلب حذف حساب ميدان وبياناته')}`;
+  assert.ok(html.includes(`href="${deletionLink}"`));
+  assert.match(html, /دون إعادة تثبيت التطبيق/);
+  assert.match(html, /نتحقق من ملكيتك قبل تنفيذ الحذف/);
+  assert.match(html, /عدم توفر إعلان لا يمنح تذكرة/);
+  for (const [, href] of html.matchAll(/href="([^"]+)"/g)) assert.ok(href.startsWith('https://maydan-game.mf103871.workers.dev/') || href === 'mailto:mf103871@gmail.com' || href === deletionLink);
   assert.match(response.headers.get('content-security-policy'), /default-src 'none'/);
   assert.match(response.headers.get('content-security-policy'), /frame-ancestors 'none'/);
   assert.equal(response.headers.get('x-frame-options'), 'DENY');

@@ -4,6 +4,7 @@ import { Room } from '../server/room.mjs';
 import { createLocalD1 } from '../server/local-d1.mjs';
 import { createRoom, joinRoom } from '../server/game-model.mjs';
 import { bindSeatAccount, prepareRoomStats } from '../server/room-stats.mjs';
+import { onlineRewardPlan } from '../server/account-progression.mjs';
 
 class Storage {
   constructor() { this.data = new Map(); this.alarm = null; this.failDelete = false; }
@@ -60,6 +61,44 @@ test('D1 success followed by a DO write failure retries safely without double co
     assert.equal(room.profileOutbox.length,0);
     assert.equal((await DB.prepare('SELECT online_matches FROM player_stats').first()).online_matches,1);
     assert.equal((await DB.prepare('SELECT COUNT(*) AS n FROM player_events').first()).n,1);
+  } finally { DB.close(); }
+});
+
+test('a promised progression grant survives the legacy retry limit, room expiry and restart', async () => {
+  const { DB, env, storage } = await fixture();
+  const now = Date.now();
+  const event = { userId: 'account-a', eventId: `online:${crypto.randomUUID()}`, game: 'badeeha',
+    won: false, draw: false, finishedAt: now, attempts: 48,
+    progressionPlan: onlineRewardPlan({ game: 'badeeha', rounds: 5 }) };
+  const next = { ...event, eventId: `online:${crypto.randomUUID()}`, attempts: 0 };
+  const batch = DB.batch.bind(DB);
+  DB.batch = items => {
+    if (items.some(item => item.sql.includes('INSERT INTO progression_events') && item.args.includes(event.eventId))) {
+      throw new Error('D1 temporarily unavailable for one result');
+    }
+    return batch(items);
+  };
+  try {
+    await storage.put('profileOutbox', [event, next]);
+    const room = instantiate(storage, env);
+    await room.flushStats();
+    const [waiting] = await storage.get('profileOutbox');
+    assert.equal(waiting.eventId, event.eventId);
+    assert.equal(waiting.attempts, 49);
+    assert.ok(waiting.retryAt > now);
+    assert.equal((await DB.prepare('SELECT COUNT(*) AS n FROM progression_events').first()).n, 1);
+
+    room.room.expiresAt = Date.now() - 1;
+    await room.serial(() => room.advance());
+    assert.equal(room.room, null);
+    assert.equal((await storage.get('profileOutbox')).length, 1);
+
+    DB.batch = batch;
+    await storage.put('profileOutbox', [{ ...waiting, retryAt: Date.now() - 1 }]);
+    const restarted = instantiate(storage, env);
+    await restarted.alarm();
+    assert.equal(await storage.get('profileOutbox'), undefined);
+    assert.equal((await DB.prepare('SELECT COUNT(*) AS n FROM progression_events').first()).n, 2);
   } finally { DB.close(); }
 });
 

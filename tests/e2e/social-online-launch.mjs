@@ -90,7 +90,7 @@ createRoot(document.getElementById('root')).render(<AccountContext.Provider valu
       await guest.waitForURL(new RegExp(`#/room/${otherRoom.code}$`));
       await guest.getByText('متصل · كل واحد بجواله', { exact: true }).waitFor();
       await guest.evaluate(() => window.fixture.group());
-      await guest.getByRole('button', { name: 'انضم للّمة', exact: false }).click();
+      await guest.getByRole('button', { name: 'قبول الدعوة', exact: true }).click();
       await guest.getByRole('heading', { name: 'تطلع من الغرفة؟', exact: true }).waitFor();
       await guest.getByRole('button', { name: 'خلّيني ألعب', exact: true }).click();
       await guest.waitForURL(new RegExp(`#/room/${otherRoom.code}$`));
@@ -104,7 +104,7 @@ createRoot(document.getElementById('root')).render(<AccountContext.Provider valu
       await guest.getByRole('heading', { name: 'تطلع من الغرفة؟', exact: true }).waitFor();
       await guest.getByRole('button', { name: 'الخروج', exact: true }).click();
       await guest.waitForURL(new RegExp(`#/friends/group/${group}$`));
-      await guest.getByRole('button', { name: 'انضم للّمة', exact: false }).click();
+      await guest.getByRole('button', { name: 'قبول الدعوة', exact: true }).click();
       await guest.waitForURL(new RegExp(`#/room/${code}$`));
       assert.equal(await guest.getByRole('textbox', { name: 'اسمك في الغرفة', exact: true }).count(), 0, 'accepted invitation joins directly with the signed-in profile');
       await guest.getByRole('button', { name: 'أنا جاهز', exact: true }).click();

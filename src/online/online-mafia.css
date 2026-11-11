@@ -45,3 +45,12 @@ body:has(.mafia-online-shell){background:#0c1019}
 /* Mafia owns its compact room controls. The redundant global launcher must not
    cover the card dock or image-status close button; dialogs and calls stay intact. */
 body:has(.mafia-room-shell) .lamma-launcher{display:none}
+
+/* Plum console, cream creation surface. */
+body:has(.mafia-online-shell){background:#1b0d25}
+.mafia-online-shell{background:radial-gradient(ellipse at 80% 0%,#5d2b5b,transparent 57%),#24132d}
+.mafia-entry .card:has(.mafia-directory){background:transparent;border:0;box-shadow:none}
+.mafia-entry .card:has(.mafia-settings){background:#fff3e3;color:#382139;border-color:#d3a7c4}
+.mafia-entry .card:has(.mafia-settings) .mafia-create-heading{border-color:#9e53a2}
+.mafia-entry .card:has(.mafia-settings) .mafia-create-heading :is(h2,p){color:#4b304d}
+.mafia-entry .card:has(.mafia-settings) .btn-primary{background:linear-gradient(#8e478d,#633467);border-color:#733773;color:#fff7ff;box-shadow:0 3px 0 #492749}

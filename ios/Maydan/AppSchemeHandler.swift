@@ -49,6 +49,15 @@ final class AppSchemeHandler: NSObject, WKURLSchemeHandler {
     /// سياسة أمن المحتوى داخل الغلاف، نظير `public/_headers` على الويب: الصفحة مستند واحد
     /// بسكربت وأنماط مضمّنة، ووسائط من الأصل أو data:/blob: أو https، واتصال بخوادم ميدان
     /// عبر https/wss. لا إطارات ولا كائنات ولا نماذج خارجية. (لم يُتحقق منها على جهاز بعد.)
+    private static var previewConnectionSources: String {
+#if MAYDAN_REWARDED_PREVIEW
+        if let port = RewardedAdCoordinator.loopbackPort {
+            return " http://127.0.0.1:\(port) ws://127.0.0.1:\(port)"
+        }
+#endif
+        return ""
+    }
+
     static let contentSecurityPolicy = [
         "default-src 'self' maydan:",
         "script-src 'self' 'unsafe-inline' maydan:",
@@ -56,7 +65,7 @@ final class AppSchemeHandler: NSObject, WKURLSchemeHandler {
         "img-src 'self' maydan: data: blob: https:",
         "media-src 'self' maydan: data: blob: https:",
         "font-src 'self' maydan: data:",
-        "connect-src 'self' maydan: https: wss:",
+        "connect-src 'self' maydan: https: wss:" + previewConnectionSources,
         "worker-src 'self' maydan:",
         "manifest-src 'self' maydan:",
         "frame-src 'none'",

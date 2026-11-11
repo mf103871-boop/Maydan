@@ -54,3 +54,16 @@
 .account-redeem { display: grid; gap: 12px; }
 .account-redeem .input { text-align: center; letter-spacing: .12em; font-weight: 800; font-size: 1.15rem; }
 .paywall .account-redeem { margin-top: 4px; }
+.account-card.is-guest { justify-items:center; text-align:center; background:#fff7eb; border-color:#e8dbcc; box-shadow:none; }
+.account-card.is-guest > .btn { width:100%; }
+.account-guest-title { color:#44264e; font-size:22px; font-weight:900; }
+.account-providers .btn[data-provider="apple"] { color:#fff; background:#181719; border-color:#181719; box-shadow:none; }
+.account-providers .btn[data-provider="google"] { color:#28262a; background:#fff; border-color:#bbb2b4; box-shadow:none; }
+.sheet[data-design-screen="account.signin"] .account-signin { text-align:center; }
+.sheet[data-design-screen="account.signin"] .account-fineprint a { color:#17626c; }
+.account-card .account-suspension { display:grid; gap:8px; padding:0 0 10px; overflow:hidden; }
+.account-suspension > b { padding:10px 12px; color:#fff; background:#43294d; }
+.account-suspension > :not(b) { margin-inline:12px; }
+.sheet[data-design-screen="account.redeem"] .modal-head { padding:4px 10px; border-radius:12px; background:#43294d; color:#fff; }
+.sheet[data-design-screen="account.redeem"] .modal-head h2 { color:inherit; }
+.sheet[data-design-screen="account.redeem"] .modal-head .btn-icon { color:inherit; background:transparent; border-color:transparent; box-shadow:none; }

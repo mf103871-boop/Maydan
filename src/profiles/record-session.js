@@ -6,8 +6,8 @@ const completing = new Set();
 const RETRYABLE = new Set(['NETWORK', 'OFFLINE', 'INTERNAL', 'SOCIAL_UNAVAILABLE', 'PROFILES_UNAVAILABLE', 'STALE', 'AUTH_REQUIRED', 'AUTH_EXPIRED']);
 
 export class LocalSessionRecorder {
-  constructor({ storage, beginSession, completeSession, owner = null }) {
-    Object.assign(this, { storage, beginSession, completeSession, owner });
+  constructor({ storage, beginSession, completeSession, owner = null, onRecorded }) {
+    Object.assign(this, { storage, beginSession, completeSession, owner, onRecorded });
     this.current = null; this.inflight = completing;
   }
   updateOwner(owner) {
@@ -65,7 +65,10 @@ export class LocalSessionRecorder {
       this.inflight.add(key);
       try {
         const result = await this.completeSession(saved.sessionId);
-        if (result && this.owner === owner) this.storage.remove(key);
+        if (result && this.owner === owner) {
+          this.storage.remove(key);
+          if (this.current?.key === saved.key) this.onRecorded?.(saved, result);
+        }
       } catch (error) {
         // A short/invalid session is a final rejection. Waiting and retrying it
         // later must not turn an ineligible game into an earned achievement.

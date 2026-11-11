@@ -1,5 +1,6 @@
 // Account-scoped social state. No private message history is written to browser storage.
 import { getCosmetic } from '../plus/catalog.js';
+import { createSocialLiveAudio } from './audio-feedback.js';
 export const SOCIAL_ERRORS = {
   AUTH_REQUIRED: 'سجّل الدخول للتواصل مع أصدقائك.', AUTH_EXPIRED: 'انتهت جلستك، سجّل الدخول من جديد.',
   NOT_FRIENDS: 'تحتاجان إلى قبول طلب الصداقة أولًا.', BLOCKED: 'التواصل مع هذا الحساب غير متاح.',
@@ -35,6 +36,7 @@ export function mergeMessages(current, incoming, peerReadSeq = 0) {
 export class SocialClient {
   constructor({ request, server, socketFactory = url => new WebSocket(url), now = () => Date.now() }) {
     this.request = request; this.server = server; this.socketFactory = socketFactory; this.now = now;
+    this.liveAudio=createSocialLiveAudio({now,available:()=>this.visible()&&this.state.mafiaCommunicationLocked!==true});
     this.state = initial(); this.listeners = new Set(); this.epoch = 0; this.userId = null;
     this.visibleConversations = new Map();
     this.networkOnline = true;
@@ -61,7 +63,7 @@ export class SocialClient {
     }
   }
   start(userId) {
-    this.stop(); this.userId = userId; this.update({ ...initial(), loading: true });
+    this.stop(); this.userId = userId; this.liveAudio.reset(userId);this.update({ ...initial(), loading: true });
     this.networkOnline = typeof navigator === 'undefined' || navigator.onLine !== false;
     if (!userId) return;
     this.refresh().catch(() => {}); this.connect();
@@ -74,6 +76,7 @@ export class SocialClient {
     }, 30_000);
   }
   stop() {
+    this.liveAudio.reset();
     this.visibleConversations.clear();
     this.epoch++; this.userId = null; this.activeFriend = null; this.refreshing = null;
     this.refreshAgain = false; this.connecting = false; this.attempt = 0;
@@ -85,6 +88,7 @@ export class SocialClient {
   }
   visible() { return typeof document === 'undefined' || document.visibilityState !== 'hidden'; }
   networkOffline() {
+    this.liveAudio.disconnect();
     this.networkOnline = false;
     clearTimeout(this.reconnect); clearTimeout(this.openTimeout); clearInterval(this.ping); this.sentTyping.clear();
     const socket = this.socket; this.socket = null;
@@ -95,6 +99,7 @@ export class SocialClient {
     if (!this.userId) return;
     this.networkOnline = typeof navigator === 'undefined' || navigator.onLine !== false;
     if (!this.visible()) {
+      this.liveAudio.disconnect();
       clearTimeout(this.reconnect); clearTimeout(this.openTimeout); clearInterval(this.ping); this.sentTyping.clear();
       const socket = this.socket; this.socket = null;
       if (socket) { socket.onclose = null; socket.close(1000, 'background'); }
@@ -321,11 +326,13 @@ export class SocialClient {
     this.socket.send(JSON.stringify({ type: 'typing', peerId, active }));
     this.sentTyping.set(peerId, { active, at: this.now() });
   }
-  async receive(event) {
+  claimLiveAudio(scope,id,seq){return this.liveAudio.claim(scope,id,seq);}
+  async receive(event, live = false) {
     const epoch = this.epoch;
     let message; try { message = JSON.parse(event.data); } catch { return; }
     if (!message || typeof message !== 'object' || typeof message.type !== 'string') return;
     if (message.type === 'pong') { this.lastPong = this.now(); return; }
+    if(live)this.liveAudio.receive(message,{visible:this.visible(),locked:this.state.mafiaCommunicationLocked===true});
     if (typeof window !== 'undefined' && typeof CustomEvent === 'function') {
       window.dispatchEvent(new CustomEvent('maydan-social-event', { detail: message }));
     }
@@ -361,12 +368,12 @@ export class SocialClient {
       this.openTimeout = setTimeout(() => {
         if (epoch !== this.epoch || this.socket !== socket || socket.readyState === 1) return;
         this.socket = null; socket.onclose = null; socket.close();
-        this.update({ connected: false }); this.reconnectLater();
+        this.liveAudio.disconnect();this.update({ connected: false }); this.reconnectLater();
       }, 20_000);
       socket.onopen = () => {
         if (epoch !== this.epoch || this.socket !== socket) { socket.close(); return; }
         clearTimeout(this.openTimeout);
-        this.attempt = 0; this.lastPong = this.now(); this.update({ connected: true });
+        this.attempt = 0; this.lastPong = this.now();this.liveAudio.connect();this.update({ connected: true });
         clearInterval(this.ping);
         this.ping = setInterval(() => {
           if (this.now() - this.lastPong > 45_000) { socket.close(); return; }
@@ -374,11 +381,11 @@ export class SocialClient {
         }, 20_000);
         this.scheduleRefresh();
       };
-      socket.onmessage = event => { if (epoch === this.epoch && this.socket === socket) this.receive(event).catch(() => {}); };
-      socket.onerror = () => { try { socket.close(); } catch { /* Already closed. */ } };
+      socket.onmessage = event => { if (epoch === this.epoch && this.socket === socket) this.receive(event,true).catch(() => {}); };
+      socket.onerror = () => {this.liveAudio.disconnect();try { socket.close(); } catch { /* Already closed. */ } };
       socket.onclose = () => {
         if (epoch !== this.epoch || this.socket !== socket) return;
-        clearTimeout(this.openTimeout); this.socket = null; this.sentTyping.clear(); clearInterval(this.ping); this.update({ connected: false }); this.reconnectLater();
+        clearTimeout(this.openTimeout); this.socket = null; this.sentTyping.clear(); clearInterval(this.ping);this.liveAudio.disconnect();this.update({ connected: false }); this.reconnectLater();
       };
     } catch { if (epoch === this.epoch) this.reconnectLater(); }
     finally { if (epoch === this.epoch) this.connecting = false; }

@@ -54,6 +54,19 @@ const { parseHash, navigate, back, getRoute, getDirection, setExitGuard, registe
 const flush = async (times = 4) => { for (let i = 0; i < times; i += 1) await new Promise((r) => setTimeout(r, 1)); };
 const start = (hash = '#/') => { env.reset(hash); resetRouterForTests(); };
 
+test('store library and presets preserve their exact tab through Back and reload', async () => {
+  for (const tab of ['collections','library','presets']) {
+    start();
+    navigate(`/store?tab=${tab}`);await flush();
+    navigate('/profile');await flush();
+    assert.equal(router.getPreviousPath(),`/store?tab=${tab}`);
+    back();await flush();
+    assert.equal(location.hash,`#/store?tab=${tab}`);
+    assert.equal(getRoute().params.tab,tab);
+    resetRouterForTests();assert.equal(getRoute().params.tab,tab);
+  }
+});
+
 test('specialist lesson and hub keep distinct Back history without normalized duplicate entries', async () => {
   start('#/online/mafia');
   navigate('/tutorial/mafia?labs=1'); await flush();
@@ -403,10 +416,10 @@ test('حدود الخطأ موجودة حول الشاشات وحول اللعب
 });
 
 test('الافتتاحية تملأ الشاشة وتنتظر جاهزية الأصول قبل تركيب اللعبة', () => {
-  assert.match(read('src/platform/platform.css'), /\.splash \.splash-world \{[^}]*height: 100%/);
+  assert.match(read('src/platform/platform.css'), /\.splash \{[^}]*position: fixed;[^}]*inset: 0/);
   const splash = read('src/platform/screens/Splash.jsx');
   assert.match(splash, /reducedMotion = false/);
-  assert.match(splash, /useVisualReadiness\(\{ includeWorld: true \}\)/);
+  assert.match(splash, /prepareVisuals\(\{ images: \[gameIcons, avatars\]/);
   assert.doesNotMatch(splash, /role="button"|setTimeout\(finish|duration = 2200/);
   const app = read('src/platform/PlatformApp.jsx');
   assert.match(app, /reducedMotion=\{settings\.reducedMotion\}/);

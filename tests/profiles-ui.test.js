@@ -5,11 +5,12 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { build } from 'esbuild';
 import { ACHIEVEMENTS } from '../src/profiles/catalog.js';
+import { MAFIA_PREVIEW_API_ORIGIN, PRODUCTION_API_ORIGIN } from '../src/shared/lib/environment.js';
 
 const root = process.cwd(); mkdirSync(path.join(root, '.cache'), { recursive: true });
 const dir = mkdtempSync(path.join(root, '.cache', 'profiles-ui-'));
 after(() => rmSync(dir, { recursive: true, force: true }));
-await build({ stdin: { contents: `import React from 'react'; import {renderToStaticMarkup} from 'react-dom/server'; import {ProfileView,ProfileEditor,Achievements,ProfileStats,profileShareUrl,profilePresence,profileEditPatch} from './src/profiles/ProfileScreen.jsx'; const html=(C,p)=>renderToStaticMarkup(React.createElement(C,p)).replace(/<style>[\\s\\S]*?<\\/style>/g,''); export const screen=p=>html(ProfileView,p); export const editor=p=>html(ProfileEditor,p); export const achievements=p=>html(Achievements,p); export const stats=p=>html(ProfileStats,p); export {profileShareUrl,profilePresence,profileEditPatch};`, resolveDir: root, loader: 'jsx' }, outfile: path.join(dir, 'render.mjs'), bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic', loader: { '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl' }, logLevel: 'silent' });
+await build({ stdin: { contents: `import React from 'react'; import {renderToStaticMarkup} from 'react-dom/server'; import {ProfileView,ProfileEditor,Achievements,ProfileStats,profileShareUrl,profilePresence,profileEditPatch} from './src/profiles/ProfileScreen.jsx'; const html=(C,p)=>renderToStaticMarkup(React.createElement(C,p)).replace(/<style\\b[^>]*>[\\s\\S]*?<\\/style>/g,''); export const screen=p=>html(ProfileView,p); export const editor=p=>html(ProfileEditor,p); export const achievements=p=>html(Achievements,p); export const stats=p=>html(ProfileStats,p); export {profileShareUrl,profilePresence,profileEditPatch};`, resolveDir: root, loader: 'jsx' }, outfile: path.join(dir, 'render.mjs'), bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic', loader: { '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl' }, logLevel: 'silent' });
 const render = await import(pathToFileURL(path.join(dir, 'render.mjs')));
 const noop = () => {};
 const profile = { id: 'me', name: 'عبدالله', code: 'MDN-A12B34C56D', bio: 'أحب جمعة الأصحاب', theme: 'teal', avatarPreset: 'falcon', selectedTitle: 'member', featuredBadges: ['welcome'], earnedTitles: ['member'], earnedBadges: ['welcome'], achievements: ACHIEVEMENTS.map(rule => ({ ...rule, current: rule.id === 'welcome' ? 1 : 0 })), stats: { localSessions: 8, onlineMatches: 6, onlineWins: 2, onlineDraws: 1, distinctGames: 4 }, friendCount: 3, relationship: 'self', revision: 1 };
@@ -30,6 +31,34 @@ test('owner profile displays identity, earned title, copy/share actions and edit
   for (const text of ['عبدالله', 'MDN-A12B34C56D', 'أحب جمعة الأصحاب', 'عضو ميدان', 'مشاركة الملف', 'نسخ رمز الصديق', 'تعديل الملف']) assert.ok(html.includes(text), text);
   assert.doesNotMatch(html, /إضافة صديق|خيارات الحساب/);
   assert.match(render.screen({ account, profiles, social, profileId: 'me' }), /تعديل الملف/);
+});
+
+test('living frame trials are visible only on the owner profile inside the isolated iPhone build', () => {
+  const restore = new Map(['location', '__MAYDAN_ROOMS_URL__'].map(key => [key, Object.getOwnPropertyDescriptor(globalThis, key)]));
+  const label = 'جرّب الإطارات الحيّة';
+  const renderOwner = () => render.screen({ account, profiles, social });
+  try {
+    globalThis.location = new URL('maydan://app/');
+    globalThis.__MAYDAN_ROOMS_URL__ = PRODUCTION_API_ORIGIN;
+    assert.ok(!renderOwner().includes(label));
+    globalThis.__MAYDAN_ROOMS_URL__ = 'same-origin';
+    assert.ok(!renderOwner().includes(label));
+    globalThis.__MAYDAN_ROOMS_URL__ = MAFIA_PREVIEW_API_ORIGIN;
+    globalThis.location = new URL(MAFIA_PREVIEW_API_ORIGIN);
+    assert.ok(!renderOwner().includes(label));
+    globalThis.location = new URL('maydan://another/');
+    assert.ok(!renderOwner().includes(label));
+    globalThis.location = new URL('maydan://app/');
+    assert.ok(renderOwner().includes(label));
+    const other = { ...profile, id: 'friend', relationship: 'friend' };
+    assert.ok(!render.screen({ account, profiles: { ...profiles, profiles: { friend: other } }, social, profileId: 'friend' }).includes(label));
+    assert.ok(!render.screen({ account: { ready: true, signedIn: false }, profiles, social }).includes(label));
+  } finally {
+    for (const [key, descriptor] of restore) {
+      if (descriptor) Object.defineProperty(globalThis, key, descriptor);
+      else delete globalThis[key];
+    }
+  }
 });
 
 test('public relationship states offer only the appropriate friendship action', () => {

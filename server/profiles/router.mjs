@@ -7,6 +7,7 @@ import { assertSocialAllowed } from '../mafia-access.mjs';
 import * as db from './db.mjs';
 import { patchOf, revisionOf, userId } from './model.mjs';
 import { base64ToBytes, imageFromDataUrl, IMAGE_LIMITS } from './images.mjs';
+import { progressionReceipt } from '../account-progression.mjs';
 
 const IMAGE_PATH=/^\/api\/profiles\/([A-Za-z0-9_-]{1,80})\/images\/(avatar|cover)\/([a-f0-9]{64})$/;
 export const isPublicProfileImagePath = pathname => IMAGE_PATH.test(pathname);
@@ -55,6 +56,8 @@ async function dispatch(request,env,url,id) {
   }
   if(method!=='GET') await chargeUser(env,id,'write',now);
   if(path==='/me' && method==='GET') return json({profile:await db.profileFor(env,id,id)});
+  const receipt = /^\/me\/progression\/receipts\/((?:online|local)(?::|%3[Aa])[a-f0-9-]{36})$/.exec(path);
+  if (receipt && method === 'GET') return json({ receipt: await progressionReceipt(env,id,decodeURIComponent(receipt[1]),now) });
   if(path==='/search' && method==='GET') {
     const q=String(url.searchParams.get('q')||'').normalize('NFKC').trim();
     if(Array.from(q).length<2 || Array.from(q).length>80) fail('INVALID',400);

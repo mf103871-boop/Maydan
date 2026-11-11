@@ -160,7 +160,7 @@ function Preview(){
     <style>{`html,body{margin:0;min-height:100%;}body{overflow-x:clip;}[data-design-screen]{scroll-margin-top:10px;}[data-preview-mode=edit] *{cursor:default !important;}[data-preview-mode=edit] [data-design-decoration]{pointer-events:auto!important;}`}</style>
     <div data-preview-mode={config.mode}>
       <PreviewBoundary resetKey={`${scene.id}:${config.previewState}`} validationMeta={validationMeta(config)}>
-        <DesignProvider document={config.document} profile={config.profile} editing={false} assetUrls={config.assetUrls}>
+        <DesignProvider document={config.document} profile={config.profile} editing={false} preview assetUrls={config.assetUrls}>
           <PreviewProviders sceneId={scene.id} previewState={config.previewState}>{content}</PreviewProviders>
         </DesignProvider>
       </PreviewBoundary>

@@ -5,7 +5,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { gzipSync } from 'node:zlib';
 import { build } from 'esbuild';
-import { esbuildOptions, renderHtml, mediaVersions, ROOT } from '../scripts/lib.mjs';
+import { esbuildOptions, renderHtml, mediaVersions, ROOT, DIST } from '../scripts/lib.mjs';
+import { WARMTH_BUNDLE_ID, warmthAudioBuild } from '../scripts/audio/warmth-preview.mjs';
+import path from 'node:path';
 
 const MB = 1024 * 1024;
 const BUDGET = {
@@ -14,17 +16,28 @@ const BUDGET = {
   input: 560 * 1024,    // أكبر ملف مصدر واحد داخل الحزمة (react-dom نحو 523 KB)
 };
 
+function assertDocumentBudget(html) {
+  const raw = Buffer.byteLength(html, 'utf8');
+  const gzip = gzipSync(Buffer.from(html, 'utf8')).length;
+  assert.ok(raw <= BUDGET.document, `index.html is ${raw} bytes, budget ${BUDGET.document} bytes`);
+  assert.ok(gzip <= BUDGET.gzip, `index.html gzip is ${gzip} bytes, budget ${Math.floor(BUDGET.gzip)} bytes`);
+}
+
 test('the shipped document and its largest inputs stay inside the size budget', { timeout: 120_000 }, async () => {
   const result = await build({ ...esbuildOptions({ minify: true, version: '0.0.0-test', media: await mediaVersions(ROOT), assets: 'files' }), metafile: true });
   const js = result.outputFiles.find((f) => f.path.endsWith('.js')).text;
-  const html = await renderHtml(js, { version: '0.0.0-test' });
+  assert.doesNotMatch(js, /maydanRewardedLab|maydanRewardedMetric|__rewarded_lab__/,
+    'the ordinary document must never ship loopback simulation or its grant endpoint');
+  // The real optional policy now uses ordinary setup/lobby entry points. Its
+  // dormant UI/bridge is shared; runtime default-off and genuine account access
+  // are tested by gameplay-access-local and account-gating. The native SDK is
+  // still absent unless its separately verified signed-build mode is selected.
+  const assets = result.outputFiles.filter(file=>!file.path.endsWith('.js')).map(file=>'./'+path.relative(DIST,file.path).replaceAll('\\','/')).sort();
+  const html = await renderHtml(js, { version: '0.0.0-test', assets });
   // الرسوم والخطوط ملفات مبصومة بجانب المستند لا base64 داخله.
   assert.ok(!/data:(image\/webp|image\/png|font\/woff2)/.test(html), 'brand art and fonts must ship as files, not data: URLs inside the document');
-  assert.ok(result.outputFiles.some((f) => /assets\/brand\/world-[A-Z0-9]+\.webp$/.test(f.path.replaceAll('\\', '/'))), 'the splash art is emitted as a hashed file');
-  const raw = Buffer.byteLength(html, 'utf8');
-  const gzip = gzipSync(Buffer.from(html, 'utf8')).length;
-  assert.ok(raw <= BUDGET.document, `index.html is ${(raw / MB).toFixed(2)} MB, budget ${(BUDGET.document / MB).toFixed(2)} MB`);
-  assert.ok(gzip <= BUDGET.gzip, `index.html gzip is ${(gzip / MB).toFixed(2)} MB, budget ${(BUDGET.gzip / MB).toFixed(2)} MB`);
+  assert.ok(result.outputFiles.some((f) => /assets\/brand\/game-icons-[A-Z0-9]+\.webp$/.test(f.path.replaceAll('\\', '/'))), 'game artwork is emitted as a hashed file');
+  assertDocumentBudget(html);
   const inputs = Object.entries(result.metafile.inputs).map(([file, info]) => [file, info.bytes]).sort((a, b) => b[1] - a[1]);
   const [largest, bytes] = inputs[0];
   assert.ok(bytes <= BUDGET.input, `${largest} is ${(bytes / 1024).toFixed(0)} KB, budget ${(BUDGET.input / 1024).toFixed(0)} KB`);
@@ -38,4 +51,22 @@ test('the shipped document and its largest inputs stay inside the size budget', 
     assert.ok(!seen.has(plain), `${plain} is bundled twice (${seen.get(plain)} and ${file}); import it the same way everywhere`);
     seen.set(plain, file);
   }
+});
+
+test('a signed Rewarded build ships the native ad bridge without loopback simulation', { timeout: 120_000 }, async () => {
+  const options = esbuildOptions({ minify: true, version: '1.9', media: await mediaVersions(ROOT), assets: 'files',
+    roomsUrl: 'https://maydan-mafia-preview.mf103871.workers.dev', rewardedPreview: true });
+  const result = await build(options);
+  const js = result.outputFiles.find(file => file.path.endsWith('.js')).text;
+  assert.match(js, /rewardedShow/);
+  assert.doesNotMatch(js, /maydanRewardedLab|maydanRewardedMetric|__rewarded_lab__/);
+  if (warmthAudioBuild()) {
+    assert.ok(js.includes(WARMTH_BUNDLE_ID), 'the selected Warmth pack stays available');
+    assert.equal(/audio\/candidates\/|معاينة أصوات التحديث/.test(js), false,
+      'a Warmth build excludes the older audition catalog and settings control');
+  }
+  const assets = result.outputFiles.filter(file => !file.path.endsWith('.js'))
+    .map(file => './' + path.relative(DIST, file.path).replaceAll('\\', '/')).sort();
+  const html = await renderHtml(js, { version: '1.9', assets });
+  assertDocumentBudget(html);
 });

@@ -1,12 +1,16 @@
 import { createAudioEvents } from './audio-events.js';
+import { createLocalAudition, localAuditionScene } from './local-audition.js';
+import { isWarmthPreviewBuild } from './warmth-preview-policy.js';
 import { resolveAudioScene, createSceneLeases } from './audio-scenes.js';
 import { SAMPLE_BANK as BASE_SAMPLE_BANK, SAMPLE_RATE } from './sample-bank.js';
 import { reviewedEffectBank } from './reviewed-effects.js';
 import { CANDIDATE_EFFECTS } from './audio-candidate-catalog.js';
 import { privateCandidateEffects } from './audio-candidate-policy.js';
 const extraEffects = reviewedEffectBank();
-// The compile-time guard lets public builds drop the private candidate catalog.
-const privateEffects = typeof __MAYDAN_AUDIO_PREVIEW__ !== 'undefined' && __MAYDAN_AUDIO_PREVIEW__ === true ? privateCandidateEffects(CANDIDATE_EFFECTS) : {};
+// Warmth provides its own audition bank, and its package omits the legacy candidate files.
+const privateEffects = typeof __MAYDAN_AUDIO_PREVIEW__ !== 'undefined' && __MAYDAN_AUDIO_PREVIEW__ === true &&
+  (typeof __MAYDAN_WARMTH_PREVIEW__ === 'undefined' || __MAYDAN_WARMTH_PREVIEW__ !== true)
+  ? privateCandidateEffects(CANDIDATE_EFFECTS) : {};
 const SAMPLE_BANK = { ...BASE_SAMPLE_BANK, ...extraEffects, ...privateEffects };
 import { MUSIC_BANK } from './music-bank.js';
 import { SELECTED_AUDIO } from './selected-audio.js';
@@ -48,7 +52,6 @@ const RESUME_TIMEOUT_MS = 1500;
 const RECOVERY_PROBE_MS = 300;
 const RECOVERY_SETTLE_MS = 200;
 const RECOVERY_VERIFY_MS = 500;
-const CUE_IDS = Object.keys(SAMPLE_BANK);
 // Every activation of a control sounds, without wiring each handler: a capture `click`
 // listener on document plays `data-sound` (default `click`) for anything matching
 // TAP_SELECTOR; `data-sound="none"` on the element or an ancestor keeps it silent, as do
@@ -73,13 +76,18 @@ const MAX_EFFECT_VOICES = 3;
 // A sting that arrives this long after its moment (slow network) is dropped.
 const LATE_STING_MS = 2500;
 
-export function createSound({ enabled = true, volume = 0.75, music = true, musicVolume = 0.5, voice = false, creatorMode = false, allowPreviewVoices = false } = {}) {
+export function createSound({ enabled = true, volume = 0.75, music = true, musicVolume = 0.5, voice = false, creatorMode = false, allowPreviewVoices = false, localAudition } = {}) {
+  const audition = ((typeof __MAYDAN_LOCAL_AUDIO_REVIEW__ !== 'undefined' && __MAYDAN_LOCAL_AUDIO_REVIEW__ === true) || (typeof __MAYDAN_WARMTH_PREVIEW__ !== 'undefined' && __MAYDAN_WARMTH_PREVIEW__ === true)) ? createLocalAudition(localAudition || (isWarmthPreviewBuild() ? { mode: 'candidate', directionId: 'bossaAlternative', baseUrl: '/audio-warmth-preview/' } : undefined)) : null;
+  const sampleBank = audition ? audition.bank : SAMPLE_BANK;
+  const cueSamples = audition ? audition.cues : CUE_SAMPLES;
+  const recipes = audition ? Object.fromEntries(Object.entries(cueSamples).map(([name, id]) => [name, (c, meta) => id ? c.sample(id, meta) : null])) : RECIPES;
+  const cueIds = Object.keys(sampleBank);
   let on = !!enabled;
   let level = clampVolume(volume);
   let musicOn = !!music;
   const musicSuppressors = new Set();
   let musicLevel = clampVolume(musicVolume, 0.5);
-  const voicesAllowed = SELECTED_AUDIO.voicesProductionApproved === true || allowPreviewVoices;
+  const voicesAllowed = !audition && (SELECTED_AUDIO.voicesProductionApproved === true || allowPreviewVoices);
   let responseOn = voicesAllowed && !!voice;
   let broadcastMode = !!creatorMode;
   let activeScene = null;
@@ -146,19 +154,25 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   const unavailableTracks = new Set();
   const streamedMusic = createStreamingMusic(SELECTED_AUDIO.music, { onFailure: () => {
     const failed = scenePlan()?.track;
-    if (failed?.candidateForPrivateTest) unavailableTracks.add(failed.url);
+    if (failed && (audition || failed.candidateForPrivateTest)) unavailableTracks.add(failed.url);
     syncMusic();
   } });
   const pageUnavailable = () => pageHidden || nativeHidden || (typeof document !== 'undefined' && document.hidden);
   const hidden = () => pageUnavailable() || interrupted || gestureRequired;
   const canPlay = () => on && level > 0 && effectSuppressors.size === 0 && !hidden();
   const canPlayMusic = () => on && musicOn && !broadcastMode && musicLevel > 0 && musicSuppressors.size === 0 && !hidden();
-  const eventAudio = createAudioEvents(play, { available: canPlay });
+  const eventAudio = createAudioEvents(play, { available: canPlay, candidateMode: !!audition });
   const sceneLeases = createSceneLeases(scene => { activeScene = scene; syncMusic(); });
-  const scenePlan = () => activeScene ? resolveAudioScene(activeScene.game, activeScene.phase, { creatorMode: broadcastMode, unavailableTracks }) : null;
+  const scenePlan = (ignoreUnavailable = false) => {
+    const scene = activeScene || (audition && musicWanted ? { game: 'home', phase: 'idle' } : null);
+    if (!scene) return null;
+    const unavailable = ignoreUnavailable ? new Set() : unavailableTracks;
+    const ordinary = resolveAudioScene(scene.game, scene.phase, { creatorMode: broadcastMode, unavailableTracks: unavailable });
+    return audition ? localAuditionScene(audition, scene.game, scene.phase, ordinary, unavailable) : ordinary;
+  };
   const wantedTrack = () => { const scene = scenePlan(); return scene ? (scene.track?.id || scene.fallback) : musicWanted; };
   // Per cue when named, the whole bank otherwise.
-  const ready = (name = null) => (name ? buffers.has(CUE_SAMPLES[name]) : CUE_IDS.every((id) => buffers.has(id)));
+  const ready = (name = null) => (name ? buffers.has(cueSamples[name]) : cueIds.every((id) => buffers.has(id)));
 
   function musicMix(tc = 0.08) {
     if (!musicGain || !context) return;
@@ -221,15 +235,21 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   function fetchCue(id) {
     if (encoded.has(id)) return Promise.resolve(true);
     if (fetches.has(id)) return fetches.get(id);
-    if (typeof fetch !== 'function') return Promise.resolve(false);
+    if (typeof fetch !== 'function' || !sampleBank[id]) return Promise.resolve(false);
     const task = Promise.resolve().then(async () => {
-      const entries = [SAMPLE_BANK[id], ...(privateEffects[id] && BASE_SAMPLE_BANK[id] ? [BASE_SAMPLE_BANK[id]] : [])];
+      const entries = [sampleBank[id], ...(!audition && privateEffects[id] && BASE_SAMPLE_BANK[id] ? [BASE_SAMPLE_BANK[id]] : [])];
       for (const entry of entries) {
         try {
           const response = await fetch(entry.url);
           if (!response?.ok) continue;
-          encoded.set(id, await response.arrayBuffer()); cueEntries.set(id, entry); return true;
-        } catch { /* missing candidate falls back to the existing cue */ }
+          const data = await response.arrayBuffer();
+          if (audition) {
+            if (data.byteLength !== entry.bytes || !globalThis.crypto?.subtle) continue;
+            const digest = await globalThis.crypto.subtle.digest('SHA-256', data);
+            if (Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, '0')).join('') !== entry.sha256) continue;
+          }
+          encoded.set(id, data); cueEntries.set(id, entry); return true;
+        } catch { /* local audition fails silent; private TestFlight retains its existing fallback */ }
       }
       return false;
     });
@@ -239,7 +259,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   }
   function fetchBank() {
     if (bankFetch) return bankFetch;
-    const task = Promise.all(CUE_IDS.map(fetchCue)).then((results) => results.every(Boolean));
+    const task = Promise.all(cueIds.map(fetchCue)).then((results) => results.every(Boolean));
     bankFetch = task;
     void task.finally(() => { if (bankFetch === task) bankFetch = null; });
     return task;
@@ -265,7 +285,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
       buffers.set(id, buffer);
       return true;
     }).catch(async () => {
-      const fallback = privateEffects[id] && BASE_SAMPLE_BANK[id];
+      const fallback = !audition && privateEffects[id] && BASE_SAMPLE_BANK[id];
       if (!fallback || cueEntries.get(id) === fallback || c !== context) return false;
       try {
         const response = await fetch(fallback.url);
@@ -284,7 +304,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     if (c !== context) return Promise.resolve(false);
     const all = () => {
       if (!bankDecode) {
-        const task = Promise.all(CUE_IDS.map((id) => decodeCue(c, id))).then((results) => c === context && results.every(Boolean));
+        const task = Promise.all(cueIds.map((id) => decodeCue(c, id))).then((results) => c === context && results.every(Boolean));
         bankDecode = task;
         void task.finally(() => { if (bankDecode === task && !ready()) bankDecode = null; });
       }
@@ -393,7 +413,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   // time a screen asks for it and decoded once per context; decoded loops are kept for
   // the last few tracks only, the encoded bytes for all of them.
   function fetchTrack(id) {
-    if (!MUSIC_BANK[id]) return Promise.resolve(null);
+    if (audition || !MUSIC_BANK[id]) return Promise.resolve(null);
     if (musicEncoded.has(id)) return Promise.resolve(musicEncoded.get(id));
     if (musicFetches.has(id)) return musicFetches.get(id);
     if (typeof fetch !== 'function') return Promise.resolve(null);
@@ -415,7 +435,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     }
   }
   function loadTrack(c, id) {
-    if (!MUSIC_BANK[id]) return Promise.resolve(null);
+    if (audition || !MUSIC_BANK[id]) return Promise.resolve(null);
     if (musicBuffers.has(id)) {
       const buffer = musicBuffers.get(id);
       musicBuffers.delete(id); musicBuffers.set(id, buffer); // most recently used last
@@ -508,6 +528,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
       if (playing) { fadeOutVoice(playing, MUSIC_FADE_OUT); playing = null; }
       if (streamedMusic.play(c, musicGain, id)) return;
     }
+    if (audition) return; // A local candidate never falls through to an old PCM/music bank.
     if (id === 'finale') streamedMusic.pause();
     const token = ++musicToken;
     void Promise.all([unlock(), loadTrack(c, id)]).then(([running, buffer]) => {
@@ -520,6 +541,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   // A one-shot musical moment (the match finale): the loop steps aside for it and the
   // wanted track (possibly a new one, `after`) returns once it has ended.
   function playSting(id, { after } = {}) {
+    if (audition) return;
     if (typeof after === 'string' && MUSIC_BANK[after]) musicWanted = after;
     if (!MUSIC_BANK[id] || !canPlayMusic()) { syncMusic(); return; }
     const c = getContext();
@@ -642,7 +664,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   function prepare(name = null) {
     const c = getContext();
     if (!c) return Promise.resolve(false);
-    const decoded = name ? decodeCue(c, CUE_SAMPLES[name]).then((ok) => { void decodeBank(c); return ok; }) : decodeBank(c);
+    const decoded = name ? decodeCue(c, cueSamples[name]).then((ok) => { void decodeBank(c); return ok; }) : decodeBank(c);
     return Promise.all([unlock(), decoded]).then(([running, ok]) => running && ok && c === context);
   }
   function cancelRecovery() {
@@ -769,7 +791,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
     if (!el) return;
     const wanted = (el.dataset && el.dataset.sound) || 'click';
     const name = ALIASES[wanted] || wanted;
-    tap.pending = { name: RECIPES[name] ? name : 'click', at: Date.now() };
+    tap.pending = { name: recipes[name] ? name : 'click', at: Date.now() };
     tap.superseded = false;
     clearTimeout(tap.timer);
     // Handlers and the effects React flushes for a click run before this timeout; a cue
@@ -845,7 +867,11 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   // click is pending replaces it, and one arriving shortly after cuts the click voice.
   function play(rawName, { source = 'code', guard, priority = 2 } = {}) {
     const name = ALIASES[rawName] || rawName;
-    if (!canPlay() || !RECIPES[name]) return false;
+    if (!canPlay() || !recipes[name]) return false;
+    if (audition && !cueSamples[name]) {
+      if (source !== 'tap') { tap.superseded = true; if (tap.voice) { cutVoice(tap.voice, TAP_FADE_S); tap.voice = null; } }
+      return false;
+    }
     const now = Date.now();
     const last = lastPlayed.get(name) ?? -Infinity;
     if (now - last < RETRIGGER_FLOOR_MS) return false;
@@ -862,11 +888,11 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
       if (!canPlay() || voided(ordinal, now) || c !== context || c.state !== 'running' || !ready(name)) return false;
       let voice = null;
       const underSpeech = responseOn && !ducked && (name === 'correct' || name === 'wrong');
-      try { voice = RECIPES[name](voiceContext, { name, requested: now, ordinal, priority, gain: underSpeech ? 0.3 : 1 }); } catch { /* never break the game */ }
+      try { voice = recipes[name](voiceContext, { name, requested: now, ordinal, priority, gain: underSpeech ? 0.3 : 1 }); } catch { /* never break the game */ }
       if (!voice) return false;
       // Rejected low-priority effects neither duck the music nor spend cooldowns.
       lastPlayed.set(name, Date.now());
-      if (DUCKS[name]) duckFor(DUCKS[name], voice.source?.buffer?.duration || SAMPLE_BANK[CUE_SAMPLES[name]].frames / SAMPLE_RATE);
+      if (DUCKS[name]) duckFor(DUCKS[name], voice.source?.buffer?.duration || sampleBank[cueSamples[name]].frames / (sampleBank[cueSamples[name]].sampleRate || SAMPLE_RATE));
       if (name === 'correct' || name === 'wrong') speakResponse(name, c, now, ordinal);
       if (source === 'tap') tap.voice = voice;
       return true;
@@ -877,6 +903,8 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
   }
   return {
     play,
+    // Candidate-only callers must not change the ordinary release sound set.
+    get localCandidateAudio() { return !!audition; },
     emit: eventAudio.emit,
     resetScope(scope = '') { eventAudio.reset(scope); stop(); },
     resetIdentity(scope = '') { eventAudio.reset(scope); stop(); haltMusic(); streamedMusic.dispose(); },
@@ -912,7 +940,7 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
       get enabled() { return responseOn; },
     },
     attach, dispose, stop, unlock, synth,
-    names: [...Object.keys(RECIPES), ...Object.keys(ALIASES)],
+    names: [...Object.keys(recipes), ...Object.keys(ALIASES)],
     // Background music: `play(id)` names the track a screen wants (it starts on the next
     // gesture if the browser has not unlocked audio yet and crossfades from the current
     // one), `stop()` fades out, `sting(id, { after })` plays a one-shot over silence.
@@ -943,6 +971,17 @@ export function createSound({ enabled = true, volume = 0.75, music = true, music
       get current() { return streamedMusic.current ?? playing?.id ?? null; },
       get transport() { return streamedMusic.current ? 'stream' : playing ? 'buffer' : null; },
       get position() { return streamedMusic.position; },
+      getStatus() { return streamedMusic.getStatus?.() || null; },
+      subscribeStatus(listener) { return streamedMusic.subscribeStatus?.(listener) || (() => {}); },
+      skipNext() { return !!audition && canPlayMusic() && !ducked && scenePlan()?.gain > 0 && !!scenePlan()?.track?.suiteTracks && streamedMusic.skipNext(); },
+      retry() {
+        if (!audition || !canPlayMusic() || ducked) return false;
+        const planned = scenePlan(true);
+        if (!planned?.track?.suiteTracks || planned.gain <= 0 || streamedMusic.getStatus?.().state !== 'failed') return false;
+        unavailableTracks.delete(planned.track.url); streamedMusic.setTrack(planned.track);
+        if (!streamedMusic.retry()) return false;
+        syncMusic(); return true;
+      },
       get wanted() { return musicWanted; },
       get stingId() { return sting?.id ?? null; },
       names: Object.keys(MUSIC_BANK),

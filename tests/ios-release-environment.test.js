@@ -59,7 +59,9 @@ test('TestFlight choice preserves signing, simulator, audio, storage, archive an
   assert.match(workflow, /environment:[\s\S]*?type: choice[\s\S]*?default: production[\s\S]*?- production\s+- mafia-preview/);
   assert.match(workflow, /IOS_RELEASE_ENVIRONMENT: \$\{\{ inputs.environment \|\| 'production' \}\}/);
   for (const gate of ['signing.py preflight', 'npm test', 'verify_audio_policy.py', 'verify_storage_migration.py', "unittest discover -s scripts/ios -p 'test_*.py'", 'smoke_release.py', 'verify_runtime_dependencies.py', 'signing.py profile', 'codesign --verify --deep --strict', 'signing.py archive', 'MAYDAN_PROVISIONING_PROFILE_SPECIFIER=$IOS_PROFILE_UUID', 'if: ${{ inputs.upload_to_testflight }}']) assert.ok(workflow.includes(gate), `Lost release gate: ${gate}`);
-  assert.match(workflow, /--verify-native ios\/Maydan\/www\/native-config.json/);
+  assert.match(workflow, /--verify-native "\$IOS_PROJECT_DIR\/Maydan\/www\/native-config.json"/);
+  assert.equal(workflow.match(/xcodebuild -project "\$IOS_PROJECT_DIR\/Maydan.xcodeproj"/g)?.length, 2);
+  assert.equal(workflow.match(/verify_rewarded_bundle\.py/g)?.length, 3);
   assert.match(workflow, /--verify-native ios\/build\/Maydan.xcarchive\/Products\/Applications\/Maydan.app\/www\/native-config.json/);
   assert.match(workflow, /cancel-in-progress: false/);
   assert.match(workflow, /default: false/);

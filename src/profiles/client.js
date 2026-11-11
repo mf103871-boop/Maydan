@@ -79,6 +79,11 @@ export class ProfilesClient {
     } finally { if (epoch === this.epoch) this.update({ saving: false }); }
   }
   saveProfile(patch) { return this.mutate('/me', 'PATCH', { ...(this.state.mine ? { revision: this.state.mine.revision } : {}), ...patch }); }
+  async loadProgressionReceipt(eventId, signal) {
+    if (!/^(?:online|local):[a-f0-9-]{36}$/.test(eventId || '')) return null;
+    const { receipt } = await this.call('/me/progression/receipts/' + encodeURIComponent(eventId), { signal });
+    return receipt?.eventId === eventId ? receipt : null;
+  }
   uploadImage(kind, dataUrl, revision = this.state.mine?.revision) { return this.mutate(`/me/images/${encodeURIComponent(kind)}`, 'PUT', { dataUrl, ...(revision === undefined ? {} : { revision }) }); }
   removeImage(kind, revision = this.state.mine?.revision) { return this.mutate(`/me/images/${encodeURIComponent(kind)}`, 'DELETE', revision === undefined ? {} : { revision }); }
   async beginSession(game) {

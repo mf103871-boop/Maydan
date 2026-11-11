@@ -2,6 +2,7 @@
 // into the one self-contained HTML document the platform ships as.
 import { build as esbuildBuild, transform } from 'esbuild';
 import { readFile, writeFile, mkdir, cp, rm, readdir, stat } from 'node:fs/promises';
+import { readFileSync } from 'node:fs';
 import { gzipSync } from 'node:zlib';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
@@ -11,10 +12,13 @@ import { fabrakaMediaManifest } from './fabraka-media.mjs';
 import { SAMPLE_BANK } from '../src/shared/fx/sample-bank.js';
 import { LIVEKIT_VERSION, LIVEKIT_MODULE } from '../src/social/media-version.js';
 import { privateAudioBuild, verifyMaterialized } from './audio/private-preview.mjs';
+import { warmthAudioBuild, validateWarmthManifest, verifyWarmthMaterialized, WARMTH_DIRECTORY } from './audio/warmth-preview.mjs';
 import { CANDIDATE_EFFECTS } from '../src/shared/fx/audio-candidate-catalog.js';
 import { audioCatalogPackagingPlugin } from './audio/catalog-packaging.mjs';
 import { designRuntimePackagingPlugin } from './design-runtime-packaging.mjs';
 import { bankPackagingPlugin } from './lib/bank-packaging.mjs';
+import { presentationCssPlugin } from './presentation-css.mjs';
+import { ticketPolicyEnabled } from '../src/shared/account/gameplay-policy.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const DIST = path.join(ROOT, 'dist');
@@ -92,11 +96,13 @@ export function encodeMediaVersions(media = {}) {
     return row;
   }).join('|');
 }
-export function esbuildOptions({ minify = true, version = '0.0.0', media = {}, assets = 'inline' } = {}) {
+export function esbuildOptions({ minify = true, version = '0.0.0', media = {}, assets = 'inline', outdir = DIST, rewardedPreview = false, rewardedSimulation = false, roomsUrl = process.env.MAYDAN_ROOMS_URL || '' } = {}) {
   const art = assets === 'files' ? 'file' : 'dataurl';
+  const warmth = warmthAudioBuild();
+  const warmthPack = warmth ? validateWarmthManifest(JSON.parse(readFileSync(path.join(ROOT, WARMTH_DIRECTORY, 'manifest.json'), 'utf8'))).runtimePack : null;
   return {
     entryPoints: [path.join(ROOT, 'src/main.jsx')],
-    outfile: path.join(DIST, 'bundle.js'),
+    outfile: path.join(outdir, 'bundle.js'),
     bundle: true,
     minify,
     format: 'iife',
@@ -106,14 +112,22 @@ export function esbuildOptions({ minify = true, version = '0.0.0', media = {}, a
     // New files are JSX; the migrated trivia game is plain React.createElement
     // in .js and parses fine under the jsx loader too.
     loader: { '.js': 'jsx', '.css': 'text', '.json': 'json', '.webp': art, '.png': art, '.woff2': art },
-    ...(minify ? { plugins: [minifiedCssTextPlugin(), audioCatalogPackagingPlugin(), designRuntimePackagingPlugin(), bankPackagingPlugin()] } : {}),
+    plugins: [presentationCssPlugin({ assets, minify }), ...(minify ? [minifiedCssTextPlugin(), audioCatalogPackagingPlugin(), designRuntimePackagingPlugin(), bankPackagingPlugin()] : [])],
     ...(assets === 'files' ? { assetNames: `${BRAND_ASSET_DIR}/[name]-[hash]` } : {}),
     define: {
       'process.env.NODE_ENV': JSON.stringify(minify ? 'production' : 'development'),
       __MAYDAN_VERSION__: JSON.stringify(version),
       __MAYDAN_MEDIA_VERSIONS__: JSON.stringify(encodeMediaVersions(media)),
-      __MAYDAN_ROOMS_URL__: JSON.stringify(process.env.MAYDAN_ROOMS_URL || ''),
+      __MAYDAN_ROOMS_URL__: JSON.stringify(roomsUrl),
+      __MAYDAN_REWARDED_PREVIEW__: JSON.stringify(rewardedPreview === true),
+      __MAYDAN_REWARDED_SIMULATION__: JSON.stringify(rewardedPreview === true && rewardedSimulation === true),
+      __MAYDAN_GAMEPLAY_POLICY__: JSON.stringify(ticketPolicyEnabled(process.env.MAYDAN_GAMEPLAY_ACCESS_POLICY) ? process.env.MAYDAN_GAMEPLAY_ACCESS_POLICY : null),
       __MAYDAN_AUDIO_PREVIEW__: JSON.stringify(privateAudioBuild()),
+      __MAYDAN_WARMTH_PREVIEW__: JSON.stringify(warmth),
+      __MAYDAN_WARMTH_PACK__: JSON.stringify(warmthPack),
+      // The separate loopback audition entry overrides this explicitly. An
+      // environment variable or runtime preference cannot enable it in a build.
+      __MAYDAN_LOCAL_AUDIO_REVIEW__: 'false',
       // Local review tools are excluded from normal web/native builds.
       __MAYDAN_UI_PREVIEW__: JSON.stringify(process.env.MAYDAN_UI_PREVIEW === '1'),
     },
@@ -133,6 +147,7 @@ export function escapeInlineScript(js) {
 // The splash art and the two fonts are needed for the first frame: preloading them
 // lets their download start while the inline script is still being parsed.
 const PRELOAD = [
+  { pattern: /\.css$/, tag: (href) => `<link rel="preload" as="style" href="${href}">` },
   { pattern: /\/(world|game-icons|avatars)-[^/]+\.webp$/, tag: (href) => `<link rel="preload" as="image" href="${href}">` },
   { pattern: /\/(arabic|latin)-[^/]+\.woff2$/, tag: (href) => `<link rel="preload" as="font" type="font/woff2" href="${href}" crossorigin>` },
 ];
@@ -140,7 +155,8 @@ export function preloadLinks(assets = []) {
   return assets.flatMap((href) => PRELOAD.filter((rule) => rule.pattern.test(href)).map((rule) => rule.tag(href))).join('\n');
 }
 
-export async function renderHtml(js, { version, assets = [] }) {
+export async function renderHtml(js, { version, assets = [], sourceCommit = process.env.GITHUB_SHA || '' }) {
+  if (sourceCommit && !/^[a-f0-9]{40}$/.test(sourceCommit)) throw new Error('Build source must be a complete Git commit SHA.');
   let template = await readFile(path.join(ROOT, 'src/index.template.html'), 'utf8');
   // The small boot guard also sits outside esbuild's imported bundle. Compact
   // its whitespace while leaving the separate bundle placeholder untouched.
@@ -156,6 +172,7 @@ export async function renderHtml(js, { version, assets = [] }) {
     loader: 'css', minifyWhitespace: true, legalComments: 'none',
   })).code;
   return template
+    .replace('</head>', () => `${sourceCommit ? `<meta name="maydan-source" content="${sourceCommit}">` : ''}</head>`)
     .replace('<!--PRELOAD-->', () => preloadLinks(assets))
     .replace('<!--TOKENS_CSS-->', () => tokens)
     .replace('<!--BUNDLE_JS-->', () => escapeInlineScript(js))
@@ -176,70 +193,82 @@ export function renderServiceWorker(src, { id = 'dev', fabrakaImages = [], audio
     .replace('/*__AUDIO_CUES__*/[]', JSON.stringify(audioCues))
     .replace('/*__BRAND_ASSETS__*/[]', JSON.stringify(brandAssets));
 }
-export const audioCueAssets = () => [...new Set([
+export const audioCueAssets = () => warmthAudioBuild()
+  ? Object.values(validateWarmthManifest(JSON.parse(readFileSync(path.join(ROOT, WARMTH_DIRECTORY, 'manifest.json'), 'utf8'))).runtimePack.assets).filter(entry => entry.kind === 'effect').map(entry => `./audio-warmth-preview/${entry.file.url}`)
+  : [...new Set([
   ...Object.values(SAMPLE_BANK).map((entry) => `./${entry.url}`),
   ...(privateAudioBuild() ? Object.values(CANDIDATE_EFFECTS).map((entry) => `./${entry.url}`) : []),
 ])];
 
-async function copyPublic({ id = 'dev', fabrakaImages = [], brandAssets = [] } = {}) {
+async function copyPublic({ id = 'dev', fabrakaImages = [], brandAssets = [], outdir = DIST } = {}) {
   const pub = path.join(ROOT, 'public');
   try { await stat(pub); } catch { return; }
   for (const entry of await readdir(pub)) {
-    await cp(path.join(pub, entry), path.join(DIST, entry), { recursive: true,
-      filter: (source) => privateAudioBuild() || !path.relative(pub, source).split(path.sep).join('/').match(/^audio\/candidates(?:\/|$)/) });
+    await cp(path.join(pub, entry), path.join(outdir, entry), { recursive: true,
+      filter: (source) => {
+        const relative = path.relative(pub, source).split(path.sep).join('/');
+        if (/^audio-warmth-preview(?:\/|$)/.test(relative)) return warmthAudioBuild();
+        if (/^audio\/candidates(?:\/|$)/.test(relative)) return privateAudioBuild() && !warmthAudioBuild();
+        return true;
+      } });
   }
-  const sw = path.join(DIST, 'sw.js');
+  const sw = path.join(outdir, 'sw.js');
   try {
     const src = await readFile(sw, 'utf8');
     await writeFile(sw, renderServiceWorker(src, { id, fabrakaImages, audioCues: audioCueAssets(), brandAssets }), 'utf8');
   } catch { /* لا عامل خدمي في public */ }
 }
 
-export async function buildOnce({ minify = true, includeStudio = true } = {}) {
-  if (privateAudioBuild()) await verifyMaterialized(ROOT);
+export async function buildOnce({ minify = true, includeStudio = true, version: releaseVersion, outdir = DIST, rewardedPreview = false, rewardedSimulation = false, roomsUrl } = {}) {
+  if (warmthAudioBuild()) await verifyWarmthMaterialized(ROOT);
+  else if (privateAudioBuild()) await verifyMaterialized(ROOT);
   const pkg = await readPkg();
+  const version = releaseVersion ?? pkg.version;
+  if (!/^\d+\.\d+(?:\.\d+)?$/.test(version)) throw new Error('Explicit application version is invalid.');
   const versions = await mediaVersions(ROOT);
   const fabrakaImages = await fabrakaMediaManifest(ROOT, versions);
   let result;
   try {
-    result = await esbuildBuild(esbuildOptions({ minify, version: pkg.version, media: versions, assets: 'files' }));
+    result = await esbuildBuild(esbuildOptions({ minify, version, media: versions, assets: 'files', outdir, rewardedPreview, rewardedSimulation, roomsUrl }));
   } catch (error) {
     const messages = (error.errors || []).map((e) => `${e.location ? `${e.location.file}:${e.location.line}:${e.location.column} ` : ''}${e.text}`);
     throw new Error(messages.length ? messages.join('\n') : error.message);
   }
   const js = result.outputFiles.find((f) => f.path.endsWith('.js')).text;
   const art = result.outputFiles.filter((f) => !f.path.endsWith('.js'));
-  const brandAssets = art.map((f) => `./${path.relative(DIST, f.path).split(path.sep).join('/')}`).sort();
+  const brandAssets = art.map((f) => `./${path.relative(outdir, f.path).split(path.sep).join('/')}`).sort();
   if (!brandAssets.every((url) => url.startsWith(`./${BRAND_ASSET_DIR}/`))) throw new Error(`Unexpected bundle output: ${brandAssets.join(', ')}`);
-  const html = await renderHtml(js, { version: pkg.version, assets: brandAssets });
-  await rm(DIST, { recursive: true, force: true });
-  await mkdir(DIST, { recursive: true });
+  const html = await renderHtml(js, { version, assets: brandAssets });
+  // An explicit destination is owned by its caller. Leave its other files
+  // alone. The standard build retains its clean dist replacement.
+  if (outdir === DIST) await rm(DIST, { recursive: true, force: true });
+  await mkdir(outdir, { recursive: true });
   for (const file of art) {
     await mkdir(path.dirname(file.path), { recursive: true });
     await writeFile(file.path, file.contents);
   }
-  await copyPublic({ id: buildId(pkg.version, html), fabrakaImages, brandAssets });
+  await copyPublic({ id: buildId(version, html), fabrakaImages, brandAssets, outdir });
   if (pkg.dependencies['livekit-client'] !== LIVEKIT_VERSION) throw new Error('Update the versioned LiveKit module filename with its pinned dependency.');
   await esbuildBuild({ stdin: { contents: "export { Room, RoomEvent, Track } from 'livekit-client';", resolveDir: ROOT, sourcefile: 'lamma-web-audio.js' },
-    outfile: path.join(DIST, LIVEKIT_MODULE), bundle: true, format: 'esm', target: ['es2020', 'safari14'], minify: true,
+    outfile: path.join(outdir, LIVEKIT_MODULE), bundle: true, format: 'esm', target: ['es2020', 'safari14'], minify: true,
     define: { 'process.env.NODE_ENV': '"production"' }, legalComments: 'eof', logLevel: 'silent' });
   // الوسائط تُفحص قبل النسخ: سؤال يشير إلى ملف غير موجود يوقف البناء.
   const media = await checkMedia(ROOT);
   if (media.errors.length) {
     throw new Error(`وسائط ناقصة (${media.errors.length}):\n  ${media.errors.slice(0, 12).join('\n  ')}`);
   }
-  const copied = await copyMedia(ROOT, DIST);
-  const out = path.join(DIST, 'index.html');
+  const copied = await copyMedia(ROOT, outdir);
+  const out = path.join(outdir, 'index.html');
   await writeFile(out, html, 'utf8');
   if (includeStudio) {
     const { buildStudio } = await import('./studio-build.mjs');
     const { buildDesignPreview } = await import('./design-preview-build.mjs');
-    await buildStudio({ outdir: path.join(DIST, 'studio'), minify });
-    await buildDesignPreview({ outdir: DIST, minify, version: pkg.version, media: versions });
+    await buildStudio({ outdir: path.join(outdir, 'studio'), minify });
+    await buildDesignPreview({ outdir, minify, version, media: versions });
   }
   const bytes = Buffer.byteLength(html, 'utf8');
   const gzip = gzipSync(Buffer.from(html, 'utf8')).length;
-  return { out, bytes, gzip, version: pkg.version, buildId: buildId(pkg.version, html), warnings: result.warnings, brandAssets, media: { packs: media.packs, files: copied.count, bytes: copied.total } };
+  return { out, bytes, gzip, version, buildId: buildId(version, html), warnings: result.warnings, brandAssets, media: { packs: media.packs, files: copied.count, bytes: copied.total } };
 }
 
 export function fmtKB(n) {

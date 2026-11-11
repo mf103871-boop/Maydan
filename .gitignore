@@ -8,6 +8,14 @@ release/
 # Native build outputs and signing material stay outside source control.
 ios/Maydan/www/
 ios/build/
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+*.aab
+*.apk
+*.jks
+*.keystore
 **/xcuserdata/
 *.ipa
 *.xcarchive/
@@ -33,6 +41,7 @@ src/data/categories/demo[a-f].json
 
 # Licensed candidates are materialized privately in a preview runner only.
 public/audio/candidates/
+public/audio-warmth-preview/
 
 # Reviewed, redacted verification logs belong with the release review.
 !docs/reviews/**/evidence/*.log

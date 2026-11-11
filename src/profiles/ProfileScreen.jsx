@@ -1,6 +1,12 @@
-import { ProfileAvatar as SharedProfileAvatar } from './ProfileAvatar.jsx';
-import { getCosmetic } from '../plus/catalog.js';
-import plusCss from '../plus/plus.css';
+import { ProfileAvatar as SharedProfileAvatar, canPreviewLivingFrames } from './ProfileAvatar.jsx';
+import { getCosmetic, PLUS_ITEMS } from '../plus/catalog.js';
+import plusCss from '../plus/plus.css?sheet';
+import identityCss from './identity.css?sheet';
+import skinCss from './profile-skin.css?sheet';
+import { PresentationStyles } from '../shared/ui/PresentationStyles.jsx';
+import { profileSkin, profileSkinStyle } from './profile-skin.js';
+import { PlayerName } from './PlayerIdentity.jsx';
+import { cosmeticPosterSources } from './identity-assets.js';
 import React, { useEffect, useRef, useState } from 'react';
 import { Button, Modal } from '../shared/ui/components.jsx';
 import { useAccount } from '../shared/account/context.js';
@@ -10,9 +16,11 @@ import { navigate, back } from '../platform/router.js';
 import { useProfiles } from './ProfileProvider.jsx';
 import { PROFILE_THEMES, AVATAR_PRESETS, TITLES, ACHIEVEMENTS, profileTheme, avatarPreset, titleLabel } from './catalog.js';
 import { decodeProfileImage, uploadCroppedProfileImage, cropRect } from './client-images.js';
-import profileCss from './profile.css';
+import profileCss from './profile.css?sheet';
 import { ImageReviewStatus } from './ImageReviewStatus.jsx';
 import { MafiaProgressPanel } from './mafia-panel.jsx';
+import { AccountProgressionProfile } from './progression/AccountProgressionProfile.jsx';
+import { useAcceptedFeedback } from '../shared/fx/accepted-feedback.js';
 
 const SHARE_ORIGIN = 'https://maydan-game.mf103871.workers.dev';
 const EMPTY = [];
@@ -67,7 +75,7 @@ export function ProfileAvatar({ profile, className = '' }) {
 function Cover({ profile, label = true }) {
   const [failed, setFailed] = useState([]);
   const cosmetic = getCosmetic(profile.cosmetics?.coverId, { kind: 'cover' });
-  const url = [cosmetic?.assetUrl, profile.coverUrl].find(value => value && !failed.includes(value));
+  const url = [...cosmeticPosterSources(cosmetic), profile.coverUrl].find(value => value && !failed.includes(value));
   return <div data-design-id="cover" className="profile-cover"><div className="profile-cover-art" /><span className="profile-cover-spark"><Icon name="spark" size={40} /></span>{url && <img src={url} alt="" onError={() => setFailed(previous => [...previous, url].slice(-8))} />}{label && !url && <span className="profile-cover-label">لك مكان في الميدان</span>}</div>;
 }
 export function Achievements({ profile, owner }) {
@@ -84,7 +92,8 @@ export function ProfileStats({ profile }) {
   const stats = profile.stats || {};
   return <section data-design-id="stats" className="profile-section profile-stats" aria-label="إحصاءات اللعب"><h2>الرحلة بالأرقام</h2>{[['localSessions', 'جلسات مستضافة', 'home'], ['onlineMatches', 'مباريات أونلاين', 'globe'], ['onlineWins', 'انتصارات أونلاين', 'trophy'], ['distinctGames', 'ألعاب مختلفة', 'compass']].map(([key, label, icon]) => <div data-design-id="stat" className="profile-stat-row" key={key}><span className="profile-stat-icon"><Icon name={icon} /></span><span className="profile-stat-copy">{label}</span><strong>{count(stats[key])}</strong></div>)}<p className="profile-stat-note">تُحتسب الجلسات والمباريات المكتملة منذ إطلاق الملفات الشخصية. تشمل الانتصارات الفوز منفردًا أو مع فريقك حسب قواعد اللعبة.</p></section>;
 }
-export function CropDialog({ crop, profiles, revision, onClose, onDone }) {
+export function CropDialog({ crop, profiles, revision, ownerId = profiles.mine?.id, onClose, onDone }) {
+  const accepted = useAcceptedFeedback(ownerId);
   const [zoom, setZoom] = useState(1);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [width, setWidth] = useState(320);
@@ -107,14 +116,15 @@ export function CropDialog({ crop, profiles, revision, onClose, onDone }) {
   const travelY = (image.height - rectangle.height) * scale / 2;
   const apply = async () => {
     if (busy) return;
+    const feedback = accepted.begin();
     setBusy(true); setError('');
     try {
-      const updated = await uploadCroppedProfileImage(image, { kind, zoom, offsetX: offset.x, offsetY: offset.y }, dataUrl => profiles.uploadImage(kind, dataUrl, revision), { isCurrent: () => alive.current });
-      if (alive.current) onDone(updated);
+      const updated = await uploadCroppedProfileImage(image, { kind, zoom, offsetX: offset.x, offsetY: offset.y }, dataUrl => profiles.uploadImage(kind, dataUrl, revision), { isCurrent: () => alive.current && feedback.current() });
+      if (feedback.current() && alive.current) { if (ownerId && updated?.id === ownerId) feedback.confirm(); onDone(updated); }
     }
-    catch (err) { if (alive.current) { setError(errorText(err)); setBusy(false); } }
+    catch (err) { if (feedback.current() && alive.current) { feedback.error(err); setError(errorText(err)); setBusy(false); } }
   };
-  return <Modal data-design-screen="profile.crop" title={kind === 'avatar' ? 'ضبط الصورة الشخصية' : 'ضبط صورة الغلاف'} className="profile-dialog profile-crop-dialog" onClose={busy ? null : onClose} footer={<div className="profile-edit-footer"><Button data-design-id="cancel" variant="ghost" onClick={onClose} disabled={busy}>إلغاء</Button><Button variant="primary" data-design-id="save" data-design-required="true" onClick={apply} loading={busy}>إرسال للمراجعة</Button></div>}><p className="profile-crop-hint">اسحب الصورة داخل الإطار، أو حرّكها بمفاتيح الأسهم. استخدم شريط التكبير لضبط القص.</p><div ref={stage} data-design-id="crop" className={'profile-crop-stage' + (kind === 'cover' ? ' is-cover' : '')} tabIndex={busy ? -1 : 0} role="group" aria-label="إطار قص الصورة؛ استخدم الأسهم لتحريكها" onKeyDown={event => {
+  return <Modal data-design-screen="profile.crop" title={kind === 'avatar' ? 'ضبط الصورة الشخصية' : 'ضبط صورة الغلاف'} className="profile-dialog profile-crop-dialog" onClose={busy ? null : onClose} footer={<div className="profile-edit-footer"><Button data-design-id="cancel" variant="ghost" onClick={onClose} disabled={busy}>إلغاء</Button><Button variant="primary" data-sound="none" data-design-id="save" data-design-required="true" onClick={apply} loading={busy}>إرسال للمراجعة</Button></div>}><p className="profile-crop-hint">اسحب الصورة داخل الإطار، أو حرّكها بمفاتيح الأسهم. استخدم شريط التكبير لضبط القص.</p><div ref={stage} data-design-id="crop" className={'profile-crop-stage' + (kind === 'cover' ? ' is-cover' : '')} tabIndex={busy ? -1 : 0} role="group" aria-label="إطار قص الصورة؛ استخدم الأسهم لتحريكها" onKeyDown={event => {
     const moves = { ArrowLeft: [.06, 0], ArrowRight: [-.06, 0], ArrowUp: [0, .06], ArrowDown: [0, -.06] }; const move = moves[event.key];
     if (move && !busy) { event.preventDefault(); setOffset(value => ({ x: clamp(value.x + move[0]), y: clamp(value.y + move[1]) })); }
   }} onPointerDown={event => { if (busy) return; event.preventDefault(); event.currentTarget.setPointerCapture(event.pointerId); drag.current = { x: event.clientX, y: event.clientY, offset }; }} onPointerMove={event => {
@@ -123,6 +133,7 @@ export function CropDialog({ crop, profiles, revision, onClose, onDone }) {
   }} onPointerUp={() => { drag.current = null; }} onPointerCancel={() => { drag.current = null; }} onLostPointerCapture={() => { drag.current = null; }}><img src={image.url} alt="معاينة موضع الصورة قبل الحفظ" draggable={false} style={{ width: image.width * scale, height: image.height * scale, left: -rectangle.x * scale, top: -rectangle.y * scale }} /></div><label data-design-id="zoom" className="profile-zoom">التكبير<input data-design-id="zoom-input" type="range" min="1" max="3" step="0.01" value={zoom} disabled={busy} onChange={event => setZoom(Number(event.target.value))} aria-label="تكبير الصورة" /><span>{zoom.toFixed(1)}×</span></label>{busy && <p role="status" className="profile-crop-hint">جارٍ إرسال الصورة للمراجعة…</p>}{error && <Notice error>{error}</Notice>}</Modal>;
 }
 export function ProfileEditor({ profile, profiles, onClose, onSaved }) {
+  const accepted = useAcceptedFeedback(profile.id);
   const [draft, setDraft] = useState(() => ({ name: profile.name || '', bio: profile.bio || '', theme: profile.theme, avatarPreset: profile.avatarPreset, selectedTitle: profile.earnedTitles?.includes(profile.selectedTitle) ? profile.selectedTitle : '', featuredBadges: (profile.featuredBadges || []).filter(id => profile.earnedBadges?.includes(id)).slice(0, 3) }));
   const [busy, setBusy] = useState('');
   const [avatarChosen, setAvatarChosen] = useState(false);
@@ -153,31 +164,37 @@ export function ProfileEditor({ profile, profiles, onClose, onSaved }) {
     finally { if (alive.current) setBusy(''); }
   };
   const remove = async target => {
+    const feedback = accepted.begin();
     setBusy(target); setError(''); setNotice('');
-    try { const updated = await profiles.removeImage(target, editRevision.current); if (Number.isInteger(updated?.revision)) editRevision.current = updated.revision; setNotice(target === 'avatar' ? 'أُزيلت الصورة الشخصية.' : 'أُزيلت صورة الغلاف.'); return true; }
-    catch (err) { setError(errorText(err)); return false; }
-    finally { setBusy(''); }
+    try { const updated = await profiles.removeImage(target, editRevision.current); if (!feedback.current()) return false; if (Number.isInteger(updated?.revision)) editRevision.current = updated.revision; if (updated?.id === profile.id) feedback.confirm(); setNotice(target === 'avatar' ? 'أُزيلت الصورة الشخصية.' : 'أُزيلت صورة الغلاف.'); return true; }
+    catch (err) { if (feedback.current()) { feedback.error(err); setError(errorText(err)); } return false; }
+    finally { if (feedback.current()) setBusy(''); }
   };
   const chooseAvatar = id => { if (saving) return; setAvatarChosen(true); patch({ avatarPreset: id }); };
   const save = async () => {
     if (saving) return;
     const name = draft.name.trim();
     if (codepoints(name).length < 2 || codepoints(name).length > 32) { setError('اكتب اسمًا من حرفين إلى 32 حرفًا.'); return; }
+    const feedback = accepted.begin();
     setBusy('save'); setError('');
-    try { await profiles.saveProfile(profileEditPatch(draft, { avatarChosen, revision: editRevision.current })); onSaved(); }
-    catch (err) { setError(errorText(err)); setBusy(''); }
+    try { const updated = await profiles.saveProfile(profileEditPatch(draft, { avatarChosen, revision: editRevision.current })); if (!feedback.current()) return; if (updated?.id === profile.id) feedback.confirm(); onSaved(); }
+    catch (err) { if (feedback.current()) { feedback.error(err); setError(errorText(err)); setBusy(''); } }
   };
-  return <><Modal data-design-screen="profile.editor" title="ملفك، على طريقتك" className="profile-dialog profile-editor" onClose={saving ? null : close} footer={<div className="profile-edit-footer"><Button variant="ghost" disabled={saving} data-design-id="cancel" data-design-required="true" onClick={close}>إلغاء</Button><Button variant="primary" loading={busy === 'save'} disabled={saving} data-design-id="save" data-design-required="true" onClick={save}>حفظ التغييرات</Button></div>}><div style={themeStyle(draft.theme)}><p className="profile-dialog-intro">عرّف أصحابك عليك، واختر اللمسة التي تشبهك.</p><div ref={feedback}>{error && <Notice error>{error}</Notice>}{notice && <Notice>{notice}</Notice>}</div><input ref={file} type="file" accept="image/jpeg,image/png,image/webp" hidden onChange={readFile} />
+  return <><Modal data-design-screen="profile.editor" title="ملفك، على طريقتك" className="profile-dialog profile-editor" onClose={saving ? null : close} footer={<div className="profile-edit-footer"><Button variant="ghost" disabled={saving} data-design-id="cancel" data-design-required="true" onClick={close}>إلغاء</Button><Button variant="primary" loading={busy === 'save'} disabled={saving} data-sound="none" data-design-id="save" data-design-required="true" onClick={save}>حفظ التغييرات</Button></div>}><div style={themeStyle(draft.theme)}><p className="profile-dialog-intro">عرّف أصحابك عليك، واختر اللمسة التي تشبهك.</p><div ref={feedback}>{error && <Notice error>{error}</Notice>}{notice && <Notice>{notice}</Notice>}</div><input ref={file} type="file" accept="image/jpeg,image/png,image/webp" hidden onChange={readFile} />
+
+    <div className="profile-edit-images">
+    <section data-design-id="edit-section" className="profile-edit-section"><h3>الصورة الشخصية</h3><div className="profile-image-editor-row"><ProfileAvatar profile={{ ...profile, avatarUrl: avatarChosen ? null : profile.avatarUrl, avatarPreset: draft.avatarPreset }} /><div className="profile-image-actions"><Button variant="secondary" icon={<Icon name="camera" size={17} />} disabled={saving} data-design-id="avatar-upload" onClick={() => pickFile('avatar')}>{profile.avatarUrl ? 'تغيير الصورة' : 'رفع صورة'}</Button>{(profile.avatarUrl || profile.imageReviews?.avatar) && <Button variant="ghost" className="is-danger" disabled={saving} data-sound="none" data-design-id="avatar-remove" onClick={() => remove('avatar')}>إزالة الصورة وطلب المراجعة</Button>}</div></div><ImageReviewStatus review={profile.imageReviews?.avatar} kind="avatar" /></section>
+    <section data-design-id="edit-section" className="profile-edit-section"><h3>الغلاف</h3><div className="profile-image-editor-row"><div className="profile-edit-cover">{profile.coverUrl ? <img src={profile.coverUrl} alt="الغلاف الحالي" /> : <div className="profile-cover-art" />}</div><div className="profile-image-actions"><Button variant="secondary" disabled={saving} data-design-id="cover-upload" onClick={() => pickFile('cover')}>{profile.coverUrl ? 'تغيير الغلاف' : 'رفع غلاف'}</Button>{(profile.coverUrl || profile.imageReviews?.cover) && <Button variant="ghost" className="is-danger" disabled={saving} data-sound="none" data-design-id="cover-remove" onClick={() => remove('cover')}>إزالة الغلاف وطلب المراجعة</Button>}</div></div><ImageReviewStatus review={profile.imageReviews?.cover} kind="cover" /><p>تُرسل الصور إلى مراجعة بشرية قبل نشرها. تبقى الصورة المعتمدة الحالية حتى اعتماد البديلة. حفظ الاسم والنبذة من زر «حفظ التغييرات».</p>{busy === 'decode' && <p role="status">جارٍ تجهيز الصورة…</p>}</section>
+    </div>
     <section data-design-id="edit-section" className="profile-edit-section"><label data-design-id="field" className="profile-field">الاسم<input data-design-id="name-input" aria-label="الاسم" autoFocus value={draft.name} maxLength={64} autoComplete="nickname" disabled={saving} onChange={event => patch({ name: codepoints(event.target.value).slice(0, 32).join('') })} /><small dir="ltr">{count(codepoints(draft.name).length)} / {count(32)}</small></label><label data-design-id="field" className="profile-field">نبذة عنك<textarea data-design-id="bio-input" aria-label="نبذة عنك" rows={3} value={draft.bio} maxLength={320} disabled={saving} placeholder="الألعاب التي تحبها، أو كلمة تعرّف عنك…" onChange={event => patch({ bio: codepoints(event.target.value).slice(0, 160).join('') })} /><small dir="ltr">{count(codepoints(draft.bio).length)} / {count(160)}</small></label></section>
-    <section data-design-id="edit-section" className="profile-edit-section"><h3>الصورة الشخصية</h3><div className="profile-image-editor-row"><ProfileAvatar profile={{ ...profile, avatarUrl: avatarChosen ? null : profile.avatarUrl, avatarPreset: draft.avatarPreset }} /><div className="profile-image-actions"><Button variant="secondary" icon={<Icon name="camera" size={17} />} disabled={saving} data-design-id="avatar-upload" onClick={() => pickFile('avatar')}>{profile.avatarUrl ? 'تغيير الصورة' : 'رفع صورة'}</Button>{(profile.avatarUrl || profile.imageReviews?.avatar) && <Button variant="ghost" className="is-danger" disabled={saving} data-design-id="avatar-remove" onClick={() => remove('avatar')}>إزالة الصورة وطلب المراجعة</Button>}</div></div><ImageReviewStatus review={profile.imageReviews?.avatar} kind="avatar" /><p>أو اختر شخصية من الميدان:</p><div className="profile-avatar-grid">{AVATAR_PRESETS.map(avatar => <button type="button" data-design-id="avatar-choice" className="profile-avatar-choice" key={avatar.id} aria-label={avatar.label} aria-pressed={(!profile.avatarUrl || avatarChosen) && draft.avatarPreset === avatar.id} disabled={saving} onClick={() => chooseAvatar(avatar.id)}><span aria-hidden="true">{avatar.emoji}</span>{(!profile.avatarUrl || avatarChosen) && draft.avatarPreset === avatar.id && <Icon name="check" className="profile-avatar-check" />}</button>)}</div></section>
-    <section data-design-id="edit-section" className="profile-edit-section"><h3>الغلاف</h3><div className="profile-image-editor-row"><div className="profile-edit-cover">{profile.coverUrl ? <img src={profile.coverUrl} alt="الغلاف الحالي" /> : <div className="profile-cover-art" />}</div><div className="profile-image-actions"><Button variant="secondary" disabled={saving} data-design-id="cover-upload" onClick={() => pickFile('cover')}>{profile.coverUrl ? 'تغيير الغلاف' : 'رفع غلاف'}</Button>{(profile.coverUrl || profile.imageReviews?.cover) && <Button variant="ghost" className="is-danger" disabled={saving} data-design-id="cover-remove" onClick={() => remove('cover')}>إزالة الغلاف وطلب المراجعة</Button>}</div></div><ImageReviewStatus review={profile.imageReviews?.cover} kind="cover" /><p>تُرسل الصور إلى مراجعة بشرية قبل نشرها. تبقى الصورة المعتمدة الحالية حتى اعتماد البديلة. حفظ الاسم والنبذة من زر «حفظ التغييرات».</p>{busy === 'decode' && <p role="status">جارٍ تجهيز الصورة…</p>}</section>
+    <section data-design-id="edit-section" className="profile-edit-section"><p>أو اختر شخصية من الميدان:</p><div className="profile-avatar-grid">{AVATAR_PRESETS.map(avatar => <button type="button" data-design-id="avatar-choice" className="profile-avatar-choice" key={avatar.id} aria-label={avatar.label} aria-pressed={(!profile.avatarUrl || avatarChosen) && draft.avatarPreset === avatar.id} disabled={saving} onClick={() => chooseAvatar(avatar.id)}><span aria-hidden="true">{avatar.emoji}</span>{(!profile.avatarUrl || avatarChosen) && draft.avatarPreset === avatar.id && <Icon name="check" className="profile-avatar-check" />}</button>)}</div></section>
     <section data-design-id="edit-section" className="profile-edit-section"><h3>ألوان ملفك</h3><div className="profile-theme-grid">{PROFILE_THEMES.map(theme => <button type="button" key={theme.id} data-design-id="theme-choice" className="profile-theme-choice" aria-pressed={draft.theme === theme.id} disabled={saving} onClick={() => patch({ theme: theme.id })}><span className="profile-theme-swatch" style={{ background: theme.gradient }}>{draft.theme === theme.id && <Icon name="check" />}</span>{theme.label}</button>)}</div></section>
     <section data-design-id="edit-section" className="profile-edit-section"><label data-design-id="field" className="profile-field">لقبك<select data-design-id="title-select" aria-label="لقبك" value={draft.selectedTitle} disabled={saving} onChange={event => patch({ selectedTitle: event.target.value })}><option value="">بدون لقب</option>{TITLES.map(title => <option key={title.id} value={title.id} disabled={!earnedTitles.has(title.id)}>{title.label}{earnedTitles.has(title.id) ? '' : ' — لم يُفتح بعد'}</option>)}</select></label><p>تفتح الألقاب بإكمال الإنجازات.</p></section>
     <section data-design-id="edit-section" className="profile-edit-section"><h3>شاراتك البارزة · <bdi dir="ltr">{count(draft.featuredBadges.length)} / {count(3)}</bdi></h3><div className="profile-badge-picker">{ACHIEVEMENTS.map(badge => {
       const selected = draft.featuredBadges.includes(badge.id); const earned = earnedBadges.has(badge.id);
       return <button type="button" key={badge.id} data-design-id="badge-choice" className={'profile-badge-choice' + (!earned ? ' is-locked' : '')} aria-pressed={selected} aria-label={badge.label + (earned ? '' : '، لم تُفتح بعد')} disabled={saving || !earned || (!selected && draft.featuredBadges.length >= 3)} onClick={() => patch({ featuredBadges: selected ? draft.featuredBadges.filter(id => id !== badge.id) : [...draft.featuredBadges, badge.id] })}><Icon name={badge.icon} /><span>{badge.label}</span><Icon name={earned ? selected ? 'check' : 'plus' : 'lock'} size={14} /></button>;
     })}</div><p>اختر حتى ثلاث شارات مكتسبة لتظهر بجانب هويتك.</p></section></div></Modal>
-    {crop && <CropDialog crop={crop} profiles={profiles} revision={editRevision.current} onClose={() => setCrop(null)} onDone={updated => { if (Number.isInteger(updated?.revision)) editRevision.current = updated.revision; if (crop.kind === 'avatar') setAvatarChosen(false); setCrop(null); setNotice('أُرسلت الصورة للمراجعة. ستظهر للآخرين بعد اعتمادها.'); }} />}
+    {crop && <CropDialog crop={crop} profiles={profiles} ownerId={profile.id} revision={editRevision.current} onClose={() => setCrop(null)} onDone={updated => { if (Number.isInteger(updated?.revision)) editRevision.current = updated.revision; if (crop.kind === 'avatar') setAvatarChosen(false); setCrop(null); setNotice('أُرسلت الصورة للمراجعة. ستظهر للآخرين بعد اعتمادها.'); }} />}
     {discard && <Modal title="تجاهل التغييرات؟" className="profile-dialog" onClose={() => setDiscard(false)} footer={<div className="profile-edit-footer"><Button data-design-id="cancel" variant="ghost" onClick={() => setDiscard(false)}>متابعة التعديل</Button><Button data-design-id="confirm" variant="danger" onClick={onClose}>تجاهل التغييرات</Button></div>}><p className="profile-dialog-intro">لن تُحفظ تعديلات الاسم والنبذة والاختيارات. الصور التي حفظتها تبقى كما هي.</p></Modal>}
   </>;
 }
@@ -189,12 +206,27 @@ export function SafetyDialog({ action, profile, social, onClose, onDone }) {
     try { if (report) await social.reportUser(profile.id, { reason: [reason, details.trim()].filter(Boolean).join(': ') }); else await social.blockUser(profile.id); onDone(); }
     catch (err) { setError(errorText(err)); setBusy(false); }
   };
-  return <Modal data-design-screen="profile.safety" title={report ? 'الإبلاغ عن الحساب' : 'حظر ' + nameOf(profile) + '؟'} onClose={busy ? null : onClose} className="profile-dialog" footer={<div className="profile-edit-footer"><Button data-design-id="cancel" variant="ghost" disabled={busy} onClick={onClose}>إلغاء</Button><Button data-design-id="submit" variant={report ? 'primary' : 'danger'} loading={busy} disabled={busy || social.offline || (report && !reason)} onClick={submit}>{report ? 'إرسال البلاغ' : 'حظر'}</Button></div>}><p className="profile-dialog-intro">{report ? 'لن نعرض بلاغك لهذا الشخص.' : 'لن يستطيع إرسال طلبات صداقة أو رسائل إليك، وسيُزال من أصدقائك.'}</p>{report && <><label data-design-id="field" className="profile-field">سبب الإبلاغ<select data-design-id="report-reason" aria-label="سبب الإبلاغ" value={reason} onChange={event => setReason(event.target.value)} disabled={busy}><option value="">اختر السبب</option>{['محتوى غير مناسب', 'انتحال شخصية', 'إساءة أو تنمر', 'رسائل مزعجة', 'سبب آخر'].map(item => <option key={item}>{item}</option>)}</select></label><label data-design-id="field" className="profile-field">تفاصيل إضافية (اختياري)<textarea data-design-id="report-details" maxLength={800} rows={3} value={details} disabled={busy} onChange={event => setDetails(event.target.value)} /></label></>}{error && <Notice error>{error}</Notice>}</Modal>;
+  return <Modal data-design-screen="profile.safety" placement="bottom" title={report ? 'الإبلاغ عن الحساب' : 'حظر ' + nameOf(profile) + '؟'} onClose={busy ? null : onClose} className="profile-dialog" footer={<div className="profile-edit-footer"><Button data-design-id="cancel" variant="ghost" disabled={busy} onClick={onClose}>إلغاء</Button><Button data-design-id="submit" variant={report ? 'primary' : 'danger'} loading={busy} disabled={busy || social.offline || (report && !reason)} onClick={submit}>{report ? 'إرسال البلاغ' : 'حظر'}</Button></div>}><p className="profile-dialog-intro">{report ? 'لن نعرض بلاغك لهذا الشخص.' : 'لن يستطيع إرسال طلبات صداقة أو رسائل إليك، وسيُزال من أصدقائك.'}</p>{report && <><label data-design-id="field" className="profile-field">سبب الإبلاغ<select data-design-id="report-reason" aria-label="سبب الإبلاغ" value={reason} onChange={event => setReason(event.target.value)} disabled={busy}><option value="">اختر السبب</option>{['محتوى غير مناسب', 'انتحال شخصية', 'إساءة أو تنمر', 'رسائل مزعجة', 'سبب آخر'].map(item => <option key={item}>{item}</option>)}</select></label><label data-design-id="field" className="profile-field">تفاصيل إضافية (اختياري)<textarea data-design-id="report-details" maxLength={800} rows={3} value={details} disabled={busy} onChange={event => setDetails(event.target.value)} /></label></>}{error && <Notice error>{error}</Notice>}</Modal>;
+}
+export function ProfileIdentityLibrary({ profile, onNavigate = navigate }) {
+  const equipped = ['profileSkinId','frameId'].map(key => getCosmetic(profile?.cosmetics?.[key])).filter(Boolean);
+  return <section data-design-id="profile-library" className="profile-identity-library" aria-label="بروفايلي وإطار صورتي">
+    <div className="profile-identity-library-head"><div><h2>بروفايلك وإطارك</h2><p>بلس يخصّص شكل ملفك وإطار صورتك. صورتك الشخصية ومقتنياتك السابقة تبقى محفوظة.</p></div></div>
+    {equipped.length > 0 && <div className="profile-equipped-pieces" aria-label="مظهري المجهّز">{equipped.map(item => <span key={item.id}>{item.label}</span>)}</div>}
+    <div className="profile-identity-links"><Button data-design-id="plus-store" size="sm" onClick={() => onNavigate('/store?tab=library')}>مقتنياتي</Button><Button data-design-id="profile-store" size="sm" variant="ghost" onClick={() => onNavigate('/store')}>المظهر والإطارات</Button></div>
+    <p>الصور والثيمات الأساسية مجانية دائمًا. تفاصيل كل قطعة توضّح مدة إتاحتها.</p>
+  </section>;
 }
 export function ProfileView({ account, profiles, social, profileId, onNavigate = navigate, onBack }) {
+  const accepted = useAcceptedFeedback(`${account.user?.id || 'guest'}:${profileId || 'me'}`);
   const key = !profileId || profileId === account.user?.id ? 'me' : profileId;
   const profile = key === 'me' ? profiles.mine : profiles.profiles?.[key];
   const owner = Boolean(account.signedIn && profile && (profile.relationship === 'self' || profile.id === account.user?.id));
+  const [detailsTab, setDetailsTab] = useState('achievements');
+  const [visitorPreviewId, setVisitorPreviewId] = useState(null);
+  const visitorPreview = owner && visitorPreviewId === profile.id;
+  const [framePreview, setFramePreview] = useState(null);
+  const canTryFrames = owner && profile.id === account.user?.id && !visitorPreview && canPreviewLivingFrames();
   const [editing, setEditing] = useState(false); const [signIn, setSignIn] = useState(false); const [menu, setMenu] = useState(false); const [action, setAction] = useState('');
   const [busy, setBusy] = useState(false); const [notice, setNotice] = useState(null); const [loadError, setLoadError] = useState(''); const [shareLink, setShareLink] = useState('');
   const notify = (text, error = false) => setNotice({ text, error });
@@ -202,11 +234,12 @@ export function ProfileView({ account, profiles, social, profileId, onNavigate =
   const loadProfile = profiles.loadProfile;
   useEffect(() => { if (account.ready && account.signedIn && profiles.ready) { let active = true; setLoadError(''); Promise.resolve(loadProfile(key)).catch(err => { if (active) setLoadError(errorText(err)); }); return () => { active = false; }; } }, [account.ready, account.signedIn, profiles.ready, key, loadProfile]);
   const error = Object.hasOwn(profiles.errors || {}, key) ? profiles.errors[key] : loadError;
-  const copyCode = async () => { try { if (!navigator.clipboard?.writeText) throw new Error('يمكنك تحديد الرمز ونسخه يدويًا.'); await navigator.clipboard.writeText(profile.code); notify(owner ? 'نُسخ رمزك في ميدان.' : 'نُسخ رمز الصديق.'); } catch (err) { notify(errorText(err), true); } };
+  const copyCode = async () => { const feedback = accepted.begin(); try { if (!navigator.clipboard?.writeText) throw new Error('يمكنك تحديد الرمز ونسخه يدويًا.'); await navigator.clipboard.writeText(profile.code); if (feedback.current()) { feedback.confirm(); notify(owner ? 'نُسخ رمزك في ميدان.' : 'نُسخ رمز الصديق.'); } } catch (err) { if (feedback.current()) { feedback.error(err); notify(errorText(err), true); } } };
   const share = async () => {
+    const feedback = accepted.begin();
     const url = profileShareUrl(profile.id);
-    try { if (navigator.share) await navigator.share({ title: nameOf(profile) + ' في ميدان', url }); else if (navigator.clipboard?.writeText) { await navigator.clipboard.writeText(url); notify('نُسخ رابط الملف الشخصي.'); } else setShareLink(url); }
-    catch (err) { if (err?.name !== 'AbortError') setShareLink(url); }
+    try { if (navigator.share) { await navigator.share({ title: nameOf(profile) + ' في ميدان', url }); feedback.confirm(); } else if (navigator.clipboard?.writeText) { await navigator.clipboard.writeText(url); if (feedback.current()) { feedback.confirm(); notify('نُسخ رابط الملف الشخصي.'); } } else if (feedback.current()) setShareLink(url); }
+    catch (err) { if (feedback.current() && err?.name !== 'AbortError') { feedback.error(err); setShareLink(url); } }
   };
   const friendship = async type => {
     if (busy || social.offline) return;
@@ -220,15 +253,43 @@ export function ProfileView({ account, profiles, social, profileId, onNavigate =
   const presence = profile ? profilePresence(profile) : null;
   const featured = (profile?.featuredBadges || EMPTY).filter(id => profile?.earnedBadges?.includes(id)).slice(0, 3).map(id => ACHIEVEMENTS.find(item => item.id === id)).filter(Boolean);
   const selectedTitle = profile?.earnedTitles?.includes(profile.selectedTitle) ? titleLabel(profile.selectedTitle) : '';
-  return <main data-design-screen="profile" className="profile-screen" dir="rtl" style={themeStyle(profile?.theme)} aria-label="ملف ميدان الشخصي"><style>{profileCss}</style><style>{plusCss}</style><header data-design-id="header" className="profile-page-head"><div className="profile-page-heading"><IconButton label="العودة" icon="back" onClick={() => onBack ? onBack() : onNavigate(profileId && !owner ? '/friends' : '/')} /><div><span>{owner || !profileId ? 'هويتك في الميدان' : 'أهل الميدان'}</span><h1 data-design-id="title">{owner || !profileId ? 'ملفي الشخصي' : 'الملف الشخصي'}</h1></div></div>{account.signedIn && profile && !error && <button type="button" data-design-id="share" className="profile-share-button" onClick={share}><Icon name="share" size={18} />مشاركة الملف</button>}</header>
+  const codeRow = profile ? <div className="profile-code-row"><button type="button" data-sound="none" data-design-id="code" className="profile-code" onClick={copyCode} aria-label="نسخ رمز الصديق"><bdi>{profile.code}</bdi><Icon name="copy" size={15} /></button><span className="profile-meta-dot" /><span>{count(profile.friendCount)} أصدقاء</span>{presence && <><span className="profile-meta-dot" /><span className={'profile-presence' + (profile.online ? ' is-online' : '')}><i />{presence}</span></>}</div> : null;
+  const identityActions = profile ? <div className="profile-primary-actions">{visitorPreview ? null : owner ? <button type="button" data-design-id="edit" className="profile-owner-edit" onClick={() => setEditing(true)}><Icon name="edit" size={18} />تعديل الملف</button> : <div data-design-id="contact" className="profile-contact-actions">{profile.relationship === 'friend' ? <Button data-design-id="friend-chat" variant="primary" icon={<Icon name="chat" size={17} />} onClick={() => onNavigate('/friends/' + encodeURIComponent(profile.id))}>محادثة</Button> : profile.relationship === 'pending_incoming' ? <Button data-design-id="friend-accept" variant="primary" loading={busy} disabled={social.offline || busy} onClick={() => friendship('accept')}>قبول الصداقة</Button> : profile.relationship === 'pending_outgoing' ? <><span className="profile-request-status">بانتظار قبول الصداقة</span><Button data-design-id="friend-cancel" variant="secondary" loading={busy} disabled={social.offline || busy} onClick={() => friendship('cancel')}>إلغاء الطلب</Button></> : <Button data-design-id="add-friend" variant="primary" loading={busy} disabled={social.offline || busy} icon={<Icon name="plus" size={17} />} onClick={() => friendship('send')}>إضافة صديق</Button>}<IconButton label="خيارات الحساب" icon="more" onClick={() => setMenu(true)} /></div>}</div> : null;
+  const hasProgression = Number.isInteger(profile?.progression?.level);
+  return <main data-design-screen="profile" className="profile-screen" data-profile-skin={profileSkin(profile?.cosmetics) ? 'sahra' : 'base'} dir="rtl" style={{...themeStyle(profile?.theme),...profileSkinStyle(profile?.cosmetics)}} aria-label="ملف ميدان الشخصي"><PresentationStyles sheet={profileCss}/><PresentationStyles sheet={plusCss}/><PresentationStyles sheet={identityCss}/><PresentationStyles sheet={skinCss}/><header data-design-id="header" className="profile-page-head"><div className="profile-page-heading"><IconButton label="العودة" icon="back" onClick={() => onBack ? onBack() : onNavigate(profileId && !owner ? '/friends' : '/')} /><div><span>{owner || !profileId ? 'هويتك في الميدان' : 'أهل الميدان'}</span><h1 data-design-id="title">{owner || !profileId ? 'ملفي الشخصي' : 'الملف الشخصي'}</h1></div></div></header>
     {notice && <Notice error={notice.error} onClose={() => setNotice(null)}>{notice.text}</Notice>}
     {!account.ready ? <LoadingProfile /> : !account.signedIn ? <EmptyState title="لك هوية في الميدان" action={<Button data-design-id="account-signin" variant="primary" onClick={() => setSignIn(true)}>تسجيل الدخول</Button>}>سجّل الدخول لتعرض ملفك، وتكتشف إنجازاتك، وتتعرّف على أصحابك.</EmptyState> : error ? <EmptyState title="تعذّر عرض الملف" action={<Button data-design-id="retry" variant="secondary" onClick={load}>إعادة المحاولة</Button>}>{error}</EmptyState> : !profile ? <LoadingProfile /> : <>
-      <article className="profile-card"><Cover profile={profile} /><div data-design-id="identity" className="profile-identity"><div className="profile-identity-top"><ProfileAvatar profile={profile} />{owner ? <button type="button" data-design-id="edit" className="profile-owner-edit" onClick={() => setEditing(true)}><Icon name="edit" size={18} />تعديل الملف</button> : <div data-design-id="contact" className="profile-contact-actions">{profile.relationship === 'friend' ? <Button data-design-id="friend-chat" variant="primary" icon={<Icon name="chat" size={17} />} onClick={() => onNavigate('/friends/' + encodeURIComponent(profile.id))}>محادثة</Button> : profile.relationship === 'pending_incoming' ? <Button data-design-id="friend-accept" variant="primary" loading={busy} disabled={social.offline || busy} onClick={() => friendship('accept')}>قبول الصداقة</Button> : profile.relationship === 'pending_outgoing' ? <><span className="profile-request-status">بانتظار قبول الصداقة</span><Button data-design-id="friend-cancel" variant="secondary" loading={busy} disabled={social.offline || busy} onClick={() => friendship('cancel')}>إلغاء الطلب</Button></> : <Button data-design-id="add-friend" variant="primary" loading={busy} disabled={social.offline || busy} icon={<Icon name="plus" size={17} />} onClick={() => friendship('send')}>إضافة صديق</Button>}<IconButton label="خيارات الحساب" icon="more" onClick={() => setMenu(true)} /></div>}</div><div data-design-id="name" className="profile-name-row"><h2 style={{ color: getCosmetic(profile.cosmetics?.nameColorId, { kind: 'nameColor' })?.color }}><bdi>{nameOf(profile)}</bdi></h2>{profile.cosmetics?.badge && <span className="plus-badge" aria-label="عضو ميدان بلس">✦ بلس</span>}{selectedTitle && <span className="profile-earned-title"><Icon name="crown" size={15} />{selectedTitle}</span>}</div><div className="profile-code-row"><button type="button" data-design-id="code" className="profile-code" onClick={copyCode} aria-label="نسخ رمز الصديق"><bdi>{profile.code}</bdi><Icon name="copy" size={15} /></button><span className="profile-meta-dot" /><span>{count(profile.friendCount)} أصدقاء</span>{presence && <><span className="profile-meta-dot" /><span className={'profile-presence' + (profile.online ? ' is-online' : '')}><i />{presence}</span></>}</div>{profile.bio ? <p data-design-id="bio" className="profile-bio" dir="auto">{profile.bio}</p> : owner ? <p className="profile-bio is-empty">أضف نبذة صغيرة… وخَلّ أصحابك يتعرّفون عليك.</p> : null}<div data-design-id="badges" className="profile-showcase"><span className="profile-showcase-label">شارات بارزة</span>{featured.length ? featured.map(badge => <span key={badge.id} className="profile-featured-badge" title={badge.description}><Icon name={badge.icon} />{badge.label}</span>) : <span className="profile-showcase-empty">{owner ? 'اختر شاراتك المكتسبة من تعديل الملف.' : 'لم يختر شارات بارزة بعد.'}</span>}</div></div></article>
-      {owner && <div className="plus-profile-actions"><Button data-design-id="plus-store" onClick={() => onNavigate('/store')}>إطاراتي ومظهر بلس</Button><span className="plus-preview-note">الصور والثيمات الأساسية مجانية دائمًا.</span></div>}
-      {owner && profile.imageReviews && <div className="profile-review-summary"><ImageReviewStatus review={profile.imageReviews.avatar} kind="avatar" /><ImageReviewStatus review={profile.imageReviews.cover} kind="cover" /></div>}
-      <MafiaProgressPanel account={account} profileId={profile.id} owner={owner} />
-      <div className="profile-content"><Achievements profile={profile} owner={owner} /><aside className="profile-side"><ProfileStats profile={profile} /><div className="profile-tip"><Icon name="spark" size={26} /><h3>بصمتك تكبر مع كل جمعة</h3><p>الإنجازات تحكي مشاركتك في ميدان. جرّب لعبة جديدة، أو اجمع أصحابك على جولة أخرى.</p></div></aside></div>
+      {hasProgression ? <>
+        <AccountProgressionProfile key={profile.id + ':' + visitorPreview} profile={profile} profiles={profiles}
+          owner={owner && !visitorPreview} featured={featured} title={selectedTitle} onCustomize={() => setEditing(true)}
+          cover={profile.coverUrl || profile.cosmetics?.coverId ? <Cover profile={profile} label={false} /> : null} />
+        <div className="profile-content">{codeRow}{identityActions}</div>
+      </> :       <article className="profile-card"><Cover profile={profile} /><div data-design-id="identity" className="profile-identity"><div className="profile-identity-top"><ProfileAvatar profile={profile} /></div><div data-design-id="name" className="profile-name-row"><h2><PlayerName user={profile} card /></h2>{selectedTitle && <span className="profile-earned-title"><Icon name="crown" size={15} />{selectedTitle}</span>}</div>{codeRow}{profile.bio ? <p data-design-id="bio" className="profile-bio" dir="auto">{profile.bio}</p> : owner ? <p className="profile-bio is-empty">أضف نبذة صغيرة… وخَلّ أصحابك يتعرّفون عليك.</p> : null}{identityActions}<div data-design-id="badges" className="profile-showcase"><span className="profile-showcase-label">شارات بارزة</span>{featured.length ? featured.map(badge => <span key={badge.id} className="profile-featured-badge" title={badge.description}><Icon name={badge.icon} />{badge.label}</span>) : <span className="profile-showcase-empty">{owner ? 'اختر شاراتك المكتسبة من تعديل الملف.' : 'لم يختر شارات بارزة بعد.'}</span>}</div></div></article>}
+      <div className="profile-content">
+        {canTryFrames && <Button variant="secondary" full onClick={() => setFramePreview('plus.signature.frame')}>جرّب الإطارات الحيّة</Button>}
+        <nav className="profile-details-nav" aria-label="تفاصيل الملف">
+          <button type="button" data-design-id="profile-tab-achievements" aria-pressed={detailsTab === 'achievements'} onClick={() => setDetailsTab('achievements')}>الإنجازات</button>
+          <button type="button" data-design-id="profile-tab-stats" aria-pressed={detailsTab === 'stats'} onClick={() => setDetailsTab('stats')}>الإحصاءات</button>
+        </nav>
+        <div className="profile-page-actions">
+          <button type="button" data-sound="none" data-design-id="share" className="profile-share-button" onClick={share}><Icon name="share" size={18} />مشاركة الملف</button>
+          {owner && <button type="button" data-design-id="profile-visitor-preview" className="profile-share-button" aria-pressed={visitorPreview} onClick={() => setVisitorPreviewId(visitorPreview ? null : profile.id)}>{visitorPreview ? 'إنهاء المعاينة' : 'معاينة كزائر'}</button>}
+        </div>
+        {visitorPreview && <p className="profile-visitor-notice" role="status">معاينة مظهر الملف دون أدوات الإدارة.</p>}
+        {owner && !visitorPreview && <Button data-design-id="home" variant="accent" full onClick={() => onNavigate('/')}>بدء اللعب</Button>}
+        <div hidden={detailsTab !== 'achievements'}><Achievements profile={profile} owner={owner && !visitorPreview} /></div>
+        <div hidden={detailsTab !== 'stats'}><ProfileStats profile={profile} />{!visitorPreview && <MafiaProgressPanel account={account} profileId={profile.id} owner={owner} />}</div>
+      </div>
+      {owner && !visitorPreview && <ProfileIdentityLibrary profile={profile} onNavigate={onNavigate} />}
+      {owner && !visitorPreview && profile.imageReviews && <div className="profile-review-summary"><ImageReviewStatus review={profile.imageReviews.avatar} kind="avatar" /><ImageReviewStatus review={profile.imageReviews.cover} kind="cover" /></div>}
     </>}
+    {canTryFrames && framePreview && <Modal title="جرّب الإطارات الحيّة" className="profile-dialog" onClose={() => setFramePreview(null)}>
+      <div className="center" style={{ paddingBlock: '30px' }}><SharedProfileAvatar user={profile} size={156} previewFrameId={framePreview} /></div>
+      <label className="profile-field">الإطار<select value={framePreview} onChange={event => setFramePreview(event.target.value)}>
+        {PLUS_ITEMS.filter(item => item.motionKind === 'living-frame').map(item => <option key={item.id} value={item.id}>{item.label}{item.availableFrom > Date.now() ? ' · قريبًا' : ''}</option>)}
+      </select></label>
+      <p className="profile-dialog-intro">معاينة على صورتك في TestFlight. اختيار الإطار هنا ما بغيّر إطار حسابك.</p>
+    </Modal>}
     <SignInSheet open={signIn} onClose={() => setSignIn(false)} note="سجّل الدخول لملفك الشخصي وأصدقائك وإنجازاتك في ميدان." />
     {account.signedIn && owner && editing && profile && <ProfileEditor profile={profile} profiles={profiles} onClose={() => setEditing(false)} onSaved={() => { setEditing(false); notify('حُفظ ملفك الشخصي.'); }} />}
     {account.signedIn && menu && profile && <Modal title={'خيارات ' + nameOf(profile)} className="profile-dialog" onClose={() => setMenu(false)}><div className="profile-menu"><button type="button" className="is-danger" onClick={() => { setMenu(false); setAction('block'); }}><Icon name="shield" />حظر الحساب</button><button type="button" onClick={() => { setMenu(false); setAction('report'); }}>الإبلاغ عن الحساب</button></div></Modal>}

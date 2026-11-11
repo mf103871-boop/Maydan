@@ -12,6 +12,7 @@ import shellCss from '../../../online/online-mafia.css';
 import { usePlatform } from '../../../platform/context.js';
 
 const goRooms = () => navigate('/online/mafia',{replace:true});
+let acceptedTrainingSound = 0;
 export function TutorialSession({ owner, progress, update, mark, isCurrentOwner=()=>true, designPreview=false,
   factory=createMafiaTutorial,humanId=TUTORIAL_HUMAN_ID,title='أول ليلة في الميدان',disclosure='تدريب محلي · ٧ شخصيات تدريب · بلا لاعبين حقيقيين',finishTarget='/online/mafia',finishLabel='ادخل الغرف',privateCover=false }) {
   const platform = usePlatform();
@@ -40,8 +41,29 @@ export function TutorialSession({ owner, progress, update, mark, isCurrentOwner=
     if(view.status==='completed'&&!completed.current){completed.current=true;latest.current.mark('completed',owner);}
   },[view,engine,owner,designPreview]);
   useEffect(()=>{setMinimized(false);},[view.coach?.stepId]);
-  const guide=(event,value)=>{if(live.current)return engine.guide(event,value);return false;};
-  const act=(type,fields)=>live.current?engine.act(type,fields):Promise.resolve(false);
+  const trainingFeedback=(before,accepted,quiz=false)=>{
+    if(accepted!==true||designPreview||covered||!live.current||!latest.current.isCurrentOwner(owner))return;
+    const after=engine.getState(),revision=after.checkpointRevision;
+    // Phase changes already have a Mafia audio owner. Replays/restores never
+    // enter this user-action path, and retry remounts the phase owner silently.
+    const type=after.feedback?'ui.error':quiz?'game.correct':before.snapshot.phaseId===after.snapshot.phaseId?'ui.confirm':null;
+    if(type)platform?.sound?.emit?.(type,{id:`training-action:${++acceptedTrainingSound}`,
+      guard:()=>live.current&&!document.hidden&&latest.current.isCurrentOwner(owner)&&engine.getState().checkpointRevision===revision});
+  };
+  const guide=(event,value)=>{
+    if(!live.current)return false;
+    const before=engine.getState(),accepted=engine.guide(event,value);
+    // Navigation/role opening already have their own tap cue. Only submitted
+    // quiz answers are acknowledged here, after the lesson accepts them.
+    if(event==='quiz-answer')trainingFeedback(before,accepted,true);
+    return accepted;
+  };
+  const act=async(type,fields)=>{
+    if(!live.current)return false;
+    const before=engine.getState(),accepted=await engine.act(type,fields);
+    trainingFeedback(before,accepted);return accepted;
+  };
+  act.audioAccepted=true;
   const state=view.snapshot;
   const me=state.members.find(player=>player.id===humanId);
   const quiet=state.phase==='night'&&state.you?.voice?.canListen===false;
@@ -70,7 +92,7 @@ export function TutorialSession({ owner, progress, update, mark, isCurrentOwner=
     <div className="mafia-tutorial-stage" data-training-target={coach.target} key={`${owner}:${view.checkpointRevision}`}>
       {state.phase==='lobby'?<MafiaLobby state={state} me={me} isHost act={act} voice={voice} accountId={owner} tutorial={{onGuide:guide}}/>:<MafiaMatchView state={state} me={me} isHost act={act} disabled={view.status==='completed'} accountId={owner} voice={voice} sound={designPreview?undefined:platform?.sound} clock={view.clock} tutorial={{onGuide:guide}}/>}
     </div>
-    {exitTarget&&<Modal className="mafia-noir" data-design-screen="mafia.tutorial" title="تكمل التدريب لاحقًا؟" onClose={()=>setExitTarget(null)} footer={<><Button data-design-id="tutorial-save-exit" full onClick={()=>finishExit(exitTarget,true)}>احفظ واخرج</Button><Button data-design-id="tutorial-stay" full variant="ghost" onClick={()=>setExitTarget(null)}>أكمل التدريب</Button></>}><p>تبقى نقطة قرارك على هذا الجهاز، وتقدر تستكملها من دليل مافيا. لا تُحسب نتيجة هذا الدرس ضمن لعبك.</p></Modal>}
+    {exitTarget&&<Modal className="mafia-noir mafia-paper-dialog mafia-tutorial-exit" placement="bottom" data-design-screen="mafia.tutorial" title="تكمل التدريب لاحقًا؟" onClose={()=>setExitTarget(null)} footer={<><Button data-design-id="tutorial-save-exit" full onClick={()=>finishExit(exitTarget,true)}>احفظ واخرج</Button><Button data-design-id="tutorial-stay" full variant="ghost" onClick={()=>setExitTarget(null)}>أكمل التدريب</Button></>}><p>تبقى نقطة قرارك على هذا الجهاز، وتقدر تستكملها من دليل مافيا. لا تُحسب نتيجة هذا الدرس ضمن لعبك.</p></Modal>}
     </>}
   </section>;
 }

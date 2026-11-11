@@ -83,6 +83,13 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     private var updateNavigationObservation: NSKeyValueObservation?
     private var bridgeProxy: WeakScriptMessageHandler?
     private var isRecoveringWebContent = false
+#if MAYDAN_REWARDED_PREVIEW || MAYDAN_REWARDED_ADS
+    private let rewardedAds = RewardedAdCoordinator()
+    private var rewardedForegroundObserver: NSObjectProtocol?
+    private var rewardedInactiveObserver: NSObjectProtocol?
+    private var rewardedRequestEpoch = 0
+    private var rewardedOverlayActive = false
+#endif
     private var migration: StorageMigration?
     private var isCollectingMigration = false
     private var isCommittingMigration = false
@@ -117,6 +124,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         return value
     }()
     private var simulatorLaunchRecorded = false
+    private var simulatorLaunchObserved = false
 #endif
     private lazy var appUpdate = AppUpdateCoordinator(host: self, canPresent: { [weak self] in
         guard let self, self.presentedViewController == nil else { return false }
@@ -125,7 +133,11 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         guard let self else { return }
         self.webView.isUserInteractionEnabled = !blocked
         self.webView.accessibilityElementsHidden = blocked
+#if MAYDAN_REWARDED_PREVIEW || MAYDAN_REWARDED_ADS
+        self.webView.setAllMediaPlaybackSuspended(blocked || self.rewardedOverlayActive, completionHandler: nil)
+#else
         self.webView.setAllMediaPlaybackSuspended(blocked, completionHandler: nil)
+#endif
     }, permitInitialLoad: { [weak self] in
         guard let self, !self.didLoadBundledGame else { return }
         self.didLoadBundledGame = true
@@ -170,8 +182,14 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
 
         let webView = WKWebView(frame: .zero, configuration: configuration)
         self.webView = webView
+#if MAYDAN_REWARDED_PREVIEW
+        webView.isInspectable = RewardedAdCoordinator.loopbackPort != nil
+#endif
         updateNavigationObservation = webView.observe(\.url, options: [.new]) { [weak self] _, _ in
             Task { @MainActor in
+#if MAYDAN_REWARDED_PREVIEW || MAYDAN_REWARDED_ADS
+                self?.rewardedRequestEpoch &+= 1
+#endif
                 self?.appUpdate.navigationChanged()
                 if let self, !DrawingOrientationPolicy.isRoomURL(self.webView.url) { self.releaseDrawingOrientation() }
             }
@@ -214,6 +232,43 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         ) { [weak self] _ in
             Task { @MainActor in self?.restoreDrawingOrientationIfPossible() }
         }
+#if MAYDAN_REWARDED_PREVIEW || MAYDAN_REWARDED_ADS
+        if RewardedAdCoordinator.isConfigured {
+            rewardedAds.onStatusChange = { [weak self] in
+                guard let self else { return }
+                self.emitRewardedEvent("rewardedStatusChanged", payload: self.rewardedAds.status)
+            }
+            rewardedAds.onPresentationChange = { [weak self] active in
+                guard let self else { return }
+                self.rewardedOverlayActive = active
+                // Maintain the update overlay's independent media suspension.
+                self.webView.setAllMediaPlaybackSuspended(active || !self.webView.isUserInteractionEnabled, completionHandler: nil)
+                self.emitRewardedEvent("rewardedPresentation", payload: ["active": active])
+                if !active && UIApplication.shared.applicationState == .active
+                    && !SocialCoordinator.shared.isBusyForRewardedUI {
+                    SocialCoordinator.shared.webAudioReady()
+                }
+            }
+            rewardedAds.onImpression = { [weak self] in
+                self?.emitRewardedEvent("rewardedImpression", payload: [:])
+            }
+            rewardedForegroundObserver = NotificationCenter.default.addObserver(
+                forName: UIApplication.didBecomeActiveNotification, object: nil, queue: .main
+            ) { [weak self] _ in
+                Task { @MainActor in
+                    if let self, self.rewardedAds.consentRequested { await self.rewardedAds.refreshConsent() }
+                }
+            }
+            rewardedInactiveObserver = NotificationCenter.default.addObserver(
+                forName: UIApplication.willResignActiveNotification, object: nil, queue: .main
+            ) { [weak self] _ in
+                Task { @MainActor in self?.rewardedRequestEpoch &+= 1 }
+            }
+            if RewardedAdCoordinator.loopbackPort != nil {
+                Task { @MainActor [weak self] in await self?.rewardedAds.refreshConsent() }
+            }
+        }
+#endif
         // تجديدات الاشتراك والمشتريات المعلّقة تصل هنا خارج الشراء المباشر؛ الويب يرسل توقيعها للخادم.
         StoreManager.shared.onTransaction = { [weak self] jws in
             self?.emit(event: "transaction", payload: ["jws": jws])
@@ -254,6 +309,10 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         drawingOrientationExpiry?.invalidate()
         migrationSeedTimeout?.invalidate()
         if let drawingForegroundObserver { NotificationCenter.default.removeObserver(drawingForegroundObserver) }
+#if MAYDAN_REWARDED_PREVIEW || MAYDAN_REWARDED_ADS
+        if let rewardedForegroundObserver { NotificationCenter.default.removeObserver(rewardedForegroundObserver) }
+        if let rewardedInactiveObserver { NotificationCenter.default.removeObserver(rewardedInactiveObserver) }
+#endif
 #if targetEnvironment(simulator)
         simulatorAudioTimer?.invalidate()
         simulatorOrientationTimer?.invalidate()
@@ -449,8 +508,9 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         progress.accessibilityLabel = label.text
         view.addSubview(progress)
         NSLayoutConstraint.activate([
-            progress.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            progress.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             progress.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            progress.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -48),
             progress.leadingAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
             progress.trailingAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24)
         ])
@@ -591,6 +651,11 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
 
 #if targetEnvironment(simulator)
     private func recordSimulatorLaunchReady(_ payload: [String: Any], pageURL: URL) {
+        if !simulatorLaunchObserved {
+            simulatorLaunchObserved = true
+            let diagnostic = "Maydan launch readiness: candidate pid=\(ProcessInfo.processInfo.processIdentifier) uptime=\(ProcessInfo.processInfo.systemUptime) tokenMatches=\(payload["token"] as? String == simulatorLaunchToken) migrationReady=\(!isCollectingMigration && !isCommittingMigration && migration?.isDone == true) entryMatches=\(pageURL.path == AppSchemeHandler.entryURL.path)\n"
+            FileHandle.standardError.write(Data(diagnostic.utf8))
+        }
         // Eight registered games, including Mafia. A catalog change deliberately
         // updates this exact gate together with the Python and actual-Home tests.
         guard !simulatorLaunchRecorded, let token = simulatorLaunchToken,
@@ -609,6 +674,12 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
             try JSONSerialization.data(withJSONObject: receipt, options: [.sortedKeys])
                 .write(to: directory.appendingPathComponent("ready.json"), options: .atomic)
             simulatorLaunchRecorded = true
+            // Acknowledge only after the receipt for this exact process has
+            // been written. The simulator-only web probe can then retire.
+            let acknowledgement = Self.json(["token": token])
+            webView.evaluateJavaScript("window.__maydanSimulatorLaunchReady = (\(acknowledgement)).token;", completionHandler: nil)
+            let diagnostic = "Maydan launch readiness: accepted pid=\(ProcessInfo.processInfo.processIdentifier) uptime=\(ProcessInfo.processInfo.systemUptime)\n"
+            FileHandle.standardError.write(Data(diagnostic.utf8))
         } catch { print("Maydan launch readiness: receipt-write-failed") }
     }
 
@@ -694,7 +765,39 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
 
     private static let simulatorAudioScript = #"""
     (() => {
-      const proof = {fixture:'streaming-recovery',contexts:[],media:[],decoded:[],errors:[],lastCommand:null};
+      const proof = {fixture:'streaming-recovery',contexts:[],media:[],decoded:[],errors:[],lastCommand:null,mediaEvents:[],mediaEventsDropped:0};
+      const mediaEventPolicy = {limit:128,timeupdateMinIntervalMs:1000};
+      let mediaEventSequence = 0;
+      const finite = value => Number.isFinite(value) ? value : null;
+      const localMediaURL = value => typeof value === 'string' && /^maydan:\/\/app\/(?:audio\/(?:selected|candidates)\/[a-z0-9-]+|audio-warmth-preview\/audio\/[a-z][a-z0-9-]{0,79}-[a-f0-9]{12})\.m4a$/.test(value) ? value : null;
+      const recordMediaEvent = (record,event) => {
+        const at = Date.now();
+        if (event === 'timeupdate') {
+          if (at - record.lastTimeupdate < mediaEventPolicy.timeupdateMinIntervalMs) return;
+          record.lastTimeupdate = at;
+        }
+        const {media,context} = record, source = media.currentSrc || media.src;
+        // Preserve the last known local file when cleanup empties src. Never
+        // retain a caller URL, query string or free-form media error message.
+        if (source) record.url = localMediaURL(source);
+        proof.mediaEvents.push({sequence:++mediaEventSequence,event,generatedAt:at,
+          mediaIndex:record.index,contextIndex:proof.contexts.indexOf(context),
+          contextState:context.state,contextTime:finite(context.currentTime),
+          command:proof.lastCommand?.command || null,url:record.url,
+          time:finite(media.currentTime),duration:finite(media.duration),
+          readyState:media.readyState,networkState:media.networkState,
+          paused:media.paused,seeking:media.seeking,ended:media.ended,
+          error:Number.isInteger(media.error?.code) ? media.error.code : null});
+        if (proof.mediaEvents.length > mediaEventPolicy.limit) { proof.mediaEvents.shift(); proof.mediaEventsDropped++; }
+      };
+      const observeMedia = (media,context) => {
+        const record = {media,context,index:proof.media.length,url:null,lastTimeupdate:-Infinity};
+        proof.media.push(record);
+        for (const event of ['loadstart','loadedmetadata','loadeddata','canplay','seeking','seeked','timeupdate','waiting','stalled','suspend','error','emptied','play','playing','pause','ended','abort']) {
+          media.addEventListener(event,() => recordMediaEvent(record,event),{passive:true});
+        }
+        recordMediaEvent(record,'source-attached');
+      };
       const NativeAC = window.AudioContext || window.webkitAudioContext;
       proof.webAudioSupported = typeof NativeAC === 'function';
       // This simulator is owned by the release gate and has no player account.
@@ -704,7 +807,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
           constructor(options) { super(options); proof.contexts.push(this); }
           createMediaElementSource(media) {
             const node = super.createMediaElementSource(media);
-            proof.media.push({media,context:this});
+            observeMedia(media,this);
             return node;
           }
           createDynamicsCompressor() {
@@ -746,6 +849,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
           lastCommand:proof.lastCommand,contextCount:proof.contexts.length,contextState:context?.state || null,
           contextTime:context?.currentTime || 0,rms:Math.sqrt(samples.reduce((sum,n)=>sum+n*n,0)/samples.length),
           decodedCount:proof.decoded.length,decodedMaxSeconds:Math.max(0,...proof.decoded),errors:proof.errors.slice(),
+          mediaEvents:proof.mediaEvents.slice(),mediaEventsDropped:proof.mediaEventsDropped,mediaEventPolicy:{...mediaEventPolicy},
           media:proof.media.map(({media,context:owner})=>({url:media.currentSrc || media.src,duration:Number.isFinite(media.duration)?media.duration:null,
             time:media.currentTime,paused:media.paused,readyState:media.readyState,error:media.error?.code || null,
             contextIndex:proof.contexts.indexOf(owner),contextState:owner.state}))};
@@ -822,6 +926,13 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         case "simulatorGameReady":
             recordSimulatorLaunchReady(payload, pageURL: pageURL)
 #endif
+#if MAYDAN_REWARDED_PREVIEW || MAYDAN_REWARDED_ADS
+        case "rewardedStatus", "rewardedShow", "rewardedPrivacyOptions", "rewardedReport":
+            guard RewardedAdCoordinator.isTrustedDocument(pageURL),
+                  let currentURL = webView.url, RewardedAdCoordinator.isTrustedDocument(currentURL),
+                  let id = payload["id"] as? String, !id.isEmpty, id.count <= 64 else { return }
+            handleRewarded(command: type, id: id, payload: payload, url: currentURL)
+#endif
         case "migrationSeedResult":
             guard isCommittingMigration, pageURL == AppSchemeHandler.migrationURL,
                   let succeeded = migration?.acceptSeedResult(payload) else { return }
@@ -843,6 +954,81 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     private func isTrustedGameURL(_ url: URL) -> Bool {
         AppSchemeHandler.isAppURL(url)
     }
+
+#if MAYDAN_REWARDED_PREVIEW || MAYDAN_REWARDED_ADS
+    private func handleRewarded(command: String, id: String, payload: [String: Any], url: URL) {
+        guard RewardedAdCoordinator.isConfigured else {
+            reply(id, result: ["state": "unavailable", "available": false, "privacyOptionsRequired": false])
+            return
+        }
+        if command == "rewardedStatus" {
+            reply(id, result: rewardedAds.status)
+            return
+        }
+        let epoch = rewardedRequestEpoch
+        Task { @MainActor [weak self] in
+            guard let self else { return }
+            let canPresent = { self.rewardedRequestEpoch == epoch && self.canPresentRewardedUI(at: url) }
+            let result: [String: Any]
+            switch command {
+            case "rewardedShow":
+                guard let surface = RewardedAdCoordinator.surface(url),
+                      let token = payload["customData"] as? String,
+                      let expiresAt = payload["expiresAt"] as? Double, expiresAt.isFinite else {
+                    reply(id, result: ["state": "blocked", "presented": false])
+                    return
+                }
+                result = await rewardedAds.show(
+                    token: token, unit: payload["adUnit"] as? String, host: self,
+                    isStillSafe: { await self.hasActiveRewardedOffer(at: url, token: token, surface: surface) },
+                    canPresent: { canPresent() && expiresAt > Date().timeIntervalSince1970 * 1000 }
+                ).payload
+            case "rewardedPrivacyOptions":
+                result = await rewardedAds.privacyOptions(host: self, canPresent: canPresent)
+            case "rewardedReport":
+                result = ["state": rewardedAds.report(host: self, canPresent: canPresent).rawValue]
+            default:
+                return
+            }
+            // Presentation is still fenced to the original URL and epoch.
+            // Returning a result to the trusted app document after a hash
+            // change lets the original request settle by its unique bridge ID.
+            if let currentURL = webView.url, RewardedAdCoordinator.isTrustedDocument(currentURL) {
+                reply(id, result: result)
+            }
+        }
+    }
+
+    private func emitRewardedEvent(_ event: String, payload: [String: Any]) {
+        guard let url = webView.url, RewardedAdCoordinator.isTrustedDocument(url) else { return }
+        emit(event: event, payload: payload)
+    }
+
+    private func canPresentRewardedUI(at url: URL) -> Bool {
+        let safeSettings = RewardedAdCoordinator.routePath(url) == "/settings"
+        return (safeSettings || RewardedAdCoordinator.surface(url) != nil)
+            && webView.url == url && !webView.isLoading && webView.isUserInteractionEnabled
+            && !isRecoveringWebContent && !isCollectingMigration && !isCommittingMigration
+            && presentedViewController == nil
+            && UIApplication.shared.applicationState == .active
+            && viewIfLoaded?.window?.windowScene?.activationState == .foregroundActive
+            && !SocialCoordinator.shared.isBusyForRewardedUI
+    }
+
+    private func hasActiveRewardedOffer(at url: URL, token: String, surface: String) async -> Bool {
+        guard canPresentRewardedUI(at: url), let route = RewardedAdCoordinator.routePath(url) else { return false }
+        let result = try? await webView.callAsyncJavaScript("""
+            if (location.hash.split('?')[0] !== '#' + route || document.visibilityState !== 'visible' ||
+                document.activeElement?.matches('input,textarea,[contenteditable="true"]')) return false;
+            const offer = Array.from(document.querySelectorAll('[data-maydan-rewarded-active]'))
+                .find(node => node.dataset.attempt === attempt && node.dataset.surface === surface);
+            if (!offer?.isConnected || offer.getClientRects().length === 0 || getComputedStyle(offer).visibility !== 'visible') return false;
+            return Array.from(document.querySelectorAll('[aria-modal="true"],dialog[open]'))
+                .every(dialog => dialog.contains(offer) || dialog.getClientRects().length === 0);
+            """, arguments: ["attempt": token, "surface": surface, "route": route], in: nil, contentWorld: .page)
+        return result as? Bool == true && canPresentRewardedUI(at: url)
+    }
+#endif
 
     // MARK: - Account and store commands
 

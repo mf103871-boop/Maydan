@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "frames": {
+    "signature": {
+      "small": "/assets/plus/v3/signature-frame-72.webp",
+      "medium": "/assets/plus/v3/signature-frame-176.webp",
+      "large": "/assets/plus/v3/signature-frame-480.webp",
+      "sha256": "5388c5ffb2f1e71bf614d145d13db2be5ae283c5d1c1717b9a2028e0d2158c44",
+      "innerScale": 0.835
+    },
+    "sahra": {
+      "small": "/assets/plus/v3/sahra-frame-72.webp",
+      "medium": "/assets/plus/v3/sahra-frame-176.webp",
+      "large": "/assets/plus/v3/sahra-frame-480.webp",
+      "sha256": "bd6972787021bbe72adeb61d0ca9ec99cae188ccbe8d38aad16e780167dc3e30",
+      "innerScale": 0.857
+    },
+    "artist": {
+      "small": "/assets/plus/v3/artist-frame-72.webp",
+      "medium": "/assets/plus/v3/artist-frame-176.webp",
+      "large": "/assets/plus/v3/artist-frame-480.webp",
+      "sha256": "ea5653a2bf7518e229d1073eda96b86773d7b30fbc9301c4ab25ec97b2faabf1",
+      "innerScale": 0.914
+    },
+    "noir": {
+      "small": "/assets/plus/v3/noir-frame-72.webp",
+      "medium": "/assets/plus/v3/noir-frame-176.webp",
+      "large": "/assets/plus/v3/noir-frame-480.webp",
+      "sha256": "e6fe5883a508b11f98041b443e4b6b411de8a735fd60553143948296b46d6ce0",
+      "innerScale": 0.938
+    },
+    "olive": {
+      "small": "/assets/plus/v3/olive-frame-72.webp",
+      "medium": "/assets/plus/v3/olive-frame-176.webp",
+      "large": "/assets/plus/v3/olive-frame-480.webp",
+      "sha256": "a2bbd1abe7f8d9a98a2598caa25c0ba9cb3eefccc3d1a5400cbe9675eaa9bb87",
+      "innerScale": 0.887
+    },
+    "starlight": {
+      "small": "/assets/plus/v3/starlight-frame-72.webp",
+      "medium": "/assets/plus/v3/starlight-frame-176.webp",
+      "large": "/assets/plus/v3/starlight-frame-480.webp",
+      "sha256": "1207835fd1ffd732519b58fa45ed9f5e7a08d6f2b7126be99e55ba12316a2692",
+      "innerScale": 0.858
+    }
+  }
+}

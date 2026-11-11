@@ -7,9 +7,13 @@ import { getGame } from './registry.js';
 import { createStorage, clearAllPlatformData } from '../shared/lib/storage.js';
 import { ACCOUNT_PREFIX } from '../shared/account/store.js';
 import { createSound } from '../shared/fx/sound.js';
+import { integratedPreviewAudio, integratedPreviewDefaults, registerIntegratedPreviewSound } from '../shared/fx/integrated-preview-audio.js';
+import { bindNetworkAudio } from '../shared/fx/network-audio.js';
+import { activeAudioOwners } from '../social/media.js';
 import { createHaptics } from '../shared/fx/haptics.js';
 import { confetti } from '../shared/fx/confetti.js';
 import { ToastProvider, useToast, ErrorBoundary } from '../shared/ui/components.jsx';
+import { PresentationStyles } from '../shared/ui/PresentationStyles.jsx';
 import uiCss from '../shared/ui/ui.css';
 import setupCss from '../shared/setup/setup.css';
 import platformCss from './platform.css';
@@ -18,6 +22,7 @@ import { BrandFonts } from '../shared/brand/art.jsx';
 import { Splash } from './screens/Splash.jsx';
 import { Home } from './screens/Home.jsx';
 import { GameDetails } from './screens/GameDetails.jsx';
+import { GameEntry } from './screens/GameEntry.jsx';
 import { Play } from './screens/Play.jsx';
 import { Players } from './screens/Players.jsx';
 import { Settings } from './screens/Settings.jsx';
@@ -32,7 +37,7 @@ import { MafiaLabs } from '../games/mafia/tutorial/labs/MafiaLabs.jsx';
 import onlineCss from '../online/online.css';
 import { AccountProvider } from '../shared/account/AccountProvider.jsx';
 import { PaywallHost } from '../shared/account/PaywallHost.jsx';
-import accountCss from '../shared/account/account.css';
+import accountCss from '../shared/account/account.css?sheet';
 import { SocialProvider } from '../social/SocialProvider.jsx';
 import { LammaProvider } from '../social/LammaProvider.jsx';
 import { SocialUIProvider } from '../social/SocialUIProvider.jsx';
@@ -48,8 +53,9 @@ const platformStorage = createStorage('platform');
 const DEFAULT_SETTINGS = { soundOn: true, soundVolume: 0.75, voiceOn: false, creatorMode: false, musicOn: true, musicVolume: 0.35, musicLevel: 2, hapticsOn: true, reducedMotion: false, splashSeen: false };
 // الموسيقى 3.1 أهدأ وأخفض: من حفظ مستوى الموسيقى قبلها يُنقل مرة واحدة إلى الافتراضي الجديد.
 function migrateSettings(saved) {
-  const next = { ...DEFAULT_SETTINGS, ...(saved || {}) };
-  if ((saved?.musicLevel || 1) < 2) { next.musicVolume = DEFAULT_SETTINGS.musicVolume; next.musicLevel = 2; }
+  const defaults = { ...DEFAULT_SETTINGS, ...integratedPreviewDefaults() };
+  const next = { ...defaults, ...(saved || {}) };
+  if ((saved?.musicLevel || 1) < 2) { next.musicVolume = defaults.musicVolume; next.musicLevel = 2; }
   return next;
 }
 
@@ -63,10 +69,15 @@ function ScreenHost({ route }) {
   let screen = null;
   // عودة الدخول (#/auth?code=) تعرض الرئيسية بينما يبدّل AccountProvider الرمز بجلسة.
   if (route.name === 'home' || route.name === 'auth') screen = <Home key="home" />;
+  else if (route.name === 'game-entry') screen = <GameEntry key={`entry-${route.params.id}`} id={route.params.id} />;
   else if (route.name === 'game') screen = <GameDetails key={`game-${route.params.id}`} id={route.params.id} mode={route.params.mode} />;
   else if (route.name === 'mafia-tutorial') screen = route.params.lab||route.params.labs ? <MafiaLabs key={`mafia-labs-${route.params.lab||'hub'}`} courseId={route.params.lab}/> : <MafiaTutorial key="mafia-tutorial" />;
   else if (route.name === 'play' && route.params.id === 'mafia') screen = <MafiaEntry key="mafia-entry" />;
-  else if (route.name === 'play') screen = getGame(route.params.id)?.onlineOnly ? <Online key={`online-${route.params.id}`} game={route.params.id} /> : <Play key={`play-${route.params.id}`} id={route.params.id} />;
+  else if (route.name === 'play') {
+    const rewarded = typeof __MAYDAN_REWARDED_PREVIEW__ !== 'undefined' && __MAYDAN_REWARDED_PREVIEW__ && route.params.id === 'badeeha' && route.params.rewarded === '1';
+    screen = getGame(route.params.id)?.onlineOnly ? <Online key={`online-${route.params.id}`} game={route.params.id} /> :
+      <Play key={`play-${route.params.id}${rewarded ? '-rewarded' : ''}`} id={route.params.id} rewarded={rewarded} />;
+  }
   else if (route.name === 'players') screen = <Players key="players" />;
   else if (route.name === 'friends' || route.name === 'friend-group') screen = <div key="friends" data-social-page-slot />;
   else if (route.name === 'profile') screen = <ProfileScreen key={`profile-${route.params.id || 'me'}`} profileId={route.params.id || null} />;
@@ -76,8 +87,12 @@ function ScreenHost({ route }) {
   else if (route.name === 'about') screen = <About key="about" />;
   else if (route.name === 'terms') screen = <Terms key="terms" />;
   else if (route.name === 'privacy') screen = <Privacy key="privacy" />;
-  else if (route.name === 'online' && route.params.id === 'mafia') screen = <MafiaEntry key="mafia-entry" />;
-  else if (route.name === 'online') screen = <Online key={`online-${route.params.id || 'meenfina'}`} game={route.params.id || 'meenfina'} />;
+  else if (route.name === 'online' && route.params.id === 'mafia') screen = <MafiaEntry key={`mafia-entry-${route.params.joinOnly === '1' ? 'join' : 'all'}`} joinOnly={route.params.joinOnly === '1'} />;
+  else if (route.name === 'online') {
+    const game = route.params.id || 'meenfina';
+    const rewarded = typeof __MAYDAN_REWARDED_PREVIEW__ !== 'undefined' && __MAYDAN_REWARDED_PREVIEW__ && game === 'meenfina' && route.params.rewarded === '1';
+    screen = <Online key={`online-${game}${rewarded ? '-rewarded' : ''}${route.params.joinOnly === '1' ? '-join' : ''}`} game={game} joinOnly={route.params.joinOnly === '1'} rewarded={rewarded} initialView={rewarded ? 'create' : 'public'} />;
+  }
   else if (route.name === 'room') screen = <Online key={`room-${route.params.id}-${route.params.watch==='1'?'observer':'player'}`} code={route.params.id} observer={route.params.watch==='1'} />;
   return screen;
 }
@@ -86,7 +101,7 @@ export function PlatformProviders({ children }) {
   const toast = useToast();
   const [settings, setSettingsState] = useState(() => migrateSettings(platformStorage.get('settings', {})));
   const [roster, setRosterState] = useState(() => platformStorage.get('roster', []) || []);
-  const sound = useMemo(() => createSound({ enabled: settings.soundOn, volume: settings.soundVolume, voice: settings.voiceOn, music: settings.musicOn, musicVolume: settings.musicVolume, creatorMode: settings.creatorMode }), []); // eslint-disable-line react-hooks/exhaustive-deps
+  const sound = useMemo(() => createSound({ enabled: settings.soundOn, volume: settings.soundVolume, voice: settings.voiceOn, music: settings.musicOn, musicVolume: settings.musicVolume, creatorMode: settings.creatorMode, localAudition: integratedPreviewAudio() }), []); // eslint-disable-line react-hooks/exhaustive-deps
   const haptics = useMemo(() => createHaptics({ enabled: settings.hapticsOn }), []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const setSettings = useCallback((patch) => {
@@ -110,6 +125,8 @@ export function PlatformProviders({ children }) {
   }, []);
 
   useEffect(() => { sound.attach(); return () => sound.dispose(); }, [sound]);
+  useEffect(() => registerIntegratedPreviewSound(sound), [sound]);
+  useEffect(() => bindNetworkAudio(sound, { available: () => !['play', 'room', 'mafia-tutorial'].includes(getRoute().name) && activeAudioOwners().length === 0 }), [sound]);
   useEffect(() => { sound.enable(settings.soundOn); }, [sound, settings.soundOn]);
   useEffect(() => { sound.setVolume(settings.soundVolume); }, [sound, settings.soundVolume]);
   useEffect(() => { sound.voice.enable(settings.voiceOn); }, [sound, settings.voiceOn]);
@@ -118,6 +135,17 @@ export function PlatformProviders({ children }) {
   useEffect(() => { sound.music.setVolume(settings.musicVolume); }, [sound, settings.musicVolume]);
   useEffect(() => { haptics.enable(settings.hapticsOn); }, [haptics, settings.hapticsOn]);
   useEffect(() => { document.documentElement.dataset.reducedMotion = settings.reducedMotion ? 'true' : 'false'; }, [settings.reducedMotion]);
+  useEffect(() => {
+    const update = () => { document.documentElement.dataset.appHidden = document.hidden ? 'true' : 'false'; };
+    update(); document.addEventListener('visibilitychange', update);
+    return () => document.removeEventListener('visibilitychange', update);
+  }, []);
+  useEffect(() => {
+    const root = document.documentElement;
+    root.dataset.largeText = settings.largeText ? 'true' : 'false';
+    root.dataset.highContrast = settings.highContrast ? 'true' : 'false';
+    root.dataset.visualQuality = settings.visualQuality === 'calm' ? 'calm' : 'auto';
+  }, [settings.largeText, settings.highContrast, settings.visualQuality]);
 
   const value = useMemo(() => ({ sound, haptics, confetti, toast, settings, setSettings, roster, setRoster, navigate, storage: platformStorage, version: VERSION }), [sound, haptics, toast, settings, setSettings, roster, setRoster]);
   // الحساب داخل مزوّد المنصة: يحتاج التنبيهات (toast) والإعدادات، وتحتاجه كل الشاشات.
@@ -136,7 +164,7 @@ function Shell() {
   const [booted, setBooted] = useState(false);
   useEffect(() => installNativeBackBridge(), []);
   useEffect(() => {
-    const game = (route.name === 'game' || route.name === 'play') ? getGame(route.params.id) : null;
+    const game = (route.name === 'game' || route.name === 'play' || route.name === 'game-entry') ? getGame(route.params.id) : null;
     const title = game ? game.name : SCREEN_TITLES[route.name];
     document.title = title ? `${title} · ميدان` : BASE_TITLE;
   }, [route.name, route.params.id]);
@@ -199,7 +227,7 @@ function Shell() {
       {booted && <ErrorBoundary title="تعذّر فتح اللّمة" message="أعد فتح ميدان لتتصل بأصحابك." onHome={() => navigate('/')}><SocialHost /></ErrorBoundary>}
       <style>{brandCss}</style>
       <style>{onlineCss}</style>
-      <style>{accountCss}</style>
+      <PresentationStyles sheet={accountCss} />
     </>
   );
 }

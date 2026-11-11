@@ -1,5 +1,5 @@
-// قفل المحتوى في الواجهة: الحزم المجانية في «بَديهة»، وشارات الرئيسية، وجدار «ميدان بلس»
-// في تفاصيل اللعبة. تُبنى الشاشات بـ esbuild وتُصيَّر بـ react-dom/server كما في بقية اختبارات الواجهة.
+// مجانية اللعب: حزم «بَديهة» وبطاقات الرئيسية والانتقال من التعليمات دون استهلاك تجربة أو طلب بلس.
+// تُبنى الشاشات بـ esbuild وتُصيَّر بـ react-dom/server كما في بقية اختبارات الواجهة.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, mkdtempSync, mkdirSync, rmSync } from 'node:fs';
@@ -107,6 +107,7 @@ await build({
     import MaydanBeta from './src/games/badeeha/App.js';
     import { Home } from './src/platform/screens/Home.jsx';
     import { GameDetails } from './src/platform/screens/GameDetails.jsx';
+    import { Terms } from './src/platform/screens/Legal.jsx';
     const noop = () => {};
     const platform = { roster: [], setRoster: noop, version: '0.0.0', toast: noop,
       sound: { play: noop }, haptics: { vibrate: noop }, confetti: { fire: noop, burst: noop },
@@ -116,6 +117,7 @@ await build({
     export const badeeha = (account) => renderToStaticMarkup(
       React.createElement(MaydanBeta, { api: { account, settings: platform.settings } }));
     export const home = (account) => renderToStaticMarkup(wrap(account, React.createElement(Home)));
+    export const terms = (account) => renderToStaticMarkup(wrap(account, React.createElement(Terms)));
     // الخطّاف يُشغَّل داخل مكوّن حقيقي، فنلتقط شجرة GameDetails ونستدعي onClick لزر العب.
     export const detailsTree = (id, account) => {
       let tree = null;
@@ -129,17 +131,35 @@ await build({
 });
 const ui = await import(pathToFileURL(path.join(temp, 'render.mjs')));
 // ورقة أنماط اللعبة تُصيَّر داخل الشجرة؛ نحذفها كي لا تُحسب أسماء الأصناف مرتين.
-const stripStyle = (html) => html.replace(/<style>[\s\S]*?<\/style>/g, '');
+const stripStyle = (html) => html.replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
 const setupMarkup = (account) => { forceSetup = true; try { return stripStyle(ui.badeeha(account)); } finally { forceSetup = false; } };
 const count = (html, needle) => html.split(needle).length - 1;
 
-// شجرة عناصر React: بحث عن أول عنصر يحمل نصًا معيّنًا بين أبنائه.
-function findByText(node, text) {
+// هوية الإجراء مستقرة حتى عندما تتغير تسميته بين الإعداد المحلي والغرف الأونلاين.
+function findByDesignId(node, id) {
   if (!node || typeof node !== 'object') return null;
-  if (Array.isArray(node)) { for (const child of node) { const hit = findByText(child, text); if (hit) return hit; } return null; }
+  if (Array.isArray(node)) { for (const child of node) { const hit = findByDesignId(child, id); if (hit) return hit; } return null; }
   const children = node.props && node.props.children;
-  if (children === text) return node;
-  return findByText(children, text);
+  if (node.props?.['data-design-id'] === id) return node;
+  return findByDesignId(children, id);
+}
+
+function assertFreeStart(tree, account, target, label) {
+  const button = findByDesignId(tree, 'skip-instructions');
+  assert.ok(button, 'يوجد إجراء رئيسي للانتقال من التعليمات');
+  assert.equal(button.props.disabled, false, 'الانتقال متاح دون بلس');
+  assert.equal(button.props.children, label);
+  const previous = Object.getOwnPropertyDescriptor(globalThis, 'location');
+  const location = { hash: '#/' };
+  Object.defineProperty(globalThis, 'location', { value: location, configurable: true });
+  try {
+    button.props.onClick();
+    assert.equal(location.hash, target, 'الإجراء ينتقل فعلًا إلى إعداد اللعبة أو غرفها');
+    assert.deepEqual(account.calls, [], 'لا جدار دفع ولا استهلاك تجربة قديمة');
+  } finally {
+    if (previous) Object.defineProperty(globalThis, 'location', previous);
+    else delete globalThis.location;
+  }
 }
 
 // ── ٣) مُنتقي «بَديهة»: كل حزمة غير مجانية تحمل is-locked، والمشترك لا يرى قفلًا ──
@@ -163,8 +183,10 @@ test('بلا حساب (NULL_ACCOUNT) لا يظهر أي قفل في المُنت
 // ── ٤) شارات الرئيسية ─────────────────────────────────────────────────────
 test('Home advertises free games consistently, including exhausted legacy trials', () => {
   for (const account of [fakeAccount(),fakeAccount({trials:{beep:true,mamnoo:true}}),fakeAccount({premium:true})]) {
-    const html=ui.home(account);
-    assert.equal(count(html,'data-design-id="game-card.'), TRIAL_GAMES.length+1);
+    const html=stripStyle(ui.home(account));
+    const cards=[...html.matchAll(/<button\b[^>]*\bdata-design-id="game-card\.([a-z0-9-]+)"[^>]*>/g)];
+    assert.deepEqual(cards.map(match=>match[1]).sort(), ['badeeha',...TRIAL_GAMES].sort());
+    for (const [tag,id] of cards) assert.doesNotMatch(tag,/\bdisabled(?:\s|=|>)/,`${id} متاحة`);
     assert.doesNotMatch(html,/١٠ فئات مجانية|مباراة مجانية|card-badge[^>]*>بلس/);
   }
 });
@@ -173,17 +195,42 @@ test('game details start previously locked games without a paywall', () => {
   for (const account of [fakeAccount({trials:{beep:true}}),fakeAccount({premium:true})]) {
     const {tree,markup}=ui.detailsTree('beep',account);
     assert.match(markup,/اللعب واستضافة الغرف والانضمام مجانًا/);
-    findByText(tree,'تخطي التعليمات').props.onClick();
-    assert.deepEqual(account.calls,[]);
+    assertFreeStart(tree, account, '/play/beep?mode=local', 'إلى إعداد اللعبة');
   }
   assert.match(ui.detailsTree('badeeha',fakeAccount()).markup,/كل الفئات مجانية/);
 });
 
 test('ارسمها تعرض استضافة الغرف والانضمام المجاني ولا تعرض جهازًا واحدًا أو حزم بديهة', () => {
-  const { markup } = ui.detailsTree('ersomha', fakeAccount({ trials: { ersomha: true } }));
+  const account = fakeAccount({ trials: { ersomha: true } });
+  const { tree, markup } = ui.detailsTree('ersomha', account);
   assert.match(markup, /الانضمام مجانًا/);
   assert.match(markup, /أونلاين/);
-  assert.match(markup, /تخطي التعليمات/);
+  assert.match(markup, /إلى غرف اللعبة/);
+  assertFreeStart(tree, account, '/online/ersomha?mode=online', 'إلى غرف اللعبة');
   assert.doesNotMatch(markup, /العب على جهاز واحد|١٠ فئات مجانية/);
   assert.doesNotMatch(stripStyle(markup), /disabled/);
+});
+
+test('v2 legal and game instructions describe one full-match host ticket without the old Badeeha carve-out', () => {
+  const account = { ...fakeAccount(), gameplayPolicy: 'game-entry-ticket-v2' };
+  const terms = stripStyle(ui.terms(account));
+  assert.match(terms, /أول مباراة كاملة لكل حساب في كل لعبة مجانية/);
+  assert.match(terms, /بما فيها جميع حزم بديهة/);
+  assert.match(terms, /قبل اختيار طريقة اللعب/);
+  assert.match(terms, /تُستخدم عند بدء المباراة الفعلي فقط/);
+  assert.match(terms, /انضمام الضيوف إلى غرفة المضيف مجاني/);
+  assert.doesNotMatch(terms, /عشر حزم|كل الألعاب والحزم والمباريات وإنشاء الغرف والانضمام إليها مجانية/);
+  for (const game of ['badeeha', 'beep', 'ersomha', 'mafia']) {
+    const { markup } = ui.detailsTree(game, account);
+    assert.match(markup, /تشمل التذكرة كل جولات المباراة/);
+    assert.doesNotMatch(markup, /عشر حزم|كل الفئات مجانية|اللعب واستضافة الغرف والانضمام مجانًا/);
+  }
+});
+
+test('v1 and explicitly free legal and instructions retain their original access descriptions', () => {
+  const v1 = { ...fakeAccount(), gameplayPolicy: 'trial-ticket-v1' };
+  assert.match(stripStyle(ui.terms(v1)), /عشر حزم بديهة الأساسية/);
+  assert.match(ui.detailsTree('badeeha', v1).markup, /عشر حزم أساسية مجانية دائمًا/);
+  assert.match(stripStyle(ui.terms(fakeAccount())), /كل الألعاب والحزم والمباريات وإنشاء الغرف والانضمام إليها مجانية/);
+  assert.match(ui.detailsTree('badeeha', fakeAccount()).markup, /كل الفئات مجانية/);
 });

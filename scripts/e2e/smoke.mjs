@@ -127,7 +127,7 @@ try {
       await overflow(`${game} directory`);
     }
 
-    await go('settings');
+    await go('settings?section=audio');
     const slider = page.locator('#sound-volume');
     await slider.fill('40');
     await tap(page.getByRole('button', { name: 'تجربة الصوت', exact: true }), 'sound preview');
@@ -136,8 +136,9 @@ try {
     await tap(page.getByRole('switch', { name: 'الصوت', exact: true }), 'mute switch', { expect: 'none' });
     check(`${name}: mute disables volume/preview`, await slider.isDisabled() && await page.getByRole('button', { name: 'تجربة الصوت', exact: true }).isDisabled());
     await tap(page.getByRole('navigation', { name: 'أقسام ميدان' }).getByRole('link', { name: 'الألعاب', exact: true }), 'games tab while muted', { expect: 'none' });
-    await go('settings');
+    await go('settings?section=audio');
     await tap(page.getByRole('switch', { name: 'الصوت', exact: true }), 'unmute switch');
+    await go('settings?section=display');
     await tap(page.getByRole('switch', { name: 'تقليل الحركة', exact: true }), 'reduced motion switch', { expect: 'click' });
     const reduced = await page.evaluate(() => ({ setting: document.documentElement.dataset.reducedMotion, duration: getComputedStyle(document.querySelector('.screen')).animationDuration }));
     check(`${name}: reduced motion applies`, reduced.setting === 'true' && parseFloat(reduced.duration) < 0.001, JSON.stringify(reduced));
@@ -148,6 +149,7 @@ try {
 
     await go('players');
     for (const player of ['سارة', 'عمر', 'ليان']) {
+      await page.getByRole('button', { name: 'إضافة لاعب', exact: true }).click();
       await page.getByLabel('اسم اللاعب', { exact: true }).fill(player);
       await tap(page.getByRole('button', { name: 'إضافة', exact: true }), `add ${player}`);
     }
@@ -159,9 +161,9 @@ try {
         await tap(page.locator(`[data-design-id="game-card.${game}"]`), `${game} mode sheet`);
         await tap(page.getByRole('dialog').locator('[data-design-id="local-mode"]'), `${game} family mode`);
         await page.waitForURL(url => url.hash === `#/game/${game}?mode=local`);
-        await page.locator('.details-hero').waitFor();
+        await page.locator('.game-instructions-steps').waitFor();
         await overflow(`${game} details`);
-        const button = page.getByRole('button', { name: 'تخطي التعليمات', exact: true });
+        const button = page.getByRole('button', { name: 'إلى إعداد اللعبة', exact: true });
         check(`${name}: ${game} has one shared instruction action`, await button.count() === 1 && await page.locator('[data-design-id="online"],[data-design-id="local"]').count() === 0);
         await tap(button, `${game} skip instructions`);
         await page.waitForURL((url) => url.hash === `#/play/${game}?mode=local`);

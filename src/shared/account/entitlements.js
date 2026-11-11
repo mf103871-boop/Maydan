@@ -1,5 +1,7 @@
 // منطق الاستحقاق النقي (بلا React ولا شبكة): يُختبر في Node ويُشارَك بين الواجهة والخادم منطقيًا.
-import { TRIAL_GAMES, GRACE_MS, REFRESH_MS } from './config.js';
+import { GAMEPLAY_TRIAL_GAMES as TRIAL_GAMES, GRACE_MS, REFRESH_MS } from './config.js';
+import { FREE_PACKS } from './config.js';
+import { ticketPolicyEnabled, entryPolicyEnabled } from './gameplay-policy.mjs';
 
 // me = { user, premium: { active, until, source, status, willRenew }, trials: { beep: true, ... }, serverTime }
 // مشترك إن لم ينتهِ الاشتراك بعد (مع سماح GRACE_MS)؛ نتجاهل active وحده كي تحترم النسخة المخزّنة موعد الانتهاء.
@@ -10,10 +12,16 @@ export function isPremium(me, now = Date.now()) {
 }
 
 // Gameplay is free independently of the genuine subscription entitlement.
-export function lockedPack() { return false; }
+export function lockedPack(id, premium, policy) {
+  if (entryPolicyEnabled(policy)) return false;
+  return ticketPolicyEnabled(policy) && !premium && !FREE_PACKS.includes(id);
+}
 
 // التجربة متاحة للّعبة إن لم تُلعب لا على الخادم ولا محليًا (المشترك لا يحتاج تجربة).
-export function trialAvailable() { return true; }
+export function trialAvailable(me, localTrials = {}, game, premium = false, policy) {
+  if (!ticketPolicyEnabled(policy === undefined ? me?.gameplay?.policy : policy)) return true;
+  return !premium && TRIAL_GAMES.includes(game) && !localTrials[game] && !me?.trials?.[game];
+}
 
 // اتحاد علامات التجارب (محلي + خادم): لا يمكن استعادة تجربة بتسجيل الدخول.
 export function mergeTrials(a = {}, b = {}) {
@@ -26,4 +34,8 @@ export function shouldRefresh(fetchedAt, now = Date.now()) {
   return !Number.isFinite(fetchedAt) || now - fetchedAt > REFRESH_MS;
 }
 
-export function gameAccess() { return 'free'; }
+export function gameAccess(me, localTrials = {}, game, policy) {
+  if (!ticketPolicyEnabled(policy === undefined ? me?.gameplay?.policy : policy)) return 'free';
+  if (isPremium(me)) return 'plus';
+  return trialAvailable(me, localTrials, game, false, policy) ? 'trial' : 'locked';
+}

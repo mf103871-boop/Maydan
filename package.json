@@ -1,12 +1,14 @@
 {
   "name": "maydan-platform",
-  "version": "1.4.1",
+  "version": "1.9.0",
   "private": true,
   "type": "module",
   "description": "ميدان: ألعاب جمعتنا — ألعاب جماعية وغرف رسم وتخمين وصوت من عدة هواتف",
   "scripts": {
     "dev": "node scripts/dev.mjs",
     "preview:ui": "node scripts/ui-preview.mjs",
+    "preview:plus": "node scripts/plus-preview.mjs",
+    "plus:art": "node scripts/plus-art-v2.mjs",
     "build": "node scripts/build.mjs",
     "brand:icons": "node scripts/brand-icons.mjs",
     "ios:prepare": "node scripts/ios/prepare.mjs",

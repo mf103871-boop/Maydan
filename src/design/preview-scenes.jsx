@@ -9,7 +9,6 @@ import { OnlineDirectoryView, OnlineRoomRow } from '../online/OnlineDirectoryVie
 import { GameDetails } from '../platform/screens/GameDetails.jsx';
 import { Players } from '../platform/screens/Players.jsx';
 import { Settings } from '../platform/screens/Settings.jsx';
-import { Store } from '../platform/screens/Store.jsx';
 import { About } from '../platform/screens/About.jsx';
 import { AudioCredits } from '../platform/screens/AudioCredits.jsx';
 import { Privacy } from '../platform/screens/Legal.jsx';
@@ -25,6 +24,7 @@ import { BadeehaMatch, BadeehaSettings } from '../online/Badeeha.jsx';
 import { MafiaHistory,MafiaPrivacy,MafiaSafety,MafiaRules,MafiaSettings,MafiaDirectory,MafiaMatch } from '../online/Mafia.jsx';
 import { ErsomhaMatch } from '../online/Ersomha.jsx';
 import { ProfileView, ProfileEditor, CropDialog, SafetyDialog } from '../profiles/ProfileScreen.jsx';
+import { StoreDesignPreview } from './preview-store.jsx';
 import { SocialHost, GameInviteDialog, GroupEditor, Preferences } from '../social/SocialHost.jsx';
 import { Conversation, SearchDialog, ActionDialog } from '../social/SocialScreen.jsx';
 import { VoiceRecorder } from '../social/LammaMedia.jsx';
@@ -122,7 +122,7 @@ export function DesignScene({ sceneId = 'home', previewState, platform, account,
   if (sceneId === 'game-details') return <GameDetails id="ersomha" />;
   if (sceneId === 'players') return <Players />;
   if (sceneId === 'settings') return <Settings />;
-  if (sceneId === 'store') return <Store />;
+  if (sceneId === 'store' || sceneId === 'store.preview') return <StoreDesignPreview openPreview={sceneId === 'store.preview'} />;
   if (sceneId === 'about') return <About />;
   if (sceneId === 'audio-credits') return <AudioCredits />;
   if (sceneId === 'legal') return <Privacy />;

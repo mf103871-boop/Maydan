@@ -36,6 +36,8 @@ const ASSETS = [
   './icons/maskable-192.png',
   './icons/maskable-512.png',
   './icons/apple-touch-icon.png',
+  // Small, versioned entry artwork is part of the offline shell, not pack media.
+  './media/game-entry/match-ticket-v1.webp',
   // The sound cues (~340 KB together) travel with the shell so the first gesture can
   // play offline. The build injects their content-hashed file names from
   // src/shared/fx/sample-bank.js, so a changed cue is a new URL, never a stale hit.
@@ -127,7 +129,7 @@ self.addEventListener('fetch', (event) => {
   // Keep policies and prices live, including their stylesheet and HTML aliases.
   if (/^\/(?:pricing|refunds)(?:\/|\.html)?$/.test(pathname)
       || /^\/(?:pricing|refunds)\/index\.html$/.test(pathname)
-      || pathname === '/commerce.css') return;
+      || pathname === '/pricing/policy.js' || pathname === '/commerce.css') return;
   // The Worker redirects /studio to the owner-only editor under /api/studio/. Answering
   // that navigation with the cached game document opened the game instead.
   if (pathname === '/studio' || pathname.startsWith('/studio/')) return;

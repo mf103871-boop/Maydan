@@ -2,7 +2,7 @@
 // كل قراءة تُطبّع الشكل كي لا تُسقط بياناتٌ تالفة الواجهةَ (JSON آمن دائمًا).
 import { createStorage } from '../lib/storage.js';
 import { environmentStorageKey } from '../lib/environment.js';
-import { TRIAL_GAMES } from './config.js';
+import { GAMEPLAY_TRIAL_GAMES as TRIAL_GAMES } from './config.js';
 
 // البادئة التي يحميها «مسح البيانات» في الإعدادات (keep).
 export const ACCOUNT_PREFIX = environmentStorageKey('maydan:account:');

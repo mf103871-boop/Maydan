@@ -47,7 +47,8 @@ test('full-page chat uses the space below a changing flow banner without losing 
         await inViewport();
         assert.equal(await input.inputValue(), 'مسودة محلية A · دون إرسال');
         assert.ok(await input.evaluate(node => parseFloat(getComputedStyle(node).fontSize) >= 16));
-        await page.getByRole('button', { name: 'إعدادات التنبيهات', exact: true }).click();
+        await page.getByRole('button', { name: 'خيارات المحادثة', exact: true }).click();
+        await page.getByRole('dialog').getByRole('button', { name: 'إعدادات التنبيهات', exact: true }).click();
         const dialog = page.getByRole('dialog'); await dialog.waitFor();
         assert.equal(await dialog.evaluate(node => node.contains(document.activeElement)), true);
         await page.keyboard.press('Escape'); await dialog.waitFor({ state: 'detached' });

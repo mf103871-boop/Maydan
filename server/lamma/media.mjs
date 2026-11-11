@@ -4,7 +4,7 @@ import { clientIdOf,userId } from '../social/model.mjs';
 import { all,first,run,stmt,ident,scopeOf,scopeAllowed,requireScope,unblocked,cleanText,live } from './common.mjs';
 import { job,wakeJobs } from './notifications.mjs';
 import { getCosmetic } from '../../src/plus/catalog.js';
-import { plusActiveFor } from '../plus/access.mjs';
+import { canUseCosmetic } from '../plus/access.mjs';
 import { timed } from '../performance.mjs';
 export const MAX_AUDIO_BYTES=3*1024*1024;
 export const MAX_AUDIO_MS=120000;
@@ -79,7 +79,7 @@ export async function messageContent(env,id,scope,conversationId,body){
     }
     const sticker=getCosmetic(body.stickerId,{kind:'sticker'});
     if(!sticker)fail('INVALID',400);
-    if(!await plusActiveFor(env,id))fail('PLUS_REQUIRED',403);
+    if(!await canUseCosmetic(env,id,sticker.id))fail('PLUS_REQUIRED',403);
     return {kind,text:`ملصق: ${sticker.label} — حدّث التطبيق لعرضه`,attachmentId:null,roomInvitationId:null,stickerId:sticker.id,stickerVersion:sticker.version};
   }
   if(kind!=='voice')fail('INVALID',400);

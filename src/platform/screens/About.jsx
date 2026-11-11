@@ -1,14 +1,16 @@
-import { BrandMark, GameArtwork } from '../../shared/brand/art.jsx';
+import { BrandMark } from '../../shared/brand/art.jsx';
 import React from 'react';
-import { Screen, TopBar, IconButton, Card } from '../../shared/ui/components.jsx';
+import { Screen, TopBar, IconButton, Card, Button } from '../../shared/ui/components.jsx';
 import { IconBack } from '../../shared/ui/icons.jsx';
 import { usePlatform } from '../context.js';
-import { back, getDirection } from '../router.js';
+import { back, getDirection, getPreviousPath, navigate, useRoute } from '../router.js';
 import { GAMES } from '../registry.js';
+import { MenuGameIcon } from '../MenuGameIcon.jsx';
 import { LEGAL_ROUTES, PUBLIC_SITE_ORIGIN } from '../../shared/account/config.js';
 import { isNativeShell } from '../../shared/account/native.js';
 import { AudioCredits } from './AudioCredits.jsx';
 import { JPEG_ENCODER_LICENSE } from '../../profiles/vendor/jpeg-license.js';
+import styles from './help-rebuild.css';
 
 // Imported media keeps its attribution; generated illustrations are disclosed
 // separately without inventing a photography license or an external source.
@@ -48,28 +50,39 @@ function Credits() {
 
 export function About() {
   const { version } = usePlatform();
+  const route = useRoute();
   const native = isNativeShell();
+  const returnToHelp = () => getPreviousPath() ? back() : navigate('/settings?section=help', { replace: true });
+  if (route.params.view === 'credits') return (
+    <Screen data-design-screen="about" dir={getDirection()} className="stack help-page" aria-label="المصادر والتراخيص">
+      <style>{styles}</style>
+      <TopBar data-design-id="topbar" title="المصادر والتراخيص" start={<IconButton data-design-id="back" label="رجوع" onClick={returnToHelp}><IconBack /></IconButton>} />
+      <Credits />
+      <Button variant="accent" full onClick={returnToHelp}>إغلاق</Button>
+    </Screen>
+  );
   return (
-    <Screen data-design-screen="about" dir={getDirection()} className="stack" aria-label="عن المنصة">
+    <Screen data-design-screen="about" dir={getDirection()} className="stack help-page" aria-label="عن المنصة">
+      <style>{styles}</style>
       <TopBar data-design-id="topbar" title="عن ميدان" start={<IconButton data-design-id="back" label="رجوع" onClick={back}><IconBack /></IconButton>} />
       <Card className="stack">
         <div className="brand">
           <BrandMark />
           <div><div className="brand-name">ميدان</div><div className="brand-sub">ألعاب جمعتنا</div></div>
         </div>
-        <p className="card-muted" style={{ fontSize: 15 }}>ألعاب عربية للأصدقاء والعائلة على جهاز واحد، وغرف «مين فينا؟» ليلعب كل واحد من هاتفه. ألعاب الجهاز الواحد تعمل دون إنترنت بعد تنزيل المحتوى؛ والغرف تحتاج اتصالًا على كل هاتف.</p>
+        <p className="card-muted" style={{ fontSize: 15 }}>ألعاب عربية للأصدقاء والعائلة على جهاز واحد، وغرف بديهة ومافيا وارسمها وفبركة ومين فينا ليلعب كل واحد من هاتفه. ألعاب الجهاز الواحد تعمل دون إنترنت بعد تنزيل المحتوى؛ والغرف تحتاج اتصالًا على كل هاتف.</p>
         <div className="about-list">
           {/* رسمة كل لعبة (28px، بلا حامل) بدل النقطة الملوّنة؛ الصفوف تدخل بتدرّج 45ms */}
-          {GAMES.map((g, n) => <div key={g.id} className="row" style={{ '--c': g.accent, '--delay': `${n * 45}ms` }}><GameArtwork game={g.id} /><b>{g.name}</b><span className="muted" style={{ fontSize: 13 }}>{g.tagline}</span></div>)}
+          {GAMES.map((g, n) => <div key={g.id} className="row" style={{ '--c': g.accent, '--delay': `${n * 45}ms` }}><MenuGameIcon id={g.id} /><b>{g.name}</b><span className="muted" style={{ fontSize: 13 }}>{g.tagline}</span></div>)}
         </div>
       </Card>
       <Card className="stack">
         <span className="card-title">بيانات الغرف</span>
-        <p className="card-muted">عند دخول غرفة، تُرسل أسماء اللاعبين وشخصياتهم وتصويتاتهم إلى خادم ميدان لتنسيق اللعبة. يرى اللاعبون مجموع الأصوات فقط، وتبقى الاختيارات الفردية مخفية عن الآخرين. تنتهي الغرفة بعد ساعتين وتُحذف بياناتها النشطة. يُحفظ مفتاح العودة على جهازك، فلا تشارك بيانات المتصفح مع غيرك.</p>
+        <p className="card-muted">عند دخول غرفة، تُرسل معلومات المشاركة والإجراءات إلى خادم ميدان لتنسيق اللعبة. تختلف المعلومات الظاهرة بحسب اللعبة والمرحلة وصلاحية اللاعب. يُحفظ مفتاح العودة على جهازك، فلا تشارك بيانات المتصفح مع غيرك. تفاصيل حفظ البيانات وحذفها في سياسة الخصوصية.</p>
       </Card>
       <Card className="stack">
         <span className="card-title">جمعتكم تبدأ هنا</span>
-        <p className="card-muted">اختر لعبة لجهاز واحد، أو أنشئ غرفة «مين فينا؟» وشارك رمزها مع أصحابك. تحديات معلومات وسرعة وتمثيل وضحك، في مكان واحد.</p>
+        <p className="card-muted">اختر اللعب مع العائلة على جهاز واحد، أو افتح غرف لعبة تدعم الأونلاين وشارك رمز غرفتك مع أصحابك. تحديات معلومات ورسم واستنتاج وضحك، في مكان واحد.</p>
       </Card>
       <Credits />
       <p className="muted center legal-links" style={{ fontSize: 13 }}>

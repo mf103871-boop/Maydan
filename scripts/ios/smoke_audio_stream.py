@@ -29,7 +29,7 @@ def audio_expectation(expected_audio=None):
         return {'url': EXPECTED_MEDIA, 'seconds': 480.0}
     if (not isinstance(expected_audio, dict)
             or not isinstance(expected_audio.get('url'), str)
-            or re.fullmatch(r'maydan://app/audio/(?:selected|candidates)/[a-z0-9-]+\.m4a', expected_audio['url']) is None
+            or re.fullmatch(r'maydan://app/(?:audio/(?:selected|candidates)/[a-z0-9-]+|audio-warmth-preview/audio/[a-z][a-z0-9-]{0,79}-[a-f0-9]{12})\.m4a', expected_audio['url']) is None
             or type(expected_audio.get('seconds')) not in (int, float)
             or not math.isfinite(expected_audio['seconds']) or expected_audio['seconds'] <= 0):
         raise SmokeFailure('Invalid expected bundled audio identity or duration.')
@@ -37,13 +37,17 @@ def audio_expectation(expected_audio=None):
 
 
 def expected_audio_for_build(app, root=None, env=None):
-    """Select a private expectation only after catalog and bundled-byte checks.
+    """Select a preview expectation only after catalog and bundled-byte checks.
 
-    readManifest verifies the sealed catalog SHA and its entire file projection.
-    The selected home file must also match that catalog inside this actual .app.
-    A named private request can never silently fall back to legacy expectations.
+    Warmth takes priority over the older private-candidate build. Its pinned
+    runtime catalog, all bundled files and materialization receipt are checked;
+    the legacy private branch continues to verify its selected home recording.
+    A named preview request can never silently fall back to legacy expectations.
     """
     env = os.environ if env is None else env
+    warmth = env.get('MAYDAN_WARMTH_PREVIEW') == '1'
+    if warmth and env.get('MAYDAN_PRIVATE_AUDIO_PREVIEW') != '1':
+        raise SmokeFailure('Warmth audio smoke requires private audio and the named isolated preview build.')
     if env.get('MAYDAN_PRIVATE_AUDIO_PREVIEW') != '1':
         return None
     if env.get('IOS_RELEASE_ENVIRONMENT') != 'mafia-preview' or env.get('MAYDAN_ROOMS_URL') != PREVIEW_ORIGIN:
@@ -51,16 +55,50 @@ def expected_audio_for_build(app, root=None, env=None):
     root = Path(root).resolve() if root is not None else Path(__file__).resolve().parents[2]
     script = r"""
 import path from 'node:path';import {pathToFileURL} from 'node:url';
-import {readFile,lstat} from 'node:fs/promises';import {createHash} from 'node:crypto';
+import {readFile,lstat,readdir,realpath} from 'node:fs/promises';import {createHash} from 'node:crypto';
 const [root,app]=process.argv.slice(1);
-const {readManifest,privateAudioBuild}=await import(pathToFileURL(path.join(root,'scripts/audio/private-preview.mjs')));
+const {privateAudioBuild}=await import(pathToFileURL(path.join(root,'scripts/audio/private-preview.mjs')));
 if(!privateAudioBuild())throw Error('Private audio environment is not enabled.');
+const {validateNativeReleaseConfig}=await import(pathToFileURL(path.join(root,'scripts/ios/release-environment.mjs')));
+validateNativeReleaseConfig(JSON.parse(await readFile(path.join(app,'www/native-config.json'),'utf8')),process.env);
+const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
+if(process.env.MAYDAN_WARMTH_PREVIEW==='1'){
+  const {readWarmthManifest,warmthAudioBuild,WARMTH_BUNDLE_ID}=await import(pathToFileURL(path.join(root,'scripts/audio/warmth-preview.mjs')));
+  if(!warmthAudioBuild())throw Error('Warmth audio environment is not enabled.');
+  const manifest=await readWarmthManifest(root),pack=manifest.runtimePack;
+  const suite=pack.musicSuites?.[pack.musicDirections?.bossaAlternative?.home];
+  const entry=pack.assets?.[suite?.introTrackId];
+  if(entry?.kind!=='music'||!suite.trackIds.includes(entry.id))throw Error('Warmth home has no verified introductory recording.');
+  const seconds=entry.file.frames/entry.file.sampleRate;
+  if(!Number.isFinite(seconds)||seconds<=0||Math.abs(seconds-entry.file.durationSeconds)>.001)throw Error('Warmth home duration differs from its verified frames.');
+  const www=await realpath(path.join(app,'www'));
+  const checked=async relative=>{
+    let file=www;
+    for(const part of relative.split('/')){
+      file=path.join(file,part);
+      if((await lstat(file)).isSymbolicLink())throw Error('Bundled warmth resources must not traverse symbolic links.');
+    }
+    const info=await lstat(file),actual=await realpath(file),escaped=path.relative(www,actual);
+    if(!info.isFile()||escaped.startsWith('..')||path.isAbsolute(escaped))throw Error('Bundled warmth resource is not a regular contained file.');
+    return readFile(file);
+  };
+  const names=(await readdir(path.join(www,'audio-warmth-preview/audio'))).sort();
+  if(JSON.stringify(names)!==JSON.stringify(manifest.files.map(file=>path.basename(file.url)).sort()))throw Error('Bundled warmth resource inventory differs from the verified catalog.');
+  const verified=[];
+  for(const file of manifest.files){
+    const bytes=await checked('audio-warmth-preview/'+file.url);
+    if(bytes.length!==file.bytes||hash(bytes)!==file.sha256)throw Error('Bundled warmth asset differs from the verified catalog: '+file.url);
+    verified.push({url:'maydan://app/audio-warmth-preview/'+file.url,sha256:file.sha256,bytes:bytes.length});
+  }
+  const receipt=JSON.parse(await checked('audio-warmth-preview/pack-receipt.json'));
+  if(receipt.schemaVersion!==1||receipt.bundleId!==WARMTH_BUNDLE_ID||receipt.sourceManifestSHA256!==manifest.sourceManifestSHA256||receipt.runtimePackSHA256!==manifest.runtimePackSHA256||receipt.previewOnly!==true||receipt.deviceTested!==false||receipt.productionApproved!==false)throw Error('Bundled warmth materialization receipt mismatch.');
+  console.log(JSON.stringify({url:'maydan://app/audio-warmth-preview/'+entry.file.url,seconds,sha256:entry.file.sha256,bytes:entry.file.bytes,sourceManifestSHA256:manifest.sourceManifestSHA256,runtimePackSHA256:manifest.runtimePackSHA256,verifiedFiles:verified}));
+}else{
+const {readManifest}=await import(pathToFileURL(path.join(root,'scripts/audio/private-preview.mjs')));
 const manifest=await readManifest(root);
 const catalogURL=pathToFileURL(path.join(root,'src/shared/fx/audio-candidate-catalog.js'));catalogURL.searchParams.set('sha256',manifest.catalogSHA256);
 const {CANDIDATE_SCENES}=await import(catalogURL.href);
 const {validPrivateAudioCandidate}=await import(pathToFileURL(path.join(root,'src/shared/fx/audio-candidate-policy.js')));
-const {validateNativeReleaseConfig}=await import(pathToFileURL(path.join(root,'scripts/ios/release-environment.mjs')));
-validateNativeReleaseConfig(JSON.parse(await readFile(path.join(app,'www/native-config.json'),'utf8')),process.env);
 const entry=CANDIDATE_SCENES?.home;
 if(!validPrivateAudioCandidate(entry)||!manifest.files.some(f=>f.url===entry.url&&f.sha256===entry.sha256&&f.bytes===entry.bytes))throw Error('Private home is not a verified catalog asset.');
 const file=path.join(app,'www',entry.url),info=await lstat(file);
@@ -68,6 +106,7 @@ if(!info.isFile()||info.isSymbolicLink())throw Error('Bundled private home is no
 const bytes=await readFile(file),sha256=createHash('sha256').update(bytes).digest('hex');
 if(bytes.length!==entry.bytes||sha256!==entry.sha256)throw Error('Bundled private home differs from the verified catalog.');
 console.log(JSON.stringify({url:'maydan://app/'+entry.url,seconds:entry.seconds,sha256,bytes:bytes.length,catalogSHA256:manifest.catalogSHA256}));
+}
 """
     try:
         result = subprocess.run(['node', '--input-type=module', '--eval', script, str(root), str(Path(app).resolve())],
@@ -122,6 +161,13 @@ class AudioStreamSmoke(UpdateGateSmoke):
                 or state['decodedMaxSeconds'] >= 60):
             raise SmokeFailure('Long music was decoded as a full buffer or actual cue decodes were not observed.')
         expected = audio_expectation(expected_audio)
+        if expected['url'].startswith('maydan://app/audio-warmth-preview/'):
+            media_values = state.get('media')
+            if isinstance(media_values, list) and any(
+                    isinstance(value, dict) and value.get('contextIndex') == state['contextCount'] - 1
+                    and value.get('paused') is False and value.get('url') != expected['url']
+                    for value in media_values):
+                raise SmokeFailure('Unexpected concurrent music or legacy fallback in the Warmth audio graph.')
         media = cls.media(state, playing=playing, expected_audio=expected)
         if not media or media.get('error') is not None:
             raise SmokeFailure('The selected bundled music has no real media element in the current context.')
@@ -179,7 +225,7 @@ class AudioStreamSmoke(UpdateGateSmoke):
                 self.use_verified_simulator(prepared)
             expected = expected_audio_for_build(self.app)
             self.expected_audio = expected
-            self.record('expected-audio', audio_expectation(expected))
+            self.record('expected-audio', expected if expected is not None else audio_expectation(expected))
             self.launch('audio-stream', 5)
             self.latest_pid = self.report['launches'][-1]['pid']
             data = Path(self.prepare_command('audio-data-container', 180, 'get_app_container', self.device, self.bundle, 'data').stdout.strip())

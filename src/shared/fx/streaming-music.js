@@ -1,7 +1,46 @@
 // The eight-minute recording stays in the media decoder. Never fetch/decode it
 // as an AudioBuffer: 48 kHz stereo Float32 would consume ~184 MB on an iPhone.
 // WebKit's bundled maydan: handler already serves audio/mp4 byte ranges.
-export function createStreamingMusic(track, { onFailure = () => {} } = {}) {
+import { createStreamingSuite } from './streaming-suite.js';
+
+// The suite branch is compiled out of normal builds. Existing single recordings
+// keep their established playback and recovery path unchanged.
+export const createStreamingMusic = ((typeof __MAYDAN_LOCAL_AUDIO_REVIEW__ !== 'undefined' && __MAYDAN_LOCAL_AUDIO_REVIEW__ === true) || (typeof __MAYDAN_WARMTH_PREVIEW__ !== 'undefined' && __MAYDAN_WARMTH_PREVIEW__ === true)) ? createLocalStreamingMusic : createSingleStreamingMusic;
+
+function createLocalStreamingMusic(track, options) {
+  const suiteEnabled = value => Array.isArray(value?.suiteTracks);
+  let isSuite = suiteEnabled(track);
+  let player = isSuite ? createStreamingSuite(track, options) : createSingleStreamingMusic(track, options);
+  const listeners = new Set();
+  const status = () => player.getStatus?.() || Object.freeze({ mode: 'single', trackId: track.id, trackTitle: track.title || track.id, position: player.position, chapterSeconds: track.seconds, state: player.current ? 'playing' : 'paused', decoderCount: player.decoderCount });
+  const notify = () => { const value = status(); for (const fn of listeners) { try { fn(value); } catch { /* diagnostic only */ } } };
+  let unsubscribe = player.subscribeStatus?.(notify);
+  return {
+    supported(context) { return player.supported(context); },
+    setTrack(next) {
+      const nextSuite = suiteEnabled(next);
+      if (nextSuite !== isSuite) {
+        unsubscribe?.(); player.dispose(); isSuite = nextSuite;
+        player = isSuite ? createStreamingSuite(next, options) : createSingleStreamingMusic(next, options);
+        unsubscribe = player.subscribeStatus?.(notify);
+      } else player.setTrack(next);
+      track = next; notify();
+    },
+    play(context, destination, id) { const ok = player.play(context, destination, id); notify(); return ok; },
+    pause(options) { player.pause(options); notify(); },
+    reset() { player.reset(); notify(); },
+    dispose() { player.dispose(); notify(); },
+    getStatus: status,
+    skipNext() { if (!isSuite || !player.skipNext) return false; return player.skipNext(); },
+    retry() { return !!isSuite && !!player.retry?.(); },
+    subscribeStatus(fn) { if (typeof fn !== 'function') return () => {}; listeners.add(fn); try { fn(status()); } catch { /* diagnostic only */ } return () => listeners.delete(fn); },
+    get current() { return player.current; },
+    get position() { return player.position; },
+    get decoderCount() { return player.decoderCount; },
+  };
+}
+
+function createSingleStreamingMusic(track, { onFailure = () => {} } = {}) {
   let active = null;
   let graph = null;
   let scene = null;
@@ -72,7 +111,7 @@ export function createStreamingMusic(track, { onFailure = () => {} } = {}) {
     }
     audio.onerror = () => fail(slot);
     audio.ontimeupdate = () => {
-      if (active !== slot || slot.fading || audio.paused || slot.epoch !== epoch) return;
+      if (recording.loop === false || active !== slot || slot.fading || audio.paused || slot.epoch !== epoch) return;
       const duration = Number.isFinite(audio.duration) ? audio.duration : recording.seconds;
       const remaining = duration - audio.currentTime;
       if (remaining <= 0 || remaining > recording.crossfadeSeconds || audio.currentTime < 1) return;
@@ -85,6 +124,7 @@ export function createStreamingMusic(track, { onFailure = () => {} } = {}) {
     audio.onended = () => {
       if (!running) return;
       if (active !== slot || slot.epoch !== epoch) { remove(slot); return; }
+      if (recording.loop === false) { position = recording.seconds; remove(slot); return; }
       remove(slot); position = 0;
       try { start(context, destination, 0); } catch { failed = true; onFailure(); }
     };
@@ -111,6 +151,7 @@ export function createStreamingMusic(track, { onFailure = () => {} } = {}) {
     play(context, destination, id) {
       if (!supported(context)) return false;
       scene = id;
+      if (!active && track.loop === false && position >= track.seconds) return true;
       if (graph !== context) {
         this.reset(); graph = context;
       }

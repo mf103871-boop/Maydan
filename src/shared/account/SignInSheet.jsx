@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import { Sheet, Button } from '../ui/components.jsx';
 import { useAccount } from './context.js';
 import { accountErrorText } from './errors.js';
-import { PUBLISHED_SETTINGS_URL, signInProviders } from './config.js';
+import { LEGAL_ROUTES, PUBLISHED_SETTINGS_URL, signInProviders } from './config.js';
 
 export const SIGN_IN_NOTE = 'الاشتراك يُربط بحسابك ليعمل على كل أجهزتك';
 
@@ -63,7 +63,7 @@ export function SignInSheet({ open, onClose, title = 'تسجيل الدخول', 
         {(account.error === 'PREVIEW_ONLY' || account.signInProvidersError === 'PREVIEW_ONLY') && (
           <a className="btn btn-secondary btn-full" href={PUBLISHED_SETTINGS_URL} target="_blank" rel="noopener noreferrer">فتح الموقع المنشور لتسجيل الدخول ↗</a>
         )}
-        <p data-design-id="privacy-note" data-design-required="true" className="account-fineprint">لا نطلب كلمة مرور. يكفي حساب Apple أو Google لتتبع اشتراكك.</p>
+        <p data-design-id="privacy-note" data-design-required="true" className="account-fineprint">يتم الدخول عبر حساب Apple أو Google. <a data-design-id="privacy-link" href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a> · <a data-design-id="terms-link" href={LEGAL_ROUTES.terms}>شروط الاستخدام</a></p>
       </div>
     </Sheet>
   );

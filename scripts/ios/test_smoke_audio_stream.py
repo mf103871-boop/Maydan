@@ -93,7 +93,7 @@ class AudioStreamEvidenceTests(unittest.TestCase):
                     self.state('replace-context',context_count=2,position=2.2,clock=.8)]
             smoke.read_until=Mock(side_effect=copy.deepcopy(states))
             variable='SIMCTL_CHILD_MAYDAN_SIMULATOR_AUDIO'
-            with patch.dict(os.environ,{variable:'previous','MAYDAN_PRIVATE_AUDIO_PREVIEW':'0'}),redirect_stdout(io.StringIO()):
+            with patch.dict(os.environ,{variable:'previous','MAYDAN_PRIVATE_AUDIO_PREVIEW':'0','MAYDAN_WARMTH_PREVIEW':'0'}),redirect_stdout(io.StringIO()):
                 self.assertEqual(smoke.run(),0)
                 self.assertEqual(os.environ[variable],'previous')
             for filename,expected in zip(['initial-playing','advancing','background-paused','foreground-resumed','closed-context-replaced','replacement-advancing'],states[1:]):
@@ -138,8 +138,29 @@ class AudioStreamEvidenceTests(unittest.TestCase):
             self.assertEqual(json.loads((smoke.output/'last-timeout-state.json').read_text()),self.state())
 
 
+class WarmthAudioEvidenceTests(AudioStreamEvidenceTests):
+    # Re-run the same RMS, clock, current-context, pause/resume and replacement
+    # contracts for the Warmth introductory chapter. This is still unit data,
+    # not a simulator result or a claim of actual speaker output.
+    private_audio = {'url': 'maydan://app/audio-warmth-preview/audio/music-bossa-8173a990b555.m4a', 'seconds': 78.901405896}
+
+    def test_warmth_does_not_accept_legacy_playback_or_escaped_resource_urls(self):
+        with self.assertRaises(SmokeFailure):
+            AudioStreamSmoke.validate(self.state(), expected_audio=self.private_audio)
+        mixed=self.private_state(); mixed['media'].append(self.state()['media'][0])
+        with self.assertRaisesRegex(SmokeFailure,'concurrent music or legacy fallback'):
+            AudioStreamSmoke.validate(mixed, expected_audio=self.private_audio)
+        for url in ['https://example.test/audio-warmth-preview/audio/music-bossa-8173a990b555.m4a',
+                    'maydan://other/audio-warmth-preview/audio/music-bossa-8173a990b555.m4a',
+                    'maydan://app/audio-warmth-preview/../audio/music-bossa-8173a990b555.m4a',
+                    'maydan://app/audio-warmth-preview/audio/music-bossa.m4a',
+                    self.private_audio['url']+'?fallback=1']:
+            with self.subTest(url=url), self.assertRaises(SmokeFailure):
+                audio_expectation({**self.private_audio,'url':url})
+
+
 class PrivateAudioExpectationTests(unittest.TestCase):
-    env = {'MAYDAN_PRIVATE_AUDIO_PREVIEW':'1', 'IOS_RELEASE_ENVIRONMENT':'mafia-preview', 'MAYDAN_ROOMS_URL':PREVIEW_ORIGIN}
+    env = {'MAYDAN_PRIVATE_AUDIO_PREVIEW':'1', 'MAYDAN_WARMTH_PREVIEW':'0', 'IOS_RELEASE_ENVIRONMENT':'mafia-preview', 'MAYDAN_ROOMS_URL':PREVIEW_ORIGIN}
 
     def test_disabled_and_misnamed_private_requests_never_silently_change_the_legacy_gate(self):
         self.assertIsNone(expected_audio_for_build(Path('not-read.app'),env={}))
@@ -186,6 +207,111 @@ class PrivateAudioExpectationTests(unittest.TestCase):
             catalog.write_text(catalog_text,encoding='utf-8')
             config.write_text(json.dumps({'version':1,'apiOrigin':'https://maydan-game.mf103871.workers.dev','authCallback':'maydan://auth'}),encoding='utf-8')
             with self.assertRaisesRegex(SmokeFailure,'native config does not match'):
+                expected_audio_for_build(app,root=root,env=self.env)
+
+
+class WarmthAudioExpectationTests(unittest.TestCase):
+    env = {**PrivateAudioExpectationTests.env, 'MAYDAN_WARMTH_PREVIEW':'1'}
+
+    def fixture(self, temporary):
+        # Tiny, distinct integrity fixtures only. Re-pin a COPY of the verifier
+        # to this synthetic catalog; production pins and assets are untouched.
+        source_root=Path(__file__).resolve().parents[2]
+        root=Path(temporary)/'source'; app=Path(temporary)/'Maydan.app'; root.mkdir()
+        (root/'package.json').write_text('{"type":"module"}',encoding='utf-8')
+        for name in ['scripts/audio/private-preview.mjs','scripts/audio/warmth-preview.mjs',
+                     'scripts/ios/release-environment.mjs','scripts/ios/native.mjs',
+                     'src/shared/lib/environment.js','src/shared/account/config.js']:
+            file=root/name; file.parent.mkdir(parents=True,exist_ok=True); file.write_bytes((source_root/name).read_bytes())
+        manifest=json.loads((source_root/'assets/audio-warmth-preview/manifest.json').read_text(encoding='utf-8'))
+        original_pin=manifest['runtimePackSHA256']; files=[]; payloads={}
+        for identifier, entry in manifest['runtimePack']['assets'].items():
+            payload=('synthetic-not-audio-'+identifier).encode(); digest=hashlib.sha256(payload).hexdigest()
+            entry['file'].update(url=f'audio/{identifier}-{digest[:12]}.m4a',sha256=digest,bytes=len(payload),
+                                 frames=3483900 if entry['kind']=='music' else 22050,sampleRate=44100,
+                                 durationSeconds=79 if entry['kind']=='music' else .5)
+            spec={key:entry['file'][key] for key in ['url','sha256','bytes']}; files.append(spec)
+            destination=app/'www/audio-warmth-preview'/spec['url']; destination.parent.mkdir(parents=True,exist_ok=True)
+            destination.write_bytes(payload); payloads[spec['url']]=payload
+        manifest['files']=files; manifest['bytes']=sum(file['bytes'] for file in files)
+        canonical=json.dumps(manifest['runtimePack'],sort_keys=True,separators=(',',':'),ensure_ascii=False).encode('utf-8')
+        manifest['runtimePackSHA256']=hashlib.sha256(canonical).hexdigest()
+        module=root/'scripts/audio/warmth-preview.mjs'; module_text=module.read_text(encoding='utf-8')
+        self.assertEqual(module_text.count(original_pin),1)
+        module.write_text(module_text.replace(original_pin,manifest['runtimePackSHA256']),encoding='utf-8')
+        manifest_path=root/'assets/audio-warmth-preview/manifest.json'; manifest_path.parent.mkdir(parents=True)
+        manifest_path.write_text(json.dumps(manifest),encoding='utf-8')
+        receipt={key:manifest[key] for key in ['schemaVersion','bundleId','sourceManifestSHA256','runtimePackSHA256','previewOnly','deviceTested','productionApproved']}
+        receipt_path=app/'www/audio-warmth-preview/pack-receipt.json'; receipt_path.write_text(json.dumps(receipt),encoding='utf-8')
+        config=app/'www/native-config.json'; config.write_text(json.dumps({'version':1,'apiOrigin':PREVIEW_ORIGIN,'authCallback':'maydan://auth'}),encoding='utf-8')
+        return root,app,manifest,manifest_path,receipt_path,payloads
+
+    def test_warmth_flag_precedes_private_fallback_and_rejects_wrong_environment(self):
+        for change in [{'MAYDAN_PRIVATE_AUDIO_PREVIEW':'0'}, {'IOS_RELEASE_ENVIRONMENT':'production'},
+                       {'MAYDAN_ROOMS_URL':'https://maydan-game.mf103871.workers.dev'}]:
+            with self.subTest(change=change), patch('smoke_audio_stream.subprocess.run') as node:
+                with self.assertRaisesRegex(SmokeFailure,'named isolated'):
+                    expected_audio_for_build(Path('never-read.app'),env={**self.env,**change})
+                node.assert_not_called()
+
+    def test_all_bundled_warmth_bytes_are_pinned_and_legacy_catalog_is_not_needed(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root,app,manifest,manifest_path,receipt_path,payloads=self.fixture(temporary)
+            # No old audio-candidate-catalog exists in this fixture. Both flags
+            # are enabled, exactly as in the isolated release job.
+            result=expected_audio_for_build(app,root=root,env=self.env)
+            home=manifest['runtimePack']['assets']['music-bossa']['file']
+            self.assertEqual(result['url'],'maydan://app/audio-warmth-preview/'+home['url'])
+            self.assertEqual(result['seconds'],79)
+            self.assertEqual(result['sourceManifestSHA256'],manifest['sourceManifestSHA256'])
+            self.assertEqual(result['runtimePackSHA256'],manifest['runtimePackSHA256'])
+            self.assertEqual(len(result['verifiedFiles']),14)
+            self.assertEqual(sum(file['bytes'] for file in result['verifiedFiles']),manifest['bytes'])
+            # A non-intro cue must be checked too, not just the selected music.
+            other=manifest['files'][-1]; other_path=app/'www/audio-warmth-preview'/other['url']
+            other_path.write_bytes(b'corrupt')
+            with self.assertRaisesRegex(SmokeFailure,'Bundled warmth asset differs'):
+                expected_audio_for_build(app,root=root,env=self.env)
+            other_path.write_bytes(payloads[other['url']]); other_path.unlink()
+            with self.assertRaisesRegex(SmokeFailure,'resource inventory differs'):
+                expected_audio_for_build(app,root=root,env=self.env)
+            other_path.write_bytes(payloads[other['url']])
+            extra=other_path.parent/'unexpected.m4a'; extra.write_bytes(b'extra')
+            with self.assertRaisesRegex(SmokeFailure,'resource inventory differs'):
+                expected_audio_for_build(app,root=root,env=self.env)
+            extra.unlink()
+            manifest['runtimePack']['musicSuites']['warmth-long']['introTrackId']='music-warmth-a'
+            manifest_path.write_text(json.dumps(manifest),encoding='utf-8')
+            with self.assertRaisesRegex(SmokeFailure,'configuration integrity mismatch'):
+                expected_audio_for_build(app,root=root,env=self.env)
+
+    def test_warmth_receipt_native_origin_and_missing_manifest_fail_closed(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root,app,manifest,manifest_path,receipt_path,payloads=self.fixture(temporary)
+            original=receipt_path.read_bytes()
+            for field,value in [('runtimePackSHA256','0'*64),('previewOnly',False),('deviceTested',True)]:
+                receipt=json.loads(original); receipt[field]=value; receipt_path.write_text(json.dumps(receipt),encoding='utf-8')
+                with self.subTest(field=field), self.assertRaisesRegex(SmokeFailure,'materialization receipt mismatch'):
+                    expected_audio_for_build(app,root=root,env=self.env)
+            receipt_path.write_bytes(original)
+            config=app/'www/native-config.json'; config_bytes=config.read_bytes()
+            config.write_text(json.dumps({'version':1,'apiOrigin':'https://maydan-game.mf103871.workers.dev','authCallback':'maydan://auth'}),encoding='utf-8')
+            with self.assertRaisesRegex(SmokeFailure,'native config does not match'):
+                expected_audio_for_build(app,root=root,env=self.env)
+            config.write_bytes(config_bytes); manifest_path.unlink()
+            with self.assertRaisesRegex(SmokeFailure,'Cannot verify private simulator audio'):
+                expected_audio_for_build(app,root=root,env=self.env)
+
+    def test_warmth_symlink_cannot_replace_a_catalog_asset(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root,app,manifest,manifest_path,receipt_path,payloads=self.fixture(temporary)
+            spec=manifest['files'][-1]; file=app/'www/audio-warmth-preview'/spec['url']
+            outside=Path(temporary)/'outside.m4a'; outside.write_bytes(file.read_bytes()); file.unlink()
+            try:
+                file.symlink_to(outside)
+            except OSError:
+                self.skipTest('Host does not permit symlinks; this rejection test runs on macOS CI.')
+            with self.assertRaisesRegex(SmokeFailure,'symbolic links'):
                 expected_audio_for_build(app,root=root,env=self.env)
 
 

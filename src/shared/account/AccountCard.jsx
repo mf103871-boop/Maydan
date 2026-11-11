@@ -12,6 +12,7 @@ import { RedeemSheet, REDEEM_PROMPT } from './RedeemSheet.jsx';
 import { REDEEM_ON_IOS, SUPPORT_EMAIL } from './config.js';
 import { navigate } from '../../platform/router.js';
 import { resolveAccountServer } from './api.js';
+import { useAcceptedFeedback } from '../fx/accepted-feedback.js';
 
 const SOURCE_TEXT = { apple: 'عبر App Store', paddle: 'عبر الويب', promo: 'برمز هدية' };
 
@@ -44,6 +45,14 @@ export function AccountCard() {
 
 function AccountCardOwner() {
   const account = useAccount();
+  const accepted = useAcceptedFeedback(`${resolveAccountServer()}:${account.user?.id || 'guest'}`);
+  const restore = async () => {
+    const feedback = accepted.begin();
+    try {
+      const result = await account.restore();
+      if (account.user?.id && result?.user?.id === account.user.id && isPremium(result)) feedback.confirm();
+    } catch (error) { feedback.error(error); }
+  };
   const { signedIn, refresh } = account;
   useEffect(() => { if (signedIn) refresh(); }, [signedIn, refresh]);
   const [signIn, setSignIn] = useState(false);
@@ -57,16 +66,17 @@ function AccountCardOwner() {
   const redeemButton = canRedeem ? <Button variant="ghost" onClick={() => setRedeem(true)}>{REDEEM_PROMPT}</Button> : null;
 
   return (
-    <Card data-design-screen="account.card" className="stack account-card" aria-label="الحساب">
+    <Card data-design-screen="account.card" className={`stack account-card${user ? '' : ' is-guest'}`} aria-label="الحساب">
       <div className="row"><IconUsers style={{ color: 'var(--accent)' }} /><span className="card-title">الحساب</span></div>
       {!user ? (
         <>
-          <p className="card-muted">الحساب: غير مسجّل</p>
+          <h3 className="account-guest-title">احفظ ملفك وأصدقاءك</h3>
           {account.promo && <p className="account-plan is-plus">{subscriptionLine(account.me, account.premium, account.promo)} · على هذا الجهاز</p>}
-          <p className="card-muted">سجّل الدخول ليعمل اشتراك {PLUS_NAME} على كل أجهزتك.</p>
+          <p className="card-muted">سجّل الدخول لتحفظ بروفايلك وأصدقاءك وإنجازاتك على أجهزتك.</p>
           {account.offline
             ? <p className="online-notice" role="status">{accountErrorText('OFFLINE')}</p>
             : <Button variant="primary" data-design-id="account-signin" data-design-required="true" onClick={() => setSignIn(true)}>تسجيل الدخول</Button>}
+          <Button data-design-id="continue" variant="ghost" onClick={() => navigate('/')}>متابعة كضيف</Button>
           {redeemButton}
         </>
       ) : (
@@ -75,7 +85,7 @@ function AccountCardOwner() {
             <b>{user.name || 'لاعب ميدان'}</b>
             {user.email && <small className="muted">{user.email}</small>}
           </div>
-          {suspension ? <div className="online-notice error" role="status"><b>حسابك معلّق</b><p>الملف والتواصل والغرف غير متاحة أثناء التعليق. يمكنك إدارة اشتراكك واستعادة المشتريات أو حذف الحساب.</p>{suspension.reason && <p dir="auto">السبب: {suspension.reason}</p>}<a href={`mailto:${SUPPORT_EMAIL}`}>التواصل مع الدعم بخصوص التعليق</a></div> : <Button variant="secondary" icon={<IconUsers />} data-design-id="profile" onClick={() => navigate('/profile')}>بروفايلي وإنجازاتي</Button>}
+          {suspension ? <div className="online-notice error account-suspension" role="status"><b>حسابك معلّق</b><p>الملف والتواصل والغرف غير متاحة أثناء التعليق. يمكنك إدارة اشتراكك واستعادة المشتريات أو حذف الحساب.</p>{suspension.reason && <p dir="auto">السبب: {suspension.reason}</p>}<a href={`mailto:${SUPPORT_EMAIL}`}>التواصل مع الدعم بخصوص التعليق</a></div> : <Button variant="secondary" icon={<IconUsers />} data-design-id="profile" onClick={() => navigate('/profile')}>بروفايلي وإنجازاتي</Button>}
           <p className={`account-plan ${account.premium ? 'is-plus' : ''}`}>{subscriptionLine(account.me, account.premium, account.promo)}</p>
           {!account.premium && !suspension && (
             <Button variant="primary" icon={<IconStar />} data-design-id="purchase" onClick={() => account.openPaywall({ reason: 'settings' })}>اشترك في {PLUS_NAME}</Button>
@@ -85,7 +95,7 @@ function AccountCardOwner() {
             <Button variant="secondary" data-design-id="subscription" data-design-required="true" onClick={() => account.manageSubscription()}>إدارة الاشتراك</Button>
           )}
           {ios && (
-            <Button variant="secondary" icon={<IconRotate />} loading={account.busy === 'restore'} data-design-id="restore" data-design-required="true" onClick={() => account.restore()}>استعادة المشتريات</Button>
+            <Button data-sound="none" variant="secondary" icon={<IconRotate />} loading={account.busy === 'restore'} data-design-id="restore" data-design-required="true" onClick={restore}>استعادة المشتريات</Button>
           )}
           <Button variant="ghost" icon={<IconBack />} loading={account.busy === 'signout'} data-design-id="account-signout" data-design-required="true" onClick={() => account.signOut()}>تسجيل الخروج</Button>
           <Button variant="danger" icon={<IconTrash />} data-design-id="account-delete" data-design-required="true" onClick={() => setConfirmDelete(true)}>حذف الحساب</Button>

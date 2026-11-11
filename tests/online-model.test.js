@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createRoom, joinRoom, connected, action, tick, leaveRoom, snapshot, profile, nextAlarm } from '../server/room-model.mjs';
-import { HOST_GRACE, ROOM_TTL, ROOM_MAX_TTL, MATCH_EXTENSION, SEAT_GRACE, COLORS, normalizeCode, validateServerUrl } from '../src/online/shared.js';
+import { HOST_GRACE, ROOM_TTL, ROOM_MAX_TTL, MATCH_EXTENSION, SEAT_GRACE, COLORS, normalizeCode, validateServerUrl, roomInviteUrl } from '../src/online/shared.js';
 const people = Array.from({ length: 13 }, (_, n) => ({ id: `p${n}`, tokenHash: `secret${n}`, name: `لاعب ${n}`, avatar: n % 4, rounds: 5 }));
 const deck = Array.from({ length: 12 }, (_, n) => ({ id: `q${n}`, text: `سؤال ${n}`, tag: 'نوم' }));
 function lobby(n = 3) {
@@ -13,6 +13,15 @@ function lobby(n = 3) {
 function command(r, id, type, extra = {}, now = 1100) { action(r, id, { type, matchId: r.matchId, round: r.round, ...extra }, now, deck); }
 function playing(n = 3) { const r = lobby(n); command(r, 'p0', 'start'); return r; }
 const rejects = (code, fn) => assert.throws(fn, (e) => e.code === code);
+
+test('room invitations share a real web URL and keep native beta on its configured server', () => {
+  assert.equal(roomInviteUrl('123456','http://127.0.0.1:4186/play/?session=discard#old',''),
+    'http://127.0.0.1:4186/play/#/room/123456');
+  assert.equal(roomInviteUrl('123456','maydan://app/index.html','https://preview.example.test'),
+    'https://preview.example.test/#/room/123456');
+  assert.equal(roomInviteUrl('123456','maydan://app/index.html',''), '');
+  assert.equal(roomInviteUrl('invalid','https://preview.example.test',''), '');
+});
 
 test('room profiles, Arabic codes and backend URLs validate at the boundary', () => {
   assert.equal(profile({ name: '  أحمد  علي ', avatar: 2 }).name, 'أحمد علي');

@@ -17,3 +17,19 @@
 .mafia-tutorial-screen .mafia-tutorial-coach h2{font-size:13px}.mafia-tutorial-screen .mafia-tutorial-coach-actions .btn{font-size:12px}
 .mafia-tutorial-stage .mafia-density .mafia-seat{height:59px!important;min-height:59px!important}.mafia-tutorial-stage .mafia-density .mafia-seat small{font-size:8px!important;white-space:nowrap}.mafia-tutorial-stage .mafia-density .mafia-heading h1{font-size:13px!important}.mafia-tutorial-stage .mafia-density .mafia-heading p{display:block!important}.mafia-tutorial-stage .mafia-density .mafia-player-rail{max-height:none!important}.mafia-tutorial-stage .mafia-density .mafia-activity{min-height:65px!important}.mafia-tutorial-stage .mafia-density .mafia-ability{max-height:min(20dvh,115px)!important}
 @media(orientation:landscape) and (max-height:550px){.mafia-tutorial-screen.mafia-room-shell.mafia-noir{grid-template-columns:195px minmax(0,1fr)}.mafia-tutorial-stage .mafia-density:not(.is-finished){display:flex!important;flex-direction:column}.mafia-tutorial-stage .mafia-density .mafia-seats{display:flex!important}.mafia-tutorial-stage .mafia-density .mafia-seat{height:50px!important;min-height:50px!important}.mafia-tutorial-stage .mafia-density .mafia-heading p{display:block!important}.mafia-tutorial-stage .mafia-density .mafia-ability{max-height:90px!important}}
+
+/* Local training and pause share the dossier palette. */
+.mafia-tutorial-screen.mafia-room-shell.mafia-noir { background: #261330; color: #fff1ff; }
+.mafia-tutorial-top { background: #492550; border-color: #a16ca1; }
+.mafia-tutorial-top small { color: #e9cae9; }
+.mafia-tutorial-coach { background: #fff3e4; color: #452d4a; border-color: #d1adc7; }
+.mafia-tutorial-coach small { color: #5f4561; }
+.mafia-tutorial-coach .mafia-tutorial-feedback { background: #f6e1d7; border-color: #a45840; color: #552d22; }
+.mafia-tutorial-screen .mafia-tutorial-coach .btn { background: #eee0ef; border-color: #a877a4; color: #3e2441; box-shadow: none; }
+.mafia-tutorial-stage .mafia-lobby-ready { background: #412448; }
+.mafia-tutorial-resume { background: linear-gradient(160deg,#59315e,#301737); color: #fff6ff; border: 1px solid #a878a3; }
+.mafia-tutorial-exit .modal-foot { display: grid; grid-template-columns: 1fr 1fr; }
+.mafia-tutorial-stage .mafia-lobby-players { max-height: min(21dvh,120px); }
+@media (orientation: landscape) and (max-height: 550px) {
+  .mafia-tutorial-stage .mafia-lobby-players { max-height: 56px; }
+}

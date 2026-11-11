@@ -2,6 +2,7 @@
 // العميل يملك نسخته في src/shared/account/entitlements.js؛ هذه هي التي تبني me.
 import { GRACE_MS } from '../../src/shared/account/config.js';
 import { inBillingEnvironment } from './billing-environment.mjs';
+import { gameplayAccessDescriptor } from '../rewarded/settings.mjs';
 
 const REVOKED = new Set(['revoked', 'refunded']);
 
@@ -41,8 +42,8 @@ export function meResponse({ user, subscriptions = [], trials = {}, now = Date.n
   return {
     user: { id: user.id, name: user.name || null, email: user.email || null },
     premium,
-    gameplay: { access: 'free', allPacks: true, hosting: 'free' },
-    plus: { cosmetics: premiumActive(premium,now), presets: premiumActive(premium,now), stickers: premiumActive(premium,now) },
+    gameplay: gameplayAccessDescriptor(env),
+    plus: { cosmetics: premiumActive(premium,now), presets: false, stickers: false },
     trials,
     serverTime: now,
   };

@@ -1,5 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Wordmark, WorldArtwork, GameArtwork, ClayStage } from '../../shared/brand/art.jsx';
+import { GameArtwork, ClayStage } from '../../shared/brand/art.jsx';
+import { MenuGameIcon } from '../MenuGameIcon.jsx';
 import { prepareVisuals } from '../../shared/fx/readiness.js';
 import { Button } from '../../shared/ui/components.jsx';
 import { cacheStartupImages } from '../../shared/media/startup-cache.js';
@@ -23,18 +24,17 @@ export function storageKnownUnavailable(now = Date.now()) {
 }
 import gameIcons from '../../shared/brand/assets/game-icons.webp';
 import avatars from '../../shared/brand/assets/avatars.webp';
-import world from '../../shared/brand/assets/world.webp';
 
-export function useVisualReadiness({ includeWorld = false } = {}) {
+export function useVisualReadiness() {
   const [ready, setReady] = useState(false);
   const [progress, setProgress] = useState({ complete: 0, total: 0 });
   useEffect(() => {
     let active = true;
-    prepareVisuals({ images: includeWorld ? [world, gameIcons, avatars] : [gameIcons, avatars],
+    prepareVisuals({ images: [gameIcons, avatars],
       onProgress: (next) => { if (active) setProgress(next); },
     }).then(() => { if (active) setReady(true); });
     return () => { active = false; };
-  }, [includeWorld]);
+  }, []);
   return { ready, progress };
 }
 
@@ -55,7 +55,7 @@ export function GameLoading({ game, progress }) {
 }
 
 export function Splash({ onDone, visible = true, reducedMotion = false }) {
-  const { ready } = useVisualReadiness({ includeWorld: true });
+  const { ready } = useVisualReadiness();
   const route = useRoute(), lamma = useLamma();
   const [downloadGate] = useState(createBackgroundDownloadGate);
   const [backgroundPaused, setBackgroundPaused] = useState(false);
@@ -180,7 +180,6 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
     finished.current = true;
     onDone();
   };
-  const percent = images.total ? Math.floor(images.ok / images.total * 100) : 0;
   const number = (value) => value.toLocaleString('ar');
   const incomplete = Math.max(0, images.total - images.ok);
 
@@ -194,34 +193,21 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
   }
 
   return <div className="splash" aria-busy={phase === 'loading'} aria-label="تجهيز ميدان" data-reduced-motion={reducedMotion ? 'true' : undefined}>
-    <div className="splash-sky" aria-hidden="true">
-      <i className="splash-cloud" style={{ '--i': 0 }} /><i className="splash-cloud" style={{ '--i': 1 }} />
-      <i className="splash-balloon" style={{ '--i': 0 }} /><i className="splash-balloon" style={{ '--i': 1 }} />
-      <i className="splash-star" /><i className="splash-star" /><i className="splash-star" /><i className="splash-star" />
-    </div>
-    <WorldArtwork className="splash-world" />
-    <div className="splash-inner"><Wordmark sculpted /><div className="splash-sub">ألعاب جمعتنا</div></div>
-    <div className="splash-loading">
-      <div className="loading-status startup-download">
-        <span className="startup-download-kicker">نجهّز كل الصور للّعب</span>
-        <h1>{phase === 'error' ? 'باقي صور لم يكتمل تحميلها' : phase === 'unsaved' ? 'الصور جاهزة لهذه الجلسة' : ['ready', 'skipped'].includes(phase) ? 'الصور جاهزة، نفتح الساحة…' : 'نحمّل صور الألعاب…'}</h1>
-        <div className="startup-download-count" aria-hidden="true">
-          <b>{number(percent)}٪</b><span>{number(images.ok)} من {number(images.total)} صورة</span>
-        </div>
+      <div className="startup-download">
+        <MenuGameIcon id="badeeha" className="startup-download-art" />
+        <h1>{phase === 'error' ? 'باقي صور لم يكتمل تحميلها' : phase === 'unsaved' ? 'الصور جاهزة لهذه الجلسة' : ['ready', 'skipped'].includes(phase) ? 'الصور جاهزة، نفتح الساحة…' : 'جارٍ تجهيز ميدان'}</h1>
         <progress className="startup-download-progress" max={images.total || 1} value={images.ok} aria-label="تحميل صور اللعبة" aria-valuetext={`${number(images.ok)} من ${number(images.total)} صورة`} />
         <p className="startup-download-note" role="status" aria-live="polite">
           {phase === 'error'
             ? `تعذّر تجهيز ${number(incomplete)} صورة. تحقّق من الاتصال وأعد المحاولة؛ الصور المكتملة محفوظة إذا كانت مساحة الجهاز تسمح.`
             : phase === 'unsaved'
               ? 'المتصفح لا يسمح بحفظ الصور على هذا الجهاز (تصفّح خاص أو مساحة ممتلئة)، فستُجلب من الإنترنت عند الحاجة.'
-              : 'ستفتح اللعبة خلال لحظات، وتكتمل الصور خارج اللعب والمكالمات. الصور المحفوظة لا نحمّلها مجددًا.'}
+              : `${number(images.ok)} من ${number(images.total)} صورة · تكتمل الصور عند العودة للقوائم`}
         </p>
         <div className="startup-download-actions">
           {phase === 'error' && <Button variant="primary" full onClick={() => setAttempt((value) => value + 1)}>إعادة المحاولة</Button>}
-          <Button variant="ghost" full disabled={!ready} onClick={enterWithAvailableImages}>الدخول بالصور المتاحة</Button>
-          <small>ادخل الآن؛ يستأنف التحميل عند العودة للقوائم.</small>
+          <Button variant="ghost" full disabled={!ready} onClick={enterWithAvailableImages}>الدخول بالمحتوى المتاح</Button>
         </div>
       </div>
-    </div>
   </div>;
 }

@@ -2,11 +2,16 @@ import statements from '../src/data/games/meenfina/statements.json' with { type:
 import { createRoom, joinRoom, connected, leaveRoom, action, tick, snapshot, nextAlarm, member, roomCapacity, RoomError, fail } from './game-model.mjs';
 import { buildFabrakaDeck } from './fabraka-content.mjs';
 import { credentials, readJson, json, errorResponse, shuffled, createLimit, sha256 } from './protocol.mjs';
-import { bindSeatAccount, prepareRoomStats } from './room-stats.mjs';
+import { bindSeatAccount, noteProgressionAction, prepareRoomStats } from './room-stats.mjs';
+import { accountProgressionEnabled } from './account-progression.mjs';
+import { assertRewardedAccount, rewardedEnvironment, rewardedOffer, reserveRewardedMatch, commitRewardedMatch, releaseRewardedMatch } from './rewarded/ledger.mjs';
+import { gameplayTicketsEnabled, gameplayEntryEnabled, requireGameplayCapability, rewardedLedgerEnvironment } from './rewarded/settings.mjs';
+import { gameplayOffer, gameplayOfferById } from '../src/shared/account/gameplay-policy.mjs';
+import { freeBadeehaRoom } from './rewarded/badeeha-free.mjs';
 import { recordOnlineResult, profileSummaries } from './profiles/db.mjs';
 import { recheckMafiaHost, mafiaHostEligible } from './accounts/router.mjs';
 import { getCosmetic } from '../src/plus/catalog.js';
-import { plusActiveFor } from './plus/access.mjs';
+import { canUseCosmetic } from './plus/access.mjs';
 import { prepareRoomAppearance, selectRoomAppearance } from './plus/room-appearance.mjs';
 import { requireSession } from './accounts/session.mjs';
 import { liveAccountSql } from './moderation/access.mjs';
@@ -33,6 +38,14 @@ import { ersomhaBoardId, emptyErsomhaDrawing, loadErsomhaDrawing, checkpointErso
   prepareErsomhaDrawing, ersomhaSyncMessages, ersomhaDrawingMeta, ersomhaVisibleCanvas, archiveErsomhaDrawing, deleteErsomhaDrawing } from './ersomha-drawing.mjs';
 const SOCKET_IDLE = 45_000;
 const STATS_RETRY = 30_000;
+const REWARDED_START_INTENT = 'rewarded:start-intent';
+const REWARDED_RETRY = 5_000;
+const policyRoomOffer = (env, room) => gameplayTicketsEnabled(env) &&
+  !(room.game === 'badeeha' && !gameplayEntryEnabled(env) && freeBadeehaRoom(room.settings))
+  ? gameplayOffer(room.game || 'meenfina', 'online') : null;
+const effectiveRoomOffer = (env, room) => policyRoomOffer(env, room) ||
+  (!room.gameplayPolicy && !gameplayOfferById(room.rewardedOffer) ? rewardedOffer(room.rewardedOffer) : null);
+const statsDue = event => Math.max(event.notBefore || 0, event.retryAt || 0);
 const STATS_MAX_ATTEMPTS = 48; // a day of half-minute retries
 const MAFIA_RESULT_FAILURE_CODES=new Set(['MAFIA_PROGRESS_DISABLED','MAFIA_PROGRESS_UNAVAILABLE','MAFIA_PROGRESS_PENDING','MAFIA_PROGRESS_INVALID']);
 const MAX_QUEUED_SOCKET_MESSAGES = 64;
@@ -68,6 +81,7 @@ export class Room {
     this.mafiaMetadata={};
     this.ready = ctx.blockConcurrencyWhile(async () => {
       this.room = await ctx.storage.get('room') || null;
+      this.rewardedStartIntent = this.room?.rewardedOffer ? await ctx.storage.get(REWARDED_START_INTENT) : null;
       // A hibernated object may have withheld a committed publication during
       // an account-store outage. Reconcile its current state on the first wake.
       this.accountPublicationPending = Boolean(this.room && this.room.game !== 'mafia' && (this.room.game === 'ersomha' || this.room.directory?.visibility === 'public' || this.sockets().some(ws => this.attachment(ws).accountSessionId)));
@@ -100,7 +114,12 @@ export class Room {
   }
   // Without a database binding the outbox can never drain; do not wake every 30 s for it.
   outboxPending() { return Boolean(this.env.DB) && (this.profileOutbox.length > 0||this.mafiaResultOutbox.length>0); }
-  outboxAlarm(now=Date.now()){return Math.min(...[this.profileOutbox[0],this.mafiaResultOutbox[0]].filter(Boolean).map(event=>event.notBefore>now?event.notBefore:now+STATS_RETRY));}
+  outboxAlarm(now = Date.now()) {
+    const nextAttempt = event => statsDue(event) > now ? statsDue(event) : now + STATS_RETRY;
+    let earliest = this.mafiaResultOutbox.length ? nextAttempt(this.mafiaResultOutbox[0]) : Infinity;
+    for (const event of this.profileOutbox) earliest = Math.min(earliest, nextAttempt(event));
+    return earliest;
+  }
   mafiaVoiceAlive(room,id,now=Date.now()) {
     const account=room.members.find(m=>m.id===id)?.accountUserId;
     return room.game==='mafia'&&Boolean(room.mafiaMedia?.devices?.[account])&&room.mafiaMedia?.authSessions?.[account]?.expiresAt>now&&now-(room.mafiaMedia?.presence?.[account]||0)<SOCKET_IDLE;
@@ -110,12 +129,14 @@ export class Room {
   }
   alarmAt(room, now) {
     if(room.game==='mafia'&&this.mafiaCleanupRetryAt>now)return this.mafiaCleanupRetryAt;
+    const rewardedRetry = this.rewardedStartIntent ? this.rewardedStartRetryAt || now + REWARDED_RETRY : Infinity;
+    if (this.rewardedStartIntent && (room.phase === 'closed' || room.expiresAt <= now)) return Math.max(now + 1, rewardedRetry);
     const deadlines = this.sockets().map((ws) => {
       const a = this.attachment(ws);
       if (room.game !== 'mafia' && a.revoked) return null;
       return a.id ? Math.min(this.lastSeen(ws, a) + SOCKET_IDLE, room.game !== 'mafia' ? a.accountExpiresAt ?? Infinity : Infinity) : a.authDeadline;
     }).filter(Number.isFinite);
-    return Math.max(now + 1, Math.min(room.game==='mafia'&&room.phase==='closed'?room.closedDeleteAt||now+90000:nextAlarm(room, now), ...deadlines, this.accountPublicationRetryAt || Infinity, ...(needsOnlineDirectory(this.env,room)?[this.onlineDirectoryRefreshAt||now+ONLINE_DIRECTORY_REFRESH_MS]:[]), ...(room.game==='mafia'?[...(room.phase==='closed'?[]:[room.mafiaRenewAt||now+30_000,this.mafiaAuthDeadline(room)]),observerNextAlarm(this.observerStream),room.observerRenewAt||now+30_000]:[]), ...(this.outboxPending() ? [this.outboxAlarm(now)] : [])));
+    return Math.max(now + 1, Math.min(room.game==='mafia'&&room.phase==='closed'?room.closedDeleteAt||now+90000:nextAlarm(room, now), ...deadlines, rewardedRetry, this.accountPublicationRetryAt || Infinity, ...(needsOnlineDirectory(this.env,room)?[this.onlineDirectoryRefreshAt||now+ONLINE_DIRECTORY_REFRESH_MS]:[]), ...(room.game==='mafia'?[...(room.phase==='closed'?[]:[room.mafiaRenewAt||now+30_000,this.mafiaAuthDeadline(room)]),observerNextAlarm(this.observerStream),room.observerRenewAt||now+30_000]:[]), ...(this.outboxPending() ? [this.outboxAlarm(now)] : [])));
   }
   async schedule({ skipIdenticalMafiaAlarm = false } = {}) {
     if (this.room) {
@@ -149,7 +170,16 @@ export class Room {
       // The receipt endpoint remains the sole source of awarded amounts.
       candidate.statsMatch.rewardReceipt={matchKey:mafiaResult.key,notBefore:mafiaResult.notBefore};
     }
-    const outbox = [...this.profileOutbox, ...prepareRoomStats(this.room,candidate,completedAt,{mafiaProgressEnabled:mafiaProgressEnabled(this.env),mafiaResult})];
+    const stats = prepareRoomStats(this.room,candidate,completedAt,{
+      mafiaProgressEnabled:mafiaProgressEnabled(this.env),accountProgressionEnabled:accountProgressionEnabled(this.env),mafiaResult,
+    });
+    const grants = stats.filter(event => event.progressionPlan);
+    if (grants.length) {
+      candidate.statsMatch.progressionReceipt = {
+        users: grants.map(event => event.userId), notBefore: grants[0].notBefore ?? grants[0].finishedAt,
+      };
+    }
+    const outbox = [...this.profileOutbox, ...stats];
     const mafiaOutbox=[...this.mafiaResultOutbox,...(mafiaResult?[mafiaResult]:[])];
     const resetDrawing = candidate.game === 'ersomha' && (!this.drawing || this.drawing.boardId !== ersomhaBoardId(candidate));
     const nextDrawing = resetDrawing ? emptyErsomhaDrawing(candidate) : this.drawing;
@@ -557,11 +587,19 @@ export class Room {
   stateFor(id) {
     assertSupportedMafiaRuleset(this.room);
     const state = snapshot(this.room, id, Date.now());
+    const offer = this.room.phase === 'lobby' ? effectiveRoomOffer(this.env, this.room) : rewardedOffer(this.room.rewardedOffer);
+    if (offer && this.room.hostId === id) state.rewardedOffer = offer.id;
     state.appearance = this.room.appearance || null;
     state.members = state.members.map(m => {
       const profile = this.room.members.find(seat => seat.id === m.id)?.profile;
       return profile ? { ...m, profile } : m;
     });
+    const marker = this.room.statsMatch;
+    const owner = this.room.members.find(seat => seat.id === id && !seat.left)?.accountUserId;
+    if (['over', 'closed'].includes(state.phase) && !state.waiting && owner && marker?.accounts?.[id] === owner
+      && marker.progressionReceipt?.users.includes(owner)) {
+      state.progressionReceipt = { eventId: marker.eventId, notBefore: marker.progressionReceipt.notBefore };
+    }
     if (this.room.game === 'ersomha' && this.drawing?.boardId === ersomhaBoardId(this.room)) state.drawing = ersomhaDrawingMeta(this.drawing);
     if (this.room.game === 'mafia') {
       if(this.room.ranked){
@@ -589,8 +627,16 @@ export class Room {
       // The small journal write is committed before any receiver or sender sees
       // this sequence. Recipients are authorized after that write (a D1 answer
       // under ACCOUNT_RECHECK_MS old may be reused for ink); no full game
-      // snapshot or stats write is needed for an ink batch.
-      const head = await persistErsomhaDrawing(this.ctx.storage, change.board, change.event, this.drawingHead);
+      // snapshot or stats write is needed after a seat's first committed ink.
+      let roomWithFirstInk = null;
+      const marker = this.room.statsMatch;
+      if (marker?.progressionPlan && marker.accounts?.[id] && !marker.progressionActors?.includes(id)
+        && change.event.kind === 'append' && change.event.op.tool === 'pen' && change.event.op.points.length) {
+        const candidate = { ...this.room };
+        if (noteProgressionAction(candidate, id, command)) roomWithFirstInk = candidate;
+      }
+      const head = await persistErsomhaDrawing(this.ctx.storage, change.board, change.event, this.drawingHead, roomWithFirstInk);
+      if (roomWithFirstInk) this.room = roomWithFirstInk;
       this.drawing = change.board; this.drawingHead = head;
       if (await this.authorizeAccountPublication({ recent: true })) for (const socket of this.sockets()) {
         const recipient = this.attachment(socket), seat = recipient.revoked ? null : recipient.id;
@@ -613,8 +659,8 @@ export class Room {
     if (a.reactTokens < 1) { ws.serializeAttachment(a); fail('RATE_LIMIT', 429); }
     a.reactTokens -= 1; ws.serializeAttachment(a);
     if (cosmetic) {
-      const userId = await this.cosmeticActor(a.id, command);
-      if (!await plusActiveFor(this.env, userId, now)) fail('PLUS_REQUIRED', 403);
+      const userId = await this.accountActor(a.id, command);
+      if (!await canUseCosmetic(this.env, userId, cosmetic.id, now)) fail('PLUS_REQUIRED', 403);
     }
     this.reactionCounter = (this.reactionCounter || 0) + 1;
     const event = { type: 'reaction', id: `${now.toString(36)}-${this.reactionCounter}`, seatId: a.id, emoji: cosmetic?.emoji || command.emoji, at: now,
@@ -630,17 +676,27 @@ export class Room {
     const task = (async () => {
       await this.ready;
       while (this.env.DB && this.profileOutbox.length) {
-        const event = this.profileOutbox[0];
-        if(event.notBefore>Date.now())break;
+        const now = Date.now();
+        const event = this.profileOutbox.find(item => statsDue(item) <= now);
+        if (!event) break;
         // D1 waits happen outside the game-command queue. A slow or unavailable
         // database must not delay a room action or the next match.
         try { await recordOnlineResult(this.env, event); }
         catch (error) {
-          // A malformed event (the database says INVALID) or one that keeps failing
-          // must not block every later result behind it: drop it after a bounded
-          // number of attempts. Transient failures keep the head of the queue.
           const permanent = error instanceof RoomError && error.status === 400;
           const attempts = (event.attempts || 0) + 1;
+          // Keep promised progression through outages and lost D1 acknowledgements.
+          // A delayed retry leaves other results in this room free to settle.
+          if (!permanent && event.progressionPlan) {
+            const retryAt = Date.now() + Math.min(STATS_RETRY * 2 ** Math.min(attempts - 1, 5), 15 * 60_000);
+            await this.serial(async () => {
+              const pending = this.profileOutbox.map(item => item === event ? { ...item, attempts, retryAt } : item);
+              await this.ctx.storage.put('profileOutbox', pending);
+              this.profileOutbox = pending;
+            });
+            continue;
+          }
+          // Keep the existing bounded retry policy for legacy statistics.
           if (!permanent && attempts < STATS_MAX_ATTEMPTS) {
             await this.serial(async () => {
               this.profileOutbox = this.profileOutbox.map((item) => (item === event ? { ...item, attempts } : item));
@@ -691,6 +747,67 @@ export class Room {
     this.accountPublicationRetryAt = null;
     await this.settleAccountPublicationAlarm();
   }
+  async reconcileRewardedStart(now = Date.now()) {
+    const claim = this.rewardedStartIntent;
+    this.rewardedStartRetryAt = now + REWARDED_RETRY;
+    // A storage failure may mean that the write actually succeeded. Never
+    // release a reservation or process another mutation using an old lobby.
+    let durable;
+    try { durable = await this.ctx.storage.get('room'); }
+    catch {
+      await this.ctx.storage.setAlarm(this.rewardedStartRetryAt);
+      fail('REWARDED_UNAVAILABLE', 503);
+    }
+    const started = durable?.rewardedMatchId === claim.matchId;
+    const unpublished = started && (!this.rewardedStartVerified || this.room?.revision !== durable.revision);
+    this.rewardedStartVerified = true;
+    if (unpublished) {
+      // A cold object may have loaded the new revision after the previous
+      // instance persisted the start but before it could tell its sockets.
+      this.room = durable;
+      this.fastAdvanceRoom = null;
+      await this.broadcast();
+    }
+    try {
+      if (started) await commitRewardedMatch(this.env, claim);
+      else await releaseRewardedMatch(this.env, claim);
+      await this.deleteKey(REWARDED_START_INTENT);
+      this.rewardedStartIntent = null;
+      this.rewardedStartRetryAt = null;
+    } catch {
+      // Keep the intent and its alarm for idempotent cross-store recovery.
+    }
+    await this.schedule();
+    return started;
+  }
+  async startRewardedMatch(candidate, seatId, command, prepare) {
+    if (this.rewardedStartIntent) fail('REWARDED_BUSY', 409);
+    if (!(gameplayOfferById(candidate.rewardedOffer) ? rewardedLedgerEnvironment(this.env) : rewardedEnvironment(this.env))) fail('REWARDED_UNAVAILABLE', 503);
+    const userId = await this.accountActor(seatId, command);
+    const claim = { offer: candidate.rewardedOffer, userId, matchId: crypto.randomUUID() };
+    this.rewardedStartIntent = claim;
+    this.rewardedStartVerified = false;
+    this.rewardedStartRetryAt = Date.now() + REWARDED_RETRY;
+    let startError;
+    try {
+      // Persist the match identity and schedule recovery before touching D1.
+      await this.ctx.storage.transaction(async (tx) => {
+        await tx.put(REWARDED_START_INTENT, claim);
+        await tx.setAlarm(this.alarmAt(this.room, Date.now()));
+      });
+      await reserveRewardedMatch(this.env, claim);
+      await this.accountActor(seatId, command);
+      await prepare();
+      candidate.rewardedMatchId = claim.matchId;
+      await this.commit(candidate, { prepared: ['ersomha', 'mafia'].includes(candidate.game) });
+      this.rewardedStartVerified = true;
+    } catch (error) {
+      startError = error;
+    }
+    if (await this.reconcileRewardedStart().catch(() => fail('REWARDED_UNAVAILABLE', 503))) return;
+    if (startError instanceof RoomError) throw startError;
+    fail('REWARDED_UNAVAILABLE', 503);
+  }
   async advance({ force = false } = {}) {
     if (!this.room) return;
     // Fail before tick, observer projection or the account-failure abort path.
@@ -698,6 +815,10 @@ export class Room {
     assertSupportedMafiaRuleset(this.room);
     if(this.room.game==='mafia')await this.advanceObservers();
     const now = Date.now();
+    if (this.rewardedStartIntent) {
+      if (now >= (this.rewardedStartRetryAt || 0)) await this.reconcileRewardedStart(now);
+      if (this.rewardedStartIntent && !this.rewardedStartVerified) fail('REWARDED_UNAVAILABLE', 503);
+    }
     if(this.room.game==='mafia'&&this.mafiaCleanupRetryAt>now)return;
     // Between durable room changes only time can advance the game. Avoid
     // cloning/stringifying the full private turn plan for every ink batch.
@@ -722,6 +843,7 @@ export class Room {
       if(candidate.game==='mafia'&&Date.now()<candidate.closedDeleteAt){await this.schedule();return;}
       const reason = candidate.reason === 'expired' ? 'EXPIRED' : 'NOT_FOUND';
       for (const ws of this.sockets()) { this.send(ws, { type: 'error', error: reason }); this.close(ws, 4404, reason); }
+      if (this.rewardedStartIntent) return; // Recovery still needs the durable start marker.
       if (candidate.game === 'ersomha') {
         try { await releaseErsomhaLease(this.env, candidate.ersomhaLease); } catch { /* short lease expiry remains safe */ }
         await deleteErsomhaDrawing(this.ctx.storage, this.drawingHead, this.drawingArchives);
@@ -774,10 +896,10 @@ export class Room {
       seat.profile = profile ? { avatarPreset: profile.avatarPreset, theme: profile.theme, avatarUrl: profile.avatarUrl, revision: profile.revision, cosmetics: profile.cosmetics } : null;
     } catch { seat.profile = null; }
   }
-  async cosmeticActor(seatId, command) {
+  async accountActor(seatId, command) {
     const seat = member(this.room, seatId);
     if (!seat.accountUserId || typeof command.accountAuthorization !== 'string' || command.accountAuthorization.length > 512) fail('AUTH_REQUIRED', 401);
-    const request = new Request('https://room.internal/api/cosmetics', { headers: { authorization: command.accountAuthorization } });
+    const request = new Request('https://room.internal/api/account', { headers: { authorization: command.accountAuthorization } });
     const auth = await requireSession(this.env, request, { rotate: false });
     if (auth.user.id !== seat.accountUserId) fail('AUTH', 401);
     return auth.user.id;
@@ -844,6 +966,22 @@ export class Room {
         if(endpoint==='mafia-ranked-create'&&request.method==='POST')return await this.createRankedMatch(await readJson(request,8192));
         if (request.method === 'POST' && endpoint === 'create') {
           const input = await credentials(await readJson(request, 4096, createLimit));
+          requireGameplayCapability(this.env, input.capabilities?.gameplayAccess);
+          const policyOffer = policyRoomOffer(this.env, input);
+          if (gameplayTicketsEnabled(this.env) && input.rewardedOffer != null && input.rewardedOffer !== policyOffer?.id) fail('REWARDED_UNAVAILABLE', 403);
+          const offer = gameplayTicketsEnabled(this.env) ? policyOffer :
+            input.rewardedOffer == null ? null : rewardedOffer(input.rewardedOffer);
+          if (input.rewardedOffer != null) {
+            if (!(gameplayOfferById(offer?.id) ? rewardedLedgerEnvironment(this.env) : rewardedEnvironment(this.env)) || offer?.mode !== 'online' || offer.game !== (input.game || 'meenfina')
+              || (gameplayOfferById(offer.id) && !gameplayTicketsEnabled(this.env))
+              || (!gameplayOfferById(offer.id) && input.directory?.visibility === 'public')) fail('REWARDED_UNAVAILABLE', 403);
+            if (!input.accountUserId) fail('AUTH_REQUIRED', 401);
+            await assertRewardedAccount(this.env, input.accountUserId);
+          }
+          if (policyOffer) {
+            if (!input.accountUserId) fail('AUTH_REQUIRED', 401);
+            await assertRewardedAccount(this.env, input.accountUserId);
+          }
           if (input.game === 'badeeha' && input.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
           if(input.game==='mafia') {requireMafiaEnabled(this.env);requireMafiaNewMatches(this.env);if(input.capabilities?.mafia!==MAFIA_PROTOCOL)fail('UPDATE_REQUIRED',409);if(!input.accountUserId)fail('AUTH_REQUIRED',401);}
           if(input.game==='mafia'&&input.settings?.experimentalRole&&(!mafiaPreviewOnly(this.env)||String(this.env.MAFIA_EXPERIMENTAL_ROLES_ENABLED)!=='1'))fail('MAFIA_EXPERIMENT_DISABLED',409);
@@ -858,12 +996,15 @@ export class Room {
             const owner = this.room.members.find((m) => m.id === input.id && !m.left);
             if (!owner || owner.tokenHash !== input.tokenHash) return json({ error: 'COLLISION' }, 409);
             if ((this.room.game || 'meenfina') !== (input.game || 'meenfina')) fail('GAME');
-            if ((['ersomha','mafia'].includes(this.room.game)||this.room.directory?.visibility==='public') && owner.accountUserId !== input.accountUserId) fail('AUTH', 401);
+            if ((this.room.rewardedOffer || ['ersomha','mafia'].includes(this.room.game)||this.room.directory?.visibility==='public') && owner.accountUserId !== input.accountUserId) fail('AUTH', 401);
+            if ((effectiveRoomOffer(this.env, this.room)?.id || null) !== (offer?.id || null)) fail('REWARDED_UNAVAILABLE', 409);
             return json({ code: this.room.code, id: input.id, game: this.room.game || 'meenfina' });
           }
           const created = createRoom(code, input, Date.now());
           const directory=normalizeRoomDirectory(input,this.env);
           if(directory)created.directory=directory;
+          if (offer) created.rewardedOffer = offer.id;
+          if (gameplayTicketsEnabled(this.env)) created.gameplayPolicy = this.env.GAMEPLAY_ACCESS_POLICY;
           created.roomTrialGate = input.roomTrialGate || null;
           created.roomTrialClaim = crypto.randomUUID();
           created.trialOwnerId = input.id;
@@ -967,6 +1108,10 @@ export class Room {
         if (request.method === 'POST' && endpoint === 'join') {
           const input = await credentials(await readJson(request));
           await assertOnlineDirectoryAdmission(this.env,this.room,input);
+          if (this.room.rewardedOffer) {
+            const previous = this.room.members.find(m => !m.left && m.id === input.id);
+            if (previous?.accountUserId && previous.accountUserId !== input.accountUserId) fail('AUTH', 401);
+          }
           if (this.room.game === 'badeeha' && input.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
           if(this.room.game==='mafia') {
             if(this.room.ranked&&!this.room.members.some(m=>!m.left&&m.id===input.id&&m.accountUserId===input.accountUserId))fail('MAFIA_RANKED_PRIVATE',403);
@@ -1099,7 +1244,7 @@ export class Room {
           for (const other of this.sockets()) if (other !== ws && this.attachment(other).id === id) {
             other.serializeAttachment({ replaced: true }); this.close(other, 4409, 'REPLACED');
           }
-          ws.serializeAttachment({ id, seenAt: now, windowAt: now, count: 1,...accountIdentity });
+          ws.serializeAttachment({ id, seenAt: now, windowAt: now, count: 1, gameplayAccess: command.capabilities?.gameplayAccess, ...accountIdentity });
           const candidate = structuredClone(this.room);
           // Retire persisted billing-derived host flags after verified account auth.
           if(candidate.game==='mafia')member(candidate,id).canHost=true;
@@ -1136,7 +1281,8 @@ export class Room {
         }
         if (command.type === 'react') { await this.reaction(ws, a, command, now); metricOutcome='ok';this.send(ws, { type: 'ack', requestId, ok: true }); return; }
         if (command.type === 'appearance') {
-          if (command.themeId != null) await this.cosmeticActor(a.id, command);
+          if (Object.hasOwn(command, 'councilSkinId')) fail('INVALID', 400);
+          if (command.themeId != null) await this.accountActor(a.id, command);
           const themed = structuredClone(this.room);
           await selectRoomAppearance(this.env, themed, a.id, command.themeId);
           await this.commit(themed);
@@ -1147,6 +1293,7 @@ export class Room {
           await this.drawingCommand(ws, a.id, command); return;
         }
         const candidate = structuredClone(this.room);
+        if (command.type === 'start') requireGameplayCapability(this.env, command.gameplayCapability ?? a.gameplayAccess);
         const deck = command.type === 'start' && !['ersomha', 'badeeha','mafia'].includes(candidate.game) ? (candidate.game === 'fabraka' ? buildFabrakaDeck(candidate) : meenfinaDeck(candidate)) : [];
         if (command.type === 'start' && this.env.DB) {
           const hostAccount = candidate.members.find(m => m.id === candidate.hostId && !m.left)?.accountUserId;
@@ -1157,14 +1304,27 @@ export class Room {
           if(command.type==='start')await recheckMafiaHost(this.env,candidate,now);
         }
         action(candidate, a.id, command, now, deck);
+        noteProgressionAction(candidate, a.id, command);
+        if (command.type === 'start') {
+          const offer = effectiveRoomOffer(this.env, candidate);
+          if (gameplayTicketsEnabled(this.env)) candidate.gameplayPolicy = this.env.GAMEPLAY_ACCESS_POLICY;
+          if (offer) candidate.rewardedOffer = offer.id;
+          else if (candidate.gameplayPolicy) delete candidate.rewardedOffer;
+        }
         if (candidate.game === 'ersomha' && command.type === 'start') attemptedStart = candidate;
-        if (candidate.game === 'ersomha') await this.prepareErsomha(candidate);
-        if (candidate.game === 'mafia') await this.prepareMafia(candidate,mafiaSessionProof);
+        const prepare = async () => {
+          if (candidate.game === 'ersomha') await this.prepareErsomha(candidate);
+          if (candidate.game === 'mafia') await this.prepareMafia(candidate,mafiaSessionProof);
+        };
         if (command.type === 'start' && !candidate.trialStarted && !(candidate.game==='mafia'&&candidate.phase==='over')) {
           // Legacy snapshots retain the started marker; no free allowance is spent.
           candidate.trialStarted = true;
         }
-        await this.commit(candidate, { prepared: ['ersomha','mafia'].includes(candidate.game) });
+        if (candidate.rewardedOffer && command.type === 'start') await this.startRewardedMatch(candidate, a.id, command, prepare);
+        else {
+          await prepare();
+          await this.commit(candidate, { prepared: ['ersomha','mafia'].includes(candidate.game) });
+        }
         metricOutcome='ok';
         this.send(ws, { type: 'ack', requestId, ok: true });
       } catch (error) {

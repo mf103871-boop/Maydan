@@ -9,7 +9,7 @@ export const GAME_PROTOCOLS = Object.freeze({ meenfina: PROTOCOL, fabraka: FABRA
 // بَديهة أونلاين: جوال لكل فريق (من فريقين إلى أربعة)، والمؤقت كما في اللعبة على جهاز واحد.
 export const BADEEHA_MAX_TEAMS = 4;
 export const BADEEHA_TIMERS = Object.freeze([30, 60, 90]);
-export const ROOM_CAPABILITIES = Object.freeze({ ersomha: ERSOMHA_PROTOCOL, badeeha: BADEEHA_PROTOCOL, mafia: MAFIA_PROTOCOL, mafiaRulesets:Object.freeze([1,2]) });
+export const ROOM_CAPABILITIES = Object.freeze({ ersomha: ERSOMHA_PROTOCOL, badeeha: BADEEHA_PROTOCOL, mafia: MAFIA_PROTOCOL, mafiaRulesets:Object.freeze([1,2]), gameplayAccess: 2 });
 // تفاعلات سريعة داخل الغرفة: طقم رموز ثابت بلا نص حر، يُبث للحاضرين ولا يُحفظ.
 // رسالة `reaction` جديدة لا تكسر عميلًا أقدم (يتجاهل الأنواع التي لا يعرفها)، فلا يُرفع البروتوكول.
 export const ROOM_REACTIONS = Object.freeze(['😂', '👏', '😮', '🔥', '😅', '❤️']);
@@ -85,6 +85,19 @@ export function validateServerUrl(value) {
 export function resolveServerUrl(value, pageOrigin = '') {
   return validateServerUrl(value === 'same-origin' ? pageOrigin : value);
 }
+export function roomInviteUrl(code, pageUrl, serverUrl) {
+  if (!validCode(code)) return '';
+  try {
+    const page = new URL(pageUrl);
+    // Native pages use an internal WKWebView URL. The recipient needs the
+    // public web entry of the server hosting this room, even in a beta build.
+    const url = ['http:', 'https:'].includes(page.protocol)
+      ? page : new URL(validateServerUrl(serverUrl));
+    url.search = '';
+    url.hash = `/room/${code}`;
+    return url.href;
+  } catch { return ''; }
+}
 export const ERRORS = {
   DIRECTORY_DISABLED: 'دليل الغرف العامة غير متاح حاليًا. أنشئ غرفة خاصة أو ادخل برمز.',
   ROOM_BLOCKED: 'تعذّر الانضمام إلى هذه الغرفة بسبب إعدادات الحظر.',
@@ -143,6 +156,10 @@ export const ERRORS = {
   GAME: 'هذه اللعبة غير متاحة للغرف. اختر لعبة من قائمة غرف ميدان.',
   UPDATE_REQUIRED: 'هذه الغرفة تحتاج إصدارًا أحدث من ميدان. حدّث التطبيق ثم افتح الدعوة مجددًا.',
   AUTH_REQUIRED: 'سجّل الدخول للانضمام إلى هذه اللعبة وحفظ تقدمك عبر أجهزتك.',
+  REWARDED_REQUIRED: 'تحتاج تذكرة جديدة لهذا التحدّي التجريبي. اختر من بطاقة التحدّي.',
+  REWARDED_BUSY: 'هناك بداية مباراة قيد التحقق. ارجع إلى المباراة نفسها أو حاول مجددًا بعد التحقق.',
+  REWARDED_UNAVAILABLE: 'هذا التحدّي التجريبي غير متاح حاليًا. تقدر تلعب الغرف المجانية.',
+  REWARDED_ACCOUNT: 'أكّد حسابك قبل المشاركة في تحدّي اللمّة التجريبي.',
   ERSOMHA_BUSY: 'لديك مباراة ارسمها جارية في غرفة أخرى. عُد إليها أو غادرها قبل البدء هنا.',
   ERSOMHA_EXHAUSTED: 'لا توجد كلمات جديدة كافية لهذه المجموعة. وسّع الفئات أو اختر إعادة الكلمات القديمة بوضوح.',
   ERSOMHA_CONTENT_EXHAUSTED: 'لا توجد كلمات جديدة كافية لهذه المجموعة. وسّع الفئات أو اختر إعادة الكلمات القديمة بوضوح.',

@@ -251,7 +251,16 @@ test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec'
       "ALTER TABLE mafia_reports ADD COLUMN category TEXT NOT NULL DEFAULT 'other' CHECK(category IN ('harassment','cheating','disruption','inappropriate','other'));",
       'ALTER TABLE mafia_reports ADD COLUMN match_id INTEGER;',
       'ALTER TABLE mafia_reports ADD COLUMN review_started_at INTEGER;',
-      'ALTER TABLE mafia_reports ADD COLUMN reviewer_id TEXT;'].includes(statement) ||
+      'ALTER TABLE mafia_reports ADD COLUMN reviewer_id TEXT;',
+      // 0029: only the new preview ledger's constrained concurrency indexes.
+      "CREATE UNIQUE INDEX IF NOT EXISTS rewarded_claims_trial ON rewarded_match_claims(environment,user_id,offer) WHERE source='trial' AND state IN ('reserved','committed');",
+      "CREATE UNIQUE INDEX IF NOT EXISTS rewarded_claims_ticket ON rewarded_match_claims(ticket_id) WHERE ticket_id IS NOT NULL AND state IN ('reserved','committed');",
+      "CREATE UNIQUE INDEX IF NOT EXISTS rewarded_claims_reserved ON rewarded_match_claims(environment,user_id,offer) WHERE state='reserved' AND source IN ('trial','ticket');",
+      // 0030: old per-mode trial rows retain NULL, including duplicate games.
+      'ALTER TABLE rewarded_match_claims ADD COLUMN game_key TEXT;',
+      "CREATE UNIQUE INDEX IF NOT EXISTS rewarded_claims_game_trial ON rewarded_match_claims(environment, user_id, game_key) WHERE game_key IS NOT NULL AND source='trial' AND state IN ('reserved','committed');",
+      // 0028: old sessions retain NULL and cannot receive retroactive XP.
+      'ALTER TABLE player_sessions ADD COLUMN progression_reward_version INTEGER;'].includes(statement) ||
     /^CREATE UNIQUE INDEX IF NOT EXISTS social_(group_invites_pending|calls_open|call_one_active) /.test(statement) ||
     (/^INSERT OR IGNORE INTO (social_profiles|player_profiles)\(/.test(statement) &&
       !/\b(UPDATE|DELETE|REPLACE|DROP|ALTER)\b/i.test(statement)) ||
@@ -270,6 +279,7 @@ test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec'
     'CREATE UNIQUE INDEX IF NOT EXISTS social_groups_creation ON social_groups(name);',
     'ALTER TABLE mafia_reports ADD COLUMN unreviewed TEXT;',
     'ALTER TABLE mafia_reports ADD COLUMN reviewer_id TEXT NOT NULL;',
+    'ALTER TABLE player_sessions ADD COLUMN progression_reward_version INTEGER NOT NULL DEFAULT 1;',
     "ALTER TABLE mafia_reports ADD COLUMN category TEXT NOT NULL DEFAULT 'other';",
     "INSERT OR IGNORE INTO design_draft(id,document_json) VALUES('main','unreviewed');",
     "INSERT OR REPLACE INTO mafia_ranked_seasons(id,starts_at,ends_at,ruleset_version,rating_model,reward_policy,status) VALUES('preview-2026-01',1793318400000,1798156800000,1,'preview-elo-1',1,'open');",
