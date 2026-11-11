@@ -301,7 +301,7 @@ try {
   scenario = 'reopen-with-missing-image';
   const beforeMissingReload = requestCounts();
   await failurePage.reload({ waitUntil: 'domcontentloaded' });
-  await failurePage.getByRole('button', { name: 'الدخول بالصور المتاحة', exact: true }).click();
+  await failurePage.getByRole('button', { name: 'الدخول بالمحتوى المتاح', exact: true }).click();
   await ready(failurePage); await retry.waitFor({ timeout: 120000 });
   check('manual continue opens the menu while preserving the incomplete download status', await failurePage.locator('.home-screen').isVisible() && /باقي\s+[1١]\s+صورة/u.test((await layout(failurePage)).background));
   check('a later launch retries only the missing image instead of treating entry as completion', countDelta(beforeMissingReload).length > 0 && countDelta(beforeMissingReload).every((x) => new URL(x.key, base).pathname === new URL(target.url, base).pathname), countDelta(beforeMissingReload));

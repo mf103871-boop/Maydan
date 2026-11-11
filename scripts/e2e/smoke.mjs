@@ -181,6 +181,12 @@ try {
           await shot('badeeha-board');
         } else {
           await tap(page.getByRole('button', { name: /^ابدأ اللعب/ }), `${game} start match`);
+          if (game === 'jabeen' && profile.viewport.width < profile.viewport.height) {
+            // Portrait now explicitly asks whether to continue in this direction.
+            // This acknowledgement must not itself begin the round or its clock.
+            await tap(page.getByRole('button', { name: 'متابعة بهذا الاتجاه', exact: true }), 'jabeen portrait acknowledgement');
+            check(`${name}: jabeen portrait acknowledgement preserves the ready screen`, await page.locator('[data-design-screen="jabeen.intro"]').isVisible() && await page.locator('.jabeen-stage').count() === 0);
+          }
           const start = game === 'beep' ? /^جاهز/ : game === 'mamnoo' ? /^ابدأ 60 ثانية/ : game === 'meenfina' ? 'اعرض العبارة' : 'ابدأ الجولة';
           const beforeRound = await cueCount();
           await tap(page.getByRole('button', { name: start, exact: typeof start === 'string' }), `${game} start round`);
@@ -191,21 +197,30 @@ try {
             const ticked = await page.waitForFunction(({ n, tick }) => window.__cues.slice(n).some((frames) => Math.abs(frames - tick) <= 2), { n: beforeRound, tick: TICK_FRAMES }, { timeout: 2500 }).then(() => true, () => false);
             check(`${name}: beep prompt ticks from its first second`, ticked);
           }
-          if (game === 'jabeen' && await page.locator('.jabeen-rotate').isVisible()) {
-            const remaining = await page.locator('.jabeen-stage-top .num').textContent();
+          if (game === 'jabeen' && profile.viewport.width < profile.viewport.height) {
+            // The explicit portrait choice lasts until a genuine resize. Exercise
+            // that transition, rather than assuming the old initial overlay.
+            await page.setViewportSize({ width: 844, height: 390 });
+            await page.setViewportSize(profile.viewport);
+            await page.locator('.jabeen-rotate').waitFor();
+            const clock = page.locator('.jabeen-stage [data-design-id="timer"] bdi');
+            const remaining = Number(await clock.textContent());
             await page.waitForTimeout(1200);
-            check(`${name}: rotation prompt pauses timer and blocks hidden controls`, await page.locator('.jabeen-stage-top .num').textContent() === remaining && await page.locator('.jabeen-stage').getAttribute('inert') !== null);
-            await page.getByRole('button', { name: 'تخطي هذا التنبيه', exact: true }).click();
-            await page.waitForFunction((before) => Number(document.querySelector('.jabeen-stage-top .num')?.textContent) < Number(before), remaining);
+            check(`${name}: rotation prompt pauses timer and blocks hidden controls`, Number(await clock.textContent()) === remaining && await page.locator('.jabeen-stage').getAttribute('inert') !== null);
+            await page.locator('.jabeen-rotate').getByRole('button', { name: 'متابعة بهذا الاتجاه', exact: true }).click();
+            await page.waitForFunction((before) => Number(document.querySelector('.jabeen-stage [data-design-id="timer"] bdi')?.textContent) < before, remaining);
             check(`${name}: dismissing rotation prompt resumes the round`, !(await page.locator('.jabeen-rotate').count()));
             await page.setViewportSize({ width: 844, height: 390 });
             await page.setViewportSize(profile.viewport);
             await page.locator('.jabeen-rotate').waitFor();
-            const paused = await page.locator('.jabeen-stage-top .num').textContent();
+            const paused = Number(await clock.textContent());
             await page.waitForTimeout(1200);
-            check(`${name}: rotating mid-round preserves remaining time`, await page.locator('.jabeen-stage-top .num').textContent() === paused);
-            await page.getByRole('button', { name: 'تخطي هذا التنبيه', exact: true }).click();
-            check(`${name}: rotation resume does not award a fresh timer`, Number(await page.locator('.jabeen-stage-top .num').textContent()) < Number(remaining));
+            check(`${name}: rotating mid-round preserves remaining time`, Number(await clock.textContent()) === paused);
+            await page.locator('.jabeen-rotate').getByRole('button', { name: 'متابعة بهذا الاتجاه', exact: true }).click();
+            // Wait for the real resume countdown and first elapsed second before
+            // measuring the exit tap; countdown cues are intentional, not clicks.
+            await page.waitForFunction((before) => Number(document.querySelector('.jabeen-stage [data-design-id="timer"] bdi')?.textContent) < before, paused);
+            check(`${name}: rotation resume does not award a fresh timer`, Number(await clock.textContent()) < remaining);
           }
           check(`${name}: ${game} first round starts`, await page.locator(active).first().isVisible());
           if (game === 'jabeen') await shot('jabeen-round');
