@@ -167,6 +167,10 @@ self.addEventListener('fetch', (event) => {
         const retry = /\/media\/fabraka-v3\/fab3-\d{3}\.webp$/.test(url.pathname) && /^\d+$/.test(url.searchParams.get('fabRetry') || '');
         if (retry) url.searchParams.delete('fabRetry');
         const cacheKey = retry ? url.href : request;
+        // Small release artwork can live under /media/ while being precached
+        // with the shell. Use only this worker's release, never a staged shell.
+        const shellHit = !retry && await (await caches.open(CACHE)).match(cacheKey);
+        if (shellHit && !/text\/html/i.test(shellHit.headers.get('content-type') || '')) return rangedResponse(request, shellHit);
         const hit = await cache.match(cacheKey);
         if (!retry && hit && !/text\/html/i.test(hit.headers.get('content-type') || '')) return rangedResponse(request, hit);
         if (hit && /text\/html/i.test(hit.headers.get('content-type') || '')) await cache.delete(cacheKey); // Repair an older fallback.
