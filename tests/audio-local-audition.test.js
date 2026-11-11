@@ -41,6 +41,8 @@ async function compiled(flag = true, origin = ORIGIN, privateFlag = false) {
 const settle = async () => { for (let i = 0; i < 12; i++) await new Promise(resolve => setImmediate(resolve)); };
 function environment(module, data, { missing = false, corrupt = false, deferred = false, stream = true } = {}) {
   const fetched = [], contexts = [], media = [], listeners = new Map(), decodes = [];
+  let enteredDecode;
+  const firstDecodeEntered = new Promise(resolve => { enteredDecode = resolve; });
   const param = () => ({ value: 0, setValueAtTime(v) { this.value = v; }, setTargetAtTime(v) { this.value = v; }, cancelScheduledValues() {}, linearRampToValueAtTime(v) { this.value = v; } });
   const node = extra => ({ connect() {}, disconnect() { this.disconnected = true; }, ...extra });
   class Media {
@@ -56,7 +58,8 @@ function environment(module, data, { missing = false, corrupt = false, deferred 
     createMediaElementSource(audio) { return node({ audio }); }
     decodeAudioData(bytes) {
       const buffer = { length: bytes.byteLength, duration: 0.5 };
-      return deferred ? new Promise(resolve => decodes.push(() => resolve(buffer))) : Promise.resolve(buffer);
+      if (!deferred) return Promise.resolve(buffer);
+      return new Promise(resolve => { decodes.push(() => resolve(buffer)); enteredDecode(); });
     }
     resume() { this.state = 'running'; return Promise.resolve(); } suspend() { this.state = 'suspended'; return Promise.resolve(); } close() { this.state = 'closed'; return Promise.resolve(); }
   }
@@ -71,7 +74,18 @@ function environment(module, data, { missing = false, corrupt = false, deferred 
     if (!bytes) { const old = Object.values(SAMPLE_BANK).find(entry => entry.url === url); if (old) bytes = new Uint8Array(old.frames); }
     return bytes ? new Response(bytes) : new Response('missing', { status: 404 });
   };
-  return { fetched, contexts, media, decodes, dispatch(name, detail) { for (const fn of listeners.get(name) || []) fn({ detail }); } };
+  return { fetched, contexts, media, decodes,
+    async waitForFirstDecode() {
+      // Hash verification uses WebCrypto's worker pool. A fixed number of
+      // setImmediate turns cannot prove it finished under parallel test load.
+      let timer;
+      try {
+        await Promise.race([firstDecodeEntered, new Promise((_, reject) => {
+          timer = setTimeout(() => reject(new Error('Candidate never entered the deferred decoder')), 5000);
+        })]);
+      } finally { clearTimeout(timer); }
+    },
+    dispatch(name, detail) { for (const fn of listeners.get(name) || []) fn({ detail }); } };
 }
 
 test('only the dedicated compile flag and a real HTTP loopback origin accept dependency injection', async () => {
@@ -138,10 +152,14 @@ test('missing, byte-corrupt and hash-corrupt candidate responses stay silent eve
 test('delayed decode is canceled by caller guards, identity reset and independent recording leases', async () => {
   for (const interrupt of ['guard', 'identity', 'recording']) {
     const module = await compiled(), data = fixture(), env = environment(module, data, { deferred: true });
+    module.sandbox.crypto = { subtle: { async digest(...args) {
+      await new Promise(resolve => setTimeout(resolve, 20));
+      return webcrypto.subtle.digest(...args);
+    } } };
     let current = true;
     const sound = module.createSound({ localAudition: data.options });
     sound.emit('game.correct', { id: 'accepted-before-decode', guard: () => current });
-    await settle(); assert.equal(env.decodes.length, 1);
+    await env.waitForFirstDecode(); assert.equal(env.decodes.length, 1);
     if (interrupt === 'guard') current = false;
     if (interrupt === 'identity') sound.resetIdentity('account-B');
     if (interrupt === 'recording') { sound.setSuppressed(true, 'recorder-A'); sound.setSuppressed(true, 'recorder-B'); sound.resetIdentity('account-B'); sound.setSuppressed(false, 'recorder-A'); }

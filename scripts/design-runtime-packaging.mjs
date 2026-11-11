@@ -48,9 +48,20 @@ export function packedRuntimeRegistrySource({ screens = DESIGN_SCREENS, registry
       return templateIds.get(identity);
     }),
   ]);
+  // Pool repeated values as well as keys. The registry repeats role/phase and
+  // property names across screens; their decoded values and guards stay exact.
+  const frequencies = new Map();
+  const count = value => {
+    if (typeof value === 'string') frequencies.set(value, (frequencies.get(value) || 0) + 1);
+    else if (value && typeof value === 'object') for (const child of Object.values(value)) count(child);
+  };
+  count([templates, rows]);
+  const strings = [...frequencies].filter(([value, n]) => (n - 1) * (JSON.stringify(value).length) > n * 9 + 4).map(([value]) => value);
+  const stringIds = new Map(strings.map((value, index) => [value, index]));
   const keys = [], keyIds = new Map(), schemas = [], schemaIds = new Map();
   const encode = value => {
     if (Array.isArray(value)) return [1, Object.isFrozen(value), ...value.map(encode)];
+    if (typeof value === 'string' && stringIds.has(value)) return [2, stringIds.get(value)];
     if (value === null || ['string', 'boolean'].includes(typeof value)) return value;
     if (typeof value === 'number' && Number.isFinite(value)) return value;
     if (!value || typeof value !== 'object' || ![Object.prototype, null].includes(Object.getPrototypeOf(value)))
@@ -64,8 +75,8 @@ export function packedRuntimeRegistrySource({ screens = DESIGN_SCREENS, registry
     return [0, schemaIds.get(identity), Object.isFrozen(value), ...Object.values(value).map(encode)];
   };
   const encoded = encode([templates, rows]);
-  return `const keys=${JSON.stringify(keys)},schemas=${JSON.stringify(schemas)};
-const decode=v=>{if(!Array.isArray(v))return v;const a=v[0]===1,value=a?v.slice(2).map(decode):Object.fromEntries(schemas[v[1]].map((key,i)=>[keys[key],decode(v[i+3])]));return v[a?1:2]?Object.freeze(value):value;};
+  return `const keys=${JSON.stringify(keys)},schemas=${JSON.stringify(schemas)},strings=${JSON.stringify(strings)};
+const decode=v=>{if(!Array.isArray(v))return v;if(v[0]===2)return strings[v[1]];const a=v[0]===1,value=a?v.slice(2).map(decode):Object.fromEntries(schemas[v[1]].map((key,i)=>[keys[key],decode(v[i+3])]));return v[a?1:2]?Object.freeze(value):value;};
 const[templates,rows]=decode(${JSON.stringify(encoded)});
 export const DESIGN_REGISTRY_VERSION=${JSON.stringify(registryVersion)};
 export const DESIGN_SCREENS=Object.freeze(rows.map(([screen,nodes])=>Object.freeze({...screen,nodes:Object.freeze(nodes.map(i=>Object.freeze({...templates[i]})))})));

@@ -48,7 +48,19 @@ for(const[name,engine]of[['chromium',chromium],['webkit',webkit]])test(`real loc
   await page.evaluate(()=>window.goDirectory('mafia'));await page.locator('[data-design-id="quick-join"]').waitFor();
   for(const[width,height]of[[320,640],[360,640],[390,844],[844,390]]){
     await page.setViewportSize({width,height});
-    await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+    // WebKit can expose the initial scale(0) frame after route/viewport changes.
+    // Measure the actual settled controls, retaining the full 44px assertion.
+    await page.waitForFunction(() => {
+      const buttons = [...document.querySelectorAll('.mafia-directory-actions button,.mafia-directory-list-label button')];
+      if (buttons.length !== 5) return false;
+      return buttons.every(button => {
+        for (let node = button; node; node = node.parentElement) {
+          if (node.getAnimations().some(animation => !['finished', 'idle'].includes(animation.playState)
+            && animation.effect?.getTiming().iterations !== Infinity)) return false;
+        }
+        return button.getBoundingClientRect().width > 0;
+      });
+    }, undefined, { timeout: 5000 });
     const bounds=await page.locator('.mafia-directory-actions button,.mafia-directory-list-label button').evaluateAll(buttons=>buttons.map(button=>{
       const {left,right,width,height}=button.getBoundingClientRect();
       return {id:button.dataset.designId,left,right,width,height,layoutWidth:button.offsetWidth,layoutHeight:button.offsetHeight};
