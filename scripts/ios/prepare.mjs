@@ -6,16 +6,19 @@ import { migrateHtml, nativeConfig } from './native.mjs';
 import { resolveNativeBuildOrigin } from './release-environment.mjs';
 import { resolveRewardedBuild } from './rewarded-config.mjs';
 import { generateSignedRewardedProject } from './rewarded-preview.mjs';
+import { resolveReleaseFeatures, writePreparedFeatures } from './release-features.mjs';
 
 // الغلاف يتصل بخادم الغرف والحسابات المنشور (يُبدَّل بـ MAYDAN_ROOMS_URL)؛ يُضبط قبل
 // استيراد أدوات البناء لأن esbuild يقرأ المتغير عند إعداد الخيارات.
 const apiOrigin = resolveNativeBuildOrigin(process.env);
 const rewarded = resolveRewardedBuild(process.env);
+resolveReleaseFeatures(process.env);
 process.env.MAYDAN_ROOMS_URL = apiOrigin;
-const { buildOnce, ROOT, DIST } = await import('../lib.mjs');
+const { buildOnce, esbuildOptions, ROOT, DIST } = await import('../lib.mjs');
 
 // Build from this checkout on every invocation; never ship a stale copied bank.
 const build = await buildOnce({ minify: true, includeStudio: false, version: process.env.IOS_VERSION, rewardedPreview: Boolean(rewarded) });
+const defines = esbuildOptions({ rewardedPreview: Boolean(rewarded) }).define;
 const projectDir = rewarded ? await generateSignedRewardedProject(process.env) : path.join(ROOT, 'ios');
 const destination = path.join(projectDir, 'Maydan/www');
 if (!rewarded) await rm(destination, { recursive: true, force: true });
@@ -44,6 +47,8 @@ if (rewarded) config.rewarded = { mode: rewarded.mode, appId: rewarded.appId, ad
   ...(rewarded.testVersion ? { testVersion: rewarded.testVersion } : {}) };
 await writeFile(path.join(destination, 'native-config.json'), `${JSON.stringify(config, null, 2)}\n`, 'utf8');
 await writeFile(path.join(destination, 'migrate.html'), migrateHtml(), 'utf8');
+const features = await writePreparedFeatures({ projectDir, destination, build, defines });
+console.log(`Prepared release feature receipt SHA-256 ${features.sha256}; ${features.evidence}`);
 // Derive Xcode's required slots from the approved release artwork.
 const iconDirectory = path.join(projectDir, 'Maydan/Assets.xcassets/AppIcon.appiconset');
 const sourceIcon = await readFile(path.join(iconDirectory, 'icon-1024.png'));
