@@ -22,7 +22,7 @@ import { routeDrawingReports } from './ersomha-reports.mjs';
 import { routeDesign, isPublicDesignAssetPath } from './design/router.mjs';
 import { routePlus } from './plus/router.mjs';
 import { rewardedWebhook, routeRewarded } from './rewarded/router.mjs';
-import { gameplayTicketsEnabled } from './rewarded/settings.mjs';
+import { gameplayTicketsEnabled, gameplayEntryEnabled, requireGameplayCapability } from './rewarded/settings.mjs';
 import { gameplayOffer } from '../src/shared/account/gameplay-policy.mjs';
 import { freeBadeehaRoom } from './rewarded/badeeha-free.mjs';
 import { routeTutorials } from './tutorials/router.mjs';
@@ -118,7 +118,7 @@ async function routeMeasuredRequest(request, env, context) {
   if (!origin && !isPublicAccountPath(url.pathname) && !publicImage && !rewardedCallback) return json({ error: 'ORIGIN' }, 403);
   const headers = origin ? { 'access-control-allow-origin': origin, vary: 'Origin',
     'access-control-allow-methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
-    'access-control-allow-headers': 'Content-Type, Authorization, Range, X-Design-Name',
+    'access-control-allow-headers': 'Content-Type, Authorization, Range, X-Design-Name, X-Maydan-Gameplay-Capability',
     'access-control-expose-headers': 'x-maydan-session',
     'access-control-max-age': '600' } : {};
   if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
@@ -166,6 +166,7 @@ async function routeMeasuredRequest(request, env, context) {
       charged = create ? kind : null;
       if (create) {
         const input = await readJson(request, 4096, createLimit);
+        requireGameplayCapability(env, input.capabilities?.gameplayAccess);
         await credentials(input); // Validate before allocating a room.
         if (input.game === 'ersomha' && input.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
         if (input.game === 'badeeha' && input.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
@@ -176,7 +177,7 @@ async function routeMeasuredRequest(request, env, context) {
         // Ignore any account ID supplied by the client. The seat's account
         // association comes only from the authenticated bearer session.
         const policyOffer = gameplayTicketsEnabled(env) &&
-          !(input.game === 'badeeha' && freeBadeehaRoom(input.settings))
+          !(input.game === 'badeeha' && !gameplayEntryEnabled(env) && freeBadeehaRoom(input.settings))
           ? gameplayOffer(input.game || 'meenfina', 'online') : null;
         if (gameplayTicketsEnabled(env)) {
           if (input.rewardedOffer != null && input.rewardedOffer !== policyOffer?.id) fail('REWARDED_UNAVAILABLE', 403);

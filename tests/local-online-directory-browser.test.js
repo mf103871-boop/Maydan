@@ -48,23 +48,27 @@ for(const[name,engine]of[['chromium',chromium],['webkit',webkit]])test(`real loc
   await page.evaluate(()=>window.goDirectory('mafia'));await page.locator('[data-design-id="quick-join"]').waitFor();
   for(const[width,height]of[[320,640],[360,640],[390,844],[844,390]]){
     await page.setViewportSize({width,height});
-    // WebKit can expose the initial scale(0) frame after route/viewport changes.
-    // Measure the actual settled controls, retaining the full 44px assertion.
-    await page.waitForFunction(() => {
+    // WebKit may briefly expose a zero-layout tree during viewport changes.
+    // Capture geometry in the same task that proves visibility, rather than
+    // re-querying a later frame after the readiness check has already passed.
+    const settled = await page.waitForFunction(({ width, height }) => {
+      if (innerWidth !== width || innerHeight !== height) return false;
       const buttons = [...document.querySelectorAll('.mafia-directory-actions button,.mafia-directory-list-label button')];
       if (buttons.length !== 5) return false;
-      return buttons.every(button => {
+      const bounds = [];
+      for (const button of buttons) {
         for (let node = button; node; node = node.parentElement) {
           if (node.getAnimations().some(animation => !['finished', 'idle'].includes(animation.playState)
             && animation.effect?.getTiming().iterations !== Infinity)) return false;
         }
-        return button.getBoundingClientRect().width > 0;
-      });
-    }, undefined, { timeout: 5000 });
-    const bounds=await page.locator('.mafia-directory-actions button,.mafia-directory-list-label button').evaluateAll(buttons=>buttons.map(button=>{
-      const {left,right,width,height}=button.getBoundingClientRect();
-      return {id:button.dataset.designId,left,right,width,height,layoutWidth:button.offsetWidth,layoutHeight:button.offsetHeight};
-    }));
+        const { left, right, width, height } = button.getBoundingClientRect();
+        if (!button.getClientRects().length || width <= 0 || height <= 0 || button.offsetWidth <= 0 || button.offsetHeight <= 0) return false;
+        bounds.push({ id: button.dataset.designId, left, right, width, height, layoutWidth: button.offsetWidth, layoutHeight: button.offsetHeight });
+      }
+      return bounds;
+    }, { width, height }, { timeout: 5000 });
+    const bounds = await settled.jsonValue();
+    await settled.dispose();
     assert.equal(bounds.length,5);
     assert.ok(bounds.every(button=>button.left>=0&&button.right<=width+1),'actions stay inside the viewport');
     assert.ok(bounds.every(button=>button.width>=43.9&&button.height>=43.9),`${name}:${width}×${height} compact labels preserve 44px hit targets: ${JSON.stringify(bounds)}`);

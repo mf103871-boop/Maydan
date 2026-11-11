@@ -60,7 +60,7 @@ export function packedRuntimeRegistrySource({ screens = DESIGN_SCREENS, registry
   const stringIds = new Map(strings.map((value, index) => [value, index]));
   const keys = [], keyIds = new Map(), schemas = [], schemaIds = new Map();
   const encode = value => {
-    if (Array.isArray(value)) return [1, Object.isFrozen(value), ...value.map(encode)];
+    if (Array.isArray(value)) return [1, Number(Object.isFrozen(value)), ...value.map(encode)];
     if (typeof value === 'string' && stringIds.has(value)) return [2, stringIds.get(value)];
     if (value === null || ['string', 'boolean'].includes(typeof value)) return value;
     if (typeof value === 'number' && Number.isFinite(value)) return value;
@@ -72,7 +72,7 @@ export function packedRuntimeRegistrySource({ screens = DESIGN_SCREENS, registry
     });
     const identity = shape.join(',');
     if (!schemaIds.has(identity)) { schemaIds.set(identity, schemas.length); schemas.push(shape); }
-    return [0, schemaIds.get(identity), Object.isFrozen(value), ...Object.values(value).map(encode)];
+    return [0, schemaIds.get(identity), Number(Object.isFrozen(value)), ...Object.values(value).map(encode)];
   };
   const encoded = encode([templates, rows]);
   return `const keys=${JSON.stringify(keys)},schemas=${JSON.stringify(schemas)},strings=${JSON.stringify(strings)};

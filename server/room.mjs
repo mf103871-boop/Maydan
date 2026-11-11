@@ -5,8 +5,8 @@ import { credentials, readJson, json, errorResponse, shuffled, createLimit, sha2
 import { bindSeatAccount, noteProgressionAction, prepareRoomStats } from './room-stats.mjs';
 import { accountProgressionEnabled } from './account-progression.mjs';
 import { assertRewardedAccount, rewardedEnvironment, rewardedOffer, reserveRewardedMatch, commitRewardedMatch, releaseRewardedMatch } from './rewarded/ledger.mjs';
-import { gameplayTicketsEnabled, rewardedLedgerEnvironment } from './rewarded/settings.mjs';
-import { TICKET_POLICY, gameplayOffer, gameplayOfferById } from '../src/shared/account/gameplay-policy.mjs';
+import { gameplayTicketsEnabled, gameplayEntryEnabled, requireGameplayCapability, rewardedLedgerEnvironment } from './rewarded/settings.mjs';
+import { gameplayOffer, gameplayOfferById } from '../src/shared/account/gameplay-policy.mjs';
 import { freeBadeehaRoom } from './rewarded/badeeha-free.mjs';
 import { recordOnlineResult, profileSummaries } from './profiles/db.mjs';
 import { recheckMafiaHost, mafiaHostEligible } from './accounts/router.mjs';
@@ -41,7 +41,7 @@ const STATS_RETRY = 30_000;
 const REWARDED_START_INTENT = 'rewarded:start-intent';
 const REWARDED_RETRY = 5_000;
 const policyRoomOffer = (env, room) => gameplayTicketsEnabled(env) &&
-  !(room.game === 'badeeha' && freeBadeehaRoom(room.settings))
+  !(room.game === 'badeeha' && !gameplayEntryEnabled(env) && freeBadeehaRoom(room.settings))
   ? gameplayOffer(room.game || 'meenfina', 'online') : null;
 const effectiveRoomOffer = (env, room) => policyRoomOffer(env, room) ||
   (!room.gameplayPolicy && !gameplayOfferById(room.rewardedOffer) ? rewardedOffer(room.rewardedOffer) : null);
@@ -966,6 +966,7 @@ export class Room {
         if(endpoint==='mafia-ranked-create'&&request.method==='POST')return await this.createRankedMatch(await readJson(request,8192));
         if (request.method === 'POST' && endpoint === 'create') {
           const input = await credentials(await readJson(request, 4096, createLimit));
+          requireGameplayCapability(this.env, input.capabilities?.gameplayAccess);
           const policyOffer = policyRoomOffer(this.env, input);
           if (gameplayTicketsEnabled(this.env) && input.rewardedOffer != null && input.rewardedOffer !== policyOffer?.id) fail('REWARDED_UNAVAILABLE', 403);
           const offer = gameplayTicketsEnabled(this.env) ? policyOffer :
@@ -1003,7 +1004,7 @@ export class Room {
           const directory=normalizeRoomDirectory(input,this.env);
           if(directory)created.directory=directory;
           if (offer) created.rewardedOffer = offer.id;
-          if (gameplayTicketsEnabled(this.env)) created.gameplayPolicy = TICKET_POLICY;
+          if (gameplayTicketsEnabled(this.env)) created.gameplayPolicy = this.env.GAMEPLAY_ACCESS_POLICY;
           created.roomTrialGate = input.roomTrialGate || null;
           created.roomTrialClaim = crypto.randomUUID();
           created.trialOwnerId = input.id;
@@ -1243,7 +1244,7 @@ export class Room {
           for (const other of this.sockets()) if (other !== ws && this.attachment(other).id === id) {
             other.serializeAttachment({ replaced: true }); this.close(other, 4409, 'REPLACED');
           }
-          ws.serializeAttachment({ id, seenAt: now, windowAt: now, count: 1,...accountIdentity });
+          ws.serializeAttachment({ id, seenAt: now, windowAt: now, count: 1, gameplayAccess: command.capabilities?.gameplayAccess, ...accountIdentity });
           const candidate = structuredClone(this.room);
           // Retire persisted billing-derived host flags after verified account auth.
           if(candidate.game==='mafia')member(candidate,id).canHost=true;
@@ -1292,6 +1293,7 @@ export class Room {
           await this.drawingCommand(ws, a.id, command); return;
         }
         const candidate = structuredClone(this.room);
+        if (command.type === 'start') requireGameplayCapability(this.env, command.gameplayCapability ?? a.gameplayAccess);
         const deck = command.type === 'start' && !['ersomha', 'badeeha','mafia'].includes(candidate.game) ? (candidate.game === 'fabraka' ? buildFabrakaDeck(candidate) : meenfinaDeck(candidate)) : [];
         if (command.type === 'start' && this.env.DB) {
           const hostAccount = candidate.members.find(m => m.id === candidate.hostId && !m.left)?.accountUserId;
@@ -1305,7 +1307,7 @@ export class Room {
         noteProgressionAction(candidate, a.id, command);
         if (command.type === 'start') {
           const offer = effectiveRoomOffer(this.env, candidate);
-          if (gameplayTicketsEnabled(this.env)) candidate.gameplayPolicy = TICKET_POLICY;
+          if (gameplayTicketsEnabled(this.env)) candidate.gameplayPolicy = this.env.GAMEPLAY_ACCESS_POLICY;
           if (offer) candidate.rewardedOffer = offer.id;
           else if (candidate.gameplayPolicy) delete candidate.rewardedOffer;
         }

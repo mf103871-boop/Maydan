@@ -1,4 +1,7 @@
 /* P01 · live Arabic menu with compact outline artwork. */
+.game-entry-screen { max-width:720px; gap:14px; }
+.game-entry-recovery { display:grid; gap:8px; padding:14px; border:1px solid #a8cbc7; border-radius:16px; background:#eff8f2; color:#234d4d; }
+.game-entry-recovery p { margin:0; font-size:14px; line-height:1.8; }
 .home-screen.screen { width:100%; max-width:720px; padding:calc(4px + var(--safe-top)) max(14px,var(--safe-right)) calc(22px + var(--safe-bottom)) max(14px,var(--safe-left)); gap:8px; }
 .home-screen .home-head { position:relative; display:grid; grid-template-columns:44px minmax(0,1fr) 44px; align-items:center; gap:8px; min-height:52px; padding-inline:0; border-bottom:1px solid #ecdecd; }
 .home-screen .home-profile, .home-head-action { appearance:none; display:grid; place-items:center; min-height:44px; padding:0; border:0; background:none; color:#331b3c; box-shadow:none; cursor:pointer; }

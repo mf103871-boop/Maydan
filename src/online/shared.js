@@ -9,7 +9,7 @@ export const GAME_PROTOCOLS = Object.freeze({ meenfina: PROTOCOL, fabraka: FABRA
 // بَديهة أونلاين: جوال لكل فريق (من فريقين إلى أربعة)، والمؤقت كما في اللعبة على جهاز واحد.
 export const BADEEHA_MAX_TEAMS = 4;
 export const BADEEHA_TIMERS = Object.freeze([30, 60, 90]);
-export const ROOM_CAPABILITIES = Object.freeze({ ersomha: ERSOMHA_PROTOCOL, badeeha: BADEEHA_PROTOCOL, mafia: MAFIA_PROTOCOL, mafiaRulesets:Object.freeze([1,2]) });
+export const ROOM_CAPABILITIES = Object.freeze({ ersomha: ERSOMHA_PROTOCOL, badeeha: BADEEHA_PROTOCOL, mafia: MAFIA_PROTOCOL, mafiaRulesets:Object.freeze([1,2]), gameplayAccess: 2 });
 // تفاعلات سريعة داخل الغرفة: طقم رموز ثابت بلا نص حر، يُبث للحاضرين ولا يُحفظ.
 // رسالة `reaction` جديدة لا تكسر عميلًا أقدم (يتجاهل الأنواع التي لا يعرفها)، فلا يُرفع البروتوكول.
 export const ROOM_REACTIONS = Object.freeze(['😂', '👏', '😮', '🔥', '😅', '❤️']);

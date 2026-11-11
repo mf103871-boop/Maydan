@@ -16,6 +16,8 @@ ORIGINS = {
 }
 WARMTH_RUNTIME_SHA256 = '7286f0eee8f45affac5701c502766ddbe9b64ea2669f42675a138768f9ec1940'
 WARMTH_SOURCE_SHA256 = '26a1737edc78602489fc7a746c1ee199d65066614312b621648da24f1f207c56'
+TICKET_POLICIES = ('trial-ticket-v1', 'game-entry-ticket-v2')
+ENTRY_GAMES = {'badeeha', 'beep', 'mamnoo', 'jabeen', 'fabraka', 'meenfina', 'ersomha', 'mafia'}
 
 
 def expected_warmth():
@@ -48,19 +50,27 @@ def verify(bundle, env, prepared=False):
     private = env.get('MAYDAN_PRIVATE_AUDIO_PREVIEW') == '1'
     warmth = env.get('MAYDAN_WARMTH_PREVIEW') == '1'
     require(environment in ORIGINS and profile in ('compatibility', 'complete-preview')
-            and policy in ('free', 'trial-ticket-v1'), 'Invalid release feature input')
+            and policy in ('free', *TICKET_POLICIES), 'Invalid release feature input')
     require(mode in ('off', 'testflight', 'testflight-owned', 'live')
             and (policy == 'free' or mode != 'off'), 'Ticket policy requires configured ads')
     require(not private or environment == 'mafia-preview', 'Private audio requires isolation')
     require(not warmth or private, 'Warmth requires private audio')
     require(profile != 'complete-preview' or environment == 'mafia-preview' and private and warmth
-            and policy == 'trial-ticket-v1' and mode == 'testflight-owned', 'Incomplete complete-preview profile')
+            and policy in TICKET_POLICIES and mode == 'testflight-owned', 'Incomplete complete-preview profile')
     native = json.loads(bundle.read('www/native-config.json'))
     require(receipt.get('environment') == environment and receipt.get('apiOrigin') == ORIGINS[environment]
             == native.get('apiOrigin') and receipt.get('profile') == profile,
             'Prepared API or profile differs from the release inputs')
     expected_policy = None if policy == 'free' else policy
     require(receipt.get('gameplayPolicy') == expected_policy, 'Prepared gameplay policy differs')
+    if policy == 'game-entry-ticket-v2':
+        entry = receipt.get('gameEntry', {})
+        require(entry.get('policy') == policy and entry.get('surface') == 'game-entry'
+                and entry.get('consumption') == 'match-start' and len(entry.get('games', [])) == 8
+                and set(entry['games']) == ENTRY_GAMES, 'Prepared entry gate coverage differs')
+        html = bundle.read('www/index.html')
+        require(b'data-maydan-game-entry' in html and policy.encode() in html,
+                'The actual bundle does not contain the before-mode entry gate')
     expected_defines = {
         '__MAYDAN_ROOMS_URL__': json.dumps(ORIGINS[environment]),
         '__MAYDAN_GAMEPLAY_POLICY__': json.dumps(expected_policy),

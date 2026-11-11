@@ -1,6 +1,7 @@
 import { MAFIA_PREVIEW_API_ORIGIN, PRODUCTION_API_ORIGIN } from '../../src/shared/lib/environment.js';
 import { sha256 } from '../protocol.mjs';
-import { TICKET_POLICY, ticketPolicyEnabled } from '../../src/shared/account/gameplay-policy.mjs';
+import { TICKET_POLICY, ENTRY_POLICY, GAMEPLAY_ACCESS_CAPABILITY, entryPolicyEnabled, ticketPolicyEnabled } from '../../src/shared/account/gameplay-policy.mjs';
+import { fail } from '../room-model.mjs';
 import { FREE_PACKS } from '../../src/shared/account/config.js';
 
 export const SAMPLE_IOS_REWARDED_UNIT = 'ca-app-pub-3940256099942544/1712485313';
@@ -53,7 +54,16 @@ export function gameplayTicketsEnabled(env) {
   return ticketPolicyEnabled(env.GAMEPLAY_ACCESS_POLICY);
 }
 
+export const gameplayEntryEnabled = env => entryPolicyEnabled(env.GAMEPLAY_ACCESS_POLICY);
+export function requireGameplayCapability(env, capability) {
+  if (gameplayEntryEnabled(env) && capability !== GAMEPLAY_ACCESS_CAPABILITY && capability !== String(GAMEPLAY_ACCESS_CAPABILITY)) {
+    fail('UPDATE_REQUIRED', 409);
+  }
+}
+
 export function gameplayAccessDescriptor(env) {
+  if (gameplayEntryEnabled(env)) return { access: 'trial-ticket', policy: ENTRY_POLICY,
+    allPacks: true, hosting: 'trial-ticket', freePacks: [], entryGate: 'before-mode', ticketScope: 'game', gameplayCapability: GAMEPLAY_ACCESS_CAPABILITY };
   return gameplayTicketsEnabled(env)
     ? { access: 'trial-ticket', policy: TICKET_POLICY, allPacks: false, hosting: 'trial-ticket', freePacks: FREE_PACKS }
     : { access: 'free', allPacks: true, hosting: 'free' };

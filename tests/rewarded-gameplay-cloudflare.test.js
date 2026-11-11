@@ -8,7 +8,8 @@ import { Miniflare, convertV4MiniflareOptions } from 'miniflare';
 import { WebSocket } from 'ws';
 import { migrationSql } from '../server/local-d1.mjs';
 import { RoomClient, newCredentials } from '../src/online/client.js';
-import { TICKET_POLICY } from '../src/shared/account/gameplay-policy.mjs';
+import { ROOM_CAPABILITIES } from '../src/online/shared.js';
+import { TICKET_POLICY, ENTRY_TICKET_POLICY } from '../src/shared/account/gameplay-policy.mjs';
 
 const ORIGIN = 'http://localhost:3000';
 class BrowserSocket extends WebSocket { constructor(url) { super(url, { origin: ORIGIN }); } }
@@ -18,7 +19,7 @@ async function until(predicate) {
   assert.fail('Workerd room did not reach the expected state');
 }
 
-test('workerd + actual D1: server-derived policy, free lobby/guests, and one full-match ticket across concurrent room starts', { timeout: 40_000 }, async () => {
+for(const policy of [TICKET_POLICY,ENTRY_TICKET_POLICY])test(`workerd + actual D1: ${policy}, free lobby/guests, and one full-match ticket across concurrent room starts`, { timeout: 40_000 }, async () => {
   const directory = await mkdtemp(path.join(os.tmpdir(), 'maydan-real-ticket-runtime-'));
   const clients = [];
   let runtime;
@@ -29,7 +30,7 @@ test('workerd + actual D1: server-derived policy, free lobby/guests, and one ful
       compatibilityDate: '2026-09-01', durableObjects: { ROOMS: { className: 'Room', useSQLite: true }, LIMITERS: { className: 'RequestLimiter', useSQLite: true } },
       d1Databases: { DB: 'rewarded-gameplay-db' }, bindings: { ALLOWED_ORIGINS: ORIGIN, APP_ORIGIN: ORIGIN,
         AUTH_DEV_FAKE: '1', SESSION_SECRET: 'runtime-test-only', REWARDED_ENV: 'local', REWARDED_PREVIEW_ENABLED: '1',
-        REWARDED_ADS_ENABLED: '1', GAMEPLAY_ACCESS_POLICY: TICKET_POLICY }, port: 0, host: '127.0.0.1', cf: false }));
+        REWARDED_ADS_ENABLED: '1', GAMEPLAY_ACCESS_POLICY: policy }, port: 0, host: '127.0.0.1', cf: false }));
     const server = (await runtime.ready).origin;
     const db = await runtime.getD1Database('DB'); await db.exec(migrationSql());
     const post = async (endpoint, body, authorization) => {
@@ -41,7 +42,7 @@ test('workerd + actual D1: server-derived policy, free lobby/guests, and one ful
     assert.equal(signIn.status, 200, JSON.stringify(signIn.body));
     const owner = signIn.body.me.user.id, authorization = 'Bearer ' + signIn.body.session.token;
     async function lobby() {
-      const seats = Array.from({ length: 3 }, (_, n) => ({ ...newCredentials(), game: 'meenfina', name: `لاعب ${n}`, avatar: n, rounds: 5 }));
+      const seats = Array.from({ length: 3 }, (_, n) => ({ ...newCredentials(), game: 'meenfina', name: `لاعب ${n}`, avatar: n, rounds: 5, capabilities:ROOM_CAPABILITIES }));
       const created = await post('/api/rooms', seats[0], authorization);
       assert.equal(created.status, 201, JSON.stringify(created.body));
       const code = created.body.code;
@@ -59,11 +60,20 @@ test('workerd + actual D1: server-derived policy, free lobby/guests, and one ful
     await first.start();
     assert.equal(first.group[0].state.phase, 'vote');
     assert.equal((await db.prepare("SELECT COUNT(*) AS n FROM rewarded_match_claims WHERE source='trial' AND state='committed'").first()).n, 1);
+    for(let round=1;round<=5;round++){
+      await until(()=>first.group.every(c=>c.state.phase==='vote'&&c.state.round===round));
+      const targetId=first.group[0].state.members[0].id;
+      await Promise.all(first.group.map(c=>c.command('vote',{targetId})));
+      await until(()=>first.group.every(c=>c.state.phase==='result'));await first.group[0].command('next');
+    }
+    await until(()=>first.group.every(c=>c.state.phase==='over'));
+    assert.equal((await db.prepare("SELECT COUNT(*) AS n FROM rewarded_match_claims WHERE state='committed'").first()).n,1,
+      'one full-match grant covers every internal round without an inter-round ad or claim');
     const second = await lobby(), third = await lobby();
     await assert.rejects(second.start(), error => error.code === 'REWARDED_REQUIRED');
     const ticket = crypto.randomUUID(), now = Date.now();
     await db.prepare(`INSERT INTO rewarded_attempts(id,environment,user_id,offer,custom_hash,ad_unit,reward_item,state,created_at,expires_at,verified_at,transaction_id)
-      VALUES(?,'local',?,'meenfina-online',?,'unit','match','verified',?,?,?,?)`).bind(ticket, owner, ticket, now, now + 30_000, now, ticket).run();
+      VALUES(?,'local',?, ?,?,'unit','match','verified',?,?,?,?)`).bind(ticket, owner, policy===ENTRY_TICKET_POLICY?'meenfina-entry-v2':'meenfina-online', ticket, now, now + 30_000, now, ticket).run();
     const attempts = await Promise.allSettled([second.start(), third.start()]);
     assert.equal(attempts.filter(result => result.status === 'fulfilled').length, 1);
     assert.ok(['REWARDED_REQUIRED','REWARDED_BUSY'].includes(attempts.find(result => result.status === 'rejected').reason.code));
@@ -71,6 +81,7 @@ test('workerd + actual D1: server-derived policy, free lobby/guests, and one ful
   } finally {
     clients.forEach(client => client.stop());
     await runtime?.dispose();
+    assert.equal(path.dirname(path.resolve(directory)),path.resolve(os.tmpdir()));assert.ok(path.basename(directory).startsWith('maydan-real-ticket-runtime-'));
     await rm(directory, { recursive: true, force: true });
   }
 });

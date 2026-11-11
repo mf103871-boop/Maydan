@@ -9,7 +9,7 @@ import { resolveNativeBuildOrigin } from './release-environment.mjs';
 import { resolveRewardedBuild } from './rewarded-config.mjs';
 import { privateAudioBuild, readManifest } from '../audio/private-preview.mjs';
 import { warmthAudioBuild, readWarmthManifest, RUNTIME_PACK_SHA256 } from '../audio/warmth-preview.mjs';
-import { TICKET_POLICY } from '../../src/shared/account/gameplay-policy.mjs';
+import { TICKET_POLICY, ENTRY_TICKET_POLICY, GAMEPLAY_OFFERS, ticketPolicyEnabled } from '../../src/shared/account/gameplay-policy.mjs';
 import { SAMPLE_BANK } from '../../src/shared/fx/sample-bank.js';
 import { MUSIC_BANK } from '../../src/shared/fx/music-bank.js';
 import { SELECTED_AUDIO } from '../../src/shared/fx/selected-audio.js';
@@ -24,14 +24,14 @@ export function resolveReleaseFeatures(env = {}) {
   const profile = env.IOS_RELEASE_PROFILE || 'compatibility';
   assert.ok(['compatibility', 'complete-preview'].includes(profile), 'Unknown iOS release profile.');
   const policy = env.MAYDAN_GAMEPLAY_ACCESS_POLICY || 'free';
-  assert.ok(['free', TICKET_POLICY].includes(policy), 'Unknown gameplay access policy.');
+  assert.ok(['free', TICKET_POLICY, ENTRY_TICKET_POLICY].includes(policy), 'Unknown gameplay access policy.');
   const rewarded = resolveRewardedBuild(configured);
   assert.ok(policy === 'free' || rewarded, 'The ticket policy requires an explicitly configured Rewarded build.');
   const privateAudio = privateAudioBuild(configured);
   const warmth = warmthAudioBuild(configured);
   if (profile === 'complete-preview') {
     assert.ok(env.IOS_RELEASE_ENVIRONMENT === 'mafia-preview' && privateAudio && warmth &&
-      policy === TICKET_POLICY && rewarded?.mode === 'testflight-owned',
+      ticketPolicyEnabled(policy) && rewarded?.mode === 'testflight-owned',
     'Complete preview requires the isolated API, private Warmth audio, ticket policy and owned TestFlight ads.');
   }
   if (env.GITHUB_SHA) assert.match(env.GITHUB_SHA, /^[a-f0-9]{40}$/, 'Invalid source commit.');
@@ -94,6 +94,11 @@ export async function checkServerReadiness(features, { fetchImpl = fetch, now = 
         check.gameplayPolicy = data.gameplay?.policy || null;
         check.gameplayAccess = data.gameplay?.access || null;
         check.passed = check.gameplayPolicy === features.gameplayPolicy && check.gameplayAccess === 'trial-ticket';
+        if (features.gameplayPolicy === ENTRY_TICKET_POLICY) {
+          check.beforeModeEntry = data.gameplay?.entryGate === 'before-mode' && data.gameplay?.ticketScope === 'game'
+            && data.gameplay?.gameplayCapability === 2 && Array.isArray(data.gameplay?.freePacks) && data.gameplay.freePacks.length === 0;
+          check.passed &&= check.beforeModeEntry;
+        }
       }
     } catch { check.error = 'PUBLIC_READ_FAILED'; }
     return check;
@@ -153,6 +158,14 @@ export async function writePreparedFeatures({ projectDir, destination, build, de
     assert.equal(hash(bytes), entry.sha256, `Prepared audio hash differs: ${entry.path}`);
   }
   const html = await readFile(path.join(destination, 'index.html'));
+  let gameEntry;
+  if (features.gameplayPolicy === ENTRY_TICKET_POLICY) {
+    assert.ok(html.includes(Buffer.from('data-maydan-game-entry')) && html.includes(Buffer.from(ENTRY_TICKET_POLICY)),
+      'The before-mode entry gate is missing from the actual prepared HTML.');
+    const games = [...new Set(GAMEPLAY_OFFERS.map(offer => offer.game))];
+    assert.equal(games.length, 8, 'The entry gate must cover all eight current games.');
+    gameEntry = { policy: ENTRY_TICKET_POLICY, surface: 'game-entry', games, consumption: 'match-start' };
+  }
   const activeIntro = warmthManifest ? warmthActiveIntro(warmthManifest, html.toString('utf8'))
     : { id: SELECTED_AUDIO.music.id, url: SELECTED_AUDIO.music.url,
       sha256: SELECTED_AUDIO.music.sha256, seconds: SELECTED_AUDIO.music.seconds };
@@ -162,6 +175,7 @@ export async function writePreparedFeatures({ projectDir, destination, build, de
     schemaVersion: 1, sourceCommit: env.GITHUB_SHA || null, version: build.version, build: env.IOS_BUILD || null,
     profile: features.profile, environment: features.environment, apiOrigin: features.apiOrigin,
     gameplayPolicy: features.gameplayPolicy, compileDefines,
+    ...(gameEntry ? { gameEntry } : {}),
     rewarded: { mode: features.rewarded?.mode || 'off', sdkProjectConfigured: Boolean(features.rewarded),
       packages: adsPackages, configuration: expectedRewarded || null },
     audio: {

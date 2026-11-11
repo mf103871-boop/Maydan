@@ -47,6 +47,7 @@ import { getOnlinePublicRooms } from './client.js';
 import { RewardedEntry, RewardedOffer } from '../shared/account/RewardedOffer.jsx';
 import { REWARDED_PREVIEW, ROOM_REWARDED_OFFER, rewardEvent } from '../shared/account/rewarded.js';
 import { ticketPolicyEnabled, gameplayOffer, gameplayOfferById, badeehaFreeSelection } from '../shared/account/gameplay-policy.mjs';
+import { gameEntryPath } from '../platform/game-entry.mjs';
 
 const SERVER = resolveServerUrl(typeof __MAYDAN_ROOMS_URL__ !== 'undefined' && __MAYDAN_ROOMS_URL__ || config.serverUrl, typeof location === 'undefined' ? '' : location.origin);
 const arabic = arabicNumber;
@@ -57,11 +58,11 @@ export function Entry(props) {
   // Private drafts, open dialogs and pending callbacks belong to one identity.
   return <EntryView key={account.user?.id||'guest'} {...props}/>;
 }
-function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver = false, initialView = 'public', rewarded = false, onJoined, onGameChange, onTutorial }) {
+function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver = false, initialView = 'public', rewarded = false, onJoined, onGameChange, onTutorial, joinOnly = false }) {
   const account = useAccount();
   const platform = usePlatform();
   const fallback = initialCode && account.user?.id ? readSaved(SERVER, socialJoinFallbackKey(account.user.id, initialCode)) : null;
-  const [mode, setMode] = useState(initialCode ? 'join' : ['public','create','join'].includes(initialView)?initialView:'public');
+  const [mode, setMode] = useState(initialCode ? 'join' : joinOnly ? 'public' : ['public','create','join'].includes(initialView)?initialView:'public');
   // The public list is only a default. A player who picks a view keeps it.
   const viewPicked = useRef(Boolean(initialCode) || initialView !== 'public');
   const game = ONLINE_GAMES[initialGame] ? initialGame : 'meenfina';
@@ -130,8 +131,8 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
   // hidden tab does not flash back while the list is read again.
   const directoryOff = game !== 'mafia' && directory.enabled === false && !directory.error;
   useEffect(() => {
-    if (directoryOff && mode === 'public' && !viewPicked.current) setMode('create');
-  }, [directoryOff, mode]);
+    if (directoryOff && mode === 'public' && !viewPicked.current) setMode(joinOnly ? 'join' : 'create');
+  }, [directoryOff, mode, joinOnly]);
   useEffect(() => {
     if(!historyOpen || game!=='mafia' || !historyOwner) {setHistory({data:null,loading:false,error:''});return undefined;}
     let cancelled=false;const controller=new AbortController();setHistory({data:null,loading:true,error:'',scope:historyScope});
@@ -154,6 +155,7 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
     setName(Array.from(account.user?.name?.normalize('NFKC').trim().replace(/\s+/g,' ')||'').slice(0,20).join(''));setAvatar(0);
   },[account.user?.id,account.user?.name]);
   const openCreate=(visibility)=>{
+    if (joinOnly) { navigate(gameEntryPath(game)); return; }
     if(visibility&&game==='mafia'){const next={...mafiaSettings,visibility};setMafiaSettings(next);save(SERVER,'mafiaSettings',next);}
     setMode('create');setError('');credentialsRef.current=null;
   };
@@ -165,10 +167,11 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
   const topicsReady = mode !== 'create' || (game === 'fabraka' ? fabrakaTopics(fabrakaSettings).enough : game === 'ersomha' ? enoughErsomhaCategories(ersomhaSettings) : game === 'badeeha' ? badeehaSettings.categories.length === 6 && badeehaReady(badeehaSettings).ok : true);
   async function submit(event) {
     event.preventDefault(); if (busy) return;
+    if (joinOnly && mode === 'create') { navigate(gameEntryPath(game)); return; }
     setError('');
     if (!name.trim()) { setError('NAME'); return; }
     const policyHost = ticketPolicyEnabled(account.gameplayPolicy) && gameplayOffer(game, 'online') &&
-      !(game === 'badeeha' && badeehaFreeSelection(badeehaSettings.categories));
+      !(game === 'badeeha' && badeehaFreeSelection(badeehaSettings.categories, account.gameplayPolicy));
     if (mode === 'create' && (rewarded || policyHost || ['ersomha','mafia'].includes(game)) && !account.user?.id) { setError('AUTH_REQUIRED'); return; }
     // A pending/failed availability read is not evidence that the feature is off.
     if (mafiaCreationBlocked) return;
@@ -248,12 +251,12 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
       {rewarded && <p className="online-notice">تحدّي اللمّة التجريبي · غرفة خاصة. الأهلية تُراجع عند بدء المباراة.</p>}
       {!rewarded&&mode!=='public'&&<div data-design-id="entry-mode" className="online-tabs" role="group" aria-label="طريقة الدخول">
         {!directoryOff&&<Button data-design-id="entry-public" disabled={busy} variant="ghost" onClick={() => { viewPicked.current = true; setMode('public'); setError(''); }}>الغرف العامة</Button>}
-        <Button data-design-id="entry-create" disabled={busy} variant={mode === 'create' ? 'primary' : 'ghost'} aria-pressed={mode === 'create'} onClick={() => { viewPicked.current = true; openCreate(); }}>إنشاء غرفة</Button>
+        {!joinOnly && <Button data-design-id="entry-create" disabled={busy} variant={mode === 'create' ? 'primary' : 'ghost'} aria-pressed={mode === 'create'} onClick={() => { viewPicked.current = true; openCreate(); }}>إنشاء غرفة</Button>}
         <Button data-design-id="entry-join" disabled={busy} variant={mode === 'join' ? 'primary' : 'ghost'} aria-pressed={mode === 'join'} onClick={() => { viewPicked.current = true; setMode('join'); setError(''); credentialsRef.current = null; }}>دخول برمز</Button>
       </div>}
-      {mode === 'public' ? <>{game==='mafia'?<MafiaDirectory onTutorial={onTutorial} {...directory} mode={directoryMode} voiceMode={directoryVoice} status={directoryStatus} onMode={value=>changeFilter(setDirectoryMode,value)} onVoiceMode={value=>changeFilter(setDirectoryVoice,value)} onStatus={value=>changeFilter(setDirectoryStatus,value)} hasPrevious={directoryPages.length>1} onNext={()=>directory.nextCursor&&setDirectoryPages(pages=>[...pages,directory.nextCursor])} onPrevious={()=>setDirectoryPages(pages=>pages.slice(0,-1))} onRefresh={() => setDirectoryRefresh(n => n+1)} onQuickJoin={() => joinPublicRoom()} onJoin={joinPublicRoom} onObserve={roomCode=>joinPublicRoom(roomCode,true)} onCreate={()=>openCreate('public')} onCode={()=>{setMode('join');setError('');credentialsRef.current=null;}} helpActions={helpActions} disabled={busy||!account.user?.id}/>:<OnlineDirectoryView game={game} {...directory} disabled={busy}
+      {mode === 'public' ? <>{game==='mafia'?<MafiaDirectory onTutorial={onTutorial} {...directory} mode={directoryMode} voiceMode={directoryVoice} status={directoryStatus} onMode={value=>changeFilter(setDirectoryMode,value)} onVoiceMode={value=>changeFilter(setDirectoryVoice,value)} onStatus={value=>changeFilter(setDirectoryStatus,value)} hasPrevious={directoryPages.length>1} onNext={()=>directory.nextCursor&&setDirectoryPages(pages=>[...pages,directory.nextCursor])} onPrevious={()=>setDirectoryPages(pages=>pages.slice(0,-1))} onRefresh={() => setDirectoryRefresh(n => n+1)} onQuickJoin={() => joinPublicRoom()} onJoin={joinPublicRoom} onObserve={roomCode=>joinPublicRoom(roomCode,true)} onCreate={joinOnly ? undefined : ()=>openCreate('public')} onCode={()=>{setMode('join');setError('');credentialsRef.current=null;}} helpActions={helpActions} disabled={busy||!account.user?.id}/>:<OnlineDirectoryView game={game} {...directory} disabled={busy}
         heading={<header className="online-directory-heading"><MenuGameIcon id={game}/><div><small>{gameInfo.name}</small><h2>الغرف العامة</h2></div><span>{arabic(gameInfo.min)} إلى {arabic(gameInfo.max)} {directoryUnit}</span></header>}
-        onCreate={()=>openCreate()} onCode={()=>{setMode('join');setError('');credentialsRef.current=null;}}
+        onCreate={joinOnly ? undefined : ()=>openCreate()} onCode={()=>{setMode('join');setError('');credentialsRef.current=null;}} emptyText={joinOnly ? 'لا غرف متاحة الآن. حدّث القائمة أو ادخل برمز.' : undefined}
         onRefresh={()=>setDirectoryRefresh(n=>n+1)} hasPrevious={directoryPages.length>1} onPrevious={()=>setDirectoryPages(pages=>pages.slice(0,-1))} onNext={()=>directory.nextCursor&&setDirectoryPages(pages=>[...pages,directory.nextCursor])}
         notice={!account.user?.id?'سجّل الدخول لرؤية الغرف العامة. تبقى الغرفة الخاصة متاحة عبر الرمز.':null}
         filters={<label className="online-field">حالة الغرفة<select aria-label="حالة الغرفة" value={directoryStatus} onChange={event=>changeFilter(setDirectoryStatus,event.target.value)}><option value="all">كل الحالات</option><option value="waiting">بانتظار اللاعبين</option><option value="playing">يلعبون الآن</option></select></label>}
@@ -687,7 +690,7 @@ function ConnectedRoom({ code, session, stored, onLeft, onGameChange, onPromoted
     {exitTarget && <ConfirmModal placement={state?.game==='mafia'?undefined:'bottom'} title={observerSession?'إنهاء المشاهدة؟':'تطلع من الغرفة؟'} message={observerSession?'تعود إلى دليل مجالس مافيا.':'مغادرتك تنهي مقعدك الحالي. إذا كنت المضيف تنتقل الإدارة للاعب متصل.'} confirmLabel="الخروج" confirmSound="none" cancelLabel="خلّيني ألعب" onConfirm={leave} onCancel={() => setExitTarget(null)} />}
   </RoomChrome>;
 }
-export function Online({ code = '', game = 'meenfina', observer = false, initialView = 'public', rewarded = false, onTutorial }) {
+export function Online({ code = '', game = 'meenfina', observer = false, initialView = 'public', rewarded = false, onTutorial, joinOnly = false }) {
   const account = useAccount();
   const gameplayPolicy = ticketPolicyEnabled(account.gameplayPolicy);
   const [activeGame,setActiveGame]=useState(observer?'mafia':game);
@@ -701,7 +704,7 @@ export function Online({ code = '', game = 'meenfina', observer = false, initial
   return <Screen data-design-screen={session && code ? undefined : 'online.entry'} className={`stack online-screen ${activeGame==='mafia'?'mafia-noir mafia-online-shell':''}`} aria-label={activeGame==='mafia'?'مافيا ميدان':'غرف ميدان'}>
     {session && code ? <ConnectedRoom code={code} session={session} stored={stored} onLeft={() => setSession(null)} onGameChange={setActiveGame} onPromoted={joined} /> : <>
       <TopBar data-design-id="topbar" title={ONLINE_GAMES[activeGame]?.name||'غرف ميدان'} end={<Button data-design-id="home" size="sm" onClick={() => navigate('/')}>الرئيسية</Button>} />
-      <Entry onTutorial={onTutorial} initialCode={code} initialGame={observer?'mafia':game} initialObserver={observer} initialView={initialView} rewarded={REWARDED_PREVIEW && rewarded && !gameplayPolicy} onJoined={joined} onGameChange={setActiveGame} />
+      <Entry onTutorial={onTutorial} initialCode={code} initialGame={observer?'mafia':game} initialObserver={observer} initialView={initialView} joinOnly={joinOnly} rewarded={REWARDED_PREVIEW && rewarded && !gameplayPolicy} onJoined={joined} onGameChange={setActiveGame} />
       {typeof __MAYDAN_REWARDED_PREVIEW__ !== 'undefined' && __MAYDAN_REWARDED_PREVIEW__ && !gameplayPolicy && !code && game === 'meenfina' && (rewarded ?
         <Button onClick={() => navigate('/online/meenfina', { replace: true })}>ارجع للمحتوى المجاني</Button> :
         <RewardedEntry offer={ROOM_REWARDED_OFFER} onReady={() => navigate('/online/meenfina?rewarded=1')} onFree={() => navigate('/')} />)}

@@ -2,9 +2,9 @@ import { randomHex } from '../accounts/jwt.mjs';
 import { sha256 } from '../protocol.mjs';
 import { liveAccountSql } from '../moderation/access.mjs';
 import { fail } from '../room-model.mjs';
-import { assertRewardedAccount, availableTicketSql, requireRewardedOffer, rewardedAccess } from './ledger.mjs';
+import { assertRewardedAccount, availableGameplayTicketSql, reservedRewardedSql, requireRewardedOffer, rewardedAccess } from './ledger.mjs';
 import { hostedRewardedSettings, matchesRewardedUnit, SAMPLE_IOS_REWARDED_UNIT, rewardedEnvironment } from './settings.mjs';
-import { gameplayOfferById } from '../../src/shared/account/gameplay-policy.mjs';
+import { ENTRY_POLICY, gameplayOffer, gameplayOfferById, gameplayEntryOffer, gameplayEntryOfferById } from '../../src/shared/account/gameplay-policy.mjs';
 
 export { SAMPLE_IOS_REWARDED_UNIT } from './settings.mjs';
 export const REWARDED_ITEM = 'match ticket';
@@ -32,12 +32,25 @@ export async function rewardedStatus(env, userId, offer, client, now = Date.now(
   await assertRewardedAccount(env, userId);
   // The single owner of the hosted beta can always test an ad without
   // changing the account-derived production or loopback A/B assignment.
-  const group = environment === 'ios-preview' || gameplayOfferById(offer) ? 'B' : await rewardedGroup(userId);
+  const group = environment === 'ios-preview' || gameplayOfferById(offer) || gameplayEntryOfferById(offer) ? 'B' : await rewardedGroup(userId);
   const access = await rewardedAccess(env, userId, offer, now);
   const pending = await env.DB.prepare(`SELECT expires_at FROM rewarded_attempts
     WHERE environment=? AND user_id=? AND state='pending' AND expires_at>? LIMIT 1`).bind(environment, userId, now).first();
   return { offer, group, access, adsAvailable: rewardedAdsAvailable(env, environment, group, client),
     attempt: pending ? 'pending' : null, attemptExpiresAt: pending?.expires_at ?? null };
+}
+
+export async function rewardedEntryStatus(env, userId, game, client, now = Date.now()) {
+  const entry = gameplayEntryOffer(game);
+  if (!entry) fail('REWARDED_UNAVAILABLE', 404);
+  const status = await rewardedStatus(env, userId, entry.id, client, now);
+  const modeAccess = Object.fromEntries(await Promise.all(entry.modes.map(async mode =>
+    [mode, await rewardedAccess(env, userId, gameplayOffer(game, mode).id, now)])));
+  const states = Object.values(modeAccess);
+  const access = ['plus', 'trial', 'ticket', 'busy'].find(value => states.includes(value)) || 'required';
+  // Reading entry rights does not reserve a seat, trial or ticket. A legacy
+  // online-only ticket can open the chooser without claiming local coverage.
+  return { ...status, game, policy: ENTRY_POLICY, access, entryAccess: status.access, modeAccess };
 }
 
 export async function issueRewardedAttempt(env, userId, offer, client, now = Date.now()) {
@@ -63,9 +76,8 @@ export async function issueRewardedAttempt(env, userId, offer, client, now = Dat
     WHERE ${liveAccountSql('q.user_id')}
       AND NOT EXISTS(SELECT 1 FROM rewarded_attempts a WHERE a.environment=q.environment AND a.user_id=q.user_id
         AND a.state='pending' AND a.expires_at>?)
-      AND (${availableTicketSql()}) IS NULL
-      AND NOT EXISTS(SELECT 1 FROM rewarded_match_claims c WHERE c.environment=q.environment AND c.user_id=q.user_id
-        AND c.offer=q.offer AND c.state='reserved' AND c.source IN ('trial','ticket'))`)
+      AND (${availableGameplayTicketSql(env, offer)}) IS NULL
+      AND NOT ${reservedRewardedSql(env, offer)}`)
     .bind(environment, userId, offer, attemptId, customHash, adUnit, REWARDED_ITEM, now, expiresAt, now).run();
   if (!meta.changes) fail('REWARDED_PENDING', 409);
   return { attemptId, customData, expiresAt, adUnit: mode === 'simulation' ? null : adUnit, mode };

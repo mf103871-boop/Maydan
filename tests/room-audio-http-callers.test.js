@@ -5,7 +5,8 @@ import {post} from '../src/online/client.js';
 import {normalizeCode,validCode,ROOM_CAPABILITIES} from '../src/online/shared.js';
 import {createAudioEvents} from '../src/shared/fx/audio-events.js';
 import {emitRoomReceipt} from '../src/shared/fx/room-audio.js';
-import {ticketPolicyEnabled,gameplayOffer,badeehaFreeSelection,TICKET_POLICY} from '../src/shared/account/gameplay-policy.mjs';
+import {ticketPolicyEnabled,gameplayOffer,badeehaFreeSelection,TICKET_POLICY,ENTRY_POLICY} from '../src/shared/account/gameplay-policy.mjs';
+import {gameEntryPath} from '../src/platform/game-entry.mjs';
 
 // Run actual async HTTP callers, without React/UI or a hosted account. Real post
 // response handling and real semantic bus are retained; only transport/storage
@@ -23,7 +24,7 @@ function fixture(gameplayPolicy=null){
   let settle,owner='owner',current=true;
   const transport=()=>new Promise(resolve=>{settle=resolve;});
   const context={
-    busy:false,setError(){},name:'ضيف الاختبار',mode:'join',game:'meenfina',account,mafiaCreationBlocked:false,rewarded:false,
+    busy:false,setError(){},name:'ضيف الاختبار',mode:'join',game:'meenfina',account,mafiaCreationBlocked:false,rewarded:false,joinOnly:false,gameEntryPath,
     normalizeCode,code:'123456',validCode,ROOM_CAPABILITIES,initialObserver:false,entryLifetime:{current:{generation:1}},
     ticketPolicyEnabled,gameplayOffer,badeehaFreeSelection,
     setBusy(){},SERVER:'http://localhost:3000',readSaved:()=>({id:'seat',token:'synthetic-only'}),
@@ -46,13 +47,21 @@ function fixture(gameplayPolicy=null){
   };
 }
 test('actual Entry HTTP join sounds only after accepted response with policy off/on; reject, late account and disposed entry stay silent',async()=>{
-  for(const policy of [null,TICKET_POLICY])for(const flow of ['create','join'])for(const mode of ['accepted','rejected','owner-changed','disposed']){
+  for(const policy of [null,TICKET_POLICY,ENTRY_POLICY])for(const flow of ['create','join'])for(const mode of ['accepted','rejected','owner-changed','disposed']){
     const f=fixture(policy);f.context.mode=flow;const submit=actualFunction('submit','joinPublicRoom',f.context);
     const pending=submit({preventDefault(){}});assert.equal(f.requests.length,1);assert.equal(f.requests[0].path,flow==='create'?'/api/rooms':'/api/rooms/123456/join');assert.deepEqual(f.played,[]);
     if(mode==='owner-changed')f.switchOwner();if(mode==='disposed')f.dispose();f.finish(mode!=='rejected');await pending;
     assert.deepEqual(f.played,mode==='accepted'?['pop']:[],mode);
     assert.equal(f.joined.length,mode==='accepted'?1:0,mode);
   }
+});
+
+test('join-only Entry redirects hosting to its game gate without HTTP admission or a success sound',async()=>{
+  const f=fixture(ENTRY_POLICY);f.context.joinOnly=true;f.context.mode='create';
+  const submit=actualFunction('submit','joinPublicRoom',f.context);
+  await submit({preventDefault(){}});
+  assert.deepEqual(f.requests,[]);assert.deepEqual(f.joined,[]);assert.deepEqual(f.played,[]);
+  assert.deepEqual(f.navigations,[['/entry/meenfina']]);
 });
 test('actual public-directory admission uses the same accepted-owner gate, not the click or rejection',async()=>{
   for(const mode of ['accepted','rejected','owner-changed']){

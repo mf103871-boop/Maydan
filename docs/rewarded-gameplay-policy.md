@@ -5,6 +5,46 @@ AdMob dashboard, App Store or Google Play setting is changed by this work.
 
 ## Policy and compatibility
 
+The new opt-in `GAMEPLAY_ACCESS_POLICY=game-entry-ticket-v2` (and matching
+`MAYDAN_GAMEPLAY_ACCESS_POLICY` build fallback) moves the read-only entry gate
+to each of the eight game cards, before choosing local or online. The first
+full match for that account/game is free; subsequent full matches require an
+explicitly watched rewarded ad or genuine Plus. One match includes all of its
+internal rounds. Lobby creation, opening/back navigation, joining and mode
+selection consume nothing. The host's eligibility covers free joiners.
+
+V2 includes all Badeeha packs within the match grant and removes the ten-pack
+always-free bypass. Its public billing descriptor is `entryGate:'before-mode'`,
+`ticketScope:'game'`, `gameplayCapability:2`, `allPacks:true`, `freePacks:[]`.
+The inclusive pack field is not permission to start another free match.
+
+`GET /api/rewarded/entry-status?game=<id>` requires
+`X-Maydan-Gameplay-Capability: 2` and returns the game's `*-entry-v2` offer,
+aggregate `access`, per-mode `modeAccess`, whole-game-only `entryAccess`, and
+the existing ad/pending status. It never reserves or consumes anything.
+`POST /api/rewarded/attempt` accepts that new offer; only a verified callback
+creates its ticket. A concrete `*-local` or `*-online` start selects the new
+same-game entry ticket atomically. The claim retains its concrete mode.
+
+Existing mode-bound tickets keep their original scope. A legacy online ticket
+can open the mode chooser without promising local coverage. Selecting an
+uncovered mode may request a new whole-game ad ticket while keeping the old
+ticket. Narrow legacy tickets are selected before broad new tickets, and all
+versions share the same historical account/game first trial. No migration or
+historical-row rewrite is needed beyond migration0030.
+
+V2 requires capability2 on new room creation, new room starts and local-start
+requests. Updated clients can continue compatible old lobbies; already playing
+matches, committed same-ID local recovery, pending signed callbacks and
+settlement remain compatible. A Home gate must honor the same owner's pending
+local journal/saved match rather than demand a second ad after a lost response.
+These checks cannot add enforcement to the offline code of an old installed
+client; activate a public minimum version only after the compatible build is
+actually downloadable. The current isolated v1 preview and production are not
+changed merely by editing this source.
+
+The following v1 rules remain supported for existing builds and rollback.
+
 Both flags are absent by default:
 
 - Server: `GAMEPLAY_ACCESS_POLICY=trial-ticket-v1`.
@@ -41,7 +81,7 @@ an alternative entitlement for a protected online room. Tutorials are not
 full-match offers and do not consume trials. Hostless ranked Mafia queue
 participants remain free joiners; no arbitrary participant is charged.
 
-The ten always-free Badeeha packs are `general`, `geo`, `capitals`, `science`,
+For v1 only, the ten always-free Badeeha packs are `general`, `geo`, `capitals`, `science`,
 `animals`, `history`, `food`, `fruitsveg`, `sports`, and `football`. Online
 free-deck validation checks the actual public question-ID manifest as well
 as the category labels. Regenerate it with
@@ -96,6 +136,11 @@ remain prerequisites; this change does not emit Android native ad attempts.
 Android checkout/redeem and automatic Paddle loading are disabled.
 
 ## Reproducible verification
+
+The `game.entry` payment/reward disclosure is intentionally a fixed surface,
+outside Studio's editable screen registry. Saved Home layouts cannot hide its
+back, explicit ad opt-in, Plus, resume or free guest-join paths, or rewrite the
+promised reward. No advertisement is requested merely by opening a game card.
 
 Run Node 22 from the checkout root. All tests use local accounts/databases,
 loopback simulators or independently signed test callbacks, never live ads.

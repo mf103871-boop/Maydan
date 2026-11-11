@@ -18,6 +18,7 @@ import { audioCatalogPackagingPlugin } from './audio/catalog-packaging.mjs';
 import { designRuntimePackagingPlugin } from './design-runtime-packaging.mjs';
 import { bankPackagingPlugin } from './lib/bank-packaging.mjs';
 import { presentationCssPlugin } from './presentation-css.mjs';
+import { ticketPolicyEnabled } from '../src/shared/account/gameplay-policy.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const DIST = path.join(ROOT, 'dist');
@@ -120,7 +121,7 @@ export function esbuildOptions({ minify = true, version = '0.0.0', media = {}, a
       __MAYDAN_ROOMS_URL__: JSON.stringify(roomsUrl),
       __MAYDAN_REWARDED_PREVIEW__: JSON.stringify(rewardedPreview === true),
       __MAYDAN_REWARDED_SIMULATION__: JSON.stringify(rewardedPreview === true && rewardedSimulation === true),
-      __MAYDAN_GAMEPLAY_POLICY__: JSON.stringify(process.env.MAYDAN_GAMEPLAY_ACCESS_POLICY === 'trial-ticket-v1' ? 'trial-ticket-v1' : null),
+      __MAYDAN_GAMEPLAY_POLICY__: JSON.stringify(ticketPolicyEnabled(process.env.MAYDAN_GAMEPLAY_ACCESS_POLICY) ? process.env.MAYDAN_GAMEPLAY_ACCESS_POLICY : null),
       __MAYDAN_AUDIO_PREVIEW__: JSON.stringify(privateAudioBuild()),
       __MAYDAN_WARMTH_PREVIEW__: JSON.stringify(warmth),
       __MAYDAN_WARMTH_PACK__: JSON.stringify(warmthPack),

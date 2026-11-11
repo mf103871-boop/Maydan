@@ -66,7 +66,7 @@ export default {
     if (['/api/legal/privacy', '/api/legal/privacy/'].includes(url.pathname) && ['GET', 'HEAD'].includes(request.method)) {
       return privacyPageResponse(request.method);
     }
-    if (['/api/legal/support', '/api/legal/support/'].includes(url.pathname)) return supportPageResponse(request.method);
+    if (['/api/legal/support', '/api/legal/support/'].includes(url.pathname)) return supportPageResponse(request.method, env);
     if (url.pathname === '/api' || url.pathname.startsWith('/api/') || url.pathname === '/health') {
       // أصل الموقع نفسه دائمًا مسموح، ويُضاف إليه EXTRA_ORIGINS (مخطط تطبيق iOS مثلًا).
       const extra = String(env.EXTRA_ORIGINS || '').split(',').map((value) => value.trim()).filter(Boolean);

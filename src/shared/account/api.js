@@ -40,7 +40,7 @@ function mapError(status, bodyCode) {
 // request(path, { method, body, token, timeout, raw })
 // raw: يعيد الاستجابة كما هي بلا تحليل JSON (للردود 204).
 // onSession: يُنادى بالرمز الجديد حين يدوّر الخادم الجلسة (حتى مع خطأ).
-export async function request(path, { method = 'GET', body, token, timeout = DEFAULT_TIMEOUT, raw = false, responseType = 'json', onSession, fetchImpl, server } = {}) {
+export async function request(path, { method = 'GET', body, token, timeout = DEFAULT_TIMEOUT, raw = false, responseType = 'json', onSession, fetchImpl, server, gameplayCapability } = {}) {
   const base = server === undefined ? resolveAccountServer() : server;
   if (!base) throw new ClientError('OFFLINE');
   const doFetch = fetchImpl || (typeof fetch === 'function' ? fetch : null);
@@ -54,6 +54,7 @@ export async function request(path, { method = 'GET', body, token, timeout = DEF
     // Fetch owns multipart boundaries. Audio bytes need not become base64 JSON.
     if (body !== undefined && !multipart) headers['content-type'] = 'application/json';
     if (token) headers.authorization = `Bearer ${token}`;
+    if (gameplayCapability === 2) headers['x-maydan-gameplay-capability'] = '2';
     response = await doFetch(`${base}${path}`, {
       method,
       headers,

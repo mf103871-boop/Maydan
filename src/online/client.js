@@ -214,7 +214,9 @@ export class RoomClient {
       const pending={resolve,reject,...(this.state.game==='mafia'?{metricsAt:Date.now()}: {})};
       const timer = setTimeout(() => { if(!this.pending.delete(requestId))return;this.settleCommandMetric(pending,'timeout');reject(new ClientError('TIMEOUT')); }, 10_000);
       pending.timer=timer;this.pending.set(requestId,pending);
-      try { this.ws.send(JSON.stringify({ type, ...payload, requestId, matchId, round, ...(this.state.game === 'mafia' ? { phaseId } : {}) })); }
+      try { this.ws.send(JSON.stringify({ type, ...payload, requestId, matchId, round,
+        ...(type === 'start' ? { gameplayCapability: ROOM_CAPABILITIES.gameplayAccess } : {}),
+        ...(this.state.game === 'mafia' ? { phaseId } : {}) })); }
       catch { clearTimeout(timer); this.pending.delete(requestId); this.settleCommandMetric(pending,'transport');reject(new ClientError('DISCONNECTED')); }
     });
     // Local-only metadata: no new protocol fields or change to Promise semantics.

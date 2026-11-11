@@ -42,7 +42,7 @@ export class LocalGameplayAccess {
     const restored = resume?.profileSession?.gameplayAccess;
     const savedOwner = restored?.owner || resume?.profileSession?.ownerUserId;
     if (savedOwner && savedOwner !== owner) return { ready: false, reason: 'account' };
-    if (this.game === 'badeeha' && badeehaFreeSelection(categories)) {
+    if (this.game === 'badeeha' && badeehaFreeSelection(categories, account.gameplayPolicy)) {
       this.current = { version: 1, owner, offer: offer.id, source: 'free-packs' };
       return { ready: true };
     }

@@ -53,12 +53,13 @@ on:
         description: 'Marketing version confirmed with Test mode ON in AdMob Test apps, for owned TestFlight only'
         type: string
       gameplay_policy:
-        description: 'Free preserves existing releases; trial-ticket-v1 requires configured Rewarded ads'
+        description: 'Free preserves existing releases; game-entry-ticket-v2 gates all game cards before mode selection'
         type: choice
         default: free
         options:
           - free
           - trial-ticket-v1
+          - game-entry-ticket-v2
       release_profile:
         description: 'Complete preview requires isolated API, approved Warmth pack, ticket policy and owned test ads'
         type: choice

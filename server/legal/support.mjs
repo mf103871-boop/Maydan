@@ -1,4 +1,5 @@
 // Standalone App Store support destination; no account, SPA shell or tracking.
+import { entryPolicyEnabled } from '../../src/shared/account/gameplay-policy.mjs';
 const ORIGIN = 'https://maydan-game.mf103871.workers.dev';
 const EMAIL = 'mf103871@gmail.com';
 const DELETE_ACCOUNT_URL = `mailto:${EMAIL}?subject=${encodeURIComponent('طلب حذف حساب ميدان وبياناته')}`;
@@ -42,9 +43,13 @@ const HTML = `<!doctype html>
 </body>
 </html>`;
 
-export function supportPageResponse(method = 'GET') {
+export function supportPageResponse(method = 'GET', env = {}) {
   if (!['GET', 'HEAD'].includes(method)) return new Response(null, { status: 405, headers: { allow: 'GET, HEAD', 'cache-control': 'no-store' } });
-  return new Response(method === 'HEAD' ? null : HTML, { status: 200, headers: {
+  const html = entryPolicyEnabled(env.GAMEPLAY_ACCESS_POLICY) ? HTML.replace(
+    'في النسخ التي تستخدم التذاكر، تكون أول مباراة لكل لعبة وعشر حزم بديهة الأساسية والانضمام إلى غرف الآخرين مجانية.',
+    'في نظام دخول الألعاب، تكون أول مباراة لكل لعبة مجانية. بعدها تحتاج كل مباراة جديدة إلى تذكرة أو ميدان بلس، بما فيها جميع حزم بديهة. تظهر خيارات التذكرة من بطاقة اللعبة قبل اختيار طريقة اللعب، والانضمام إلى غرف الآخرين مجاني مع المضيف.'
+  ) : HTML;
+  return new Response(method === 'HEAD' ? null : html, { status: 200, headers: {
     'content-type': 'text/html; charset=utf-8', 'content-language': 'ar', 'cache-control': 'public, max-age=300',
     'content-security-policy': "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
     'x-content-type-options': 'nosniff', 'x-frame-options': 'DENY', 'referrer-policy': 'no-referrer',

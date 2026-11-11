@@ -98,6 +98,41 @@ class ReleaseFeaturesTests(unittest.TestCase):
                 self.verify_app()
             self.receipt = json.loads(json.dumps(original))
 
+    def test_entry_policy_requires_complete_game_coverage_and_the_actual_bundled_gate(self):
+        policy = 'game-entry-ticket-v2'
+        env = {**self.env, 'MAYDAN_GAMEPLAY_ACCESS_POLICY': policy, 'IOS_REWARDED_MODE': 'live'}
+        native = {'apiOrigin': self.origin, 'rewarded': {'mode': 'live', 'appId': 'fixture', 'adUnit': 'fixture'}}
+        self.write('www/native-config.json', json.dumps(native).encode())
+        self.write('www/index.html', ('<main data-maydan-game-entry>' + policy + '</main>').encode())
+        self.receipt.update({
+            'gameplayPolicy': policy,
+            'gameEntry': {'policy': policy, 'surface': 'game-entry', 'consumption': 'match-start',
+                          'games': ['badeeha', 'beep', 'mamnoo', 'jabeen', 'fabraka', 'meenfina', 'ersomha', 'mafia']},
+            'rewarded': {'mode': 'live', 'sdkProjectConfigured': True, 'configuration': native['rewarded'],
+                         'packages': [{'identity': name} for name in ['swift-package-manager-google-mobile-ads',
+                                                                    'swift-package-manager-google-user-messaging-platform']]},
+        })
+        self.receipt['compileDefines'].update({'__MAYDAN_GAMEPLAY_POLICY__': json.dumps(policy),
+                                              '__MAYDAN_REWARDED_PREVIEW__': 'true'})
+
+        def save_current_resources():
+            self.receipt['resources'] = [{'path': entry['path'], 'bytes': len(self.read(entry['path'])),
+                                          'sha256': hashlib.sha256(self.read(entry['path'])).hexdigest()}
+                                         for entry in self.receipt['resources']]
+            self.save_receipt()
+
+        save_current_resources()
+        self.assertEqual(verify(PreparedBundle(self.app), env, prepared=True)['gameEntry']['consumption'], 'match-start')
+        self.receipt['gameEntry']['games'].pop()
+        self.save_receipt()
+        with self.assertRaisesRegex(ValueError, 'coverage differs'):
+            verify(PreparedBundle(self.app), env, prepared=True)
+        self.receipt['gameEntry']['games'].append('mafia')
+        self.write('www/index.html', ('<main>' + policy + '</main>').encode())
+        save_current_resources()
+        with self.assertRaisesRegex(ValueError, 'before-mode entry gate'):
+            verify(PreparedBundle(self.app), env, prepared=True)
+
     def test_warmth_verifier_rejects_receipt_omissions_and_unreferenced_files_against_pinned_source(self):
         manifest = expected_warmth()
         self.assertEqual(len(manifest['files']), 14)

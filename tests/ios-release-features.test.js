@@ -40,6 +40,16 @@ test('receipt construction rejects a compiler definition that silently disables 
   }
 });
 
+test('complete preview preserves the explicit before-mode policy instead of compiling it as free or v1', () => {
+  const entryPolicy = 'game-entry-ticket-v2';
+  const features = resolveReleaseFeatures({ ...complete, MAYDAN_GAMEPLAY_ACCESS_POLICY: entryPolicy });
+  assert.equal(features.gameplayPolicy, entryPolicy);
+  const defines = expectedFeatureDefines(features);
+  assert.equal(defines.__MAYDAN_GAMEPLAY_POLICY__, JSON.stringify(entryPolicy));
+  assert.deepEqual(assertFeatureDefines(features, defines), defines);
+  assert.throws(() => assertFeatureDefines(features, { ...defines, __MAYDAN_GAMEPLAY_POLICY__: JSON.stringify(policy) }), /definition differs/);
+});
+
 test('Warmth evidence records its real 78.9-second introduction and rejects a missing compiled reference or incomplete inventory', async () => {
   const manifest = await readWarmthManifest();
   const html = manifest.files.map(entry => path.posix.basename(entry.url)).join('\n');
@@ -90,6 +100,23 @@ test('complete preview public preflight rejects old or disabled services and nev
     assert.equal(result.passed, false, endpoint);
   }
   await assert.rejects(checkServerReadiness({ ...features, apiOrigin: 'https://wrong.example' }, { fetchImpl: read }), /approved release/);
+});
+
+test('v2 server readiness rejects a v1 server or incomplete before-mode coverage even if other features are healthy', async () => {
+  const features = resolveReleaseFeatures({ ...complete, MAYDAN_GAMEPLAY_ACCESS_POLICY: 'game-entry-ticket-v2' });
+  const gameplay = { policy: features.gameplayPolicy, access: 'trial-ticket', entryGate: 'before-mode',
+    ticketScope: 'game', gameplayCapability: 2, freePacks: [] };
+  const data = {
+    '/health': { ok: true, protocol: 1, accounts: true, games: ['meenfina', 'fabraka', 'badeeha', 'ersomha', 'mafia'] },
+    '/api/mafia/capabilities': { enabled: true, capabilities: { mafia: 2 } },
+    '/api/cosmetics/catalog': { version: 3, items: [{ id: 'plus.signature.frame', kind: 'frame', motionKind: 'living-frame', frameTheme: 'signature' }] },
+    '/api/billing/config': { gameplay },
+  };
+  const run = replacement => checkServerReadiness(features, { fetchImpl: async url =>
+    Response.json(new URL(url).pathname === '/api/billing/config' ? { gameplay: replacement } : data[new URL(url).pathname]) });
+  assert.equal((await run(gameplay)).passed, true);
+  for (const change of [{ policy }, { entryGate: undefined }, { ticketScope: 'mode' }, { gameplayCapability: 1 }, { freePacks: ['general'] }])
+    assert.equal((await run({ ...gameplay, ...change })).passed, false);
 });
 
 test('prepared evidence pins actual HTML, native API and every selected audio byte; changed resources or unexpected SDK fail', async t => {
@@ -144,4 +171,5 @@ test('workflow wires explicit policy/profile, keeps at most 25 dispatch inputs a
   assert.ok(workflow.indexOf('verify_release_features.py "$ipa"') < workflow.indexOf('Upload to App Store Connect'));
   assert.ok(workflow.indexOf('release-features.mjs --server-readiness') < workflow.indexOf("'AuthKey.p8'"));
   assert.match(workflow, /timeout-minutes: 60/);
+  assert.match(workflow, /^          - game-entry-ticket-v2$/m);
 });

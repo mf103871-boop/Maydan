@@ -1,7 +1,7 @@
 // منطق الاستحقاق النقي (بلا React ولا شبكة): يُختبر في Node ويُشارَك بين الواجهة والخادم منطقيًا.
 import { GAMEPLAY_TRIAL_GAMES as TRIAL_GAMES, GRACE_MS, REFRESH_MS } from './config.js';
 import { FREE_PACKS } from './config.js';
-import { ticketPolicyEnabled } from './gameplay-policy.mjs';
+import { ticketPolicyEnabled, entryPolicyEnabled } from './gameplay-policy.mjs';
 
 // me = { user, premium: { active, until, source, status, willRenew }, trials: { beep: true, ... }, serverTime }
 // مشترك إن لم ينتهِ الاشتراك بعد (مع سماح GRACE_MS)؛ نتجاهل active وحده كي تحترم النسخة المخزّنة موعد الانتهاء.
@@ -13,6 +13,7 @@ export function isPremium(me, now = Date.now()) {
 
 // Gameplay is free independently of the genuine subscription entitlement.
 export function lockedPack(id, premium, policy) {
+  if (entryPolicyEnabled(policy)) return false;
   return ticketPolicyEnabled(policy) && !premium && !FREE_PACKS.includes(id);
 }
 

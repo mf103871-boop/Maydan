@@ -2,12 +2,12 @@ import { requireSession } from '../accounts/session.mjs';
 import { json, readJson, sha256 } from '../protocol.mjs';
 import { RoomError, fail } from '../room-model.mjs';
 import { verifyAdMobCallback, verifyAdMobPreviewSetup } from './admob-ssv.mjs';
-import { cancelRewardedAttempt, issueRewardedAttempt, REWARDED_ITEM, rewardedStatus, rewardedTransport, verifyRewardedAttempt } from './attempts.mjs';
+import { cancelRewardedAttempt, issueRewardedAttempt, REWARDED_ITEM, rewardedStatus, rewardedEntryStatus, rewardedTransport, verifyRewardedAttempt } from './attempts.mjs';
 import { assertRewardedAccount, rewardedEnvironment, rewardedMatchId, rewardedOffers, startRewardedLocalMatch } from './ledger.mjs';
 import { hostedRewardedSettings, matchesRewardedUnit, rewardedOrigin, REWARDED_PREVIEW_QA_UNIT, validRewardedPreviewSetupExpiry } from './settings.mjs';
-import { gameplayAccessDescriptor, gameplayTicketsEnabled } from './settings.mjs';
+import { gameplayAccessDescriptor, gameplayTicketsEnabled, gameplayEntryEnabled, requireGameplayCapability } from './settings.mjs';
 import { rewardedLedgerEnvironment } from './settings.mjs';
-import { gameplayOfferById } from '../../src/shared/account/gameplay-policy.mjs';
+import { gameplayOfferById, gameplayEntryOfferById } from '../../src/shared/account/gameplay-policy.mjs';
 
 const ROOT = '/api/rewarded/';
 const verifyDashboard = url => Promise.any(['test', 'production'].map(keys => verifyAdMobCallback(url, keys)))
@@ -24,17 +24,23 @@ export async function routeRewarded(request, env, url = new URL(request.url)) {
       const { user } = await requireSession(env, request);
       await assertRewardedAccount(env, user.id);
     }
-    return json({ offers: rewardedOffers.filter(offer => gameplayOfferById(offer.id) ? gameplayTicketsEnabled(env) : Boolean(rewardedEnvironment(env))),
+    return json({ offers: rewardedOffers.filter(offer => gameplayEntryOfferById(offer.id) ? gameplayEntryEnabled(env) :
+      gameplayOfferById(offer.id) ? gameplayTicketsEnabled(env) : Boolean(rewardedEnvironment(env))),
       gameplay: gameplayAccessDescriptor(env), mode: rewardedTransport(env, environment) });
   }
   const cancellation = method === 'POST' && /^attempt\/([a-f\d-]+)\/cancel$/.exec(path);
-  if (!(method === 'GET' && path === 'status') && !(method === 'POST' && ['attempt','local-start'].includes(path)) && !cancellation) {
+  if (!(method === 'GET' && ['status','entry-status'].includes(path)) && !(method === 'POST' && ['attempt','local-start'].includes(path)) && !cancellation) {
     return json({ error: 'REWARDED_UNAVAILABLE' }, 404);
   }
 
   const { user, session } = await requireSession(env, request);
   const client = session.client === 'ios' && request.headers.get('origin') === 'maydan://app' ? 'ios' : 'web';
   if (path === 'status') return json(await rewardedStatus(env, user.id, url.searchParams.get('offer'), client));
+  if (path === 'entry-status') {
+    if (!gameplayEntryEnabled(env)) return json({ error: 'REWARDED_UNAVAILABLE' }, 404);
+    requireGameplayCapability(env, request.headers.get('x-maydan-gameplay-capability'));
+    return json(await rewardedEntryStatus(env, user.id, url.searchParams.get('game'), client));
+  }
   if (cancellation) {
     if (!rewardedMatchId(cancellation[1])) fail('INVALID');
     await assertRewardedAccount(env, user.id);
@@ -43,6 +49,7 @@ export async function routeRewarded(request, env, url = new URL(request.url)) {
   }
 
   const input = await readJson(request, 512);
+  requireGameplayCapability(env, request.headers.get('x-maydan-gameplay-capability'));
   if (path === 'attempt') return json(await issueRewardedAttempt(env, user.id, input.offer, client), 201);
   const claim = { offer: input.offer, matchId: input.matchId, userId: user.id };
   // An interrupted response must retry the same already prepared local match ID.

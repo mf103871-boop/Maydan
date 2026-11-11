@@ -6,7 +6,7 @@ import { issueSession } from '../server/accounts/session.mjs';
 import { RoomClient, newCredentials } from '../src/online/client.js';
 import { ROOM_CAPABILITIES } from '../src/online/shared.js';
 import { FREE_PACKS } from '../src/shared/account/config.js';
-import { TICKET_POLICY } from '../src/shared/account/gameplay-policy.mjs';
+import { TICKET_POLICY, ENTRY_TICKET_POLICY } from '../src/shared/account/gameplay-policy.mjs';
 import { freeQuestionManifest } from '../scripts/badeeha-free-manifest.mjs';
 import freeManifest from '../server/data/badeeha-free-manifest.json' with { type: 'json' };
 import { freeBadeehaRoom } from '../server/rewarded/badeeha-free.mjs';
@@ -32,7 +32,7 @@ async function setup(t, policy = true) {
   const app = await startLocalServer({ port: 0, origins: ORIGIN, vars: {
     APP_ORIGIN: ORIGIN, AUTH_DEV_FAKE: '1', REWARDED_ENV: 'local',
     REWARDED_PREVIEW_ENABLED: '1', REWARDED_ADS_ENABLED: '1', MAFIA_ENABLED: '1', ONLINE_PUBLIC_DIRECTORY_ENABLED: '1',
-    ...(policy ? { GAMEPLAY_ACCESS_POLICY: TICKET_POLICY } : {}),
+    ...(policy ? { GAMEPLAY_ACCESS_POLICY: typeof policy === 'string' ? policy : TICKET_POLICY } : {}),
   } });
   const clients = [];
   t.after(async () => { clients.forEach(client => client.stop()); await app.close(); });
@@ -70,12 +70,12 @@ async function setup(t, policy = true) {
     return { code, owner, auth, members, group, host: group[0], item,
       start: (fields = {}, index = 0) => group[index].command('start', { accountAuthorization: auth[index]?.authorization, ...fields }) };
   }
-  async function ticket(owner, game) {
+  async function ticket(owner, game, offer = `${game}-online`) {
     const id = crypto.randomUUID(), now = Date.now();
     // SSV authenticity is covered by rewarded-server.test. Only verified rows
     // may exercise the room's atomic reserve/commit contract here.
     await db.prepare(`INSERT INTO rewarded_attempts(id,environment,user_id,offer,custom_hash,ad_unit,reward_item,state,created_at,expires_at,verified_at,transaction_id)
-      VALUES(?,?,?,?,?,'unit','match','verified',?,?,?,?)`).bind(id, app.env.REWARDED_ENV, owner.id, `${game}-online`, id, now, now + 30_000, now, id).run();
+      VALUES(?,?,?,?,?,'unit','match','verified',?,?,?,?)`).bind(id, app.env.REWARDED_ENV, owner.id, offer, id, now, now + 30_000, now, id).run();
     return id;
   }
   const claims = async () => (await db.prepare("SELECT offer,user_id,source,state,ticket_id FROM rewarded_match_claims WHERE state!='released' ORDER BY updated_at,match_id").all()).results;
@@ -90,6 +90,61 @@ test('free-pack server manifest matches the exact public bank and rejects forged
   settings.deck[settings.categories[0]][0].qid = 'paid-pack-question';
   assert.equal(freeBadeehaRoom(settings), false);
   assert.equal(JSON.stringify(freeManifest).includes('"a"'), false, 'the Worker manifest contains no answers');
+});
+
+for (const game of ['meenfina','fabraka','badeeha','ersomha','mafia']) {
+  test(`${game}: v2 game-entry ticket starts the real engine in its concrete mode and guests never pay`, async t => {
+    const env=await setup(t,ENTRY_TICKET_POLICY),owner=await env.account();
+    await env.db.prepare('INSERT INTO trials(user_id,game,created_at) VALUES(?,?,?)').bind(owner.id,game,Date.now()).run();
+    const ticketId=await env.ticket(owner,game,`${game}-entry-v2`);
+    const room=await env.lobby(game,{owner,free:game==='badeeha'});
+    assert.equal(room.host.state.rewardedOffer,`${game}-online`);
+    assert.deepEqual(await env.claims(),[],'opening/creating/joining/readiness does not consume entry rights');
+    await room.start();assert.ok(!['lobby','over','closed'].includes(room.host.state.phase));
+    assert.deepEqual(await env.claims(),[{offer:`${game}-online`,user_id:owner.id,source:'ticket',state:'committed',ticket_id:ticketId}]);
+    assert.equal(room.item.instance.room.gameplayPolicy,ENTRY_TICKET_POLICY);
+  });
+}
+
+test('v2 protects a basic-pack Badeeha match and rejects old creation capability before allocating a seat',async t=>{
+  const env=await setup(t,ENTRY_TICKET_POLICY),owner=await env.account();
+  const oldCapabilities={...ROOM_CAPABILITIES};delete oldCapabilities.gameplayAccess;
+  const before=env.app.rooms.size;
+  const rejected=await env.post('/api/rooms',{...newCredentials(),name:'قديمة',avatar:0,game:'meenfina',rounds:5,capabilities:oldCapabilities},owner);
+  assert.equal(rejected.status,409);assert.equal(rejected.body.error,'UPDATE_REQUIRED');assert.equal(env.app.rooms.size,before);
+  const first=await env.lobby('badeeha',{owner,free:true});await first.start();
+  assert.equal((await env.claims())[0].source,'trial');
+  const second=await env.lobby('badeeha',{owner,free:true});await assert.rejects(second.start(),error('REWARDED_REQUIRED'));
+  assert.equal((await env.claims()).length,1,'the former ten basic packs are covered by one full-match trial, not a bypass');
+});
+
+test('v2 entry-status works through HTTP/CORS with the explicit capability header and consumes no start',async t=>{
+  const env=await setup(t,ENTRY_TICKET_POLICY),owner=await env.account();env.app.env.APP_ORIGIN=env.app.url;
+  const headers={origin:ORIGIN,authorization:owner.authorization,'x-maydan-gameplay-capability':'2'};
+  const preflight=await fetch(env.app.url+'/api/rewarded/entry-status?game=badeeha',{method:'OPTIONS',headers:{origin:ORIGIN,
+    'access-control-request-method':'GET','access-control-request-headers':'Authorization, X-Maydan-Gameplay-Capability'}});
+  assert.equal(preflight.status,204);assert.match(preflight.headers.get('access-control-allow-headers'),/X-Maydan-Gameplay-Capability/i);
+  const response=await fetch(env.app.url+'/api/rewarded/entry-status?game=badeeha',{headers});assert.equal(response.status,200);
+  const status=await response.json();assert.equal(status.offer,'badeeha-entry-v2');assert.equal(status.access,'trial');
+  assert.deepEqual(status.modeAccess,{local:'trial',online:'trial'});assert.deepEqual(await env.claims(),[]);
+});
+
+test('a v1 lobby requires v2 capability at its next start without consuming rights; updated client can continue it',async t=>{
+  const env=await setup(t),room=await env.lobby('badeeha',{free:true});
+  for(const socket of room.item.instance.sockets()){const a=socket.deserializeAttachment();delete a.gameplayAccess;socket.serializeAttachment(a);}
+  const original=room.host.ws.send.bind(room.host.ws);
+  room.host.ws.send=data=>{let message;try{message=JSON.parse(data);}catch{return original(data);}
+    if(message.type==='start')delete message.gameplayCapability;return original(JSON.stringify(message));};
+  env.app.env.GAMEPLAY_ACCESS_POLICY=ENTRY_TICKET_POLICY;
+  await assert.rejects(room.start(),error('UPDATE_REQUIRED'));assert.deepEqual(await env.claims(),[]);
+  room.host.ws.send=original;await room.start();assert.equal((await env.claims())[0].source,'trial');
+});
+
+test('v2 activation does not interrupt an already playing legacy free-pack match',async t=>{
+  const env=await setup(t),room=await env.lobby('badeeha',{free:true});await room.start();assert.deepEqual(await env.claims(),[]);
+  env.app.env.GAMEPLAY_ACCESS_POLICY=ENTRY_TICKET_POLICY;
+  await room.host.command('open',{categoryId:room.item.instance.room.settings.categories[0],index:0});
+  assert.equal(room.host.state.phase,'question');assert.deepEqual(await env.claims(),[]);
 });
 
 for (const game of ['meenfina', 'fabraka', 'badeeha', 'ersomha', 'mafia']) {

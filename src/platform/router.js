@@ -5,6 +5,7 @@ import { getGameModeSupport } from '../shared/game-mode-support.mjs';
 
 const ROUTES = [
   ['home', /^\/?$/],
+  ['game-entry', /^\/entry\/(badeeha|beep|mamnoo|jabeen|fabraka|meenfina|ersomha|mafia)$/],
   ['mafia-tutorial', /^\/tutorial\/mafia$/],
   ['game', /^\/game\/([a-z0-9-]+)$/],
   ['play', /^\/play\/([a-z0-9-]+)$/],
@@ -53,6 +54,7 @@ const routeLocation = route => {
   if (route.name === 'settings' && ['audio','display','account','help'].includes(route.params.section)) return `${route.path}?section=${route.params.section}`;
   if (route.name === 'about' && route.params.view === 'credits') return `${route.path}?view=credits`;
   if (route.name === 'room' && route.params.watch === '1') return `${route.path}?watch=1`;
+  if (route.name === 'online' && route.params.joinOnly === '1') return `${route.path}?mode=online&joinOnly=1`;
   // A specialty lesson and its hub share a pathname, but they are distinct
   // training sessions. Restore that context through Back, dialogs and guards.
   if (route.name === 'mafia-tutorial') {

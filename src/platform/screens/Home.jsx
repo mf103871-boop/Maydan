@@ -14,6 +14,7 @@ import { reportSimulatorHomeReady } from '../native-launch-ready.js';
 import { MenuGameIcon } from '../MenuGameIcon.jsx';
 import { getGameModeSupport } from '../../shared/game-mode-support.mjs';
 import { gameModePath } from '../game-mode-navigation.js';
+import { gameEntryPath, needsGameEntry } from '../game-entry.mjs';
 import homeStyles from './home-rebuild.css';
 
 // جمع «لعبة» بحسب العدد: لعبة واحدة، لعبتان، 3–10 ألعاب، 11+ لعبة
@@ -36,11 +37,11 @@ export function HomeGroups({ account, groups = [], calls = [], onOpen }) {
   return <div data-design-id="groups" className="lamma-home-groups" aria-label="لمّاتك الأخيرة">{recent.map(group => <button type="button" key={group.id} data-design-id="group-card" className={'lamma-home-group' + (active.has(group.id) ? ' has-live-call' : '')} onClick={() => onOpen(group.id)} aria-label={'افتح لمّة ' + group.name + (active.has(group.id) ? '، مكالمة جارية' : '')}><ProfileAvatar user={{ avatarPreset: group.avatarPreset, theme: 'teal' }} size={32} /><span><strong>{group.name}</strong><small>{active.has(group.id) ? <><LammaIcon name="phone" size={12} />مكالمة جارية</> : group.unreadCount > 0 ? `${group.unreadCount} رسالة جديدة` : 'افتح السوالف'}</small></span></button>)}</div>;
 }
 
-function GameCard({ game, index, onOpen }) {
+function GameCard({ game, index, onOpen, opensDialog = true }) {
   const support = getGameModeSupport(game.id);
   return (
     <button type="button" data-design-id={`game-card.${game.id}`} className={`game-card home-game-row ${game.soon ? 'is-soon' : ''}`} style={{ '--game-accent': game.accent, '--delay': `${index * 25}ms` }}
-      onPointerDown={ripple} onClick={() => onOpen(game)} aria-label={`${game.name}: ${game.tagline}`} aria-haspopup="dialog" disabled={!!game.soon}>
+      onPointerDown={ripple} onClick={() => onOpen(game)} aria-label={`${game.name}: ${game.tagline}`} aria-haspopup={opensDialog ? 'dialog' : undefined} disabled={!!game.soon}>
       <MenuGameIcon id={game.id} />
       <span className="home-game-copy"><span className="name">{game.name}</span><span className="home-game-capability">{support?.online && support.local ? 'أونلاين ومع العائلة' : support?.online ? 'أونلاين' : 'مع العائلة'}</span></span>
       <IconBack className="home-game-arrow" aria-hidden="true" />
@@ -84,6 +85,7 @@ export function Home() {
   const open = (game) => {
     opening.current = false;
     sound.play('pop'); haptics.vibrate('selection');
+    if (needsGameEntry(account, game.id)) { navigate(gameEntryPath(game.id)); return; }
     setSelectedGame(game);
   };
   const select = (mode) => {
@@ -106,10 +108,10 @@ export function Home() {
       {searching && <div className="home-search"><label htmlFor="home-game-search" className="sr-only">اسم اللعبة</label><input data-design-id="search-input" id="home-game-search" value={query} placeholder="اسم اللعبة" onChange={event => setQuery(event.target.value)} /><LammaIcon name="search" /></div>}
       <section data-design-id="games" className="home-games" aria-labelledby="home-games-title">
         <h1 data-design-id="title" id="home-games-title" className="sr-only">اختار لعبتك</h1>
-        <div className="games-grid home-game-list">{games.map((g, i) => <GameCard key={g.id} game={g} index={i} onOpen={open} />)}</div>
+        <div className="games-grid home-game-list">{games.map((g, i) => <GameCard key={g.id} game={g} index={i} onOpen={open} opensDialog={!needsGameEntry(account, g.id)} />)}</div>
         {!games.length && <p className="home-no-games" role="status">لا توجد لعبة بهذا الاسم.</p>}
       </section>
-      <p data-design-id="footer" className="home-footer">ألعاب الجهاز الواحد تعمل دون إنترنت · الغرف تحتاج اتصالًا <span>الإصدار {version}</span></p>
+      <p data-design-id="footer" className="home-footer">{account.gameplayPolicy && account.signedIn ? 'بدء مباراة جديدة يحتاج اتصالًا للتحقّق · يمكن استئناف المباراة المحلية المحفوظة دون اتصال' : 'ألعاب الجهاز الواحد تعمل دون إنترنت · الغرف تحتاج اتصالًا'} <span>الإصدار {version}</span></p>
       <nav className="muted center legal-links" aria-label="الأسعار والسياسات" style={{ fontSize: 13 }}>
         {account.platform === 'web' && <><a data-design-id="pricing-link" href="pricing/">التسعير</a> · </>}
         <a data-design-id="refunds-link" href={account.platform === 'ios' ? `${PUBLIC_SITE_ORIGIN}/refunds/` : 'refunds/'}>سياسة الاسترداد</a> · <a data-design-id="terms-link" href={LEGAL_ROUTES.terms}>شروط الاستخدام</a> · <a data-design-id="privacy-link" href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>

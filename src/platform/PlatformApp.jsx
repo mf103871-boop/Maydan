@@ -22,6 +22,7 @@ import { BrandFonts } from '../shared/brand/art.jsx';
 import { Splash } from './screens/Splash.jsx';
 import { Home } from './screens/Home.jsx';
 import { GameDetails } from './screens/GameDetails.jsx';
+import { GameEntry } from './screens/GameEntry.jsx';
 import { Play } from './screens/Play.jsx';
 import { Players } from './screens/Players.jsx';
 import { Settings } from './screens/Settings.jsx';
@@ -68,6 +69,7 @@ function ScreenHost({ route }) {
   let screen = null;
   // عودة الدخول (#/auth?code=) تعرض الرئيسية بينما يبدّل AccountProvider الرمز بجلسة.
   if (route.name === 'home' || route.name === 'auth') screen = <Home key="home" />;
+  else if (route.name === 'game-entry') screen = <GameEntry key={`entry-${route.params.id}`} id={route.params.id} />;
   else if (route.name === 'game') screen = <GameDetails key={`game-${route.params.id}`} id={route.params.id} mode={route.params.mode} />;
   else if (route.name === 'mafia-tutorial') screen = route.params.lab||route.params.labs ? <MafiaLabs key={`mafia-labs-${route.params.lab||'hub'}`} courseId={route.params.lab}/> : <MafiaTutorial key="mafia-tutorial" />;
   else if (route.name === 'play' && route.params.id === 'mafia') screen = <MafiaEntry key="mafia-entry" />;
@@ -85,11 +87,11 @@ function ScreenHost({ route }) {
   else if (route.name === 'about') screen = <About key="about" />;
   else if (route.name === 'terms') screen = <Terms key="terms" />;
   else if (route.name === 'privacy') screen = <Privacy key="privacy" />;
-  else if (route.name === 'online' && route.params.id === 'mafia') screen = <MafiaEntry key="mafia-entry" />;
+  else if (route.name === 'online' && route.params.id === 'mafia') screen = <MafiaEntry key={`mafia-entry-${route.params.joinOnly === '1' ? 'join' : 'all'}`} joinOnly={route.params.joinOnly === '1'} />;
   else if (route.name === 'online') {
     const game = route.params.id || 'meenfina';
     const rewarded = typeof __MAYDAN_REWARDED_PREVIEW__ !== 'undefined' && __MAYDAN_REWARDED_PREVIEW__ && game === 'meenfina' && route.params.rewarded === '1';
-    screen = <Online key={`online-${game}${rewarded ? '-rewarded' : ''}`} game={game} rewarded={rewarded} initialView={rewarded ? 'create' : 'public'} />;
+    screen = <Online key={`online-${game}${rewarded ? '-rewarded' : ''}${route.params.joinOnly === '1' ? '-join' : ''}`} game={game} joinOnly={route.params.joinOnly === '1'} rewarded={rewarded} initialView={rewarded ? 'create' : 'public'} />;
   }
   else if (route.name === 'room') screen = <Online key={`room-${route.params.id}-${route.params.watch==='1'?'observer':'player'}`} code={route.params.id} observer={route.params.watch==='1'} />;
   return screen;
@@ -162,7 +164,7 @@ function Shell() {
   const [booted, setBooted] = useState(false);
   useEffect(() => installNativeBackBridge(), []);
   useEffect(() => {
-    const game = (route.name === 'game' || route.name === 'play') ? getGame(route.params.id) : null;
+    const game = (route.name === 'game' || route.name === 'play' || route.name === 'game-entry') ? getGame(route.params.id) : null;
     const title = game ? game.name : SCREEN_TITLES[route.name];
     document.title = title ? `${title} · ميدان` : BASE_TITLE;
   }, [route.name, route.params.id]);

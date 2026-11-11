@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createStorage } from '../src/shared/lib/storage.js';
 import { LocalGameplayAccess } from '../src/shared/account/local-gameplay-access.mjs';
-import { GAMEPLAY_OFFERS, TICKET_POLICY, badeehaFreeSelection, resolveGameplayPolicy } from '../src/shared/account/gameplay-policy.mjs';
+import { GAMEPLAY_OFFERS, TICKET_POLICY, ENTRY_POLICY, badeehaFreeSelection, resolveGameplayPolicy } from '../src/shared/account/gameplay-policy.mjs';
 import { FREE_PACKS } from '../src/shared/account/config.js';
 import { gameAccess, lockedPack } from '../src/shared/account/entitlements.js';
 
@@ -68,6 +68,30 @@ test('local preparation and rematch use one full-match claim each; active resume
   env.reply(async id => ({ matchId: id, state: 'committed', source: 'ticket' }));
   assert.equal((await env.gate.authorize()).ready, true);
   assert.notEqual(env.gate.snapshot().matchId, first.matchId);
+});
+
+test('v2 Badeeha basic and expanded packs use the same actual-start claim, never selection-time consumption', async()=>{
+  const env=setup('badeeha');env.account.gameplayPolicy=ENTRY_POLICY;
+  assert.equal(badeehaFreeSelection(FREE_PACKS.slice(0,6),ENTRY_POLICY),false);
+  assert.equal(env.calls.length,0);
+  assert.equal((await env.gate.authorize({categories:FREE_PACKS.slice(0,6)})).ready,true);
+  assert.equal(env.calls.length,1);assert.equal(env.gate.snapshot().source,'trial');
+  env.gate.activate();env.gate.complete();
+  env.reply(async id=>({matchId:id,state:'committed',source:'ticket'}));
+  assert.equal((await env.gate.authorize({categories:['worldcup']})).ready,true);
+  assert.equal(env.calls.length,2);assert.equal(env.gate.snapshot().source,'ticket');
+});
+
+test('v2 crash after server commit but before local grant persistence recovers the same prepared claim',async()=>{
+  const env=setup();env.account.gameplayPolicy=ENTRY_POLICY;
+  const originalSet=env.storage.set;let fail=true;
+  env.storage.set=(key,value)=>key.startsWith('match:')&&fail?(fail=false,false):originalSet(key,value);
+  assert.equal((await env.gate.authorize()).reason,'storage');
+  const prepared=env.storage.get('pending:a');assert.ok(prepared.matchId);assert.equal(env.calls.length,1);
+  env.gate.clear();
+  assert.equal((await env.gate.authorize()).ready,true);
+  assert.equal(env.calls.length,2);assert.equal(env.calls[0].id,env.calls[1].id);
+  assert.equal(env.gate.snapshot().matchId,prepared.matchId,'recovery never mints a second match ID');
 });
 
 test('lost response, reload and double tap preserve one prepared claim; no-fill never grants access', async () => {

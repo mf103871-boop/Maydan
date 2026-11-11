@@ -4,7 +4,7 @@ import { supportPageResponse } from '../server/legal/support.mjs';
 import fullWorker from '../server/full-worker.mjs';
 
 test('support is standalone public GET/HEAD through the existing worker-first API routes', async () => {
-  const env = new Proxy({}, { get() { throw new Error('Support must not load assets, sessions or storage'); } });
+  const env = new Proxy({}, { get(_, key) { if (key === 'GAMEPLAY_ACCESS_POLICY') return undefined; throw new Error('Support must not load assets, sessions or storage'); } });
   for (const path of ['/api/legal/support', '/api/legal/support/']) for (const method of ['GET', 'HEAD']) {
     const response = await fullWorker.fetch(new Request(`https://maydan.test${path}`, { method }), env);
     assert.equal(response.status, 200);
@@ -13,6 +13,22 @@ test('support is standalone public GET/HEAD through the existing worker-first AP
     const body = await response.text();
     if (method === 'HEAD') assert.equal(body, ''); else assert.match(body, /الدعم|مساعدتك/);
   }
+});
+
+test('entry policy support describes all-game before-mode tickets without changing legacy support', async () => {
+  const legacy = await supportPageResponse().text();
+  assert.match(legacy, /وعشر حزم بديهة الأساسية/);
+  const env = new Proxy({ GAMEPLAY_ACCESS_POLICY: 'game-entry-ticket-v2' }, {
+    get(target, key) { if (key === 'GAMEPLAY_ACCESS_POLICY') return target[key]; throw new Error('Support must read configuration only'); },
+  });
+  const response = await fullWorker.fetch(new Request('https://maydan.test/api/legal/support/'), env);
+  const html = await response.text();
+  assert.match(html, /بما فيها جميع حزم بديهة/);
+  assert.match(html, /من بطاقة اللعبة قبل اختيار طريقة اللعب/);
+  assert.match(html, /الانضمام إلى غرف الآخرين مجاني مع المضيف/);
+  assert.doesNotMatch(html, /وعشر حزم بديهة الأساسية/);
+  assert.equal(await supportPageResponse('HEAD', env).text(), '');
+  assert.deepEqual([...supportPageResponse('HEAD', env).headers], [...response.headers]);
 });
 
 test('support covers purchases, deletion, call recovery, notification controls and real contact', async () => {
