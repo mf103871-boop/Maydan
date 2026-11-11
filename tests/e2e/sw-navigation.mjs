@@ -4,6 +4,7 @@ import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import http from 'node:http';
 import { readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { chromium } from 'playwright';
 
 let server, browser, origin;
@@ -29,6 +30,58 @@ before(async () => {
 after(async () => {
   await browser?.close();
   if (server?.listening) await new Promise((resolve) => server.close(resolve));
+});
+
+test('the actual ticket artwork decodes offline from its current shell cache and supports ranges', { timeout: 20000 }, async (t) => {
+  const source = (await readFile(new URL('../../public/sw.js', import.meta.url), 'utf8')).replaceAll('__BUILD_ID__', 'ticket-shell-cache');
+  const art = await readFile(new URL('../../public/media/game-entry/match-ticket-v1.webp', import.meta.url));
+  const asset = '/media/game-entry/match-ticket-v1.webp';
+  const html = '<!doctype html><html><meta charset="utf-8"><main>Ticket offline</main><script>navigator.serviceWorker.register("/sw.js");</script></html>';
+  let downloads = 0;
+  const fixture = http.createServer((req, res) => {
+    const pathname = new URL(req.url, 'http://fixture.invalid').pathname;
+    res.setHeader('cache-control', 'no-store');
+    if (pathname === '/sw.js') { res.setHeader('content-type', 'text/javascript'); res.end(source); return; }
+    if (pathname === '/' || pathname === '/index.html') { res.setHeader('content-type', 'text/html'); res.end(html); return; }
+    if (pathname === asset) { downloads++; res.setHeader('content-type', 'image/webp'); res.end(art); return; }
+    res.writeHead(404); res.end();
+  });
+  await new Promise(resolve => fixture.listen(0, '127.0.0.1', resolve));
+  t.after(() => new Promise(resolve => fixture.close(resolve)));
+  const base = `http://127.0.0.1:${fixture.address().port}`;
+  const context = await browser.newContext(); t.after(() => context.close());
+  const page = await context.newPage(); await page.goto(base);
+  await page.waitForFunction(() => navigator.serviceWorker.controller);
+  const cached = await page.evaluate(async asset => {
+    const address = new URL(asset, location.href), shell = await caches.open('maydan-platform-ticket-shell-cache');
+    const response = await shell.match(address);
+    const bytes = await response.arrayBuffer();
+    const hash = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', bytes)), value => value.toString(16).padStart(2, '0')).join('');
+    return { hash, bytes: bytes.byteLength, mediaHit: Boolean(await (await caches.open('maydan-media-v1')).match(address)) };
+  }, asset);
+  assert.equal(cached.hash, createHash('sha256').update(art).digest('hex'));
+  assert.equal(cached.bytes, art.length); assert.equal(cached.mediaHit, false, 'the image was installed only in the release shell');
+  const downloadsBeforeOffline = downloads;
+  await context.setOffline(true);
+  const decoded = await page.evaluate(async asset => {
+    const image = new Image(); image.src = asset;
+    try { await image.decode(); return { width: image.naturalWidth, height: image.naturalHeight }; }
+    catch (error) { return { error: error.name }; }
+  }, asset);
+  assert.deepEqual(decoded, { width: 720, height: 480 }, 'first display must decode the real shell artwork without a network or media-cache hit');
+  const range = await page.evaluate(async asset => {
+    const response = await fetch(asset, { headers: { Range: 'bytes=0-15' } });
+    return { status: response.status, range: response.headers.get('content-range'), bytes: Array.from(new Uint8Array(await response.arrayBuffer())) };
+  }, asset);
+  assert.equal(range.status, 206); assert.equal(range.range, `bytes 0-15/${art.length}`);
+  assert.deepEqual(range.bytes, [...art.subarray(0, 16)]); assert.equal(downloads, downloadsBeforeOffline);
+  const rejectedForeignShell = await page.evaluate(async asset => {
+    const address = new URL(asset, location.href);
+    await (await caches.open('maydan-platform-unrelated-draft')).put(address, new Response('stale foreign shell', { headers: { 'content-type': 'image/webp' } }));
+    await (await caches.open('maydan-platform-ticket-shell-cache')).delete(address);
+    try { await fetch(asset, { cache: 'reload' }); return false; } catch { return true; }
+  }, asset);
+  assert.equal(rejectedForeignShell, true, 'a staged or unrelated shell must never supply the current release image');
 });
 
 for (const base of ['/', '/Maydan/']) {
