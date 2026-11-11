@@ -14,6 +14,7 @@ import { SAMPLE_BANK } from '../../src/shared/fx/sample-bank.js';
 import { MUSIC_BANK } from '../../src/shared/fx/music-bank.js';
 import { SELECTED_AUDIO } from '../../src/shared/fx/selected-audio.js';
 import { ONLINE_GAMES, ROOM_CAPABILITIES } from '../../src/online/shared.js';
+import ticketArtwork from '../../assets/game-entry/manifest.json' with { type: 'json' };
 
 const ROOT = fileURLToPath(new URL('../../', import.meta.url));
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -164,7 +165,15 @@ export async function writePreparedFeatures({ projectDir, destination, build, de
       'The before-mode entry gate is missing from the actual prepared HTML.');
     const games = [...new Set(GAMEPLAY_OFFERS.map(offer => offer.game))];
     assert.equal(games.length, 8, 'The entry gate must cover all eight current games.');
-    gameEntry = { policy: ENTRY_TICKET_POLICY, surface: 'game-entry', games, consumption: 'match-start' };
+    assert.ok(html.includes(Buffer.from('data-maydan-ticket-ui')) && html.includes(Buffer.from(ticketArtwork.id)),
+      'The designed ticket screen is missing from the actual prepared HTML.');
+    const art = await readFile(path.join(destination, ticketArtwork.url));
+    assert.equal(art.length, ticketArtwork.bytes, 'Prepared ticket artwork size differs.');
+    assert.equal(hash(art), ticketArtwork.sha256, 'Prepared ticket artwork hash differs.');
+    const artwork = { path: `www/${ticketArtwork.url}`, bytes: art.length, sha256: hash(art) };
+    resources.push(artwork);
+    gameEntry = { policy: ENTRY_TICKET_POLICY, surface: 'game-entry', games, consumption: 'match-start',
+      ui: ticketArtwork.id, artwork };
   }
   const activeIntro = warmthManifest ? warmthActiveIntro(warmthManifest, html.toString('utf8'))
     : { id: SELECTED_AUDIO.music.id, url: SELECTED_AUDIO.music.url,

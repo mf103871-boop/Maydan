@@ -40,8 +40,13 @@ settlement remain compatible. A Home gate must honor the same owner's pending
 local journal/saved match rather than demand a second ad after a lost response.
 These checks cannot add enforcement to the offline code of an old installed
 client; activate a public minimum version only after the compatible build is
-actually downloadable. The current isolated v1 preview and production are not
-changed merely by editing this source.
+actually downloadable. Editing source does not activate production. The isolated
+preview receipt dated2026-11-11 records backendv2 at version
+`179cad58-2b18-4a04-b3bd-183541e56501` from source
+`2bf5043ce893f4df83af15564e511a0d88630033`; that code-only update deliberately
+retained static assets and does not prove the browser client was updated. See
+[the pending web/build59 plan](releases/preview-web-1.9-build59.md) for the
+separate complete-asset update and acceptance boundary.
 
 The following v1 rules remain supported for existing builds and rollback.
 

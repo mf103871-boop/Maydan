@@ -9,6 +9,8 @@ import { hasRewardedDraft, LOCAL_REWARDED_OFFER, presentRewarded, rewardedConfig
 import { configuredBuildOrigin, MAFIA_PREVIEW_API_ORIGIN, PRODUCTION_API_ORIGIN } from '../lib/environment.js';
 import { gameplayOfferById, gameplayEntryOfferById } from './gameplay-policy.mjs';
 import { callAndroidRewarded, isAndroidRewardedShell } from './android-rewarded.js';
+import entryStyles from './rewarded-entry.css';
+import ticketArtwork from '../../../assets/game-entry/manifest.json' with { type: 'json' };
 
 const rewardNative = (type, payload, options) => isAndroidRewardedShell()
   ? callAndroidRewarded(type, payload, options) : callNative(type, payload, options);
@@ -104,14 +106,21 @@ function Offer({ account, offer, surface, onReady, onFree, onBusy, onAccess, can
   const marker = useRef(null);
   const lifetime = useRef(false);
   const action = useRef(false);
+  const statusRead = useRef(0);
   const abort = useRef(null);
   const current = useRef(null);
   current.current = { owner, account, canPresent, unsafe: Boolean(lamma?.activeCall || lamma?.incomingCall || lamma?.callConnecting) };
 
   const refresh = useCallback(async () => {
     if (!owner || current.current.owner !== owner) return null;
-    const next = entry ? await rewardedEntryStatus(current.current.account, entry.game) : await rewardedStatus(current.current.account, offer);
-    if (!lifetime.current || current.current.owner !== owner) return null;
+    const read = ++statusRead.current;
+    let next;
+    try { next = entry ? await rewardedEntryStatus(current.current.account, entry.game) : await rewardedStatus(current.current.account, offer); }
+    catch (error) {
+      if (!lifetime.current || current.current.owner !== owner || read !== statusRead.current) return null;
+      throw error;
+    }
+    if (!lifetime.current || current.current.owner !== owner || read !== statusRead.current) return null;
     const access = entry && requiredMode ? next.modeAccess?.[requiredMode] || 'required' : next.access;
     setStatus(next);
     onAccess?.(access, next);
@@ -120,8 +129,9 @@ function Offer({ account, offer, surface, onReady, onFree, onBusy, onAccess, can
     return { ...next, access };
   }, [offer, owner, onAccess, entry, requiredMode]);
   useLayoutEffect(() => {
+    const reads = statusRead;
     lifetime.current = true;
-    return () => { lifetime.current = false; abort.current?.abort(); onBusy?.(false); };
+    return () => { lifetime.current = false; reads.current++; abort.current?.abort(); onBusy?.(false); };
   }, [onBusy]);
   useEffect(() => {
     rewardEvent(offer, 'offer');
@@ -143,7 +153,7 @@ function Offer({ account, offer, surface, onReady, onFree, onBusy, onAccess, can
     async function poll() {
       try {
         const next = await refresh();
-        if (next?.attempt !== 'pending' && !readyAccess.has(next?.access) && !cancelled) {
+        if (next && next.attempt !== 'pending' && !readyAccess.has(next.access) && !cancelled) {
           setNote('unavailable'); return;
         }
         if (readyAccess.has(next?.access)) return;
@@ -219,16 +229,24 @@ function Offer({ account, offer, surface, onReady, onFree, onBusy, onAccess, can
   const mayWatch = status?.group === 'B' && status.adsAvailable && effectiveAccess === 'required' &&
     status.attempt !== 'pending' && (!native || nativeStatus?.available !== false);
   const unavailable = effectiveAccess === 'required' && status?.group === 'B' && (!status.adsAvailable || nativeStatus?.available === false);
-  return <Card className="stack" style={{ padding: 16 }} role="region" aria-label={gameplay ? `بدء مباراة ${gameplay.label}` : 'تحدّي اللمّة التجريبي'}>
-    <header><small>{gameplay ? 'مباراة كاملة · إعلان اختياري أو بلس' : configuredBuildOrigin() === PRODUCTION_API_ORIGIN ? 'تحدّي اللمّة' : 'معاينة اختبار · تحدّي اللمّة'}</small><h2 className="card-title">{gameplay ? gameplay.label : local ? 'بديهة · ست حزم مختارة' : 'مين فينا · غرفة تجريبية خاصة'}</h2></header>
-    <p className="card-muted">{entry ? 'التذكرة لمباراة كاملة، وليست لجولة. لا تُستهلك عند اختيار النمط أو إعداد الغرفة، والانضمام إلى غرف الآخرين مجاني.' : local ? `مباراة ${gameplay?.label || 'بديهة'} كاملة على جهاز واحد.` : 'المضيف فقط يحتاج أهلية البدء. الضيوف يدخلون بالدعوة مجانًا.'}</p>
+  return <Card className={entry ? 'stack rewarded-entry-card' : 'stack'} style={entry ? undefined : { padding: 16 }} data-maydan-ticket-ui={entry ? 'ticket-clay-v1' : undefined} data-entry-access={effectiveAccess || 'checking'} role="region" aria-label={gameplay ? `بدء مباراة ${gameplay.label}` : 'تحدّي اللمّة التجريبي'}>
+    {entry && <style>{entryStyles}</style>}
+    {entry ? <header className="rewarded-entry-header">
+      <span className="rewarded-entry-kicker">تذكرة ميدان <span aria-hidden="true">✦</span> مباراة كاملة</span>
+      <div className="rewarded-entry-art" aria-hidden="true"><img src={ticketArtwork.url} width="300" height="200" alt="" decoding="async" /></div>
+      <span className="rewarded-entry-game">{gameplay.label}</span>
+      <h2>{effectiveAccess === 'trial' ? 'أول مباراة علينا!' : readyAccess.has(effectiveAccess) ? 'جاهز للّمة؟' : 'تذكرتك إلى اللمّة'}</h2>
+      <p>{effectiveAccess === 'trial' ? 'جرّب مباراة كاملة مجانًا، ثم اختر إعلانًا أو بلس للمباريات التالية.' : readyAccess.has(effectiveAccess) ? 'أهليتك مؤكدة. اختر طريقة اللعب واستمتع بمباراتك.' : 'شاهد إعلانًا لتذكرة مباراة، أو ادخل مباشرة مع بلس.'}</p>
+      <div className="rewarded-entry-benefits" aria-label="مزايا التذكرة"><span>مباراة كاملة</span><span>بلا فواصل إعلانية</span>{entry.modes.includes('online') && <span>ضيوفك مجانًا</span>}</div>
+    </header> : <header><small>{gameplay ? 'مباراة كاملة · إعلان اختياري أو بلس' : configuredBuildOrigin() === PRODUCTION_API_ORIGIN ? 'تحدّي اللمّة' : 'معاينة اختبار · تحدّي اللمّة'}</small><h2 className="card-title">{gameplay ? gameplay.label : local ? 'بديهة · ست حزم مختارة' : 'مين فينا · غرفة تجريبية خاصة'}</h2></header>}
+    <p className={entry ? 'card-muted rewarded-entry-explanation' : 'card-muted'}>{entry ? `التذكرة محفوظة حتى تبدأ المباراة.${entry.modes.includes('online') ? ' ضيوف غرفتك يدخلون معك مجانًا.' : ' لا إعلانات بين الأسئلة أو الجولات.'}` : local ? `مباراة ${gameplay?.label || 'بديهة'} كاملة على جهاز واحد.` : 'المضيف فقط يحتاج أهلية البدء. الضيوف يدخلون بالدعوة مجانًا.'}</p>
     {entry && requiredMode && <p className="card-muted">تذكرتك السابقة مخصّصة لنمط آخر. لبدء {requiredMode === 'online' ? 'مباراة أونلاين' : 'مباراة مع العائلة'} اختر تذكرة جديدة أو بلس؛ تذكرتك السابقة محفوظة.</p>}
-    <p role="status" aria-live="polite">{busy ? 'جارٍ تجهيز الإعلان…' : messages[note] || (unavailable ? messages.noAds : status ? accessText : owner ? 'جارٍ التحقق من الأهلية…' : 'سجّل الدخول لحفظ التجربة أو التذكرة على حسابك.')}</p>
+    <p className={entry ? 'rewarded-entry-status' : undefined} data-state={busy ? 'loading' : note || (unavailable ? 'unavailable' : effectiveAccess || 'checking')} role="status" aria-live="polite">{busy ? 'جارٍ تجهيز الإعلان…' : messages[note] || (unavailable ? messages.noAds : status ? accessText : owner ? 'جارٍ التحقق من الأهلية…' : 'سجّل الدخول لحفظ التجربة أو التذكرة على حسابك.')}</p>
     {!owner && <Button size="lg" onClick={() => setSignIn(true)}>تسجيل الدخول للتجربة</Button>}
     {owner && onReady && (entry ? readyAccess.has(effectiveAccess) : gameplay || !local || saved || readyAccess.has(status?.access)) && <Button size="lg" variant="accent" disabled={busy} onClick={onReady}>{entry ? 'اختر طريقة اللعب' : gameplay ? 'تحقّق وابدأ المباراة' : saved ? 'استأنف مباراة بديهة التجريبية' : local ? 'إلى إعداد المباراة التجريبية' : 'إلى إعداد الغرفة التجريبية'}</Button>}
     <div ref={marker}>{mayWatch && <Button size="lg" full variant="accent" disabled={busy} onClick={watch}>شاهد إعلان والعب مباراة كاملة</Button>}</div>
-    {owner && !readyAccess.has(effectiveAccess) && <Button size="lg" variant="ghost" disabled={busy} onClick={refreshManually}>تحقّق من تذكرتي</Button>}
     {!account.premium && <Button size="lg" disabled={busy} onClick={() => account.openPaywall({ reason: 'cosmetics' })}>العب فورًا مع بلس</Button>}
+    {owner && !readyAccess.has(effectiveAccess) && <Button size="lg" variant="ghost" disabled={busy} onClick={refreshManually}>تحقّق من تذكرتي</Button>}
     {nativeStatus?.privacyOptionsRequired && <Button size="lg" disabled={busy} onClick={() => { void rewardNative('rewardedPrivacyOptions').catch(() => setNote('privacy-required')); }}>خيارات خصوصية الإعلانات</Button>}
     {native && !android && <Button size="lg" variant="ghost" disabled={busy} onClick={() => { void callNative('rewardedReport').then(result => { if (result?.state !== 'shown') setNote('unavailable'); }).catch(() => setNote('unavailable')); }}>الإبلاغ عن آخر إعلان</Button>}
     <Button size="lg" variant="ghost" disabled={busy} onClick={onFree}>{entry ? 'ارجع إلى الألعاب' : 'ارجع للمحتوى المجاني'}</Button>

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { gameEntryPath, needsGameEntry, localEntryRecovery } from '../src/platform/game-entry.mjs';
+import { gameEntryPath, needsGameEntry, localEntryRecovery, gameEntryPolicyState } from '../src/platform/game-entry.mjs';
 import { ENTRY_POLICY, TICKET_POLICY, GAMEPLAY_ENTRY_OFFERS } from '../src/shared/account/gameplay-policy.mjs';
 import { environmentStorageKey } from '../src/shared/lib/environment.js';
 import { lockedPack } from '../src/shared/account/entitlements.js';
@@ -24,6 +24,17 @@ test('all eight host cards use the exact v2 entry route, Plus and guest navigati
     assert.equal(needsGameEntry({...account,signedIn:false,user:null,gameAccess:()=> 'locked'},game),true);
     assert.equal(needsGameEntry({...account,gameplayPolicy:TICKET_POLICY},game),false);}
   for(const bad of ['__proto__','unknown','mafia/../../settings','']){assert.equal(gameEntryPath(bad),null);assert.equal(needsGameEntry(account,bad),false);}
+});
+
+test('pending policy/readiness is distinct from an explicitly confirmed free server policy',()=>{
+  assert.equal(gameEntryPolicyState({...account,gameplayPolicy:null,billing:null},true),'pending');
+  assert.equal(gameEntryPolicyState({...account,ready:false,premium:true}),'pending');
+  assert.equal(needsGameEntry({...account,ready:false,premium:true},'beep'),true);
+  const cached={...account,gameplayPolicy:null,me:{gameplay:{policy:ENTRY_POLICY}}};
+  assert.equal(gameEntryPolicyState(cached),'pending');assert.equal(needsGameEntry(cached,'beep'),true);
+  assert.equal(gameEntryPolicyState({...cached,billing:{gameplay:{access:'free'}}}),'free');
+  assert.equal(needsGameEntry({...cached,billing:{gameplay:{access:'free'}}},'beep'),false);
+  assert.equal(gameEntryPolicyState({...account,gameplayPolicy:TICKET_POLICY}),'legacy');
 });
 
 test('entry recovery reads an exact same-owner unplayed pending ID without granting or writing anything',()=>{

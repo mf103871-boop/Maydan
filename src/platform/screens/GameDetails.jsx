@@ -10,6 +10,7 @@ import homeStyles from './home-rebuild.css';
 import { RewardedEntry } from '../../shared/account/RewardedOffer.jsx';
 import { LOCAL_REWARDED_OFFER } from '../../shared/account/rewarded.js';
 import { useAccount } from '../../shared/account/context.js';
+import { entryPolicyEnabled } from '../../shared/account/gameplay-policy.mjs';
 
 // معرّف غير معروف في الرابط: الملاحة أثناء التصيير تضيع لأن مستمعي الموجّه لم
 // يشتركوا بعد، فتبقى الصفحة بيضاء إلى الأبد. نعرض رسالة وزر عودة بدلًا منها.
@@ -34,7 +35,9 @@ export function GameDetails({ id, mode: requestedMode }) {
   const mode = resolveGameMode(id, requestedMode ?? getRoute().params.mode);
   const modeLabel = game.id === 'ersomha' ? 'أونلاين · تعاون لشخصين · منافسة من ثلاثة' : game.players.mode === 'teams' ? 'فرق' : game.players.mode === 'both' ? 'فردي أو فرق' : 'فردي';
   const factDelay = (i) => ({ '--delay': `${250 + i * 50}ms` });
-  const note = account.gameplayPolicy
+  const note = entryPolicyEnabled(account.gameplayPolicy)
+    ? 'أول مباراة كاملة لكل لعبة مجانية. بعدها تذكرة للمضيف أو بلس، بما فيها جميع حزم بديهة. تشمل التذكرة كل جولات المباراة؛ انضمام الضيوف إلى غرفة المضيف مجاني.'
+    : account.gameplayPolicy
     ? game.id === 'badeeha' ? 'عشر حزم أساسية مجانية دائمًا. للحزم الأخرى: مباراة أولى مجانية، ثم تذكرة إعلان اختياري أو بلس.' : 'المباراة الأولى مجانية. بعدها يبدأ المضيف بتذكرة إعلان اختياري أو بلس؛ الانضمام إلى الغرف مجاني.'
     : game.id === 'badeeha' ? 'كل الفئات مجانية — العبوا قد ما بدكم' : 'اللعب واستضافة الغرف والانضمام مجانًا';
   const skip = () => {

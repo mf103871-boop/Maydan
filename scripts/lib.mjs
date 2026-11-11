@@ -155,7 +155,8 @@ export function preloadLinks(assets = []) {
   return assets.flatMap((href) => PRELOAD.filter((rule) => rule.pattern.test(href)).map((rule) => rule.tag(href))).join('\n');
 }
 
-export async function renderHtml(js, { version, assets = [] }) {
+export async function renderHtml(js, { version, assets = [], sourceCommit = process.env.GITHUB_SHA || '' }) {
+  if (sourceCommit && !/^[a-f0-9]{40}$/.test(sourceCommit)) throw new Error('Build source must be a complete Git commit SHA.');
   let template = await readFile(path.join(ROOT, 'src/index.template.html'), 'utf8');
   // The small boot guard also sits outside esbuild's imported bundle. Compact
   // its whitespace while leaving the separate bundle placeholder untouched.
@@ -171,6 +172,7 @@ export async function renderHtml(js, { version, assets = [] }) {
     loader: 'css', minifyWhitespace: true, legalComments: 'none',
   })).code;
   return template
+    .replace('</head>', () => `${sourceCommit ? `<meta name="maydan-source" content="${sourceCommit}">` : ''}</head>`)
     .replace('<!--PRELOAD-->', () => preloadLinks(assets))
     .replace('<!--TOKENS_CSS-->', () => tokens)
     .replace('<!--BUNDLE_JS-->', () => escapeInlineScript(js))

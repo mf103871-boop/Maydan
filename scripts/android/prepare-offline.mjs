@@ -3,6 +3,7 @@ import { cp, mkdir, readFile, realpath, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import sharp from 'sharp';
 import { buildOnce, DIST, ROOT } from '../lib.mjs';
+import { ticketPolicyEnabled } from '../../src/shared/account/gameplay-policy.mjs';
 
 const generatedParent = path.join(ROOT, 'android/app/build/generated');
 const generated = path.join(generatedParent, 'maydan');
@@ -12,7 +13,7 @@ if (path.resolve(process.argv[2] || '.') !== generated) {
 if (process.env.MAYDAN_PRIVATE_AUDIO_PREVIEW === '1' || process.env.MAYDAN_WARMTH_PREVIEW === '1') {
   throw new Error('Private preview media is forbidden in the Android proof.');
 }
-if (process.env.MAYDAN_GAMEPLAY_ACCESS_POLICY === 'trial-ticket-v1') {
+if (ticketPolicyEnabled(process.env.MAYDAN_GAMEPLAY_ACCESS_POLICY)) {
   throw new Error('The offline Android proof cannot enable account-bound tickets.');
 }
 

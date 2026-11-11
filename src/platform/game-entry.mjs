@@ -1,12 +1,25 @@
 import { getGameModeSupport } from '../shared/game-mode-support.mjs';
 import { createStorage } from '../shared/lib/storage.js';
 import { environmentStorageKey } from '../shared/lib/environment.js';
-import { entryPolicyEnabled, gameplayOffer } from '../shared/account/gameplay-policy.mjs';
+import { entryPolicyEnabled, gameplayOffer, TICKET_POLICY } from '../shared/account/gameplay-policy.mjs';
 
 export const gameEntryPath = game => getGameModeSupport(game) ? `/entry/${game}` : null;
-export const needsGameEntry = (account, game) => Boolean(gameEntryPath(game) &&
-  entryPolicyEnabled(account.gameplayPolicy) && !account.premium &&
-  (account.signedIn || account.gameAccess?.(game) !== 'trial'));
+export function gameEntryPolicyState(account, entered = false) {
+  const expected = entered || entryPolicyEnabled(account.gameplayPolicy) ||
+    entryPolicyEnabled(account.me?.gameplay?.policy) ||
+    (typeof __MAYDAN_GAMEPLAY_POLICY__ !== 'undefined' && entryPolicyEnabled(__MAYDAN_GAMEPLAY_POLICY__));
+  if (expected && !account.ready) return 'pending';
+  if (entryPolicyEnabled(account.gameplayPolicy)) return 'entry';
+  if (account.gameplayPolicy === TICKET_POLICY) return 'legacy';
+  if (account.billing?.gameplay?.access === 'free' && !account.billing.gameplay.policy) return 'free';
+  return expected ? 'pending' : 'free';
+}
+export function needsGameEntry(account, game) {
+  if (!gameEntryPath(game)) return false;
+  const policy = gameEntryPolicyState(account);
+  return policy === 'pending' || policy === 'entry' && !account.premium &&
+    (account.signedIn || account.gameAccess?.(game) !== 'trial');
+}
 
 // Recovery is a navigation hint, never an entitlement. Play validates the
 // saved board and reuses its existing journal/claim before allowing any start.

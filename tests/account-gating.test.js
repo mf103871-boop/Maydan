@@ -107,6 +107,7 @@ await build({
     import MaydanBeta from './src/games/badeeha/App.js';
     import { Home } from './src/platform/screens/Home.jsx';
     import { GameDetails } from './src/platform/screens/GameDetails.jsx';
+    import { Terms } from './src/platform/screens/Legal.jsx';
     const noop = () => {};
     const platform = { roster: [], setRoster: noop, version: '0.0.0', toast: noop,
       sound: { play: noop }, haptics: { vibrate: noop }, confetti: { fire: noop, burst: noop },
@@ -116,6 +117,7 @@ await build({
     export const badeeha = (account) => renderToStaticMarkup(
       React.createElement(MaydanBeta, { api: { account, settings: platform.settings } }));
     export const home = (account) => renderToStaticMarkup(wrap(account, React.createElement(Home)));
+    export const terms = (account) => renderToStaticMarkup(wrap(account, React.createElement(Terms)));
     // الخطّاف يُشغَّل داخل مكوّن حقيقي، فنلتقط شجرة GameDetails ونستدعي onClick لزر العب.
     export const detailsTree = (id, account) => {
       let tree = null;
@@ -207,4 +209,28 @@ test('ارسمها تعرض استضافة الغرف والانضمام الم�
   assertFreeStart(tree, account, '/online/ersomha?mode=online', 'إلى غرف اللعبة');
   assert.doesNotMatch(markup, /العب على جهاز واحد|١٠ فئات مجانية/);
   assert.doesNotMatch(stripStyle(markup), /disabled/);
+});
+
+test('v2 legal and game instructions describe one full-match host ticket without the old Badeeha carve-out', () => {
+  const account = { ...fakeAccount(), gameplayPolicy: 'game-entry-ticket-v2' };
+  const terms = stripStyle(ui.terms(account));
+  assert.match(terms, /أول مباراة كاملة لكل حساب في كل لعبة مجانية/);
+  assert.match(terms, /بما فيها جميع حزم بديهة/);
+  assert.match(terms, /قبل اختيار طريقة اللعب/);
+  assert.match(terms, /تُستخدم عند بدء المباراة الفعلي فقط/);
+  assert.match(terms, /انضمام الضيوف إلى غرفة المضيف مجاني/);
+  assert.doesNotMatch(terms, /عشر حزم|كل الألعاب والحزم والمباريات وإنشاء الغرف والانضمام إليها مجانية/);
+  for (const game of ['badeeha', 'beep', 'ersomha', 'mafia']) {
+    const { markup } = ui.detailsTree(game, account);
+    assert.match(markup, /تشمل التذكرة كل جولات المباراة/);
+    assert.doesNotMatch(markup, /عشر حزم|كل الفئات مجانية|اللعب واستضافة الغرف والانضمام مجانًا/);
+  }
+});
+
+test('v1 and explicitly free legal and instructions retain their original access descriptions', () => {
+  const v1 = { ...fakeAccount(), gameplayPolicy: 'trial-ticket-v1' };
+  assert.match(stripStyle(ui.terms(v1)), /عشر حزم بديهة الأساسية/);
+  assert.match(ui.detailsTree('badeeha', v1).markup, /عشر حزم أساسية مجانية دائمًا/);
+  assert.match(stripStyle(ui.terms(fakeAccount())), /كل الألعاب والحزم والمباريات وإنشاء الغرف والانضمام إليها مجانية/);
+  assert.match(ui.detailsTree('badeeha', fakeAccount()).markup, /كل الفئات مجانية/);
 });

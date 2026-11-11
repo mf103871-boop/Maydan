@@ -103,11 +103,16 @@ class ReleaseFeaturesTests(unittest.TestCase):
         env = {**self.env, 'MAYDAN_GAMEPLAY_ACCESS_POLICY': policy, 'IOS_REWARDED_MODE': 'live'}
         native = {'apiOrigin': self.origin, 'rewarded': {'mode': 'live', 'appId': 'fixture', 'adUnit': 'fixture'}}
         self.write('www/native-config.json', json.dumps(native).encode())
-        self.write('www/index.html', ('<main data-maydan-game-entry>' + policy + '</main>').encode())
+        art = json.loads((Path(__file__).resolve().parents[2] / 'assets/game-entry/manifest.json').read_text(encoding='utf-8'))
+        self.write('www/' + art['url'], (Path(__file__).resolve().parents[2] / 'public' / art['url']).read_bytes())
+        self.write('www/index.html', ('<main data-maydan-game-entry data-maydan-ticket-ui="' + art['id'] + '">' + policy + '</main>').encode())
+        artwork = {'path': 'www/' + art['url'], 'bytes': art['bytes'], 'sha256': art['sha256']}
+        self.receipt['resources'].append(artwork)
         self.receipt.update({
             'gameplayPolicy': policy,
             'gameEntry': {'policy': policy, 'surface': 'game-entry', 'consumption': 'match-start',
-                          'games': ['badeeha', 'beep', 'mamnoo', 'jabeen', 'fabraka', 'meenfina', 'ersomha', 'mafia']},
+                          'games': ['badeeha', 'beep', 'mamnoo', 'jabeen', 'fabraka', 'meenfina', 'ersomha', 'mafia'],
+                          'ui': art['id'], 'artwork': artwork},
             'rewarded': {'mode': 'live', 'sdkProjectConfigured': True, 'configuration': native['rewarded'],
                          'packages': [{'identity': name} for name in ['swift-package-manager-google-mobile-ads',
                                                                     'swift-package-manager-google-user-messaging-platform']]},
@@ -123,6 +128,11 @@ class ReleaseFeaturesTests(unittest.TestCase):
 
         save_current_resources()
         self.assertEqual(verify(PreparedBundle(self.app), env, prepared=True)['gameEntry']['consumption'], 'match-start')
+        original_ui = self.receipt['gameEntry'].pop('ui')
+        self.save_receipt()
+        with self.assertRaisesRegex(ValueError, 'designed ticket screen'):
+            verify(PreparedBundle(self.app), env, prepared=True)
+        self.receipt['gameEntry']['ui'] = original_ui
         self.receipt['gameEntry']['games'].pop()
         self.save_receipt()
         with self.assertRaisesRegex(ValueError, 'coverage differs'):

@@ -49,17 +49,17 @@ function GameCard({ game, index, onOpen, opensDialog = true }) {
   );
 }
 
-export function GameModeSheet({ game, onClose, onSelect }) {
+export function GameModeSheet({ game, onClose, onSelect, disabled = false }) {
   if (!game) return null;
   const support = getGameModeSupport(game.id);
   return <Sheet open title={game.name} onClose={onClose} data-design-screen="home.game-mode">
     <MenuGameIcon id={game.id} className="game-mode-art" />
     <p className="game-mode-intro">كيف تودون اللعب؟</p>
     <div className="game-mode-options" aria-label="اختر نمط اللعب">
-      <button type="button" className="game-mode-choice is-online" data-design-id="online-mode" disabled={!support?.online} onClick={() => onSelect('online')}>
+      <button type="button" className="game-mode-choice is-online" data-design-id="online-mode" disabled={disabled || !support?.online} onClick={() => onSelect('online')}>
         <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20m-10-10c-6 4-6 16 0 20 6-4 6-16 0-20Z"/></svg><strong>أونلاين</strong>
       </button>
-      <button type="button" className="game-mode-choice is-local" data-design-id="local-mode" disabled={!support?.local} onClick={() => onSelect('local')}>
+      <button type="button" className="game-mode-choice is-local" data-design-id="local-mode" disabled={disabled || !support?.local} onClick={() => onSelect('local')}>
         <IconUsers /><strong>مع العائلة</strong>
       </button>
     </div>
@@ -81,6 +81,11 @@ export function Home() {
   const normalize = value => value.replace(/[\u064B-\u065F\u0670]/g, '').replace(/[أإآ]/g, 'ا').trim();
   const games = GAMES.filter(game => normalize(game.name).includes(normalize(query)));
   const opening = useRef(false);
+  const entryRequired = selectedGame && needsGameEntry(account, selectedGame.id);
+  useEffect(() => {
+    if (!entryRequired) return;
+    setSelectedGame(null); navigate(gameEntryPath(selectedGame.id));
+  }, [entryRequired, selectedGame]);
   useEffect(() => reportSimulatorHomeReady({ accountReady: account.ready, gameCount: GAMES.length }), [account.ready]);
   const open = (game) => {
     opening.current = false;
@@ -89,6 +94,9 @@ export function Home() {
     setSelectedGame(game);
   };
   const select = (mode) => {
+    if (selectedGame && needsGameEntry(account, selectedGame.id)) {
+      setSelectedGame(null); navigate(gameEntryPath(selectedGame.id)); return;
+    }
     const target = gameModePath(selectedGame?.id, mode);
     if (!target || opening.current) return;
     opening.current = true;
@@ -116,7 +124,7 @@ export function Home() {
         {account.platform === 'web' && <><a data-design-id="pricing-link" href="pricing/">التسعير</a> · </>}
         <a data-design-id="refunds-link" href={account.platform === 'ios' ? `${PUBLIC_SITE_ORIGIN}/refunds/` : 'refunds/'}>سياسة الاسترداد</a> · <a data-design-id="terms-link" href={LEGAL_ROUTES.terms}>شروط الاستخدام</a> · <a data-design-id="privacy-link" href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>
       </nav>
-      <GameModeSheet game={selectedGame} onClose={() => setSelectedGame(null)} onSelect={select} />
+      <GameModeSheet game={entryRequired ? null : selectedGame} onClose={() => setSelectedGame(null)} onSelect={select} />
     </Screen>
   );
 }

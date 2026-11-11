@@ -71,6 +71,12 @@ def verify(bundle, env, prepared=False):
         html = bundle.read('www/index.html')
         require(b'data-maydan-game-entry' in html and policy.encode() in html,
                 'The actual bundle does not contain the before-mode entry gate')
+        art = json.loads((Path(__file__).resolve().parents[2] / 'assets/game-entry/manifest.json').read_text(encoding='utf-8'))
+        expected_art = {'path': 'www/' + art['url'], 'bytes': art['bytes'], 'sha256': art['sha256']}
+        require(entry.get('ui') == art['id'] and entry.get('artwork') == expected_art
+                and expected_art in receipt.get('resources', [])
+                and b'data-maydan-ticket-ui' in html and art['id'].encode() in html,
+                'The designed ticket screen or its artwork evidence differs')
     expected_defines = {
         '__MAYDAN_ROOMS_URL__': json.dumps(ORIGINS[environment]),
         '__MAYDAN_GAMEPLAY_POLICY__': json.dumps(expected_policy),
@@ -120,7 +126,7 @@ def verify(bundle, env, prepared=False):
     seen = set()
     for entry in resources:
         name = entry.get('path', '')
-        require(re.fullmatch(r'www/[A-Za-z0-9/_-]+\.(?:html|json|m4a|wav|mp3|ogg)', name)
+        require(re.fullmatch(r'www/[A-Za-z0-9/_-]+\.(?:html|json|m4a|wav|mp3|ogg|webp)', name)
                 and name not in seen and re.fullmatch(r'[a-f0-9]{64}', entry.get('sha256', '')),
                 'Invalid or duplicate feature resource')
         seen.add(name)
