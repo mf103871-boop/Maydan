@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-11-11T18:38:15.864296Z",
+  "repository": "https://github.com/mf103871-boop/Maydan",
+  "developmentBranch": "main",
+  "status": "internal-testflight-available",
+  "packageVersion": "1.9.0",
+  "ios": {
+    "version": "1.9",
+    "build": "59",
+    "appId": "6808385717",
+    "bundleId": "Maydan",
+    "buildId": "ba5484d6-f285-4d68-a3de-125c8c902b19",
+    "processingState": "VALID",
+    "internalBuildState": "IN_BETA_TESTING",
+    "expired": false,
+    "environment": "mafia-preview",
+    "releaseProfile": "complete-preview",
+    "workflowRunId": 43073414892,
+    "workflowUrl": "https://github.com/mf103871-boop/Maydan/actions/runs/43073414892",
+    "sourceCommit": "ed3c8cc5d576edd0a4770cce0b04f05593a19b57",
+    "sourceTree": "7a33c60a98235fbc0a6b553e8390d661bc053fd4",
+    "mainMergeAtDelivery": "c17e75f707d36c82fb21ac996b9f9cddd73a5d9a",
+    "mainMergeTreeMatchesSignedSource": true,
+    "ipaSHA256": "33e9fa61921c5895bcfbebcea1cc8bbc4481075bec0434dcaf6ebf91fb659d5b",
+    "nextBuild": "Read Apple build and upload inventories before reserving a new number; do not rebuild or upload 59 again."
+  },
+  "preview": {
+    "url": "https://maydan-mafia-preview.mf103871.workers.dev/",
+    "apiOrigin": "https://maydan-mafia-preview.mf103871.workers.dev",
+    "workerVersion": "220df288-4c52-4e82-a35d-a861d8093605",
+    "htmlVersion": "1.9",
+    "htmlSourceCommit": "ed3c8cc5d576edd0a4770cce0b04f05593a19b57",
+    "serviceWorkerBuildId": "1.9-43f9a7f7",
+    "gameplayPolicy": "game-entry-ticket-v2",
+    "ticketDesign": "ticket-clay-v1",
+    "webRewardedAdsEnabled": false,
+    "privateWarmthAudioPublishedToWeb": false
+  },
+  "audio": {
+    "approvedPreview": "دفء وخفّة / Warmth",
+    "verifiedBundledFiles": 14,
+    "runtimePackSHA256": "7286f0eee8f45affac5701c502766ddbe9b64ea2669f42675a138768f9ec1940",
+    "publicReleaseApproved": false
+  },
+  "links": {
+    "startHere": "docs/releases/CURRENT.md",
+    "source": "https://github.com/mf103871-boop/Maydan/commit/ed3c8cc5d576edd0a4770cce0b04f05593a19b57",
+    "mainAtDelivery": "https://github.com/mf103871-boop/Maydan/commit/c17e75f707d36c82fb21ac996b9f9cddd73a5d9a",
+    "currentMain": "https://github.com/mf103871-boop/Maydan/tree/main",
+    "preview": "https://maydan-mafia-preview.mf103871.workers.dev/",
+    "appStoreConnect": "https://appstoreconnect.apple.com/apps/6808385717/testflight",
+    "publishedGame": "https://maydan-game.mf103871.workers.dev/",
+    "productionProcedure": "docs/releases/production-paired-release.md"
+  },
+  "handoff": {
+    "startFrom": "fresh origin/main, preserving any existing local work",
+    "historicalDefaults": ["ios/app-store.json", "ios/Maydan.xcodeproj/project.pbxproj"],
+    "mainAfterDelivery": "Documentation-only successors may have a different Git tree; sourceCommit and mainMergeAtDelivery pin the exact delivered application. Inspect subsequent diffs before assuming they are included in build 59.",
+    "temporaryAudioBuildSecretRemoved": true,
+    "originalSigningAndEncryptedAudioKeyPreserved": true,
+    "publicReviewSubmitted": false,
+    "productionDeploymentPerformed": false
+  },
+  "remainingAcceptance": [
+    "Physical iPhone acceptance of 1.9 (59), including foreground and relaunch audio.",
+    "Actual rewarded ad completion and Google SSV-earned ticket on iPhone.",
+    "Physical multi-device Mafia voice isolation acceptance.",
+    "Public-release review, including audio licensing certificates previously deferred by the owner."
+  ],
+  "verificationLimits": [
+    "Eight game-entry cards were tested in actual signed-in Chrome without starting matches or requesting ads.",
+    "Signed IPA, fourteen Warmth files, native configuration, simulator launch and existing internal-group availability were verified.",
+    "The simulator played the approved intro; complete long-music listening was not performed.",
+    "Ubuntu full E2E jobs stopped during browser-dependency installation; reviewed local E2E and same-tree Mac CI passed."
+  ]
+}

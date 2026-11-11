@@ -1,8 +1,10 @@
 # Lamma backend and iOS release record
 
+> **Historical record.** The current internal build is **1.9 (59)**, not the October candidate below. Start with [CURRENT.md](releases/CURRENT.md) and [CURRENT-RELEASE.json](../CURRENT-RELEASE.json). Do not repeat historical uploads, provisioning or migrations.
+
 The original internal-pilot procedure below updated the two production API workers while retaining the existing public website. Its backend helper does **not** publish the website or upload a build to Apple. That rollout and its preview-provider prerequisites are historical; later backend and native release status is recorded in the dated sections below. Do not repeat the initial migration procedure against the already migrated production service.
 
-## Current candidate — 18 October 2026
+## Historical candidate — 18 October 2026
 
 The current candidate is **1.8 (18)**. Its [release receipt](releases/lamma-reliability-2026-10-18/release.json) is the authoritative record for this update; [Arabic TestFlight notes](releases/lamma-reliability-2026-10-18/testflight-notes-ar.txt) describe the intended device trial. The dated records below preserve earlier release states and must not be read as this candidate's current App Store status.
 
