@@ -13,11 +13,13 @@ import { REDEEM_ON_IOS } from './config.js';
 import { isPremium } from './entitlements.js';
 import { resolveAccountServer } from './api.js';
 import { useAcceptedFeedback } from '../fx/accepted-feedback.js';
+import { entryPolicyEnabled } from './gameplay-policy.mjs';
 export const PAYWALL_BULLETS = ['شكل متكامل لبروفايلك مع بقاء صورتك الشخصية', 'إطارات مميزة لصورتك، تختارها وتستخدمها بشكل مستقل'];
 export const PAYWALL_LEGAL = 'يتجدد الاشتراك تلقائيًا ما لم يُلغَ قبل نهاية الفترة بـ٢٤ ساعة';
 export const PRICE_UNKNOWN = 'يُعرض السعر عند الشراء';
 
 export function paywallReason(reason, game, gameplayPolicy) {
+  if (entryPolicyEnabled(gameplayPolicy)) return 'بلس يتيح بدء المباريات دون تذاكر إعلانات، مع أشكال البروفايل والإطارات. أول مباراة لكل لعبة مجانية؛ بعدها تذكرة إعلان لمباراة كاملة أو بلس. جميع الحزم مشمولة، وضيوف الغرف مجانًا مع المضيف، دون أفضلية في اللعب.';
   if (gameplayPolicy) return 'بلس يتيح بدء المباريات دون تذاكر إعلانات، مع أشكال البروفايل والإطارات. تبقى أول مباراة لكل لعبة والحزم الأساسية والانضمام إلى الغرف مجانية؛ لا أفضلية في اللعب.';
   return 'كل الألعاب والحزم والغرف مجانية. بلس يضيف لمستك الخاصة، دون أفضلية في اللعب.';
 }

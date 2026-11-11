@@ -13,6 +13,7 @@ import css from '../../plus/store-v2.css?sheet';
 import { PresentationStyles } from '../../shared/ui/PresentationStyles.jsx';
 import { useAcceptedFeedback } from '../../shared/fx/accepted-feedback.js';
 import { ProfileAvatar } from '../../profiles/ProfileAvatar.jsx';
+import { ticketPolicyEnabled } from '../../shared/account/gameplay-policy.mjs';
 
 const TABS = [['collections', 'تخصيص'], ['membership', 'ميدان بلس']];
 const storeTab = value => ['library','membership'].includes(value) ? value : 'collections';
@@ -75,8 +76,8 @@ function StoreAccount() {
     <PlusStyles/><PresentationStyles sheet={css}/><TopBar data-design-id="topbar" title="المتجر" />
     <nav data-design-id="store-navigation" className="store-nav" role="tablist" aria-label="المتجر">{TABS.map(([id,label]) => <button data-design-id={'store-tab-'+id} key={id} type="button" role="tab" aria-selected={tab === id || (tab === 'library' && id === 'collections')} onClick={() => switchTab(id)}>{label}</button>)}</nav>
     {tab === 'membership' ? <>
-      <section data-design-id="store-membership" className="store-membership"><div><strong>ما هو ميدان بلس؟</strong><small>اشتراك اختياري يضيف مظهرًا لبروفايلك وإطارًا لصورتك.</small></div></section>
-      <ul className="store-membership-perks"><li><b>مظهر كامل لبروفايلك</b><small>ألوان وخامات متناسقة لبروفايلك وبطاقاته.</small></li><li><b>إطار ذهبي حول صورتك</b><small>تظل صورتك الشخصية كما اخترتها.</small></li><li><b>اللعب مجاني للجميع</b><small>الألعاب والغرف والمحادثات متاحة دون اشتراك.</small></li></ul>
+      <section data-design-id="store-membership" className="store-membership"><div><strong>ما هو ميدان بلس؟</strong><small>{ticketPolicyEnabled(account.gameplayPolicy) ? 'ابدأ المباريات دون تذاكر إعلانات، وخصّص بروفايلك وإطار صورتك.' : 'اشتراك اختياري يضيف مظهرًا لبروفايلك وإطارًا لصورتك.'}</small></div></section>
+      <ul className="store-membership-perks"><li><b>مظهر كامل لبروفايلك</b><small>ألوان وخامات متناسقة لبروفايلك وبطاقاته.</small></li><li><b>إطار ذهبي حول صورتك</b><small>تظل صورتك الشخصية كما اخترتها.</small></li><li><b>{ticketPolicyEnabled(account.gameplayPolicy) ? 'مباريات دون تذاكر إعلانات' : 'اللعب مجاني للجميع'}</b><small>{ticketPolicyEnabled(account.gameplayPolicy) ? 'بلس يغطي بدء مبارياتك؛ ضيوف غرفتك يدخلون مجانًا.' : 'الألعاب والغرف والمحادثات متاحة دون اشتراك.'}</small></li></ul>
       <Button data-design-id="plus-details" variant="accent" full onClick={() => account.openPaywall({ reason: 'cosmetics' })}>{plus ? 'إدارة بلس' : 'عرض خيارات الاشتراك'}</Button>
     </> : <>
     <section className="store-current-look"><ProfileAvatar user={previewUser} size={47} /><div><h2>مظهري الحالي</h2><p>{loading ? 'جارٍ تحميل المظهر…' : currentLook.map(item => item.label).join(' · ') || 'التصميم الأساسي'}</p></div>{owner && <Button data-design-id="profile" onClick={() => navigate('/profile')}>عرض البروفايل</Button>}</section>
