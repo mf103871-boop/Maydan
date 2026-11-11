@@ -31,6 +31,7 @@ function Entry({ id, account }) {
   const [busy, setBusy] = useState(false);
   const adRequested = useRef(false), opening = useRef(false);
   const recovery = localEntryRecovery(account, id);
+  const unusedGuestTrial = !account.signedIn && account.gameAccess?.(id) === 'trial';
   const onBusy = useCallback(value => { if (value) adRequested.current = true; setBusy(value); }, []);
   const onAccess = useCallback((value, next) => {
     setAccess(value); setStatus(next);
@@ -40,9 +41,8 @@ function Entry({ id, account }) {
   }, []);
   useEffect(() => {
     if (!account.ready) return;
-    if (account.premium || !entryPolicyEnabled(account.gameplayPolicy) ||
-      !account.signedIn && account.gameAccess?.(id) === 'trial') setSelecting(true);
-  }, [account.ready, account.signedIn, account.premium, account.gameplayPolicy, account.gameAccess, id]);
+    if (account.premium || !entryPolicyEnabled(account.gameplayPolicy) || unusedGuestTrial) setSelecting(true);
+  }, [account.ready, account.premium, account.gameplayPolicy, unusedGuestTrial]);
   const select = mode => {
     const target = gameModePath(id, mode);
     if (!target || opening.current || busy) return;
