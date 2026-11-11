@@ -16,7 +16,7 @@
 .rewarded-entry-card[data-entry-access="ticket"] .rewarded-entry-status,.rewarded-entry-card[data-entry-access="trial"] .rewarded-entry-status { background:#eaf5ec; border-color:#c6dfcd; color:#245e46; }
 .rewarded-entry-status[data-state="error"],.rewarded-entry-status[data-state="unavailable"],.rewarded-entry-status[data-state="noAds"] { background:#fff1e8; border-color:#ecd4c0; color:#874a35; }
 .rewarded-entry-card .btn { width:100%; min-height:48px; height:auto; padding:11px 16px; border-radius:16px; font-size:16px; line-height:1.45; }
-.rewarded-entry-card .btn.btn-accent { color:#fff; background:linear-gradient(160deg,#159da0,#087782); border:1px solid #077480; box-shadow:inset 0 2px 0 #ffffff65,0 4px 0 #075d67,0 8px 16px #087d8920; }
+.rewarded-entry-card .btn.btn-accent { color:#fff; background:linear-gradient(160deg,#087f89,#066570); border:1px solid #077480; box-shadow:inset 0 2px 0 #ffffff65,0 4px 0 #075d67,0 8px 16px #087d8920; }
 .rewarded-entry-card .btn:not(.btn-ghost):not(.btn-accent) { color:#543267; border-color:#ceb5dd; background:linear-gradient(#fcf4ff,#ecdcf6); box-shadow:inset 0 2px 0 #fff,0 3px 0 #c7b2cf; }
 .rewarded-entry-card .btn.btn-ghost { color:#6e587a; font-size:13px; box-shadow:none; background:transparent; }
 .rewarded-entry-card .btn:disabled { opacity:.58; box-shadow:none; }

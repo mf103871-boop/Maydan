@@ -156,6 +156,7 @@ test('one browser player plays a whole public Mafia match through the real UI', 
     const me = mine();
     const botOf = (id) => bots[people.findIndex((p) => p.id === id)];
     if (r.phase === 'night') {
+      const nightCommandsBefore = await page.evaluate(() => window.__mafiaUITrace.commands.filter(command => ['night_action','mafia_vote'].includes(command.type)).length);
       const trigger=page.locator('[data-design-id="action-open"]');if(await trigger.count()&&await trigger.getAttribute('aria-expanded')!=='true')await trigger.click();
       const target = alive.find((id) => r.roleStates[id].faction !== 'mafia' && id !== seatId) || alive.find((id) => r.roleStates[id].faction !== 'mafia');
       for (const id of alive.filter((id) => id !== seatId && r.roleStates[id].faction === 'mafia')) await botOf(id).command('mafia_vote', { targetId: target });
@@ -169,7 +170,16 @@ test('one browser player plays a whole public Mafia match through the real UI', 
           if (mine().roleId === 'analyst') await page.locator('[data-design-id="player-seat"].is-target').nth(1).click();
           await page.locator('[data-design-id="ability-submit"]').click();
           await until(() => Boolean(room().nightActions[seatId]), 'the browser night ability reached the server');
-        } else {assert.equal(await page.locator('[data-design-id="action-open"]').count(),0);assert.equal(await page.locator('[data-design-id="player-seat"].is-target').count(),0);}
+        } else {
+          // Living roles without a current action can still open the night
+          // explanation. Its presence must never create an actionable target
+          // or send an unauthorized night command.
+          assert.equal(await trigger.count(),1);
+          await page.getByText('لا إجراء متاح لك في هذه المرحلة.',{exact:true}).waitFor();
+          for(const selector of ['[data-design-id="player-seat"].is-target','[data-design-id="target"]','[data-design-id="ability-submit"]','[data-design-id="mafia-vote"]'])assert.equal(await page.locator(selector).count(),0);
+          assert.equal(await page.evaluate(() => window.__mafiaUITrace.commands.filter(command => ['night_action','mafia_vote'].includes(command.type)).length),nightCommandsBefore,'Opening the explanation sends no night action');
+          assert.equal(Object.hasOwn(room().nightActions,seatId),false,'The server has no night action for a role without an available ability');
+        }
       }
     }
     if (r.phase === 'nomination') {
@@ -235,7 +245,7 @@ test('real host lobby controls remain hit-testable with the startup notice in bo
   await mkdir(output, { recursive: true });
   const settle = () => page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
   async function controls(notice, width, height) {
-    await page.locator('[data-design-id="player-rail"]').evaluate(rail => { rail.scrollTop = 0; });
+    await page.locator('.mafia-lobby-players').evaluate(players => { players.scrollTop = 0; players.scrollLeft = 0; });
     await settle();
     const values = await page.evaluate(() => {
       const result = { width: innerWidth, height: innerHeight, overflow: document.documentElement.scrollWidth > innerWidth + 1, notice: document.documentElement.hasAttribute('data-startup-background-visible'), floatingLauncherVisible: [...document.querySelectorAll('.lamma-launcher')].some(element => getComputedStyle(element).display !== 'none'), controls: [] };
@@ -256,11 +266,12 @@ test('real host lobby controls remain hit-testable with the startup notice in bo
     assert.equal(values.controls.find(control => control.id === 'start').disabled, false, 'the real ready host can start');
     assert.equal(await page.locator('[data-design-id="player-seat"]').count(), 12);
     const lastCard = await page.locator('[data-design-id="player-seat"]').last().evaluate(card => {
-      const rail = card.closest('.mafia-player-rail'), grid = card.closest('.mafia-seats');
+      const players = card.closest('.mafia-lobby-players'), grid = card.closest('.mafia-seats');
+      if(!players||!grid)throw new Error('The lobby player card must belong to the scrollable waiting seats');
       card.scrollIntoView({block:'nearest',inline:'nearest'});
       const rect = card.getBoundingClientRect(), hit = document.elementFromPoint(rect.x + rect.width/2, rect.y + rect.height/2);
       const result = { hit: hit === card || card.contains(hit), top: rect.top, bottom: rect.bottom };
-      rail.scrollTop = 0; grid.scrollTop = 0; return result;
+      players.scrollTop = 0; players.scrollLeft = 0; grid.scrollTop = 0; grid.scrollLeft = 0; return result;
     });
     assert.ok(lastCard.hit && lastCard.top >= 0 && lastCard.bottom <= height + 1, `${notice} ${width}: twelfth player is unreachable ${JSON.stringify(lastCard)}`);
   }
