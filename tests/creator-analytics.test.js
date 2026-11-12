@@ -61,6 +61,31 @@ test('analytics authenticates, authorizes and returns an explicit empty aggregat
   assert.doesNotMatch(JSON.stringify(data),/same@example|private owner|private other|sessionId|userId|room_code/);
 });
 
+test('creator realm uses a trusted dedicated origin without changing the authentication origin',async t=>{
+  const {env,sessions,grant}=await fixture(t); await grant();
+  const production='https://maydan-game.mf103871.workers.dev';
+  const preview='https://maydan-mafia-preview.mf103871.workers.dev';
+  const cases=[
+    {name:'production keeps its blank auth origin',app:'',creator:production,expected:{id:'production',origin:production}},
+    {name:'legacy rooms keep their GitHub auth origin',app:'https://mf103871-boop.github.io',creator:production,expected:{id:'production',origin:production}},
+    {name:'dedicated preview overrides another auth origin',app:production,creator:preview,expected:{id:'preview',origin:preview}},
+    {name:'preview fallback remains compatible',app:preview,expected:{id:'preview',origin:preview}},
+    {name:'production fallback remains compatible',app:production,expected:{id:'production',origin:production}},
+    {name:'missing origins remain unknown',app:'',expected:{id:'unknown',origin:null}},
+    {name:'legacy origin alone does not infer a realm',app:'https://mf103871-boop.github.io',expected:{id:'unknown',origin:null}},
+    {name:'lookalike override fails closed',app:preview,creator:production+'.untrusted.example',expected:{id:'unknown',origin:null}},
+    {name:'malformed override fails closed',app:preview,creator:'not-a-url',expected:{id:'unknown',origin:null}},
+  ];
+  for(const item of cases){
+    const configured={...env,APP_ORIGIN:item.app,...(item.creator===undefined?{}:{CREATOR_ORIGIN:item.creator})};
+    const before={APP_ORIGIN:configured.APP_ORIGIN,CREATOR_ORIGIN:configured.CREATOR_ORIGIN};
+    const {response,data}=await request(configured,sessions[0].token);
+    assert.equal(response.status,200,item.name);
+    assert.deepEqual(data.environment,item.expected,item.name);
+    assert.deepEqual({APP_ORIGIN:configured.APP_ORIGIN,CREATOR_ORIGIN:configured.CREATOR_ORIGIN},before,'Analytics must not mutate auth/session configuration');
+  }
+});
+
 test('presence accepts only the three enumerated hints and takes limiter identity from auth',async t=>{
   const {env,sessions,actors}=await fixture(t), charged=[];
   for (const extra of [{userId:'forged'},{email:'same@example.test'},{role:'mafia'},{chat:'private'},{timestamp:Date.now()}]) {

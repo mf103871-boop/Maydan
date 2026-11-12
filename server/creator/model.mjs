@@ -45,7 +45,8 @@ export function dayStart(day) {
 }
 export function creatorEnvironment(env) {
   let origin;
-  try { origin = new URL(env.APP_ORIGIN).origin; } catch { return {id:'unknown',origin:null}; }
+  // A server-owned analytics origin preserves blank/legacy auth origins unchanged.
+  try { origin = new URL(env.CREATOR_ORIGIN || env.APP_ORIGIN).origin; } catch { return {id:'unknown',origin:null}; }
   if (origin === 'https://maydan-game.mf103871.workers.dev') return {id:'production',origin};
   if (origin === 'https://maydan-mafia-preview.mf103871.workers.dev') return {id:'preview',origin};
   if (['localhost','127.0.0.1','[::1]'].includes(new URL(origin).hostname)) return {id:'local',origin};
