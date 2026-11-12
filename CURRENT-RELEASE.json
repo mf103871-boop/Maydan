@@ -1,41 +1,51 @@
 {
   "schemaVersion": 1,
-  "verifiedAt": "2026-11-11T18:38:15.864296Z",
+  "verifiedAt": "2026-11-12T02:39:31.079337+00:00",
   "repository": "https://github.com/mf103871-boop/Maydan",
   "developmentBranch": "main",
   "status": "internal-testflight-available",
   "packageVersion": "1.9.0",
   "ios": {
     "version": "1.9",
-    "build": "59",
+    "build": "60",
     "appId": "6808385717",
     "bundleId": "Maydan",
-    "buildId": "ba5484d6-f285-4d68-a3de-125c8c902b19",
+    "buildId": "0f5f5c9b-c81d-4690-8135-a011d150daed",
     "processingState": "VALID",
     "internalBuildState": "IN_BETA_TESTING",
     "expired": false,
     "environment": "mafia-preview",
     "releaseProfile": "complete-preview",
-    "workflowRunId": 43073414892,
-    "workflowUrl": "https://github.com/mf103871-boop/Maydan/actions/runs/43073414892",
-    "sourceCommit": "ed3c8cc5d576edd0a4770cce0b04f05593a19b57",
-    "sourceTree": "7a33c60a98235fbc0a6b553e8390d661bc053fd4",
-    "mainMergeAtDelivery": "c17e75f707d36c82fb21ac996b9f9cddd73a5d9a",
+    "workflowRunId": 43139334222,
+    "workflowUrl": "https://github.com/mf103871-boop/Maydan/actions/runs/43139334222",
+    "sourceCommit": "406f2637de48a25076e162506a2242629d3ca2ec",
+    "sourceTree": "f65985887aa11884f892f00d387ce6940c0dd713",
+    "mainMergeAtDelivery": "71b0443f6d4deade79e0cd7513b25e7bed2ef2c7",
     "mainMergeTreeMatchesSignedSource": true,
-    "ipaSHA256": "33e9fa61921c5895bcfbebcea1cc8bbc4481075bec0434dcaf6ebf91fb659d5b",
-    "nextBuild": "Read Apple build and upload inventories before reserving a new number; do not rebuild or upload 59 again."
+    "ipaSHA256": "654888f7be0720072e01df57228e1c89de1f7f29a594d5e825e594d4ebc88ca2",
+    "nextBuild": "Read Apple build and upload inventories before reserving a new number; do not rebuild or upload 60 again."
   },
   "preview": {
     "url": "https://maydan-mafia-preview.mf103871.workers.dev/",
     "apiOrigin": "https://maydan-mafia-preview.mf103871.workers.dev",
-    "workerVersion": "220df288-4c52-4e82-a35d-a861d8093605",
+    "workerVersion": "822df2e4-b49b-4086-95d0-d215d807d02a",
     "htmlVersion": "1.9",
-    "htmlSourceCommit": "ed3c8cc5d576edd0a4770cce0b04f05593a19b57",
-    "serviceWorkerBuildId": "1.9-43f9a7f7",
+    "htmlSourceCommit": "406f2637de48a25076e162506a2242629d3ca2ec",
+    "serviceWorkerBuildId": "1.9-a19b834e",
     "gameplayPolicy": "game-entry-ticket-v2",
     "ticketDesign": "ticket-clay-v1",
     "webRewardedAdsEnabled": false,
-    "privateWarmthAudioPublishedToWeb": false
+    "privateWarmthAudioPublishedToWeb": false,
+    "migration31Verified": true,
+    "contentLocales": [
+      "ar",
+      "en"
+    ],
+    "contentVersions": {
+      "ar": "legacy-ar",
+      "en": "new-en"
+    },
+    "htmlSHA256": "a19b834eeb2312e4c7142de8ace12f59c5a4928b1e0deff006f885c494b8f9cc"
   },
   "audio": {
     "approvedPreview": "دفء وخفّة / Warmth",
@@ -45,8 +55,8 @@
   },
   "links": {
     "startHere": "docs/releases/CURRENT.md",
-    "source": "https://github.com/mf103871-boop/Maydan/commit/ed3c8cc5d576edd0a4770cce0b04f05593a19b57",
-    "mainAtDelivery": "https://github.com/mf103871-boop/Maydan/commit/c17e75f707d36c82fb21ac996b9f9cddd73a5d9a",
+    "source": "https://github.com/mf103871-boop/Maydan/commit/406f2637de48a25076e162506a2242629d3ca2ec",
+    "mainAtDelivery": "https://github.com/mf103871-boop/Maydan/commit/71b0443f6d4deade79e0cd7513b25e7bed2ef2c7",
     "currentMain": "https://github.com/mf103871-boop/Maydan/tree/main",
     "preview": "https://maydan-mafia-preview.mf103871.workers.dev/",
     "appStoreConnect": "https://appstoreconnect.apple.com/apps/6808385717/testflight",
@@ -55,23 +65,63 @@
   },
   "handoff": {
     "startFrom": "fresh origin/main, preserving any existing local work",
-    "historicalDefaults": ["ios/app-store.json", "ios/Maydan.xcodeproj/project.pbxproj"],
-    "mainAfterDelivery": "Documentation-only successors may have a different Git tree; sourceCommit and mainMergeAtDelivery pin the exact delivered application. Inspect subsequent diffs before assuming they are included in build 59.",
+    "historicalDefaults": [
+      "ios/app-store.json",
+      "ios/Maydan.xcodeproj/project.pbxproj"
+    ],
+    "mainAfterDelivery": "Documentation-only successors may have a different Git tree; sourceCommit and mainMergeAtDelivery pin the exact delivered application. Inspect subsequent diffs before assuming they are included in build 60.",
     "temporaryAudioBuildSecretRemoved": true,
     "originalSigningAndEncryptedAudioKeyPreserved": true,
     "publicReviewSubmitted": false,
     "productionDeploymentPerformed": false
   },
   "remainingAcceptance": [
-    "Physical iPhone acceptance of 1.9 (59), including foreground and relaunch audio.",
-    "Actual rewarded ad completion and Google SSV-earned ticket on iPhone.",
+    "Physical iPhone and Android input, keyboard, microphone, calls, cross-platform networking, thermal and battery acceptance.",
+    "Actual StoreKit purchase/restore and rewarded-ad completion with provider SSV settlement.",
     "Physical multi-device Mafia voice isolation acceptance.",
-    "Public-release review, including audio licensing certificates previously deferred by the owner."
+    "Six-person thirty-task usability study and human bilingual editorial/factual/difficulty review.",
+    "Public-release review and the previously deferred audio licensing certificates."
   ],
   "verificationLimits": [
-    "Eight game-entry cards were tested in actual signed-in Chrome without starting matches or requesting ads.",
-    "Signed IPA, fourteen Warmth files, native configuration, simulator launch and existing internal-group availability were verified.",
-    "The simulator played the approved intro; complete long-music listening was not performed.",
-    "Ubuntu full E2E jobs stopped during browser-dependency installation; reviewed local E2E and same-tree Mac CI passed."
-  ]
+    "The signed source passed macOS CI, all five native Release simulator phases, authenticated IPA inspection, and existing internal TestFlight availability.",
+    "Final application-source PR validation passed on Ubuntu, including the complete browser E2E chain.",
+    "The Android companion is offlineDebug and does not establish production Android authentication, online voice or payments.",
+    "Earlier 143-state visual review, 62-row game matrix and 30-minute soak retain their original source/measurement scope.",
+    "Simulator/browser evidence does not replace the remaining physical-device and human acceptance.",
+    "Android Badeeha restart passed after normal background and storage-settle time; immediate force-stop shortly after a localStorage write restored an older disk snapshot, so abrupt-kill latest-action durability is not established.",
+    "Drawing-orientation smoke uses injected eligibility and rotates the native wrapper; the captured landscape image is Home. It is not proof of a live drawing canvas or production room."
+  ],
+  "verification": {
+    "signedNodeTests": {
+      "total": 2718,
+      "pass": 2712,
+      "fail": 0,
+      "skip": 6
+    },
+    "signedSkippedTests": [
+      "ok 249 - the private pack files exactly match every public catalog byte/hash without escaping their supplied root # SKIP",
+      "ok 2317 - 10 · the shipped page only needs the sources the policy allows # SKIP",
+      "ok 2524 - actual private build preserves the full live Arabic semantic digest, retirement and current bilingual choice runtime # SKIP",
+      "ok 2525 - private worker cannot be prepared with an omitted or changed English supplement # SKIP",
+      "ok 2526 - actual compiled preview advertises versioned English only while enabled, and keeps five game services # SKIP",
+      "ok 2527 - actual compiled Room preserves old Arabic history across English starts, private projections, authorization and reconnect # SKIP"
+    ],
+    "nativePythonTests": {
+      "tests": 97,
+      "passed": 97
+    },
+    "nativeSimulatorPhases": [
+      "startup/relaunch",
+      "AR/EN settings and native retention",
+      "update gate",
+      "audio stream",
+      "wrapper orientation with injected drawing eligibility"
+    ],
+    "publicEnglishPacks": 7,
+    "privateDrawingArabicTranslated": 1400,
+    "privateDrawingEnglishTotal": 1616,
+    "browserMafiaGeometryCases": 44,
+    "hostedPreviewHttpChecks": 22,
+    "hostedPreviewBrowserJourneys": 4
+  }
 }
