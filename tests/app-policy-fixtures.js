@@ -5,7 +5,8 @@ export const ENV = Object.freeze({ IOS_UPDATE_POLICY_ENABLED: '1', IOS_MIN_SUPPO
 export const NOW = Date.parse('2026-10-21T06:00:00.000Z');
 export const STOREFRONTS = ['JOR', 'SAU', 'ARE', 'USA'];
 export const EXPECTED = Object.freeze({ schemaVersion: 1, enabled: true, minimumBuild: 22, minimumVersion: '1.8',
-  appStoreId: '6808385717', message: 'يتوفر تحديث جديد لميدان. حدّث التطبيق من App Store للمتابعة.' });
+  appStoreId: '6808385717', message: 'يتوفر تحديث جديد لميدان. حدّث التطبيق من App Store للمتابعة.',
+  messageEn: 'A new Maydan update is available. Update the app from the App Store to continue.' });
 export const DISABLED = Object.freeze({ ...EXPECTED, enabled: false, minimumBuild: 0, minimumVersion: null });
 
 // Public release facts verified on 2026-10-21, retained as a deterministic fixture.

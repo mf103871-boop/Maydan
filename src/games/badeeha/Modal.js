@@ -1,3 +1,4 @@
+import { tr } from '../../shared/i18n/core.js';
 import React from "../../design/react.js";
 import { wait } from "../../shared/fx/index.js";
 const { useState, useEffect, useRef } = React;
@@ -76,7 +77,7 @@ export function MaydanModal({ title, onClose, children, bottom = !1 }) {
           hBeta("h2", null, title),
           hBeta(
             "button",
-            { "data-design-id": "close", "data-design-required": "true", type: "button", className: "m-icon-btn", onClick: requestClose, "aria-label": "إغلاق" },
+            { "data-design-id": "close", "data-design-required": "true", type: "button", className: "m-icon-btn", onClick: requestClose, "aria-label": tr("إغلاق") },
             "✕",
           ),
         ),

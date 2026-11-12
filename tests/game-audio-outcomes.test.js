@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { tr } from '../src/shared/i18n/core.js';
 import { readFileSync } from 'node:fs';
 
 const source = game => readFileSync(new URL(`../src/games/${game}/Game.jsx`, import.meta.url), 'utf8').replaceAll('\r\n', '\n');
@@ -44,7 +45,7 @@ test('a Meenfina vote confirms a choice without marking the player correct or pr
   const body = source('meenfina').match(/const confirmPick = \(\) => \{ (.*) \};/);
   assert.ok(body);
   const fixture = apiFixture(), labels = [], actions = [];
-  new Function('api', 'stampScreen', 'dispatch', 'picked', body[1])(fixture.api, value => labels.push(value.text), value => actions.push(value), ['friend']);
+  new Function('api', 'stampScreen', 'dispatch', 'picked', 'tr', body[1])(fixture.api, value => labels.push(value.text), value => actions.push(value), ['friend'], tr);
   assert.deepEqual(fixture.sounds, ['ui.confirm']); assert.deepEqual(fixture.haptics, ['selection']);
   assert.equal(fixture.confetti, 0); assert.deepEqual(labels, ['تم الاختيار']);
   assert.deepEqual(actions, [{ type: 'PICK', playerIds: ['friend'] }]);

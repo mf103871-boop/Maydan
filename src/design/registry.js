@@ -27,6 +27,10 @@ const common = [
   node('results', 'النتائج'), node('rules', 'طريقة اللعب'), node('artwork', 'الرسم التوضيحي', 'image'),
 ];
 const platformNodes = [
+  node('online-friend', 'قالب صديق متصل', 'button', {repeat:true,editableText:false,editableIcon:false}),
+  node('ui-language', 'لغة الواجهة', 'input', {editableText:false,editableIcon:false}),
+  node('profile-settings', 'إعدادات الحساب والتطبيق', 'button', {editableText:false,editableIcon:false}),
+  node('achievements-toggle', 'عرض الإنجازات كلها أو اختصارها', 'button', {editableText:false,editableIcon:false}),
   node('online-mode', 'اختيار اللعب أونلاين', 'button', { required: true, editableText: false, editableIcon: false }),
   node('local-mode', 'اختيار اللعب مع العائلة', 'button', { required: true, editableText: false, editableIcon: false }),
   node('skip-instructions', 'تخطي التعليمات إلى إعداد اللعبة', 'button', { required: true, editableText: false, editableIcon: false }),
@@ -72,6 +76,7 @@ const gameNodes = [
   node('round-scores', 'نقاط الجولة', 'list', { repeat: true }), node('laugh-award', 'جائزة الضحك'),
 ];
 const onlineNodes = [
+  node('content-language', 'لغة محتوى المباراة', 'input', { editableText:false, editableIcon:false }),
   node('toolbar', 'إجراءات دليل الغرف', 'container', { required: true }),
   node('directory-options', 'خيارات دليل الغرف والمساعدة', 'button', { required: true, editableText: false }),
   node('directory-filter', 'تصفية الغرف', 'button', { editableText: false }),
@@ -268,7 +273,7 @@ definitions.push(screen('ersomha.over', 'ارسمها · النتيجة النه
 definitions.push(screen('ersomha.private-wait', 'ارسمها · حماية الفكرة', 'ارسمها', [...gameNodes, ...drawNodes], { game: 'ersomha', phase: 'private-wait' }));
 for (const [id, label] of [['social.list', 'الأصدقاء والشِّلَل'], ['social.conversation', 'المحادثة'], ['social.group-editor', 'إنشاء الشلّة وإدارتها'], ['social.invite', 'دعوة للعب'], ['social.preferences', 'تنبيهات اللّمّة'], ['social.search', 'البحث عن الأصدقاء'], ['social.action', 'إجراءات المحادثة'], ['social.voice', 'تسجيل صوتي'], ['social.call', 'المكالمة']]) definitions.push(screen(id, label, 'اللّمّة', socialNodes));
 for (const [id, label] of [['profile', 'ملف اللاعب'], ['profile.editor', 'تعديل الملف'], ['profile.crop', 'قص صورة الملف'], ['profile.safety', 'حظر وإبلاغ']]) definitions.push(screen(id, label, 'الملف الشخصي', profileNodes));
-definitions.push(screen('shell.navigation', 'شريط التنقّل الرئيسي', 'إطار ميدان', [node('navigation', 'الشريط'), ...['games','friends','store','settings'].map(id => node(id, ({ games: 'الألعاب', friends: 'الأصدقاء', store: 'المتجر', settings: 'الإعدادات' })[id], 'button', { required: id === 'games' || id === 'settings' }))]));
+definitions.push(screen('shell.navigation', 'شريط التنقّل الرئيسي', 'إطار ميدان', [node('navigation', 'الشريط'), ...['games','friends','store','settings'].map(id => node(id, ({ games: 'العب', friends: 'الأصدقاء', store: 'المتجر', settings: 'أنا' })[id], 'button', { required: id === 'games' || id === 'settings' }))]));
 definitions.push(screen('shell.game-frame', 'إطار اللعبة', 'إطار ميدان', [node('privacy', 'ستار حماية الدور', 'container', { required: true })]));
 for (const id of ['system.dialog','system.sheet']) definitions.push(screen(id, id.endsWith('dialog') ? 'النافذة الحوارية' : 'الورقة السفلية', 'النظام', [node('close', 'إغلاق', 'button', { required: true }), node('cancel', 'إلغاء', 'button', { required: true }), node('confirm', 'تأكيد', 'button', { required: true })]));
 const accountNodes = [node('account-signin', 'تسجيل الدخول', 'button', { required: true }), node('account-signout', 'تسجيل الخروج', 'button', { required: true }), node('account-delete', 'حذف الحساب', 'button', { required: true }), node('subscription', 'إدارة الاشتراك', 'button', { required: true }), node('restore', 'استعادة المشتريات', 'button', { required: true }), node('purchase', 'الاشتراك', 'button'), node('products', 'خطط الاشتراك'), node('legal', 'الشروط والخصوصية', 'container', { required: true })];

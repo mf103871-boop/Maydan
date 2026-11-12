@@ -1,0 +1,511 @@
+{
+  "id": "tarab",
+  "name": "Tarab Classics",
+  "icon": "📻",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "Composition",
+      "q": "Who composed Alf Leila wa Leila?",
+      "a": "Baligh Hamdi",
+      "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
+      "qid": "tarab-200-911",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "alt": [
+        "Baligh Hamdy"
+      ]
+    },
+    {
+      "p": 200,
+      "topic": "Composition",
+      "q": "Who composed Al-Atlal?",
+      "a": "Riyad al-Sunbati",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "qid": "tarab-200-912",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "alt": [
+        "Riad El-Sonbaty"
+      ]
+    },
+    {
+      "p": 200,
+      "topic": "Egyptian stars",
+      "q": "Which Egyptian singer recorded Hayrana Leih?",
+      "a": "Leila Mourad",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "qid": "tarab-200-913",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "alt": [
+        "Layla Murad"
+      ]
+    },
+    {
+      "p": 200,
+      "topic": "Levantine stars",
+      "q": "Which Lebanese singer recorded Ya Dala' Dala'?",
+      "a": "Sabah",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "qid": "tarab-200-914",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "alt": []
+    },
+    {
+      "p": 200,
+      "topic": "Song poetry",
+      "q": "Who wrote the poem Al-Atlal?",
+      "a": "Ibrahim Nagi",
+      "sourceUrl": "https://www.bibalex.org/libraries/Presentation/Static/Om_Koulthoum_ara.pdf",
+      "qid": "tarab-200-915",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "alt": [
+        "Ibrahim Nagy"
+      ]
+    },
+    {
+      "p": 200,
+      "topic": "Tarab milestones",
+      "q": "On which recurring monthly occasion was Umm Kulthum known for her radio concert?",
+      "a": "The first Thursday",
+      "sourceUrl": "https://streetstory.gov.eg/اسماء-الشوارع/أم-كلثوم/",
+      "alt": [
+        "First Thursday of the month"
+      ],
+      "qid": "tarab-200-916",
+      "difficultyTarget": 0.8,
+      "verified": true
+    },
+    {
+      "topic": "Instruments and performers",
+      "q": "Before plastic heads, what animal material was traditionally used for the riqq's membrane?",
+      "a": "Fish skin",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/riqq.php",
+      "verified": true,
+      "p": 200,
+      "qid": "tarab-200-917",
+      "difficultyTarget": 0.8,
+      "alt": []
+    },
+    {
+      "p": 200,
+      "topic": "Musical forms",
+      "q": "What vocal form consists of a singer improvising colloquial verses alone?",
+      "a": "Mawwal",
+      "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
+      "alt": [],
+      "qid": "tarab-200-918",
+      "difficultyTarget": 0.8,
+      "verified": true
+    },
+    {
+      "p": 400,
+      "topic": "Egyptian stars",
+      "q": "Which singer became known for his recording of Leih Ya Banafsig?",
+      "a": "Saleh Abdel Hay",
+      "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
+      "alt": [
+        "Salih Abd al-Hayy"
+      ],
+      "qid": "tarab-400-911",
+      "difficultyTarget": 0.6,
+      "verified": true
+    },
+    {
+      "p": 400,
+      "topic": "Song poetry",
+      "q": "Who wrote the poem Al-Mawakib, from which A'tini al-Nay wa Ghanni was taken?",
+      "a": "Kahlil Gibran",
+      "sourceUrl": "https://poetry.dct.gov.ae/poems/141719-الخير-في-الناس-مصنوع-إذا-جبروا",
+      "alt": [
+        "Gibran Khalil Gibran"
+      ],
+      "qid": "tarab-400-912",
+      "difficultyTarget": 0.6,
+      "verified": true
+    },
+    {
+      "p": 400,
+      "topic": "Composition",
+      "q": "Who composed Qari'at al-Finjan?",
+      "a": "Mohamed al-Mougi",
+      "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
+      "qid": "tarab-400-913",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "alt": [
+        "Muhammad al-Muji"
+      ]
+    },
+    {
+      "p": 400,
+      "topic": "Composition",
+      "q": "Which Lebanese composer wrote Waraqu al-Asfar?",
+      "a": "Philemon Wehbe",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "alt": [
+        "Filimon Wahbi"
+      ],
+      "qid": "tarab-400-914",
+      "difficultyTarget": 0.6,
+      "verified": true
+    },
+    {
+      "p": 400,
+      "topic": "Musical forms",
+      "q": "What is an improvisation on the syllables 'ya layl, ya 'ayn' called?",
+      "a": "Layali",
+      "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
+      "alt": [],
+      "qid": "tarab-400-915",
+      "difficultyTarget": 0.6,
+      "verified": true
+    },
+    {
+      "p": 400,
+      "topic": "Instruments and performers",
+      "q": "What Levantine instrument has a long neck, movable frets, and metal strings?",
+      "a": "Buzuq",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/buzuq.php",
+      "alt": [
+        "Bouzouk"
+      ],
+      "qid": "tarab-400-916",
+      "difficultyTarget": 0.6,
+      "verified": true
+    },
+    {
+      "p": 400,
+      "topic": "Tarab milestones",
+      "q": "At which Paris music hall did Fairuz perform on her European tours?",
+      "a": "Olympia",
+      "sourceUrl": "https://music.apple.com/us/album/the-olympia-paris-concert-1979-live/1420594903",
+      "alt": [
+        "L'Olympia"
+      ],
+      "qid": "tarab-400-917",
+      "difficultyTarget": 0.6,
+      "verified": true
+    },
+    {
+      "p": 400,
+      "topic": "Levantine stars",
+      "q": "What is Fairuz's birth name?",
+      "a": "Nouhad Haddad",
+      "sourceUrl": "https://www.aub.edu.lb/doctorates/recipients/Pages/fairuz-profile.aspx",
+      "alt": [
+        "Nuhad Haddad"
+      ],
+      "qid": "tarab-400-918",
+      "difficultyTarget": 0.6,
+      "verified": true
+    },
+    {
+      "p": 600,
+      "topic": "Composition",
+      "q": "Who composed the vocal monologue Ya Toyour?",
+      "a": "Mohamed al-Qasabji",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "qid": "tarab-600-911",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "alt": [
+        "Muhammad al-Qasabji"
+      ]
+    },
+    {
+      "p": 600,
+      "topic": "Composition",
+      "q": "Who composed Ya Msahharni for Umm Kulthum?",
+      "a": "Sayed Mekawy",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/accordion.php",
+      "qid": "tarab-600-912",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "alt": [
+        "Sayyid Makkawi"
+      ]
+    },
+    {
+      "p": 600,
+      "topic": "Musical forms",
+      "q": "In which traditional Egyptian vocal form do the soloist and chorus exchange ah phrases?",
+      "a": "Dawr",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "alt": [
+        "Dour"
+      ],
+      "qid": "tarab-600-913",
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "p": 600,
+      "topic": "Instruments and performers",
+      "q": "What small frame drum with a membrane and jingles is used in a traditional Arab ensemble?",
+      "a": "Riqq",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/riqq.php",
+      "alt": [
+        "Riq"
+      ],
+      "qid": "tarab-600-914",
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "p": 600,
+      "topic": "Song poetry",
+      "q": "Who translated Omar Khayyam's quatrains into the Arabic version sung by Umm Kulthum?",
+      "a": "Ahmed Rami",
+      "sourceUrl": "https://www.bibalex.org/libraries/Presentation/Static/ramy.pdf",
+      "qid": "tarab-600-915",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "alt": [
+        "Ahmad Rami"
+      ]
+    },
+    {
+      "p": 600,
+      "topic": "Levantine stars",
+      "q": "Which Lebanese singer appeared with Fairuz in The Ring Seller, Mays al-Reem, and Petra?",
+      "a": "Nasri Shamseddine",
+      "sourceUrl": "https://nasrishamseddine.com/about-nasri-shamseddine",
+      "alt": [
+        "Nasri Shams al-Din"
+      ],
+      "qid": "tarab-600-916",
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "p": 600,
+      "topic": "Tarab milestones",
+      "q": "What is the traditional small Arab ensemble combining melodic instruments and percussion called?",
+      "a": "Takht",
+      "sourceUrl": "https://www.maqamworld.com/en/instr.php",
+      "alt": [],
+      "qid": "tarab-600-917",
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "p": 600,
+      "topic": "Tarab milestones",
+      "q": "In which Lebanese city did Fairuz sing near the columns of the Temple of Jupiter in 1957?",
+      "a": "Baalbek",
+      "sourceUrl": "https://www.aub.edu.lb/doctorates/recipients/Pages/fairuz-profile.aspx",
+      "alt": [],
+      "qid": "tarab-600-918",
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "p": 800,
+      "topic": "Instruments and performers",
+      "q": "Which Egyptian accordionist played the introduction to Ya Msahharni?",
+      "a": "Farouk Salama",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/accordion.php",
+      "qid": "tarab-800-911",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "alt": [
+        "Farouq Salama"
+      ]
+    },
+    {
+      "p": 800,
+      "topic": "Instruments and performers",
+      "q": "Which qanun player accompanied Umm Kulthum for decades?",
+      "a": "Mohamed Abdo Saleh",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/qanun.php",
+      "alt": [
+        "Muhammad Abdu Salih"
+      ],
+      "qid": "tarab-800-912",
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "p": 800,
+      "topic": "Musical forms",
+      "q": "What is the returning refrain between sections of a sama'i or bashraf called?",
+      "a": "Taslim",
+      "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
+      "alt": [
+        "Taslīm"
+      ],
+      "qid": "tarab-800-913",
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "p": 800,
+      "topic": "Musical forms",
+      "q": "Which instrumental form alternates a group refrain with solos improvised by individual musicians?",
+      "a": "Tahmila",
+      "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
+      "alt": [
+        "Tahmilah"
+      ],
+      "qid": "tarab-800-914",
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "p": 800,
+      "topic": "Composition",
+      "q": "Which Egyptian composer wrote the famous Sama'i Bayati known by his family name?",
+      "a": "Ibrahim al-Aryan",
+      "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
+      "qid": "tarab-800-915",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "alt": [
+        "Ibrahim El-Arian"
+      ]
+    },
+    {
+      "p": 800,
+      "topic": "Composition",
+      "q": "Which musician chose Fairuz's stage name while she worked in radio?",
+      "a": "Halim El-Roumi",
+      "sourceUrl": "https://www.aub.edu.lb/doctorates/recipients/Pages/fairuz-profile.aspx",
+      "qid": "tarab-800-916",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "alt": [
+        "Halim al-Rumi"
+      ]
+    },
+    {
+      "p": 800,
+      "topic": "Song poetry",
+      "q": "Which Sudanese poet wrote Aghadan Alqak?",
+      "a": "Al-Hadi Adam",
+      "sourceUrl": "https://www.mfa.gov.eg/ar/Ministers/Details/MissionsNews/4441",
+      "alt": [
+        "El Hadi Adam"
+      ],
+      "qid": "tarab-800-917",
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "p": 800,
+      "topic": "Levantine stars",
+      "q": "Which Syrian musician was called the Prince of the Buzuq?",
+      "a": "Mohammad Abdel Karim",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/buzuq.php",
+      "alt": [
+        "Muhammad Abd al-Karim"
+      ],
+      "qid": "tarab-800-918",
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Levantine stars",
+      "q": "Which singer opens her recording of the dawr Kadani al-Hawa with layali in Nahawand?",
+      "a": "Marie Jubran",
+      "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "tarab-1000-911",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Mary Gibran"
+      ]
+    },
+    {
+      "topic": "Levantine stars",
+      "q": "Which Lebanese singer recorded the dawr Enta Fahem in Huzam?",
+      "a": "Souad Mohamed",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "tarab-1000-912",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Suad Muhammad"
+      ]
+    },
+    {
+      "topic": "Composition",
+      "q": "Who composed the dawr Dayya't Mustaqbal Hayati recorded by Sabah Fakhri?",
+      "a": "Sayed Darwish",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "tarab-1000-913",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Sayyid Darwish"
+      ]
+    },
+    {
+      "topic": "Composition",
+      "q": "Which Aleppine composer wrote the muwashshahat in the Nahawand suite recorded by Hassan Haffar?",
+      "a": "Omar al-Batsh",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "tarab-1000-914",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Umar al-Batsh"
+      ]
+    },
+    {
+      "topic": "Instruments and performers",
+      "q": "Which Lebanese Kurdish musician recorded Rast taqasim for Lebanese television?",
+      "a": "Zoro Youssef",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/buzuq.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "tarab-1000-915",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Zoro Yusuf"
+      ]
+    },
+    {
+      "topic": "Musical forms",
+      "q": "Which maqam does the opening dulab introduce in the recording of Enta Fahem?",
+      "a": "Rahat al-Arwah",
+      "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "tarab-1000-916",
+      "difficultyTarget": 0.15,
+      "alt": []
+    },
+    {
+      "topic": "Musical forms",
+      "q": "What is the technique of a singer repeating and varying a muwashshah passage before the chorus returns called?",
+      "a": "Tafrid",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "tarab-1000-917",
+      "difficultyTarget": 0.15,
+      "alt": []
+    },
+    {
+      "topic": "Tarab milestones",
+      "q": "Which composer discovered Fairuz's voice at school and brought her into the radio choir?",
+      "a": "Mohammed Fleifel",
+      "sourceUrl": "https://www.aub.edu.lb/doctorates/recipients/Pages/fairuz-profile.aspx",
+      "verified": true,
+      "p": 1000,
+      "qid": "tarab-1000-918",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Muhammad Flayfil"
+      ]
+    }
+  ]
+}

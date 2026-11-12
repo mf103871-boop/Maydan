@@ -1,0 +1,486 @@
+{
+  "id": "actors",
+  "name": "Actors and Stars",
+  "icon": "🌠",
+  "qs": [
+    {
+      "qid": "actors-200-911",
+      "p": 200,
+      "topic": "Harry Potter",
+      "q": "Who played Hermione Granger in the Harry Potter films?",
+      "a": "Emma Watson",
+      "alt": [],
+      "sourceUrl": "https://www.harrypotter.com/features/actors-of-the-wizarding-world-part-one-the-stars-that-rose",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "actors-200-912",
+      "p": 200,
+      "topic": "Pirates of the Caribbean",
+      "q": "Who played blacksmith Will Turner in Pirates of the Caribbean?",
+      "a": "Orlando Bloom",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "actors-200-913",
+      "p": 200,
+      "topic": "The Dark Knight",
+      "q": "Who played the Joker in the 2008 film The Dark Knight?",
+      "a": "Heath Ledger",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Dark_Knight",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "actors-200-914",
+      "p": 200,
+      "topic": "Friends",
+      "q": "Who played Chandler Bing in Friends?",
+      "a": "Matthew Perry",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Friends_and_Joey_characters",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "actors-200-915",
+      "p": 200,
+      "topic": "Bab Al-Hara",
+      "q": "Who played Souad, known as Umm Issam, in Bab Al-Hara?",
+      "a": "Sabah al-Jazairi",
+      "sourceUrl": "https://elcinema.com/work/1010631/cast",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Sabah Jazairi"
+      ]
+    },
+    {
+      "qid": "actors-200-916",
+      "p": 200,
+      "topic": "I Will Not Live in My Father's Robes",
+      "q": "Who played the koshari seller Fatma in I Will Not Live in My Father's Robes?",
+      "a": "Abla Kamel",
+      "sourceUrl": "https://elcinema.com/work/1010312/cast",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": []
+    },
+    {
+      "qid": "actors-200-917",
+      "p": 200,
+      "topic": "El Nazer",
+      "q": "Who played Salah's simple-minded friend Atef in El Nazer?",
+      "a": "Ahmed Helmy",
+      "sourceUrl": "https://elcinema.com/work/1001525/cast",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Ahmad Helmi"
+      ]
+    },
+    {
+      "qid": "actors-200-918",
+      "p": 200,
+      "topic": "Al Hayba",
+      "q": "Who played Nahed, Jabal's mother, in Al Hayba?",
+      "a": "Mona Wassef",
+      "sourceUrl": "https://elcinema.com/work/2030474/cast",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Muna Wassef"
+      ]
+    },
+    {
+      "qid": "actors-400-911",
+      "p": 400,
+      "topic": "Harry Potter",
+      "q": "Who played Ron Weasley in the Harry Potter films?",
+      "a": "Rupert Grint",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "actors-400-912",
+      "p": 400,
+      "topic": "Pirates of the Caribbean",
+      "q": "Who played Elizabeth Swann in The Curse of the Black Pearl?",
+      "a": "Keira Knightley",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "actors-400-913",
+      "p": 400,
+      "topic": "The Dark Knight",
+      "q": "Who played police commissioner James Gordon in Christopher Nolan's Batman trilogy?",
+      "a": "Gary Oldman",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Dark_Knight",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "actors-400-914",
+      "p": 400,
+      "topic": "Friends",
+      "q": "Who played Monica Geller in Friends?",
+      "a": "Courteney Cox",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Friends_and_Joey_characters",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "actors-400-915",
+      "p": 400,
+      "topic": "Bab Al-Hara",
+      "q": "Who played Abu Shehab in the early seasons of Bab Al-Hara?",
+      "a": "Samer al-Masri",
+      "sourceUrl": "https://elcinema.com/work/1010631/cast",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Samer El Masri"
+      ]
+    },
+    {
+      "qid": "actors-400-916",
+      "p": 400,
+      "topic": "I Will Not Live in My Father's Robes",
+      "q": "Who played the adult Abdel Wahab in I Will Not Live in My Father's Robes?",
+      "a": "Mohamed Riad",
+      "sourceUrl": "https://elcinema.com/work/1010312/cast",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Mohammad Riyad"
+      ]
+    },
+    {
+      "qid": "actors-400-917",
+      "p": 400,
+      "topic": "El Nazer",
+      "q": "Who played deputy headmaster Sayed Dahi in El Nazer?",
+      "a": "Hassan Hosny",
+      "sourceUrl": "https://elcinema.com/work/1001525/cast",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Hassan Hosni"
+      ]
+    },
+    {
+      "qid": "actors-400-918",
+      "p": 400,
+      "topic": "Al Hayba",
+      "q": "Who played Alia in the first season of Al Hayba?",
+      "a": "Nadine Nassib Njeim",
+      "alt": [
+        "Nadine Njeim"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2030474/cast",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "actors-600-911",
+      "p": 600,
+      "topic": "Harry Potter",
+      "q": "Who played Potions professor Severus Snape in the Harry Potter films?",
+      "a": "Alan Rickman",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "actors-600-912",
+      "p": 600,
+      "topic": "Pirates of the Caribbean",
+      "q": "Who played Captain Barbossa in Pirates of the Caribbean?",
+      "a": "Geoffrey Rush",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "actors-600-913",
+      "p": 600,
+      "topic": "The Dark Knight",
+      "q": "Who played Bruce Wayne's butler Alfred in Christopher Nolan's Batman trilogy?",
+      "a": "Michael Caine",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Dark_Knight",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "actors-600-914",
+      "p": 600,
+      "topic": "Friends",
+      "q": "Who played Phoebe Buffay in Friends?",
+      "a": "Lisa Kudrow",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Friends_and_Joey_characters",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "actors-600-915",
+      "p": 600,
+      "topic": "Bab Al-Hara",
+      "q": "Who played Ferial, Abu Issam's sister, in Bab Al-Hara?",
+      "a": "Wafaa Mousally",
+      "alt": [
+        "Wafaa Moselly",
+        "Wafaa Moussalli"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010631/cast",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "actors-600-916",
+      "p": 600,
+      "topic": "I Will Not Live in My Father's Robes",
+      "q": "Who played Saniya, Abdel Ghafour's daughter, in I Will Not Live in My Father's Robes?",
+      "a": "Nahed Roshdy",
+      "sourceUrl": "https://elcinema.com/work/1010312/cast",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Nahed Rushdi"
+      ]
+    },
+    {
+      "qid": "actors-600-917",
+      "p": 600,
+      "topic": "El Nazer",
+      "q": "Who played teacher Hussein Ismail in El Nazer?",
+      "a": "Hesham Selim",
+      "sourceUrl": "https://elcinema.com/work/1001525/cast",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Hisham Salim"
+      ]
+    },
+    {
+      "qid": "actors-600-918",
+      "p": 600,
+      "topic": "Al Hayba",
+      "q": "Who played Sakher, Jabal's brother, in the early seasons of Al Hayba?",
+      "a": "Owais Mkhallalati",
+      "sourceUrl": "https://elcinema.com/work/2030474/cast",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Oweis Mkhallalati"
+      ]
+    },
+    {
+      "qid": "actors-800-911",
+      "p": 800,
+      "topic": "Harry Potter",
+      "q": "Who played Hagrid, keeper of the keys at Hogwarts, in the Harry Potter films?",
+      "a": "Robbie Coltrane",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "actors-800-912",
+      "p": 800,
+      "topic": "Pirates of the Caribbean",
+      "q": "Who played James Norrington in The Curse of the Black Pearl?",
+      "a": "Jack Davenport",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "actors-800-913",
+      "p": 800,
+      "topic": "The Dark Knight",
+      "q": "Who played Harvey Dent, who becomes Two-Face, in The Dark Knight?",
+      "a": "Aaron Eckhart",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Dark_Knight",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "actors-800-914",
+      "p": 800,
+      "topic": "Friends",
+      "q": "Who played Janice, known for her distinctive laugh, in Friends?",
+      "a": "Maggie Wheeler",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Friends_and_Joey_characters",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "actors-800-915",
+      "p": 800,
+      "topic": "Bab Al-Hara",
+      "q": "Who played Dalal, Abu Issam's daughter, in the early seasons of Bab Al-Hara?",
+      "a": "Anaheed Fayyad",
+      "sourceUrl": "https://elcinema.com/work/1010631/cast",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Anahid Fayyad"
+      ]
+    },
+    {
+      "qid": "actors-800-916",
+      "p": 800,
+      "topic": "I Will Not Live in My Father's Robes",
+      "q": "Who played Nafisa, known as Nova, in I Will Not Live in My Father's Robes?",
+      "a": "Manal Salama",
+      "sourceUrl": "https://elcinema.com/work/1010312/cast",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Manal Salamah"
+      ]
+    },
+    {
+      "qid": "actors-800-917",
+      "p": 800,
+      "topic": "El Nazer",
+      "q": "Who played Wafaa Hassan, Salah's love interest, in El Nazer?",
+      "a": "Basma",
+      "alt": [
+        "Basma Hassan"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1001525/cast",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "actors-800-918",
+      "p": 800,
+      "topic": "Al Hayba",
+      "q": "Who played Mona, Jabal's sister, in the first season of Al Hayba?",
+      "a": "Rosina Lazkani",
+      "alt": [
+        "Rozina Lazkani"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2030474/cast",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "Harry Potter",
+      "q": "Who played Dumbledore in Harry Potter and the Philosopher's Stone?",
+      "a": "Richard Harris",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "actors-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Pirates of the Caribbean",
+      "q": "Who played Gibbs in The Curse of the Black Pearl?",
+      "a": "Kevin McNally",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "actors-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "The Dark Knight",
+      "q": "Who played mob boss Sal Maroni in The Dark Knight?",
+      "a": "Eric Roberts",
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Dark_Knight",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "actors-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Friends",
+      "q": "Who played coffee-shop employee Gunther in Friends?",
+      "a": "James Michael Tyler",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Friends_and_Joey_characters",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "actors-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Bab Al-Hara",
+      "q": "Who played Lutfiya in the first season of Bab Al-Hara?",
+      "a": "Lilia al-Atrash",
+      "sourceUrl": "https://elcinema.com/work/1010631/cast",
+      "verified": true,
+      "p": 1000,
+      "qid": "actors-1000-915",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Lilia El Atrash"
+      ]
+    },
+    {
+      "topic": "I Will Not Live in My Father's Robes",
+      "q": "Who played Nabil in I Will Not Live in My Father's Robes?",
+      "a": "Yasser Galal",
+      "sourceUrl": "https://elcinema.com/work/1010312/cast",
+      "verified": true,
+      "p": 1000,
+      "qid": "actors-1000-916",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Yasser Jalal"
+      ]
+    },
+    {
+      "topic": "El Nazer",
+      "q": "Who played Zakariya al-Dardiri in El Nazer?",
+      "a": "Youssef Eid",
+      "sourceUrl": "https://elcinema.com/work/1001525/cast",
+      "verified": true,
+      "p": 1000,
+      "qid": "actors-1000-917",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Yusuf Eid"
+      ]
+    },
+    {
+      "topic": "Al Hayba",
+      "q": "Who played lawyer Naim in the first season of Al Hayba?",
+      "a": "Wajih Sakr",
+      "sourceUrl": "https://elcinema.com/work/2030474/cast",
+      "verified": true,
+      "p": 1000,
+      "qid": "actors-1000-918",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Wajih Saqr"
+      ]
+    }
+  ]
+}

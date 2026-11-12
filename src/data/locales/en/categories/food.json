@@ -1,0 +1,498 @@
+{
+  "id": "food",
+  "name": "Food",
+  "icon": "🍽️",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Which Spanish rice dish is cooked in a wide pan and sometimes includes seafood?",
+      "a": "Paella",
+      "qid": "food-200-911",
+      "topic": "World cuisines",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.spain.info/es/top/comida-saludable-espana/"
+    },
+    {
+      "p": 200,
+      "q": "What small, colorful French sweet consists of two shells with a creamy filling?",
+      "a": "Macaron",
+      "qid": "food-200-912",
+      "topic": "Desserts",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.laduree.fr/en/macarons/"
+    },
+    {
+      "p": 200,
+      "q": "What Ramadan drink is made from dried apricot paste?",
+      "a": "Qamar al-Din",
+      "qid": "food-200-913",
+      "topic": "Drinks",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://damasradio.fm/قمر-الدين-السوري-سفير-المشمش-الدمشقي-م/",
+      "alt": [
+        "Qamaruddin",
+        "Amar el-Din"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "In which country did mandi originate?",
+      "a": "Yemen",
+      "qid": "food-200-914",
+      "topic": "Origins of dishes",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.yementourism.com/ar/food-drinks/47-food/215-2017-07-23-09-13-42"
+    },
+    {
+      "p": 200,
+      "q": "Which hard Italian cheese is commonly grated over pasta?",
+      "a": "Parmesan",
+      "qid": "food-200-915",
+      "topic": "Ingredients and varieties",
+      "verified": true,
+      "alt": [
+        "Parmigiano-Reggiano"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.parmigianoreggiano.com/en-US/faq"
+    },
+    {
+      "p": 200,
+      "q": "What cold soup made with tomatoes and cucumber comes from southern Spain?",
+      "a": "Gazpacho",
+      "qid": "food-200-916",
+      "topic": "World cuisines",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.spain.info/es/top/comida-saludable-espana/"
+    },
+    {
+      "p": 200,
+      "q": "What concentrated coffee is made by forcing hot water through ground beans under high pressure?",
+      "a": "Espresso",
+      "qid": "food-200-917",
+      "topic": "Drinks",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.illy.com/content/dam/channels/website/professional/usa/professional-standtogether/Espresso-Preparation-Guide-Beans_5-2020.pdf"
+    },
+    {
+      "p": 200,
+      "q": "Which Cypriot cheese keeps its shape when grilled or fried?",
+      "a": "Halloumi",
+      "qid": "food-200-918",
+      "topic": "Ingredients and varieties",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.visitcyprus.com/discover-cyprus/food-drink/local-produce/halloumi-cheese/"
+    },
+    {
+      "p": 400,
+      "q": "Which Yemeni dish is topped with fenugreek foam and served hot in a stone bowl called a madara?",
+      "a": "Saltah",
+      "qid": "food-400-911",
+      "topic": "Arab cuisine",
+      "verified": true,
+      "alt": [
+        "Salta"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.yementourism.com/ar/food-drinks/47-food/208-2017-07-23-08-50-10"
+    },
+    {
+      "p": 400,
+      "q": "Which ground red spice gives goulash its characteristic color?",
+      "a": "Paprika",
+      "qid": "food-400-912",
+      "topic": "Spices and herbs",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.visitczechia.com/en-us/things-to-do/places/gastronomic-tourism/recipes/g-goulash"
+    },
+    {
+      "p": 400,
+      "q": "Which dessert made with whipped egg whites and fruit is named after a Russian ballerina?",
+      "a": "Pavlova",
+      "qid": "food-400-913",
+      "topic": "Desserts",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://teara.govt.nz/en/photograph/38530/anna-pavlova-and-her-baked-namesake"
+    },
+    {
+      "p": 400,
+      "q": "In which country did cheddar cheese originate?",
+      "a": "England",
+      "qid": "food-400-914",
+      "topic": "Origins of dishes",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.cheddargorgecheese.com/the-history-of-cheddar-cheese/"
+    },
+    {
+      "p": 400,
+      "q": "A cooking vessel sits inside another container of hot water. What is this method called?",
+      "a": "Bain-marie",
+      "qid": "food-400-915",
+      "topic": "Cooking techniques",
+      "verified": true,
+      "alt": [
+        "Water bath",
+        "Double boiler"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://app.ckbk.com/reference/cook52062c12s001ss003e004/making-creme-caramel"
+    },
+    {
+      "p": 400,
+      "q": "Which Moroccan spice blend may contain dozens of different spices?",
+      "a": "Ras el hanout",
+      "qid": "food-400-916",
+      "topic": "Arab cuisine",
+      "verified": true,
+      "alt": [
+        "Ras al hanout"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.visitmorocco.com/sites/default/files/atoms/files/maroc_gastronomie_0111_il_en.pdf"
+    },
+    {
+      "p": 400,
+      "q": "Which old Yemeni port gave a famous type of coffee its international name?",
+      "a": "Mocha",
+      "qid": "food-400-917",
+      "topic": "Drinks",
+      "verified": true,
+      "alt": [
+        "Al-Makha",
+        "Mokha"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://yemen.un.org/en/290202-fao-yemen-assessment-report-coffee-value-chain-yemen-export-potential-and-investment"
+    },
+    {
+      "p": 400,
+      "q": "In which country were instant noodles invented?",
+      "a": "Japan",
+      "qid": "food-400-918",
+      "topic": "Origins of dishes",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.cupnoodles-museum.jp/ja/osaka_ikeda/about/"
+    },
+    {
+      "p": 600,
+      "q": "What Peruvian dish uses raw fish marinated in citrus juice with seasonings?",
+      "a": "Ceviche",
+      "qid": "food-600-911",
+      "topic": "World cuisines",
+      "verified": true,
+      "alt": [
+        "Cebiche"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://ich.unesco.org/en/RL/practices-and-meanings-associated-with-the-preparation-and-consumption-of-ceviche-an-expression-of-peruvian-traditional-cuisine-01952"
+    },
+    {
+      "p": 600,
+      "q": "Which Indonesian archipelago was historically known as the Spice Islands?",
+      "a": "Maluku Islands",
+      "qid": "food-600-912",
+      "topic": "Spices and herbs",
+      "verified": true,
+      "alt": [
+        "Moluccas"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.indonesia.travel/gb/en/destination/maluku-papua/maluku"
+    },
+    {
+      "p": 600,
+      "q": "Which Austrian chocolate-covered cake is filled with apricot jam?",
+      "a": "Sachertorte",
+      "qid": "food-600-913",
+      "topic": "Desserts",
+      "verified": true,
+      "alt": [
+        "Sacher torte"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.sacher.com/en/original-sacher-torte/recipe/"
+    },
+    {
+      "p": 600,
+      "q": "Bread browns and develops flavor as reducing sugars react with amino acids. What is this reaction called?",
+      "a": "Maillard reaction",
+      "qid": "food-600-914",
+      "topic": "Cooking techniques",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://cen.acs.org/articles/89/i47/Maillard-Reaction.html"
+    },
+    {
+      "p": 600,
+      "q": "What Libyan dish consists of boiled barley dough served with a sauce or broth?",
+      "a": "Bazin",
+      "qid": "food-600-915",
+      "topic": "Arab cuisine",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://alqurtas.alandalus-libya.org.ly/ojs/index.php/qjhar/article/download/1625/1450/1925"
+    },
+    {
+      "p": 600,
+      "q": "Which American pharmacist created the original Coca-Cola recipe?",
+      "a": "John Pemberton",
+      "qid": "food-600-916",
+      "topic": "Drinks",
+      "verified": true,
+      "alt": [
+        "John Stith Pemberton"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.coca-colacompany.com/about-us/history/the-birth-of-a-refreshing-idea"
+    },
+    {
+      "p": 600,
+      "q": "Which Asian country has forests of wild Malus sieversii, an ancestor of cultivated apples?",
+      "a": "Kazakhstan",
+      "qid": "food-600-917",
+      "topic": "Origins of dishes",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.ars.usda.gov/news-events/news/research-news/2006/going-back-to-the-source-for-a-heartier-apple-tree/"
+    },
+    {
+      "p": 600,
+      "q": "What spice comes from the red covering around a nutmeg seed?",
+      "a": "Mace",
+      "qid": "food-600-918",
+      "topic": "Ingredients and varieties",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A77126699-1/general-information"
+    },
+    {
+      "p": 800,
+      "q": "What is the dried okra powder used in Sudanese mulah called?",
+      "a": "Weika",
+      "qid": "food-800-911",
+      "topic": "Arab cuisine",
+      "verified": true,
+      "alt": [
+        "Waika"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://ugspace.ug.edu.gh/bitstreams/3554962a-5b4c-469d-be68-7975ff863c3a/download"
+    },
+    {
+      "p": 800,
+      "q": "Which Georgian cheese-and-egg bread is shaped like a boat?",
+      "a": "Adjarian khachapuri",
+      "qid": "food-800-912",
+      "topic": "World cuisines",
+      "verified": true,
+      "alt": [
+        "Acharuli khachapuri"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://georgia.travel/ship-and-sun-the-inspiration-for-ajarian-khachapuri"
+    },
+    {
+      "p": 800,
+      "q": "Which strong-smelling resinous Indian spice is also called hing?",
+      "a": "Asafoetida",
+      "qid": "food-800-913",
+      "topic": "Spices and herbs",
+      "verified": true,
+      "alt": [
+        "Asafetida"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.csir.res.in/sites/default/files/2023-06/Compendium-of-Social-relevant-technologies-2.6.2021.pdf"
+    },
+    {
+      "p": 800,
+      "q": "Which French dessert stacks filled pastry balls into a caramel-bound tower?",
+      "a": "Croquembouche",
+      "qid": "food-800-914",
+      "topic": "Desserts",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.cordonbleu.edu/news/celebrate-bastille-day-croquembouche-recipe-lcba/en"
+    },
+    {
+      "p": 800,
+      "q": "What French term describes baking food inside a sealed paper parcel?",
+      "a": "En papillote",
+      "qid": "food-800-915",
+      "topic": "Cooking techniques",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.ice.edu/blog/fish-en-papillote-with-farro-and-asparagus"
+    },
+    {
+      "q": "What basic Japanese stock is commonly made with seaweed and dried fish?",
+      "a": "Dashi",
+      "topic": "Ingredients and varieties",
+      "verified": true,
+      "sourceUrl": "https://www.maff.go.jp/j/shokusan/gaisyoku/pamphlet/pdf/washoku_english.pdf",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "food-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "A chef begins béchamel by cooking flour and fat together. What is this mixture called?",
+      "a": "Roux",
+      "topic": "Cooking techniques",
+      "verified": true,
+      "sourceUrl": "https://tollbit.bbcgoodfood.com/howto/guide/how-make-roux",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "food-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which aromatic relative of ginger is used in Thai tom kha soup?",
+      "a": "Galangal",
+      "topic": "Spices and herbs",
+      "verified": true,
+      "sourceUrl": "https://www.thaicookbook.tv/thai-food-ingredients/roots-and-rhizomes/galangal-thai-kha/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "food-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "What sour Indian spice is made from dried pomegranate seeds?",
+      "a": "Anardana",
+      "topic": "Spices and herbs",
+      "verified": true,
+      "sourceUrl": "https://worldspice.com/products/anardana",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "food-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What is the French name for an uncooked paste of butter and flour used to thicken sauces?",
+      "a": "Beurre manié",
+      "topic": "Cooking techniques",
+      "verified": true,
+      "sourceUrl": "https://www.academiedugout.fr/recettes/beurre-manie_7621_2",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Beurre manie"
+      ],
+      "p": 1000,
+      "qid": "food-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What Japanese seven-spice blend is sprinkled over noodles and rice?",
+      "a": "Shichimi togarashi",
+      "topic": "Spices and herbs",
+      "verified": true,
+      "sourceUrl": "https://www.bbcgoodfood.com/glossary/sichimi-togarashi-glossary",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Shichimi"
+      ],
+      "p": 1000,
+      "qid": "food-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What savory Japanese egg custard is steamed in small cups?",
+      "a": "Chawanmushi",
+      "topic": "World cuisines",
+      "verified": true,
+      "sourceUrl": "https://www.maff.go.jp/e/policies/market/japan-cuisine/japan/19/index.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "food-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What small Bordeaux pastry has a caramelized crust and a soft vanilla-and-rum interior?",
+      "a": "Canelé",
+      "topic": "Desserts",
+      "verified": true,
+      "sourceUrl": "https://www.bordeaux-tourisme.com/commerce-service/toque-cuivree.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Canele",
+        "Cannelé"
+      ],
+      "p": 1000,
+      "qid": "food-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Chinese black tea is traditionally dried over pinewood smoke?",
+      "a": "Lapsang souchong",
+      "topic": "Drinks",
+      "verified": true,
+      "sourceUrl": "https://www.harney.com/products/lapsang-souchong",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "food-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What Persian term describes the crisp crust at the bottom of a rice pot?",
+      "a": "Tahdig",
+      "topic": "World cuisines",
+      "verified": true,
+      "sourceUrl": "https://tollbit.bbcgoodfood.com/recipes/persian-basmati-rice-chelo-tahdig",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Tah deeg"
+      ],
+      "p": 1000,
+      "qid": "food-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Aspergillus oryzae grows on rice to make a fermentation starter. What is the resulting product called?",
+      "a": "Koji",
+      "topic": "Ingredients and varieties",
+      "verified": true,
+      "sourceUrl": "https://japan-food.jetro.go.jp/en/japanesecuisine/117.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Kōji"
+      ],
+      "p": 1000,
+      "qid": "food-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

@@ -1,0 +1,509 @@
+{
+  "id": "sports",
+  "name": "Sports",
+  "icon": "🏅",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Which basketball player scored 100 points in a game in 1962?",
+      "a": "Wilt Chamberlain",
+      "qid": "sports-200-911",
+      "topic": "Basketball",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.nba.com/news/history-nba-legend-wilt-chamberlain",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Chamberlain"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Which American won her 23rd Grand Slam singles title at the 2017 Australian Open?",
+      "a": "Serena Williams",
+      "qid": "sports-200-912",
+      "topic": "Tennis",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://ausopen.com/articles/features/was-australian-open-2017",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "What was Muhammad Ali's name when he won gold at the Rome Olympics?",
+      "a": "Cassius Clay",
+      "qid": "sports-200-914",
+      "topic": "Combat sports",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://olympic.ca/games/1960-rome/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "With which team did Schumacher win five consecutive titles from 2000 to 2004?",
+      "a": "Ferrari",
+      "qid": "sports-200-915",
+      "topic": "Motor racing",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.formula1.com/en/information/drivers-hall-of-fame-michael-schumacher.7KdX5nJlTG55vR5JQSbZ21",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "A cyclist wears green in the Tour de France. Which classification does he lead?",
+      "a": "Points classification",
+      "qid": "sports-200-916",
+      "topic": "Cycling",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.letour.fr/en/the-jerseys-tour-de-france/the-green-jersey",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Who invented basketball in 1891?",
+      "a": "James Naismith",
+      "qid": "sports-200-917",
+      "topic": "Basketball",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.fiba.basketball/en/news/10-fun-basketball-facts-to-celebrate-the-inaugural-world-basketball-day",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which Romanian gymnast earned the first Olympic perfect 10 in 1976?",
+      "a": "Nadia Comăneci",
+      "qid": "sports-200-918",
+      "topic": "Olympic Games",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://olympic.ca/games/1976-montreal/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Nadia Comaneci"
+      ]
+    },
+    {
+      "q": "Who won both the men's 1,500 m and 5,000 m gold medals at Athens 2004?",
+      "a": "Hicham El Guerrouj",
+      "topic": "Athletics",
+      "verified": true,
+      "sourceUrl": "https://worldathletics.org/competitions/olympic-games/28th-olympic-games-6913163/news/article/mens-5000m-final-2",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "El Guerrouj"
+      ],
+      "p": 200,
+      "qid": "sports-200-921",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 400,
+      "q": "Which swimmer won seven gold medals at Munich 1972?",
+      "a": "Mark Spitz",
+      "qid": "sports-400-911",
+      "topic": "Swimming",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.worldaquatics.com/news/1908880/snapped-mark-spitz-on-his-remarkable-seven-in-seven-at-munich-1972",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which city became Asia's first Olympic host in 1964?",
+      "a": "Tokyo",
+      "qid": "sports-400-912",
+      "topic": "Olympic Games",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://olympic.ca/games/1964-tokyo/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "What judo score immediately wins the bout?",
+      "a": "Ippon",
+      "qid": "sports-400-913",
+      "topic": "Combat sports",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://olympic.ca/sports/judo/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which German driver had won seven world titles by 2004?",
+      "a": "Michael Schumacher",
+      "qid": "sports-400-914",
+      "topic": "Motor racing",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.formula1.com/en/information/drivers-hall-of-fame-michael-schumacher.7KdX5nJlTG55vR5JQSbZ21",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "What is the main color of the best young rider's jersey in the Tour de France?",
+      "a": "White",
+      "qid": "sports-400-915",
+      "topic": "Cycling",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.letour.fr/en/1975-a-landmark-year",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Who won all four Grand Slam singles titles and Seoul Olympic gold in 1988?",
+      "a": "Steffi Graf",
+      "qid": "sports-400-916",
+      "topic": "Tennis",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.itftennis.com/en/news-and-media/articles/own-the-podium-steffi-graf-seoul-1988-womens-singles-olympic-champion/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "In the triple jump, what movement comes between the hop and the jump?",
+      "a": "Step",
+      "qid": "sports-400-917",
+      "topic": "Athletics",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://worldathletics.org/disciplines/jump/triple-jump",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which Tour de France classification is represented by the red polka-dot jersey?",
+      "a": "Mountains classification",
+      "qid": "sports-400-918",
+      "topic": "Cycling",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.letour.fr/en/the-jerseys-tour-de-france/the-polka-dot-jersey",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "King of the Mountains"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Which Australian swimmer won the 400 m freestyle at Sydney 2000 and Athens 2004?",
+      "a": "Ian Thorpe",
+      "qid": "sports-600-911",
+      "topic": "Swimming",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.worldaquatics.com/athletes/1010811/ian-thorpe/medals",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "A wrestler cannot grab an opponent's legs to attack. Which Olympic style is he competing in?",
+      "a": "Greco-Roman wrestling",
+      "qid": "sports-600-912",
+      "topic": "Combat sports",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://uww.org/article/wrestling-101-origins-and-facts-about-greco-roman-wrestling",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which Brazilian driver won world titles in 1988, 1990, and 1991?",
+      "a": "Ayrton Senna",
+      "qid": "sports-600-913",
+      "topic": "Motor racing",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.formula1.com/en/latest/article/who-was-ayrton-senna-and-why-is-he-regarded-as-one-of-f1s-greatest-drivers.2GZEdmgHd9mPeCae2n6n4K",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which country hosted and won the first Basketball World Championship in 1950?",
+      "a": "Argentina",
+      "qid": "sports-600-914",
+      "topic": "Basketball",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.fiba.basketball/en/news/10-fun-basketball-facts-to-celebrate-the-inaugural-world-basketball-day",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Who won all four men's singles Grand Slam titles in 1969?",
+      "a": "Rod Laver",
+      "qid": "sports-600-915",
+      "topic": "Tennis",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.itftennis.com/en/tours/grand-slam-tournaments/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which British athlete jumped 18.29 m in the triple jump at the 1995 World Championships?",
+      "a": "Jonathan Edwards",
+      "qid": "sports-600-916",
+      "topic": "Athletics",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://worldathletics.org/download/competition?filename=AT-TJ-M-f----.RS6.pdf&path=%5Cpdf%5C5151%5C&updatedOn=08%2F10%2F2017+20%3A46%3A25&urlslug=triple-jump-Official+Results",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "In which city was the Olympic flag first raised at the Games in 1920?",
+      "a": "Antwerp",
+      "qid": "sports-600-917",
+      "topic": "Olympic Games",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://olympic.ca/games/1920-antwerp/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Who founded judo and established the Kodokan in 1882?",
+      "a": "Jigoro Kano",
+      "qid": "sports-600-918",
+      "topic": "Combat sports",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.ijf.org/history",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Kanō Jigorō"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "Which Hungarian swimmer won the 200 m backstroke Olympic gold in 1988, 1992, and 1996?",
+      "a": "Krisztina Egerszegi",
+      "qid": "sports-800-911",
+      "topic": "Swimming",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.worldaquatics.com/athletes/1063728/wd/medals",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which Argentine driver won five world titles in the 1950s?",
+      "a": "Juan Manuel Fangio",
+      "qid": "sports-800-912",
+      "topic": "Motor racing",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.formula1.com/en/information/drivers-hall-of-fame-juan-manuel-fangio.6SSng3B5E6j6pxPNbyqQIv",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Who defeated Merckx to win the Tour de France in 1975?",
+      "a": "Bernard Thévenet",
+      "qid": "sports-800-913",
+      "topic": "Cycling",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.letour.fr/en/1975-a-landmark-year",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Bernard Thevenet"
+      ]
+    },
+    {
+      "q": "Which Croatian basketball star was nicknamed the 'Mozart of Basketball'?",
+      "a": "Dražen Petrović",
+      "topic": "Basketball",
+      "verified": true,
+      "sourceUrl": "https://about.fiba.basketball/en/fiba-hall-of-fame/hall-of-famers/drazen-petrovic",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Drazen Petrovic"
+      ],
+      "p": 800,
+      "qid": "sports-800-914",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Who became the youngest French Open women's singles champion in 1990 at age 16?",
+      "a": "Monica Seles",
+      "topic": "Tennis",
+      "verified": true,
+      "sourceUrl": "https://www.rolandgarros.com/en-us/article/swiatek-bids-to-join-marquee-list-of-teen-queens-rg2020",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "sports-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which Greek runner won the first modern Olympic marathon in 1896?",
+      "a": "Spyridon Louis",
+      "topic": "Olympic Games",
+      "verified": true,
+      "sourceUrl": "https://www.hoc.gr/en/athletes/louis-spyridon/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Spyros Louis"
+      ],
+      "p": 800,
+      "qid": "sports-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which Cuban boxer won Olympic heavyweight gold in 1972, 1976, and 1980?",
+      "a": "Teófilo Stevenson",
+      "topic": "Combat sports",
+      "verified": true,
+      "sourceUrl": "https://www.olympedia.org/results/24804",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Teofilo Stevenson"
+      ],
+      "p": 800,
+      "qid": "sports-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "q": "Who popularized a back-first high-jump technique and won Olympic gold in 1968?",
+      "a": "Dick Fosbury",
+      "qid": "sports-800-921",
+      "topic": "Athletics",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://worldathletics.org/news/news/dick-fosbury-obituary",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "q": "Which Brazilian basketball player scored 55 points against Spain at Seoul 1988?",
+      "a": "Oscar Schmidt",
+      "topic": "Basketball",
+      "verified": true,
+      "sourceUrl": "https://www.fiba.basketball/en/history/320-mens-olympic-basketball-tournament/2538/players/124549-oscar-schmidt",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "sports-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Who became the first woman to win all four singles Grand Slams in one year, in 1953?",
+      "a": "Maureen Connolly",
+      "topic": "Tennis",
+      "verified": true,
+      "sourceUrl": "https://www.tennisfame.com/hall-of-famers/inductees/maureen-connolly",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "sports-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Czech athlete threw the javelin 98.48 m in Jena in 1996?",
+      "a": "Jan Železný",
+      "topic": "Athletics",
+      "verified": true,
+      "sourceUrl": "https://worldathletics.org/athletes/_/14168038",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Jan Zelezny"
+      ],
+      "p": 1000,
+      "qid": "sports-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Australian swimmer retained the 100 m freestyle Olympic title in 1956, 1960, and 1964?",
+      "a": "Dawn Fraser",
+      "topic": "Swimming",
+      "verified": true,
+      "sourceUrl": "https://www.olympedia.org/athletes/45044",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "sports-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Swedish shooter won Olympic gold at Stockholm 1912 at age 64?",
+      "a": "Oscar Swahn",
+      "topic": "Olympic Games",
+      "verified": true,
+      "sourceUrl": "https://sok.se/idrottare/idrottare/o/oscar-swahn.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "sports-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Dutchman won open-category judo gold at the 1964 Olympics?",
+      "a": "Anton Geesink",
+      "topic": "Combat sports",
+      "verified": true,
+      "sourceUrl": "https://www.ijf.org/news/show/tokyo-1964-the-first-chapter",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "sports-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Alfa Romeo driver became the first Formula One world champion in 1950?",
+      "a": "Giuseppe Farina",
+      "topic": "Motor racing",
+      "verified": true,
+      "sourceUrl": "https://www.formula1.com/en/information/drivers-hall-of-fame-nino-farina.42vZMEuSei8avz76yMDHpf",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Nino Farina"
+      ],
+      "p": 1000,
+      "qid": "sports-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Who became the first Italian to win the Tour de France, in 1924?",
+      "a": "Ottavio Bottecchia",
+      "topic": "Cycling",
+      "verified": true,
+      "sourceUrl": "https://www.bottecchia.com/pages/centenario",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "sports-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

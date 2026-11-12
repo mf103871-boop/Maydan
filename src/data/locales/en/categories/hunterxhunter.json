@@ -1,0 +1,475 @@
+{
+  "id": "hunterxhunter",
+  "name": "Hunter × Hunter",
+  "icon": "🎴",
+  "style": "story",
+  "qs": [
+    {
+      "qid": "hunterxhunter-200-912",
+      "p": 200,
+      "q": "Which father of Killua allows him to return to his friends?",
+      "a": "Silva Zoldyck",
+      "alt": [
+        "Silva"
+      ],
+      "topic": "The Zoldyck family",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/024.html",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "hunterxhunter-200-913",
+      "p": 200,
+      "q": "Which teacher introduces Gon and Killua to Nen at Heavens Arena?",
+      "a": "Wing",
+      "alt": [],
+      "topic": "Nen abilities",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gon_Freecss#In_the_Hunter_%C3%97_Hunter_manga",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "hunterxhunter-200-914",
+      "p": 200,
+      "q": "Which small-looking teacher trains Gon and Killua inside Greed Island?",
+      "a": "Biscuit Krueger",
+      "alt": [
+        "Bisky",
+        "Biscuit"
+      ],
+      "topic": "Greed Island",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gon_Freecss#In_the_Hunter_%C3%97_Hunter_manga",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "hunterxhunter-200-915",
+      "p": 200,
+      "q": "Which blind girl bonds with the Ant King through the game of Gungi?",
+      "a": "Komugi",
+      "alt": [],
+      "topic": "Chimera Ants",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Komugi",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "hunterxhunter-200-916",
+      "p": 200,
+      "q": "Who raises Gon and gives him a box left by his father?",
+      "a": "Mito",
+      "alt": [],
+      "topic": "Gon's journey",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/037.html",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "hunterxhunter-200-917",
+      "p": 200,
+      "q": "What is Gon's rock-paper-scissors-inspired ability called?",
+      "a": "Jajanken",
+      "alt": [],
+      "topic": "Nen abilities",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gon_Freecss#In_the_Hunter_%C3%97_Hunter_manga",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "hunterxhunter-200-918",
+      "p": 200,
+      "q": "What entity inside Alluka heals Gon?",
+      "a": "Nanika",
+      "alt": [],
+      "topic": "The election",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/145.html",
+      "difficultyTarget": 0.8
+    },
+    {
+      "topic": "The Hunter Exam",
+      "q": "Who leads the candidates in the running stage at the start of the Hunter Exam?",
+      "a": "Satotz",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-200-921",
+      "p": 200,
+      "difficultyTarget": 0.8,
+      "verified": true
+    },
+    {
+      "qid": "hunterxhunter-400-911",
+      "p": 400,
+      "q": "Which apprentice butler stops Killua's friends after they pass the gate?",
+      "a": "Canary",
+      "alt": [],
+      "topic": "The Zoldyck family",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/023.html",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "hunterxhunter-400-912",
+      "p": 400,
+      "q": "Which swordsman detains Gon and Killua because he wants them to join the Troupe?",
+      "a": "Nobunaga",
+      "alt": [
+        "Nobunaga Hazama"
+      ],
+      "topic": "The Phantom Troupe",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/050.html",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "hunterxhunter-400-913",
+      "p": 400,
+      "q": "Which Greed Island pirate leader must be challenged to obtain the coastal card?",
+      "a": "Razor",
+      "alt": [],
+      "topic": "Greed Island",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/068.html",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "hunterxhunter-400-914",
+      "p": 400,
+      "q": "Which technology-banning region is where the Chimera Ant threat begins?",
+      "a": "NGL",
+      "alt": [
+        "Neo-Green Life"
+      ],
+      "topic": "Chimera Ants",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter#Plot",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "hunterxhunter-400-915",
+      "p": 400,
+      "q": "Atop which enormous tree does Gon sit with his father at the end of the 2011 anime?",
+      "a": "The World Tree",
+      "alt": [
+        "World Tree"
+      ],
+      "topic": "Gon's journey",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/148.html",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "hunterxhunter-400-916",
+      "p": 400,
+      "q": "Which Nen principle closes the flow of aura to conceal one's presence?",
+      "a": "Zetsu",
+      "alt": [],
+      "topic": "Nen abilities",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter#Setting",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "hunterxhunter-400-917",
+      "p": 400,
+      "q": "Which Phantom Troupe member does Kurapika first kill in a one-on-one confrontation?",
+      "a": "Uvogin",
+      "alt": [],
+      "topic": "The Phantom Troupe",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kurapika#Appearances",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "hunterxhunter-400-918",
+      "p": 400,
+      "q": "Which player nicknamed the Bomber does Gon defeat?",
+      "a": "Genthru",
+      "alt": [],
+      "topic": "Greed Island",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gon_Freecss#In_the_Hunter_%C3%97_Hunter_manga",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "hunterxhunter-600-911",
+      "p": 600,
+      "q": "Which island hosts the badge-collection stage of the Hunter Exam?",
+      "a": "Zevil Island",
+      "alt": [
+        "Zevil"
+      ],
+      "topic": "The Hunter Exam",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/014.html",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "hunterxhunter-600-912",
+      "p": 600,
+      "q": "Which butler tests Killua's friends with a coin game?",
+      "a": "Gotoh",
+      "alt": [],
+      "topic": "The Zoldyck family",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/025.html",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "hunterxhunter-600-913",
+      "p": 600,
+      "q": "Which octopus-like Chimera Ant saves Killua and leaves his former comrades?",
+      "a": "Ikalgo",
+      "alt": [],
+      "topic": "Chimera Ants",
+      "verified": true,
+      "sourceUrl": [
+        "https://www.ntv.co.jp/hunterhunter/story/102.html",
+        "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Chimera_Ants"
+      ],
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "hunterxhunter-600-914",
+      "p": 600,
+      "q": "Who wins the Hunter Association chairmanship and immediately resigns?",
+      "a": "Pariston Hill",
+      "alt": [
+        "Pariston"
+      ],
+      "topic": "The election",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Pariston_Hill",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "hunterxhunter-600-915",
+      "p": 600,
+      "q": "Which Phantom Troupe member controls victims using an antenna and a phone?",
+      "a": "Shalnark",
+      "alt": [],
+      "topic": "The Phantom Troupe",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Shalnark",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "hunterxhunter-600-916",
+      "p": 600,
+      "q": "Which ability lets Hisoka change a flat surface's appearance, such as making a handkerchief look like skin?",
+      "a": "Texture Surprise",
+      "alt": [],
+      "topic": "Nen abilities",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Hisoka",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "hunterxhunter-600-917",
+      "p": 600,
+      "q": "What is Neferpitou's healing ability that summons a puppet surgeon called?",
+      "a": "Doctor Blythe",
+      "alt": [
+        "Dr. Blythe"
+      ],
+      "topic": "Chimera Ants",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Neferpitou",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "hunterxhunter-600-921",
+      "p": 600,
+      "q": "Which ninja does Gon refuse to surrender to in the final phase of the exam?",
+      "a": "Hanzo",
+      "alt": [],
+      "topic": "The Hunter Exam",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/019.html",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "hunterxhunter-800-911",
+      "p": 800,
+      "q": "Which bounty hunter does Bisky use as Gon and Killua's training opponent for two weeks?",
+      "a": "Binolt",
+      "alt": [],
+      "topic": "Greed Island",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/063.html",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "hunterxhunter-800-912",
+      "p": 800,
+      "q": "Which butler pursues Killua's airship alongside Tsubone?",
+      "a": "Amane",
+      "alt": [],
+      "topic": "The Zoldyck family",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/143.html",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "hunterxhunter-800-913",
+      "p": 800,
+      "q": "Who becomes chairwoman of the Hunter Association after the election winner resigns?",
+      "a": "Cheadle Yorkshire",
+      "alt": [
+        "Cheadle"
+      ],
+      "topic": "The election",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Cheadle_Yorkshire",
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "Nen abilities",
+      "q": "Which boy is already training in Nen at Heavens Arena before meeting Gon and Killua?",
+      "a": "Zushi",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Nen abilities",
+      "q": "Which ability temporarily lets Kurapika use all Nen categories at full proficiency?",
+      "a": "Emperor Time",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "The Phantom Troupe",
+      "q": "Which Nostrade bodyguard controls dogs by whistling?",
+      "a": "Squala",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Greed Island",
+      "q": "Which Greed Island player summons a black gorilla and a white gorilla?",
+      "a": "Goreinu",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "qid": "hunterxhunter-800-921",
+      "p": 800,
+      "q": "Which animal does Ging represent among the Twelve Zodiacs?",
+      "a": "The boar",
+      "alt": [
+        "Boar",
+        "Wild boar"
+      ],
+      "topic": "Gon's journey",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Ging_Freecss",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "hunterxhunter-1000-911",
+      "p": 1000,
+      "q": "Which of the Bomber's two companions does Killua fight in the final confrontation?",
+      "a": "Sub",
+      "alt": [],
+      "topic": "Greed Island",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/073.html",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Greed Island",
+      "q": "Which Nen exorcist is recruited to remove the restriction on Chrollo?",
+      "a": "Abengane",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "The Hunter Exam",
+      "q": "Who oversees the Trick Tower stage of the Hunter Exam?",
+      "a": "Lippo",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Nen abilities",
+      "q": "Which Heavens Arena fighter creates a left arm from aura?",
+      "a": "Sadaso",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Nen abilities",
+      "q": "Which Heavens Arena fighter uses a wheelchair and two electrified whips?",
+      "a": "Riehlvelt",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "The Phantom Troupe",
+      "q": "Which chief of Neon's bodyguards does Phinks kill while rescuing the Troupe's captive?",
+      "a": "Dalzollene",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Chimera Ants",
+      "q": "Who founded the country that banned modern technology and became the starting point of the Chimera Ant threat?",
+      "a": "Gyro",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "The Zoldyck family",
+      "q": "Under what alias does Illumi enter the Hunter Exam in disguise?",
+      "a": "Gittarackur",
+      "alt": [
+        "Gitarakuru"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters",
+      "qid": "hunterxhunter-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    }
+  ]
+}

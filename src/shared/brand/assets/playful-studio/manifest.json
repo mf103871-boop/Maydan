@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "generator": "Built-in imagegen",
+  "style": "User-approved Playful Studio B",
+  "purpose": "Original 2.5D game-menu artwork",
+  "processing": "Resize to 512px and WebP compression only; original alpha preserved.",
+  "assets": [
+    {
+      "id": "mafia",
+      "file": "mafia.webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 26228,
+      "sha256": "b233ccb5d58f1f1a4f8564d8069f289da489435a2f231d8b22f38d8cf8c1be2b",
+      "sourceSha256": "f6854ba98f747f327ddbc05762c4554e15872ea20e9d51afdd6da1f03d503527",
+      "hasAlpha": true,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    {
+      "id": "ersomha",
+      "file": "ersomha.webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 21678,
+      "sha256": "097461065230685a88694778491de87a3ab4a22a16ff5b5351c1f26cb7646941",
+      "sourceSha256": "7f513063c4eebb1a8d7a911b8520e127ca09908d9fecf102d99cc51ded151005",
+      "hasAlpha": true,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    {
+      "id": "badeeha",
+      "file": "badeeha.webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 22562,
+      "sha256": "115bbff707184d4d4206e8e2adcf44b39c76410535b354716a3eaf2c68db0a6e",
+      "sourceSha256": "1904f5843474218c6c710ddc620c71147f6f9b8c08bd6ec0c9d326a8dc9d37fb",
+      "hasAlpha": true,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    {
+      "id": "beep",
+      "file": "beep.webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 25632,
+      "sha256": "75ea6350a9e5f52b98ab93e42edaef76e1341e0d9e85adab4fdd6476e1d60339",
+      "sourceSha256": "55dd002f94d4f13050354c8cf9eb4477d0ccea6ed044856c0e40663f98c32afd",
+      "hasAlpha": true,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    {
+      "id": "mamnoo",
+      "file": "mamnoo.webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 45206,
+      "sha256": "d5047c5d4e010ff0abfae79a6a3509861339343f062d2757355c61512b715e08",
+      "sourceSha256": "98e74dca4003e7c234f31ed96b5d0fca03025254a863080155d1eedc435065c0",
+      "hasAlpha": true,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    {
+      "id": "jabeen",
+      "file": "jabeen.webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 24618,
+      "sha256": "90792845dee72c741807558604c3aec078332375d19cbadea6cfc29206bb0040",
+      "sourceSha256": "772c2c38801aeefb46e9f86929a1e288c13cb5faa1d27e72b5990b36cc04a952",
+      "hasAlpha": true,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    {
+      "id": "fabraka",
+      "file": "fabraka.webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 27214,
+      "sha256": "2ec747ef6bd492e70d56c1689baf969cf575ccff1a90ee55d2d8f8d1da8b677e",
+      "sourceSha256": "91806b86edf5584dcf62a6621a9fec718477d1c7a73c95e766bade2c504e528f",
+      "hasAlpha": true,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    {
+      "id": "meenfina",
+      "file": "meenfina.webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 30198,
+      "sha256": "e8f24201b523356e8f6a0a286c2b14da3f4f5ce058c054b05bfcbb4277cd8dd6",
+      "sourceSha256": "8a64e8d674be81ccce5f592c6fe786de0359fda46235f2d0df392b3a089b1d7d",
+      "hasAlpha": true,
+      "alphaMin": 0,
+      "alphaMax": 255
+    }
+  ],
+  "brandMark": {
+    "file": "brand-mark.webp",
+    "width": 512,
+    "height": 512,
+    "bytes": 8216,
+    "sha256": "8c79890e028c3d20e77534e9139711b5c88186b0039efa968b2805d8250ac4e0",
+    "sourceSha256": "422050db6497b622fb309d8af057d36fb203243210bd6dd295c7fa7f5522f9d0",
+    "hasAlpha": false
+  }
+}

@@ -1,0 +1,502 @@
+{
+  "id": "deathnote",
+  "name": "Death Note",
+  "icon": "📓",
+  "style": "story",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "The notebook and its rules",
+      "q": "What is the price of obtaining Shinigami eyes?",
+      "a": "Half the remaining lifespan",
+      "alt": [
+        "Half of one's remaining life"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Misa_Amane#In_Death_Note",
+      "verified": true,
+      "qid": "deathnote-200-911",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Shinigami",
+      "q": "Which Shinigami dies after saving Misa from an attacker, before Rem gives her his notebook?",
+      "a": "Gelus",
+      "alt": [
+        "Jealous"
+      ],
+      "sourceUrl": "https://www.ntv.co.jp/deathnote/static/story.html",
+      "verified": true,
+      "qid": "deathnote-200-912",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "The company investigation",
+      "q": "Which company employs the third Kira?",
+      "a": "Yotsuba",
+      "alt": [
+        "The Yotsuba Group"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Yotsuba_Group",
+      "verified": true,
+      "qid": "deathnote-200-913",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "The task force",
+      "q": "Which investigator shoots Light during the warehouse confrontation?",
+      "a": "Touta Matsuda",
+      "alt": [
+        "Matsuda",
+        "Tota Matsuda"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Touta_Matsuda",
+      "verified": true,
+      "qid": "deathnote-200-914",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "L and the investigation",
+      "q": "What alias does L ask the task force to call him?",
+      "a": "Ryuzaki",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/L_(Death_Note)#In_Death_Note",
+      "verified": true,
+      "qid": "deathnote-200-915",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Light and Kira",
+      "q": "Whom does Light choose as the fourth Kira to carry out killings for him?",
+      "a": "Teru Mikami",
+      "alt": [
+        "Mikami"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Teru_Mikami",
+      "verified": true,
+      "qid": "deathnote-200-916",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "The company investigation",
+      "q": "What is the name of the third Kira, an executive at a large company?",
+      "a": "Kyosuke Higuchi",
+      "alt": [
+        "Higuchi"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Kyosuke_Higuchi",
+      "verified": true,
+      "qid": "deathnote-200-917",
+      "difficultyTarget": 0.8
+    },
+    {
+      "topic": "The notebook and its rules",
+      "q": "According to the fake rule, after how many days without using the notebook would its writer die?",
+      "a": "Thirteen days",
+      "alt": [
+        "13 days"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Death_Note_(2006_TV_series)",
+      "qid": "deathnote-200-918",
+      "p": 200,
+      "difficultyTarget": 0.8,
+      "verified": true
+    },
+    {
+      "p": 400,
+      "topic": "L's successors",
+      "q": "Where do Near and Mello grow up together?",
+      "a": "Wammy's House",
+      "alt": [
+        "Wammys House"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mello_(Death_Note)#Appearances",
+      "verified": true,
+      "qid": "deathnote-400-911",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "L and the investigation",
+      "q": "Under what alias does L enroll at university?",
+      "a": "Hideki Ryuga",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/L_(Death_Note)#In_Death_Note",
+      "verified": true,
+      "qid": "deathnote-400-912",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "The task force",
+      "q": "Which American agent is assigned to watch Light's family?",
+      "a": "Raye Penber",
+      "alt": [
+        "Ray Penber"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Raye_Penber",
+      "verified": true,
+      "qid": "deathnote-400-913",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "The task force",
+      "q": "Which former FBI agent searches for her fiancé's killer?",
+      "a": "Naomi Misora",
+      "alt": [
+        "Naomi"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Naomi_Misora",
+      "verified": true,
+      "qid": "deathnote-400-914",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "L's successors",
+      "q": "What organization does Near lead in the hunt for Kira?",
+      "a": "SPK",
+      "alt": [
+        "Special Provision for Kira"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#SPK",
+      "verified": true,
+      "qid": "deathnote-400-915",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Light and Kira",
+      "q": "Which former university classmate of Light becomes Kira's spokesperson?",
+      "a": "Kiyomi Takada",
+      "alt": [
+        "Takada"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Kiyomi_Takada",
+      "verified": true,
+      "qid": "deathnote-400-916",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Shinigami",
+      "q": "Which Shinigami searches for his stolen notebook?",
+      "a": "Sidoh",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Sidoh",
+      "verified": true,
+      "qid": "deathnote-400-917",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "L and the investigation",
+      "q": "To which Japanese region does L restrict his first television broadcast to locate Kira?",
+      "a": "Kanto",
+      "alt": [
+        "Kantō"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Death_Note#Plot",
+      "verified": true,
+      "qid": "deathnote-400-918",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 600,
+      "topic": "L and the investigation",
+      "q": "Which prisoner appears on television impersonating L?",
+      "a": "Lind L. Tailor",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Lind_L._Tailor",
+      "verified": true,
+      "qid": "deathnote-600-911",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "The company investigation",
+      "q": "Which con artist does L recruit for the third-Kira investigation?",
+      "a": "Aiber",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Aiber",
+      "verified": true,
+      "qid": "deathnote-600-912",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "The company investigation",
+      "q": "Which professional thief does L recruit?",
+      "a": "Wedy",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Wedy",
+      "verified": true,
+      "qid": "deathnote-600-913",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "L's successors",
+      "q": "What is Near's real name?",
+      "a": "Nate River",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Near",
+      "verified": true,
+      "qid": "deathnote-600-914",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "L's successors",
+      "q": "What is Mello's real name?",
+      "a": "Mihael Keehl",
+      "alt": [
+        "Michael Keehl"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mello_(Death_Note)",
+      "verified": true,
+      "qid": "deathnote-600-915",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Light and Kira",
+      "q": "How does Light kill the third Kira after his arrest?",
+      "a": "Using a scrap in his watch",
+      "alt": [
+        "With notebook paper hidden in his watch"
+      ],
+      "sourceUrl": "https://www.ntv.co.jp/deathnote/static/story2.html",
+      "verified": true,
+      "qid": "deathnote-600-916",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "The task force",
+      "q": "Who replaces Mikami's notebook with a counterfeit?",
+      "a": "Stephen Gevanni",
+      "alt": [
+        "Gevanni"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Stephen_Gevanni",
+      "verified": true,
+      "qid": "deathnote-600-917",
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "Misa",
+      "q": "What biological evidence links Misa to the tapes sent to the television station?",
+      "a": "Her DNA",
+      "alt": [
+        "DNA"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Death_Note_(2006_TV_series)",
+      "qid": "deathnote-600-918",
+      "p": 600,
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "p": 800,
+      "topic": "L's successors",
+      "q": "What is the real name of L's assistant and benefactor?",
+      "a": "Quillsh Wammy",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Watari",
+      "verified": true,
+      "qid": "deathnote-800-911",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "L's successors",
+      "q": "In which English city is the orphanage for L's potential successors?",
+      "a": "Winchester",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Watari",
+      "verified": true,
+      "qid": "deathnote-800-912",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "The company investigation",
+      "q": "Which Yotsuba executive is skilled at shogi?",
+      "a": "Reiji Namikawa",
+      "alt": [
+        "Namikawa"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Other_members_of_the_Yotsuba_Group",
+      "verified": true,
+      "qid": "deathnote-800-913",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "The company investigation",
+      "q": "Which company member does the third Kira kill before the other executives?",
+      "a": "Arayoshi Hatori",
+      "alt": [
+        "Hatori"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Other_members_of_the_Yotsuba_Group",
+      "verified": true,
+      "qid": "deathnote-800-914",
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "The task force",
+      "q": "Which investigator dies at the television station's entrance while trying to stop the second Kira's broadcasts?",
+      "a": "Hirokazu Ukita",
+      "alt": [
+        "Ukita"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
+      "qid": "deathnote-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "L and the investigation",
+      "q": "Where in his clothing does Matsuda hide his communicator while infiltrating the suspected company's headquarters?",
+      "a": "His belt buckle",
+      "alt": [
+        "Belt buckle"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Death_Note_(2006_TV_series)",
+      "qid": "deathnote-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Light and Kira",
+      "q": "Which accomplice of Mello is shot by Takada's guards during her abduction?",
+      "a": "Matt",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
+      "qid": "deathnote-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Misa",
+      "q": "What alias does the young investigator use while working as Misa's manager?",
+      "a": "Taro Matsui",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
+      "qid": "deathnote-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "L's successors",
+      "q": "Which FBI director helps Near establish his team?",
+      "a": "Steve Mason",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
+      "qid": "deathnote-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "L's successors",
+      "q": "Which member of Near's team passes information to Mello to improve their chances of exposing Kira?",
+      "a": "Halle Lidner",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
+      "qid": "deathnote-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Shinigami",
+      "q": "Which member of Mello's gang owns the notebook and is forced into the eye deal?",
+      "a": "Jack Neylon",
+      "alt": [
+        "Kal Snydar"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
+      "qid": "deathnote-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "The company investigation",
+      "q": "Which financial-planning executive does Misa say resembles Light?",
+      "a": "Shingo Mido",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
+      "qid": "deathnote-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "p": 1000,
+      "topic": "L and the investigation",
+      "q": "Why does Mikami make an unscheduled bank visit, revealing the location of his real notebook?",
+      "a": "To kill Takada independently",
+      "alt": [
+        "To write Takada's name",
+        "To kill Takada"
+      ],
+      "sourceUrl": "https://www.ntv.co.jp/deathnote/static/story2.html",
+      "verified": true,
+      "qid": "deathnote-1000-921",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "topic": "L and the investigation",
+      "q": "When Higuchi is surrounded, how does Aizawa prevent him from seeing the police officers' faces?",
+      "a": "By darkening the police-car windows",
+      "alt": [
+        "Using tinted windows"
+      ],
+      "sourceUrl": "https://www.ntv.co.jp/deathnote/static/story2.html",
+      "verified": true,
+      "qid": "deathnote-1000-922",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "topic": "The task force",
+      "q": "What danger prompts Rem to kill L when he plans to test the thirteen-day rule?",
+      "a": "Misa being exposed as Kira",
+      "alt": [
+        "Misa's guilt being proven"
+      ],
+      "sourceUrl": "https://www.ntv.co.jp/deathnote/static/story2.html",
+      "verified": true,
+      "qid": "deathnote-1000-923",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "topic": "The task force",
+      "q": "How does Light lose his memories of being Kira during detention while another owner continues the killings?",
+      "a": "By relinquishing notebook ownership",
+      "sourceUrl": "https://www.ntv.co.jp/deathnote/static/story2.html",
+      "verified": true,
+      "qid": "deathnote-1000-924",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Giving up ownership of the Death Note"
+      ]
+    }
+  ]
+}

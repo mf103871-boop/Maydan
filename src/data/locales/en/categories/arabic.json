@@ -1,0 +1,559 @@
+{
+  "id": "arabic",
+  "name": "Arabic Language",
+  "icon": "🔤",
+  "qs": [
+    {
+      "p": 200,
+      "q": "In the passive Arabic sentence 'kufi'a al-talibu' (the student was rewarded), what is the grammatical role of al-talibu?",
+      "a": "Deputy subject",
+      "qid": "arabic-200-911",
+      "topic": "Syntax",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://learning.aljazeera.net/en/generallanguage/نائب-الفاعل",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Passive subject",
+        "Na'ib fa'il"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "What is the active participle of the Arabic verb istakhraja (to extract)?",
+      "a": "Mustakhrij",
+      "qid": "arabic-200-912",
+      "topic": "Morphology",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://hdat.sa/library/files/view/2699",
+      "verifiedAt": "2026-09-25",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Does the initial hamza in the imperative of the four-letter Arabic verb akrama remain pronounced after a preceding word?",
+      "a": "Yes, hamzat al-qat'",
+      "qid": "arabic-200-913",
+      "topic": "Spelling",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://learning.aljazeera.net/ar/node/974",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Hamzat al qat",
+        "Disjunctive hamza"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "What Arabic sentence style is used in 'ma arwa'a al-bahra!' (how magnificent the sea is!)?",
+      "a": "Exclamation",
+      "qid": "arabic-200-914",
+      "topic": "Sentence styles",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/books/85925824/1.2/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Exclamatory style",
+        "Ta'ajjub"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "What does the Arabic verb nafida mean when describing stock in a warehouse?",
+      "a": "Ran out",
+      "qid": "arabic-200-915",
+      "topic": "Vocabulary",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.arabicterminology.com/content/نفد-1",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Was exhausted",
+        "Finished"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "What kind of Arabic simile is used in 'al-'ilmu nur' (knowledge is light), with neither a comparison word nor a stated shared quality?",
+      "a": "Condensed simile",
+      "qid": "arabic-200-916",
+      "topic": "Rhetoric",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/books/85925824/2.1/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Baligh simile",
+        "Tashbih baligh"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "What is the singular of the Arabic word arwiqa (corridors)?",
+      "a": "Riwaq",
+      "qid": "arabic-200-917",
+      "topic": "Plurals",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.arabicterminology.com/content/رُواقٌرِواقٌ",
+      "verifiedAt": "2026-09-25",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which Arabic conjunction marks sequence with a delay between two events?",
+      "a": "Thumma",
+      "qid": "arabic-200-918",
+      "topic": "Particles",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://learning.aljazeera.net/ar/node/1025",
+      "verifiedAt": "2026-09-25",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "In 'the traveler returned smiling', what Arabic grammatical role does mubtasiman (smiling) have?",
+      "a": "Circumstantial accusative",
+      "qid": "arabic-400-911",
+      "topic": "Syntax",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://learning.aljazeera.net/en/generallanguage/الحال",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Hal",
+        "Circumstantial qualifier"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What is the passive participle of the Arabic verb ista'mala (to use)?",
+      "a": "Musta'mal",
+      "qid": "arabic-400-912",
+      "topic": "Morphology",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://hdat.sa/library/files/view/2699",
+      "verifiedAt": "2026-09-25",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "What is the nominative dual form of the Arabic noun mabda' (principle)?",
+      "a": "Mabda'an",
+      "qid": "arabic-400-913",
+      "topic": "Spelling",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://almustashar.ksaa.gov.sa/bank/4927",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Mabda'ani"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What Arabic rhetorical style is used in 'iyyaka wal-kadhib' (beware of lying)?",
+      "a": "Warning",
+      "qid": "arabic-400-914",
+      "topic": "Sentence styles",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://bahethoarabia.com/egrathzir/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Tahdhir"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What does wajil mean in the Arabic description of someone facing danger?",
+      "a": "Afraid",
+      "qid": "arabic-400-915",
+      "topic": "Vocabulary",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.arabicacademy.gov.eg/ar/محرك-البحث/وَجُلَ?exact_search=true",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Fearful"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What rhetorical device is used when an Arabic poet says 'the field laughed', implying a person without naming one?",
+      "a": "Implicit metaphor",
+      "qid": "arabic-400-916",
+      "topic": "Rhetoric",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/books/85925824/2.2/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Isti'ara makniyya",
+        "Personification"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What is the regular feminine plural of the Arabic word sahra' (desert)?",
+      "a": "Sahrawat",
+      "qid": "arabic-400-917",
+      "topic": "Plurals",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://uomustansiriyah.edu.iq/media/lectures/9/9_2024_10_26%2107_45_25_AM.pdf",
+      "verifiedAt": "2026-09-25",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Complete with the Arabic two-letter purpose particle: 'tadarrabtu ___ afuza' (I trained in order to win).",
+      "a": "Kay",
+      "qid": "arabic-400-918",
+      "topic": "Particles",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://almustashar.ksaa.gov.sa/bank/1930",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Kai"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "In the Arabic sentence 'I bought a liter of honey', what is the role of 'asalan (honey)?",
+      "a": "Specification accusative",
+      "qid": "arabic-600-911",
+      "topic": "Syntax",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://learning.aljazeera.net/es/node/19637",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Tamyiz"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "What is the verbal noun of the Arabic verb istaghfara (to seek forgiveness)?",
+      "a": "Istighfar",
+      "qid": "arabic-600-912",
+      "topic": "Morphology",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://learning.aljazeera.net/ar/node/974",
+      "verifiedAt": "2026-09-25",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "What is the accusative indefinite form of the Arabic noun juz' (part), with tanwin?",
+      "a": "Juz'an",
+      "qid": "arabic-600-913",
+      "topic": "Spelling",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://library.ksaa.gov.sa/links/epubs/alkhilaf_fi_nizam_alkitabat_alearabia.pdf",
+      "verifiedAt": "2026-09-25",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "What Arabic construction is used in 'nahnu al-'araba nukrimu al-dayf', singling out 'we Arabs' for clarification?",
+      "a": "Specification construction",
+      "qid": "arabic-600-914",
+      "topic": "Sentence styles",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://kenanaonline.com/users/amer123123/posts/606227",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Ikhtisas"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "What does the Arabic expression am'ana fi al-nazar mean?",
+      "a": "Looked closely",
+      "qid": "arabic-600-915",
+      "topic": "Vocabulary",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.quranicthought.com/wp-content/uploads/post_attachments/5d4812b073855.pdf",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Examined carefully"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "What Arabic rhetorical device sets paired opposites against each other, as in 'they hide sadness and show joy'?",
+      "a": "Antithetical parallelism",
+      "qid": "arabic-600-916",
+      "topic": "Rhetoric",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/books/85925824/3.1/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Muqabala"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "What is the broken plural of the Arabic word qabw (cellar) in Al-Mu'jam al-Wasit?",
+      "a": "Aqba'",
+      "qid": "arabic-600-917",
+      "topic": "Plurals",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.almougem.com/search.php?mdatabase=lmougem&query=قبو",
+      "verifiedAt": "2026-09-25",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Complete with the Arabic particle meaning 'were it not for': '___ al-mataru lakharajna'.",
+      "a": "Lawla",
+      "qid": "arabic-600-918",
+      "topic": "Particles",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://abu.edu.iq/en/node/12486",
+      "verifiedAt": "2026-09-25",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "In the Arabic sentence 'I stood out of respect for the guest', what is the role of ihtiraman (out of respect)?",
+      "a": "Accusative of purpose",
+      "qid": "arabic-800-911",
+      "topic": "Syntax",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://learning.aljazeera.net/ar/node/19640",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Maf'ul li-ajlih"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "From which three-letter Arabic verb is mizan (balance) derived?",
+      "a": "Wazana",
+      "qid": "arabic-800-912",
+      "topic": "Morphology",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.arabicacademy.gov.eg/ar/محرك-البحث/معجم/dic-19/الميزان",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Wazan",
+        "W-Z-N"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "What is the indefinite nominative active participle of the Arabic verb sa'a (to strive)?",
+      "a": "Sa'in",
+      "qid": "arabic-800-913",
+      "topic": "Spelling",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://uomustansiriyah.edu.iq/media/lectures/8/8_2022_03_25%2110_26_14_PM.pdf",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Saa'in"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "What Arabic rhetorical construction repeats 'al-sidqa, al-sidqa' to urge someone to be truthful?",
+      "a": "Exhortation",
+      "qid": "arabic-800-914",
+      "topic": "Sentence styles",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://bahethoarabia.com/egrathzir/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Ighra'"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "What does the Arabic verb azifa mean in 'azifa al-rahil' (departure...)?",
+      "a": "Drew near",
+      "qid": "arabic-800-915",
+      "topic": "Vocabulary",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.islamweb.net/ar/library/content/122/110/أزف",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Approached"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "An employee handling money is called 'clean-handed' in Arabic. What quality is implied?",
+      "a": "Integrity",
+      "qid": "arabic-800-916",
+      "topic": "Rhetoric",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/85925824/2.3/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Honesty"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "What is the nominative sound masculine plural of the Arabic noun da'in (one who calls)?",
+      "a": "Da'un",
+      "qid": "arabic-800-917",
+      "topic": "Plurals",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://st.mara.gov.om/uploads/documents/2020/05/xFxfp.pdf",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Daa'un",
+        "Da'oona"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "Which Arabic negative particle rejects an entire class and governs a nominal sentence like inna?",
+      "a": "La of categorical negation",
+      "qid": "arabic-800-918",
+      "topic": "Particles",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://learning.aljazeera.net/ar/node/19642",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "La al-nafiya lil-jins"
+      ]
+    },
+    {
+      "p": 1000,
+      "q": "In the Arabic sentence 'I admired the book, its style', what type of apposition is 'its style'?",
+      "a": "Apposition of inclusion",
+      "qid": "arabic-1000-911",
+      "topic": "Syntax",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://learning.aljazeera.net/ar/node/19670",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Badal ishtimal"
+      ]
+    },
+    {
+      "p": 1000,
+      "q": "What three-letter Arabic root produces ittisal (connection)?",
+      "a": "W-S-L",
+      "qid": "arabic-1000-912",
+      "topic": "Morphology",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://faculty.ksu.edu.sa/en/badalobaid/course-material/55963",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Wasala",
+        "Wasl"
+      ]
+    },
+    {
+      "p": 1000,
+      "q": "How is al-layl (the night) pronounced after the Arabic preposition li- is attached?",
+      "a": "Lil-layl",
+      "qid": "arabic-1000-913",
+      "topic": "Spelling",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://www.al-jazirah.com/2011/20110721/cu8.htm",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Lillayl"
+      ]
+    },
+    {
+      "p": 1000,
+      "q": "What Arabic rhetorical method restricts success to the diligent in 'none succeeds except the diligent'?",
+      "a": "Restriction by negation and exception",
+      "qid": "arabic-1000-914",
+      "topic": "Sentence styles",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://www.safahat.org/books/85925824/1.7/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Qasr bil-nafy wal-istithna'"
+      ]
+    },
+    {
+      "p": 1000,
+      "q": "What does qamin mean in the Arabic phrase 'qamin bil-thiqa'?",
+      "a": "Worthy",
+      "qid": "arabic-1000-915",
+      "topic": "Vocabulary",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://www.arabicterminology.com/content/قمن-1",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Deserving"
+      ]
+    },
+    {
+      "p": 1000,
+      "q": "What Arabic wordplay pairs Yahya, a man's name, with yahya, meaning 'he lives', using the same sound sequence?",
+      "a": "Complete paronomasia",
+      "qid": "arabic-1000-916",
+      "topic": "Rhetoric",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://www.safahat.org/books/85925824/3.2/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Complete jinas",
+        "Jinas tamm"
+      ]
+    },
+    {
+      "p": 1000,
+      "q": "What is the nominative dual form of the Arabic word 'asa (stick)?",
+      "a": "'Asawan",
+      "qid": "arabic-1000-917",
+      "topic": "Plurals",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://uomustansiriyah.edu.iq/media/lectures/9/9_2024_10_26%2107_45_25_AM.pdf",
+      "verifiedAt": "2026-09-25",
+      "alt": []
+    },
+    {
+      "p": 1000,
+      "q": "In 'innama al-'ilmu nurun', which type of ma stops inna from governing the following noun?",
+      "a": "Restraining ma",
+      "qid": "arabic-1000-918",
+      "topic": "Particles",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://learning.aljazeera.net/ar/node/342",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Ma al-kaffa",
+        "Ma al-kaffah"
+      ]
+    }
+  ]
+}

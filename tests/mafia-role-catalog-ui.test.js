@@ -10,7 +10,7 @@ import { createDesignFixture } from '../src/design/screen-catalog.js';
 let directory, render;
 before(async () => {
   mkdirSync('.cache', { recursive: true }); directory = mkdtempSync(path.resolve('.cache/mafia-role-catalog-'));
-  await build({ stdin: { contents: `import React from 'react';import{renderToStaticMarkup}from'react-dom/server';import{MafiaRules,MafiaMatch}from'./src/online/Mafia.jsx';const c={guide:MafiaRules,match:MafiaMatch};export const render=(name,p)=>renderToStaticMarkup(React.createElement(c[name],p)).replace(/<style>[\\s\\S]*?<\\/style>/g,'');`, resolveDir: process.cwd(), loader: 'jsx' }, outfile: path.join(directory, 'renderer.mjs'), bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic', loader: { '.js': 'jsx', '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl' }, logLevel: 'silent' });
+  await build({ stdin: { contents: `import React from 'react';import{renderToStaticMarkup}from'react-dom/server';import{MafiaRules,MafiaMatch}from'./src/online/Mafia.jsx';const c={guide:MafiaRules,match:MafiaMatch};export const render=(name,p)=>renderToStaticMarkup(React.createElement(c[name],p)).replace(/<style[^>]*>[\\s\\S]*?<\\/style>/g,'');`, resolveDir: process.cwd(), loader: 'jsx' }, outfile: path.join(directory, 'renderer.mjs'), bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic', loader: { '.js': 'jsx', '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl' }, logLevel: 'silent' });
   ({ render } = await import(pathToFileURL(path.join(directory, 'renderer.mjs'))));
 });
 after(() => { if (directory) { assert.ok(directory.startsWith(path.resolve('.cache') + path.sep)); rmSync(directory, { recursive: true, force: true }); } });

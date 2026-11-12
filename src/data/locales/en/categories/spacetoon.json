@@ -1,0 +1,511 @@
+{
+  "id": "spacetoon",
+  "name": "Spacetoon Classics",
+  "icon": "📡",
+  "style": "story",
+  "qs": [
+    {
+      "qid": "spacetoon-200-911",
+      "p": 200,
+      "q": "Which friend does Conan meet after leaving his island in Future Boy Conan?",
+      "a": "Jimsy",
+      "alt": [
+        "Absi"
+      ],
+      "topic": "Future Boy Conan",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا#القصة",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "spacetoon-200-912",
+      "p": 200,
+      "q": "Which cruel headmistress changes Sara's life after she loses her fortune in A Little Princess Sara?",
+      "a": "Miss Minchin",
+      "alt": [
+        "Minchin"
+      ],
+      "topic": "A Little Princess Sara",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)#الآنسة_منشن",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "spacetoon-200-913",
+      "p": 200,
+      "q": "To which country is Flone's family sailing before the shipwreck?",
+      "a": "Australia",
+      "topic": "Flone",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة#القصة",
+      "difficultyTarget": 0.8,
+      "alt": []
+    },
+    {
+      "qid": "spacetoon-200-914",
+      "p": 200,
+      "q": "What is Sinbad's talking bird companion called in the Arabic dub of Arabian Nights: Sinbad's Adventures?",
+      "a": "Yasmina",
+      "alt": [
+        "Shera"
+      ],
+      "topic": "Sinbad's Adventures",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد#الشخصيات",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "spacetoon-200-915",
+      "p": 200,
+      "q": "Which ally of Grendizer builds the small aircraft TFO?",
+      "a": "Koji Kabuto",
+      "alt": [
+        "Koji"
+      ],
+      "topic": "Grendizer",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Grendizer#Plot",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "spacetoon-200-916",
+      "p": 200,
+      "q": "Which strict captain commands the ship in the Treasure Island anime?",
+      "a": "Captain Smollett",
+      "alt": [
+        "Smollett"
+      ],
+      "topic": "Treasure Island",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Treasure_Island_(1978_TV_series)#Main_characters",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "spacetoon-200-917",
+      "p": 200,
+      "q": "What is Sandybell's faithful dog called?",
+      "a": "Oliver",
+      "alt": [],
+      "topic": "Hello! Sandybell",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hello!_Sandybell#Plot",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "spacetoon-200-918",
+      "p": 200,
+      "q": "What new ability does Nils gain after the elf shrinks him?",
+      "a": "Understanding animals' speech",
+      "alt": [
+        "Talking to animals"
+      ],
+      "topic": "The Wonderful Adventures of Nils",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Wonderful_Adventures_of_Nils_(TV_series)#Plot",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "spacetoon-400-911",
+      "p": 400,
+      "q": "What ability lets Lana communicate mentally with her grandfather and birds in Future Boy Conan?",
+      "a": "Telepathy",
+      "alt": [],
+      "topic": "Future Boy Conan",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Future_Boy_Conan#Characters",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "spacetoon-400-912",
+      "p": 400,
+      "q": "Which friend works at Sara's school and joins her after she regains her fortune?",
+      "a": "Becky",
+      "alt": [
+        "Vicky"
+      ],
+      "topic": "A Little Princess Sara",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)#فيكي",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "spacetoon-400-913",
+      "p": 400,
+      "q": "What is Flone's older brother's name, who dreams of becoming a musician?",
+      "a": "Franz",
+      "alt": [
+        "Frans"
+      ],
+      "topic": "Flone",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة#شخصيات_المسلسل",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "spacetoon-400-914",
+      "p": 400,
+      "q": "Which thief leaves his companions to join Sinbad's adventures?",
+      "a": "Ali Baba",
+      "alt": [],
+      "topic": "Sinbad's Adventures",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد#الشخصيات",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "spacetoon-400-915",
+      "p": 400,
+      "q": "From which planet does Grendizer's pilot flee to Earth?",
+      "a": "Fleed",
+      "alt": [],
+      "topic": "Grendizer",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Grendizer#Plot",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "spacetoon-400-916",
+      "p": 400,
+      "q": "What is John Silver's job aboard the ship in the Treasure Island anime?",
+      "a": "Cook",
+      "alt": [
+        "Ship's cook",
+        "Chef"
+      ],
+      "topic": "Treasure Island",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Treasure_Island_(1978_TV_series)#Main_characters",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "spacetoon-400-917",
+      "p": 400,
+      "q": "In which country does Sandybell live before moving to London?",
+      "a": "Scotland",
+      "alt": [],
+      "topic": "Hello! Sandybell",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hello!_Sandybell#Plot",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "spacetoon-400-918",
+      "p": 400,
+      "q": "What is the white farm goose that carries Nils on his journey called?",
+      "a": "Morten",
+      "alt": [
+        "Marten"
+      ],
+      "topic": "The Wonderful Adventures of Nils",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_نيلز#الشخصيات",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "spacetoon-600-911",
+      "p": 600,
+      "q": "Which energy source's secret does Lepka seek from Lana's grandfather in Future Boy Conan?",
+      "a": "Solar energy",
+      "alt": [
+        "Solar power"
+      ],
+      "topic": "Future Boy Conan",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا#القصة",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "spacetoon-600-912",
+      "p": 600,
+      "q": "Which friend of Sara's father searches for her and restores her share of the fortune?",
+      "a": "Mr. Carrisford",
+      "alt": [
+        "Thomas Carrisford",
+        "Carrisford"
+      ],
+      "topic": "A Little Princess Sara",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)#توماس_كريسفورس",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "spacetoon-600-913",
+      "p": 600,
+      "q": "Which elderly sailor helps Flone's family build a boat to escape?",
+      "a": "Morton",
+      "alt": [
+        "Mr. Morton"
+      ],
+      "topic": "Flone",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة#شخصيات_المسلسل",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "spacetoon-600-914",
+      "p": 600,
+      "q": "What was the social status of Sinbad's bird companion before sorcerers transformed her?",
+      "a": "A princess",
+      "alt": [
+        "Princess"
+      ],
+      "topic": "Sinbad's Adventures",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد#الشخصيات",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "spacetoon-600-915",
+      "p": 600,
+      "q": "Which sister of Grendizer's pilot joins his team?",
+      "a": "Maria Fleed",
+      "alt": [
+        "Maria"
+      ],
+      "topic": "Grendizer",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر#الشخصيات_الرئيسية",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "spacetoon-600-916",
+      "p": 600,
+      "q": "Which marooned sailor directs Jim to his handmade boat in the Treasure Island anime?",
+      "a": "Ben Gunn",
+      "alt": [],
+      "topic": "Treasure Island",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Treasure_Island_(1978_TV_series)#Main_characters",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "spacetoon-600-917",
+      "p": 600,
+      "q": "Which arrogant girl rivals Sandybell for Mark's love?",
+      "a": "Kitty",
+      "alt": [],
+      "topic": "Hello! Sandybell",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hello!_Sandybell#Plot",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "spacetoon-600-918",
+      "p": 600,
+      "q": "What is the wise leader of the goose flock called in the Arabic dub of The Wonderful Adventures of Nils?",
+      "a": "Aksa",
+      "alt": [
+        "Akka"
+      ],
+      "topic": "The Wonderful Adventures of Nils",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_نيلز#الشخصيات",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "spacetoon-800-911",
+      "p": 800,
+      "q": "What is Lepka's giant aircraft called in the Arabic dub of Future Boy Conan?",
+      "a": "Jumana",
+      "alt": [
+        "Giganto"
+      ],
+      "topic": "Future Boy Conan",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/عدنان_ولينا#القصة",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "spacetoon-800-912",
+      "p": 800,
+      "q": "Which kinder sister of Sara's headmistress tries to defend the girl?",
+      "a": "Amelia Minchin",
+      "alt": [
+        "Amelia"
+      ],
+      "topic": "A Little Princess Sara",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)#الآنسة_إيميليا",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "spacetoon-800-913",
+      "p": 800,
+      "q": "What is the small animal that becomes Jack's companion in Flone called?",
+      "a": "Mercer",
+      "alt": [
+        "Mercury",
+        "Merkur"
+      ],
+      "topic": "Flone",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/فلونة#شخصيات_المسلسل",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "spacetoon-800-914",
+      "p": 800,
+      "q": "Into what birds do the sorcerers transform the parents of Sinbad's bird companion?",
+      "a": "Two white eagles",
+      "alt": [
+        "White eagles"
+      ],
+      "topic": "Sinbad's Adventures",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد#الشخصيات",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "spacetoon-800-915",
+      "p": 800,
+      "q": "Which farmer, Hikaru's father, shouts UFO when he sees flying saucers in Grendizer?",
+      "a": "Danbei Makiba",
+      "alt": [
+        "Danbei"
+      ],
+      "topic": "Grendizer",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/جريندايزر#الشخصيات_الرئيسية",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "spacetoon-800-916",
+      "p": 800,
+      "q": "What is Jim's pet leopard cub called in the Treasure Island anime?",
+      "a": "Benbow",
+      "alt": [],
+      "topic": "Treasure Island",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Treasure_Island_(1978_TV_series)#Main_characters",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "spacetoon-800-917",
+      "p": 800,
+      "q": "What white flower does Sandybell plant and associate with memories of her mother?",
+      "a": "A white daffodil",
+      "alt": [
+        "White daffodil",
+        "Narcissus"
+      ],
+      "topic": "Hello! Sandybell",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/ساندي_بل#القصة",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "spacetoon-800-918",
+      "p": 800,
+      "q": "What is the fox pursuing the geese called in the Arabic dub of The Wonderful Adventures of Nils?",
+      "a": "Rex",
+      "alt": [
+        "Smirre"
+      ],
+      "topic": "The Wonderful Adventures of Nils",
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_نيلز#الشخصيات",
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "Future Boy Conan",
+      "q": "Under what name does Lana's grandfather lead a salvage team in Future Boy Conan?",
+      "a": "Patch",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Future_Boy_Conan#Story",
+      "alt": [
+        "Badr"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "spacetoon-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "A Little Princess Sara",
+      "q": "Which boy helps Sara carry shopping after his coachman father becomes ill?",
+      "a": "Peter",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/سالي_(أنمي)#القصة",
+      "verified": true,
+      "p": 1000,
+      "qid": "spacetoon-1000-912",
+      "difficultyTarget": 0.15,
+      "alt": []
+    },
+    {
+      "topic": "Flone",
+      "q": "In Flone, what is the name of the Robinson family's nanny before they leave Switzerland?",
+      "a": "Marsh",
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Swiss_Family_Robinson:_Flone_of_the_Mysterious_Island#Plot",
+      "verified": true,
+      "p": 1000,
+      "qid": "spacetoon-1000-913",
+      "difficultyTarget": 0.15,
+      "alt": []
+    },
+    {
+      "topic": "Sinbad's Adventures",
+      "q": "In the Arabic dub of Sinbad's Adventures, which witch takes the talking bird and carpet to Black Mountain?",
+      "a": "Maysaa",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/مغامرات_سندباد#الشخصيات",
+      "verified": true,
+      "p": 1000,
+      "qid": "spacetoon-1000-914",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Maysa"
+      ]
+    },
+    {
+      "topic": "Grendizer",
+      "q": "What is Vega's lunar base called in the Arabic dub of Grendizer?",
+      "a": "Skull Moon",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Grendizer#Plot",
+      "verified": true,
+      "p": 1000,
+      "qid": "spacetoon-1000-915",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Jumjumat al-Qamar"
+      ]
+    },
+    {
+      "topic": "Treasure Island",
+      "q": "Which nobleman finances the voyage and chooses the ship's crew in Treasure Island?",
+      "a": "Squire Trelawney",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Treasure_Island_(1978_TV_series)#Main_characters",
+      "alt": [
+        "Trelawney"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "spacetoon-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Hello! Sandybell",
+      "q": "What does Sandybell call the garden she secretly creates around her white flower?",
+      "a": "Mother's Garden",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hello!_Sandybell#Plot",
+      "verified": true,
+      "p": 1000,
+      "qid": "spacetoon-1000-917",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "My Mother's Garden"
+      ]
+    },
+    {
+      "topic": "The Wonderful Adventures of Nils",
+      "q": "Where does the hamster Carrot hide during the journey in The Wonderful Adventures of Nils?",
+      "a": "In Nils's hat",
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Wonderful_Adventures_of_Nils_(TV_series)#Plot",
+      "alt": [
+        "Nils's hat",
+        "His hat"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "spacetoon-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

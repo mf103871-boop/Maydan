@@ -1,5 +1,8 @@
 // غلاف المنصة: المزوّدون (صوت/اهتزاز/تخزين/دفتر اللاعبين/إعدادات)، الموجّه، وانتقالات الشاشات.
-import React, { useEffect, useMemo, useState, useCallback, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useMemo, useState, useCallback, useRef } from 'react';
+import { initialUiLocale, setUiLocale, tr, gameName } from '../shared/i18n/core.js';
+import { useI18n } from '../shared/i18n/react.jsx';
+import playfulCss from './playful-studio.css';
 import { PlusStyles } from '../plus/PlusStyles.jsx';
 import { PlatformContext, usePlatform } from './context.js';
 import { useRoute, navigate, getDirection, getRoute, installNativeBackBridge } from './router.js';
@@ -55,6 +58,7 @@ const DEFAULT_SETTINGS = { soundOn: true, soundVolume: 0.75, voiceOn: false, cre
 function migrateSettings(saved) {
   const defaults = { ...DEFAULT_SETTINGS, ...integratedPreviewDefaults() };
   const next = { ...defaults, ...(saved || {}) };
+  next.uiLocale = initialUiLocale(saved, typeof navigator === 'undefined' ? 'ar' : navigator.language);
   if ((saved?.musicLevel || 1) < 2) { next.musicVolume = defaults.musicVolume; next.musicLevel = 2; }
   return next;
 }
@@ -99,7 +103,8 @@ function ScreenHost({ route }) {
 
 export function PlatformProviders({ children }) {
   const toast = useToast();
-  const [settings, setSettingsState] = useState(() => migrateSettings(platformStorage.get('settings', {})));
+  const [settings, setSettingsState] = useState(() => migrateSettings(platformStorage.get('settings', null)));
+  useLayoutEffect(() => { setUiLocale(settings.uiLocale); }, [settings.uiLocale]);
   const [roster, setRosterState] = useState(() => platformStorage.get('roster', []) || []);
   const sound = useMemo(() => createSound({ enabled: settings.soundOn, volume: settings.soundVolume, voice: settings.voiceOn, music: settings.musicOn, musicVolume: settings.musicVolume, creatorMode: settings.creatorMode, localAudition: integratedPreviewAudio() }), []); // eslint-disable-line react-hooks/exhaustive-deps
   const haptics = useMemo(() => createHaptics({ enabled: settings.hapticsOn }), []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -159,15 +164,23 @@ const IN_GAME_ROUTES = new Set(['play', 'online', 'room', 'mafia-tutorial']);
 export const UPDATE_READY_MESSAGE = 'تحديث ميدان جاهز — يعمل عند الفتح التالي.';
 
 function Shell() {
+  const { locale, localeStatus } = useI18n();
   const route = useRoute();
   const { settings, setSettings, sound, confetti, toast } = usePlatform();
   const [booted, setBooted] = useState(false);
+  const [languageBooted, setLanguageBooted] = useState(settings.uiLocale !== 'en' || locale === 'en');
+  useEffect(() => {
+    if (settings.uiLocale !== 'en' || locale === 'en') setLanguageBooted(true);
+  }, [settings.uiLocale, locale]);
+  // Only the first mount waits for its dictionary. Later language changes keep
+  // the live match, drafts and dialog instances mounted throughout the request.
+  const usable = booted && languageBooted;
   useEffect(() => installNativeBackBridge(), []);
   useEffect(() => {
     const game = (route.name === 'game' || route.name === 'play' || route.name === 'game-entry') ? getGame(route.params.id) : null;
-    const title = game ? game.name : SCREEN_TITLES[route.name];
-    document.title = title ? `${title} · ميدان` : BASE_TITLE;
-  }, [route.name, route.params.id]);
+    const title = game ? gameName(game, locale) : tr(SCREEN_TITLES[route.name]);
+    document.title = title ? `${title} · ${tr('ميدان')}` : tr(BASE_TITLE);
+  }, [route.name, route.params.id, locale]);
   // عامل الخدمة يعلن «maydan-update-ready» بعد تثبيت إصدار جديد ولا يعيد تحميل الصفحة.
   // التنبيه يظهر خارج شاشات اللعب فقط؛ داخل مباراة يُؤجَّل إلى أول شاشة عادية بعدها.
   const pendingUpdate = useRef(false);
@@ -211,23 +224,25 @@ function Shell() {
       <style>{platformCss}</style>
       <Splash visible={!booted} onDone={finishSplash} reducedMotion={settings.reducedMotion} />
       {/* حدّ خطأ حول الشاشات: خطأ تصيير واحد كان يُفرغ الصفحة بلا رجعة. */}
-      {booted && <ErrorBoundary
+      {booted && !languageBooted && <main className="screen stack center" aria-busy={localeStatus.loading} lang="en" dir="ltr"><h1>Maydan</h1><p role={localeStatus.error ? 'alert' : 'status'}>{localeStatus.error ? 'Could not load English. Please try again.' : 'Loading English…'}</p>{localeStatus.error && <><button type="button" className="btn btn-primary" onClick={() => setUiLocale('en')}>Try again</button><button type="button" className="btn" lang="ar" onClick={() => setSettings({uiLocale:'ar'})}>المتابعة بالعربية</button></>}</main>}
+      {usable && <ErrorBoundary
         resetKey={route.path}
-        title="تعطّلت هذه الشاشة"
-        message="حدث خطأ غير متوقع. يمكنك العودة إلى الرئيسية، أو مسح البيانات المحفوظة إن تكرّر الخطأ عند كل فتح."
-        clearLabel="مسح كل البيانات وإعادة التشغيل"
+        title={tr("تعطّلت هذه الشاشة")}
+        message={tr("حدث خطأ غير متوقع. يمكنك العودة إلى الرئيسية، أو مسح البيانات المحفوظة إن تكرّر الخطأ عند كل فتح.")}
+        clearLabel={tr("مسح كل البيانات وإعادة التشغيل")}
         onHome={() => navigate('/', { replace: true })}
         onClear={resetKeepingAccount}
       >
         <CallViewport><ScreenHost route={route} /></CallViewport>
       </ErrorBoundary>}
-      {booted && <MenuScrollRestoration route={route} />}
-      {booted && <BottomNavigation route={route} />}
-      {booted && <PaywallHost />}
-      {booted && <ErrorBoundary title="تعذّر فتح اللّمة" message="أعد فتح ميدان لتتصل بأصحابك." onHome={() => navigate('/')}><SocialHost /></ErrorBoundary>}
+      {usable && <MenuScrollRestoration route={route} />}
+      {usable && <BottomNavigation route={route} />}
+      {usable && <PaywallHost />}
+      {usable && <ErrorBoundary title={tr("تعذّر فتح اللّمة")} message={tr("أعد فتح ميدان لتتصل بأصحابك.")} onHome={() => navigate('/')}><SocialHost /></ErrorBoundary>}
       <style>{brandCss}</style>
       <style>{onlineCss}</style>
       <PresentationStyles sheet={accountCss} />
+      <style>{playfulCss}</style>
     </>
   );
 }

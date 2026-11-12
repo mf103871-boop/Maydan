@@ -419,11 +419,13 @@ test('الافتتاحية تملأ الشاشة وتنتظر جاهزية ال�
   assert.match(read('src/platform/platform.css'), /\.splash \{[^}]*position: fixed;[^}]*inset: 0/);
   const splash = read('src/platform/screens/Splash.jsx');
   assert.match(splash, /reducedMotion = false/);
-  assert.match(splash, /prepareVisuals\(\{ images: \[gameIcons, avatars\]/);
+  assert.match(splash, /SHELL_ARTWORK_URLS as startupImageUrls/);
+  assert.match(splash, /prepareVisuals\(\{ images: startupImageUrls/);
   assert.doesNotMatch(splash, /role="button"|setTimeout\(finish|duration = 2200/);
   const app = read('src/platform/PlatformApp.jsx');
   assert.match(app, /reducedMotion=\{settings\.reducedMotion\}/);
-  assert.match(app, /booted && <ErrorBoundary/);
+  assert.match(app, /const usable = booted && languageBooted/);
+  assert.match(app, /usable && <ErrorBoundary/);
   assert.match(app, /setSettings\(\{ splashSeen: true \}\)/);
 });
 

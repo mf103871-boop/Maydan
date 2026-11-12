@@ -19,7 +19,7 @@
 .meen-pick > .clay-stage { --contact-inset: 18%; --contact-y: -2px; }
 .meen-pick.selected { background: var(--top-light), color-mix(in srgb, var(--pick-color) 26%, var(--surface)); border-color: var(--pick-color); box-shadow: inset 0 2px 1px #fff, 0 3px 0 color-mix(in srgb, var(--pick-color) 55%, #5B3D24), 0 8px 14px color-mix(in srgb, var(--pick-color) 22%, transparent); animation: ui-pop-select .3s var(--ease-spring); }
 .meen-pick.selected > .clay-stage > .clay-lift { animation: clay-squash .42s var(--ease-spring); }
-.meen-pick .count { position: absolute; top: 6px; inset-inline-end: 8px; min-width: 22px; height: 22px; border-radius: 999px; background: var(--pick-color); color: #0B0E1A; font-size: 12px; font-weight: 900; display: grid; place-items: center; animation: ui-pop-in .35s var(--ease-spring) both; }
+.meen-pick .count { position: absolute; top: 6px; inset-inline-end: 8px; min-width: 22px; height: 22px; border-radius: 999px; background: var(--pick-color); color: #0B0E1A; font-size:14px; font-weight: 900; display: grid; place-items: center; animation: ui-pop-in .35s var(--ease-spring) both; }
 /* النتيجة: أشرطة تتمدد بالتحويل من جهة البداية (‎--w-frac‎ نسبة 0..1) */
 .meen-bars { display: grid; gap: 8px; }
 .meen-bar { display: flex; align-items: center; gap: 10px; }
@@ -38,7 +38,7 @@
 .meen-titles { display: grid; gap: 6px; }
 .meen-titles div { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 14px; background: var(--top-light), var(--surface); border: 1px solid var(--stroke); box-shadow: var(--shadow-row); animation: ui-row-in .35s var(--ease-out) both; animation-delay: calc(900ms + var(--i, 0) * 70ms); }
 .meen-titles .grow { flex: 1; min-width: 0; }
-.meen-titles small { color: var(--game-accent); font-weight: 800; font-size: 13px; display: block; }
+.meen-titles small { color: var(--game-accent); font-weight: 800; font-size:14px; display: block; }
 /* المقدمة: الرسم على حامل يهبط ويطفو، والنصوص تدخل متدرّجة */
 .meen-intro { display: grid; justify-items: center; gap: 12px; text-align: center; padding: 20px 12px; }
 .meen-intro .big { font-size: 70px; --contact-inset: 18%; }
@@ -90,3 +90,19 @@
 .meen-score-chips .is-winner { background: #f9e2a0; color: #503315; }
 .meenfina .meen-titles div { animation: none; box-shadow: none; }
 @media (max-width: 345px) { .meenfina .meen-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+/* Playful Studio: selected players retain their identity and vote counts. */
+.meenfina { --game-accent: #08796D; }
+.game-frame:has(.meenfina,.meen-setup) > .game-bar { background: #FFF8F0; }
+.game-frame:has(.meenfina,.meen-setup) > .game-bar .title { color: #352139; }
+.meenfina .meen-statement { border-radius: 24px; border-color: #D8CAD9; background: #EEE3F5; color: #352139; padding: 20px 16px; }
+.meenfina .meen-intro-guide { background: #FFFDF9; border: 1px solid #DFD1DC; border-radius: 24px; color: #352139; padding: 16px; }
+.meenfina .meen-pick { border-radius: 20px; background: #FFFDF9; border-color: #DFD1DC; gap: 8px; padding: 12px 8px; }
+.meenfina .meen-pick.selected { background: #DDF2EA; border-color: #08796D; box-shadow: inset 0 0 0 1px #08796D; }
+.meenfina .meen-pick.selected .meen-pick-mark { background: #08796D; border-color: #08796D; }
+.meenfina .meen-count { background: #FFF8F0; }
+.meenfina .meen-count-beads span { background: #EEE3F5; color: #352139; }
+.meenfina .meen-count-beads .current { background: #08796D; color: #FFF; }
+.meenfina .meen-bars { border-radius: 20px; border-color: #DFD1DC; }
+.meenfina .meen-bar { background: #FFFDF9; padding: 10px 12px; }
+.meenfina .meen-bar .fill { background: #76518D; }
+.meenfina .meen-bar.is-winner { background: #DDF2EA; }

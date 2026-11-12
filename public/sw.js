@@ -160,6 +160,18 @@ self.addEventListener('fetch', (event) => {
   }
 
   // الوسائط: من المخزن أولًا فهي لا تتغيّر، وما يُجلب يُخزَّن للمرة القادمة.
+  // Optional English packs are content-hashed public assets. Cache only a
+  // successful JSON response on first use; never turn a missing pack into HTML.
+  if (/\/assets\/brand\/locale-en-[a-z]+-[A-Z0-9]+\.json$/i.test(pathname)) {
+    event.respondWith(caches.open(MEDIA_CACHE).then(async cache => {
+      const hit = await cache.match(request);
+      if (hit && /application\/json/i.test(hit.headers.get('content-type') || '')) return hit;
+      const response = await fetch(request);
+      if (response.ok && /application\/json/i.test(response.headers.get('content-type') || '')) event.waitUntil(cache.put(request, response.clone()).catch(() => {}));
+      return response;
+    }));
+    return;
+  }
   if (MEDIA_PATH.test(new URL(request.url).pathname)) {
     event.respondWith(
       caches.open(MEDIA_CACHE).then(async (cache) => {

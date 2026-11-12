@@ -22,7 +22,7 @@ const receiptSignature=event=>createHash('sha256').update(JSON.stringify({...eve
 const checkoutPending=()=>Object.assign(Error(),{code:'CHECKOUT_PENDING',status:409});
 const expiryDrops=()=>{const d=new Date();d.setUTCDate(1);d.setUTCMonth(d.getUTCMonth()-2);const monthKey=d.toISOString().slice(0,7);return MONTHLY_COSMETIC_DROPS.some(drop=>drop.monthKey===monthKey)?MONTHLY_COSMETIC_DROPS:[...MONTHLY_COSMETIC_DROPS,{id:'local-expired-gift',monthKey,itemId:'sahra.frame',availableFrom:0}];};
 
-export async function startPlusPreview({port=4182,apiPort=8792,build=true,watchSource=true,requestHook=null}={}) {
+export async function startPlusPreview({port=4182,apiPort=8792,build=true,watchSource=true,requestHook=null,assetRoot}={}) {
   const quotes=new Map(),seeded=new Map(),lastPurchases=new Map();
   const checkoutQueues=new Map(),unresolvedCheckouts=new Map();
   async function serializedCheckout(userId,operation) {
@@ -140,7 +140,7 @@ export async function startPlusPreview({port=4182,apiPort=8792,build=true,watchS
       return false;
     } catch(error) {if(!lab&&!url.pathname.startsWith('/api/me/cosmetics/'))throw error;json(res,{error:error.code||'LOCAL_PREVIEW_ERROR',localOnly:true},error.status||409);return true;}
   };
-  const app=await startUIReview({port,apiPort,build,watchSource,requestHook:async args => await hook(args) || Boolean(requestHook && await requestHook(args)),localVars:{PLUS_COMMERCE_LOCAL_PREVIEW:'1'}});
+  const app=await startUIReview({port,apiPort,build,watchSource,assetRoot,requestHook:async args => await hook(args) || Boolean(requestHook && await requestHook(args)),localVars:{PLUS_COMMERCE_LOCAL_PREVIEW:'1'}});
   const timer=setInterval(()=>void settleMonthlyGrants(app.backend.env,Date.now(),{drops:expiryDrops()}).catch(()=>{}),30000);timer.unref();
   return {...app,url:`http://127.0.0.1:${port}/plus-lab/`,close:async()=>{clearInterval(timer);await app.close();}};
 }

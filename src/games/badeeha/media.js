@@ -1,3 +1,4 @@
+import { tr } from '../../shared/i18n/core.js';
 import React from "../../design/react.js";
 import { wait } from "../../shared/fx/index.js";
 import { socialInterruption } from "../../social/interruption.js";
@@ -217,7 +218,7 @@ export function MediaImage({ question, url, effect, revealed, onSfx }) {
                 onSfx && onSfx("click");
               },
             },
-            `اكشف قطعة (${shown.length})`,
+            tr("اكشف قطعة ({v0})", {v0: shown.length}),
           ),
       ),
   );
@@ -352,7 +353,7 @@ export function MediaAudio({ url, revealed, soundOn = true, volume = .75, sound 
               ? "بعد الكشف يمكنكم إعادة السماع بلا حدّ"
               : spent
                 ? "اكشفوا الإجابة لإعادة السماع"
-                : `${left === 1 ? "مرة واحدة متبقية" : left === 2 ? "مرتان متبقيتان" : `${left} مرات متبقية`} من ${MAX_AUDIO_PLAYS}`,
+                : tr("{v0} من {v1}", {v0: left === 1 ? "مرة واحدة متبقية" : left === 2 ? "مرتان متبقيتان" : `${left} مرات متبقية`, v1: MAX_AUDIO_PLAYS}),
           ),
         ),
         hBeta(
@@ -379,7 +380,7 @@ export function FourPics({ question, urls, revealed }) {
       hBeta(MediaBox, { key: one, url: one }, ({ onReady, onError }) =>
         hBeta("img", {
           src: one,
-          alt: revealed ? `${question.a} — صورة ${index + 1}` : `صورة ${index + 1}`,
+          alt: revealed ? tr("{v0} — صورة {v1}", {v0: question.a, v1: index + 1}) : tr("صورة {v0}", {v0: index + 1}),
           className: "m-media-img",
           onLoad: onReady,
           onError,

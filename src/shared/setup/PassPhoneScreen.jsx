@@ -1,3 +1,4 @@
+import { tr } from '../i18n/core.js';
 import { Avatar } from '../brand/art.jsx';
 // «سلّم الجوال لـ …» — يخفي المحتوى الخاص باللاعب حتى يلمس الشاشة.
 import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
@@ -16,7 +17,7 @@ export function PassPhoneLock() {
   </span>;
 }
 
-export function PassPhoneScreen({ player, hint = 'لا يرى الشاشة غيرك. عندما تكون جاهزًا اضغط الزر.', ready = 'أنا جاهز', children, api, designPreviewShown = false }) {
+export function PassPhoneScreen({ player, hint = tr("لا يرى الشاشة غيرك. عندما تكون جاهزًا اضغط الزر."), ready = tr("أنا جاهز"), children, api, designPreviewShown = false }) {
   const previewRevealed = !!api?.designPreview && designPreviewShown;
   const playerId = player?.id;
   const [revealState, setRevealState] = useState({ playerId, shown: previewRevealed });
@@ -48,7 +49,7 @@ export function PassPhoneScreen({ player, hint = 'لا يرى الشاشة غي�
     <div data-design-screen="setup.pass-phone" data-design-id="privacy" data-design-required="true" className="pass-screen" style={{ '--pass-color': player.color }}>
       <div className="pass-panel">
         <PassPhoneLock />
-        <h2 data-design-id="title" className="pass-title">سلّم الجوال إلى <span data-design-id="player-name" className="pass-name">{player.name}</span></h2>
+        <h2 data-design-id="title" className="pass-title">{tr("سلّم الجوال إلى ")}<span data-design-id="player-name" className="pass-name">{player.name}</span></h2>
         <p data-design-id="privacy-hint" data-design-required="true" className="pass-hint">{hint}</p>
         <div className={`pass-avatar clay-stage clay-static ${reaction}`} aria-hidden="true"><span className="clay-lift"><Avatar player={player} /></span></div>
         <Button variant="accent" size="lg" full data-design-id="continue" data-design-required="true" onClick={reveal}>{ready} — {player.name}</Button>

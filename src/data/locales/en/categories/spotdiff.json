@@ -1,0 +1,1907 @@
+{
+  "id": "spotdiff",
+  "name": "Spot the Difference",
+  "icon": "🧐",
+  "defaultType": "diff",
+  "qs": [
+    {
+      "p": 200,
+      "q": "What changed between the two tea-corner pictures?",
+      "a": "The kettle changed color",
+      "qid": "spotdiff-200-901",
+      "type": "diff",
+      "spot": {
+        "x": 66,
+        "y": 56,
+        "r": 24
+      },
+      "topic": "Kitchen",
+      "alt": [
+        "Kettle color"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "media": [
+        {
+          "src": "spotdiff-200-901-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-901-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-200-901-b.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-901-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 200,
+      "q": "What differs between the two pictures of the student's desk?",
+      "a": "The notebook changed color",
+      "qid": "spotdiff-200-902",
+      "type": "diff",
+      "spot": {
+        "x": 63,
+        "y": 57,
+        "r": 27
+      },
+      "topic": "Desk and study",
+      "alt": [
+        "Notebook color"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "media": [
+        {
+          "src": "spotdiff-200-902-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-902-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-200-902-b.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-902-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 200,
+      "q": "What is missing from the two pictures of gardening tools?",
+      "a": "The small trowel disappeared",
+      "qid": "spotdiff-200-921",
+      "type": "diff",
+      "spot": {
+        "x": 76,
+        "y": 67,
+        "r": 19
+      },
+      "topic": "Garden",
+      "alt": [
+        "Trowel",
+        "Small shovel"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-400-903-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-400-903-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-400-903-b.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-400-903-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 200,
+      "q": "What changed between the two pictures of building blocks?",
+      "a": "The top block disappeared",
+      "qid": "spotdiff-200-922",
+      "type": "diff",
+      "spot": {
+        "x": 67,
+        "y": 26,
+        "r": 16
+      },
+      "topic": "Games and hobbies",
+      "alt": [
+        "Top block",
+        "Blue block"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-400-904-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-400-904-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-400-904-b.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-400-904-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 200,
+      "q": "What disappeared between the two rhythm-practice pictures?",
+      "a": "The maraca disappeared",
+      "qid": "spotdiff-200-923",
+      "type": "diff",
+      "spot": {
+        "x": 75,
+        "y": 57,
+        "r": 23
+      },
+      "topic": "Music",
+      "alt": [
+        "Maraca",
+        "Shaker"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-400-905-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-400-905-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-400-905-b.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-400-905-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 200,
+      "q": "What is missing from the two pictures of hiking supplies?",
+      "a": "The compass disappeared",
+      "qid": "spotdiff-200-924",
+      "type": "diff",
+      "spot": {
+        "x": 64,
+        "y": 62,
+        "r": 14
+      },
+      "topic": "Travel",
+      "alt": [
+        "Compass"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-400-906-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-400-906-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-400-906-b.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-400-906-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 200,
+      "q": "What is missing from the two cold-weather preparation pictures?",
+      "a": "The scarf disappeared",
+      "qid": "spotdiff-200-925",
+      "type": "diff",
+      "spot": {
+        "x": 71,
+        "y": 48,
+        "r": 25
+      },
+      "topic": "Clothing and accessories",
+      "alt": [
+        "Scarf"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-400-907-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-400-907-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-400-907-b.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-400-907-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 200,
+      "q": "What tool is missing from the two repair-table pictures?",
+      "a": "The screwdriver disappeared",
+      "qid": "spotdiff-200-926",
+      "type": "diff",
+      "spot": {
+        "x": 73,
+        "y": 53,
+        "r": 22
+      },
+      "topic": "Workshop and tools",
+      "alt": [
+        "Screwdriver"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-400-908-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-400-908-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-400-908-b.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-400-908-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What changed between the two gardening-corner pictures?",
+      "a": "An extra band appeared around the pot",
+      "qid": "spotdiff-400-921",
+      "type": "diff",
+      "spot": {
+        "x": 20,
+        "y": 59,
+        "r": 14
+      },
+      "topic": "Garden",
+      "alt": [
+        "Extra ring around the pot"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-200-903-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-903-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-200-903-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-200-903-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What changed between the two toy-shelf pictures?",
+      "a": "The small tower now has two rings",
+      "qid": "spotdiff-400-922",
+      "type": "diff",
+      "spot": {
+        "x": 26,
+        "y": 58,
+        "r": 12
+      },
+      "topic": "Games and hobbies",
+      "alt": [
+        "The blue ring disappeared",
+        "Number of rings"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-200-904-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-904-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-200-904-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-200-904-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What differs between the two percussion-corner pictures?",
+      "a": "The mallet faces the opposite direction",
+      "qid": "spotdiff-400-923",
+      "type": "diff",
+      "spot": {
+        "x": 29,
+        "y": 74,
+        "r": 22
+      },
+      "topic": "Music",
+      "alt": [
+        "Mallet direction",
+        "The mallet head moved to the other end"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-200-905-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-905-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-200-905-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-200-905-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What differs between the two trip-preparation pictures?",
+      "a": "An extra bar appeared inside the suitcase handle",
+      "qid": "spotdiff-400-924",
+      "type": "diff",
+      "spot": {
+        "x": 70.5,
+        "y": 14,
+        "r": 9
+      },
+      "topic": "Travel",
+      "alt": [
+        "The handle opening is divided in two"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-200-906-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-906-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-200-906-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-200-906-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What changed between the two winter-clothing pictures?",
+      "a": "An extra button appeared on the hat",
+      "qid": "spotdiff-400-925",
+      "type": "diff",
+      "spot": {
+        "x": 72,
+        "y": 60,
+        "r": 6
+      },
+      "topic": "Clothing and accessories",
+      "alt": [
+        "New button on the hat"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-200-907-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-907-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-200-907-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-200-907-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What differs between the two maintenance-table pictures?",
+      "a": "The toolbox latch is now open",
+      "qid": "spotdiff-400-926",
+      "type": "diff",
+      "spot": {
+        "x": 63,
+        "y": 44,
+        "r": 10
+      },
+      "topic": "Workshop and tools",
+      "alt": [
+        "Toolbox latch"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-200-908-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-200-908-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-200-908-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-200-908-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What differs between the two soup-table pictures?",
+      "a": "The soup spoon faces the opposite direction",
+      "qid": "spotdiff-400-927",
+      "type": "diff",
+      "spot": {
+        "x": 85,
+        "y": 54,
+        "r": 27
+      },
+      "topic": "Kitchen",
+      "alt": [
+        "Spoon direction",
+        "Reversed spoon"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-400-901-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-400-901-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-400-901-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-400-901-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What changed between the two drawing-preparation pictures?",
+      "a": "The red pencil faces the opposite direction",
+      "qid": "spotdiff-400-928",
+      "type": "diff",
+      "spot": {
+        "x": 83,
+        "y": 55,
+        "r": 23
+      },
+      "topic": "Desk and study",
+      "alt": [
+        "Pencil direction",
+        "Reversed red pencil"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-400-902-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-400-902-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-400-902-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-400-902-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 600,
+      "q": "What differs between the two geometry-tool pictures?",
+      "a": "The ruler changed direction",
+      "qid": "spotdiff-600-902",
+      "type": "diff",
+      "spot": {
+        "x": 73,
+        "y": 47,
+        "r": 23
+      },
+      "topic": "Desk and study",
+      "alt": [
+        "Ruler orientation"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "media": [
+        {
+          "src": "spotdiff-600-902-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-902-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-600-902-b.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-902-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 600,
+      "q": "What detail changed between the two rhythm-setting pictures?",
+      "a": "The metronome pendulum changed direction",
+      "qid": "spotdiff-600-905",
+      "type": "diff",
+      "spot": {
+        "x": 48,
+        "y": 41,
+        "r": 17
+      },
+      "topic": "Music",
+      "alt": [
+        "Pendulum direction"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+      "media": [
+        {
+          "src": "spotdiff-600-905-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-905-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-600-905-b.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-905-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 600,
+      "q": "What detail differs between the two winter-preparation pictures?",
+      "a": "The glove's button disappeared",
+      "qid": "spotdiff-600-907",
+      "type": "diff",
+      "spot": {
+        "x": 87,
+        "y": 54,
+        "r": 7
+      },
+      "topic": "Clothing and accessories",
+      "alt": [
+        "Glove button"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-600-907-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-907-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-600-907-b.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-907-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 600,
+      "q": "What detail differs between the two water-serving pictures?",
+      "a": "The water level in the glass rose",
+      "qid": "spotdiff-600-921",
+      "type": "diff",
+      "spot": {
+        "x": 18,
+        "y": 52,
+        "r": 10
+      },
+      "topic": "Kitchen",
+      "alt": [
+        "Higher water level",
+        "More water"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-600-901-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-901-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-600-901-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-600-901-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 600,
+      "q": "What detail changed between the two plant-corner pictures?",
+      "a": "The watering-can spout changed direction",
+      "qid": "spotdiff-600-922",
+      "type": "diff",
+      "spot": {
+        "x": 81,
+        "y": 54,
+        "r": 10
+      },
+      "topic": "Garden",
+      "alt": [
+        "Spout angle"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-600-903-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-903-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-600-903-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-600-903-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 600,
+      "q": "What differs between the two wooden-train pictures?",
+      "a": "The train window is now round",
+      "qid": "spotdiff-600-923",
+      "type": "diff",
+      "spot": {
+        "x": 80,
+        "y": 41,
+        "r": 9
+      },
+      "topic": "Games and hobbies",
+      "alt": [
+        "Window shape",
+        "A round window replaces a rectangular one"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-600-904-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-904-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-600-904-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-600-904-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 600,
+      "q": "What differs between the two nature-watching pictures?",
+      "a": "The lens cap moved to the other side",
+      "qid": "spotdiff-600-924",
+      "type": "diff",
+      "spot": {
+        "x": 70,
+        "y": 59,
+        "r": 25
+      },
+      "topic": "Travel",
+      "alt": [
+        "Different binocular lens covered"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-600-906-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-906-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-600-906-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-600-906-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 600,
+      "q": "What changed between the two painting-tool pictures?",
+      "a": "The hole in the brush handle disappeared",
+      "qid": "spotdiff-600-925",
+      "type": "diff",
+      "spot": {
+        "x": 92,
+        "y": 36,
+        "r": 5
+      },
+      "topic": "Workshop and tools",
+      "alt": [
+        "Brush hanging hole",
+        "Handle without a hole"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-600-908-a.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-09-25",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-600-908-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-600-908-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-600-908-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 800,
+      "q": "What detail differs between the two breakfast-table pictures?",
+      "a": "The orange jam jar moved in front of the other two",
+      "qid": "spotdiff-800-921",
+      "type": "diff",
+      "spot": {
+        "x": 54,
+        "y": 21,
+        "r": 13
+      },
+      "topic": "Kitchen",
+      "alt": [
+        "Jam jar position",
+        "Middle jar moved forward"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-800-901-a-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-901-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-800-901-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-12",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-901-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 800,
+      "q": "What differs between the two design-desk pictures?",
+      "a": "The blue triangular shape changed direction",
+      "qid": "spotdiff-800-922",
+      "type": "diff",
+      "spot": {
+        "x": 62,
+        "y": 33,
+        "r": 9
+      },
+      "topic": "Desk and study",
+      "alt": [
+        "Blue triangle orientation"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-800-902-a-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-902-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-800-902-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-902-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 800,
+      "q": "What detail differs between the two gardening-corner pictures?",
+      "a": "One pebble disappeared from the dish",
+      "qid": "spotdiff-800-923",
+      "type": "diff",
+      "spot": {
+        "x": 51,
+        "y": 55,
+        "r": 10
+      },
+      "topic": "Garden",
+      "alt": [
+        "Four pebbles instead of five",
+        "Pebble count"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-800-903-a-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-903-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-800-903-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-903-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 800,
+      "q": "What differs between the two toy-workshop pictures?",
+      "a": "The triangular sail became a trapezoid",
+      "qid": "spotdiff-800-924",
+      "type": "diff",
+      "spot": {
+        "x": 65,
+        "y": 54,
+        "r": 12
+      },
+      "topic": "Games and hobbies",
+      "alt": [
+        "Sail shape",
+        "Flat top on the sail"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-800-904-a-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-904-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-800-904-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-904-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 800,
+      "q": "What detail differs between the two music-room pictures?",
+      "a": "The metronome weight moved up the rod",
+      "qid": "spotdiff-800-925",
+      "type": "diff",
+      "spot": {
+        "x": 91,
+        "y": 18,
+        "r": 6
+      },
+      "topic": "Music",
+      "alt": [
+        "Pendulum weight position"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-800-905-a-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-905-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-800-905-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-12",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-905-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 800,
+      "q": "What detail changed between the two campsite pictures?",
+      "a": "The compass needle changed direction",
+      "qid": "spotdiff-800-926",
+      "type": "diff",
+      "spot": {
+        "x": 14,
+        "y": 47,
+        "r": 6
+      },
+      "topic": "Travel",
+      "alt": [
+        "Reversed compass needle"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-800-906-a-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-906-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-800-906-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-906-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 800,
+      "q": "What detail differs between the two clothing-preparation pictures?",
+      "a": "The middle button became square",
+      "qid": "spotdiff-800-927",
+      "type": "diff",
+      "spot": {
+        "x": 54.3,
+        "y": 46.5,
+        "r": 4
+      },
+      "topic": "Clothing and accessories",
+      "alt": [
+        "Middle jacket button shape"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-800-907-a-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-907-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-800-907-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-907-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 800,
+      "q": "What detail differs between the two workshop-tool pictures?",
+      "a": "The holes in the wood are now unevenly spaced",
+      "qid": "spotdiff-800-928",
+      "type": "diff",
+      "spot": {
+        "x": 51.5,
+        "y": 79.4,
+        "r": 5.5
+      },
+      "topic": "Workshop and tools",
+      "alt": [
+        "The middle hole moved right",
+        "Hole spacing"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-800-908-a-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-908-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-800-908-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-12",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-800-908-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 1000,
+      "q": "What subtle difference appears between the two cookie-preparation pictures?",
+      "a": "The bottom-center star cookie now has six points",
+      "qid": "spotdiff-1000-921",
+      "type": "diff",
+      "spot": {
+        "x": 28.3,
+        "y": 38,
+        "r": 8
+      },
+      "topic": "Kitchen",
+      "alt": [
+        "Six-pointed instead of five-pointed star",
+        "Number of points"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-1000-901-a-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-901-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-1000-901-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-901-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 1000,
+      "q": "What detail differs between the two stationery pictures?",
+      "a": "The middle line on the blue notebook is broken",
+      "qid": "spotdiff-1000-922",
+      "type": "diff",
+      "spot": {
+        "x": 30.5,
+        "y": 49,
+        "r": 6
+      },
+      "topic": "Desk and study",
+      "alt": [
+        "Missing section of the notebook stripe"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-1000-902-a-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-902-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-1000-902-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-902-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 1000,
+      "q": "What subtle difference appears between the two greenhouse pictures?",
+      "a": "The large ladybug lost one black spot",
+      "qid": "spotdiff-1000-923",
+      "type": "diff",
+      "spot": {
+        "x": 89.5,
+        "y": 82.5,
+        "r": 4.5
+      },
+      "topic": "Garden",
+      "alt": [
+        "Three spots instead of four",
+        "Ladybug spot count"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-1000-903-a-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-903-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-1000-903-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-12",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-903-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 1000,
+      "q": "What detail differs between the two board-game pictures?",
+      "a": "The bottom-center domino gained a dot",
+      "qid": "spotdiff-1000-924",
+      "type": "diff",
+      "spot": {
+        "x": 45.5,
+        "y": 55,
+        "r": 7
+      },
+      "topic": "Games and hobbies",
+      "alt": [
+        "Five dots instead of four",
+        "Extra domino dot"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-1000-904-a-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-904-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-1000-904-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-904-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 1000,
+      "q": "What subtle difference appears between the two music-workshop pictures?",
+      "a": "The front wooden instrument has three holes instead of four",
+      "qid": "spotdiff-1000-925",
+      "type": "diff",
+      "spot": {
+        "x": 56.2,
+        "y": 75.2,
+        "r": 4.5
+      },
+      "topic": "Music",
+      "alt": [
+        "One missing hole",
+        "Wooden instrument hole count"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-1000-905-a-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-905-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-1000-905-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-905-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 1000,
+      "q": "What subtle detail changed between the two camping-preparation pictures?",
+      "a": "The carabiner gate moved to the opposite side",
+      "qid": "spotdiff-1000-926",
+      "type": "diff",
+      "spot": {
+        "x": 71.4,
+        "y": 78.1,
+        "r": 8
+      },
+      "topic": "Travel",
+      "alt": [
+        "Carabiner gate direction"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-1000-906-a-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-906-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-1000-906-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-906-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 1000,
+      "q": "What detail differs between the two sewing-table pictures?",
+      "a": "The lower sleeve buttonhole changed direction",
+      "qid": "spotdiff-1000-927",
+      "type": "diff",
+      "spot": {
+        "x": 64.7,
+        "y": 70.9,
+        "r": 4.5
+      },
+      "topic": "Clothing and accessories",
+      "alt": [
+        "Lower buttonhole is now vertical"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-1000-907-a-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-907-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-1000-907-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-907-b.json"
+          }
+        }
+      ]
+    },
+    {
+      "p": 1000,
+      "q": "What subtle change appears between the two metal-parts pictures?",
+      "a": "The top slit in the ring moved",
+      "qid": "spotdiff-1000-928",
+      "type": "diff",
+      "spot": {
+        "x": 39.5,
+        "y": 48,
+        "r": 7.5
+      },
+      "topic": "Workshop and tools",
+      "alt": [
+        "Ring slit position",
+        "Spacing between the slits"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-spotdiff.json",
+      "media": [
+        {
+          "src": "spotdiff-1000-908-a-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-908-a.json"
+          }
+        },
+        {
+          "src": "spotdiff-1000-908-b-q20261008.webp",
+          "type": "image",
+          "title": "Generated visual puzzle",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "AI-generated illustration",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation (built-in)",
+            "createdAt": "2026-10-08",
+            "record": "docs/bank/quality-2026-10-08/spotdiff-generated/spotdiff-1000-908-b.json"
+          }
+        }
+      ]
+    }
+  ]
+}

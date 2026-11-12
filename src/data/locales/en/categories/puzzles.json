@@ -1,0 +1,577 @@
+{
+  "id": "puzzles",
+  "name": "Riddles and Logic",
+  "icon": "🧩",
+  "qs": [
+    {
+      "q": "Reverse POTS, then add S at the end. What verb results?",
+      "a": "Stops",
+      "topic": "Letters and symbols",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "verified": true,
+      "verifiedAt": "2026-10-12",
+      "p": 200,
+      "qid": "puzzles-200-912-en-v1",
+      "difficultyTarget": 0.8,
+      "alt": [],
+      "sourceId": "puzzles-200-912",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Replaces the Arabic word transformation with POTS to STOPS; English wordplay has a distinct lexical answer."
+      }
+    },
+    {
+      "q": "A film starts at 9:40 and lasts 95 minutes. When does it end?",
+      "a": "11:15",
+      "topic": "Time",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "Quarter past eleven"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-10-12",
+      "p": 200,
+      "qid": "puzzles-200-913",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "q": "Four people stand ahead of someone and seven behind them. What is that person's position from the back?",
+      "a": "Eighth",
+      "qid": "puzzles-200-915",
+      "topic": "Ordering",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "8th",
+        "8"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "A square is divided into a 2×2 grid. How many squares of all sizes are there?",
+      "a": "5",
+      "qid": "puzzles-200-921",
+      "topic": "Shapes",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "Five"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "One unlit incandescent bulb was just switched off; another was never on. What property immediately distinguishes them?",
+      "a": "Heat",
+      "qid": "puzzles-200-922",
+      "topic": "Logic",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "Temperature"
+      ]
+    },
+    {
+      "q": "You paid 40 dinars after a 20% discount. What was the original price?",
+      "a": "50 dinars",
+      "topic": "Arithmetic",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "50"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-10-12",
+      "p": 200,
+      "qid": "puzzles-200-923",
+      "difficultyTarget": 0.8
+    },
+    {
+      "q": "In a race, you overtake the runner immediately behind the leader. What position are you now in?",
+      "a": "Second",
+      "topic": "Ordering",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "2nd",
+        "2"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-10-12",
+      "p": 200,
+      "qid": "puzzles-200-924",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "q": "You have three shirts and two pairs of trousers. How many shirt-and-trousers outfits can you make?",
+      "a": "6",
+      "qid": "puzzles-200-925",
+      "topic": "Counting",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "Six"
+      ]
+    },
+    {
+      "q": "Remove the last letter of TMEAX, then move its first letter to the end. What word results?",
+      "a": "Meat",
+      "topic": "Letters and symbols",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-10-12",
+      "p": 400,
+      "qid": "puzzles-400-912-en-v1",
+      "difficultyTarget": 0.6,
+      "sourceId": "puzzles-400-912",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Rebuilds the removable-letter and rotation puzzle as TMEAX to MEAT in the English alphabet."
+      }
+    },
+    {
+      "p": 400,
+      "q": "How many diagonals does a convex pentagon have?",
+      "a": "5",
+      "qid": "puzzles-400-916",
+      "topic": "Shapes",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "Five"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "A drawer has many black and white socks. How many must you draw to guarantee three of one color?",
+      "a": "5 socks",
+      "qid": "puzzles-400-918",
+      "topic": "Logic",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "5",
+        "Five"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "A bag costs 50. After a 20% discount and then another 5 off, what is its price?",
+      "a": "35",
+      "qid": "puzzles-400-921",
+      "topic": "Arithmetic",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Two brothers' ages total 24 years and differ by 12. How old is the elder?",
+      "a": "18 years",
+      "qid": "puzzles-400-922",
+      "topic": "Ages",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "18"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "You turn a quarter-turn right, then a half-turn left, ending facing north. Which direction did you originally face?",
+      "a": "East",
+      "qid": "puzzles-400-923",
+      "topic": "Directions",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "A bag has three red balls and one blue. After removing a red ball, what is the chance of drawing blue?",
+      "a": "One third",
+      "qid": "puzzles-400-924",
+      "topic": "Probability",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "1/3"
+      ]
+    },
+    {
+      "q": "A bell takes ten seconds from its first to sixth strike. With equal intervals, how long from first to twelfth?",
+      "a": "22 seconds",
+      "topic": "Time",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "22"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-10-12",
+      "p": 400,
+      "qid": "puzzles-400-925",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 600,
+      "q": "A cipher replaces each English letter with the next alphabet letter. What word was encoded as NPPO?",
+      "a": "Moon",
+      "qid": "puzzles-600-912-en-v1",
+      "topic": "Letters and symbols",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "sourceId": "puzzles-600-912",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the moon answer as NPPO using the English alphabet successor rule."
+      }
+    },
+    {
+      "p": 600,
+      "q": "Of 30 club members, 18 swim and 20 run. Everyone does at least one. How many do both?",
+      "a": "8",
+      "qid": "puzzles-600-921",
+      "topic": "Counting",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "Eight"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "One of eight balls is heavier; all others weigh equally. What is the minimum guaranteed number of balance-scale weighings?",
+      "a": "Two",
+      "qid": "puzzles-600-922",
+      "topic": "Logic",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "2"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "A notebook and pen cost 18; the notebook costs twice the pen. What do three notebooks and one pen cost?",
+      "a": "42",
+      "qid": "puzzles-600-923",
+      "topic": "Arithmetic",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "A clock loses five minutes per real hour, starting correctly at noon. When it shows 5:30 p.m., what is the actual time?",
+      "a": "6:00 p.m.",
+      "qid": "puzzles-600-924",
+      "topic": "Time",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "6 p.m.",
+        "18:00"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "A father is three times his son's age. In twelve years, he will be twice his son's age. How old is he?",
+      "a": "36 years",
+      "qid": "puzzles-600-925",
+      "topic": "Ages",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "36"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Five books: A immediately precedes B, C immediately follows D, and E is between B and D. Which book is central?",
+      "a": "E",
+      "qid": "puzzles-600-926",
+      "topic": "Ordering",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "Book E"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "A painted cube is cut into 27 equal cubes. How many small cubes have exactly two painted faces?",
+      "a": "12",
+      "qid": "puzzles-600-927",
+      "topic": "Shapes",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "Twelve"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "In a reversed English alphabet cipher, where A pairs with Z, which letter pairs with G?",
+      "a": "T",
+      "qid": "puzzles-800-912-en-v1",
+      "topic": "Letters and symbols",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "sourceId": "puzzles-800-912",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Uses the English reversed-alphabet pair G to T instead of the Arabic letter pair."
+      }
+    },
+    {
+      "p": 800,
+      "q": "Five distinct books sit on a shelf. Two specified books must be adjacent. How many arrangements are possible?",
+      "a": "48",
+      "qid": "puzzles-800-915",
+      "topic": "Ordering",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "Forty-eight"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "Across a 3×3 square grid, how many shortest corner-to-opposite-corner routes use only right and down moves?",
+      "a": "20",
+      "qid": "puzzles-800-916",
+      "topic": "Shapes",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "Twenty"
+      ]
+    },
+    {
+      "q": "A thirty-day month has five Fridays and five Saturdays. On which weekday does it begin?",
+      "a": "Friday",
+      "topic": "Ordering",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-10-12",
+      "p": 800,
+      "qid": "puzzles-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "q": "A two-digit number's digits total 11. Reversing them increases it by 27. What is the number?",
+      "a": "47",
+      "qid": "puzzles-800-921",
+      "topic": "Arithmetic",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "What is the smaller angle between an analog clock's hands at 3:30?",
+      "a": "75 degrees",
+      "qid": "puzzles-800-922",
+      "topic": "Time",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "75°",
+        "75"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "A tap fills a tank in six hours; a drain empties it in nine. Together, how long to fill an empty tank?",
+      "a": "18 hours",
+      "qid": "puzzles-800-923",
+      "topic": "Arithmetic",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "18"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "A rectangular grid has two rows and three columns. How many rectangles, including squares, do its lines define?",
+      "a": "18",
+      "qid": "puzzles-800-924",
+      "topic": "Counting",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "Eighteen"
+      ]
+    },
+    {
+      "q": "Boxes contain apples, oranges, and a mixture. Every label is wrong. From which labeled box should you draw one fruit first?",
+      "a": "The box labeled mixed",
+      "topic": "Logic",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "Mixed",
+        "The mixed box"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-10-12",
+      "p": 1000,
+      "qid": "puzzles-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Why can't a chessboard missing two opposite corners be tiled with 2×1 dominoes?",
+      "a": "Unequal numbers of black and white squares",
+      "topic": "Shapes",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "Each domino covers one of each color"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-10-12",
+      "p": 1000,
+      "qid": "puzzles-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "q": "Four people take 1, 2, 7, and 10 minutes to cross a two-person bridge with one shared torch. Minimum total time?",
+      "a": "17 minutes",
+      "qid": "puzzles-1000-917",
+      "topic": "Logic",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "verifiedAt": "2026-10-12",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "17"
+      ]
+    },
+    {
+      "q": "Three keys fit three different locks. What minimum number of trials identifies every match in the worst case?",
+      "a": "3",
+      "topic": "Counting",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "Three"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-10-12",
+      "p": 1000,
+      "qid": "puzzles-1000-918",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Two items sell for the same price, one at 25% profit and the other at 25% loss. What is the overall loss?",
+      "a": "6.25%",
+      "topic": "Arithmetic",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "6.25 percent"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-10-12",
+      "p": 1000,
+      "qid": "puzzles-1000-921",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Two uneven-burning ropes each last an hour. To measure 45 minutes, how should you initially light them?",
+      "a": "Both ends of one, one of the other",
+      "topic": "Time",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "One at both ends, the other at one"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-10-12",
+      "p": 1000,
+      "qid": "puzzles-1000-922",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Seven people sit around a circular table. Treat rotations and reflections as identical. How many distinct arrangements are there?",
+      "a": "360",
+      "topic": "Ordering",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-10-12",
+      "p": 1000,
+      "qid": "puzzles-1000-923",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "100 lockers start closed. Round k toggles every multiple of k, for rounds 1–100. How many finish open?",
+      "a": "10",
+      "topic": "Counting",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "Ten"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-10-12",
+      "p": 1000,
+      "qid": "puzzles-1000-924",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

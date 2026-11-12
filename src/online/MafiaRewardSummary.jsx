@@ -1,15 +1,18 @@
+import { localizeAuthored } from './format.js';
+import { arabicNumber } from './format.js';
+import { tr } from '../shared/i18n/core.js';
 import React, { useEffect, useRef, useState } from 'react';
 import { useAccount } from '../shared/account/context.js';
 import { getMafiaReward } from '../profiles/mafia-client.js';
-import { arabicNumber } from './shared.js';
+
 import { MAFIA_ROLES } from './mafia-shared.js';
 import { Button } from '../shared/ui/components.jsx';
 
 const exclusionText = reason => ({
-  forfeited: 'الانسحاب لا يمنح خبرة أو إتقانًا لهذه المباراة.',
-  private_daily_cap: 'اكتملت منح المشاركة الثلاث للغرف الخاصة في يوم هذه النتيجة.',
-  legacy: 'نتيجة تاريخية محفوظة دون خبرة أو إتقان جديد.',
-}[reason] || 'هذه النتيجة لا تمنح تقدمًا جديدًا.');
+  forfeited: tr("الانسحاب لا يمنح خبرة أو إتقانًا لهذه المباراة."),
+  private_daily_cap: tr("اكتملت منح المشاركة الثلاث للغرف الخاصة في يوم هذه النتيجة."),
+  legacy: tr("نتيجة تاريخية محفوظة دون خبرة أو إتقان جديد."),
+}[reason] || tr("هذه النتيجة لا تمنح تقدمًا جديدًا."));
 export function validMafiaReward(value, matchKey) {
   return value?.status==='processed'&&value.matchKey===matchKey&&Number.isSafeInteger(value.xpAwarded)
     &&value.xpAwarded>=0&&value.xpAwarded<=70&&typeof value.participationGranted==='boolean'
@@ -52,16 +55,16 @@ export function MafiaRewardSummary({ server, accountId, receipt, clockOffset=0, 
   },[enabled,key,epoch,accountId,server,receipt?.matchKey,receipt?.notBefore,clockOffset,loadReward,refresh]);
   if(!enabled)return null;
   const reward=shown?.data;
-  return <section className="mafia-reward-summary" aria-label="مكافأة المباراة" aria-live="polite">
-    <header><h3>رحلتك في مافيا</h3><small>لحسابك فقط</small></header>
+  return <section className="mafia-reward-summary" aria-label={tr("مكافأة المباراة")} aria-live="polite">
+    <header><h3>{tr("رحلتك في مافيا")}</h3><small>{tr("لحسابك فقط")}</small></header>
     {shown?.status==='processed'?<>
-      <strong className="mafia-reward-xp">{reward.xpAwarded>0?`+${arabicNumber(reward.xpAwarded)} خبرة`:'دون خبرة إضافية'}</strong>
-      <p>{reward.participationGranted?`إكمال مؤهل لإتقان دور ${MAFIA_ROLES[reward.roleId].name}.`:exclusionText(reward.exclusionReason)}</p>
-      {!!reward.achievements?.length&&<ul aria-label="إنجازات هذه المباراة">{reward.achievements.map(item=><li key={item.id||item.achievementId}>{item.label||item.title||'إنجاز مافيا مكتسب'}</li>)}</ul>}
-      {!!reward.grants?.length&&<p>أُضيفت مقتنيات مكتسبة إلى مظهرك؛ تقدر تجهيزها من المتجر.</p>}
+      <strong className="mafia-reward-xp">{reward.xpAwarded>0?tr("+{v0} خبرة", {v0: arabicNumber(reward.xpAwarded)}):tr("دون خبرة إضافية")}</strong>
+      <p>{reward.participationGranted?tr("إكمال مؤهل لإتقان دور {v0}.", {v0: localizeAuthored(MAFIA_ROLES[reward.roleId]).name}):exclusionText(reward.exclusionReason)}</p>
+      {!!reward.achievements?.length&&<ul aria-label={tr("إنجازات هذه المباراة")}>{reward.achievements.map(item=><li key={item.id||item.achievementId}>{item.label||item.title||tr("إنجاز مافيا مكتسب")}</li>)}</ul>}
+      {!!reward.grants?.length&&<p>{tr("أُضيفت مقتنيات مكتسبة إلى مظهرك؛ تقدر تجهيزها من المتجر.")}</p>}
     </>:<>
-      <p role={shown?.status==='error'?'alert':'status'}>{shown?.status==='error'?'تعذّر تحديث المكافأة. تقدر المحاولة مجددًا.':'نجهّز مكافأتك… ستظهر هنا بعد قليل.'}</p>
-      <Button variant="ghost" onClick={()=>setRefresh(value=>value+1)}>تحديث المكافأة</Button>
+      <p role={shown?.status==='error'?'alert':'status'}>{shown?.status==='error'?tr("تعذّر تحديث المكافأة. تقدر المحاولة مجددًا."):tr("نجهّز مكافأتك… ستظهر هنا بعد قليل.")}</p>
+      <Button variant="ghost" onClick={()=>setRefresh(value=>value+1)}>{tr("تحديث المكافأة")}</Button>
     </>}
   </section>;
 }

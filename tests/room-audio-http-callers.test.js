@@ -7,6 +7,8 @@ import {createAudioEvents} from '../src/shared/fx/audio-events.js';
 import {emitRoomReceipt} from '../src/shared/fx/room-audio.js';
 import {ticketPolicyEnabled,gameplayOffer,badeehaFreeSelection,TICKET_POLICY,ENTRY_POLICY} from '../src/shared/account/gameplay-policy.mjs';
 import {gameEntryPath} from '../src/platform/game-entry.mjs';
+import {tr} from '../src/shared/i18n/core.js';
+import {contentVersionFor} from '../src/shared/content-locale.mjs';
 
 // Run actual async HTTP callers, without React/UI or a hosted account. Real post
 // response handling and real semantic bus are retained; only transport/storage
@@ -24,6 +26,7 @@ function fixture(gameplayPolicy=null){
   let settle,owner='owner',current=true;
   const transport=()=>new Promise(resolve=>{settle=resolve;});
   const context={
+    tr,contentLocale:'ar',contentVersionFor,
     busy:false,setError(){},name:'ضيف الاختبار',mode:'join',game:'meenfina',account,mafiaCreationBlocked:false,rewarded:false,joinOnly:false,gameEntryPath,
     normalizeCode,code:'123456',validCode,ROOM_CAPABILITIES,initialObserver:false,entryLifetime:{current:{generation:1}},
     ticketPolicyEnabled,gameplayOffer,badeehaFreeSelection,

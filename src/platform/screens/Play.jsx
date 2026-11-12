@@ -1,3 +1,4 @@
+import { tr } from '../../shared/i18n/core.js';
 // شاشة اللعب: إعداد اللاعبين/الفرق (للألعاب التي لا تدير إعدادها بنفسها) ثم مكوّن اللعبة داخل الإطار.
 import React, { useMemo, useState, useCallback, useEffect, useRef, useSyncExternalStore } from 'react';
 import { socialInterruption } from '../../social/interruption.js';
@@ -23,6 +24,10 @@ import { LOCAL_REWARDED_OFFER, REWARDED_PREVIEW, rewardedStart, rewardEvent } fr
 import { LocalGameplayAccess } from '../../shared/account/local-gameplay-access.mjs';
 import { gameplayOffer } from '../../shared/account/gameplay-policy.mjs';
 import { RewardedOffer } from '../../shared/account/RewardedOffer.jsx';
+import { contentStorage, readSavedContentIdentity } from '../../shared/lib/content-storage.js';
+import { contentVersionFor } from '../../shared/content-locale.mjs';
+import { gameName } from '../../shared/i18n/core.js';
+import { loadGameContent } from '../../data/game-content.js';
 
 // طبقات التأثير المشتركة تُمرَّر للألعاب عبر api.fx (اختصار؛ الاستيراد المباشر من shared/fx هو العقد).
 const FX = { flash: flashScreen, stamp: stampScreen, vignette, reduced: prefersReducedMotion, wait };
@@ -30,6 +35,22 @@ const FX = { flash: flashScreen, stamp: stampScreen, vignette, reduced: prefersR
 export function Play({ id, rewarded = false }) {
   const game = getGame(id);
   const platform = usePlatform();
+  const preferences = useMemo(() => createStorage(id), [id]);
+  const [contentLocale, setContentLocale] = useState(() => preferences.get('match-content-locale', 'ar') === 'en' ? 'en' : 'ar');
+  const contentVersion = contentVersionFor(contentLocale);
+  const contentKey = `${id}:${contentLocale}:${contentVersion}`;
+  const [pack, setPack] = useState({key:contentKey,ready:contentLocale==='ar',error:false});
+  const [packAttempt, setPackAttempt] = useState(0);
+  useEffect(() => {
+    let active = true;
+    loadGameContent(id,contentLocale,contentVersion).then(() => {
+      if (active) setPack({key:contentKey,ready:true,error:false});
+    }).catch(() => {
+      if (active) setPack({key:contentKey,ready:false,error:true});
+    });
+    return () => { active=false; };
+  },[id,contentLocale,contentVersion,contentKey,packAttempt]);
+  const contentReady = pack.key===contentKey && pack.ready;
   const account = useAccount();
   const demo = REWARDED_PREVIEW && rewarded && id === 'badeeha';
   const accountRef = useRef(account);
@@ -125,6 +146,7 @@ export function Play({ id, rewarded = false }) {
   const [savedSession, setSavedSession] = useState(null);
   const [gameOptions, setGameOptions] = useState(null);
   const [setupValid, setSetupValid] = useState(true);
+  const [selfSetupActive, setContentSetupActive] = useState(false);
   const [exitMessage, setExitMessage] = useState(null);
   const [beforeExit, setBeforeExit] = useState(null);
   // وهج أطراف عند البدء/الإعادة: لا يغطي اللعب ولا يُصيَّر تحت تقليل الحركة.
@@ -138,13 +160,15 @@ export function Play({ id, rewarded = false }) {
   }, []);
   useEffect(() => () => clearTimeout(curtainTimer.current), []);
 
-  const storage = useMemo(() => createStorage(id), [id]);
+  const storage = useMemo(() => contentStorage(id, { contentLocale, contentVersion }), [id, contentLocale, contentVersion]);
   const wakeLock = useMemo(() => createWakeLock(), []);
   useEffect(() => { wakeLock.request(); return () => wakeLock.dispose(); }, [wakeLock]);
 
   const api = useMemo(() => ({
     // الحساب والاستحقاقات: اللعبة تقرأ api.account، وتعلن انتهاء مباراة كاملة بـ api.matchOver().
     account,
+    contentLocale,
+    contentVersion,
     ...(demo && owner ? { rewarded: {
       owner,
       start: (matchId) => {
@@ -156,7 +180,7 @@ export function Play({ id, rewarded = false }) {
     matchStart: () => { access.activate(); matchAudio.begin(); return recorder.start(id); },
     matchSnapshot: () => {
       const marker = recorder.marker(), gameplayAccess = access.snapshot();
-      return gameplayAccess ? { ...marker, gameplayAccess } : marker;
+      return { ...marker, ...(gameplayAccess ? { gameplayAccess } : {}), contentLocale, contentVersion };
     },
     matchResume: (marker) => { access.activate(); matchAudio.begin(); return recorder.resume(marker, id); },
     // احتفال واحد للمباراة المكتملة؛ الانسحاب أو الإلغاء لا يشغّل صوت الفوز.
@@ -172,11 +196,16 @@ export function Play({ id, rewarded = false }) {
     navigate,
     setInGame,
     setSetupValid,
+    setContentSetupActive,
     setGameOptions,
     setExitMessage,
     setBeforeExit: (handler) => setBeforeExit(() => handler),
     resumeGame: async (saved) => {
+      let identity;
+      try { identity = readSavedContentIdentity(saved); await loadGameContent(id,identity.contentLocale,identity.contentVersion); }
+      catch { platform.toast(tr('نسخة محتوى هذه المباراة غير متاحة.')); return; }
       if (!await authorizeMatch({ resume: saved })) return;
+      setContentLocale(identity.contentLocale);
       access.activate();
       recorder.resume(saved.profileSession, id);
       // ممنوع تُلعب بفرق: اللقطة تحمل teams بدل players، والنمط يعود إلى «فرق».
@@ -192,9 +221,10 @@ export function Play({ id, rewarded = false }) {
       recorder.start(id); setSavedSession(null); setSession((s) => s + 1); raiseCurtain();
     },
     backToSetup: () => { setInGame(false); setSavedSession(null); setStage('setup'); setSetupValid(true); raiseCurtain(); },
-  }), [platform, storage, raiseCurtain, account, id, recorder, matchAudio, demo, owner, access, authorizeMatch]);
+  }), [platform, storage, raiseCurtain, account, id, recorder, matchAudio, demo, owner, access, authorizeMatch, contentLocale, contentVersion]);
 
   const start = useCallback(async (list) => {
+    if (!contentReady) return;
     if (!await authorizeMatch()) return;
     access.activate();
     recorder.start(id);
@@ -205,52 +235,53 @@ export function Play({ id, rewarded = false }) {
     setSession((s) => s + 1);
     platform.sound.play('whoosh');
     raiseCurtain();
-  }, [mode, platform.sound, raiseCurtain, id, recorder, access, authorizeMatch]);
+  }, [mode, platform.sound, raiseCurtain, id, recorder, access, authorizeMatch, contentReady]);
 
   if (!game) return <MissingGame id={id} />;
-  if (demo && !owner) return <Screen className="stack" aria-label="تحدّي اللمّة التجريبي">
-    <TopBar title="تحدّي بديهة التجريبي" />
-    <p role="status">{account.ready ? 'سجّل الدخول لبدء التجربة أو استئنافها.' : 'جارٍ التحقق من الحساب…'}</p>
-    <Button onClick={() => navigate('/game/badeeha?mode=local', { replace: true })}>العودة إلى بديهة</Button>
-    <Button onClick={() => navigate('/play/badeeha?mode=local', { replace: true })}>العب بديهة المجانية</Button>
+  if (demo && !owner) return <Screen className="stack" aria-label={tr("تحدّي اللمّة التجريبي")}>
+    <TopBar title={tr("تحدّي بديهة التجريبي")} />
+    <p role="status">{account.ready ? tr("سجّل الدخول لبدء التجربة أو استئنافها.") : tr("جارٍ التحقق من الحساب…")}</p>
+    <Button onClick={() => navigate('/game/badeeha?mode=local', { replace: true })}>{tr("العودة إلى بديهة")}</Button>
+    <Button onClick={() => navigate('/play/badeeha?mode=local', { replace: true })}>{tr("العب بديهة المجانية")}</Button>
   </Screen>;
   const Component = game.Component;
 
   return (
-    <GameFrame game={game} inGame={ready && inGame} exitMessage={exitMessage || game.exitMessage} beforeExit={beforeExit}>
+    <GameFrame game={game} inGame={ready && contentReady && inGame} exitMessage={exitMessage || game.exitMessage} beforeExit={beforeExit}>
+      {ready && (stage === 'setup' || game.setup === 'self' && selfSetupActive) && !inGame && !accessPrompt && <section className="studio-local-language"><label htmlFor="local-content-locale">{tr('لغة المباراة')}</label><select id="local-content-locale" value={contentLocale} disabled={accessBusy} onChange={event => { const next = event.target.value; preferences.set('match-content-locale', next); setContentLocale(next); setSavedSession(null); setGameOptions(null); }}><option value="ar" lang="ar">{tr("العربية")}</option><option value="en" lang="en">English</option></select><small>{tr('لغة القوائم مستقلة عن لغة المباراة.')}</small></section>}
       <div inert={interruption.paused || Boolean(accessPrompt) || accessBusy || undefined} aria-hidden={interruption.paused || Boolean(accessPrompt) || undefined} style={interruption.paused || accessPrompt ? { visibility: 'hidden', pointerEvents: 'none' } : undefined}>
-      {!ready ? <GameLoading game={game} progress={progress} /> : stage === 'setup' ? (
-        <Screen dir={getDirection()} className="stack" style={{ '--game-accent': game.accent }} aria-label={`إعداد ${game.name}`}>
-          <TopBar title="من يلعب؟" eyebrow={game.name} />
+      {!ready ? <GameLoading game={game} progress={progress} /> : !contentReady ? <section className="stack" style={{padding:24}}><p role={pack.error?'alert':'status'}>{pack.key===contentKey&&pack.error?tr('تعذّر تحميل محتوى المباراة. محفوظاتك لم تتغير.'):tr('جارٍ تحميل محتوى المباراة…')}</p>{pack.key===contentKey&&pack.error&&<Button onClick={()=>{setPack({key:contentKey,ready:false,error:false});setPackAttempt(value=>value+1);}}>{tr('إعادة المحاولة')}</Button>}</section> : stage === 'setup' ? (
+        <Screen dir={getDirection()} className="stack" style={{ '--game-accent': game.accent }} aria-label={tr('إعداد {game}', {game:gameName(game)})}>
+          <TopBar title={tr("من يلعب؟")} eyebrow={gameName(game)} />
           {game.players.mode === 'both' && (
-            <Segment label="نمط اللعب" accent value={mode} onChange={(v) => setMode(v)} options={[{ value: 'individual', label: 'فردي' }, { value: 'teams', label: 'فرق' }]} />
+            <Segment label={tr("نمط اللعب")} accent value={mode} onChange={(v) => setMode(v)} options={[{ value: 'individual', label: tr("فردي") }, { value: 'teams', label: tr("فرق") }]} />
           )}
           {mode === 'teams' ? (
             <TeamsSetup min={Math.max(2, game.players.mode === 'teams' ? game.players.min : 2)} max={Math.min(4, game.players.mode === 'teams' ? game.players.max : 4)} api={api} onStart={start}>
-              {game.SetupOptions && <game.SetupOptions api={api} storage={storage} />}
+              {game.SetupOptions && <game.SetupOptions key={contentLocale} api={api} storage={storage} />}
             </TeamsSetup>
           ) : (
             <PlayersSetup roster={platform.roster} setRoster={platform.setRoster} min={game.players.min} max={game.players.max} api={api} onStart={start} startDisabled={!setupValid}>
-              {game.SetupOptions && <game.SetupOptions api={api} storage={storage} />}
+              {game.SetupOptions && <game.SetupOptions key={contentLocale} api={api} storage={storage} />}
             </PlayersSetup>
           )}
         </Screen>
       ) : (
-        <><Component key={demo || account.gameplayPolicy ? `${owner}:${session}` : session} api={api} players={players} teams={teams} mode={mode} savedSession={savedSession} gameOptions={gameOptions} onExit={api.requestExit} />
+        <><Component key={`${contentLocale}:${demo || account.gameplayPolicy ? `${owner}:${session}` : session}`} api={api} players={players} teams={teams} mode={mode} savedSession={savedSession} gameOptions={gameOptions} onExit={api.requestExit} />
           {progressionReceipt && progressionReceipt.ownerId === owner && progressionReceipt.key === recorder.marker()?.key &&
             <MatchProgression key={progressionReceipt.eventId} {...progressionReceipt} />}</>
       )}
       </div>
-      {accessPrompt && <section className="stack" aria-label="أهلية بدء المباراة" style={{ position: 'fixed', inset: 0, zIndex: 75, overflowY: 'auto', padding: 'max(16px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom))', background: 'var(--bg, #fff8eb)' }}>
+      {accessPrompt && <section className="stack" aria-label={tr("أهلية بدء المباراة")} style={{ position: 'fixed', inset: 0, zIndex: 75, overflowY: 'auto', padding: 'max(16px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom))', background: 'var(--bg, #fff8eb)' }}>
         <RewardedOffer offer={gameplayOffer(id, 'local')?.id} surface="local-start" onReady={retryAccess} onFree={cancelAccess} canPresent={() => !accessBusy} />
-        {accessPrompt.reason === 'pending' && <p role="status">قد يكون بدء المباراة تأكد بالفعل. أعد التحقق من البداية نفسها؛ لن نطلب تذكرة ثانية.</p>}
-        {accessPrompt.reason === 'storage' && <p role="alert">تعذّر حفظ نقطة استعادة آمنة. أتح التخزين المحلي قبل بدء المباراة.</p>}
-        {accessPrompt.reason === 'account' && <p role="alert">هذه المباراة المحفوظة مرتبطة بحساب آخر. ارجع إلى الإعداد أو ادخل بحسابها.</p>}
+        {accessPrompt.reason === 'pending' && <p role="status">{tr("قد يكون بدء المباراة تأكد بالفعل. أعد التحقق من البداية نفسها؛ لن نطلب تذكرة ثانية.")}</p>}
+        {accessPrompt.reason === 'storage' && <p role="alert">{tr("تعذّر حفظ نقطة استعادة آمنة. أتح التخزين المحلي قبل بدء المباراة.")}</p>}
+        {accessPrompt.reason === 'account' && <p role="alert">{tr("هذه المباراة المحفوظة مرتبطة بحساب آخر. ارجع إلى الإعداد أو ادخل بحسابها.")}</p>}
       </section>}
-      {accessBusy && <p role="status" style={{ position: 'fixed', insetInline: 16, bottom: 24, zIndex: 80 }}>جارٍ التحقق من بدء المباراة…</p>}
+      {accessBusy && <p role="status" style={{ position: 'fixed', insetInline: 16, bottom: 24, zIndex: 80 }}>{tr("جارٍ التحقق من بدء المباراة…")}</p>}
       {interruption.paused && <div className="stack center" role="status" style={{ position: 'fixed', inset: 0, zIndex: 70, background: 'var(--bg, #fff8eb)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', justifyContent: 'center', padding: 24 }}>
-        <h2>اللعبة بانتظاركم</h2><p>الوقت متوقف والمحتوى مخفي. سلّم الهاتف للاعب قبل المتابعة.</p>
-        <button className="btn accent" style={{ width: 'min(100%, 320px)', minHeight: 48 }} disabled={interruption.open} onClick={() => socialInterruption.resume()}>متابعة اللعب</button>
+        <h2>{tr("اللعبة بانتظاركم")}</h2><p>{tr("الوقت متوقف والمحتوى مخفي. سلّم الهاتف للاعب قبل المتابعة.")}</p>
+        <button className="btn accent" style={{ width: 'min(100%, 320px)', minHeight: 48 }} disabled={interruption.open} onClick={() => socialInterruption.resume()}>{tr("متابعة اللعب")}</button>
       </div>}
       {curtain > 0 && <div key={`curtain-${curtain}`} className="game-curtain" aria-hidden="true" />}
     </GameFrame>

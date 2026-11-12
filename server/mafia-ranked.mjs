@@ -1,3 +1,4 @@
+import { requireContentCapability, requireNewContentEnabled, englishContentEnabled } from './content-locale.mjs';
 import { all,first,run,stmt } from './lamma/common.mjs';
 import { fail } from './room-model.mjs';
 import { liveAccountSql,isModerator } from './moderation/access.mjs';
@@ -42,7 +43,7 @@ async function sweep(env,now){
   ]);
 }
 async function ownState(env,actor,now=Date.now()){
-  const season=await openSeason(env,now),held=await first(env,"SELECT season_id,seat_id,match_seat_id,queue_revision,joined_at,expires_at,match_key,room_code,status FROM mafia_ranked_queue WHERE user_id=? AND (status='assigned' OR expires_at>?)",actor.userId,now);
+  const season=await openSeason(env,now),held=await first(env,"SELECT season_id,seat_id,match_seat_id,queue_revision,joined_at,expires_at,match_key,room_code,status,content_locale FROM mafia_ranked_queue WHERE user_id=? AND (status='assigned' OR expires_at>?)",actor.userId,now);
   const current=season||await first(env,'SELECT * FROM mafia_ranked_seasons ORDER BY starts_at DESC LIMIT 1');
   const effectivePolicy=current?await resolveMafiaSeasonRatingPolicy(env,current):null;
   const rating=current&&await first(env,'SELECT rating,games,wins,forfeits,cooldown_until AS cooldownUntil FROM mafia_ranked_ratings WHERE user_id=? AND season_id=?',actor.userId,current.id);
@@ -50,22 +51,24 @@ async function ownState(env,actor,now=Date.now()){
   const state={available:true,experimental:true,calibrated:false,canManageSeasons:isModerator(env,actor.userId),season:current?{id:current.id,status:current.status,endsAt:current.ends_at,rulesetVersion:1,ratingModel:effectivePolicy.model,rewardPolicyVersion:1}:null,
     eligibility:await eligibility(env,actor.userId,season,now),rating:{...r,provisional:r.games<10,placementRemaining:Math.max(0,10-r.games),band:rankedBand(r.rating,r.games)},
     matchmaking:rankedMatchingStatus(held?.joined_at,now),
-    queue:held?{status:held.status,revision:held.queue_revision,seatId:held.status==='assigned'?held.match_seat_id:held.seat_id,clientSeatId:held.seat_id,joinedAt:held.joined_at,expiresAt:held.expires_at,code:held.room_code||null}:null,
+    queue:held?{contentLocale:held.content_locale||'ar',status:held.status,revision:held.queue_revision,seatId:held.status==='assigned'?held.match_seat_id:held.seat_id,clientSeatId:held.seat_id,joinedAt:held.joined_at,expiresAt:held.expires_at,code:held.room_code||null}:null,
     waiting:season?(await first(env,"SELECT COUNT(*) AS n FROM mafia_ranked_queue WHERE season_id=? AND status='queued' AND expires_at>?",season.id,now)).n:0};
   await requireActor(env,actor,Date.now());return state;
 }
 async function enqueue(env,actor,body,now){
   const season=await openSeason(env,now);if(!season)fail('MAFIA_RANKED_CLOSED',409);
   const allowed=await eligibility(env,actor.userId,season,now);if(!allowed.eligible)fail(allowed.cooldownUntil>now?'MAFIA_RANKED_COOLDOWN':'MAFIA_RANKED_ELIGIBILITY',409);
+  const identity=requireContentCapability(body.capabilities,body);
   const input=await credentials(body),current=await first(env,'SELECT * FROM mafia_ranked_queue WHERE user_id=?',actor.userId);
-  if(current){if(current.seat_id!==input.id||current.token_hash!==input.tokenHash)fail('MAFIA_ACTIVE_ELSEWHERE',409);return;}
+  if(current){if(current.seat_id!==input.id||current.token_hash!==input.tokenHash||(current.content_locale||'ar')!==identity.contentLocale)fail('MAFIA_ACTIVE_ELSEWHERE',409);return;}
+  requireNewContentEnabled(env, identity);
   requireMafiaNewMatches(env);
   if(await first(env,"SELECT 1 FROM social_call_participants WHERE user_id=? AND state='active'",actor.userId))fail('MAFIA_RANKED_CALL_ACTIVE',409);
   const free=`NOT EXISTS(SELECT 1 FROM mafia_seats WHERE user_id=? AND expires_at>?) AND NOT EXISTS(SELECT 1 FROM mafia_observer_memberships WHERE user_id=? AND expires_at>?) AND NOT EXISTS(SELECT 1 FROM mafia_media_leases WHERE user_id=? AND expires_at>?) AND NOT EXISTS(SELECT 1 FROM mafia_match_leases WHERE user_id=? AND expires_at>?) AND NOT EXISTS(SELECT 1 FROM social_call_participants WHERE user_id=? AND state='active')`;
   const stamp=crypto.randomUUID(),lease=queueKey(season.id);
   await env.DB.batch([
     stmt(env,`INSERT INTO mafia_match_leases(user_id,room_key,match_id,expires_at,updated_at) SELECT ?,?,'queue',?,? WHERE ${nowSessionSql} AND ${free} ON CONFLICT(user_id) DO UPDATE SET room_key=excluded.room_key,match_id=excluded.match_id,expires_at=excluded.expires_at,updated_at=excluded.updated_at WHERE mafia_match_leases.expires_at<=?`,actor.userId,lease,now+QUEUE_MS,now,...actorArgs(actor,now),...Array.from({length:4},()=>[actor.userId,now]).flat(),actor.userId,now),
-    stmt(env,`INSERT INTO mafia_ranked_queue(user_id,season_id,seat_id,token_hash,queue_revision,session_id,joined_at,expires_at,status) SELECT ?,?,?,?,?,?,?,?,'queued' WHERE EXISTS(SELECT 1 FROM mafia_match_leases WHERE user_id=? AND room_key=? AND match_id='queue' AND updated_at=?) AND ${nowSessionSql}`,actor.userId,season.id,input.id,input.tokenHash,crypto.randomUUID(),actor.sessionId,now,now+QUEUE_MS,actor.userId,lease,now,...actorArgs(actor,now)),
+    stmt(env,`INSERT INTO mafia_ranked_queue(user_id,season_id,seat_id,token_hash,queue_revision,session_id,joined_at,expires_at,status,content_locale) SELECT ?,?,?,?,?,?,?,?,'queued',? WHERE EXISTS(SELECT 1 FROM mafia_match_leases WHERE user_id=? AND room_key=? AND match_id='queue' AND updated_at=?) AND ${nowSessionSql}`,actor.userId,season.id,input.id,input.tokenHash,crypto.randomUUID(),actor.sessionId,now,now+QUEUE_MS,identity.contentLocale,actor.userId,lease,now,...actorArgs(actor,now)),
     guard(env,stamp,'SELECT COUNT(*)=1 FROM mafia_ranked_queue WHERE user_id=? AND seat_id=? AND token_hash=?',actor.userId,input.id,input.tokenHash),
     stmt(env,'DELETE FROM mafia_ranked_atomic_guard WHERE id=?',stamp),
   ]);
@@ -105,12 +108,12 @@ async function dispatch(env,now){
     // an admission limit, not a measured provider or production capacity claim.
     if(await first(env,"SELECT 1 FROM mafia_ranked_matches WHERE status='playing' LIMIT 1"))return;
     const season=await openSeason(env,now);if(!season)return;
-    const candidates=await all(env,`SELECT q.*,COALESCE(r.rating,1000) AS rating,COALESCE(r.games,0) AS rating_games FROM mafia_ranked_queue q JOIN sessions s ON s.id=q.session_id AND s.user_id=q.user_id JOIN mafia_match_leases l ON l.user_id=q.user_id LEFT JOIN mafia_ranked_ratings r ON r.user_id=q.user_id AND r.season_id=q.season_id WHERE q.status='queued' AND q.season_id=? AND q.expires_at>? AND s.expires_at>? AND (s.revoked_at IS NULL OR s.revoked_at>?) AND ${liveAccountSql('q.user_id')} AND l.room_key=? AND l.match_id='queue' AND l.expires_at>? AND COALESCE(r.cooldown_until,0)<=? AND ${queueAvailableSql('q',now)} ORDER BY q.joined_at,q.user_id LIMIT ${MAFIA_MATCHMAKING_POLICY.candidateLimit}`,season.id,now,now,now,queueKey(season.id),now,now);
+    const candidates=await all(env,`SELECT q.*,COALESCE(r.rating,1000) AS rating,COALESCE(r.games,0) AS rating_games FROM mafia_ranked_queue q JOIN sessions s ON s.id=q.session_id AND s.user_id=q.user_id JOIN mafia_match_leases l ON l.user_id=q.user_id LEFT JOIN mafia_ranked_ratings r ON r.user_id=q.user_id AND r.season_id=q.season_id WHERE q.status='queued' ${englishContentEnabled(env) ? '' : "AND q.content_locale='ar'"} AND q.season_id=? AND q.expires_at>? AND s.expires_at>? AND (s.revoked_at IS NULL OR s.revoked_at>?) AND ${liveAccountSql('q.user_id')} AND l.room_key=? AND l.match_id='queue' AND l.expires_at>? AND COALESCE(r.cooldown_until,0)<=? AND ${queueAvailableSql('q',now)} ORDER BY q.joined_at,q.user_id LIMIT ${MAFIA_MATCHMAKING_POLICY.candidateLimit}`,season.id,now,now,now,queueKey(season.id),now,now);
     const candidateIds=JSON.stringify(candidates.map(row=>row.user_id));
     const blocks=await all(env,'SELECT blocker_id,blocked_id FROM social_blocks WHERE blocker_id IN (SELECT value FROM json_each(?)) AND blocked_id IN (SELECT value FROM json_each(?))',candidateIds,candidateIds);
     const matched=selectRankedGroup(candidates,blocks,now);if(!matched)return;
     const selected=matched.members,at=Date.now();
-    const selectedEvidence=JSON.stringify(selected.map(row=>({userId:row.user_id,seatId:row.seat_id,tokenHash:row.token_hash,revision:row.queue_revision,sessionId:row.session_id,rating:row.rating,games:row.rating_games})));
+    const selectedEvidence=JSON.stringify(selected.map(row=>({userId:row.user_id,seatId:row.seat_id,tokenHash:row.token_hash,revision:row.queue_revision,sessionId:row.session_id,rating:row.rating,games:row.rating_games,contentLocale:row.content_locale||'ar'})));
     // Ratings, blocks, eligibility and every activity/session owner are checked
     // again inside the same transaction that transfers the queue reservations.
     // JSON parameters keep the bounded64candidate query below D1 bind limits.
@@ -121,6 +124,7 @@ async function dispatch(env,now){
       LEFT JOIN mafia_ranked_ratings r ON r.user_id=q.user_id AND r.season_id=q.season_id
       WHERE q.status='queued' AND q.season_id=? AND q.expires_at>${at}
         AND q.seat_id=json_extract(expected.value,'$.seatId') AND q.token_hash=json_extract(expected.value,'$.tokenHash')
+        AND q.content_locale=json_extract(expected.value,'$.contentLocale')
         AND q.queue_revision=json_extract(expected.value,'$.revision') AND q.session_id=json_extract(expected.value,'$.sessionId')
         AND s.expires_at>${at} AND (s.revoked_at IS NULL OR s.revoked_at>${at}) AND ${liveAccountSql('q.user_id')}
         AND l.room_key=? AND l.match_id='queue' AND l.expires_at>${at}
@@ -141,7 +145,7 @@ async function dispatch(env,now){
     ]);
     pending={match_key:matchKey,season_id:season.id,room_code:code,created_at:at};
   }
-  const rows=await all(env,'SELECT user_id,match_seat_id AS seat_id,token_hash,session_id FROM mafia_ranked_queue WHERE match_key=? ORDER BY match_seat_id',pending.match_key);
+  const rows=await all(env,'SELECT user_id,match_seat_id AS seat_id,token_hash,session_id,content_locale FROM mafia_ranked_queue WHERE match_key=? ORDER BY match_seat_id',pending.match_key);
   if(pending.created_at+180000<=now){
     const response=await roomPost(env,pending.room_code,'mafia-ranked-status',{key:pending.match_key});
     if(!response.ok)fail('MAFIA_RANKED_UNAVAILABLE',503);
@@ -150,7 +154,7 @@ async function dispatch(env,now){
     if(state.status==='missing'||state.status==='aborted'){await abortCreating(env,pending);return;}
   }
   if(rows.length!==8){await abortCreating(env,pending);return;}
-  const response=await roomPost(env,pending.room_code,'mafia-ranked-create',{key:pending.match_key,seasonId:pending.season_id,code:pending.room_code,createdAt:pending.created_at,seats:rows});
+  const response=await roomPost(env,pending.room_code,'mafia-ranked-create',{key:pending.match_key,seasonId:pending.season_id,code:pending.room_code,createdAt:pending.created_at,contentLocale:rows[0].content_locale||'ar',seats:rows});
   if(!response.ok){
     const error=await response.json();if(['COLLISION','AUTH','MAFIA_ACTIVE_ELSEWHERE','MAFIA_BLOCKED'].includes(error.error)){await abortCreating(env,pending);return;}fail(error.error||'MAFIA_RANKED_UNAVAILABLE',503);
   }

@@ -1,10 +1,11 @@
+import { tr, getUiLocale } from '../../shared/i18n/core.js';
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { GameArtwork, ClayStage } from '../../shared/brand/art.jsx';
 import { MenuGameIcon } from '../MenuGameIcon.jsx';
 import { prepareVisuals } from '../../shared/fx/readiness.js';
 import { Button } from '../../shared/ui/components.jsx';
 import { cacheStartupImages } from '../../shared/media/startup-cache.js';
-import { startupImageUrls } from '../../shared/media/startup-images.js';
+import { SHELL_ARTWORK_URLS as startupImageUrls } from '../../shared/brand/art.jsx';
 import { pruneStaleMedia } from '../../shared/media/prune.js';
 import { isNativeShell } from '../../shared/account/native.js';
 import { createStorage } from '../../shared/lib/storage.js';
@@ -22,15 +23,13 @@ export function storageKnownUnavailable(now = Date.now()) {
   const at = Number(platformStorage.get(UNAVAILABLE_KEY, 0) || 0);
   return at > 0 && now - at < UNAVAILABLE_TTL;
 }
-import gameIcons from '../../shared/brand/assets/game-icons.webp';
-import avatars from '../../shared/brand/assets/avatars.webp';
 
 export function useVisualReadiness() {
   const [ready, setReady] = useState(false);
   const [progress, setProgress] = useState({ complete: 0, total: 0 });
   useEffect(() => {
     let active = true;
-    prepareVisuals({ images: [gameIcons, avatars],
+    prepareVisuals({ images: startupImageUrls,
       onProgress: (next) => { if (active) setProgress(next); },
     }).then(() => { if (active) setReady(true); });
     return () => { active = false; };
@@ -47,10 +46,10 @@ function LoadingStatus({ progress, label }) {
 }
 
 export function GameLoading({ game, progress }) {
-  return <section className="game-loading" aria-busy="true" aria-label={`تجهيز ${game.name}`}>
+  return <section className="game-loading" aria-busy="true" aria-label={tr("تجهيز {v0}", {v0: game.name})}>
     <ClayStage className="clay-static"><GameArtwork game={game.id} /></ClayStage>
     <h1>{game.name}</h1>
-    <LoadingStatus progress={progress} label="نجهّز ساحة اللعب…" />
+    <LoadingStatus progress={progress} label={tr("نجهّز ساحة اللعب…")} />
   </section>;
 }
 
@@ -180,33 +179,33 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
     finished.current = true;
     onDone();
   };
-  const number = (value) => value.toLocaleString('ar');
+  const number = (value) => value.toLocaleString(getUiLocale());
   const incomplete = Math.max(0, images.total - images.ok);
 
   if (!visible) {
     if (['ready', 'skipped'].includes(phase) || statusHidden) return null;
-    return <aside ref={statusRef} className="startup-background" aria-label="حالة تحميل الصور">
-      <span role="status">{phase === 'error' ? `باقي ${number(incomplete)} صورة` : phase === 'unsaved' ? 'الصور نُزّلت لكن المتصفح لم يحفظها؛ ستُجلب عند الحاجة.' : backgroundPaused ? 'تجهيز الصور متوقف مؤقتًا لإعطاء الأولوية للعب والصوت' : <>نجهّز الصور بالخلفية · <bdi dir="ltr" style={{whiteSpace:'nowrap',unicodeBidi:'isolate-override'}}>{number(images.ok)} / {number(images.total)}</bdi></>}</span>
-      {phase === 'error' && <button type="button" onClick={() => setAttempt((value) => value + 1)}>إعادة المحاولة</button>}
-      <button type="button" className="startup-background-close" aria-label="إخفاء حالة الصور" onClick={() => setStatusHidden(true)}>×</button>
+    return <aside ref={statusRef} className="startup-background" aria-label={tr("حالة تحميل الصور")}>
+      <span role="status">{phase === 'error' ? tr("باقي {v0} صورة", {v0: number(incomplete)}) : phase === 'unsaved' ? tr("الصور نُزّلت لكن المتصفح لم يحفظها؛ ستُجلب عند الحاجة.") : backgroundPaused ? tr("تجهيز الصور متوقف مؤقتًا لإعطاء الأولوية للعب والصوت") : <>{tr("نجهّز الصور بالخلفية · ")}<bdi dir="ltr" style={{whiteSpace:'nowrap',unicodeBidi:'isolate-override'}}>{number(images.ok)} / {number(images.total)}</bdi></>}</span>
+      {phase === 'error' && <button type="button" onClick={() => setAttempt((value) => value + 1)}>{tr("إعادة المحاولة")}</button>}
+      <button type="button" className="startup-background-close" aria-label={tr("إخفاء حالة الصور")} onClick={() => setStatusHidden(true)}>×</button>
     </aside>;
   }
 
-  return <div className="splash" aria-busy={phase === 'loading'} aria-label="تجهيز ميدان" data-reduced-motion={reducedMotion ? 'true' : undefined}>
+  return <div className="splash" aria-busy={phase === 'loading'} aria-label={tr("تجهيز ميدان")} data-reduced-motion={reducedMotion ? 'true' : undefined}>
       <div className="startup-download">
         <MenuGameIcon id="badeeha" className="startup-download-art" />
-        <h1>{phase === 'error' ? 'باقي صور لم يكتمل تحميلها' : phase === 'unsaved' ? 'الصور جاهزة لهذه الجلسة' : ['ready', 'skipped'].includes(phase) ? 'الصور جاهزة، نفتح الساحة…' : 'جارٍ تجهيز ميدان'}</h1>
-        <progress className="startup-download-progress" max={images.total || 1} value={images.ok} aria-label="تحميل صور اللعبة" aria-valuetext={`${number(images.ok)} من ${number(images.total)} صورة`} />
+        <h1>{phase === 'error' ? tr("باقي صور لم يكتمل تحميلها") : phase === 'unsaved' ? tr("الصور جاهزة لهذه الجلسة") : ['ready', 'skipped'].includes(phase) ? tr("الصور جاهزة، نفتح الساحة…") : tr("جارٍ تجهيز ميدان")}</h1>
+        <progress className="startup-download-progress" max={images.total || 1} value={images.ok} aria-label={tr("تحميل صور اللعبة")} aria-valuetext={tr("{v0} من {v1} صورة", {v0: number(images.ok), v1: number(images.total)})} />
         <p className="startup-download-note" role="status" aria-live="polite">
           {phase === 'error'
-            ? `تعذّر تجهيز ${number(incomplete)} صورة. تحقّق من الاتصال وأعد المحاولة؛ الصور المكتملة محفوظة إذا كانت مساحة الجهاز تسمح.`
+            ? tr("تعذّر تجهيز {v0} صورة. تحقّق من الاتصال وأعد المحاولة؛ الصور المكتملة محفوظة إذا كانت مساحة الجهاز تسمح.", {v0: number(incomplete)})
             : phase === 'unsaved'
-              ? 'المتصفح لا يسمح بحفظ الصور على هذا الجهاز (تصفّح خاص أو مساحة ممتلئة)، فستُجلب من الإنترنت عند الحاجة.'
-              : `${number(images.ok)} من ${number(images.total)} صورة · تكتمل الصور عند العودة للقوائم`}
+              ? tr("المتصفح لا يسمح بحفظ الصور على هذا الجهاز (تصفّح خاص أو مساحة ممتلئة)، فستُجلب من الإنترنت عند الحاجة.")
+              : tr("{v0} من {v1} صورة · تكتمل الصور عند العودة للقوائم", {v0: number(images.ok), v1: number(images.total)})}
         </p>
         <div className="startup-download-actions">
-          {phase === 'error' && <Button variant="primary" full onClick={() => setAttempt((value) => value + 1)}>إعادة المحاولة</Button>}
-          <Button variant="ghost" full disabled={!ready} onClick={enterWithAvailableImages}>الدخول بالمحتوى المتاح</Button>
+          {phase === 'error' && <Button variant="primary" full onClick={() => setAttempt((value) => value + 1)}>{tr("إعادة المحاولة")}</Button>}
+          <Button variant="ghost" full disabled={!ready} onClick={enterWithAvailableImages}>{tr("الدخول بالمحتوى المتاح")}</Button>
         </div>
       </div>
   </div>;

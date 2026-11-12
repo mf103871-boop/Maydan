@@ -1,3 +1,4 @@
+import { tr } from '../../shared/i18n/core.js';
 import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Button, IconButton, Screen, TopBar } from '../../shared/ui/components.jsx';
 import { IconBack } from '../../shared/ui/icons.jsx';
@@ -103,20 +104,20 @@ function Entry({ id, account, policy, unusedGuestTrial }) {
       }
     }
   };
-  return <Screen data-design-screen="game.entry" data-maydan-game-entry={id} dir={getDirection()} className="stack game-entry-screen" aria-label={`دخول ${game?.name || 'اللعبة'}`}>
+  return <Screen data-design-screen="game.entry" data-maydan-game-entry={id} dir={getDirection()} className="stack game-entry-screen" aria-label={tr("دخول {v0}", {v0: game?.name || tr("اللعبة")})}>
     <style>{homeStyles}</style>
-    <TopBar title={game?.name || 'اللعبة غير متاحة'} start={<IconButton label="رجوع" onClick={back} disabled={busy}><IconBack /></IconButton>} />
-    {!game || !offer ? <p role="status">هذه اللعبة غير متاحة.</p> : <>
-      {recovery && <section className="game-entry-recovery" aria-label="متابعة المباراة المحلية">
-        <strong>{recovery.kind === 'active' ? 'مباراتك المحفوظة جاهزة للمتابعة' : 'لديك بداية مباراة قيد الاستعادة'}</strong>
-        <p>{recovery.kind === 'active' ? 'تابع نفس المباراة من دون تذكرة جديدة، حتى دون اتصال.' : 'ارجع إلى نفس إعداد المباراة للتحقّق من بدايتها، دون طلب إعلان جديد.'}</p>
-        <Button variant="ghost" disabled={busy} onClick={() => navigate(recovery.path)}>متابعة المباراة المحلية</Button>
+    <TopBar title={game?.name || tr("اللعبة غير متاحة")} start={<IconButton label={tr("رجوع")} onClick={back} disabled={busy}><IconBack /></IconButton>} />
+    {!game || !offer ? <p role="status">{tr("هذه اللعبة غير متاحة.")}</p> : <>
+      {recovery && <section className="game-entry-recovery" aria-label={tr("متابعة المباراة المحلية")}>
+        <strong>{recovery.kind === 'active' ? tr("مباراتك المحفوظة جاهزة للمتابعة") : tr("لديك بداية مباراة قيد الاستعادة")}</strong>
+        <p>{recovery.kind === 'active' ? tr("تابع نفس المباراة من دون تذكرة جديدة، حتى دون اتصال.") : tr("ارجع إلى نفس إعداد المباراة للتحقّق من بدايتها، دون طلب إعلان جديد.")}</p>
+        <Button variant="ghost" disabled={busy} onClick={() => navigate(recovery.path)}>{tr("متابعة المباراة المحلية")}</Button>
       </section>}
-      {policy === 'pending' || !account.ready || account.signedIn && !account.user?.id ? <p role="status">جارٍ التحقق من أهلية المباراة…</p> :
+      {policy === 'pending' || !account.ready || account.signedIn && !account.user?.id ? <p role="status">{tr("جارٍ التحقق من أهلية المباراة…")}</p> :
         <RewardedOffer key={`${generation}:${desiredMode || 'entry'}`} offer={offer.id} surface="game-entry" requiredMode={desiredMode} onAccess={onAccess} onBusy={onBusy}
           onReady={() => { if (maySelect && !busy && visible()) setSelecting(true); }}
           onFree={() => navigate('/')} canPresent={() => !picker} />}
-      {getGameModeSupport(id)?.online && <Button variant="ghost" disabled={busy} onClick={() => navigate(`/online/${id}?mode=online&joinOnly=1`)}>انضم إلى غرفة</Button>}
+      {getGameModeSupport(id)?.online && <Button variant="ghost" disabled={busy} onClick={() => navigate(`/online/${id}?mode=online&joinOnly=1`)}>{tr("انضم إلى غرفة")}</Button>}
       <GameModeSheet game={picker ? game : null} disabled={busy} onClose={() => navigate('/')} onSelect={select} />
     </>}
   </Screen>;

@@ -1,0 +1,531 @@
+{
+  "id": "worldcup",
+  "name": "World Cup",
+  "icon": "🏆",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Which team won the first World Cup in 1930?",
+      "a": "Uruguay",
+      "qid": "worldcup-200-911",
+      "topic": "Champions",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.fifa.com/es/articles/cuantas-veces-gano-la-seleccion-de-uruguay-la-copa-mundial-de-la-fifa",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Who scored Spain's only goal in the 2010 World Cup final?",
+      "a": "Andrés Iniesta",
+      "qid": "worldcup-200-912",
+      "topic": "Final heroes",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://inside.fifa.com/es/tournaments/mens/worldcup/2010south-africa/news/donde-estabas-cuando-el-gol-de-iniesta",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Andres Iniesta"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Which stadium hosted the 2022 World Cup final?",
+      "a": "Lusail Stadium",
+      "qid": "worldcup-200-913",
+      "topic": "Hosts and venues",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/argentina-france-2022-final-greatest-games",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Lusail"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Who coached Germany to the 2014 World Cup title?",
+      "a": "Joachim Löw",
+      "qid": "worldcup-200-914",
+      "topic": "Coaches",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.fifa.com/de/tournaments/mens/worldcup/articles/wm-titel-deutschland-ueberblick-ergebnisse-torschuetzen-kader",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Joachim Low",
+        "Joachim Loew"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Who scored France's two headers in the 1998 World Cup final?",
+      "a": "Zinedine Zidane",
+      "qid": "worldcup-200-915",
+      "topic": "Final heroes",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.fifa.com/pt/articles/historia-brasil-finais-copa-mundo-fifa",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Zidane"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Which German goalkeeper won the Golden Glove at the 2014 World Cup?",
+      "a": "Manuel Neuer",
+      "qid": "worldcup-200-916",
+      "topic": "Goalkeepers",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://inside.fifa.com/de/tournaments/mens/worldcup/2014brazil/news/multimedia-als-deutschland-im-maracana-den-vierten-stern-holte-2663720",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Who scored Saudi Arabia's winning goal against Argentina at the 2022 World Cup?",
+      "a": "Salem Al-Dawsari",
+      "qid": "worldcup-200-917",
+      "topic": "Arab teams",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.fifa.com/en/articles/world-cup-qatar-2022-argentina-v-saudi-arabia-match-report-review-first-game-group-e-result",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Salem Aldawsari"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Which Croatia captain won the Golden Ball at the 2018 World Cup?",
+      "a": "Luka Modrić",
+      "qid": "worldcup-200-918",
+      "topic": "Awards",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://inside.fifa.com/tournaments/mens/worldcup/2018russia/news/157-awards-piece-2986294",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Luka Modric"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Who scored both Brazilian goals against Germany in the 2002 World Cup final?",
+      "a": "Ronaldo",
+      "qid": "worldcup-400-911",
+      "topic": "Final heroes",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.fifa.com/pt/news/articles/copa-2002-brasil-campeao-penta",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Ronaldo Nazário"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Which Colombian won the Golden Boot at the 2014 World Cup?",
+      "a": "James Rodríguez",
+      "qid": "worldcup-400-912",
+      "topic": "Awards",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/highest-scoring-south-americans-history",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "James Rodriguez"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Which Brazilian stadium hosted the 2014 World Cup final?",
+      "a": "Maracanã",
+      "qid": "worldcup-400-913",
+      "topic": "Hosts and venues",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://inside.fifa.com/news/world-cup-winner-schurrle-hangs-up-his-boots",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Maracana"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Who won the Golden Ball as best player at the 2010 World Cup?",
+      "a": "Diego Forlán",
+      "qid": "worldcup-400-914",
+      "topic": "Awards",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.plus.fifa.com/en/showcase/awarded-players-2010-fifa-world-cup/786b5d53-7160-4e6a-bea2-56586aca597f",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Diego Forlan"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Who coached France to victory at the 2018 World Cup?",
+      "a": "Didier Deschamps",
+      "qid": "worldcup-400-915",
+      "topic": "Coaches",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://inside.fifa.com/media-releases/luka-modric-and-marta-crowned-at-the-best-fifa-football-awardstm-2018",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Who crossed the ball for Götze's winning goal in the 2014 final?",
+      "a": "André Schürrle",
+      "qid": "worldcup-400-916",
+      "topic": "Final heroes",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://inside.fifa.com/news/world-cup-winner-schurrle-hangs-up-his-boots",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Andre Schurrle"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Which Saudi player dribbled through Belgium's defense for a famous solo goal in 1994?",
+      "a": "Saeed Al-Owairan",
+      "qid": "worldcup-400-917",
+      "topic": "Arab teams",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.fifa.com/en/articles/100-great-world-cup-moments-69-al-owairan-saudi-arabia-usa-94",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which Belgian goalkeeper won the Golden Glove at the 2018 World Cup?",
+      "a": "Thibaut Courtois",
+      "qid": "worldcup-400-918",
+      "topic": "Goalkeepers",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://inside.fifa.com/tournaments/mens/worldcup/2018russia/news/157-awards-piece-2986294",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which French striker scored 13 goals at the 1958 World Cup?",
+      "a": "Just Fontaine",
+      "qid": "worldcup-600-911",
+      "topic": "Stars",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.fifa.com/en/articles/just-fontaine-13-goal-fifa-world-cup-record-sweden-1958-france",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which stadium hosted the first World Cup final in 1930?",
+      "a": "Estadio Centenario",
+      "qid": "worldcup-600-912",
+      "topic": "Hosts and venues",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/uruguay-players-results-goalscorers",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Centenario"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Who scored Algeria's first-ever World Cup goal, against West Germany in 1982?",
+      "a": "Rabah Madjer",
+      "qid": "worldcup-600-913",
+      "topic": "Arab teams",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.fifa.com/en/articles/every-country-nation-first-goalscorer",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Who scored Germany's winning goal in the 1954 final, known as the Miracle of Bern?",
+      "a": "Helmut Rahn",
+      "qid": "worldcup-600-914",
+      "topic": "Memorable moments",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.fifa.com/en/articles/world-cup-finals-that-made-history",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which Argentine striker topped the 1930 World Cup scoring chart with eight goals?",
+      "a": "Guillermo Stábile",
+      "qid": "worldcup-600-915",
+      "topic": "Awards",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.fifa.com/ar/tournaments/mens/worldcup/articles/just-fontaine-france-goals-one-edition-record-1958-ar",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Guillermo Stabile"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Who captained the winners and lifted the first World Cup in 1930?",
+      "a": "José Nasazzi",
+      "qid": "worldcup-600-916",
+      "topic": "Stars",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/uruguay-players-results-goalscorers",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Jose Nasazzi"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Which Moroccan scored twice against Portugal at the 1986 World Cup?",
+      "a": "Abderrazak Khairi",
+      "qid": "worldcup-600-917",
+      "topic": "Arab teams",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.fifa.com/en/articles/article-greater-than-fwc-2022-greater-than-morocco-v-croatia-archive-follow",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Abdelrazak Khairi"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Who coached Argentina to the 1986 World Cup title?",
+      "a": "Carlos Bilardo",
+      "qid": "worldcup-600-918",
+      "topic": "Coaches",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/argentina-england-1986-diego-maradona",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which goalkeeper won the Golden Ball at the 2002 World Cup?",
+      "a": "Oliver Kahn",
+      "qid": "worldcup-800-911",
+      "topic": "Goalkeepers",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.fifa.com/fr/articles/lionel-messi-ballon-d-or-meilleur-joueur-coupe-du-monde-2022",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which Englishman scored the first hat-trick in a World Cup final, in 1966?",
+      "a": "Geoff Hurst",
+      "qid": "worldcup-800-912",
+      "topic": "Final heroes",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.fifa.com/en/articles/world-cup-finals-that-made-history",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Whose goal decided the 1950 title match against Brazil?",
+      "a": "Alcides Ghiggia",
+      "qid": "worldcup-800-913",
+      "topic": "Memorable moments",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.fifa.com/es/articles/cuantas-veces-gano-la-seleccion-de-uruguay-la-copa-mundial-de-la-fifa",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "q": "Which Frenchman scored the first goal in World Cup history against Mexico in 1930?",
+      "a": "Lucien Laurent",
+      "topic": "Memorable moments",
+      "verified": true,
+      "sourceUrl": "https://inside.fifa.com/tournaments/mens/worldcup/1930uruguay/news/lucien-laurent-the-first-world-cup-goalscorer",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "worldcup-800-914",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Who scored for Turkey against South Korea after about 11 seconds at the 2002 World Cup?",
+      "a": "Hakan Şükür",
+      "topic": "Records",
+      "verified": true,
+      "sourceUrl": "https://www.fifa.com/en/articles/quickest-fastest-goals",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Hakan Sukur"
+      ],
+      "p": 800,
+      "qid": "worldcup-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Who coached Italy to the 1934 and 1938 World Cup titles?",
+      "a": "Vittorio Pozzo",
+      "topic": "Coaches",
+      "verified": true,
+      "sourceUrl": "https://inside.fifa.com/tournaments/mens/worldcup/1934italy/news/pozzo-prepares-azzurri-push-2769391",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "worldcup-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which Cameroonian scored at the 1994 World Cup aged 42?",
+      "a": "Roger Milla",
+      "topic": "Records",
+      "verified": true,
+      "sourceUrl": "https://inside.fifa.com/tournaments/mens/worldcup/1990italy/news/roger-milla-my-record-will-be-very-difficult-to-beat",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "worldcup-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which Russian scored five goals in one game against Cameroon at the 1994 World Cup?",
+      "a": "Oleg Salenko",
+      "topic": "Stars",
+      "verified": true,
+      "sourceUrl": "https://inside.fifa.com/es/tournaments/mens/worldcup/1994usa/news/salenko-el-apellido-del-gol-2877511",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "worldcup-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Who reached the 1930 final with Argentina and the 1934 final with Italy?",
+      "a": "Luis Monti",
+      "topic": "Final heroes",
+      "verified": true,
+      "sourceUrl": "https://inside.fifa.com/es/tournaments/mens/worldcup/1934italy/news/la-singular-historia-de-luis-monti-y-sus-dos-finales",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "worldcup-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Northern Ireland player appeared at the 1982 World Cup aged 17 years and 41 days?",
+      "a": "Norman Whiteside",
+      "topic": "Stars",
+      "verified": true,
+      "sourceUrl": "https://inside.fifa.com/tournaments/mens/worldcup/2018russia/news/whiteside-makes-history-2951643",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "worldcup-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Polish player scored four times in a 6–5 defeat to Brazil at the 1938 World Cup?",
+      "a": "Ernst Wilimowski",
+      "topic": "Memorable moments",
+      "verified": true,
+      "sourceUrl": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/every-hat-trick-history",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Ernest Wilimowski"
+      ],
+      "p": 1000,
+      "qid": "worldcup-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Brazilian topped the 1938 World Cup scoring chart with seven goals?",
+      "a": "Leônidas da Silva",
+      "topic": "Awards",
+      "verified": true,
+      "sourceUrl": "https://inside.fifa.com/news/medals-lost-found-given-and-returned-2792789",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Leonidas da Silva",
+        "Leonidas"
+      ],
+      "p": 1000,
+      "qid": "worldcup-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Portugal goalkeeper saved three penalties against England in the 2006 quarter-final shootout?",
+      "a": "Ricardo",
+      "topic": "Goalkeepers",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/european-qualifiers/news/0254-0d7b9ad6a5b3-a8f7adb30905-1000--portugal-prevail-as-rooney-sees-red/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Ricardo Pereira"
+      ],
+      "p": 1000,
+      "qid": "worldcup-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Argentina goalkeeper excelled in the 1990 shootouts against Yugoslavia and Italy?",
+      "a": "Sergio Goycochea",
+      "topic": "Goalkeepers",
+      "verified": true,
+      "sourceUrl": "https://inside.fifa.com/news/1990-world-cup-a-magical-night-in-rome-2402993",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "worldcup-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Swedish stadium hosted the 1958 World Cup final?",
+      "a": "Råsunda",
+      "topic": "Hosts and venues",
+      "verified": true,
+      "sourceUrl": "https://www.plus.fifa.com/en/content/bresil-suede-coupe-du-monde-de-la-fifa-suede-1958-matches-classiques/8ea9a023-998e-4afe-826a-35ecb47d5c81",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Rasunda"
+      ],
+      "p": 1000,
+      "qid": "worldcup-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Hungarian striker scored 11 goals at the 1954 World Cup?",
+      "a": "Sándor Kocsis",
+      "topic": "Awards",
+      "verified": true,
+      "sourceUrl": "https://inside.fifa.com/tournaments/mens/worldcup/1954switzerland/news/the-beginning-of-the-magyars-magic",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Sandor Kocsis"
+      ],
+      "p": 1000,
+      "qid": "worldcup-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

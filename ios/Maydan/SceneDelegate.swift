@@ -23,9 +23,9 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         curtain.isOpaque = true
         curtain.isAccessibilityElement = true
         curtain.accessibilityViewIsModal = true
-        curtain.accessibilityLabel = "ميدان"
+        curtain.accessibilityLabel = NativeLocalization.text("ميدان")
         let label = UILabel()
-        label.text = "ميدان"
+        label.text = NativeLocalization.text("ميدان")
         label.textColor = UIColor(red: 48/255, green: 34/255, blue: 68/255, alpha: 1)
         label.font = .boldSystemFont(ofSize: 36)
         label.translatesAutoresizingMaskIntoConstraints = false

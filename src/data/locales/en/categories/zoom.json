@@ -1,0 +1,1140 @@
+{
+  "id": "zoom",
+  "name": "Close-Up",
+  "icon": "🔍",
+  "defaultType": "image",
+  "qs": [
+    {
+      "p": 200,
+      "q": "What object is shown in this close-up?",
+      "a": "Banana",
+      "qid": "zoom-200-901",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 60%",
+      "alt": [],
+      "topic": "Fruit and vegetables",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-200-901.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What object is shown in this close-up?",
+      "a": "Scissors",
+      "qid": "zoom-200-902",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 45%",
+      "alt": [],
+      "topic": "Household tools",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-200-902.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What object is shown in this close-up?",
+      "a": "Toothbrush",
+      "qid": "zoom-200-903",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "20% 60%",
+      "alt": [],
+      "topic": "Personal items",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-200-903.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What object is shown in this close-up?",
+      "a": "Keyboard",
+      "qid": "zoom-200-904",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 45%",
+      "alt": [
+        "Computer keyboard"
+      ],
+      "topic": "Devices and technology",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-200-904.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What object is shown in this close-up?",
+      "a": "Football",
+      "qid": "zoom-200-905",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 50%",
+      "alt": [
+        "Soccer ball"
+      ],
+      "topic": "Sports",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-200-905.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What object is shown in this close-up?",
+      "a": "Guitar",
+      "qid": "zoom-200-906",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "40% 50%",
+      "alt": [
+        "Acoustic guitar"
+      ],
+      "topic": "Music",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-200-906.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What object is shown in this close-up?",
+      "a": "Bicycle",
+      "qid": "zoom-200-907",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "45% 66%",
+      "alt": [
+        "Bike"
+      ],
+      "topic": "Transport",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-200-907.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What object is shown in this close-up?",
+      "a": "Sunflower",
+      "qid": "zoom-200-908",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 50%",
+      "alt": [],
+      "topic": "Nature",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-200-908.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What object is shown in this close-up?",
+      "a": "Orange",
+      "qid": "zoom-400-901",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "65% 50%",
+      "alt": [],
+      "topic": "Fruit and vegetables",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-400-901.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What object is shown in this close-up?",
+      "a": "Can opener",
+      "qid": "zoom-400-902",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "25% 65%",
+      "alt": [
+        "Tin opener"
+      ],
+      "topic": "Household tools",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-400-902.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What object is shown in this close-up?",
+      "a": "Pine cone",
+      "qid": "zoom-400-908",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 50%",
+      "alt": [
+        "Pinecone"
+      ],
+      "topic": "Nature",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-400-908.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What object is shown in this close-up?",
+      "a": "Clothespin",
+      "qid": "zoom-400-921",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 50%",
+      "alt": [
+        "Clothes peg"
+      ],
+      "topic": "Personal items",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-400-903.webp",
+        "type": "image",
+        "title": "Illustrated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-400-903.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What object is shown in this close-up?",
+      "a": "Computer mouse",
+      "qid": "zoom-400-922",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 50%",
+      "alt": [
+        "Mouse"
+      ],
+      "topic": "Devices and technology",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-400-904.webp",
+        "type": "image",
+        "title": "Illustrated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-400-904.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What object is shown in this close-up?",
+      "a": "Table tennis paddle",
+      "qid": "zoom-400-923",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "47% 67%",
+      "alt": [
+        "Ping-pong paddle",
+        "Table tennis bat"
+      ],
+      "topic": "Sports",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-400-905.webp",
+        "type": "image",
+        "title": "Illustrated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-400-905.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What object is shown in this close-up?",
+      "a": "Drum",
+      "qid": "zoom-400-924",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "55% 35%",
+      "alt": [],
+      "topic": "Music",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-400-906.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What object is shown in this close-up?",
+      "a": "Seat belt",
+      "qid": "zoom-400-925",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 50%",
+      "alt": [
+        "Seatbelt"
+      ],
+      "topic": "Transport",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-400-907.webp",
+        "type": "image",
+        "title": "Illustrated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-400-907.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What object is shown in this close-up?",
+      "a": "Feather",
+      "qid": "zoom-600-908",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "55% 50%",
+      "alt": [
+        "Bird feather"
+      ],
+      "topic": "Nature",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-600-908.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What object is shown in this close-up?",
+      "a": "Garlic press",
+      "qid": "zoom-600-921",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "28% 60%",
+      "alt": [
+        "Garlic crusher"
+      ],
+      "topic": "Household tools",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-1000-902.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What object is shown in this close-up?",
+      "a": "Fig",
+      "qid": "zoom-600-922",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "62% 59%",
+      "alt": [],
+      "topic": "Fruit and vegetables",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-600-901.webp",
+        "type": "image",
+        "title": "Illustrated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-600-901.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What object is shown in this close-up?",
+      "a": "Whisk",
+      "qid": "zoom-600-923",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "8% 65%",
+      "alt": [
+        "Hand whisk"
+      ],
+      "topic": "Household tools",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-600-902.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What object is shown in this close-up?",
+      "a": "USB-C connector",
+      "qid": "zoom-600-924",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 51%",
+      "alt": [
+        "USB C"
+      ],
+      "topic": "Devices and technology",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-usbc-reference.webp",
+        "type": "image",
+        "title": "USB-C.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:USB-C.jpg",
+        "author": "Wikideas1",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Resized and converted to WebP; photographic content unchanged"
+      }
+    },
+    {
+      "p": 600,
+      "q": "What object is shown in this close-up?",
+      "a": "Bicycle helmet",
+      "qid": "zoom-600-925",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 50%",
+      "alt": [
+        "Bike helmet"
+      ],
+      "topic": "Sports",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-600-905.webp",
+        "type": "image",
+        "title": "Illustrated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-600-905.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What object is shown in this close-up?",
+      "a": "Harmonica",
+      "qid": "zoom-600-926",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 52%",
+      "alt": [
+        "Mouth organ"
+      ],
+      "topic": "Music",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-600-906.webp",
+        "type": "image",
+        "title": "Illustrated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-600-906.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What object is shown in this close-up?",
+      "a": "Bicycle gear",
+      "qid": "zoom-600-927",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "48% 42%",
+      "alt": [
+        "Bike sprocket",
+        "Bicycle sprocket"
+      ],
+      "topic": "Transport",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-600-907.webp",
+        "type": "image",
+        "title": "Illustrated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-600-907.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What object is shown in this close-up?",
+      "a": "Accordion",
+      "qid": "zoom-800-906",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 50%",
+      "topic": "Music",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-800-906.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      },
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "What object is shown in this close-up?",
+      "a": "Microchip",
+      "qid": "zoom-800-921",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "25% 50%",
+      "alt": [
+        "Integrated circuit",
+        "Computer chip"
+      ],
+      "topic": "Devices and technology",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-1000-904.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What object is shown in this close-up?",
+      "a": "Fern",
+      "qid": "zoom-800-922",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "48% 45%",
+      "alt": [],
+      "topic": "Nature",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-1000-908.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What object is shown in this close-up?",
+      "a": "Okra",
+      "qid": "zoom-800-923",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 50%",
+      "alt": [
+        "Lady's finger"
+      ],
+      "topic": "Fruit and vegetables",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-800-901.webp",
+        "type": "image",
+        "title": "Illustrated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-800-901.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What object is shown in this close-up?",
+      "a": "Corkscrew",
+      "qid": "zoom-800-924",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "48% 47%",
+      "alt": [],
+      "topic": "Household tools",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-800-902.webp",
+        "type": "image",
+        "title": "Illustrated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-800-902.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What object is shown in this close-up?",
+      "a": "Nail clippers",
+      "qid": "zoom-800-925",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "42% 52%",
+      "alt": [
+        "Nail clipper"
+      ],
+      "topic": "Personal items",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-800-903.webp",
+        "type": "image",
+        "title": "Illustrated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-800-903.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What object is shown in this close-up?",
+      "a": "Fencing mask",
+      "qid": "zoom-800-926",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "63% 53%",
+      "alt": [],
+      "topic": "Sports",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-800-905.webp",
+        "type": "image",
+        "title": "Illustrated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-800-905.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What object is shown in this close-up?",
+      "a": "Railway track",
+      "qid": "zoom-800-927",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "48% 50%",
+      "alt": [
+        "Railroad track",
+        "Rail"
+      ],
+      "topic": "Transport",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-800-907.webp",
+        "type": "image",
+        "title": "Illustrated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-800-907.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What object is shown in this close-up?",
+      "a": "Artichoke",
+      "qid": "zoom-1000-901",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 50%",
+      "alt": [],
+      "topic": "Fruit and vegetables",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-1000-901.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What object is shown in this close-up?",
+      "a": "Cricket ball",
+      "qid": "zoom-1000-905",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 50%",
+      "alt": [],
+      "topic": "Sports",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-1000-905.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What object is shown in this close-up?",
+      "a": "Clarinet",
+      "qid": "zoom-1000-906",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 50%",
+      "alt": [],
+      "topic": "Music",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-1000-906.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What object is shown in this close-up?",
+      "a": "Thimble",
+      "qid": "zoom-1000-921",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "65% 78%",
+      "alt": [],
+      "topic": "Personal items",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-1000-903.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What object is shown in this close-up?",
+      "a": "Tire valve",
+      "qid": "zoom-1000-922",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 10%",
+      "alt": [
+        "Tyre valve"
+      ],
+      "topic": "Transport",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "zoom-1000-907.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What object is shown in this close-up?",
+      "a": "Thread bobbin",
+      "qid": "zoom-1000-923",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 38%",
+      "alt": [
+        "Spool of thread",
+        "Sewing bobbin"
+      ],
+      "topic": "Personal items",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-600-903.webp",
+        "type": "image",
+        "title": "Illustrated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-600-903.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What object is shown in this close-up?",
+      "a": "Camera lens",
+      "qid": "zoom-1000-924",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 50%",
+      "alt": [
+        "Photographic lens"
+      ],
+      "topic": "Devices and technology",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-800-904.webp",
+        "type": "image",
+        "title": "Illustrated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-800-904.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What object is shown in this close-up?",
+      "a": "Seashell",
+      "qid": "zoom-1000-925",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "53% 53%",
+      "alt": [
+        "Shell"
+      ],
+      "topic": "Nature",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-800-908.webp",
+        "type": "image",
+        "title": "Illustrated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/zoom-800-908.json"
+        }
+      }
+    }
+  ]
+}

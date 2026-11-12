@@ -18,6 +18,17 @@ struct AppUpdatePolicyTests {
     }
     static func main() {
         expect(required(policy()), "same marketing version, older build requires update")
+        let translated = AppUpdatePolicy.required(data: policy(["messageEn": "Please update Maydan."]), installedVersion: "1.7", installedBuild: "11")
+        expect(translated?.messageEn == "Please update Maydan.", "valid optional English copy is retained")
+        let invalidTranslations: [Any] = [17, true, ["unexpected"], ["unexpected": "object"], NSNull()]
+        for value in invalidTranslations {
+            let retained = AppUpdatePolicy.required(data: policy(["messageEn": value]), installedVersion: "1.7", installedBuild: "11")
+            expect(retained != nil, "invalid optional translation cannot bypass the required update")
+            expect(retained?.messageEn == nil, "invalid optional translation is ignored independently")
+        }
+        if case .allowed = AppUpdatePolicy.decision(data: policy(["enabled": false, "messageEn": 17]), installedVersion: "1.7", installedBuild: "11") {
+            expect(true, "invalid optional translation cannot turn explicit disable into an unavailable policy")
+        } else { expect(false, "disabled policy must survive malformed translation") }
         expect(!required(policy(), "1.7", "12"), "installed required build is allowed")
         expect(!required(policy(), "1.7.0", "13"), "equivalent version with newer build is allowed")
         expect(required(policy(), "1.6", "99"), "older marketing version still requires update")

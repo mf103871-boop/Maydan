@@ -1,3 +1,4 @@
+import { tr } from '../i18n/core.js';
 import { Avatar, TrophyArtwork, ClayStage } from '../brand/art.jsx';
 import { ProfileAvatar } from '../../profiles/ProfileAvatar.jsx';
 import { PlayerName } from '../../profiles/PlayerIdentity.jsx';
@@ -132,7 +133,7 @@ export function ModalCloseButton({ onClick, ...props }) {
   return <Button {...props} onClick={(e) => { if (requestClose) requestClose(); else if (onClick) onClick(e); }} />;
 }
 
-export function Modal({ title, onClose, children, footer = null, closeLabel = 'إغلاق', className = '', placement = 'center', ...designProps }) {
+export function Modal({ title, onClose, children, footer = null, closeLabel = tr("إغلاق"), className = '', placement = 'center', ...designProps }) {
   const ref = useRef(null);
   const [host, anchor, syncVars] = useDialogHost();
   // الإغلاق يمرّ بحالة is-closing (خروج قصير) ثم يستدعي onClose؛ صفر مهلة تحت تقليل الحركة.
@@ -157,7 +158,7 @@ export function Modal({ title, onClose, children, footer = null, closeLabel = '�
   return <><span ref={anchor} hidden aria-hidden="true" />{host ? createPortal(provided, host) : provided}</>;
 }
 
-export function ConfirmModal({ title, message, confirmLabel = 'نعم', cancelLabel = 'لا', danger = false, onConfirm, onCancel, confirmSound, placement = 'center', className = '' }) {
+export function ConfirmModal({ title, message, confirmLabel = tr("نعم"), cancelLabel = 'لا', danger = false, onConfirm, onCancel, confirmSound, placement = 'center', className = '' }) {
   const docked = placement === 'bottom';
   const confirm = <Button data-design-id="confirm" data-sound={confirmSound} data-design-required="true" variant={docked ? 'ghost' : danger ? 'danger' : 'primary'} size="lg" full onClick={onConfirm}>{confirmLabel}</Button>;
   const cancel = <ModalCloseButton data-design-id="cancel" data-design-required="true" variant={docked ? 'primary' : 'ghost'} full onClick={onCancel}>{cancelLabel}</ModalCloseButton>;
@@ -194,8 +195,8 @@ export function Sheet({ open, onClose, title, children, ...designProps }) {
     <div className="modal-layer is-sheet" role="presentation" onClick={close}>
       <section ref={ref} data-design-screen="system.sheet" className={`sheet ${closing ? 'is-closing' : ''}`} role="dialog" aria-modal="true" aria-label={title} tabIndex={-1} {...designProps}
         onClick={(e) => e.stopPropagation()}>
-        {onClose ? <button type="button" data-design-id="sheet-drag-handle" data-design-required="true" className="sheet-drag-handle" aria-label="إغلاق اللوحة" onClick={event => {if(event.defaultPrevented)return;if(drag.current.dy>5){drag.current.dy=0;return;}close();}} onPointerDown={onStart} onPointerMove={onMove} onPointerUp={onEnd} onPointerCancel={onEnd}><span className="sheet-handle" aria-hidden="true" /></button> : <div className="sheet-handle" aria-hidden="true" />}
-        {title && <div data-design-id="header" className="modal-head"><h2>{title}</h2>{onClose && <IconButton data-design-id="close" data-design-required="true" label="إغلاق" onClick={close}><IconClose /></IconButton>}</div>}
+        {onClose ? <button type="button" data-design-id="sheet-drag-handle" data-design-required="true" className="sheet-drag-handle" aria-label={tr("إغلاق اللوحة")} onClick={event => {if(event.defaultPrevented)return;if(drag.current.dy>5){drag.current.dy=0;return;}close();}} onPointerDown={onStart} onPointerMove={onMove} onPointerUp={onEnd} onPointerCancel={onEnd}><span className="sheet-handle" aria-hidden="true" /></button> : <div className="sheet-handle" aria-hidden="true" />}
+        {title && <div data-design-id="header" className="modal-head"><h2>{title}</h2>{onClose && <IconButton data-design-id="close" data-design-required="true" label={tr("إغلاق")} onClick={close}><IconClose /></IconButton>}</div>}
         <div data-design-id="content" className="modal-body">{children}</div>
       </section>
     </div>
@@ -215,7 +216,7 @@ export class ErrorBoundary extends React.Component {
   }
   static getDerivedStateFromError(error) { return { error }; }
   componentDidCatch(error, info) {
-    try { console.error('[ميدان] خطأ في التصيير:', error, info && info.componentStack); } catch (e) { /* ignore */ }
+    try { console.error(tr("[ميدان] خطأ في التصيير:"), error, info && info.componentStack); } catch (e) { /* ignore */ }
   }
   componentDidUpdate(previous) {
     // تغيّر المسار (أو أي مفتاح يمرّره المستدعي) يعيد المحاولة تلقائيًا.
@@ -224,7 +225,7 @@ export class ErrorBoundary extends React.Component {
   reset() { this.setState({ error: null }); }
   render() {
     const { error } = this.state;
-    const { children, fallback, title = 'تعطّلت هذه الشاشة', message = 'حدث خطأ غير متوقع. يمكنك العودة إلى الرئيسية، أو مسح البيانات المحفوظة إن تكرّر الخطأ.', homeLabel = 'العودة إلى الرئيسية', clearLabel = 'مسح البيانات المحفوظة', onHome, onClear } = this.props;
+    const { children, fallback, title = tr("تعطّلت هذه الشاشة"), message = tr("حدث خطأ غير متوقع. يمكنك العودة إلى الرئيسية، أو مسح البيانات المحفوظة إن تكرّر الخطأ."), homeLabel = tr("العودة إلى الرئيسية"), clearLabel = tr("مسح البيانات المحفوظة"), onHome, onClear } = this.props;
     if (!error) return children;
     if (typeof fallback === 'function') return fallback(error, this.reset);
     return (
@@ -341,7 +342,7 @@ export function Podium({ entries, title, unit = '', ...domProps }) {
   const order = top.length === 3 ? [top[1], top[0], top[2]] : top.length === 2 ? [top[1], top[0]] : top;
   const heights = { 0: 92, 1: 66, 2: 48 };
   const winners = sorted.filter((e) => ranking(e) === ranking(sorted[0]));
-  const heading = title || (winners.length > 1 ? 'تعادل جميل!' : `فاز ${sorted[0].name}`);
+  const heading = title || (winners.length > 1 ? tr("تعادل جميل!") : tr("فاز {v0}", {v0: sorted[0].name}));
   // الأسماء والنتائج تظهر فورًا؛ الاحتفال على الرسوم فقط دون إخفاء المعلومة.
   const winnerRef = useRef(null);
   useEffect(() => {
@@ -362,7 +363,7 @@ export function Podium({ entries, title, unit = '', ...domProps }) {
             <div key={e.id} ref={rank === 0 ? winnerRef : null} data-rank={sorted.findIndex((entry) => ranking(entry) === ranking(e)) + 1} className="podium-col" style={{ '--col-color': e.color, '--delay': `${(2 - rank) * 260 + 300}ms`, '--h': `${heights[rank]}px` }}>
               <ClayStage className="avatar-wrap">{e.profile ? <ProfileAvatar user={e.profile} size={64} /> : <Avatar player={e} className="avatar" />}</ClayStage>
               <span className="name"><PlayerName user={e.profile} name={e.name} card={!!e.profile} badge={!!e.profile} compact /></span>
-              <div className="block"><span className="rank" aria-label="الترتيب">{sorted.findIndex((entry) => ranking(entry) === ranking(e)) + 1}</span><span className="count-up">{e.score}{unit}</span></div>
+              <div className="block"><span className="rank" aria-label={tr("الترتيب")}>{sorted.findIndex((entry) => ranking(entry) === ranking(e)) + 1}</span><span className="count-up">{e.score}{unit}</span></div>
             </div>
           );
         })}
@@ -392,7 +393,7 @@ export function Segment({ options, value, onChange, accent = false, label, ...re
     <div className="segment" role="group" aria-label={label} {...rest}>
       {options.map((o) => (
         <button key={String(o.value)} type="button" data-design-id="segment-option" className={`${value === o.value ? 'selected' : ''} ${accent ? 'accent' : ''}`} aria-pressed={value === o.value} onClick={() => onChange(o.value)}>
-          {o.label}
+          {tr(o.label)}
         </button>
       ))}
     </div>

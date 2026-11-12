@@ -1,0 +1,520 @@
+{
+  "id": "dialects",
+  "name": "Arab Dialects",
+  "icon": "🗣️",
+  "qs": [
+    {
+      "qid": "dialects-200-911",
+      "p": 200,
+      "q": "What number does jouj mean in Moroccan Darija?",
+      "a": "Two",
+      "topic": "Time and numbers",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "alt": [
+        "2"
+      ]
+    },
+    {
+      "qid": "dialects-200-912",
+      "p": 200,
+      "q": "What does afak mean in a Moroccan request such as 'give me water, afak'?",
+      "a": "Please",
+      "topic": "Communication",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "alt": []
+    },
+    {
+      "qid": "dialects-200-913",
+      "p": 200,
+      "q": "What does bnina mean when a Moroccan describes a meal?",
+      "a": "Delicious",
+      "topic": "Descriptions",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "alt": [
+        "Tasty"
+      ]
+    },
+    {
+      "qid": "dialects-200-914",
+      "p": 200,
+      "q": "What does wayed mean in the Emirati expression 'wayed tall'?",
+      "a": "Very",
+      "topic": "Descriptions",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://alramsa.ae/wp-content/uploads/2025/09/Emirati-Arabic-Beginner-level-A3-Al-Ramsa-Sample-Book.pdf",
+      "alt": []
+    },
+    {
+      "qid": "dialects-200-915",
+      "p": 200,
+      "q": "After a long explanation, an Emirati asks for 'the butter'. What does the expression request?",
+      "a": "The gist",
+      "topic": "Communication",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://alramsa.ae/wp-content/uploads/2025/09/Emirati-Arabic-Beginner-level-A3-Al-Ramsa-Sample-Book.pdf",
+      "alt": [
+        "A summary",
+        "The main point"
+      ]
+    },
+    {
+      "qid": "dialects-200-916",
+      "p": 200,
+      "q": "What does a Palestinian mean by suggesting a tashsha with friends?",
+      "a": "An outing",
+      "topic": "Actions and activities",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
+      "alt": [
+        "A stroll",
+        "An excursion"
+      ]
+    },
+    {
+      "qid": "dialects-200-917",
+      "p": 200,
+      "q": "What does khout mean when discussing family in Moroccan Darija?",
+      "a": "Siblings",
+      "topic": "Family",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "alt": [
+        "Brothers"
+      ]
+    },
+    {
+      "q": "What house fittings are called shish in Egyptian Arabic?",
+      "a": "Window shutters",
+      "alt": [
+        "Shutters"
+      ],
+      "topic": "Home and tools",
+      "verified": true,
+      "sourceUrl": "https://resources.lingualism.com/egyptian-arabic/the-house/",
+      "p": 200,
+      "qid": "dialects-200-918",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "dialects-400-911",
+      "p": 400,
+      "q": "Which drink is called atay in Moroccan Darija?",
+      "a": "Tea",
+      "topic": "Food and plants",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "alt": []
+    },
+    {
+      "qid": "dialects-400-912",
+      "p": 400,
+      "q": "Which vegetable is called khizo in Moroccan Darija?",
+      "a": "Carrots",
+      "topic": "Food and plants",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "alt": [
+        "Carrot"
+      ]
+    },
+    {
+      "qid": "dialects-400-913",
+      "p": 400,
+      "q": "What does shhal mean in the Moroccan question 'shhal of sisters do you have?'",
+      "a": "How many",
+      "topic": "Communication",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "alt": [
+        "How much"
+      ]
+    },
+    {
+      "qid": "dialects-400-914",
+      "p": 400,
+      "q": "What does ma'ash mean in Emirati workplace vocabulary?",
+      "a": "Salary",
+      "topic": "Money and work",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://alramsa.ae/wp-content/uploads/2025/09/Emirati-Arabic-Beginner-level-A3-Al-Ramsa-Sample-Book.pdf",
+      "alt": [
+        "Pay"
+      ]
+    },
+    {
+      "qid": "dialects-400-915",
+      "p": 400,
+      "q": "What is the tabun used for baking in rural Palestine?",
+      "a": "A clay oven",
+      "topic": "Home and tools",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
+      "alt": [
+        "Earthen oven"
+      ]
+    },
+    {
+      "qid": "dialects-400-916",
+      "p": 400,
+      "q": "A Moroccan says 'ana 'ayyan' and asks to rest. What do they mean?",
+      "a": "I am tired",
+      "topic": "Descriptions",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "alt": [
+        "Tired"
+      ]
+    },
+    {
+      "qid": "dialects-400-917",
+      "p": 400,
+      "q": "How much is a kamsha of nuts in Palestinian Arabic?",
+      "a": "A handful",
+      "topic": "Time and numbers",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
+      "alt": []
+    },
+    {
+      "qid": "dialects-400-918",
+      "p": 400,
+      "q": "When serving drinks, what is a berrad in Moroccan Darija?",
+      "a": "A teapot",
+      "topic": "Home and tools",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "alt": []
+    },
+    {
+      "qid": "dialects-600-911",
+      "p": 600,
+      "q": "Which spice is called kharkoum in Moroccan Darija?",
+      "a": "Turmeric",
+      "topic": "Food and plants",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "alt": []
+    },
+    {
+      "qid": "dialects-600-912",
+      "p": 600,
+      "q": "Which fruit is called habb al-muluk in Moroccan Darija?",
+      "a": "Cherries",
+      "topic": "Food and plants",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "alt": [
+        "Cherry"
+      ]
+    },
+    {
+      "qid": "dialects-600-913",
+      "p": 600,
+      "q": "What bedroom furniture is called a comodino in Egyptian Arabic?",
+      "a": "A bedside table",
+      "topic": "Home and tools",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://resources.lingualism.com/egyptian-arabic/the-house/",
+      "alt": [
+        "Nightstand"
+      ]
+    },
+    {
+      "qid": "dialects-600-914",
+      "p": 600,
+      "q": "What was a namliyya in a traditional Palestinian kitchen?",
+      "a": "A food cupboard",
+      "topic": "Home and tools",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
+      "alt": [
+        "Food-storage cabinet"
+      ]
+    },
+    {
+      "qid": "dialects-600-915",
+      "p": 600,
+      "q": "What is the Emirati pearl-diving term for the sailor who hauls the diver up by rope?",
+      "a": "Al-seeb",
+      "topic": "Seafaring terms",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://abudhabiculture.ae/ar/cultural-heritage/intangible/heritage-register/traditional-handicraft/pearl-diving",
+      "alt": [
+        "Seeb",
+        "Sib"
+      ]
+    },
+    {
+      "qid": "dialects-600-916",
+      "p": 600,
+      "q": "In the Moroccan time expression 'one o'clock nishan', what does the last word mean?",
+      "a": "Exactly",
+      "topic": "Time and numbers",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "alt": [
+        "Precisely"
+      ]
+    },
+    {
+      "qid": "dialects-600-917",
+      "p": 600,
+      "q": "What family relationship does nsab refer to in Moroccan Darija?",
+      "a": "In-laws",
+      "topic": "Family",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "alt": [
+        "Relatives by marriage"
+      ]
+    },
+    {
+      "qid": "dialects-600-918",
+      "p": 600,
+      "q": "What is a shakhtura in the Palestinian sentence 'we rode the shakhtura at sea'?",
+      "a": "A boat",
+      "topic": "Seafaring terms",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
+      "alt": [
+        "Small boat"
+      ]
+    },
+    {
+      "qid": "dialects-800-911",
+      "p": 800,
+      "q": "When telling the time in Moroccan Darija, how many minutes is a qsem?",
+      "a": "Five minutes",
+      "topic": "Time and numbers",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "alt": [
+        "5"
+      ]
+    },
+    {
+      "qid": "dialects-800-912",
+      "p": 800,
+      "q": "Which fruit is called shahdiya in Moroccan Darija?",
+      "a": "Nectarine",
+      "topic": "Food and plants",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "alt": []
+    },
+    {
+      "qid": "dialects-800-913",
+      "p": 800,
+      "q": "What is the Emirati pearl-diving term for a diver's nose clip?",
+      "a": "Al-fitam",
+      "topic": "Seafaring terms",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://abudhabiculture.ae/ar/cultural-heritage/intangible/heritage-register/traditional-handicraft/pearl-diving",
+      "alt": [
+        "Fitam",
+        "Fetam"
+      ]
+    },
+    {
+      "qid": "dialects-800-914",
+      "p": 800,
+      "q": "What is the Emirati pearl-diving term for the net basket used to collect oysters?",
+      "a": "Al-dayeen",
+      "topic": "Seafaring terms",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://abudhabiculture.ae/ar/cultural-heritage/intangible/heritage-register/traditional-handicraft/pearl-diving",
+      "alt": [
+        "Dayeen",
+        "Deyeen"
+      ]
+    },
+    {
+      "qid": "dialects-800-915",
+      "p": 800,
+      "q": "What is a kiskas, used for preparing couscous in Moroccan kitchens?",
+      "a": "A perforated steaming pot",
+      "topic": "Home and tools",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "alt": [
+        "Couscous steamer"
+      ]
+    },
+    {
+      "qid": "dialects-800-916",
+      "p": 800,
+      "q": "What shelter is called a kharboush in Palestinian Arabic?",
+      "a": "A small tent",
+      "topic": "Home and tools",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
+      "alt": [
+        "Small tent"
+      ]
+    },
+    {
+      "qid": "dialects-800-917",
+      "p": 800,
+      "q": "What is a m'damma in traditional Moroccan dress?",
+      "a": "An embroidered women's belt",
+      "topic": "Clothing",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "alt": [
+        "Decorated belt"
+      ]
+    },
+    {
+      "qid": "dialects-800-918",
+      "p": 800,
+      "q": "A Palestinian poultry keeper leaves a maknuna to guide hens. What is it?",
+      "a": "An egg left to show hens where to lay",
+      "topic": "Food and plants",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon",
+      "alt": [
+        "A nest egg"
+      ]
+    },
+    {
+      "q": "What is tashmir in Moroccan women's clothing accessories?",
+      "a": "A tie for holding sleeves up",
+      "alt": [
+        "Sleeve tie"
+      ],
+      "topic": "Clothing",
+      "verified": true,
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "p": 1000,
+      "qid": "dialects-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What is a wasla used between the home and bakery in Moroccan Darija?",
+      "a": "A board for carrying bread",
+      "alt": [
+        "Bread-carrying board"
+      ],
+      "topic": "Home and tools",
+      "verified": true,
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "p": 1000,
+      "qid": "dialects-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What is the trade of a mwaksi in Moroccan Darija?",
+      "a": "Watch repairer",
+      "alt": [
+        "Watchmaker",
+        "Clock repairer"
+      ],
+      "topic": "Money and work",
+      "verified": true,
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "p": 1000,
+      "qid": "dialects-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Who is a krisson among Moroccan transport workers?",
+      "a": "A bus driver's assistant",
+      "alt": [
+        "Bus assistant"
+      ],
+      "topic": "Money and work",
+      "verified": true,
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "p": 1000,
+      "qid": "dialects-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What is qunbar sprinkled on baked rings in Palestinian Arabic?",
+      "a": "Decorative sugar granules",
+      "alt": [
+        "Sugar sprinkles"
+      ],
+      "topic": "Food and plants",
+      "verified": true,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
+      "p": 1000,
+      "qid": "dialects-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What is a shaqouf used by a Palestinian mason?",
+      "a": "A stone-cutting hammer",
+      "alt": [
+        "Mason's hammer"
+      ],
+      "topic": "Home and tools",
+      "verified": true,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
+      "p": 1000,
+      "qid": "dialects-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "A Palestinian describes a garment as 'min ibratu' (from its needle). What condition is it in?",
+      "a": "Brand new and unworn",
+      "alt": [
+        "New",
+        "Never worn"
+      ],
+      "topic": "Clothing",
+      "verified": true,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
+      "p": 1000,
+      "qid": "dialects-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What is a tree's qurmiyya in Palestinian Arabic?",
+      "a": "The stump and roots",
+      "alt": [
+        "Tree stump with roots"
+      ],
+      "topic": "Food and plants",
+      "verified": true,
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
+      "p": 1000,
+      "qid": "dialects-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

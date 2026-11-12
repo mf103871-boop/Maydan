@@ -13,7 +13,7 @@ export const ERSOMHA_PLAYING = ['select', 'draw', 'result'];
 const zeroRow = () => ({ guess: 0, draw: 0, points: 0 });
 const hintText = text => text.normalize('NFKC').replace(/[\p{M}\u0640]/gu, '');
 const accountOf = (room, id) => room.members.find(m => m.id === id)?.accountUserId;
-export function normalizeErsomhaSettings(input = {}) {
+export function normalizeErsomhaSettings(input = {}, contentLocale = 'ar') {
   if (input === null || typeof input !== 'object' || Array.isArray(input)) fail('INVALID');
   const mode = input.mode ?? 'competitive', cycles = input.cycles ?? 1, difficulty = input.difficulty ?? 'medium';
   if (!['competitive', 'cooperative'].includes(mode) || ![1, 2].includes(cycles) || !['easy', 'medium', 'hard'].includes(difficulty)) fail('INVALID');
@@ -23,11 +23,11 @@ export function normalizeErsomhaSettings(input = {}) {
   if (!Array.isArray(categories) || categories.length > 30 || categories.some(c => typeof c !== 'string' || !ERSOMHA_CATEGORIES.some(category => category.id === c)) || new Set(categories).size !== categories.length) fail('INVALID');
   if (categories.length && categories.length < 3) fail('INVALID');
   // Content validates categories too. Unknown IDs must not silently widen a pool.
-  if (!getErsomhaPool({ categories, difficulty }).length) fail('ERSOMHA_CONTENT_EXHAUSTED', 409);
+  if (!getErsomhaPool({ categories, difficulty, contentLocale }).length) fail('ERSOMHA_CONTENT_EXHAUSTED', 409);
   return { mode, cycles, difficulty, categories: [...categories], allowReplay: input.allowReplay === true, drawSeconds: 60 };
 }
 export function createRoom(code, input, now) {
-  const settings = normalizeErsomhaSettings(input.settings);
+  const settings = normalizeErsomhaSettings(input.settings, input.contentLocale);
   return { game: 'ersomha', code, revision: 0, createdAt: now, expiresAt: now + ROOM_TTL,
     hostId: input.id, hostMissingSince: now, phase: 'lobby', matchId: 0, round: 0, rounds: 0,
     settings, deadlineAt: null, reason: null, participants: [], scores: {}, history: [],
@@ -160,7 +160,7 @@ export function action(room, actorId, command, now) {
       if (room.phase !== 'lobby' || typeof command.ready !== 'boolean') fail('PHASE', 409);
       actor.ready = command.ready; break;
     case 'settings':
-      host(); if (room.phase !== 'lobby') fail('PHASE', 409); room.settings = normalizeErsomhaSettings(command.settings); break;
+      host(); if (room.phase !== 'lobby') fail('PHASE', 409); room.settings = normalizeErsomhaSettings(command.settings, room.contentLocale); break;
     case 'kick': leaveRoom(room, kickSeat(room, actorId, command, now, host), now); break;
     case 'start': {
       host(); if (room.phase !== 'lobby') fail('PHASE', 409);
@@ -192,7 +192,7 @@ export function action(room, actorId, command, now) {
       const window = room.draw.guessWindows[actorId] || { at: now, count: 0 };
       if (now - window.at >= 5_000) { window.at = now; window.count = 0; }
       if (++window.count > 5) fail('RATE_LIMIT', 429); room.draw.guessWindows[actorId] = window;
-      const correct = matchesErsomhaAnswer(text, room.draw.word);
+      const correct = matchesErsomhaAnswer(text, room.draw.word, room.contentLocale);
       if (correct) room.draw.correct[actorId] = { at: now, points: 100 + Math.max(0, 50 - 10 * Math.floor(elapsed(room, now) / 10_000)) };
       room.draw.guesses.push({ id: ++room.draw.nextGuessId, playerId: actorId, text: correct ? null : text, correct, at: now });
       room.draw.guesses = room.draw.guesses.slice(-40); maybeSolved(room, now); break;

@@ -1,0 +1,495 @@
+{
+  "id": "science",
+  "name": "Science",
+  "icon": "🔬",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Which Muslim scholar wrote the Book of Optics and became a pioneer of the subject?",
+      "a": "Ibn al-Haytham",
+      "qid": "science-200-911",
+      "topic": "Scientists and discoveries",
+      "verified": true,
+      "alt": [
+        "Alhazen"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.unesco.org/en/articles/international-year-light-ibn-al-haytham-pioneer-modern-optics-celebrated-unesco"
+    },
+    {
+      "p": 200,
+      "q": "What is the pH of a neutral aqueous solution at 25°C?",
+      "a": "7",
+      "qid": "science-200-912",
+      "topic": "Chemistry",
+      "verified": true,
+      "alt": [
+        "Seven"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://openstax.org/books/biology/pages/2-2-water"
+    },
+    {
+      "p": 200,
+      "q": "Space between Earth and the Sun is a vacuum. How does the Sun's heat reach us?",
+      "a": "Radiation",
+      "qid": "science-200-913",
+      "topic": "Energy and motion",
+      "verified": true,
+      "alt": [
+        "Thermal radiation"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://openstax.org/books/physics/pages/15-2-the-behavior-of-electromagnetic-radiation"
+    },
+    {
+      "p": 200,
+      "q": "What instrument measures atmospheric pressure?",
+      "a": "Barometer",
+      "qid": "science-200-914",
+      "topic": "Instruments and measurement",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.weather.gov/jkl/education"
+    },
+    {
+      "p": 200,
+      "q": "What is the SI base unit of temperature?",
+      "a": "Kelvin",
+      "qid": "science-200-915",
+      "topic": "Instruments and measurement",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.bipm.org/en/measurement-units/si-base-units"
+    },
+    {
+      "p": 200,
+      "q": "Two atoms share a pair of electrons. What type of bond joins them?",
+      "a": "Covalent bond",
+      "qid": "science-200-916",
+      "topic": "Chemistry",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://openstax.org/books/chemistry-2e/pages/7-2-covalent-bonding"
+    },
+    {
+      "p": 200,
+      "q": "Which scientist arranged the periodic table and predicted elements not yet discovered?",
+      "a": "Dmitri Mendeleev",
+      "qid": "science-200-917",
+      "topic": "Scientists and discoveries",
+      "verified": true,
+      "alt": [
+        "Mendeleev"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://periodic-table.rsc.org/about"
+    },
+    {
+      "p": 200,
+      "q": "What icy belt beyond Neptune contains Pluto?",
+      "a": "Kuiper Belt",
+      "qid": "science-200-918",
+      "topic": "Astronomy",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://science.nasa.gov/dwarf-planets/pluto/"
+    },
+    {
+      "p": 400,
+      "q": "An ambulance's siren changes pitch as it passes you. Which effect explains this?",
+      "a": "Doppler effect",
+      "qid": "science-400-911",
+      "topic": "Physics",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://openstax.org/books/university-physics-volume-1/pages/17-7-the-doppler-effect"
+    },
+    {
+      "p": 400,
+      "q": "What is the maintenance of a stable internal environment in the body called?",
+      "a": "Homeostasis",
+      "qid": "science-400-912",
+      "topic": "Human body",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/33-3-homeostasis"
+    },
+    {
+      "p": 400,
+      "q": "Which group of amphibians, including the axolotl, is known for regenerating limbs?",
+      "a": "Salamanders",
+      "qid": "science-400-913",
+      "topic": "Biology",
+      "verified": true,
+      "alt": [
+        "Salamander"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.nigms.nih.gov/education/fact-sheets/Pages/regeneration"
+    },
+    {
+      "p": 400,
+      "q": "What is the nearest large galaxy to the Milky Way?",
+      "a": "Andromeda Galaxy",
+      "qid": "science-400-914",
+      "topic": "Astronomy",
+      "verified": true,
+      "alt": [
+        "Andromeda",
+        "M31"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.nasa.gov/universe/galaxies/andromeda-galaxy/"
+    },
+    {
+      "p": 400,
+      "q": "Which metal has the lowest density in the periodic table?",
+      "a": "Lithium",
+      "qid": "science-400-915",
+      "topic": "Elements and compounds",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.mtm.kuleuven.be/periodic-table/data/fiches/info-li"
+    },
+    {
+      "p": 400,
+      "q": "What flame color does potassium produce in a flame test?",
+      "a": "Lilac",
+      "qid": "science-400-916",
+      "topic": "Chemistry",
+      "verified": true,
+      "alt": [
+        "Pale purple",
+        "Light violet"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://edu.rsc.org/infographics/how-to-carry-out-flame-tests/4024075.article"
+    },
+    {
+      "p": 400,
+      "q": "Which microscopic animal, also called a water bear, survived experimental exposure to the vacuum of space?",
+      "a": "Tardigrade",
+      "qid": "science-400-917",
+      "topic": "Biology",
+      "verified": true,
+      "alt": [
+        "Water bear"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Research/Tiny_animals_survive_exposure_to_space"
+    },
+    {
+      "p": 400,
+      "q": "What is the chemical symbol for tungsten?",
+      "a": "W",
+      "qid": "science-400-918",
+      "topic": "Elements and compounds",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://periodic-table.rsc.org/element/74/"
+    },
+    {
+      "p": 600,
+      "q": "What outer layer of the Sun's atmosphere becomes visible during a total solar eclipse?",
+      "a": "Corona",
+      "qid": "science-600-911",
+      "topic": "Astronomy",
+      "verified": true,
+      "alt": [
+        "Solar corona"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://spaceplace.nasa.gov/sun-corona/en/"
+    },
+    {
+      "p": 600,
+      "q": "What is the SI unit of luminous intensity?",
+      "a": "Candela",
+      "qid": "science-600-912",
+      "topic": "Instruments and measurement",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.bipm.org/en/measurement-units/si-base-units"
+    },
+    {
+      "p": 600,
+      "q": "Which scientist produced the famous DNA Photo 51 with her student Raymond Gosling?",
+      "a": "Rosalind Franklin",
+      "qid": "science-600-913",
+      "topic": "Scientists and discoveries",
+      "verified": true,
+      "alt": [
+        "Franklin"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://digital.sciencehistory.org/works/mjir8wn"
+    },
+    {
+      "p": 600,
+      "q": "Tiny particles in a fluid move randomly as molecules strike them. What is this movement called?",
+      "a": "Brownian motion",
+      "qid": "science-600-914",
+      "topic": "Energy and motion",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://sciencedemonstrations.fas.harvard.edu/kinetic-theory"
+    },
+    {
+      "p": 600,
+      "q": "Which scientist independently developed natural selection and announced it jointly with Darwin?",
+      "a": "Alfred Russel Wallace",
+      "qid": "science-600-915",
+      "topic": "Scientists and discoveries",
+      "verified": true,
+      "alt": [
+        "Wallace"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.nhm.ac.uk/discover/what-is-natural-selection.html"
+    },
+    {
+      "p": 600,
+      "q": "Which desert rodent can survive without drinking by obtaining water from seeds and metabolism?",
+      "a": "Kangaroo rat",
+      "qid": "science-600-916",
+      "topic": "Biology",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://home.nps.gov/whsa/learn/nature/kangaroo-rats.htm"
+    },
+    {
+      "p": 600,
+      "q": "Which metal melts at about 30°C and can melt in a warm hand?",
+      "a": "Gallium",
+      "qid": "science-600-917",
+      "topic": "Elements and compounds",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://periodic-table.rsc.org/element/31/"
+    },
+    {
+      "q": "What is the SI unit of electrical capacitance?",
+      "a": "Farad",
+      "topic": "Instruments and measurement",
+      "verified": true,
+      "sourceUrl": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-4-two-classes-si-units-and-si-prefixes",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 600,
+      "qid": "science-600-918",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 800,
+      "q": "Which particle carries the strong force between quarks?",
+      "a": "Gluon",
+      "qid": "science-800-911",
+      "topic": "Physics",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://home.cern/science/physics/standard-model/"
+    },
+    {
+      "p": 800,
+      "q": "Which ideal cycle sets the maximum efficiency for an engine operating between two temperatures?",
+      "a": "Carnot cycle",
+      "qid": "science-800-912",
+      "topic": "Energy and motion",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://openstax.org/books/university-physics-volume-2/pages/4-5-the-carnot-cycle"
+    },
+    {
+      "p": 800,
+      "q": "What is the SI unit of magnetic flux?",
+      "a": "Weber",
+      "qid": "science-800-913",
+      "topic": "Instruments and measurement",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://goldbook.iupac.org/terms/view/W06666"
+    },
+    {
+      "p": 800,
+      "q": "What phenomenon causes the distinctive blue glow around nuclear fuel underwater?",
+      "a": "Cherenkov radiation",
+      "qid": "science-800-914",
+      "topic": "Physics",
+      "verified": true,
+      "alt": [
+        "Cerenkov radiation"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://conferences.iaea.org/event/173/contributions/13356/attachments/7890/10577/Poster_SFM_2019.pdf"
+    },
+    {
+      "p": 800,
+      "q": "Which compound produced by soil bacteria contributes to the earthy smell after rain?",
+      "a": "Geosmin",
+      "qid": "science-800-915",
+      "topic": "Chemistry",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://jic.ac.uk/blog/meet-the-molecules-geosmin/"
+    },
+    {
+      "q": "Who discovered the neutron in 1932?",
+      "a": "James Chadwick",
+      "topic": "Scientists and discoveries",
+      "verified": true,
+      "sourceUrl": "https://www.nobelprize.org/prizes/themes/the-nobel-prize-in-physics-1901-2000/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Chadwick"
+      ],
+      "p": 800,
+      "qid": "science-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which unit of radioactivity equals one nuclear transformation per second?",
+      "a": "Becquerel",
+      "topic": "Instruments and measurement",
+      "verified": true,
+      "sourceUrl": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-4-two-classes-si-units-and-si-prefixes",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Bq"
+      ],
+      "p": 800,
+      "qid": "science-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which element did Bunsen and Kirchhoff discover in 1861 from two red spectral lines?",
+      "a": "Rubidium",
+      "topic": "Elements and compounds",
+      "verified": true,
+      "sourceUrl": "https://periodic-table.rsc.org/element/37/rubidium",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "science-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which principle prevents two electrons in an atom from having the same four quantum numbers?",
+      "a": "Pauli exclusion principle",
+      "topic": "Physics",
+      "verified": true,
+      "sourceUrl": "https://www.nobelprize.org/prizes/physics/1945/pauli/facts/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "science-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What effect allows current to flow between superconductors separated by a thin insulating barrier?",
+      "a": "Josephson effect",
+      "topic": "Physics",
+      "verified": true,
+      "sourceUrl": "https://www.nobelprize.org/prizes/physics/1973/josephson/facts/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "science-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What is the upper mass limit for a stable white dwarf, about 1.4 solar masses, called?",
+      "a": "Chandrasekhar limit",
+      "topic": "Astronomy",
+      "verified": true,
+      "sourceUrl": "https://educationalgames.nobelprize.org/educational/physics/star_stories/overview/index.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "science-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which scientist concluded that stars consist mainly of hydrogen and helium?",
+      "a": "Cecilia Payne-Gaposchkin",
+      "topic": "Scientists and discoveries",
+      "verified": true,
+      "sourceUrl": "https://www.aip.org/foundation/the-voice-behind-the-discovery-cecilia-payne-gaposchkins-aip-oral-history",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Cecilia Payne"
+      ],
+      "p": 1000,
+      "qid": "science-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which scientist explained nuclear fission theoretically with Otto Frisch?",
+      "a": "Lise Meitner",
+      "topic": "Scientists and discoveries",
+      "verified": true,
+      "sourceUrl": "https://physicstoday.aip.org/letters/lise-meitner-and-the-discovery-of-fission",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Meitner"
+      ],
+      "p": 1000,
+      "qid": "science-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What is an RNA molecule that catalyzes a chemical reaction called?",
+      "a": "Ribozyme",
+      "topic": "Biology",
+      "verified": true,
+      "sourceUrl": "https://www.nobelprize.org/prizes/chemistry/1989/cech/article/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "science-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which enzyme adds DNA sequences to the ends of chromosomes?",
+      "a": "Telomerase",
+      "topic": "Human body",
+      "verified": true,
+      "sourceUrl": "https://www.nobelprize.org/prizes/medicine/2009/advanced-information/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "science-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Extremely cold atoms occupy a shared lowest-energy state. What state of matter has formed?",
+      "a": "Bose-Einstein condensate",
+      "topic": "Energy and motion",
+      "verified": true,
+      "sourceUrl": "https://www.nobelprize.org/prizes/physics/2001/press-release/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Bose Einstein condensation"
+      ],
+      "p": 1000,
+      "qid": "science-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

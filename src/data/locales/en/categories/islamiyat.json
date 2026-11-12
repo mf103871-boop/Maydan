@@ -1,0 +1,541 @@
+{
+  "id": "islamiyat",
+  "name": "Islamic Heritage",
+  "icon": "☪️",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "Pilgrimage sites",
+      "q": "Which pilgrimage site lies on the route between Mina and Arafat?",
+      "a": "Muzdalifah",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Muzdalifah",
+      "verified": true,
+      "qid": "islamiyat-200-911",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Calendars",
+      "q": "Which sacred month falls between Jumada al-Akhirah and Sha'ban?",
+      "a": "Rajab",
+      "alt": [],
+      "sourceUrl": "https://sunnah.com/bukhari:3197",
+      "verified": true,
+      "qid": "islamiyat-200-912",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Scholars",
+      "q": "Who wrote The Compendious Book on Calculation by Completion and Balancing?",
+      "a": "Al-Khwarizmi",
+      "alt": [
+        "Muhammad ibn Musa al-Khwarizmi"
+      ],
+      "sourceUrl": "https://mathshistory.st-andrews.ac.uk/Biographies/Al-Khwarizmi/",
+      "verified": true,
+      "qid": "islamiyat-200-913",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Historic cities",
+      "q": "Which Tunisian city is famous for its Great Mosque and Aghlabid Basins?",
+      "a": "Kairouan",
+      "alt": [
+        "Al-Qayrawan"
+      ],
+      "sourceUrl": "https://whc.unesco.org/en/list/499/",
+      "verified": true,
+      "qid": "islamiyat-200-914",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Mosques",
+      "q": "In which Omani city is the Sultan Qaboos Grand Mosque?",
+      "a": "Muscat",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sultan_Qaboos_Grand_Mosque",
+      "verified": true,
+      "qid": "islamiyat-200-915",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Historic cities",
+      "q": "Which Spanish city's historic center contains a great mosque later converted into a cathedral?",
+      "a": "Córdoba",
+      "alt": [
+        "Cordoba"
+      ],
+      "sourceUrl": "https://whc.unesco.org/en/list/313/",
+      "verified": true,
+      "qid": "islamiyat-200-916",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Scholars",
+      "q": "Which physician described blood passing between the heart and lungs in his commentary on the Canon's anatomy?",
+      "a": "Ibn al-Nafis",
+      "alt": [
+        "Ala al-Din ibn al-Nafis"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ibn_al-Nafis",
+      "verified": true,
+      "qid": "islamiyat-200-917",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Arts",
+      "q": "Which clear, rounded Arabic script became widely used for copying Qurans and books?",
+      "a": "Naskh",
+      "alt": [
+        "Naskh script"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Naskh_(script)",
+      "verified": true,
+      "qid": "islamiyat-200-918",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 400,
+      "topic": "Sacred landmarks",
+      "q": "What is the southwestern corner of the Kaaba called?",
+      "a": "The Yemeni Corner",
+      "alt": [
+        "Yemeni Corner",
+        "Al-Rukn al-Yamani"
+      ],
+      "sourceUrl": "https://saudipedia.com/en/what-is-the-yamani-corner",
+      "verified": true,
+      "qid": "islamiyat-400-911",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Sacred landmarks",
+      "q": "What is the section of the Kaaba's wall between its door and the Black Stone called?",
+      "a": "Al-Multazam",
+      "alt": [
+        "Multazam"
+      ],
+      "sourceUrl": "https://saudipedia.com/ملتزم-الكعبة",
+      "verified": true,
+      "qid": "islamiyat-400-912",
+      "difficultyTarget": 0.6,
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 400,
+      "topic": "Pilgrimage sites",
+      "q": "Which large mosque at the western edge of Arafat hosts the Day of Arafat sermon?",
+      "a": "Namirah Mosque",
+      "alt": [
+        "Masjid Namirah",
+        "Namira Mosque"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد_نمرة",
+      "verified": true,
+      "qid": "islamiyat-400-913",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Calendars",
+      "q": "How many days are in a common year of the tabular Islamic calendar?",
+      "a": "354",
+      "alt": [
+        "354 days",
+        "Three hundred and fifty-four"
+      ],
+      "sourceUrl": "https://aa.usno.navy.mil/downloads/c15_usb_online.pdf",
+      "verified": true,
+      "qid": "islamiyat-400-914",
+      "difficultyTarget": 0.6,
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 400,
+      "topic": "Terminology",
+      "q": "What is the traditional Arabic term for custodianship of the Kaaba and safekeeping of its key?",
+      "a": "Sidanah",
+      "alt": [
+        "Sidanat al-Kaaba",
+        "Hijabah"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/سدانة_الكعبة",
+      "verified": true,
+      "qid": "islamiyat-400-915",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Scholars",
+      "q": "Which geographer created a world map for Roger II of Sicily?",
+      "a": "Al-Idrisi",
+      "alt": [
+        "Muhammad al-Idrisi"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Al-Idrisi",
+      "verified": true,
+      "qid": "islamiyat-400-916",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Terminology",
+      "q": "What charitable building supplies free drinking water to passersby in traditional Islamic cities?",
+      "a": "Sabil",
+      "alt": [
+        "Sebil"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sabil_(fountain)",
+      "verified": true,
+      "qid": "islamiyat-400-917",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "What is the common name for Dhu al-Hulayfah near Medina?",
+      "a": "Abyar Ali",
+      "topic": "Pilgrimage sites",
+      "sourceUrl": "https://risala.prh.gov.sa/ar/amaken/16",
+      "alt": [
+        "Abar Ali"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 400,
+      "qid": "islamiyat-400-918",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 600,
+      "topic": "Sacred landmarks",
+      "q": "What is the sloping structure around the base of three sides of the Kaaba called?",
+      "a": "Shadharwan",
+      "alt": [
+        "Al-Shadharwan"
+      ],
+      "sourceUrl": [
+        "https://saudipedia.com/en/al-kaaba%22s-shadherwaan",
+        "https://alharamain.gov.sa/public/?page=shadrawan-ar"
+      ],
+      "verified": true,
+      "qid": "islamiyat-600-911",
+      "difficultyTarget": 0.4,
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 600,
+      "topic": "Pilgrimage sites",
+      "q": "Which miqat for pilgrims from Najd is named in the hadith of Ibn Abbas?",
+      "a": "Qarn al-Manazil",
+      "alt": [
+        "Qarn"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:1524",
+      "verified": true,
+      "qid": "islamiyat-600-912",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Mosques",
+      "q": "Who designed the Selimiye Mosque in Edirne?",
+      "a": "Mimar Sinan",
+      "alt": [
+        "Sinan"
+      ],
+      "sourceUrl": "https://whc.unesco.org/en/list/1366/",
+      "verified": true,
+      "qid": "islamiyat-600-913",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Calendars",
+      "q": "Which Saudi Islamic calendar uses astronomical calculations and is used for administrative purposes?",
+      "a": "Umm al-Qura calendar",
+      "alt": [
+        "Umm al-Qura"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Islamic_calendar",
+      "verified": true,
+      "qid": "islamiyat-600-914",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Historic cities",
+      "q": "Which Malian city became famous for the Sankore schools and manuscript trade?",
+      "a": "Timbuktu",
+      "alt": [
+        "Tombouctou"
+      ],
+      "sourceUrl": "https://whc.unesco.org/en/list/119/",
+      "verified": true,
+      "qid": "islamiyat-600-915",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Sacred landmarks",
+      "q": "What is the golden rainwater spout projecting from the Kaaba's roof called?",
+      "a": "Mizab al-Rahmah",
+      "alt": [
+        "Mizab",
+        "Meezab al-Rahmah"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kaaba",
+      "verified": true,
+      "qid": "islamiyat-600-916",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Pilgrimage sites",
+      "q": "Which miqat for pilgrims from Yemen is named in the hadith of Ibn Abbas?",
+      "a": "Yalamlam",
+      "alt": [
+        "Alamlam"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:1524",
+      "verified": true,
+      "qid": "islamiyat-600-917",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Books",
+      "q": "What is Al-Khalil ibn Ahmad's dictionary, arranged by the articulation of letters, called?",
+      "a": "Kitab al-Ayn",
+      "alt": [
+        "Al-Ayn"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kitab_al-Ayn",
+      "verified": true,
+      "qid": "islamiyat-600-918",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 800,
+      "topic": "Mosques",
+      "q": "According to Sahih al-Bukhari, in which town was Friday prayer first held after the Prophet's Mosque?",
+      "a": "Jawatha",
+      "alt": [
+        "Juwatha"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:892",
+      "verified": true,
+      "qid": "islamiyat-800-911",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "Scholars",
+      "q": "Who compiled the Arabic dictionary Al-Qamus al-Muhit?",
+      "a": "Al-Firuzabadi",
+      "alt": [
+        "Majd al-Din al-Firuzabadi"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Firuzabadi",
+      "verified": true,
+      "qid": "islamiyat-800-912",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "Arts",
+      "q": "What are the tiered, small-cell ornaments hanging from domes in Islamic architecture called?",
+      "a": "Muqarnas",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Muqarnas",
+      "verified": true,
+      "qid": "islamiyat-800-913",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "What is the traditional Arabic name for the curtain over the Kaaba's door?",
+      "a": "Burqu",
+      "topic": "Sacred landmarks",
+      "sourceUrl": "https://www.spa.gov.sa/N2229052",
+      "alt": [
+        "Burqa",
+        "Al-Burqu"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "islamiyat-800-914",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which Cairo mosque is famous for a minaret with an external spiral staircase?",
+      "a": "Mosque of Ibn Tulun",
+      "topic": "Mosques",
+      "sourceUrl": "https://cairo.gov.eg/ar/culture/lines-of-knowledge/cairos-minarets/",
+      "alt": [
+        "Ahmad ibn Tulun Mosque"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "islamiyat-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Who copied and illustrated the manuscript of Al-Hariri's Maqamat held in Paris?",
+      "a": "Yahya ibn Mahmud al-Wasiti",
+      "topic": "Books",
+      "sourceUrl": "https://www.loc.gov/item/2021667393/",
+      "alt": [
+        "Yahya al-Wasiti",
+        "Al-Wasiti"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "islamiyat-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "What are the gardens and summer palace beside the Alhambra in Granada called?",
+      "a": "Generalife",
+      "topic": "Historic cities",
+      "sourceUrl": "https://whc.unesco.org/document/142194",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "islamiyat-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "In which Uzbek city is the historic Registan Square?",
+      "a": "Samarkand",
+      "topic": "Historic cities",
+      "sourceUrl": "https://whc.unesco.org/en/list/603",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "islamiyat-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 1000,
+      "topic": "Books",
+      "q": "What is the Arabic title of the atlas known as the Book of Roger, written for Sicily's king?",
+      "a": "Nuzhat al-Mushtaq fi Ikhtiraq al-Afaq",
+      "alt": [
+        "Nuzhat al-Mushtaq"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tabula_Rogeriana",
+      "verified": true,
+      "qid": "islamiyat-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "topic": "Historic cities",
+      "q": "What Persian name of Isfahan's historic square means Image of the World?",
+      "a": "Naqsh-e Jahan",
+      "alt": [
+        "Naqsh-i Jahan"
+      ],
+      "sourceUrl": "https://whc.unesco.org/en/list/115/",
+      "verified": true,
+      "qid": "islamiyat-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "topic": "Arts",
+      "q": "Which Persian calligraphic script has a name combining naskh and ta'liq?",
+      "a": "Nasta'liq",
+      "alt": [
+        "Nastaliq"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Nastaliq",
+      "verified": true,
+      "qid": "islamiyat-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Damascene astronomer made a sundial for the Umayyad Mosque in the fourteenth century?",
+      "a": "Ibn al-Shatir",
+      "topic": "Scholars",
+      "sourceUrl": "https://archive.thawra.sy/?p=633710",
+      "alt": [
+        "Ali ibn Ibrahim ibn al-Shatir"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "islamiyat-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which engineer's book of ingenious devices includes a water-powered peacock clock?",
+      "a": "Al-Jazari",
+      "topic": "Books",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/451302",
+      "alt": [
+        "Badi al-Zaman al-Jazari"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "islamiyat-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What is the art of inlaying metal with gold or silver wire called?",
+      "a": "Damascening",
+      "topic": "Arts",
+      "sourceUrl": "https://www.safahat.org/books/37926480/5.7/",
+      "alt": [
+        "Takfit",
+        "Metal inlay"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "islamiyat-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Turkish town is famous for Ottoman ceramics decorated with colorful floral designs?",
+      "a": "İznik",
+      "topic": "Historic cities",
+      "sourceUrl": "https://crees.ku.edu/iznik",
+      "alt": [
+        "Iznik"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "islamiyat-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Andalusian physician wrote Al-Tasrif li-man Ajiza an al-Talif?",
+      "a": "Abu al-Qasim al-Zahrawi",
+      "topic": "Scholars",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3459224/",
+      "alt": [
+        "Al-Zahrawi",
+        "Albucasis"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "islamiyat-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

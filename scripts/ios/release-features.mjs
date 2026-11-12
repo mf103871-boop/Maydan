@@ -2,7 +2,7 @@
 // acceptance need their own evidence; neither is inferred from this receipt.
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { resolveNativeBuildOrigin } from './release-environment.mjs';
@@ -15,6 +15,7 @@ import { MUSIC_BANK } from '../../src/shared/fx/music-bank.js';
 import { SELECTED_AUDIO } from '../../src/shared/fx/selected-audio.js';
 import { ONLINE_GAMES, ROOM_CAPABILITIES } from '../../src/online/shared.js';
 import ticketArtwork from '../../assets/game-entry/manifest.json' with { type: 'json' };
+import { LOCALIZED_CONTENT_CAPABILITY, CONTENT_VERSIONS } from '../../src/shared/content-locale.mjs';
 
 const ROOT = fileURLToPath(new URL('../../', import.meta.url));
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -59,11 +60,12 @@ export function assertFeatureDefines(features, defines) {
 }
 
 export async function checkServerReadiness(features, { fetchImpl = fetch, now = () => new Date() } = {}) {
-  // A fixed approved destination and four public GETs only. No account, room,
+  // A fixed approved destination and public GETs only. No account, room,
   // private word bank, mutation, provider secret or callback is involved.
   assert.equal(resolveNativeBuildOrigin({ IOS_RELEASE_ENVIRONMENT: features.environment,
     MAYDAN_ROOMS_URL: features.apiOrigin }), features.apiOrigin);
-  const endpoints = ['/health', '/api/mafia/capabilities', '/api/cosmetics/catalog', '/api/billing/config'];
+  const endpoints = ['/health', '/api/mafia/capabilities', '/api/cosmetics/catalog', '/api/billing/config',
+    ...(features.profile === 'complete-preview' ? ['/api/content/capabilities'] : [])];
   const checks = await Promise.all(endpoints.map(async endpoint => {
     const check = { endpoint, status: null, passed: false };
     try {
@@ -91,6 +93,12 @@ export async function checkServerReadiness(features, { fetchImpl = fetch, now = 
         check.catalogVersion = data.version;
         check.signatureFrame = Boolean(frame && frame.kind === 'frame' && frame.motionKind === 'living-frame' && frame.frameTheme === 'signature');
         check.passed = data.version >= 3 && check.signatureFrame;
+      } else if (endpoint === '/api/content/capabilities') {
+        check.localizedContent = data.localizedContent;
+        check.contentVersions = data.contentVersions;
+        check.passed = data.localizedContent === LOCALIZED_CONTENT_CAPABILITY
+          && data.contentVersions?.ar === CONTENT_VERSIONS.ar
+          && data.contentVersions?.en === CONTENT_VERSIONS.en;
       } else {
         check.gameplayPolicy = data.gameplay?.policy || null;
         check.gameplayAccess = data.gameplay?.access || null;
@@ -106,7 +114,36 @@ export async function checkServerReadiness(features, { fetchImpl = fetch, now = 
   }));
   return { schemaVersion: 1, checkedAt: now().toISOString(), apiOrigin: features.apiOrigin,
     profile: features.profile, passed: checks.every(check => check.passed), checks,
-    limits: ['Public capability checks do not prove D1 migration 0030, real Google SSV, purchase verification, private voice isolation or device acceptance.'] };
+    limits: ['Public capability checks do not prove D1 migrations 0030/0031, private Draw It bank preservation or English semantics, real Google SSV, purchase verification, private voice isolation or device acceptance.'] };
+}
+
+// The actual prepared asset bytes are also listed in resources, so the existing
+// simulator/archive/IPA verifier checks every hash after packaging and signing.
+export async function preparedLocalePacks(destination, html, { required = true } = {}) {
+  const directory = path.join(destination, 'assets/brand');
+  const filenames = (await readdir(directory).catch(error => { if (error.code === 'ENOENT') return []; throw error; }))
+    .filter(name => /^locale-en-.*\.json$/.test(name)).sort();
+  if (!filenames.length && !required) return null;
+  const expected = new Set(['ui', 'badeeha', 'beep', 'fabraka', 'jabeen', 'mamnoo', 'meenfina']), publicPacks = [];
+  assert.equal(filenames.length, expected.size, 'Prepared English locale pack inventory is incomplete or contains an unexpected pack.');
+  for (const filename of filenames) {
+    assert.match(filename, /^locale-en-[a-z]+-[A-Z0-9]+\.json$/, 'Invalid prepared English locale asset name.');
+    assert.ok(html.includes(filename), 'Prepared HTML does not reference an English locale pack.');
+    const bytes = await readFile(path.join(directory, filename)), pack = JSON.parse(bytes);
+    assert.ok(expected.delete(pack.id), 'Duplicate or private/unexpected English locale pack.');
+    assert.ok(filename.startsWith(`locale-en-${pack.id}-`), 'Prepared English locale pack filename differs from its ID.');
+    const kind = pack.id === 'ui' ? 'ui' : 'game', version = pack.id === 'ui' ? 'ui-en-v1' : CONTENT_VERSIONS.en;
+    assert.equal(pack.schemaVersion, 1, 'Prepared English locale schema differs.');
+    assert.equal(pack.kind, kind, 'Prepared English locale kind differs.');
+    assert.equal(pack.contentLocale, 'en', 'Prepared English locale language differs.');
+    assert.equal(pack.contentVersion, version, 'Prepared English locale version differs.');
+    assert.ok(pack.data && typeof pack.data === 'object' && Object.keys(pack.data).length, 'Prepared English locale data is empty.');
+    assert.equal(Array.isArray(pack.data), !['ui', 'fabraka'].includes(pack.id), 'Prepared English locale data shape differs.');
+    publicPacks.push({ id: pack.id, kind, contentLocale: 'en', contentVersion: version,
+      path: `www/assets/brand/${filename}`, bytes: bytes.length, sha256: hash(bytes) });
+  }
+  assert.equal(expected.size, 0, 'Prepared English locale coverage is incomplete.');
+  return { schemaVersion: 1, uiLocales: ['ar', 'en'], contentVersions: { ...CONTENT_VERSIONS }, publicPacks, privateContent: 'server-only' };
 }
 
 export function warmthActiveIntro(manifest, html) {
@@ -159,6 +196,8 @@ export async function writePreparedFeatures({ projectDir, destination, build, de
     assert.equal(hash(bytes), entry.sha256, `Prepared audio hash differs: ${entry.path}`);
   }
   const html = await readFile(path.join(destination, 'index.html'));
+  const localization = await preparedLocalePacks(destination, html.toString('utf8'), { required: features.profile === 'complete-preview' });
+  if (localization) resources.push(...localization.publicPacks.map(({ path, bytes, sha256 }) => ({ path, bytes, sha256 })));
   let gameEntry;
   if (features.gameplayPolicy === ENTRY_TICKET_POLICY) {
     assert.ok(html.includes(Buffer.from('data-maydan-game-entry')) && html.includes(Buffer.from(ENTRY_TICKET_POLICY)),
@@ -184,6 +223,7 @@ export async function writePreparedFeatures({ projectDir, destination, build, de
     schemaVersion: 1, sourceCommit: env.GITHUB_SHA || null, version: build.version, build: env.IOS_BUILD || null,
     profile: features.profile, environment: features.environment, apiOrigin: features.apiOrigin,
     gameplayPolicy: features.gameplayPolicy, compileDefines,
+    ...(localization ? { localization } : {}),
     ...(gameEntry ? { gameEntry } : {}),
     rewarded: { mode: features.rewarded?.mode || 'off', sdkProjectConfigured: Boolean(features.rewarded),
       packages: adsPackages, configuration: expectedRewarded || null },

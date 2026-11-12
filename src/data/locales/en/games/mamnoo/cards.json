@@ -1,0 +1,3005 @@
+[
+  {
+    "id": "mamnoo-concepts-001",
+    "word": "Patience",
+    "forbidden": [
+      "Waiting",
+      "Endurance",
+      "Calm",
+      "Long",
+      "Nerves"
+    ],
+    "category": "Ideas",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-concepts-002",
+    "word": "Time",
+    "forbidden": [
+      "Clock",
+      "Minute",
+      "Passes",
+      "Duration",
+      "Day"
+    ],
+    "category": "Ideas",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-concepts-003",
+    "word": "Memory",
+    "forbidden": [
+      "Forgetting",
+      "Brain",
+      "Past",
+      "Remember",
+      "Information"
+    ],
+    "category": "Ideas",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-concepts-004",
+    "word": "Surprise",
+    "forbidden": [
+      "Unexpected",
+      "Gift",
+      "Shock",
+      "Birthday",
+      "Amazement"
+    ],
+    "category": "Ideas",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-concepts-005",
+    "word": "Success",
+    "forbidden": [
+      "Win",
+      "Excel",
+      "Goal",
+      "Exam",
+      "Achievement"
+    ],
+    "category": "Ideas",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-concepts-006",
+    "word": "Friendship",
+    "forbidden": [
+      "Companion",
+      "Classmate",
+      "Relationship",
+      "Loyalty",
+      "Close"
+    ],
+    "category": "Ideas",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-concepts-007",
+    "word": "Courage",
+    "forbidden": [
+      "Fear",
+      "Bravery",
+      "Hero",
+      "Strength",
+      "Daring"
+    ],
+    "category": "Ideas",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-concepts-008",
+    "word": "Happiness",
+    "forbidden": [
+      "Joy",
+      "Smile",
+      "Laughter",
+      "Sadness",
+      "Feeling"
+    ],
+    "category": "Ideas",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-concepts-009",
+    "word": "Fear",
+    "forbidden": [
+      "Terror",
+      "Darkness",
+      "Fright",
+      "Worry",
+      "Courage"
+    ],
+    "category": "Ideas",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-concepts-010",
+    "word": "Dream",
+    "forbidden": [
+      "Sleep",
+      "Night",
+      "Imagination",
+      "Ambition",
+      "Awake"
+    ],
+    "category": "Ideas",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-concepts-011",
+    "word": "Hope",
+    "forbidden": [
+      "Optimism",
+      "Future",
+      "Despair",
+      "Waiting",
+      "Wish"
+    ],
+    "category": "Ideas",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-concepts-012",
+    "word": "Cooperation",
+    "forbidden": [
+      "Help",
+      "Team",
+      "Together",
+      "Work",
+      "Sharing"
+    ],
+    "category": "Ideas",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-concepts-013",
+    "word": "Boredom",
+    "forbidden": [
+      "Dull",
+      "Idle",
+      "Repetition",
+      "Waiting",
+      "Entertainment"
+    ],
+    "category": "Ideas",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-concepts-014",
+    "word": "Curiosity",
+    "forbidden": [
+      "Knowledge",
+      "Question",
+      "Discover",
+      "Explore",
+      "Nosy"
+    ],
+    "category": "Ideas",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-concepts-015",
+    "word": "Generosity",
+    "forbidden": [
+      "Giving",
+      "Guest",
+      "Stingy",
+      "Kindness",
+      "Money"
+    ],
+    "category": "Ideas",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-concepts-016",
+    "word": "Honesty",
+    "forbidden": [
+      "Lie",
+      "Truth",
+      "Trust",
+      "Frankness",
+      "Promise"
+    ],
+    "category": "Ideas",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-concepts-017",
+    "word": "Respect",
+    "forbidden": [
+      "Appreciation",
+      "Manners",
+      "Elder",
+      "Greeting",
+      "Status"
+    ],
+    "category": "Ideas",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-concepts-018",
+    "word": "Humility",
+    "forbidden": [
+      "Arrogance",
+      "Pride",
+      "Modest",
+      "Conceit",
+      "Boasting"
+    ],
+    "category": "Ideas",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-concepts-019",
+    "word": "Justice",
+    "forbidden": [
+      "Unfairness",
+      "Judge",
+      "Equality",
+      "Rights",
+      "Scales"
+    ],
+    "category": "Ideas",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-concepts-020",
+    "word": "Creativity",
+    "forbidden": [
+      "Art",
+      "Idea",
+      "New",
+      "Invention",
+      "Imagination"
+    ],
+    "category": "Ideas",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-concepts-021",
+    "word": "Luck",
+    "forbidden": [
+      "Coincidence",
+      "Fortune",
+      "Happy",
+      "Win",
+      "Fate"
+    ],
+    "category": "Ideas",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-concepts-022",
+    "word": "Concentration",
+    "forbidden": [
+      "Attention",
+      "Distraction",
+      "Mind",
+      "Study",
+      "Quiet"
+    ],
+    "category": "Ideas",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-concepts-023",
+    "word": "Responsibility",
+    "forbidden": [
+      "Duty",
+      "Burden",
+      "Commitment",
+      "Task",
+      "Adult"
+    ],
+    "category": "Ideas",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-concepts-024",
+    "word": "Ambition",
+    "forbidden": [
+      "Goal",
+      "Dream",
+      "Future",
+      "Effort",
+      "Success"
+    ],
+    "category": "Ideas",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-concepts-025",
+    "word": "Nostalgia",
+    "forbidden": [
+      "Past",
+      "Memories",
+      "Longing",
+      "Childhood",
+      "Home"
+    ],
+    "category": "Ideas",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-concepts-026",
+    "word": "Contentment",
+    "forbidden": [
+      "Satisfied",
+      "Greed",
+      "Little",
+      "Enough",
+      "Fulfilled"
+    ],
+    "category": "Ideas",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-concepts-027",
+    "word": "Quick wit",
+    "forbidden": [
+      "Speed",
+      "Answer",
+      "Intelligence",
+      "Immediate",
+      "Alert"
+    ],
+    "category": "Ideas",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-concepts-028",
+    "word": "Intuition",
+    "forbidden": [
+      "Feeling",
+      "Sense",
+      "Prediction",
+      "Inner",
+      "Heart"
+    ],
+    "category": "Ideas",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-concepts-029",
+    "word": "Wisdom",
+    "forbidden": [
+      "Mind",
+      "Knowledge",
+      "Elders",
+      "Experience",
+      "Advice"
+    ],
+    "category": "Ideas",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-concepts-030",
+    "word": "Flexibility",
+    "forbidden": [
+      "Adapt",
+      "Change",
+      "Rigid",
+      "Soft",
+      "Circumstances"
+    ],
+    "category": "Ideas",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-food-001",
+    "word": "Pizza",
+    "forbidden": [
+      "Italy",
+      "Cheese",
+      "Dough",
+      "Round",
+      "Oven"
+    ],
+    "category": "Food",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-food-002",
+    "word": "Tea",
+    "forbidden": [
+      "Drink",
+      "Hot",
+      "Cup",
+      "Leaves",
+      "Sugar"
+    ],
+    "category": "Food",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-food-003",
+    "word": "Rice",
+    "forbidden": [
+      "Grain",
+      "White",
+      "Cooking",
+      "Boiled",
+      "Asia"
+    ],
+    "category": "Food",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-food-004",
+    "word": "Date",
+    "forbidden": [
+      "Palm",
+      "Ramadan",
+      "Sweet",
+      "Stone",
+      "Desert"
+    ],
+    "category": "Food",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-food-005",
+    "word": "Burger",
+    "forbidden": [
+      "Meat",
+      "Bun",
+      "Sandwich",
+      "Restaurant",
+      "America"
+    ],
+    "category": "Food",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-food-006",
+    "word": "Ice cream",
+    "forbidden": [
+      "Cold",
+      "Frozen",
+      "Summer",
+      "Scoop",
+      "Melts"
+    ],
+    "category": "Food",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-food-007",
+    "word": "Falafel",
+    "forbidden": [
+      "Chickpeas",
+      "Fried",
+      "Taameya",
+      "Sandwich",
+      "Fava beans"
+    ],
+    "category": "Food",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-food-008",
+    "word": "Kabsa",
+    "forbidden": [
+      "Rice",
+      "Meat",
+      "Saudi Arabia",
+      "Chicken",
+      "Spices"
+    ],
+    "category": "Food",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-food-009",
+    "word": "Juice",
+    "forbidden": [
+      "Fruit",
+      "Orange",
+      "Drink",
+      "Blender",
+      "Liquid"
+    ],
+    "category": "Food",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-food-010",
+    "word": "French fries",
+    "forbidden": [
+      "Oil",
+      "Sticks",
+      "Burger",
+      "Ketchup",
+      "Crispy"
+    ],
+    "category": "Food",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-food-011",
+    "word": "Coffee",
+    "forbidden": [
+      "Beans",
+      "Morning",
+      "Drink",
+      "Caffeine",
+      "Cup"
+    ],
+    "category": "Food",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-food-012",
+    "word": "Chocolate",
+    "forbidden": [
+      "Cocoa",
+      "Sweet",
+      "Brown",
+      "Melts",
+      "Switzerland"
+    ],
+    "category": "Food",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-food-013",
+    "word": "Shawarma",
+    "forbidden": [
+      "Meat",
+      "Spit",
+      "Rotating",
+      "Chicken",
+      "Bread"
+    ],
+    "category": "Food",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-food-014",
+    "word": "Kunafa",
+    "forbidden": [
+      "Cheese",
+      "Pastry strands",
+      "Syrup",
+      "Dessert",
+      "Oven"
+    ],
+    "category": "Food",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-food-015",
+    "word": "Sushi",
+    "forbidden": [
+      "Japan",
+      "Rice",
+      "Fish",
+      "Raw",
+      "Chopsticks"
+    ],
+    "category": "Food",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-food-016",
+    "word": "Hummus",
+    "forbidden": [
+      "Tahini",
+      "Appetizer",
+      "Oil",
+      "Lemon",
+      "Bread"
+    ],
+    "category": "Food",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-food-017",
+    "word": "Lasagna",
+    "forbidden": [
+      "Layers",
+      "Italy",
+      "Pasta",
+      "Cheese",
+      "Meat"
+    ],
+    "category": "Food",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-food-018",
+    "word": "Maqluba",
+    "forbidden": [
+      "Rice",
+      "Eggplant",
+      "Pot",
+      "Chicken",
+      "Dish"
+    ],
+    "category": "Food",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-food-019",
+    "word": "Mandi",
+    "forbidden": [
+      "Rice",
+      "Meat",
+      "Pit",
+      "Smoke",
+      "Yemen"
+    ],
+    "category": "Food",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-food-020",
+    "word": "Koshari",
+    "forbidden": [
+      "Egypt",
+      "Rice",
+      "Lentils",
+      "Pasta",
+      "Sauce"
+    ],
+    "category": "Food",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-food-021",
+    "word": "Baklava",
+    "forbidden": [
+      "Pastry",
+      "Pistachios",
+      "Layers",
+      "Syrup",
+      "Turkey"
+    ],
+    "category": "Food",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-food-022",
+    "word": "Tagine",
+    "forbidden": [
+      "Morocco",
+      "Clay",
+      "Meat",
+      "Lid",
+      "Cone"
+    ],
+    "category": "Food",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-food-023",
+    "word": "Cappuccino",
+    "forbidden": [
+      "Coffee",
+      "Foam",
+      "Milk",
+      "Italy",
+      "Cup"
+    ],
+    "category": "Food",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-food-024",
+    "word": "Samosa",
+    "forbidden": [
+      "Triangle",
+      "Fried",
+      "Ramadan",
+      "Filling",
+      "Pastry"
+    ],
+    "category": "Food",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-food-025",
+    "word": "Umm Ali",
+    "forbidden": [
+      "Egypt",
+      "Dessert",
+      "Milk",
+      "Nuts",
+      "Oven"
+    ],
+    "category": "Food",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-food-026",
+    "word": "Musakhan",
+    "forbidden": [
+      "Chicken",
+      "Onion",
+      "Sumac",
+      "Bread",
+      "Oil"
+    ],
+    "category": "Food",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-food-027",
+    "word": "Harees",
+    "forbidden": [
+      "Wheat",
+      "Meat",
+      "Gulf",
+      "Ramadan",
+      "Pot"
+    ],
+    "category": "Food",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-food-028",
+    "word": "Cheesecake",
+    "forbidden": [
+      "Cheese",
+      "Biscuit",
+      "Cake",
+      "Dessert",
+      "Strawberry"
+    ],
+    "category": "Food",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-food-029",
+    "word": "Zalabia",
+    "forbidden": [
+      "Fried",
+      "Dough",
+      "Syrup",
+      "Ramadan",
+      "Crispy"
+    ],
+    "category": "Food",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-food-030",
+    "word": "Thareed",
+    "forbidden": [
+      "Bread",
+      "Broth",
+      "Meat",
+      "Gulf",
+      "Vegetables"
+    ],
+    "category": "Food",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-home-001",
+    "word": "Vacuum cleaner",
+    "forbidden": [
+      "Cleaning",
+      "Dust",
+      "Floor",
+      "Electricity",
+      "Carpet"
+    ],
+    "category": "Household tools",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-home-002",
+    "word": "Refrigerator",
+    "forbidden": [
+      "Cold",
+      "Food",
+      "Kitchen",
+      "Freezer",
+      "Cooling"
+    ],
+    "category": "Household tools",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-home-003",
+    "word": "Frying pan",
+    "forbidden": [
+      "Oil",
+      "Eggs",
+      "Cooking",
+      "Heat",
+      "Potatoes"
+    ],
+    "category": "Household tools",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-home-004",
+    "word": "Iron",
+    "forbidden": [
+      "Clothes",
+      "Heat",
+      "Wrinkles",
+      "Shirt",
+      "Steam"
+    ],
+    "category": "Household tools",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-home-005",
+    "word": "Spoon",
+    "forbidden": [
+      "Eating",
+      "Soup",
+      "Fork",
+      "Sugar",
+      "Stirring"
+    ],
+    "category": "Household tools",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-home-006",
+    "word": "Knife",
+    "forbidden": [
+      "Cutting",
+      "Sharp",
+      "Vegetables",
+      "Kitchen",
+      "Blade"
+    ],
+    "category": "Household tools",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-home-007",
+    "word": "Cup",
+    "forbidden": [
+      "Tea",
+      "Water",
+      "Drinking",
+      "Coffee",
+      "Glass"
+    ],
+    "category": "Household tools",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-home-008",
+    "word": "Plate",
+    "forbidden": [
+      "Eating",
+      "Food",
+      "Round",
+      "Table",
+      "Serving"
+    ],
+    "category": "Household tools",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-home-009",
+    "word": "Lamp",
+    "forbidden": [
+      "Glow",
+      "Light",
+      "Electricity",
+      "Darkness",
+      "Ceiling"
+    ],
+    "category": "Household tools",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-home-010",
+    "word": "Pillow",
+    "forbidden": [
+      "Sleep",
+      "Head",
+      "Bed",
+      "Soft",
+      "Cotton"
+    ],
+    "category": "Household tools",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-home-011",
+    "word": "Mirror",
+    "forbidden": [
+      "Reflection",
+      "Face",
+      "Glass",
+      "Hair",
+      "Bathroom"
+    ],
+    "category": "Household tools",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-home-012",
+    "word": "Washing machine",
+    "forbidden": [
+      "Clothes",
+      "Water",
+      "Soap",
+      "Cleaning",
+      "Spinning"
+    ],
+    "category": "Household tools",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-home-013",
+    "word": "Blender",
+    "forbidden": [
+      "Juice",
+      "Fruit",
+      "Electricity",
+      "Blades",
+      "Mixing"
+    ],
+    "category": "Household tools",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-home-014",
+    "word": "Colander",
+    "forbidden": [
+      "Pasta",
+      "Water",
+      "Holes",
+      "Rice",
+      "Rinsing"
+    ],
+    "category": "Household tools",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-home-015",
+    "word": "Grater",
+    "forbidden": [
+      "Cheese",
+      "Carrot",
+      "Holes",
+      "Metal",
+      "Fine"
+    ],
+    "category": "Household tools",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-home-016",
+    "word": "Kettle",
+    "forbidden": [
+      "Water",
+      "Tea",
+      "Electricity",
+      "Steam",
+      "Hot"
+    ],
+    "category": "Household tools",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-home-017",
+    "word": "Tablecloth",
+    "forbidden": [
+      "Table",
+      "Fabric",
+      "Dining",
+      "Cover",
+      "Decoration"
+    ],
+    "category": "Household tools",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-home-018",
+    "word": "Curtain",
+    "forbidden": [
+      "Window",
+      "Fabric",
+      "Sun",
+      "Covering",
+      "Light"
+    ],
+    "category": "Household tools",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-home-019",
+    "word": "Hanger",
+    "forbidden": [
+      "Clothes",
+      "Wardrobe",
+      "Shirt",
+      "Hook",
+      "Coat"
+    ],
+    "category": "Household tools",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-home-020",
+    "word": "Key",
+    "forbidden": [
+      "Door",
+      "Lock",
+      "Metal",
+      "Car",
+      "Closing"
+    ],
+    "category": "Household tools",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-home-021",
+    "word": "Air conditioner",
+    "forbidden": [
+      "Air",
+      "Cold",
+      "Summer",
+      "Temperature",
+      "Electricity"
+    ],
+    "category": "Household tools",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-home-022",
+    "word": "Oven",
+    "forbidden": [
+      "Bread",
+      "Cake",
+      "Heat",
+      "Cooking",
+      "Fire"
+    ],
+    "category": "Household tools",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-home-023",
+    "word": "Scissors",
+    "forbidden": [
+      "Paper",
+      "Cutting",
+      "Fabric",
+      "Sharp",
+      "Two blades"
+    ],
+    "category": "Household tools",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-home-024",
+    "word": "Bucket",
+    "forbidden": [
+      "Water",
+      "Cleaning",
+      "Mopping",
+      "Plastic",
+      "Carrying"
+    ],
+    "category": "Household tools",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-home-025",
+    "word": "Mop",
+    "forbidden": [
+      "Floor",
+      "Water",
+      "Cleaning",
+      "Bucket",
+      "Wet"
+    ],
+    "category": "Household tools",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-home-026",
+    "word": "Screwdriver",
+    "forbidden": [
+      "Screw",
+      "Tools",
+      "Assembly",
+      "Tighten",
+      "Thread"
+    ],
+    "category": "Household tools",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-home-027",
+    "word": "Funnel",
+    "forbidden": [
+      "Liquid",
+      "Bottle",
+      "Pour",
+      "Narrow",
+      "Oil"
+    ],
+    "category": "Household tools",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-home-028",
+    "word": "Pliers",
+    "forbidden": [
+      "Nail",
+      "Tighten",
+      "Grip",
+      "Metal",
+      "Pull"
+    ],
+    "category": "Household tools",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-home-029",
+    "word": "Jar",
+    "forbidden": [
+      "Glass",
+      "Jam",
+      "Lid",
+      "Storage",
+      "Pickles"
+    ],
+    "category": "Household tools",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-home-030",
+    "word": "Mortar",
+    "forbidden": [
+      "Garlic",
+      "Pounding",
+      "Grinding",
+      "Spices",
+      "Stone"
+    ],
+    "category": "Household tools",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-jobs-001",
+    "word": "Doctor",
+    "forbidden": [
+      "Hospital",
+      "Patient",
+      "Treatment",
+      "Medicine",
+      "Stethoscope"
+    ],
+    "category": "Jobs",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-jobs-002",
+    "word": "Teacher",
+    "forbidden": [
+      "School",
+      "Students",
+      "Lesson",
+      "Board",
+      "Explaining"
+    ],
+    "category": "Jobs",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-jobs-003",
+    "word": "Pilot",
+    "forbidden": [
+      "Sky",
+      "Flying",
+      "Flight",
+      "Captain",
+      "Passengers"
+    ],
+    "category": "Jobs",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-jobs-004",
+    "word": "Farmer",
+    "forbidden": [
+      "Land",
+      "Field",
+      "Crop",
+      "Harvest",
+      "Soil"
+    ],
+    "category": "Jobs",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-jobs-005",
+    "word": "Carpenter",
+    "forbidden": [
+      "Wood",
+      "Saw",
+      "Nail",
+      "Table",
+      "Chair"
+    ],
+    "category": "Jobs",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-jobs-006",
+    "word": "Chef",
+    "forbidden": [
+      "Food",
+      "Eating",
+      "Restaurant",
+      "Recipe",
+      "Pot"
+    ],
+    "category": "Jobs",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-jobs-007",
+    "word": "Driver",
+    "forbidden": [
+      "Car",
+      "Bus",
+      "Steering wheel",
+      "Road",
+      "Passengers"
+    ],
+    "category": "Jobs",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-jobs-008",
+    "word": "Baker",
+    "forbidden": [
+      "Oven",
+      "Dough",
+      "Flour",
+      "Loaf",
+      "Bread"
+    ],
+    "category": "Jobs",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-jobs-009",
+    "word": "Painter",
+    "forbidden": [
+      "Canvas",
+      "Colors",
+      "Brush",
+      "Artist",
+      "Picture"
+    ],
+    "category": "Jobs",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-jobs-010",
+    "word": "Barber",
+    "forbidden": [
+      "Hair",
+      "Scissors",
+      "Cutting",
+      "Head",
+      "Salon"
+    ],
+    "category": "Jobs",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-jobs-011",
+    "word": "Fisherman",
+    "forbidden": [
+      "Sea",
+      "Fish",
+      "Net",
+      "Boat",
+      "Rod"
+    ],
+    "category": "Jobs",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-jobs-012",
+    "word": "Clown",
+    "forbidden": [
+      "Circus",
+      "Laughter",
+      "Nose",
+      "Colors",
+      "Children"
+    ],
+    "category": "Jobs",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-jobs-013",
+    "word": "Programmer",
+    "forbidden": [
+      "Computer",
+      "Laptop",
+      "App",
+      "Code",
+      "Screen"
+    ],
+    "category": "Jobs",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-jobs-014",
+    "word": "Engineer",
+    "forbidden": [
+      "Building",
+      "Design",
+      "Blueprint",
+      "Project",
+      "Bridge"
+    ],
+    "category": "Jobs",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-jobs-015",
+    "word": "Firefighter",
+    "forbidden": [
+      "Blaze",
+      "Flames",
+      "Water",
+      "Hose",
+      "Truck"
+    ],
+    "category": "Jobs",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-jobs-016",
+    "word": "Pharmacist",
+    "forbidden": [
+      "Medicine",
+      "Prescription",
+      "Doctor",
+      "Pills",
+      "Treatment"
+    ],
+    "category": "Jobs",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-jobs-017",
+    "word": "Lawyer",
+    "forbidden": [
+      "Court",
+      "Law",
+      "Judge",
+      "Defense",
+      "Case"
+    ],
+    "category": "Jobs",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-jobs-018",
+    "word": "Presenter",
+    "forbidden": [
+      "Television",
+      "News",
+      "Microphone",
+      "Program",
+      "Screen"
+    ],
+    "category": "Jobs",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-jobs-019",
+    "word": "Photographer",
+    "forbidden": [
+      "Camera",
+      "Lens",
+      "Capture",
+      "Flash",
+      "Studio"
+    ],
+    "category": "Jobs",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-jobs-020",
+    "word": "Tailor",
+    "forbidden": [
+      "Fabric",
+      "Needle",
+      "Clothes",
+      "Machine",
+      "Scissors"
+    ],
+    "category": "Jobs",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-jobs-021",
+    "word": "Plumber",
+    "forbidden": [
+      "Water",
+      "Pipes",
+      "Tap",
+      "Leak",
+      "Bathroom"
+    ],
+    "category": "Jobs",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-jobs-022",
+    "word": "Mechanic",
+    "forbidden": [
+      "Car",
+      "Engine",
+      "Repair",
+      "Workshop",
+      "Tire"
+    ],
+    "category": "Jobs",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-jobs-023",
+    "word": "Captain",
+    "forbidden": [
+      "Ship",
+      "Sea",
+      "Command",
+      "Crew",
+      "Port"
+    ],
+    "category": "Jobs",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-jobs-024",
+    "word": "Astronaut",
+    "forbidden": [
+      "Rocket",
+      "Moon",
+      "Suit",
+      "Planets",
+      "Station"
+    ],
+    "category": "Jobs",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-jobs-025",
+    "word": "Sculptor",
+    "forbidden": [
+      "Statue",
+      "Stone",
+      "Marble",
+      "Chisel",
+      "Carving"
+    ],
+    "category": "Jobs",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-jobs-026",
+    "word": "Translator",
+    "forbidden": [
+      "Language",
+      "English",
+      "Arabic",
+      "Words",
+      "Convert"
+    ],
+    "category": "Jobs",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-jobs-027",
+    "word": "Archaeologist",
+    "forbidden": [
+      "Ancient",
+      "Excavation",
+      "History",
+      "Pyramids",
+      "Museum"
+    ],
+    "category": "Jobs",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-jobs-028",
+    "word": "Beekeeper",
+    "forbidden": [
+      "Honey",
+      "Hive",
+      "Sting",
+      "Colony",
+      "Suit"
+    ],
+    "category": "Jobs",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-jobs-029",
+    "word": "Librarian",
+    "forbidden": [
+      "Novels",
+      "Reading",
+      "Borrowing",
+      "Shelves",
+      "Quiet"
+    ],
+    "category": "Jobs",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-jobs-030",
+    "word": "Tour guide",
+    "forbidden": [
+      "Visitors",
+      "Ruins",
+      "Trip",
+      "Explaining",
+      "Landmarks"
+    ],
+    "category": "Jobs",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-nature-001",
+    "word": "Volcano",
+    "forbidden": [
+      "Mountain",
+      "Lava",
+      "Eruption",
+      "Fire",
+      "Smoke"
+    ],
+    "category": "Nature",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-nature-002",
+    "word": "Rainbow",
+    "forbidden": [
+      "Colors",
+      "Rain",
+      "Sky",
+      "Seven",
+      "Sun"
+    ],
+    "category": "Nature",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-nature-003",
+    "word": "Desert",
+    "forbidden": [
+      "Sand",
+      "Camel",
+      "Hot",
+      "Oasis",
+      "Dry"
+    ],
+    "category": "Nature",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-nature-004",
+    "word": "Bee",
+    "forbidden": [
+      "Honey",
+      "Hive",
+      "Sting",
+      "Flower",
+      "Buzzing"
+    ],
+    "category": "Nature",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-nature-005",
+    "word": "River",
+    "forbidden": [
+      "Water",
+      "Flowing",
+      "Sea",
+      "Nile",
+      "Bank"
+    ],
+    "category": "Nature",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-nature-006",
+    "word": "Tree",
+    "forbidden": [
+      "Leaves",
+      "Roots",
+      "Green",
+      "Fruit",
+      "Shade"
+    ],
+    "category": "Nature",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-nature-007",
+    "word": "Moon",
+    "forbidden": [
+      "Night",
+      "Sky",
+      "Full",
+      "Crescent",
+      "Earth"
+    ],
+    "category": "Nature",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-nature-008",
+    "word": "Sea",
+    "forbidden": [
+      "Water",
+      "Salty",
+      "Waves",
+      "Fish",
+      "Beach"
+    ],
+    "category": "Nature",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-nature-009",
+    "word": "Lion",
+    "forbidden": [
+      "King",
+      "Jungle",
+      "Roar",
+      "Mane",
+      "Predator"
+    ],
+    "category": "Nature",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-nature-010",
+    "word": "Butterfly",
+    "forbidden": [
+      "Wings",
+      "Colors",
+      "Flower",
+      "Caterpillar",
+      "Flying"
+    ],
+    "category": "Nature",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-nature-011",
+    "word": "Snow",
+    "forbidden": [
+      "White",
+      "Cold",
+      "Winter",
+      "Mountain",
+      "Melting"
+    ],
+    "category": "Nature",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-nature-012",
+    "word": "Mountain",
+    "forbidden": [
+      "High",
+      "Peak",
+      "Rock",
+      "Climbing",
+      "Tall"
+    ],
+    "category": "Nature",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-nature-013",
+    "word": "Earthquake",
+    "forbidden": [
+      "Ground",
+      "Tremor",
+      "Shaking",
+      "Houses",
+      "Richter"
+    ],
+    "category": "Nature",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-nature-014",
+    "word": "Oasis",
+    "forbidden": [
+      "Desert",
+      "Palms",
+      "Water",
+      "Sand",
+      "Green"
+    ],
+    "category": "Nature",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-nature-015",
+    "word": "Tortoise",
+    "forbidden": [
+      "Slow",
+      "Armor",
+      "Shell",
+      "Hare",
+      "Crawling"
+    ],
+    "category": "Nature",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-nature-016",
+    "word": "Waterfall",
+    "forbidden": [
+      "Water",
+      "Falling",
+      "High",
+      "River",
+      "Rocks"
+    ],
+    "category": "Nature",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-nature-017",
+    "word": "Owl",
+    "forbidden": [
+      "Night",
+      "Wise",
+      "Bird",
+      "Eyes",
+      "Turning"
+    ],
+    "category": "Nature",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-nature-018",
+    "word": "Ice",
+    "forbidden": [
+      "Water",
+      "Frozen",
+      "Cold",
+      "Snow",
+      "Pole"
+    ],
+    "category": "Nature",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-nature-019",
+    "word": "Thunder",
+    "forbidden": [
+      "Sound",
+      "Lightning",
+      "Rain",
+      "Sky",
+      "Storm"
+    ],
+    "category": "Nature",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-nature-020",
+    "word": "Giraffe",
+    "forbidden": [
+      "Neck",
+      "Long",
+      "Africa",
+      "Spots",
+      "Leaves"
+    ],
+    "category": "Nature",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-nature-021",
+    "word": "Dolphin",
+    "forbidden": [
+      "Sea",
+      "Intelligent",
+      "Jumping",
+      "Fish",
+      "Friendly"
+    ],
+    "category": "Nature",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-nature-022",
+    "word": "Forest",
+    "forbidden": [
+      "Trees",
+      "Animals",
+      "Dense",
+      "Green",
+      "Rain"
+    ],
+    "category": "Nature",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-nature-023",
+    "word": "Fog",
+    "forbidden": [
+      "Visibility",
+      "Cloud",
+      "White",
+      "Morning",
+      "Vapor"
+    ],
+    "category": "Nature",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-nature-024",
+    "word": "Chameleon",
+    "forbidden": [
+      "Colors",
+      "Changing",
+      "Tongue",
+      "Lizard",
+      "Eyes"
+    ],
+    "category": "Nature",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-nature-025",
+    "word": "Aurora",
+    "forbidden": [
+      "Colors",
+      "Sky",
+      "North",
+      "Night",
+      "Lights"
+    ],
+    "category": "Nature",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-nature-026",
+    "word": "Meteorite",
+    "forbidden": [
+      "Sky",
+      "Space",
+      "Falling",
+      "Rock",
+      "Fire"
+    ],
+    "category": "Nature",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-nature-027",
+    "word": "Bat",
+    "forbidden": [
+      "Night",
+      "Flying",
+      "Cave",
+      "Upside down",
+      "Echo"
+    ],
+    "category": "Nature",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-nature-028",
+    "word": "Mirage",
+    "forbidden": [
+      "Desert",
+      "Water",
+      "Illusion",
+      "Heat",
+      "Thirsty"
+    ],
+    "category": "Nature",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-nature-029",
+    "word": "Spring",
+    "forbidden": [
+      "Water",
+      "Ground",
+      "Flowing",
+      "Mountain",
+      "Source"
+    ],
+    "category": "Nature",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-nature-030",
+    "word": "Coral",
+    "forbidden": [
+      "Sea",
+      "Colors",
+      "Reef",
+      "Fish",
+      "Rocks"
+    ],
+    "category": "Nature",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-places-001",
+    "word": "Airport",
+    "forbidden": [
+      "Travel",
+      "Luggage",
+      "Passport",
+      "Takeoff",
+      "Flight"
+    ],
+    "category": "Places",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-places-002",
+    "word": "Library",
+    "forbidden": [
+      "Reading",
+      "Shelves",
+      "Quiet",
+      "Borrowing",
+      "Novels"
+    ],
+    "category": "Places",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-places-003",
+    "word": "Hospital",
+    "forbidden": [
+      "Doctor",
+      "Nurse",
+      "Treatment",
+      "Ambulance",
+      "Patient"
+    ],
+    "category": "Places",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-places-004",
+    "word": "Beach",
+    "forbidden": [
+      "Sea",
+      "Sand",
+      "Swimming",
+      "Waves",
+      "Summer"
+    ],
+    "category": "Places",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-places-005",
+    "word": "Pharmacy",
+    "forbidden": [
+      "Medicine",
+      "Treatment",
+      "Prescription",
+      "Tablets",
+      "Doctor"
+    ],
+    "category": "Places",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-places-006",
+    "word": "Market",
+    "forbidden": [
+      "Buying",
+      "Selling",
+      "Goods",
+      "Merchant",
+      "Prices"
+    ],
+    "category": "Places",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-places-007",
+    "word": "School",
+    "forbidden": [
+      "Students",
+      "Teacher",
+      "Classroom",
+      "Education",
+      "Homework"
+    ],
+    "category": "Places",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-places-008",
+    "word": "Restaurant",
+    "forbidden": [
+      "Food",
+      "Table",
+      "Waiter",
+      "Menu",
+      "Cooking"
+    ],
+    "category": "Places",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-places-009",
+    "word": "Zoo",
+    "forbidden": [
+      "Lion",
+      "Cage",
+      "Giraffe",
+      "Monkey",
+      "Children"
+    ],
+    "category": "Places",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-places-010",
+    "word": "Swimming pool",
+    "forbidden": [
+      "Water",
+      "Diving",
+      "Summer",
+      "Floating",
+      "Lifeguard"
+    ],
+    "category": "Places",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-places-011",
+    "word": "Stadium",
+    "forbidden": [
+      "Ball",
+      "Crowd",
+      "Match",
+      "Goal",
+      "Team"
+    ],
+    "category": "Places",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-places-012",
+    "word": "Bakery",
+    "forbidden": [
+      "Dough",
+      "Oven",
+      "Flour",
+      "Pastries",
+      "Cakes"
+    ],
+    "category": "Places",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-places-013",
+    "word": "Museum",
+    "forbidden": [
+      "History",
+      "Antiquities",
+      "Paintings",
+      "Statues",
+      "Exhibition"
+    ],
+    "category": "Places",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-places-014",
+    "word": "Cinema",
+    "forbidden": [
+      "Film",
+      "Screen",
+      "Popcorn",
+      "Ticket",
+      "Seats"
+    ],
+    "category": "Places",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-places-015",
+    "word": "Bank",
+    "forbidden": [
+      "Money",
+      "Account",
+      "ATM",
+      "Card",
+      "Deposit"
+    ],
+    "category": "Places",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-places-016",
+    "word": "Gas station",
+    "forbidden": [
+      "Fuel",
+      "Car",
+      "Refill",
+      "Tank",
+      "Pump"
+    ],
+    "category": "Places",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-places-017",
+    "word": "Farm",
+    "forbidden": [
+      "Cows",
+      "Grower",
+      "Chickens",
+      "Field",
+      "Crops"
+    ],
+    "category": "Places",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-places-019",
+    "word": "Island",
+    "forbidden": [
+      "Sea",
+      "Water",
+      "Surrounded",
+      "Beach",
+      "Boat"
+    ],
+    "category": "Places",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-places-020",
+    "word": "Hotel",
+    "forbidden": [
+      "Room",
+      "Sleep",
+      "Travel",
+      "Reception",
+      "Booking"
+    ],
+    "category": "Places",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-places-021",
+    "word": "Factory",
+    "forbidden": [
+      "Production",
+      "Machines",
+      "Workers",
+      "Building",
+      "Goods"
+    ],
+    "category": "Places",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-places-023",
+    "word": "Train station",
+    "forbidden": [
+      "Rails",
+      "Platform",
+      "Ticket",
+      "Travelers",
+      "Carriages"
+    ],
+    "category": "Places",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-places-024",
+    "word": "Port",
+    "forbidden": [
+      "Ships",
+      "Sea",
+      "Goods",
+      "Docking",
+      "Shipping"
+    ],
+    "category": "Places",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-places-025",
+    "word": "Observatory",
+    "forbidden": [
+      "Stars",
+      "Telescope",
+      "Space",
+      "Sky",
+      "Astronomy"
+    ],
+    "category": "Places",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-places-026",
+    "word": "Cave",
+    "forbidden": [
+      "Darkness",
+      "Mountain",
+      "Bats",
+      "Rocks",
+      "Hole"
+    ],
+    "category": "Places",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-places-028",
+    "word": "Greenhouse",
+    "forbidden": [
+      "Plants",
+      "Growing",
+      "Heat",
+      "Transparent",
+      "Garden"
+    ],
+    "category": "Places",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-places-029",
+    "word": "Mine",
+    "forbidden": [
+      "Gold",
+      "Digging",
+      "Coal",
+      "Underground",
+      "Workers"
+    ],
+    "category": "Places",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-sports-001",
+    "word": "Football",
+    "forbidden": [
+      "Goal",
+      "Pitch",
+      "Team",
+      "Keeper",
+      "Kicking"
+    ],
+    "category": "Sports",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-sports-002",
+    "word": "Swimming",
+    "forbidden": [
+      "Water",
+      "Sea",
+      "Diving",
+      "Floating",
+      "Pool"
+    ],
+    "category": "Sports",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-sports-003",
+    "word": "Goal",
+    "forbidden": [
+      "Net",
+      "Posts",
+      "Ball",
+      "Scoring",
+      "Keeper"
+    ],
+    "category": "Sports",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-sports-004",
+    "word": "Referee",
+    "forbidden": [
+      "Whistle",
+      "Card",
+      "Match",
+      "Decision",
+      "Rules"
+    ],
+    "category": "Sports",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-sports-005",
+    "word": "Medal",
+    "forbidden": [
+      "Gold",
+      "Silver",
+      "Winning",
+      "Neck",
+      "Olympics"
+    ],
+    "category": "Sports",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-sports-006",
+    "word": "Basketball",
+    "forbidden": [
+      "Hoop",
+      "Net",
+      "Dribbling",
+      "Tall",
+      "Jumping"
+    ],
+    "category": "Sports",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-sports-007",
+    "word": "Racket",
+    "forbidden": [
+      "Tennis",
+      "Ball",
+      "Net",
+      "Shuttlecock",
+      "Wood"
+    ],
+    "category": "Sports",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-sports-008",
+    "word": "Goalkeeper",
+    "forbidden": [
+      "Goal",
+      "Gloves",
+      "Net",
+      "Ball",
+      "Save"
+    ],
+    "category": "Sports",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-sports-009",
+    "word": "Whistle",
+    "forbidden": [
+      "Referee",
+      "Blowing",
+      "Sound",
+      "Start",
+      "Match"
+    ],
+    "category": "Sports",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-sports-010",
+    "word": "Trophy",
+    "forbidden": [
+      "Championship",
+      "Win",
+      "Lifting",
+      "Gold",
+      "Final"
+    ],
+    "category": "Sports",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-sports-011",
+    "word": "Bicycle",
+    "forbidden": [
+      "Wheel",
+      "Pedal",
+      "Race",
+      "Riding",
+      "Road"
+    ],
+    "category": "Sports",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-sports-013",
+    "word": "Penalty kick",
+    "forbidden": [
+      "Goal",
+      "Keeper",
+      "Spot",
+      "Foul",
+      "Net"
+    ],
+    "category": "Sports",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-sports-014",
+    "word": "Offside",
+    "forbidden": [
+      "Foul",
+      "Defender",
+      "Referee",
+      "Flag",
+      "Line"
+    ],
+    "category": "Sports",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-sports-015",
+    "word": "Marathon",
+    "forbidden": [
+      "Running",
+      "Distance",
+      "Long",
+      "Kilometer",
+      "Race"
+    ],
+    "category": "Sports",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-sports-016",
+    "word": "Gymnastics",
+    "forbidden": [
+      "Flexibility",
+      "Jumping",
+      "Moves",
+      "Balance",
+      "Somersault"
+    ],
+    "category": "Sports",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-sports-017",
+    "word": "Fencing",
+    "forbidden": [
+      "Sword",
+      "Mask",
+      "Touch",
+      "Opponent",
+      "Knight"
+    ],
+    "category": "Sports",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-sports-018",
+    "word": "Table tennis",
+    "forbidden": [
+      "Paddle",
+      "Net",
+      "Ball",
+      "Ping-pong",
+      "Small"
+    ],
+    "category": "Sports",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-sports-019",
+    "word": "Red card",
+    "forbidden": [
+      "Sent off",
+      "Referee",
+      "Foul",
+      "Player",
+      "Exit"
+    ],
+    "category": "Sports",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-sports-020",
+    "word": "Skiing",
+    "forbidden": [
+      "Snow",
+      "Ice",
+      "Sliding",
+      "Mountain",
+      "Pole"
+    ],
+    "category": "Sports",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-sports-021",
+    "word": "Olympics",
+    "forbidden": [
+      "Medal",
+      "Countries",
+      "Four years",
+      "Flame",
+      "Rings"
+    ],
+    "category": "Sports",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-sports-022",
+    "word": "Coach",
+    "forbidden": [
+      "Team",
+      "Plan",
+      "Players",
+      "Practice",
+      "Instructions"
+    ],
+    "category": "Sports",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-sports-023",
+    "word": "Hurdles",
+    "forbidden": [
+      "Running",
+      "Jumping",
+      "Obstacle",
+      "Track",
+      "Speed"
+    ],
+    "category": "Sports",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-sports-024",
+    "word": "Javelin",
+    "forbidden": [
+      "Throwing",
+      "Distance",
+      "Stick",
+      "Long",
+      "Athletics"
+    ],
+    "category": "Sports",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-sports-025",
+    "word": "Corner kick",
+    "forbidden": [
+      "Angle",
+      "Flag",
+      "Cross",
+      "Ball",
+      "Header"
+    ],
+    "category": "Sports",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-sports-026",
+    "word": "Judo",
+    "forbidden": [
+      "Japan",
+      "Belt",
+      "Throwing",
+      "Ground",
+      "Wrestling"
+    ],
+    "category": "Sports",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-sports-027",
+    "word": "Relay",
+    "forbidden": [
+      "Baton",
+      "Handover",
+      "Four",
+      "Running",
+      "Team"
+    ],
+    "category": "Sports",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-sports-028",
+    "word": "Extra time",
+    "forbidden": [
+      "Draw",
+      "Minutes",
+      "End",
+      "Match",
+      "Added"
+    ],
+    "category": "Sports",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-sports-029",
+    "word": "Handball",
+    "forbidden": [
+      "Throwing",
+      "Goal",
+      "Seven",
+      "Keeper",
+      "Jumping"
+    ],
+    "category": "Sports",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-sports-030",
+    "word": "Triathlon",
+    "forbidden": [
+      "Swimming",
+      "Cycling",
+      "Running",
+      "Three",
+      "Consecutive"
+    ],
+    "category": "Sports",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-things-001",
+    "word": "Umbrella",
+    "forbidden": [
+      "Rain",
+      "Sun",
+      "Opening",
+      "Hand",
+      "Wet"
+    ],
+    "category": "Objects",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-things-002",
+    "word": "Clock",
+    "forbidden": [
+      "Time",
+      "Hands",
+      "Wrist",
+      "Minutes",
+      "Wall"
+    ],
+    "category": "Objects",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-things-004",
+    "word": "Bag",
+    "forbidden": [
+      "Carrying",
+      "Back",
+      "Travel",
+      "Belongings",
+      "School"
+    ],
+    "category": "Objects",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-things-005",
+    "word": "Glasses",
+    "forbidden": [
+      "Eyes",
+      "Lenses",
+      "Vision",
+      "Sun",
+      "Face"
+    ],
+    "category": "Objects",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-things-006",
+    "word": "Chair",
+    "forbidden": [
+      "Sitting",
+      "Table",
+      "Legs",
+      "Wood",
+      "Seat"
+    ],
+    "category": "Objects",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-things-007",
+    "word": "Pen",
+    "forbidden": [
+      "Writing",
+      "Paper",
+      "Ink",
+      "Pencil",
+      "School"
+    ],
+    "category": "Objects",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-things-008",
+    "word": "Phone",
+    "forbidden": [
+      "Call",
+      "Messages",
+      "Mobile",
+      "Screen",
+      "Ringing"
+    ],
+    "category": "Objects",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-things-010",
+    "word": "Comb",
+    "forbidden": [
+      "Hair",
+      "Teeth",
+      "Styling",
+      "Head",
+      "Brush"
+    ],
+    "category": "Objects",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-things-011",
+    "word": "Book",
+    "forbidden": [
+      "Reading",
+      "Pages",
+      "Paper",
+      "Author",
+      "Cover"
+    ],
+    "category": "Objects",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-things-012",
+    "word": "Candle",
+    "forbidden": [
+      "Fire",
+      "Light",
+      "Melting",
+      "Darkness",
+      "Wick"
+    ],
+    "category": "Objects",
+    "difficulty": 1
+  },
+  {
+    "id": "mamnoo-things-013",
+    "word": "Compass",
+    "forbidden": [
+      "Direction",
+      "North",
+      "Needle",
+      "Lost",
+      "Map"
+    ],
+    "category": "Objects",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-things-014",
+    "word": "Alarm",
+    "forbidden": [
+      "Waking",
+      "Morning",
+      "Ringing",
+      "Sleep",
+      "Clock"
+    ],
+    "category": "Objects",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-things-015",
+    "word": "Magnet",
+    "forbidden": [
+      "Iron",
+      "Attraction",
+      "Fridge",
+      "Pole",
+      "Sticking"
+    ],
+    "category": "Objects",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-things-016",
+    "word": "Binoculars",
+    "forbidden": [
+      "Distant",
+      "Zoom",
+      "Lens",
+      "Stars",
+      "Eyes"
+    ],
+    "category": "Objects",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-things-017",
+    "word": "Ruler",
+    "forbidden": [
+      "Measuring",
+      "Line",
+      "Centimeter",
+      "Straight",
+      "Length"
+    ],
+    "category": "Objects",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-things-018",
+    "word": "Flashlight",
+    "forbidden": [
+      "Light",
+      "Battery",
+      "Darkness",
+      "Hand",
+      "Beam"
+    ],
+    "category": "Objects",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-things-019",
+    "word": "Tent",
+    "forbidden": [
+      "Trip",
+      "Desert",
+      "Sleep",
+      "Fabric",
+      "Pegs"
+    ],
+    "category": "Objects",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-things-020",
+    "word": "Basket",
+    "forbidden": [
+      "Shopping",
+      "Fruit",
+      "Wicker",
+      "Carrying",
+      "Trash"
+    ],
+    "category": "Objects",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-things-021",
+    "word": "Box",
+    "forbidden": [
+      "Wood",
+      "Lid",
+      "Storage",
+      "Cardboard",
+      "Closed"
+    ],
+    "category": "Objects",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-things-023",
+    "word": "Needle",
+    "forbidden": [
+      "Thread",
+      "Sewing",
+      "Hole",
+      "Sharp",
+      "Pin"
+    ],
+    "category": "Objects",
+    "difficulty": 2
+  },
+  {
+    "id": "mamnoo-things-025",
+    "word": "Hammer",
+    "forbidden": [
+      "Nail",
+      "Pounding",
+      "Metal",
+      "Carpenter",
+      "Tool"
+    ],
+    "category": "Objects",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-things-026",
+    "word": "Hourglass",
+    "forbidden": [
+      "Grains",
+      "Time",
+      "Glass",
+      "Turning",
+      "Minutes"
+    ],
+    "category": "Objects",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-things-027",
+    "word": "Magnifying glass",
+    "forbidden": [
+      "Lens",
+      "Detective",
+      "Small",
+      "Enlarging",
+      "Reading"
+    ],
+    "category": "Objects",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-things-028",
+    "word": "Thermos",
+    "forbidden": [
+      "Tea",
+      "Hot",
+      "Coffee",
+      "Preserving",
+      "Travel"
+    ],
+    "category": "Objects",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-things-029",
+    "word": "Anchor",
+    "forbidden": [
+      "Ship",
+      "Sea",
+      "Securing",
+      "Metal",
+      "Seabed"
+    ],
+    "category": "Objects",
+    "difficulty": 3
+  },
+  {
+    "id": "mamnoo-things-030",
+    "word": "Steering wheel",
+    "forbidden": [
+      "Car",
+      "Driver",
+      "Direction",
+      "Round",
+      "Hands"
+    ],
+    "category": "Objects",
+    "difficulty": 3
+  }
+]

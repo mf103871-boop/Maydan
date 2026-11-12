@@ -1,0 +1,494 @@
+{
+  "icon": "🎬",
+  "id": "movies",
+  "name": "World Cinema",
+  "qs": [
+    {
+      "qid": "movies-200-911",
+      "p": 200,
+      "topic": "Jurassic Park",
+      "q": "In the first Jurassic Park film, what material preserved the mosquito containing ancient DNA?",
+      "a": "Amber",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "movies-200-912",
+      "p": 200,
+      "topic": "Harry Potter",
+      "q": "In Harry Potter and the Philosopher's Stone, which mirror shows a person's deepest desires?",
+      "a": "The Mirror of Erised",
+      "alt": [
+        "Mirror of Erised",
+        "Erised"
+      ],
+      "sourceUrl": "https://www.harrypotter.com/fact-file/objects/the-mirror-of-erised",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "movies-200-913",
+      "p": 200,
+      "topic": "Titanic",
+      "q": "What is the blue necklace sought by the wreck-exploration team in Titanic called?",
+      "a": "Heart of the Ocean",
+      "alt": [
+        "The Heart of the Ocean"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "movies-200-914",
+      "p": 200,
+      "topic": "Inception",
+      "q": "In Inception, which architecture student designs the worlds for the mission?",
+      "a": "Ariadne",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Inception",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "movies-200-915",
+      "p": 200,
+      "topic": "The Matrix",
+      "q": "In The Matrix, which crew leader believes the hero is the One?",
+      "a": "Morpheus",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Matrix",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "movies-200-916",
+      "p": 200,
+      "topic": "Pirates of the Caribbean",
+      "q": "In The Curse of the Black Pearl, what is Will Turner's trade before his adventure?",
+      "a": "Blacksmithing",
+      "alt": [
+        "Blacksmith",
+        "Swordsmith"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "movies-200-917",
+      "p": 200,
+      "topic": "Back to the Future",
+      "q": "In Back to the Future, what natural event does Doc use to power the return journey from the past?",
+      "a": "A lightning strike",
+      "alt": [
+        "Lightning",
+        "A bolt of lightning"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Back_to_the_Future",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "movies-200-918",
+      "p": 200,
+      "topic": "The Lord of the Rings",
+      "q": "In The Fellowship of the Ring, which wizard imprisons his friend in Isengard after allying with Sauron?",
+      "a": "Saruman",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "movies-400-911",
+      "p": 400,
+      "topic": "Jurassic Park",
+      "q": "In the first Jurassic Park film, which programmer disables security to steal embryos?",
+      "a": "Dennis Nedry",
+      "alt": [
+        "Nedry"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "movies-400-912",
+      "p": 400,
+      "topic": "Harry Potter",
+      "q": "In Harry Potter and the Philosopher's Stone, which alchemist created the stone?",
+      "a": "Nicolas Flamel",
+      "alt": [
+        "Nicholas Flamel"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "movies-400-913",
+      "p": 400,
+      "topic": "Jurassic Park",
+      "q": "On which island is the park in the first Jurassic Park film?",
+      "a": "Isla Nublar",
+      "alt": [
+        "Nublar"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "movies-400-914",
+      "p": 400,
+      "topic": "Titanic",
+      "q": "In Titanic, what is the name of the wealthy fiancé who accuses Jack of theft?",
+      "a": "Cal Hockley",
+      "alt": [
+        "Cal"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "movies-400-915",
+      "p": 400,
+      "topic": "Inception",
+      "q": "In Inception, which team member remains on the hotel level and arranges to wake his companions?",
+      "a": "Arthur",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Inception",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "movies-400-916",
+      "p": 400,
+      "topic": "The Matrix",
+      "q": "In The Matrix, what is humanity's last underground refuge called?",
+      "a": "Zion",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Matrix",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "movies-400-917",
+      "p": 400,
+      "topic": "Back to the Future",
+      "q": "In Back to the Future, from what do Marty's family members begin disappearing after he changes his parents' meeting?",
+      "a": "A family photograph",
+      "alt": [
+        "A photograph",
+        "A photo"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Back_to_the_Future",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "movies-400-918",
+      "p": 400,
+      "topic": "Harry Potter",
+      "q": "In Harry Potter and the Philosopher's Stone, which teacher conceals Voldemort beneath his turban?",
+      "a": "Quirrell",
+      "alt": [
+        "Professor Quirrell"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "movies-600-911",
+      "p": 600,
+      "topic": "Pirates of the Caribbean",
+      "q": "In the first Pirates of the Caribbean film, what does Elizabeth burn on the island as a distress signal?",
+      "a": "The rum supply",
+      "alt": [
+        "Rum",
+        "Barrels of rum"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "movies-600-912",
+      "p": 600,
+      "topic": "Jurassic Park",
+      "q": "In the first Jurassic Park film, which of Hammond's grandchildren restores the system in the control room?",
+      "a": "Lex",
+      "alt": [
+        "Lex Murphy"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "movies-600-913",
+      "p": 600,
+      "topic": "Titanic",
+      "q": "In Titanic, what name does the heroine give on arriving in New York?",
+      "a": "Rose Dawson",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "movies-600-914",
+      "p": 600,
+      "topic": "Inception",
+      "q": "In Inception, which company heir is the target of the idea-planting mission?",
+      "a": "Robert Fischer",
+      "alt": [
+        "Fischer"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Inception",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "movies-600-915",
+      "p": 600,
+      "topic": "The Matrix",
+      "q": "In The Matrix, who betrays the crew in exchange for a comfortable life inside the simulation?",
+      "a": "Cypher",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Matrix",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "movies-600-916",
+      "p": 600,
+      "topic": "The Lord of the Rings",
+      "q": "In The Fellowship of the Ring, which Orc commander shoots Boromir with arrows?",
+      "a": "Lurtz",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "movies-600-917",
+      "p": 600,
+      "topic": "Pirates of the Caribbean",
+      "q": "In the first Pirates of the Caribbean film, to which island do Jack and Will go to recruit a crew?",
+      "a": "Tortuga",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "movies-600-918",
+      "p": 600,
+      "topic": "Back to the Future",
+      "q": "In Back to the Future, what is the mall called during Doc's first experiment, before Marty changes the past?",
+      "a": "Twin Pines Mall",
+      "alt": [
+        "Twin Pines"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Back_to_the_Future",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "Jurassic Park",
+      "q": "In the first Jurassic Park film, which chief engineer attempts to restart the systems?",
+      "a": "Ray Arnold",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
+      "qid": "movies-800-912",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Titanic",
+      "q": "In Titanic, which servant and bodyguard of Cal frames Jack for theft?",
+      "a": "Spicer Lovejoy",
+      "alt": [
+        "Lovejoy"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
+      "qid": "movies-800-913",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Inception",
+      "q": "In Inception, which chemist drives the van on the first dream level?",
+      "a": "Yusuf",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Inception",
+      "qid": "movies-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "The Matrix",
+      "q": "In the first Matrix film, what is the resistance crew's ship called?",
+      "a": "Nebuchadnezzar",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Matrix",
+      "qid": "movies-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "The Lord of the Rings",
+      "q": "In The Fellowship of the Ring, what creature does Gandalf confront before falling in Moria?",
+      "a": "A Balrog",
+      "alt": [
+        "Balrog"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
+      "qid": "movies-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Pirates of the Caribbean",
+      "q": "In The Curse of the Black Pearl, on which island is the cursed treasure hidden?",
+      "a": "Isla de Muerta",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "qid": "movies-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Back to the Future",
+      "q": "In Back to the Future, what is the name of Doc's dog who tests time travel?",
+      "a": "Einstein",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Back_to_the_Future",
+      "qid": "movies-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Harry Potter",
+      "q": "In Harry Potter and the Philosopher's Stone, how can the three-headed guard dog be put to sleep?",
+      "a": "Playing music",
+      "alt": [
+        "Music",
+        "Playing a flute"
+      ],
+      "sourceUrl": "https://www.harrypotter.com/fact-file/characters-and-pets/fluffy-fact-file",
+      "qid": "movies-800-921",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Jurassic Park",
+      "q": "In the first Jurassic Park film, who bribes the programmer to steal embryos?",
+      "a": "Lewis Dodgson",
+      "alt": [
+        "Dodgson"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
+      "qid": "movies-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Titanic",
+      "q": "In Titanic, which friend boards with Jack after they win tickets?",
+      "a": "Fabrizio",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
+      "qid": "movies-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Inception",
+      "q": "In Inception, which forger impersonates Peter Browning inside the dream?",
+      "a": "Eames",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Inception",
+      "qid": "movies-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "The Matrix",
+      "q": "In The Matrix, which operator saves the survivors by killing the traitor after being wounded?",
+      "a": "Tank",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Matrix",
+      "qid": "movies-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "The Lord of the Rings",
+      "q": "In The Fellowship of the Ring, where do the Orcs attack the fellowship and wound Boromir?",
+      "a": "Parth Galen",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
+      "qid": "movies-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Pirates of the Caribbean",
+      "q": "In The Curse of the Black Pearl, which naval ship do Jack and Will steal to rescue Elizabeth?",
+      "a": "HMS Interceptor",
+      "alt": [
+        "Interceptor"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "qid": "movies-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Back to the Future",
+      "q": "In Back to the Future, which café worker later becomes mayor of Hill Valley?",
+      "a": "Goldie Wilson",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Back_to_the_Future",
+      "qid": "movies-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Harry Potter",
+      "q": "In Harry Potter and the Philosopher's Stone, what wish lets Harry retrieve the stone from the mirror?",
+      "a": "Finding it without using it",
+      "alt": [
+        "To find the stone, not use it"
+      ],
+      "sourceUrl": "https://www.harrypotter.com/features/what-the-mirror-of-erised-can-tell-us-about-the-boy-who-lived",
+      "qid": "movies-1000-921",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    }
+  ],
+  "style": "story"
+}

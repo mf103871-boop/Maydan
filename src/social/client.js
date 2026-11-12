@@ -1,3 +1,4 @@
+import { tr } from '../shared/i18n/core.js';
 // Account-scoped social state. No private message history is written to browser storage.
 import { getCosmetic } from '../plus/catalog.js';
 import { createSocialLiveAudio } from './audio-feedback.js';
@@ -13,7 +14,7 @@ export const SOCIAL_ERRORS = {
   SOCIAL_UNAVAILABLE: 'التحديث المباشر غير متاح مؤقتًا.', STALE: 'تغيّر الحساب أثناء الطلب.',
   PLUS_REQUIRED: 'إرسال هذا الملصق يحتاج ميدان بلس. الرسائل العادية مجانية.',
 };
-export const socialError = error => SOCIAL_ERRORS[error?.code] || SOCIAL_ERRORS.NETWORK;
+export const socialError = error => tr(SOCIAL_ERRORS[error?.code] || SOCIAL_ERRORS.NETWORK);
 export const emptyConversation = () => ({ id: null, messages: [], loading: false, loadingOlder: false, hasMore: false,
   nextBefore: null, error: '', typing: false, readSeq: 0, peerReadSeq: 0 });
 export const emptySocialState = () => ({ profile: null, friends: [], incoming: [], outgoing: [], blocked: [], conversationList: [],
@@ -287,7 +288,7 @@ export class SocialClient {
     if (!sticker) throw Object.assign(new Error(SOCIAL_ERRORS.INVALID), { code: 'INVALID' });
     const id = this.findConversation(friendId); if (!id) throw new Error(SOCIAL_ERRORS.NOT_FRIENDS);
     const message = { clientId: crypto.randomUUID(), conversationId: id, senderId: this.userId,
-      kind: 'sticker', stickerId, stickerVersion: sticker.version, text: `ملصق: ${sticker.label}`,
+      kind: 'sticker', stickerId, stickerVersion: sticker.version, text: tr("ملصق: {v0}", {v0: sticker.label}),
       createdAt: this.now(), editedAt: null, deletedAt: null, status: 'pending' };
     const current = this.state.conversations[friendId] || emptyConversation();
     this.conversation(friendId, { id, messages: [...current.messages, message] });

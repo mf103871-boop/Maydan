@@ -1,0 +1,524 @@
+{
+  "id": "syriandrama",
+  "name": "Syrian Drama",
+  "icon": "🇸🇾",
+  "style": "story",
+  "qs": [
+    {
+      "qid": "syriandrama-200-911",
+      "p": 200,
+      "topic": "Dayaa Dayaa",
+      "q": "In Dayaa Dayaa, which neighbor envies Asaad and tries to prevent him from opening his shop?",
+      "a": "Joudeh",
+      "alt": [
+        "Jouda",
+        "Joudeh Abu Khamis"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1400743/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "syriandrama-200-912",
+      "p": 200,
+      "topic": "Al Khirba",
+      "q": "In Al Khirba, what is Atef's true field of study, which surprises his family after his return?",
+      "a": "Veterinary medicine",
+      "alt": [
+        "Veterinary science"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1768474/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "syriandrama-200-913",
+      "p": 200,
+      "topic": "Jamil and Hanaa's Diaries",
+      "q": "In Jamil and Hanaa's Diaries, which secretary advises the wife to raise her salary?",
+      "a": "Amal",
+      "sourceUrl": "https://elcinema.com/work/1010717/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": []
+    },
+    {
+      "qid": "syriandrama-200-914",
+      "p": 200,
+      "topic": "Al Zeer Salem",
+      "q": "Who betrays and kills Kulayb in Al Zeer Salem?",
+      "a": "Jassas",
+      "alt": [
+        "Jassas ibn Murrah"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1707324/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "syriandrama-200-915",
+      "p": 200,
+      "topic": "The Palestinian Exodus",
+      "q": "In The Palestinian Exodus, which educated brother recounts his family's story?",
+      "a": "Ali",
+      "alt": [
+        "Ali Abu Saleh"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1002894/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "syriandrama-200-916",
+      "p": 200,
+      "topic": "The Four Seasons",
+      "q": "In The Four Seasons, whose birthday celebration opens the series?",
+      "a": "Nabila",
+      "sourceUrl": "https://elcinema.com/work/1011042/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Nabeela"
+      ]
+    },
+    {
+      "qid": "syriandrama-200-917",
+      "p": 200,
+      "topic": "Ahl Al-Raya",
+      "q": "In Ahl Al-Raya, which daughter of the leader is wronged and eventually marries Reda?",
+      "a": "Qatr al-Nada",
+      "alt": [
+        "Qatr al-Neda"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1846031/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "syriandrama-200-921",
+      "p": 200,
+      "topic": "Al Khirba",
+      "q": "From which country does Atef return before the truth about his studies and marriage emerges in Al Khirba?",
+      "a": "France",
+      "sourceUrl": "https://elcinema.com/work/1768474/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": []
+    },
+    {
+      "qid": "syriandrama-400-911",
+      "p": 400,
+      "topic": "Dayaa Dayaa",
+      "q": "In Dayaa Dayaa's episode The Hero, which animal does Asaad confront, earning the village's admiration?",
+      "a": "A hyena",
+      "alt": [
+        "Hyena"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1400743/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "syriandrama-400-912",
+      "p": 400,
+      "topic": "Al Khirba",
+      "q": "In Al Khirba, from what does Ghassan discover his village's name is missing?",
+      "a": "A map",
+      "alt": [
+        "The map"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1768474/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "syriandrama-400-913",
+      "p": 400,
+      "topic": "Jamil and Hanaa's Diaries",
+      "q": "In Jamil and Hanaa's Diaries, which friend encourages the husband to change his behavior toward women?",
+      "a": "Waseem",
+      "sourceUrl": "https://elcinema.com/work/1010717/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Wassim"
+      ]
+    },
+    {
+      "qid": "syriandrama-400-914",
+      "p": 400,
+      "topic": "Al Zeer Salem",
+      "q": "In Al Zeer Salem, what short instruction does the hero find written in his murdered brother's blood?",
+      "a": "Do not reconcile",
+      "alt": [
+        "Never reconcile",
+        "La tusalih"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1707324/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "syriandrama-400-915",
+      "p": 400,
+      "topic": "The Palestinian Exodus",
+      "q": "In The Palestinian Exodus, which brother loves Jamila and insists on marrying her?",
+      "a": "Hassan",
+      "alt": [
+        "Hassan Abu Saleh"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1002894/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "syriandrama-400-916",
+      "p": 400,
+      "topic": "The Four Seasons",
+      "q": "In The Four Seasons, who is the family lawyer and Nara's father?",
+      "a": "Adel",
+      "sourceUrl": "https://elcinema.com/work/1011042/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Adil"
+      ]
+    },
+    {
+      "qid": "syriandrama-400-917",
+      "p": 400,
+      "topic": "Ahl Al-Raya",
+      "q": "In Ahl Al-Raya, what craft does the leader's daughter learn from Badriya?",
+      "a": "Sewing",
+      "alt": [
+        "Dressmaking"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1846031/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "syriandrama-400-918",
+      "p": 400,
+      "topic": "Al Intizar",
+      "q": "In Al Intizar, what dream does Bassam have that his brother Saber tries to divert through marriage?",
+      "a": "Emigrating",
+      "alt": [
+        "Emigration",
+        "Moving abroad"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1676776/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "syriandrama-600-911",
+      "p": 600,
+      "topic": "Dayaa Dayaa",
+      "q": "At the start of Dayaa Dayaa season two, why does Asaad leave home secretly?",
+      "a": "To escape his neighbor's harassment",
+      "alt": [
+        "To get away from Joudeh"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1494336/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "syriandrama-600-913",
+      "p": 600,
+      "topic": "Jamil and Hanaa's Diaries",
+      "q": "In Jamil and Hanaa's Diaries, what subject does the husband teach Siham at his neighbor's request?",
+      "a": "Mathematics",
+      "alt": [
+        "Math",
+        "Maths"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010717/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "syriandrama-600-914",
+      "p": 600,
+      "topic": "Al Zeer Salem",
+      "q": "In Al Zeer Salem, which son of the murdered king avenges his father by dueling his maternal uncle?",
+      "a": "Hagras",
+      "alt": [
+        "Hajras"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1707324/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "syriandrama-600-915",
+      "p": 600,
+      "topic": "The Palestinian Exodus",
+      "q": "In The Palestinian Exodus, what is the name of Umm Ahmad, who tries to hold the family together?",
+      "a": "Mastoura",
+      "alt": [
+        "Mastura",
+        "Umm Ahmad"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1002894/cast",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "syriandrama-600-916",
+      "p": 600,
+      "topic": "The Four Seasons",
+      "q": "In The Four Seasons, which city does a competition make Najib believe he has won two tickets to visit?",
+      "a": "Paris",
+      "sourceUrl": "https://elcinema.com/work/1011042/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": []
+    },
+    {
+      "qid": "syriandrama-600-917",
+      "p": 600,
+      "topic": "Ahl Al-Raya",
+      "q": "In Ahl Al-Raya, what does the leader send the German emperor in response to an honorary medal?",
+      "a": "His sword",
+      "alt": [
+        "A sword",
+        "Sword"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1846031/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "syriandrama-600-918",
+      "p": 600,
+      "topic": "Al Intizar",
+      "q": "In Al Intizar, which daughter of Wael temporarily loses her sight after an accident?",
+      "a": "Malak",
+      "sourceUrl": "https://elcinema.com/work/1676776/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Malek"
+      ]
+    },
+    {
+      "qid": "syriandrama-600-921",
+      "p": 600,
+      "topic": "Al Intizar",
+      "q": "In Al Intizar's finale, which young man protects Raja and dies rescuing him?",
+      "a": "Abboud",
+      "sourceUrl": "https://elcinema.com/work/1676776/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Aboud"
+      ]
+    },
+    {
+      "qid": "syriandrama-800-911",
+      "p": 800,
+      "topic": "Dayaa Dayaa",
+      "q": "In Dayaa Dayaa season two, from which country does Asaad's expatriate uncle send a letter that sparks his neighbor's envy?",
+      "a": "Venezuela",
+      "sourceUrl": "https://elcinema.com/work/1494336/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "alt": []
+    },
+    {
+      "qid": "syriandrama-800-912",
+      "p": 800,
+      "topic": "Al Khirba",
+      "q": "At the start of Al Khirba, for which child does Bou Nimer forge a passing certificate?",
+      "a": "Haitham",
+      "alt": [
+        "Haytham",
+        "Haitham ibn Fayyad"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1768474/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "syriandrama-800-913",
+      "p": 800,
+      "topic": "Jamil and Hanaa's Diaries",
+      "q": "In episode seven of Jamil and Hanaa's Diaries, what does the friend give the hero to imitate with his wife?",
+      "a": "A television script",
+      "alt": [
+        "A series script",
+        "A script"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010717/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "syriandrama-800-914",
+      "p": 800,
+      "topic": "Al Zeer Salem",
+      "q": "In Al Zeer Salem, what name does the tribe give the hero after he loses his memory?",
+      "a": "Timsah",
+      "alt": [
+        "Crocodile"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1707324/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "syriandrama-800-915",
+      "p": 800,
+      "topic": "The Palestinian Exodus",
+      "q": "In The Palestinian Exodus, what job does the educated brother obtain instead of the city job he wanted?",
+      "a": "Teacher in his village",
+      "alt": [
+        "Village teacher",
+        "Teacher"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1002894/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "syriandrama-800-916",
+      "p": 800,
+      "topic": "The Four Seasons",
+      "q": "In The Four Seasons, to which singer does Nara write a fan letter that her father misunderstands?",
+      "a": "Ramy Ayach",
+      "sourceUrl": "https://elcinema.com/work/1011042/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Rami Ayash"
+      ]
+    },
+    {
+      "qid": "syriandrama-800-917",
+      "p": 800,
+      "topic": "Ahl Al-Raya",
+      "q": "In Ahl Al-Raya, which wife plots the false accusation against the leader's daughter?",
+      "a": "Dalal",
+      "alt": [
+        "Dalal Khanum"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1846031/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "syriandrama-800-918",
+      "p": 800,
+      "topic": "Al Intizar",
+      "q": "In Al Intizar's final episode, which enemy kills Raja's protector?",
+      "a": "Shawish",
+      "alt": [
+        "Shaweesh"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1676776/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "Dayaa Dayaa",
+      "q": "In Dayaa Dayaa season two, from which islands does Deeba's aunt send the inheritance letter?",
+      "a": "The Canary Islands",
+      "sourceUrl": "https://elcinema.com/work/1494336/episodes",
+      "alt": [
+        "Canary Islands"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "syriandrama-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Al Khirba",
+      "q": "In Al Khirba, what forgotten document prevents Jawhar from entering the official ceremony?",
+      "a": "His identity card",
+      "sourceUrl": "https://elcinema.com/work/1768474/episodes",
+      "alt": [
+        "ID card",
+        "Identity card"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "syriandrama-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Jamil and Hanaa's Diaries",
+      "q": "In Jamil and Hanaa's Diaries, where does Umm Mahmoud hide the prize money that the plumber steals?",
+      "a": "The kitchen",
+      "sourceUrl": "https://elcinema.com/work/1010717/episodes",
+      "verified": true,
+      "p": 1000,
+      "qid": "syriandrama-1000-913",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Kitchen"
+      ]
+    },
+    {
+      "topic": "Al Zeer Salem",
+      "q": "At the start of Al Zeer Salem, to which country does Salem dream of traveling?",
+      "a": "India",
+      "sourceUrl": "https://elcinema.com/work/1707324/content",
+      "verified": true,
+      "p": 1000,
+      "qid": "syriandrama-1000-914",
+      "difficultyTarget": 0.15,
+      "alt": []
+    },
+    {
+      "topic": "The Palestinian Exodus",
+      "q": "In The Palestinian Exodus, who finds Fathiya's lost son and raises him?",
+      "a": "Abu Mahmoud",
+      "sourceUrl": "https://elcinema.com/work/1002894/episodes",
+      "verified": true,
+      "p": 1000,
+      "qid": "syriandrama-1000-915",
+      "difficultyTarget": 0.15,
+      "alt": []
+    },
+    {
+      "topic": "The Four Seasons",
+      "q": "In The Four Seasons season one, which widow asks the family lawyer to file a case against herself?",
+      "a": "Sarab",
+      "sourceUrl": "https://elcinema.com/work/1011042/content",
+      "verified": true,
+      "p": 1000,
+      "qid": "syriandrama-1000-916",
+      "difficultyTarget": 0.15,
+      "alt": []
+    },
+    {
+      "topic": "Ahl Al-Raya",
+      "q": "In Ahl Al-Raya season one, what is the name of the leader's son's wet nurse?",
+      "a": "Fahima",
+      "sourceUrl": "https://elcinema.com/work/1846031/content",
+      "verified": true,
+      "p": 1000,
+      "qid": "syriandrama-1000-917",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Faheema"
+      ]
+    },
+    {
+      "topic": "Al Intizar",
+      "q": "In Al Intizar, which wife of Maher watches his shop and suspects his relationships?",
+      "a": "Reham",
+      "sourceUrl": "https://elcinema.com/work/1676776/episodes",
+      "verified": true,
+      "p": 1000,
+      "qid": "syriandrama-1000-918",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Riham"
+      ]
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import { json } from './protocol.mjs';
 const APP_STORE_ID = '6808385717';
 const BUNDLE_ID = 'Maydan';
 const MESSAGE = 'يتوفر تحديث جديد لميدان. حدّث التطبيق من App Store للمتابعة.';
+const MESSAGE_EN = 'A new Maydan update is available. Update the app from the App Store to continue.';
 // Local candidate only: deployment of this alternative has not been approved.
 // This records a completed public-release check, not continuing Apple availability.
 // It intentionally has no expiry. Disable the existing flag to revoke enforcement;
@@ -66,7 +67,7 @@ function atLeast(actual, minimum) {
 }
 
 function disabled() {
-  return { schemaVersion: 1, enabled: false, minimumBuild: 0, minimumVersion: null, appStoreId: APP_STORE_ID, message: MESSAGE };
+  return { schemaVersion: 1, enabled: false, minimumBuild: 0, minimumVersion: null, appStoreId: APP_STORE_ID, message: MESSAGE, messageEn: MESSAGE_EN };
 }
 
 function configuredPolicy(env) {

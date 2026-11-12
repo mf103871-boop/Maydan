@@ -37,7 +37,9 @@ test('public privacy includes every current native policy paragraph and the same
     readFile(new URL('src/shared/account/config.js', root), 'utf8'),
   ]);
   const nativePrivacy = legal.slice(legal.indexOf('export function Privacy()'));
-  const paragraphs = [...nativePrivacy.matchAll(/<p className="card-muted">([\s\S]*?)<\/p>/g)].map(match => plainText(match[1]));
+  // Compare the source Arabic policy after unwrapping its translation calls.
+  // JSON.parse retains punctuation, whitespace and escaped characters exactly.
+  const paragraphs = [...nativePrivacy.matchAll(/<p className="card-muted">([\s\S]*?)<\/p>/g)].map(match => plainText(match[1].replace(/\{tr\(("(?:[^"\\]|\\.)*")\)\}/g, (_, literal) => JSON.parse(literal))));
   assert.ok(paragraphs.length >= 20, 'must compare the full native policy');
   const html = await privacyPageResponse().text();
   const renderedText = plainText(html);

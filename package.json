@@ -50,7 +50,8 @@
     "audio:screen": "node scripts/audio/screen.mjs",
     "audio:build": "node scripts/audio/build.mjs && node scripts/audio/music.mjs && node scripts/audio/credits.mjs && node scripts/audio/selected.mjs",
     "audio:audition": "node scripts/audio/audition.mjs",
-    "audio:check": "node scripts/audio/sources.mjs --check && node scripts/audio/build.mjs --check && node scripts/audio/music.mjs --check && node scripts/audio/credits.mjs --check && node scripts/audio/selected.mjs --check"
+    "audio:check": "node scripts/audio/sources.mjs --check && node scripts/audio/build.mjs --check && node scripts/audio/music.mjs --check && node scripts/audio/credits.mjs --check && node scripts/audio/selected.mjs --check",
+    "preview:studio": "node scripts/studio-preview.mjs"
   },
   "engines": {
     "node": ">=22"

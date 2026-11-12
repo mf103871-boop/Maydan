@@ -1,0 +1,492 @@
+{
+  "id": "cartoon",
+  "name": "Cartoons",
+  "icon": "🐰",
+  "style": "story",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "Objects and tools",
+      "q": "In The Smurfs, what surprise is hidden in Jokey Smurf's gift boxes?",
+      "a": "An explosion",
+      "alt": [
+        "A small bomb",
+        "A firecracker"
+      ],
+      "sourceUrl": "https://www.smurf.com/",
+      "verified": true,
+      "qid": "cartoon-200-912",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Places and cities",
+      "q": "In Inside Out, to which city does Riley move with her family?",
+      "a": "San Francisco",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/inside-out",
+      "verified": true,
+      "qid": "cartoon-200-913",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Food and resources",
+      "q": "At the start of Monsters, Inc., what sounds from children does the company collect for energy?",
+      "a": "Screams",
+      "alt": [
+        "Children's screams"
+      ],
+      "sourceUrl": "https://www.pixar.com/monsters-inc",
+      "verified": true,
+      "qid": "cartoon-200-914",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Objects and tools",
+      "q": "In SpongeBob SquarePants, what instrument does Squidward play?",
+      "a": "The clarinet",
+      "alt": [
+        "Clarinet"
+      ],
+      "sourceUrl": "https://www.nick.com/info-page/c2e5s0/squidward-j-q-tentacles",
+      "verified": true,
+      "qid": "cartoon-200-915",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Places and cities",
+      "q": "In SpongeBob SquarePants, from which US state does Sandy come?",
+      "a": "Texas",
+      "alt": [],
+      "sourceUrl": "https://www.nick.com/info-page/zj5lyn/sandy-cheeks",
+      "verified": true,
+      "qid": "cartoon-200-916",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Heroes and characters",
+      "q": "Which Smurf constantly quotes the village leader and considers himself the smartest?",
+      "a": "Brainy Smurf",
+      "alt": [
+        "Brainy"
+      ],
+      "sourceUrl": "https://www.smurf.com/",
+      "verified": true,
+      "qid": "cartoon-200-917",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Heroes and characters",
+      "q": "In Up, what is the name of the young Wilderness Explorer who accompanies Carl?",
+      "a": "Russell",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/upfilm",
+      "verified": true,
+      "qid": "cartoon-200-918",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Rivals and opponents",
+      "q": "In Monsters, Inc., why does the agency decontaminate monsters after finding a human object?",
+      "a": "They believe humans are toxic",
+      "alt": [
+        "Fear of human contamination"
+      ],
+      "sourceUrl": "https://www.pixar.com/monsters-inc",
+      "verified": true,
+      "qid": "cartoon-200-921",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 400,
+      "topic": "Friends and families",
+      "q": "In Monsters, Inc., what does Sulley call the human girl he protects?",
+      "a": "Boo",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/monsters-inc",
+      "verified": true,
+      "qid": "cartoon-400-911",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Powers and transformations",
+      "q": "In The Incredibles, what can Violet create around herself for protection besides turning invisible?",
+      "a": "Force fields",
+      "alt": [
+        "A force field"
+      ],
+      "sourceUrl": "https://www.pixar.com/the-incredibles",
+      "verified": true,
+      "qid": "cartoon-400-912",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Events and missions",
+      "q": "In The Incredibles, what is Edna Mode's specialty that the heroes need for their new suits?",
+      "a": "Superhero costume design",
+      "alt": [
+        "Costume design",
+        "Fashion design"
+      ],
+      "sourceUrl": "https://www.pixar.com/the-incredibles",
+      "verified": true,
+      "qid": "cartoon-400-913",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Friends and families",
+      "q": "In Coco, what is the name of the nearly hairless dog accompanying Miguel?",
+      "a": "Dante",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/coco",
+      "verified": true,
+      "qid": "cartoon-400-914",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Places and cities",
+      "q": "What is the monster city that the human girl enters in Monsters, Inc. called?",
+      "a": "Monstropolis",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/monsters-inc",
+      "verified": true,
+      "qid": "cartoon-400-915",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Places and cities",
+      "q": "In WALL-E, what is the name of the spaceship where humans live?",
+      "a": "Axiom",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/wall-e",
+      "verified": true,
+      "qid": "cartoon-400-916",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Rivals and opponents",
+      "q": "In Ratatouille, what is the name of the strict food critic feared by restaurants?",
+      "a": "Anton Ego",
+      "alt": [
+        "Ego"
+      ],
+      "sourceUrl": "https://www.pixar.com/ratatouille",
+      "verified": true,
+      "qid": "cartoon-400-917",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Heroes and characters",
+      "q": "In Ratatouille, which chef is assigned to train Linguini?",
+      "a": "Colette",
+      "alt": [
+        "Colette Tatou"
+      ],
+      "sourceUrl": "https://www.pixar.com/ratatouille",
+      "verified": true,
+      "qid": "cartoon-400-918",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 600,
+      "topic": "Rivals and opponents",
+      "q": "In SpongeBob SquarePants, which boastful rival challenges Squidward over musical performances?",
+      "a": "Squilliam Fancyson",
+      "alt": [
+        "Squilliam"
+      ],
+      "sourceUrl": "https://www.nick.com/info-page/c2e5s0/squidward-j-q-tentacles",
+      "verified": true,
+      "qid": "cartoon-600-911",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Friends and families",
+      "q": "In Up, what does Russell name the rare bird he finds in the jungle?",
+      "a": "Kevin",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/upfilm",
+      "verified": true,
+      "qid": "cartoon-600-912",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Objects and tools",
+      "q": "In Coco, petals of which flower form the bridge to the land of the living?",
+      "a": "Marigolds",
+      "alt": [
+        "Marigold",
+        "Cempasuchil"
+      ],
+      "sourceUrl": "https://www.pixar.com/coco",
+      "verified": true,
+      "qid": "cartoon-600-913",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Objects and tools",
+      "q": "In The Smurfs, what stone does the wizard seek to create to turn lead into gold?",
+      "a": "The Philosopher's Stone",
+      "alt": [
+        "Philosopher's Stone"
+      ],
+      "sourceUrl": "https://www.smurf.com/",
+      "verified": true,
+      "qid": "cartoon-600-914",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Friends and families",
+      "q": "In Ratatouille, which brother of Remy loves eating anything?",
+      "a": "Emile",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/ratatouille",
+      "verified": true,
+      "qid": "cartoon-600-915",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Heroes and characters",
+      "q": "In WALL-E, which small cleaning robot pursues foreign contaminants aboard the ship?",
+      "a": "M-O",
+      "alt": [
+        "MO"
+      ],
+      "sourceUrl": "https://www.pixar.com/wall-e",
+      "verified": true,
+      "qid": "cartoon-600-917",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Heroes and characters",
+      "q": "In Ratatouille, what is the name of Remy's father, the rat colony's leader?",
+      "a": "Django",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/ratatouille",
+      "verified": true,
+      "qid": "cartoon-600-918",
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "Events and missions",
+      "q": "In Ratatouille, what is the title of the late chef's book that inspires Remy?",
+      "a": "Anyone Can Cook",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/ratatouille",
+      "qid": "cartoon-600-921",
+      "p": 600,
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "p": 800,
+      "topic": "Places and cities",
+      "q": "In Coco, in which town does Miguel's family live?",
+      "a": "Santa Cecilia",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/coco",
+      "verified": true,
+      "qid": "cartoon-800-911",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "Friends and families",
+      "q": "In Inside Out, what is the name of Riley's imaginary friend with an elephant's trunk?",
+      "a": "Bing Bong",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/inside-out",
+      "verified": true,
+      "qid": "cartoon-800-912",
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "Rivals and opponents",
+      "q": "In Ratatouille, who takes over the restaurant and uses its late owner's name to market frozen food?",
+      "a": "Skinner",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/ratatouille",
+      "qid": "cartoon-800-913",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Rivals and opponents",
+      "q": "In WALL-E, what is the ship's secretly controlling robotic wheel called?",
+      "a": "AUTO",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/wall-e",
+      "qid": "cartoon-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Friends and families",
+      "q": "In Coco, who establishes the family's shoemaking business?",
+      "a": "Mamá Imelda",
+      "alt": [
+        "Mama Imelda",
+        "Imelda"
+      ],
+      "sourceUrl": "https://www.pixar.com/coco",
+      "qid": "cartoon-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Places and cities",
+      "q": "In Up, which waterfalls do Carl and Ellie dream of reaching?",
+      "a": "Paradise Falls",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/upfilm",
+      "qid": "cartoon-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Food and resources",
+      "q": "In Ratatouille, what job does Remy perform for the colony using his sense of smell?",
+      "a": "Detecting poison",
+      "alt": [
+        "Poison checker",
+        "Poison detection"
+      ],
+      "sourceUrl": "https://www.pixar.com/ratatouille",
+      "qid": "cartoon-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Objects and tools",
+      "q": "In Up, what device translates the dogs' thoughts into speech?",
+      "a": "Electronic collars",
+      "alt": [
+        "Talking collars",
+        "Translation collars"
+      ],
+      "sourceUrl": "https://www.pixar.com/upfilm",
+      "qid": "cartoon-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Heroes and characters",
+      "q": "In Coco, which friend of Héctor is beginning to be forgotten by the living?",
+      "a": "Chicharrón",
+      "alt": [
+        "Chicharron"
+      ],
+      "sourceUrl": "https://www.pixar.com/coco",
+      "qid": "cartoon-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Powers and transformations",
+      "q": "In Coco, what is the name of the winged spirit guide accompanying Imelda?",
+      "a": "Pepita",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/coco",
+      "qid": "cartoon-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Rivals and opponents",
+      "q": "In Up, what is the name of the Rottweiler who assists the pack leader?",
+      "a": "Beta",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/upfilm",
+      "qid": "cartoon-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Objects and tools",
+      "q": "In WALL-E, which musical film does the robot keep on tape in his truck?",
+      "a": "Hello, Dolly!",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/wall-e",
+      "qid": "cartoon-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Heroes and characters",
+      "q": "In WALL-E, by what probe designation does the captain address EVE?",
+      "a": "Probe One",
+      "alt": [
+        "Probe 1"
+      ],
+      "sourceUrl": "https://www.pixar.com/wall-e",
+      "qid": "cartoon-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Friends and families",
+      "q": "In Coco, what is the name of Óscar's twin brother among Miguel's ancestors?",
+      "a": "Felipe",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/coco",
+      "qid": "cartoon-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Events and missions",
+      "q": "In Inside Out, why does the Train of Thought stop when Riley sleeps?",
+      "a": "Its operators go to sleep",
+      "alt": [
+        "The train's operators also sleep"
+      ],
+      "sourceUrl": "https://www.pixar.com/inside-out",
+      "qid": "cartoon-1000-921",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "p": 1000,
+      "topic": "Food and resources",
+      "q": "In Monsters, Inc., what flavor are the Abominable Snowman's snow cones?",
+      "a": "Lemon",
+      "alt": [],
+      "sourceUrl": "https://www.pixar.com/monsters-inc",
+      "verified": true,
+      "qid": "cartoon-1000-922",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

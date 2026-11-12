@@ -1,3 +1,4 @@
+import { tr } from '../shared/i18n/core.js';
 import React, { useState } from 'react';
 import { getCosmetic } from '../plus/catalog.js';
 import { ProfileAvatar } from './ProfileAvatar.jsx';
@@ -5,7 +6,7 @@ import { ProfileAvatar } from './ProfileAvatar.jsx';
 export function MembershipBadge({ user, compact = false }) {
   // Effective server projection; never infer membership from a purchase or frame.
   if (user?.cosmetics?.badge !== true) return null;
-  return <span className={'player-membership-badge' + (compact ? ' is-compact' : '')} aria-label="عضو ميدان بلس"><span aria-hidden="true">✦</span><span>بلس</span></span>;
+  return <span className={'player-membership-badge' + (compact ? ' is-compact' : '')} aria-label={tr("عضو ميدان بلس")}><span aria-hidden="true">✦</span><span>{tr("بلس")}</span></span>;
 }
 
 export function NameCard({ user, children, className = '', enabled = true }) {
@@ -22,7 +23,7 @@ export function NameCard({ user, children, className = '', enabled = true }) {
 export function PlayerName({ user, name, className = '', card = false, badge = true, compact = false }) {
   const color = getCosmetic(user?.cosmetics?.nameColorId, { kind: 'nameColor' });
   return <span className={'player-identity-name ' + (compact ? 'is-compact ' : '') + className}>
-    <NameCard user={user} enabled={card}><bdi style={!card && color ? { color: color.color } : undefined}>{name || user?.name?.trim() || 'لاعب ميدان'}</bdi></NameCard>
+    <NameCard user={user} enabled={card}><bdi style={!card && color ? { color: color.color } : undefined}>{name || user?.name?.trim() || tr("لاعب ميدان")}</bdi></NameCard>
     {badge && <MembershipBadge user={user} compact={compact} />}
   </span>;
 }

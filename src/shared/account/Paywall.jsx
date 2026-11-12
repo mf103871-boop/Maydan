@@ -1,3 +1,4 @@
+import { tr } from '../i18n/core.js';
 // جدار «ميدان بلس»: ورقة سفلية واحدة لكل أسباب القفل. لا خدع: السبب أولًا، ثم
 // ما يفتحه الاشتراك، ثم الخطط المتاحة بأسعار المتجر، ثم الشروط بوضوح.
 import React, { useEffect, useRef, useState } from 'react';
@@ -19,9 +20,9 @@ export const PAYWALL_LEGAL = 'يتجدد الاشتراك تلقائيًا ما 
 export const PRICE_UNKNOWN = 'يُعرض السعر عند الشراء';
 
 export function paywallReason(reason, game, gameplayPolicy) {
-  if (entryPolicyEnabled(gameplayPolicy)) return 'بلس يتيح بدء المباريات دون تذاكر إعلانات، مع أشكال البروفايل والإطارات. أول مباراة لكل لعبة مجانية؛ بعدها تذكرة إعلان لمباراة كاملة أو بلس. جميع الحزم مشمولة، وضيوف الغرف مجانًا مع المضيف، دون أفضلية في اللعب.';
-  if (gameplayPolicy) return 'بلس يتيح بدء المباريات دون تذاكر إعلانات، مع أشكال البروفايل والإطارات. تبقى أول مباراة لكل لعبة والحزم الأساسية والانضمام إلى الغرف مجانية؛ لا أفضلية في اللعب.';
-  return 'كل الألعاب والحزم والغرف مجانية. بلس يضيف لمستك الخاصة، دون أفضلية في اللعب.';
+  if (entryPolicyEnabled(gameplayPolicy)) return tr("بلس يتيح بدء المباريات دون تذاكر إعلانات، مع أشكال البروفايل والإطارات. أول مباراة لكل لعبة مجانية؛ بعدها تذكرة إعلان لمباراة كاملة أو بلس. جميع الحزم مشمولة، وضيوف الغرف مجانًا مع المضيف، دون أفضلية في اللعب.");
+  if (gameplayPolicy) return tr("بلس يتيح بدء المباريات دون تذاكر إعلانات، مع أشكال البروفايل والإطارات. تبقى أول مباراة لكل لعبة والحزم الأساسية والانضمام إلى الغرف مجانية؛ لا أفضلية في اللعب.");
+  return tr("كل الألعاب والحزم والغرف مجانية. بلس يضيف لمستك الخاصة، دون أفضلية في اللعب.");
 }
 
 const PLANS = [
@@ -80,86 +81,86 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
 
   return (
     <Sheet open={open} onClose={onClose} title={null}>
-      <section data-design-screen="account.paywall" className="paywall" aria-label={`اشتراك ${PLUS_NAME}`} data-reason={reason} data-pack={pack || undefined}>
+      <section data-design-screen="account.paywall" className="paywall" aria-label={tr("اشتراك {v0}", {v0: tr(PLUS_NAME)})} data-reason={reason} data-pack={pack || undefined}>
         <ClayStage className="paywall-hero clay-idle" aria-hidden="true"><TrophyArtwork /></ClayStage>
-        <h2 className="paywall-title">خلّي لك بصمة مع {PLUS_NAME}</h2>
+        <h2 className="paywall-title">{tr("خلّي لك بصمة مع ")}{tr(PLUS_NAME)}</h2>
         {account.platform !== 'ios' && account.billing?.paddle?.environment === 'sandbox' && (
-          <p className="online-notice" role="status">الدفع في وضع الاختبار؛ لا تُخصم مبالغ حقيقية. الاشتراك الناتج تجريبي.</p>
+          <p className="online-notice" role="status">{tr("الدفع في وضع الاختبار؛ لا تُخصم مبالغ حقيقية. الاشتراك الناتج تجريبي.")}</p>
         )}
         {reasonText && <p className="paywall-reason">{reasonText}</p>}
-        {account.platform === 'android' && <p role="status">شراء بلس عبر Google Play غير متاح في هذه النسخة التجريبية.</p>}
+        {account.platform === 'android' && <p role="status">{tr("شراء بلس عبر Google Play غير متاح في هذه النسخة التجريبية.")}</p>}
         {redeeming ? (
           <RedeemForm onDone={onClose} onCancel={cancelRedeem} />
         ) : (
           <>
-        <p className="paywall-reason">المزايا متاحة أثناء الاستحقاق فقط؛ نحفظ اختياراتك إذا انتهى الاشتراك.</p>
+        <p className="paywall-reason">{tr("المزايا متاحة أثناء الاستحقاق فقط؛ نحفظ اختياراتك إذا انتهى الاشتراك.")}</p>
         <ul className="paywall-bullets">
-          {PAYWALL_BULLETS.map((text, i) => <li key={text} style={{ '--n': i }}>{text}</li>)}
+          {PAYWALL_BULLETS.map((text, i) => <li key={text} style={{ '--n': i }}>{tr(text)}</li>)}
         </ul>
-        <div data-design-id="products" className="paywall-plans" role="radiogroup" aria-label="اختر مدة الاشتراك">
+        <div data-design-id="products" className="paywall-plans" role="radiogroup" aria-label={tr("اختر مدة الاشتراك")}>
           {plans.map((item) => {
             const product = products && products[item.key];
             const selected = selectedPlan === item.key;
             return (
               <button key={item.key} data-design-id="plan-option" type="button" role="radio" aria-checked={selected} data-plan={item.key}
                 className={`paywall-plan ${selected ? 'is-selected' : ''}`} onClick={() => setPlan(item.key)}>
-                <span className="paywall-plan-name">{item.label}</span>
-                <span className="paywall-plan-price">{product && product.price ? product.price : PRICE_UNKNOWN}</span>
-                <span className="paywall-plan-period">{(product && product.period) || item.fallbackPeriod}</span>
+                <span className="paywall-plan-name">{tr(item.label)}</span>
+                <span className="paywall-plan-price">{product && product.price ? product.price : tr(PRICE_UNKNOWN)}</span>
+                <span className="paywall-plan-period">{tr(item.fallbackPeriod)}</span>
               </button>
             );
           })}
         </div>
-        {productsLoading && <p className="online-notice" role="status">جارٍ تحميل أسعار App Store…</p>}
+        {productsLoading && <p className="online-notice" role="status">{tr("جارٍ تحميل أسعار App Store…")}</p>}
         {productsUnavailable && (
           <>
             <p className="online-notice error" role="status">{accountErrorText(account.productsError || 'APPLE_PRODUCTS_UNAVAILABLE')}</p>
-            <Button variant="secondary" full onClick={() => account.retryProducts && account.retryProducts()}>إعادة تحميل الأسعار</Button>
+            <Button variant="secondary" full onClick={() => account.retryProducts && account.retryProducts()}>{tr("إعادة تحميل الأسعار")}</Button>
             {account.productsDiagnostics && <details className="paywall-support">
-              <summary>تفاصيل المشكلة للدعم</summary>
+              <summary>{tr("تفاصيل المشكلة للدعم")}</summary>
               <pre dir="ltr" style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere', textAlign: 'left', fontSize: '0.8rem' }}>{catalogSupportText(account.productsDiagnostics)}</pre>
-              {account.probeStore && <Button variant="secondary" full loading={account.storeProbeStatus === 'loading'} onClick={() => account.probeStore()}>فحص المتجر للدعم</Button>}
+              {account.probeStore && <Button variant="secondary" full loading={account.storeProbeStatus === 'loading'} onClick={() => account.probeStore()}>{tr("فحص المتجر للدعم")}</Button>}
               {account.storeProbeDiagnostics && <pre dir="ltr" style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere', textAlign: 'left', fontSize: '0.8rem' }}>{catalogSupportText(account.storeProbeDiagnostics)}</pre>}
             </details>}
           </>
         )}
-        {partialCatalog && <Button variant="secondary" full onClick={() => account.retryProducts && account.retryProducts()}>إعادة تحميل الأسعار</Button>}
-        {!native && !plans.length && <p className="online-notice" role="status">الاشتراك غير متاح حاليًا؛ حاول لاحقًا.</p>}
+        {partialCatalog && <Button variant="secondary" full onClick={() => account.retryProducts && account.retryProducts()}>{tr("إعادة تحميل الأسعار")}</Button>}
+        {!native && !plans.length && <p className="online-notice" role="status">{tr("الاشتراك غير متاح حاليًا؛ حاول لاحقًا.")}</p>}
         {needsSignIn ? (
           <div className="paywall-auth">
-            <p className="paywall-note">{SIGN_IN_NOTE}</p>
+            <p className="paywall-note">{tr(SIGN_IN_NOTE)}</p>
             <SignInButtons />
           </div>
         ) : (
           <>
-            {account.platform === 'ios' && !account.signedIn && <p className="paywall-note">{SIGN_IN_NOTE}</p>}
-            <Button data-sound="none" variant="primary" size="lg" full disabled={!!account.activationPending || !selectedPlan || productsLoading} loading={busy === 'purchase' || busy === 'signin'} data-design-id="purchase" onClick={() => purchaseFeedback(account.purchase, selectedPlan)}>اشترك</Button>
-            {account.activationPending && <Button variant="secondary" full onClick={() => account.refresh()}>تحديث حالة الاشتراك</Button>}
+            {account.platform === 'ios' && !account.signedIn && <p className="paywall-note">{tr(SIGN_IN_NOTE)}</p>}
+            <Button data-sound="none" variant="primary" size="lg" full disabled={!!account.activationPending || !selectedPlan || productsLoading} loading={busy === 'purchase' || busy === 'signin'} data-design-id="purchase" onClick={() => purchaseFeedback(account.purchase, selectedPlan)}>{tr("اشترك")}</Button>
+            {account.activationPending && <Button variant="secondary" full onClick={() => account.refresh()}>{tr("تحديث حالة الاشتراك")}</Button>}
           </>
         )}
         {account.platform === 'ios' && (
-          <Button data-sound="none" variant="ghost" full loading={busy === 'restore'} data-design-id="restore" data-design-required="true" onClick={() => purchaseFeedback(account.restore)}>استعادة المشتريات</Button>
+          <Button data-sound="none" variant="ghost" full loading={busy === 'restore'} data-design-id="restore" data-design-required="true" onClick={() => purchaseFeedback(account.restore)}>{tr("استعادة المشتريات")}</Button>
         )}
         {native && account.restoreDiagnostics && <details className="paywall-support">
-          <summary>تفاصيل الاستعادة للدعم</summary>
+          <summary>{tr("تفاصيل الاستعادة للدعم")}</summary>
           <pre dir="ltr" style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere', textAlign: 'left', fontSize: '0.8rem' }}>{catalogSupportText(account.restoreDiagnostics)}</pre>
         </details>}
         {canRedeem && (
-          <button type="button" ref={redeemTrigger} className="btn btn-ghost btn-full paywall-redeem" onClick={() => setRedeeming(true)}>{REDEEM_PROMPT}</button>
+          <button type="button" ref={redeemTrigger} className="btn btn-ghost btn-full paywall-redeem" onClick={() => setRedeeming(true)}>{tr(REDEEM_PROMPT)}</button>
         )}
         {account.error && !needsSignIn && !(productsUnavailable && account.error === 'APPLE_PRODUCTS_UNAVAILABLE') && <p className="online-notice error" role="alert">{accountErrorText(account.error)}</p>}
         {account.error === 'CHECKOUT_REVIEW' && !needsSignIn && SUPPORT_EMAIL && (
-          <a className="btn btn-ghost btn-full" href={`mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent('مراجعة محاولة دفع ميدان')}`}>التواصل مع الدعم</a>
+          <a className="btn btn-ghost btn-full" href={`mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(tr("مراجعة محاولة دفع ميدان"))}`}>{tr("التواصل مع الدعم")}</a>
         )}
         <p data-design-id="legal" data-design-required="true" className="paywall-legal">
-          {PAYWALL_LEGAL}
+          {tr(PAYWALL_LEGAL)}
           <span className="paywall-legal-links">
-            {account.platform !== 'ios' && <><a data-design-id="legal-pricing" data-legal="pricing" href="pricing/" onClick={onClose}>التسعير</a><span aria-hidden="true"> · </span></>}
-            <a data-design-id="legal-terms" data-design-required="true" data-legal="terms" href={LEGAL_ROUTES.terms} onClick={onClose}>شروط الاستخدام</a>
+            {account.platform !== 'ios' && <><a data-design-id="legal-pricing" data-legal="pricing" href="pricing/" onClick={onClose}>{tr("التسعير")}</a><span aria-hidden="true"> · </span></>}
+            <a data-design-id="legal-terms" data-design-required="true" data-legal="terms" href={LEGAL_ROUTES.terms} onClick={onClose}>{tr("شروط الاستخدام")}</a>
             <span aria-hidden="true"> · </span>
-            <a data-design-id="legal-privacy" data-design-required="true" data-legal="privacy" href={LEGAL_ROUTES.privacy} onClick={onClose}>سياسة الخصوصية</a>
+            <a data-design-id="legal-privacy" data-design-required="true" data-legal="privacy" href={LEGAL_ROUTES.privacy} onClick={onClose}>{tr("سياسة الخصوصية")}</a>
             <span aria-hidden="true"> · </span>
-            <a data-design-id="legal-refunds" data-design-required="true" data-legal="refunds" href={account.platform === 'ios' ? `${PUBLIC_SITE_ORIGIN}/refunds/` : 'refunds/'} onClick={onClose}>سياسة الاسترداد</a>
+            <a data-design-id="legal-refunds" data-design-required="true" data-legal="refunds" href={account.platform === 'ios' ? `${PUBLIC_SITE_ORIGIN}/refunds/` : 'refunds/'} onClick={onClose}>{tr("سياسة الاسترداد")}</a>
           </span>
         </p>
           </>

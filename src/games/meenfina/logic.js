@@ -47,10 +47,24 @@ export const TITLES = {
   إبداع: 'صانع الأشياء',
 };
 export const DEFAULT_TITLE = 'نجم الجلسة';
+export const ENGLISH_TITLES = Object.freeze({
+  Sleep: 'Sleep ambassador', Phones: 'Screen guardian', Food: 'Group foodie',
+  'Running late': 'Fashionably late', Forgetfulness: 'Lost-and-found keeper',
+  Tidiness: 'Master organizer', Coffee: 'Coffee connoisseur', Laughter: 'Laugh maker',
+  Organization: 'Plan captain', Cooking: 'Group chef', Wisdom: 'Wise one',
+  Optimism: 'Ray of sunshine', Shyness: 'Quiet thinker', Ideas: 'Idea factory',
+  News: 'News desk', Travel: 'World explorer', 'Road trips': 'Road navigator',
+  Games: 'Challenge champion', Photography: 'Group photographer', Shopping: 'Shopping expert',
+  Restaurants: 'Restaurant guide', Parties: 'Life of the party', Technology: 'Gadget guru',
+  Music: 'Group DJ', Messiness: 'Master of chaos', Tea: 'Tea connoisseur',
+  Memory: 'Walking archive', Timekeeping: 'Timekeeper', Stories: 'Storyteller',
+  Cheering: 'Cheer captain', Creativity: 'Creative spark',
+});
 
 // العربية تجمع 3–10 وتفرد ما بعدها: «5 عبارات» لكن «12 عبارة».
-export function statementsLabel(count) {
+export function statementsLabel(count, locale = 'ar') {
   const n = Math.abs(Number(count) || 0);
+  if (locale === 'en') return `${count} ${n === 1 ? 'statement' : 'statements'}`;
   if (n === 1) return 'عبارة واحدة';
   if (n === 2) return 'عبارتان';
   return `${count} ${n >= 3 && n <= 10 ? 'عبارات' : 'عبارة'}`;
@@ -153,15 +167,15 @@ export function reduce(state, action) {
 }
 
 // لقب لكل لاعب من أكثر وسم فاز به
-export function titleFor(state, playerId) {
+export function titleFor(state, playerId, locale = state.contentLocale || state.statement?.contentLocale || 'ar') {
   const tags = state.tags[playerId] || {};
   const best = Object.entries(tags).sort((a, b) => b[1] - a[1])[0];
   if (!best) return null;
-  return TITLES[best[0]] || DEFAULT_TITLE;
+  return locale === 'en' ? ENGLISH_TITLES[best[0]] || 'Star of the session' : TITLES[best[0]] || DEFAULT_TITLE;
 }
 
-export function standings(state) {
-  return state.players.map((p) => ({ ...p, score: state.scores[p.id], title: titleFor(state, p.id) })).sort((a, b) => b.score - a.score);
+export function standings(state, locale) {
+  return state.players.map((p) => ({ ...p, score: state.scores[p.id], title: titleFor(state, p.id, locale) })).sort((a, b) => b.score - a.score);
 }
 
 // ── الجلسة المحفوظة ───────────────────────────────────────────────────────────

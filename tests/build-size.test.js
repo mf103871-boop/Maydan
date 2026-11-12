@@ -36,10 +36,18 @@ test('the shipped document and its largest inputs stay inside the size budget', 
   const html = await renderHtml(js, { version: '0.0.0-test', assets });
   // الرسوم والخطوط ملفات مبصومة بجانب المستند لا base64 داخله.
   assert.ok(!/data:(image\/webp|image\/png|font\/woff2)/.test(html), 'brand art and fonts must ship as files, not data: URLs inside the document');
-  assert.ok(result.outputFiles.some((f) => /assets\/brand\/game-icons-[A-Z0-9]+\.webp$/.test(f.path.replaceAll('\\', '/'))), 'game artwork is emitted as a hashed file');
+  for (const game of ['badeeha', 'mafia', 'ersomha', 'beep', 'mamnoo', 'jabeen', 'fabraka', 'meenfina']) {
+    assert.ok(result.outputFiles.some(f => new RegExp(`assets/brand/${game}-[A-Z0-9]+\\.webp$`).test(f.path.replaceAll('\\', '/'))), `${game} artwork is emitted as a hashed file`);
+  }
   assertDocumentBudget(html);
   const inputs = Object.entries(result.metafile.inputs).map(([file, info]) => [file, info.bytes]).sort((a, b) => b[1] - a[1]);
-  const [largest, bytes] = inputs[0];
+  assert.ok(!inputs.some(([file]) => /server[\\/]data[\\/]ersomha|server[\\/]ersomha-content\.mjs/.test(file)), 'private Draw It answers and aliases must never enter the client bundle');
+  // Lazy JSON files are independent network assets, not code parsed at launch.
+  // Keep the original code-input limit and separately bound each content pack.
+  const [largest, bytes] = inputs.find(([file]) => !file.startsWith('maydan-locale-json:'));
+  for (const asset of result.outputFiles.filter(f => /locale-en-.*\.json$/.test(f.path))) {
+    assert.ok(asset.contents.byteLength <= MB, `${asset.path} exceeds the 1MB on-demand content budget`);
+  }
   assert.ok(bytes <= BUDGET.input, `${largest} is ${(bytes / 1024).toFixed(0)} KB, budget ${(BUDGET.input / 1024).toFixed(0)} KB`);
   // الأصوات لم تعد داخل المستند: ملفات صغيرة تُجلب عند الحاجة.
   assert.ok(!inputs.some(([file, size]) => file.endsWith('sample-bank.js') && size > 8 * 1024), 'the sound bank manifest must not embed audio data');

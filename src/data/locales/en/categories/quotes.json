@@ -1,0 +1,488 @@
+{
+  "id": "quotes",
+  "name": "Who Said It?",
+  "icon": "💬",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "Modern Arabic poetry",
+      "q": "Who wrote a line meaning 'on this earth there is what deserves life'?",
+      "a": "Mahmoud Darwish",
+      "alt": [],
+      "sourceUrl": "https://www.aldiwan.net/poem9094.html",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-911"
+    },
+    {
+      "p": 200,
+      "topic": "Modern Arabic poetry",
+      "q": "Which poet described a mother as a school in the line beginning 'al-ummu madrasatun'?",
+      "a": "Hafiz Ibrahim",
+      "sourceUrl": "https://www.safahat.org/books/94053925/6/",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-912",
+      "alt": [
+        "Hafez Ibrahim"
+      ]
+    },
+    {
+      "p": 200,
+      "topic": "Classical Arabic poetry",
+      "q": "Whose Mu'allaqa opens with an invitation to stop and weep for a beloved and her dwelling?",
+      "a": "Imru' al-Qays",
+      "alt": [
+        "Imru al-Qais"
+      ],
+      "sourceUrl": "https://ar.wikisource.org/wiki/قفا_نبك_من_ذكرى_حبيب_ومنزل_(معلقة)",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-913"
+    },
+    {
+      "p": 200,
+      "topic": "Classical Arabic poetry",
+      "q": "Whose Mu'allaqa asks whether earlier poets have left any subject untouched?",
+      "a": "Antarah ibn Shaddad",
+      "alt": [
+        "Antar ibn Shaddad"
+      ],
+      "sourceUrl": "https://www.aldiwan.net/poem85.html",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-914"
+    },
+    {
+      "p": 200,
+      "topic": "Thought and philosophy",
+      "q": "Who wrote that what does not kill him makes him stronger?",
+      "a": "Friedrich Nietzsche",
+      "alt": [
+        "Nietzsche"
+      ],
+      "sourceUrl": "https://www.gutenberg.org/files/52263/52263-h/52263-h.htm",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-915"
+    },
+    {
+      "p": 200,
+      "topic": "Science and discovery",
+      "q": "Which scientist wrote to Robert Hooke about seeing farther by standing on giants' shoulders?",
+      "a": "Isaac Newton",
+      "alt": [],
+      "sourceUrl": "https://newtonproject.ox.ac.uk/view/texts/normalized/OTHE00018",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-916"
+    },
+    {
+      "p": 200,
+      "topic": "World fiction and prose",
+      "q": "Who opened A Tale of Two Cities with the best and worst of times?",
+      "a": "Charles Dickens",
+      "alt": [],
+      "sourceUrl": "https://www.gutenberg.org/files/98/98-h/98-h.htm",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-917"
+    },
+    {
+      "p": 200,
+      "topic": "World fiction and prose",
+      "q": "Who wrote in The Prophet that children do not belong to their parents?",
+      "a": "Kahlil Gibran",
+      "alt": [
+        "Khalil Gibran",
+        "Gibran Khalil Gibran"
+      ],
+      "sourceUrl": "https://poets.org/poem/children-1/print",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-918"
+    },
+    {
+      "p": 400,
+      "topic": "Classical Arabic poetry",
+      "q": "Which poet wrote the Arabic line 'ta'abun kulluha al-hayat', describing all life as weariness?",
+      "a": "Abu al-Ala al-Ma'arri",
+      "alt": [
+        "Al-Maarri"
+      ],
+      "sourceUrl": "https://poetry.dct.gov.ae/poems/16598-غير-مجد-في-ملتي-واعتقادي",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-911"
+    },
+    {
+      "p": 400,
+      "topic": "Modern Arabic poetry",
+      "q": "Which poet opened a verse with a man frowning because the sky looked gloomy?",
+      "a": "Elia Abu Madi",
+      "alt": [
+        "Ilya Abu Madi"
+      ],
+      "sourceUrl": "https://ar.wikisource.org/wiki/ابتسم",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-912"
+    },
+    {
+      "p": 400,
+      "topic": "Thought and philosophy",
+      "q": "Who wrote that the heart has reasons that reason does not know?",
+      "a": "Blaise Pascal",
+      "alt": [],
+      "sourceUrl": "https://www.gutenberg.org/files/18269/18269-h/18269-h.htm",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-913"
+    },
+    {
+      "topic": "Science and discovery",
+      "q": "Who ended On the Origin of Species by describing grandeur in that view of life?",
+      "a": "Charles Darwin",
+      "sourceUrl": "https://www.gutenberg.org/files/2009/2009-h/2009-h.htm",
+      "alt": [],
+      "verified": true,
+      "p": 400,
+      "qid": "quotes-400-914",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "World fiction and prose",
+      "q": "Who introduced the idea that beauty would save the world in The Idiot?",
+      "a": "Fyodor Dostoevsky",
+      "alt": [
+        "Dostoyevsky"
+      ],
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Idiot/Part_III/Chapter_V",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-915"
+    },
+    {
+      "p": 400,
+      "topic": "World fiction and prose",
+      "q": "Who opened Anna Karenina by saying that happy families are alike?",
+      "a": "Leo Tolstoy",
+      "alt": [
+        "Lev Tolstoy"
+      ],
+      "sourceUrl": "https://penguinrandomhousehighereducation.com/book/?isbn=9780143035008",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-916"
+    },
+    {
+      "p": 400,
+      "topic": "World theater",
+      "q": "Who wrote in Lady Windermere's Fan that he could resist everything except temptation?",
+      "a": "Oscar Wilde",
+      "alt": [],
+      "sourceUrl": "https://www.gutenberg.org/files/790/old/lwfan10h.htm",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-917"
+    },
+    {
+      "p": 400,
+      "topic": "Speeches",
+      "q": "Who described himself in his Nobel address as the son of two civilizations?",
+      "a": "Naguib Mahfouz",
+      "alt": [],
+      "sourceUrl": "https://www.nobelprize.org/prizes/literature/1988/mahfouz/lecture/",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-918"
+    },
+    {
+      "p": 600,
+      "topic": "Classical Arabic poetry",
+      "q": "Which poet wrote that everything declines once it reaches perfection in his elegy for al-Andalus?",
+      "a": "Abu al-Baqa al-Rundi",
+      "alt": [
+        "Al-Rundi"
+      ],
+      "sourceUrl": "https://ar.wikisource.org/wiki/لكل_شيء_اذا_ماتم_(رثاء_الأندلس)",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-911"
+    },
+    {
+      "p": 600,
+      "topic": "Modern Arabic poetry",
+      "q": "Who wrote the poem Cholera, asking readers to listen to the echo of moans?",
+      "a": "Nazik al-Malaika",
+      "alt": [
+        "Nazik al-Mala'ika"
+      ],
+      "sourceUrl": "https://poetsgate.com/poem.php?pm=623",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-912"
+    },
+    {
+      "p": 600,
+      "topic": "Thought and philosophy",
+      "q": "Who wrote in Walden that most people live lives of quiet desperation?",
+      "a": "Henry David Thoreau",
+      "alt": [],
+      "sourceUrl": "https://digitalthoreau.org/walden/fluid/text/01.html",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-913"
+    },
+    {
+      "p": 600,
+      "topic": "Science and discovery",
+      "q": "Who concluded Computing Machinery and Intelligence by saying that we see only a short distance ahead but much remains to be done?",
+      "a": "Alan Turing",
+      "alt": [],
+      "sourceUrl": "https://www.cs.tufts.edu/comp/50cog/readings/turing.html",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-914"
+    },
+    {
+      "p": 600,
+      "topic": "World fiction and prose",
+      "q": "Who opened Pride and Prejudice with a wealthy single man's supposed need for a wife?",
+      "a": "Jane Austen",
+      "alt": [],
+      "sourceUrl": "https://www.gutenberg.org/cache/epub/1342/pg1342.html",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-915"
+    },
+    {
+      "p": 600,
+      "topic": "World fiction and prose",
+      "q": "Who wrote the instruction to try again, fail again, and fail better?",
+      "a": "Samuel Beckett",
+      "alt": [],
+      "sourceUrl": "https://www.allenandunwin.com/browse/book/Samuel-Beckett-Company--Ill-Seen-Ill-Said--Worstward-Ho--Stirrings-Still-9780571244737",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-916"
+    },
+    {
+      "p": 600,
+      "topic": "World poetry",
+      "q": "Which poet imagined hope as something with feathers?",
+      "a": "Emily Dickinson",
+      "alt": [],
+      "sourceUrl": "https://www.poetryfoundation.org/poems/42889/hope-is-the-thing-with-feathers-314",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-917"
+    },
+    {
+      "p": 600,
+      "topic": "Speeches",
+      "q": "Who ended his Stanford address with the advice to stay hungry and foolish?",
+      "a": "Steve Jobs",
+      "alt": [],
+      "sourceUrl": "https://stevejobsarchive.com/stories/stay-hungry-stay-foolish",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-918"
+    },
+    {
+      "p": 800,
+      "topic": "Classical Arabic poetry",
+      "q": "Which poet lamented his own approaching death and wished for one more night beside the ghada trees?",
+      "a": "Malik ibn al-Rayb",
+      "alt": [
+        "Malik bin al-Rayb"
+      ],
+      "sourceUrl": "https://poetry.dct.gov.ae/poems/28285-ألا-ليت-شعري-هل-أبيتن-ليلة",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-911"
+    },
+    {
+      "p": 800,
+      "topic": "Classical Arabic poetry",
+      "q": "Which poet wrote of death sinking its claws into its victim?",
+      "a": "Abu Dhu'ayb al-Hudhali",
+      "alt": [
+        "Abu Dhuayb al-Hudhali"
+      ],
+      "sourceUrl": "https://www.aldiwan.net/poem24106.html",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-912"
+    },
+    {
+      "p": 800,
+      "topic": "World poetry",
+      "q": "Who opened Endymion with the idea that beauty brings joy forever?",
+      "a": "John Keats",
+      "alt": [],
+      "sourceUrl": "https://www.poetryfoundation.org/poems/44469/endymion-56d2239287ca5",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-913"
+    },
+    {
+      "p": 800,
+      "topic": "World poetry",
+      "q": "Who called April the cruelest month at the beginning of The Waste Land?",
+      "a": "T. S. Eliot",
+      "alt": [
+        "TS Eliot"
+      ],
+      "sourceUrl": "https://www.poetryfoundation.org/poems/47311/the-waste-land",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-914"
+    },
+    {
+      "p": 800,
+      "topic": "Thought and philosophy",
+      "q": "Who wrote in A Treatise of Human Nature that reason is the slave of the passions?",
+      "a": "David Hume",
+      "alt": [],
+      "sourceUrl": "https://metaphors.lib.virginia.edu/metaphors/18227",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-915"
+    },
+    {
+      "p": 800,
+      "topic": "Science and discovery",
+      "q": "Which computer scientist said testing can reveal the presence of bugs but cannot prove their absence?",
+      "a": "Edsger Dijkstra",
+      "alt": [
+        "Edsger W. Dijkstra"
+      ],
+      "sourceUrl": "https://www.cs.utexas.edu/~EWD/transcriptions/EWD02xx/EWD249/EWD249.html",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-916"
+    },
+    {
+      "p": 800,
+      "topic": "World fiction and prose",
+      "q": "Who wrote in Ulysses that history is a nightmare from which the speaker is trying to awake?",
+      "a": "James Joyce",
+      "alt": [],
+      "sourceUrl": "https://en.wikisource.org/wiki/Ulysses_(1922)/Chapter_2",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-917"
+    },
+    {
+      "p": 800,
+      "topic": "Thought and philosophy",
+      "q": "Who warned that those who cannot remember the past are condemned to repeat it?",
+      "a": "George Santayana",
+      "alt": [],
+      "sourceUrl": "https://www.gutenberg.org/files/15000/15000-h/15000-h.htm",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-918"
+    },
+    {
+      "topic": "Classical Arabic poetry",
+      "q": "To which poet is the Lamiyyat al-Arab attributed, opening by telling his kinsmen to ready their mounts?",
+      "a": "Al-Shanfara",
+      "sourceUrl": "https://www.aldiwan.net/poem1219.html",
+      "verified": true,
+      "p": 1000,
+      "qid": "quotes-1000-911",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Shanfara"
+      ]
+    },
+    {
+      "topic": "Classical Arabic poetry",
+      "q": "Which poet began a famous poem by saying he had protected his soul from what would defile it?",
+      "a": "Al-Buhturi",
+      "sourceUrl": "https://ar.wikisource.org/wiki/صنت_نفسي_عما_يدنس_نفسي",
+      "verified": true,
+      "p": 1000,
+      "qid": "quotes-1000-912",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Buhturi"
+      ]
+    },
+    {
+      "topic": "Thought and philosophy",
+      "q": "Who wrote in Novum Organum that human knowledge and human power amount to the same thing?",
+      "a": "Francis Bacon",
+      "sourceUrl": "https://www.gutenberg.org/files/45988/45988-h/45988-h.htm",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "quotes-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Thought and philosophy",
+      "q": "Whose Essays include a chapter on philosophizing as learning how to die?",
+      "a": "Michel de Montaigne",
+      "sourceUrl": "https://www.gutenberg.org/files/3600/3600-h/3600-h",
+      "alt": [
+        "Montaigne"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "quotes-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "topic": "Science and discovery",
+      "q": "Which physicist warned at Caltech that you must not fool yourself because you are the easiest person to fool?",
+      "a": "Richard Feynman",
+      "alt": [],
+      "sourceUrl": "https://calteches.library.caltech.edu/51/2/CargoCult.htm",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "qid": "quotes-1000-915"
+    },
+    {
+      "topic": "World fiction and prose",
+      "q": "Who gave Ahab the defiant line about striking from hell's heart?",
+      "a": "Herman Melville",
+      "sourceUrl": "https://www.gutenberg.org/files/2701/2701-h/2701-h.htm",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "quotes-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "World fiction and prose",
+      "q": "Which author made her heroine declare that she was no bird and no net could trap her?",
+      "a": "Charlotte Brontë",
+      "sourceUrl": "https://www.gutenberg.org/files/1260/1260-h/1260-h.htm",
+      "alt": [
+        "Charlotte Bronte"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "quotes-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "World theater",
+      "q": "Who made Faust lament that two souls dwelt in his breast?",
+      "a": "Johann Wolfgang von Goethe",
+      "sourceUrl": "https://www.gutenberg.org/files/14591/14591-h/14591-h.htm",
+      "alt": [
+        "Goethe"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "quotes-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

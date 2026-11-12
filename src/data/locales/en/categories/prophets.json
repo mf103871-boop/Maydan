@@ -1,0 +1,573 @@
+{
+  "id": "prophets",
+  "name": "Stories of the Prophets",
+  "icon": "🕊️",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "Adam and Noah",
+      "q": "What did God instruct Noah to take aboard the ark from each kind of creature?",
+      "a": "A pair",
+      "sourceUrl": "https://quran.com/hud/40",
+      "verified": true,
+      "qid": "prophets-200-911",
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Two of each",
+        "One pair"
+      ]
+    },
+    {
+      "p": 200,
+      "topic": "Abraham and his family",
+      "q": "Which prophet did the angels promise to Abraham's wife, followed by Jacob after him?",
+      "a": "Isaac",
+      "sourceUrl": "https://quran.com/hud/71",
+      "verified": true,
+      "qid": "prophets-200-912",
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Ishaq"
+      ]
+    },
+    {
+      "p": 200,
+      "topic": "Joseph and his brothers",
+      "q": "What animals did the king see as seven fat ones in his dream?",
+      "a": "Cows",
+      "alt": [
+        "Cattle"
+      ],
+      "sourceUrl": "https://quran.com/yusuf/43",
+      "verified": true,
+      "qid": "prophets-200-913",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "David and Solomon",
+      "q": "What was made subject to Solomon, blowing gently at his command?",
+      "a": "The wind",
+      "sourceUrl": "https://quran.com/sad/36",
+      "verified": true,
+      "qid": "prophets-200-915",
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Wind"
+      ]
+    },
+    {
+      "p": 200,
+      "topic": "Jesus and Mary",
+      "q": "What did Jesus's disciples ask to be sent down from heaven?",
+      "a": "A table of food",
+      "sourceUrl": "https://quran.com/al-maidah/112",
+      "verified": true,
+      "qid": "prophets-200-916",
+      "difficultyTarget": 0.8,
+      "alt": [
+        "A table spread",
+        "A heavenly table"
+      ]
+    },
+    {
+      "p": 200,
+      "topic": "Other prophets",
+      "q": "Which prophet called on God saying that adversity had touched him and that God is the most merciful?",
+      "a": "Job",
+      "sourceUrl": "https://quran.com/al-anbya/83",
+      "verified": true,
+      "qid": "prophets-200-917",
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Ayyub"
+      ]
+    },
+    {
+      "p": 200,
+      "topic": "Abraham and his family",
+      "q": "What name does the Quran give for Abraham's father?",
+      "a": "Azar",
+      "sourceUrl": "https://quran.com/al-anam/74",
+      "verified": true,
+      "qid": "prophets-200-918",
+      "difficultyTarget": 0.8,
+      "alt": []
+    },
+    {
+      "q": "At the water of Madyan, what were the shepherds doing while two women waited?",
+      "a": "Watering their livestock",
+      "topic": "Moses and Aaron",
+      "sourceUrl": "https://quran.com/28/23",
+      "alt": [
+        "Watering sheep",
+        "Watering their flocks"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-10-08",
+      "p": 200,
+      "qid": "prophets-200-921",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 400,
+      "topic": "Hud, Salih, and Shu’ayb",
+      "q": "How many days did Salih give his people before punishment would come?",
+      "a": "Three days",
+      "sourceUrl": "https://quran.com/hud/65",
+      "verified": true,
+      "qid": "prophets-400-911",
+      "difficultyTarget": 0.6,
+      "alt": [
+        "3 days",
+        "Three",
+        "3"
+      ]
+    },
+    {
+      "p": 400,
+      "topic": "Adam and Noah",
+      "q": "What sign told Noah to bring his family aboard the ark?",
+      "a": "The oven overflowed",
+      "alt": [
+        "Water gushed from the oven",
+        "Overflowing of the oven"
+      ],
+      "sourceUrl": "https://quran.com/hud/40",
+      "verified": true,
+      "qid": "prophets-400-912",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Joseph and his brothers",
+      "q": "What did Joseph ask the king to place him in charge of?",
+      "a": "The land's storehouses",
+      "sourceUrl": "https://quran.com/yusuf/55",
+      "verified": true,
+      "qid": "prophets-400-913",
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Storehouses of the land",
+        "The treasuries"
+      ]
+    },
+    {
+      "p": 400,
+      "topic": "David and Solomon",
+      "q": "Which animals were shown to Solomon in the evening, described as standing finely and running swiftly?",
+      "a": "Horses",
+      "sourceUrl": "https://quran.com/sad/31",
+      "verified": true,
+      "qid": "prophets-400-914",
+      "difficultyTarget": 0.6,
+      "alt": [],
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 400,
+      "topic": "Jesus and Mary",
+      "q": "Where was Zechariah standing in prayer when the angels called him?",
+      "a": "The sanctuary",
+      "sourceUrl": "https://quran.com/ali-imran/39",
+      "verified": true,
+      "qid": "prophets-400-915",
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Mihrab",
+        "The prayer chamber"
+      ]
+    },
+    {
+      "p": 400,
+      "topic": "Other prophets",
+      "q": "Which prophet does the Quran say was raised to a high station?",
+      "a": "Idris",
+      "sourceUrl": "https://quran.com/maryam/56-57",
+      "verified": true,
+      "qid": "prophets-400-917",
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Enoch"
+      ]
+    },
+    {
+      "q": "What did Adam and his wife use to cover themselves after eating from the tree?",
+      "a": "Leaves of Paradise",
+      "topic": "Adam and Noah",
+      "sourceUrl": "https://quran.com/7/22",
+      "alt": [
+        "Garden leaves"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 400,
+      "qid": "prophets-400-918",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Moses and Aaron",
+      "q": "Who led the Israelites astray after Moses left for his appointed meeting?",
+      "a": "Al-Samiri",
+      "sourceUrl": "https://quran.com/taha/85",
+      "verified": true,
+      "qid": "prophets-400-921",
+      "difficultyTarget": 0.6,
+      "verifiedAt": "2026-10-08",
+      "alt": [
+        "Samiri",
+        "The Samaritan"
+      ]
+    },
+    {
+      "p": 600,
+      "topic": "Moses and Aaron",
+      "q": "What happened to the mountain when God manifested His glory to it?",
+      "a": "It crumbled",
+      "alt": [
+        "It was crushed",
+        "It was leveled"
+      ],
+      "sourceUrl": "https://quran.com/al-araf/143",
+      "verified": true,
+      "qid": "prophets-600-911",
+      "difficultyTarget": 0.4,
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 600,
+      "topic": "Adam and Noah",
+      "q": "What did God command the earth to do after Noah's people were destroyed?",
+      "a": "Swallow its water",
+      "sourceUrl": "https://quran.com/hud/44",
+      "verified": true,
+      "qid": "prophets-600-912",
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Swallow your water"
+      ]
+    },
+    {
+      "p": 600,
+      "topic": "Abraham and his family",
+      "q": "What did Abraham's wife do to her face when the angels announced she would have a child?",
+      "a": "Struck her face",
+      "sourceUrl": "https://quran.com/adh-dhariyat/29",
+      "verified": true,
+      "qid": "prophets-600-913",
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Slapped her face"
+      ],
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 600,
+      "topic": "Joseph and his brothers",
+      "q": "What reassurance did Joseph give his brothers after revealing his identity?",
+      "a": "No blame upon you today",
+      "sourceUrl": "https://quran.com/yusuf/92",
+      "verified": true,
+      "qid": "prophets-600-914",
+      "difficultyTarget": 0.4,
+      "alt": [
+        "No reproach upon you",
+        "La tathriba alaykum"
+      ],
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 600,
+      "topic": "Jesus and Mary",
+      "q": "Which Arabic description follows noble in the announcement of John's birth in Surah Aal Imran?",
+      "a": "Hasur",
+      "sourceUrl": "https://quran.com/ali-imran/39",
+      "verified": true,
+      "qid": "prophets-600-916",
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Hasuran"
+      ],
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 600,
+      "topic": "Hud, Salih, and Shu’ayb",
+      "q": "How many men were spreading corruption in the city in Salih's story?",
+      "a": "Nine",
+      "alt": [
+        "9",
+        "Nine men"
+      ],
+      "sourceUrl": "https://quran.com/an-naml/48",
+      "verified": true,
+      "qid": "prophets-600-917",
+      "difficultyTarget": 0.4,
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 600,
+      "topic": "Joseph and his brothers",
+      "q": "What happened to Jacob's eyes from grief, as described in Surah Yusuf?",
+      "a": "They turned white",
+      "alt": [
+        "His eyes became white"
+      ],
+      "sourceUrl": "https://quran.com/yusuf/84",
+      "verified": true,
+      "qid": "prophets-600-918",
+      "difficultyTarget": 0.4,
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 600,
+      "topic": "Hud, Salih, and Shu’ayb",
+      "q": "Which community is mentioned before Shu'ayb calls on them to be mindful of God in Surah Ash-Shu'ara?",
+      "a": "Companions of the Thicket",
+      "sourceUrl": "https://quran.com/ash-shuara/176-177",
+      "verified": true,
+      "qid": "prophets-600-921",
+      "difficultyTarget": 0.4,
+      "verifiedAt": "2026-10-08",
+      "alt": [
+        "People of the Thicket",
+        "Ashab al-Aykah"
+      ]
+    },
+    {
+      "p": 800,
+      "topic": "David and Solomon",
+      "q": "What flowing spring did God make available to Solomon according to Surah Saba?",
+      "a": "A spring of molten copper",
+      "sourceUrl": "https://quran.com/saba/12",
+      "verified": true,
+      "qid": "prophets-800-911",
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Molten copper",
+        "Ayn al-qitr"
+      ]
+    },
+    {
+      "p": 800,
+      "topic": "Other prophets",
+      "q": "What was Job told to take in his hand in Surah Sad?",
+      "a": "A bundle of grass",
+      "alt": [
+        "A bundle of twigs",
+        "Dighth"
+      ],
+      "sourceUrl": "https://quran.com/sad/44",
+      "verified": true,
+      "qid": "prophets-800-912",
+      "difficultyTarget": 0.25,
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 800,
+      "topic": "Adam and Noah",
+      "q": "In the verse about Adam's covenant, which quality does the Quran say was not found in him?",
+      "a": "Firm resolve",
+      "alt": [
+        "Determination",
+        "Azm"
+      ],
+      "sourceUrl": "https://quran.com/taha/115",
+      "verified": true,
+      "qid": "prophets-800-913",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "Moses and Aaron",
+      "q": "On which day did Moses agree to meet Pharaoh's magicians?",
+      "a": "The festival day",
+      "sourceUrl": "https://quran.com/taha/59",
+      "verified": true,
+      "qid": "prophets-800-915",
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Day of adornment",
+        "Yawm al-zinah"
+      ]
+    },
+    {
+      "p": 800,
+      "topic": "David and Solomon",
+      "q": "What was Solomon leaning on when he died?",
+      "a": "His staff",
+      "alt": [
+        "A staff",
+        "Minsa'ah"
+      ],
+      "sourceUrl": "https://quran.com/saba/14",
+      "verified": true,
+      "qid": "prophets-800-916",
+      "difficultyTarget": 0.25,
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 800,
+      "topic": "Hud, Salih, and Shu’ayb",
+      "q": "What does Surah Adh-Dhariyat compare things struck by the wind sent against Ad to?",
+      "a": "Decayed remains",
+      "alt": [
+        "Rotten ruins",
+        "Ramim"
+      ],
+      "sourceUrl": "https://quran.com/adh-dhariyat/42",
+      "verified": true,
+      "qid": "prophets-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which prophet asked his people why they worshipped Baal and abandoned the best of creators?",
+      "a": "Elijah",
+      "topic": "Other prophets",
+      "sourceUrl": "https://quran.com/37/125",
+      "alt": [
+        "Ilyas"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "prophets-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "Moses and Aaron",
+      "q": "Which place did Moses and his young companion travel to in order to meet the righteous servant?",
+      "a": "The junction of two seas",
+      "sourceUrl": "https://quran.com/al-kahf/60",
+      "verified": true,
+      "qid": "prophets-800-921",
+      "difficultyTarget": 0.25,
+      "verifiedAt": "2026-10-08",
+      "alt": [
+        "Meeting of the two seas",
+        "Majma al-bahrayn"
+      ]
+    },
+    {
+      "p": 1000,
+      "topic": "Jesus and Mary",
+      "q": "How does Surah Al-Mu'minun describe the place that sheltered Jesus and his mother?",
+      "a": "A secure hill with flowing water",
+      "alt": [
+        "A hill with springs",
+        "A secure elevated place with water"
+      ],
+      "sourceUrl": "https://quran.com/al-muminun/50",
+      "verified": true,
+      "qid": "prophets-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "topic": "Other prophets",
+      "q": "How does the Quran describe Jonah's health when he was cast onto the open shore?",
+      "a": "He was ill",
+      "alt": [
+        "Ill",
+        "Sick"
+      ],
+      "sourceUrl": "https://quran.com/as-saffat/145",
+      "verified": true,
+      "qid": "prophets-1000-912",
+      "difficultyTarget": 0.15,
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "q": "How did Abraham describe the valley where he settled some of his descendants near the Sacred House?",
+      "a": "A valley without cultivation",
+      "topic": "Abraham and his family",
+      "sourceUrl": "https://quran.com/14/37",
+      "alt": [
+        "Barren",
+        "Uncultivated"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "prophets-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Arabic word refers to linking armor rings in the command addressed to David?",
+      "a": "Sard",
+      "topic": "David and Solomon",
+      "sourceUrl": "https://quran.com/34/11",
+      "alt": [
+        "Al-sard"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-10-08",
+      "p": 1000,
+      "qid": "prophets-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "During the pains of childbirth, what did Mary wish to have become, besides having died?",
+      "a": "Something entirely forgotten",
+      "topic": "Jesus and Mary",
+      "sourceUrl": "https://quran.com/19/23",
+      "alt": [
+        "Forgotten",
+        "Nasyan mansiyyan"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-10-08",
+      "p": 1000,
+      "qid": "prophets-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Arabic word describes the wind sent against Ad in Surah Al-Qamar?",
+      "a": "Sarsar",
+      "topic": "Hud, Salih, and Shu’ayb",
+      "sourceUrl": "https://quran.com/54/19",
+      "alt": [
+        "Sarsaran"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "prophets-1000-918",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which prisoner's dream did Joseph interpret as returning to serve his master drinks?",
+      "a": "Pressing wine",
+      "topic": "Joseph and his brothers",
+      "sourceUrl": [
+        "https://quran.com/12/36",
+        "https://quran.com/12/41"
+      ],
+      "alt": [
+        "Pressing grapes for wine"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-10-08",
+      "p": 1000,
+      "qid": "prophets-1000-921",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "topic": "Abraham and his family",
+      "q": "How does Surah An-Nahl describe Abraham as an example devoted to God?",
+      "a": "An exemplary leader, obedient to God",
+      "alt": [
+        "An ummah obedient to God",
+        "Ummah"
+      ],
+      "sourceUrl": "https://quran.com/an-nahl/120",
+      "verified": true,
+      "qid": "prophets-1000-922",
+      "difficultyTarget": 0.15,
+      "verifiedAt": "2026-10-08"
+    }
+  ]
+}

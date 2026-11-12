@@ -1,3 +1,4 @@
+import { tr } from '../../shared/i18n/core.js';
 import React, { useEffect, useState } from 'react';
 import { Button, Modal } from '../../shared/ui/components.jsx';
 import { resolveMedia } from '../../shared/media/resolve.js';
@@ -18,16 +19,16 @@ function Picture({ src, description }) {
   const retry = () => { setStatus('loading'); setAttempt((value) => value + 1); };
   return <figure className="fab-illustration">
     <div className={`fab-picture-stage is-${status}`} aria-busy={status === 'loading'}>
-      <button type="button" className="fab-picture-open" aria-label="تكبير صورة الأداة" disabled={status !== 'ready'} onClick={() => setExpanded(true)}>
+      <button type="button" className="fab-picture-open" aria-label={tr("تكبير صورة الأداة")} disabled={status !== 'ready'} onClick={() => setExpanded(true)}>
         <img key={attempt} src={imageSrc} alt={description} decoding="async" draggable="false"
           onLoad={() => setStatus('ready')} onError={() => setStatus('error')} />
-        {status === 'ready' && <span className="fab-picture-zoom" aria-hidden="true">تكبير ↗</span>}
+        {status === 'ready' && <span className="fab-picture-zoom" aria-hidden="true">{tr("تكبير ↗")}</span>}
       </button>
-      {status === 'loading' && <p className="fab-picture-status" role="status">جارٍ تحميل الصورة…</p>}
-      {status === 'error' && <div className="fab-picture-status stack"><p role="alert">تعذّر تحميل الصورة. تحقّق من الاتصال ثم أعد المحاولة.</p><Button variant="secondary" onClick={retry}>إعادة تحميل الصورة</Button></div>}
+      {status === 'loading' && <p className="fab-picture-status" role="status">{tr("جارٍ تحميل الصورة…")}</p>}
+      {status === 'error' && <div className="fab-picture-status stack"><p role="alert">{tr("تعذّر تحميل الصورة. تحقّق من الاتصال ثم أعد المحاولة.")}</p><Button variant="secondary" onClick={retry}>{tr("إعادة تحميل الصورة")}</Button></div>}
     </div>
     <figcaption>{PICTURE_CREDIT}</figcaption>
-    {expanded && <Modal title="صورة الأداة" className="fab-picture-modal" onClose={() => setExpanded(false)} closeLabel="إغلاق الصورة المكبّرة">
+    {expanded && <Modal title={tr("صورة الأداة")} className="fab-picture-modal" onClose={() => setExpanded(false)} closeLabel={tr("إغلاق الصورة المكبّرة")}>
       <img className="fab-picture-full" src={imageSrc} alt={description} draggable="false" />
       <p className="fab-picture-credit">{PICTURE_CREDIT}</p>
     </Modal>}
@@ -36,7 +37,7 @@ function Picture({ src, description }) {
 
 export function Illustration({ question }) {
   const asset = pictureAsset(question);
-  if (!asset) return <p className="fab-note" role="alert">صورة هذه الجولة غير متاحة. ابدأوا جلسة جديدة للحصول على الصور المحدّثة.</p>;
+  if (!asset) return <p className="fab-note" role="alert">{tr("صورة هذه الجولة غير متاحة. ابدأوا جلسة جديدة للحصول على الصور المحدّثة.")}</p>;
   const src = resolveMedia(asset);
-  return <Picture key={src} src={src} description={question.imageDescription || 'أداة ذات شكل غير مألوف على خلفية محايدة'} />;
+  return <Picture key={src} src={src} description={question.imageDescription || tr("أداة ذات شكل غير مألوف على خلفية محايدة")} />;
 }

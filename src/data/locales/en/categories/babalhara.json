@@ -1,0 +1,526 @@
+{
+  "id": "babalhara",
+  "name": "Bab Al-Hara",
+  "icon": "🚪",
+  "style": "story",
+  "qs": [
+    {
+      "qid": "babalhara-200-911",
+      "p": 200,
+      "topic": "The healer's family",
+      "q": "What is the name of the healer's wife and mother of his children, whom he divorces in season two?",
+      "a": "Souad",
+      "alt": [
+        "Suad",
+        "Umm Issam"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1821972/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "babalhara-200-912",
+      "p": 200,
+      "topic": "Households and marriage",
+      "q": "What is the name of Issam's first wife, Ferial's daughter?",
+      "a": "Lutfiya",
+      "sourceUrl": "https://elcinema.com/work/1821972/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Lotfiya"
+      ]
+    },
+    {
+      "qid": "babalhara-200-913",
+      "p": 200,
+      "topic": "Secrets and spies",
+      "q": "Who marries Ferial before being exposed as an agent of the occupation in season five?",
+      "a": "Mamoun Bey",
+      "alt": [
+        "Maamoun Bey",
+        "Mamoun"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1295836/content",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "babalhara-200-914",
+      "p": 200,
+      "topic": "The healer's family",
+      "q": "Which of the healer's daughters is widowed when Ibrahim is killed at the start of season four?",
+      "a": "Dalal",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1653818/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "babalhara-200-915",
+      "p": 200,
+      "topic": "Neighborhood leadership",
+      "q": "Which neighborhood leader is killed by the spy at the beginning of season two?",
+      "a": "Abu Saleh",
+      "alt": [
+        "Abu Salih"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1821972/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "babalhara-200-916",
+      "p": 200,
+      "topic": "The resistance",
+      "q": "Which woman helps the resistance and avenges Abu Youssef's killing in season four?",
+      "a": "Umm Joseph",
+      "alt": [
+        "Um Joseph",
+        "Georgette"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1653818/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "babalhara-200-917",
+      "p": 200,
+      "topic": "Neighborhood leadership",
+      "q": "Which neighboring district's strongman feuds with the neighborhood before supporting it during the siege?",
+      "a": "Abu al-Nar",
+      "sourceUrl": "https://elcinema.com/work/1653818/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Abu Nar"
+      ]
+    },
+    {
+      "qid": "babalhara-200-918",
+      "p": 200,
+      "topic": "Work and trades",
+      "q": "What does Abu Ibrahim, whose gold coins are stolen in season one, trade in?",
+      "a": "Fabric",
+      "alt": [
+        "Cloth",
+        "Textiles"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1295836/content",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "babalhara-400-911",
+      "p": 400,
+      "topic": "The gold theft",
+      "q": "What object left behind makes Abu Ibrahim suspect the gold-coin thief's identity in season one?",
+      "a": "The thief's shoe",
+      "alt": [
+        "A shoe",
+        "Shoe"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010631/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "babalhara-400-912",
+      "p": 400,
+      "topic": "Households and marriage",
+      "q": "Which daughter of Abu Khater marries the healer's younger son at the end of season four?",
+      "a": "Khairiya",
+      "sourceUrl": "https://elcinema.com/work/1653818/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Khayriya"
+      ]
+    },
+    {
+      "qid": "babalhara-400-913",
+      "p": 400,
+      "topic": "Secrets and spies",
+      "q": "Which cousin of Al-Nims arrives from prison and helps expose the disguised spy in season five?",
+      "a": "Abu Diab",
+      "sourceUrl": "https://elcinema.com/work/1295836/content",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Abu Diyab"
+      ]
+    },
+    {
+      "qid": "babalhara-400-915",
+      "p": 400,
+      "topic": "The healer's family",
+      "q": "What is the name of the healer's second wife, who conceals her tuberculosis at the start of season seven?",
+      "a": "Nadia",
+      "alt": [
+        "Nadya"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2034936/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "babalhara-400-916",
+      "p": 400,
+      "topic": "The gold theft",
+      "q": "What causes the death of Maarouf, the gold-coin thief's son, in season one?",
+      "a": "A snakebite",
+      "alt": [
+        "Snakebite"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010631/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "babalhara-400-917",
+      "p": 400,
+      "topic": "Households and marriage",
+      "q": "Which daughter of the café owner marries the first neighborhood strongman in season three?",
+      "a": "Sharifa",
+      "sourceUrl": "https://elcinema.com/work/1667786/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Sherifa"
+      ]
+    },
+    {
+      "qid": "babalhara-400-918",
+      "p": 400,
+      "topic": "Places",
+      "q": "From which facility do the men free the female resistance fighter in season five?",
+      "a": "A hospital",
+      "alt": [
+        "Hospital"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1295836/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "babalhara-400-921",
+      "p": 400,
+      "topic": "Work and trades",
+      "q": "How does Abu Fares help the neighborhood's unmarried young men in season five?",
+      "a": "Arranging marriages",
+      "alt": [
+        "Finding them brides",
+        "Matchmaking"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1295836/content",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "babalhara-600-911",
+      "p": 600,
+      "topic": "Secrets and spies",
+      "q": "As what worker does Al-Nims's cousin disguise himself to gather evidence against Ferial's husband?",
+      "a": "A garbage collector",
+      "alt": [
+        "Garbage collector",
+        "Sanitation worker"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1295836/content",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "babalhara-600-912",
+      "p": 600,
+      "topic": "The healer's family",
+      "q": "What is the name of the abandoned girl whom Fawziya cares for in season four?",
+      "a": "Warda",
+      "sourceUrl": "https://elcinema.com/work/1653818/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": []
+    },
+    {
+      "qid": "babalhara-600-913",
+      "p": 600,
+      "topic": "Neighborhood leadership",
+      "q": "What neighborhood, led by Abu Sayyah, becomes involved in a dispute in season three?",
+      "a": "Al-Mawi",
+      "alt": [
+        "Harat al-Mawi"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1667786/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "babalhara-600-914",
+      "p": 600,
+      "topic": "The gold theft",
+      "q": "Which son of the gold-coin thief sells the house and leaves after his father's confession and death?",
+      "a": "Sobhi",
+      "sourceUrl": "https://elcinema.com/work/1010631/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Subhi"
+      ]
+    },
+    {
+      "qid": "babalhara-600-915",
+      "p": 600,
+      "topic": "Households and marriage",
+      "q": "Which daughter of the café owner marries the doctor Hamza?",
+      "a": "Hamida",
+      "sourceUrl": "https://elcinema.com/work/1653818/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Hameeda"
+      ]
+    },
+    {
+      "qid": "babalhara-600-916",
+      "p": 600,
+      "topic": "The resistance",
+      "q": "Whom does the spy hire to burn the café and shop, before the man is killed, in season five?",
+      "a": "Abu al-Ward",
+      "sourceUrl": "https://elcinema.com/work/1295836/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Abu Ward"
+      ]
+    },
+    {
+      "qid": "babalhara-600-917",
+      "p": 600,
+      "topic": "Secrets and spies",
+      "q": "Which spy shoots Zaatar dead in season seven?",
+      "a": "Hilal",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2034936/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "babalhara-600-918",
+      "p": 600,
+      "topic": "Places",
+      "q": "In whose house does the female resistance fighter hide after being freed in season five?",
+      "a": "Abu Bashir's house",
+      "alt": [
+        "Abu Bashir"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1295836/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "Secrets and spies",
+      "q": "What alias does Al-Nims's cousin use while working undercover in the neighborhood in season five?",
+      "a": "Abu Qaoud",
+      "alt": [
+        "Abu Qaud"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1295836/episodes",
+      "qid": "babalhara-800-912",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Work and trades",
+      "q": "Who takes over the absent strongman's shop in season four?",
+      "a": "Abdo",
+      "alt": [
+        "Abdu"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1653818/episodes",
+      "qid": "babalhara-800-913",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Households and marriage",
+      "q": "Which young woman agrees to marry the strongman's son in season five?",
+      "a": "Muti'a",
+      "alt": [
+        "Mutia",
+        "Moutia"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1295836/episodes",
+      "qid": "babalhara-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Households and marriage",
+      "q": "Whom does Said decide to marry, angering Bouran, in season five?",
+      "a": "Hadiya",
+      "alt": [
+        "Hadiyya"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1295836/episodes",
+      "qid": "babalhara-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "The resistance",
+      "q": "Who leads the men who break the café owner out of detention in season five?",
+      "a": "Abu Hassan",
+      "alt": [
+        "Abu Hasan"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1295836/episodes",
+      "qid": "babalhara-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Places",
+      "q": "What land belonging to the neighborhood is occupied at Ferial's husband's instigation in season five?",
+      "a": "The waqf land",
+      "alt": [
+        "Endowment land",
+        "Waqf land"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1295836/episodes",
+      "qid": "babalhara-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Neighborhood leadership",
+      "q": "Which prisoner's papers did the healer use to get out, leading to a case in season seven?",
+      "a": "Al-Doumani",
+      "alt": [
+        "Doumani"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2034936/episodes",
+      "qid": "babalhara-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "qid": "babalhara-800-921",
+      "p": 800,
+      "topic": "Places",
+      "q": "In which prison did Al-Nims's cousin learn the truth about Ferial's husband before arriving in the neighborhood?",
+      "a": "Arwad Prison",
+      "alt": [
+        "Arwad"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1295836/content",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "The healer's family",
+      "q": "What does Sarah give the healer's younger son at the start of season seven?",
+      "a": "A gemstone",
+      "alt": [
+        "Gemstone",
+        "A precious stone"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2034936/episodes",
+      "qid": "babalhara-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Households and marriage",
+      "q": "What is the name of Dhafer's wife, whose mother-in-law wants him to take another wife in season seven?",
+      "a": "Bahiya",
+      "alt": [
+        "Bahiyya"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2034936/episodes",
+      "qid": "babalhara-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Secrets and spies",
+      "q": "Which spy incites Abu Arab against the neighborhood and is killed by Abu Sayyah at the end of season three?",
+      "a": "Hamdi",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1667786/episodes",
+      "qid": "babalhara-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Secrets and spies",
+      "q": "Which officer's weapon does Zaatar steal before being told to return it in season seven?",
+      "a": "Salloum",
+      "alt": [
+        "Sallum"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2034936/episodes",
+      "qid": "babalhara-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "The resistance",
+      "q": "Who joins forces with Abu Shehab against the French army in season three?",
+      "a": "Adham",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1667786/episodes",
+      "qid": "babalhara-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "The resistance",
+      "q": "Which man is executed by the French in episode twenty-one of season four?",
+      "a": "Abu Abdo",
+      "alt": [
+        "Abu Abdu"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1653818/episodes",
+      "qid": "babalhara-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Households and marriage",
+      "q": "Who married Abu Khater's daughter and legally demanded that she join him in season three?",
+      "a": "Kamal",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1667786/episodes",
+      "qid": "babalhara-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Places",
+      "q": "Who files a fraudulent lawsuit to seize Ibrahim's father's house in season three?",
+      "a": "Abu Nasouh",
+      "alt": [
+        "Abu Nasuh"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1667786/episodes",
+      "qid": "babalhara-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    }
+  ]
+}

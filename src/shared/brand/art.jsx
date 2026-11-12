@@ -1,10 +1,17 @@
 import React from 'react';
-import { ErsomhaIcon } from '../../games/ersomha/icon.jsx';
-import gameIcons from './assets/game-icons.webp';
+import { tr } from '../i18n/core.js';
+import mafiaArt from './assets/playful-studio/mafia.webp';
+import ersomhaArt from './assets/playful-studio/ersomha.webp';
+import badeehaArt from './assets/playful-studio/badeeha.webp';
+import beepArt from './assets/playful-studio/beep.webp';
+import mamnooArt from './assets/playful-studio/mamnoo.webp';
+import jabeenArt from './assets/playful-studio/jabeen.webp';
+import fabrakaArt from './assets/playful-studio/fabraka.webp';
+import meenfinaArt from './assets/playful-studio/meenfina.webp';
 import avatarSheet from './assets/avatars.webp';
 import trophy from './assets/trophy.webp';
 import world from './assets/world.webp';
-import mark from './assets/mark.webp';
+import mark from './assets/playful-studio/brand-mark.webp';
 import arabicFont from './assets/arabic.woff2';
 import latinFont from './assets/latin.woff2';
 import { AVATAR_OPTIONS, resolveAvatarIndex } from './avatar-identity.js';
@@ -12,8 +19,11 @@ export { AVATAR_OPTIONS } from './avatar-identity.js';
 
 // The build ships the art and fonts as content-hashed files the service worker
 // installs before activation, so they stay available offline.
-// Sprite windows preserve the original artwork and share one decoded image.
-const GAMES = { badeeha: [0, 0], beep: [1, 0], mamnoo: [2, 0], jabeen: [0, 1], fabraka: [1, 1], meenfina: [2, 1] };
+// Independent alpha artwork shares one source across the menu and game screens.
+// Existing avatar identities continue to use their original sprite positions.
+const GAMES = Object.freeze({ mafia: mafiaArt, ersomha: ersomhaArt, badeeha: badeehaArt, beep: beepArt, mamnoo: mamnooArt, jabeen: jabeenArt, fabraka: fabrakaArt, meenfina: meenfinaArt });
+export const GAME_ARTWORK_IDS = Object.freeze(Object.keys(GAMES));
+export const SHELL_ARTWORK_URLS = Object.freeze([mark, avatarSheet, ...Object.values(GAMES)]);
 
 export function BrandFonts() {
   return <style>{`
@@ -23,9 +33,7 @@ export function BrandFonts() {
 }
 
 export function GameArtwork({ game, className = '', style = {} }) {
-  if (game === 'ersomha') return <span className={`clay-art ${className}`} data-game={game} aria-hidden="true" style={style}><ErsomhaIcon /></span>;
-  const [column, row] = GAMES[game] || GAMES.badeeha;
-  return <span className={`clay-art ${className}`} data-game={game} aria-hidden="true" style={{ backgroundImage: `url(${gameIcons})`, backgroundPosition: `${column * 50}% ${row * 100}%`, ...style }} />;
+  return <span className={`clay-art playful-game-art ${className}`} data-game={game} aria-hidden="true" style={style}><img src={GAMES[game] || GAMES.badeeha} alt="" width="512" height="512" decoding="async" draggable="false" /></span>;
 }
 
 export function Avatar({ player, emoji, index, className = '', style = {} }) {
@@ -42,8 +50,8 @@ export function ClayStage({ className = '', idle = false, react = '', as: Tag = 
 }
 
 export function AvatarPicker({ value, onChange, ...rest }) {
-  return <div data-design-id="avatar-picker" className="avatar-picker" role="group" aria-label="اختر شخصيتك" {...rest}>{AVATAR_OPTIONS.map((option) => (
-    <button key={option.emoji} type="button" data-design-id="avatar-choice" className={`avatar-choice ${value === option.emoji ? 'selected' : ''}`} aria-label={option.label} aria-pressed={value ===option.emoji} onClick={() => onChange(option.emoji)}>
+  return <div data-design-id="avatar-picker" className="avatar-picker" role="group" aria-label={tr("اختر شخصيتك")} {...rest}>{AVATAR_OPTIONS.map((option) => (
+    <button key={option.emoji} type="button" data-design-id="avatar-choice" className={`avatar-choice ${value === option.emoji ? 'selected' : ''}`} aria-label={tr(option.label)} aria-pressed={value ===option.emoji} onClick={() => onChange(option.emoji)}>
       <ClayStage className="clay-static"><Avatar index={option.index} /></ClayStage>
     </button>
   ))}</div>;
@@ -54,11 +62,11 @@ export function TrophyArtwork({ className = '' }) {
 }
 
 export function BrandMark({ className = '' }) {
-  return <img className={`brand-mark ${className}`} src={mark} alt="" width="256" height="256" draggable="false" />;
+  return <img className={`brand-mark ${className}`} src={mark} alt="" width="512" height="512" draggable="false" />;
 }
 
 export function Wordmark({ sculpted = false }) {
-  return <span className={sculpted ? 'wordmark-art' : 'brand-name'}>ميدان</span>;
+  return <span className={sculpted ? 'wordmark-art' : 'brand-name'}>{tr('ميدان')}</span>;
 }
 
 export function WorldArtwork({ className = '' }) {

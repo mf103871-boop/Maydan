@@ -18,6 +18,7 @@ WARMTH_RUNTIME_SHA256 = '7286f0eee8f45affac5701c502766ddbe9b64ea2669f42675a13876
 WARMTH_SOURCE_SHA256 = '26a1737edc78602489fc7a746c1ee199d65066614312b621648da24f1f207c56'
 TICKET_POLICIES = ('trial-ticket-v1', 'game-entry-ticket-v2')
 ENTRY_GAMES = {'badeeha', 'beep', 'mamnoo', 'jabeen', 'fabraka', 'meenfina', 'ersomha', 'mafia'}
+PUBLIC_ENGLISH_PACKS = {'ui', 'badeeha', 'beep', 'fabraka', 'jabeen', 'mamnoo', 'meenfina'}
 
 
 def expected_warmth():
@@ -40,6 +41,62 @@ class PreparedBundle:
         return target.read_bytes()
 
 
+def verify_localization(bundle, receipt, required=False):
+    localization = receipt.get('localization')
+    if localization is None and not required:
+        return
+    require(isinstance(localization, dict) and localization.get('schemaVersion') == 1,
+            'Missing or invalid localization receipt')
+    require(localization.get('uiLocales') == ['ar', 'en']
+            and localization.get('contentVersions') == {'ar': 'legacy-ar', 'en': 'new-en'}
+            and localization.get('privateContent') == 'server-only', 'Localization identity differs')
+    packs = localization.get('publicPacks')
+    require(isinstance(packs, list) and len(packs) == len(PUBLIC_ENGLISH_PACKS)
+            and all(isinstance(pack, dict) and isinstance(pack.get('id'), str) for pack in packs),
+            'English pack coverage is incomplete')
+    require({pack.get('id') for pack in packs} == PUBLIC_ENGLISH_PACKS,
+            'Duplicate, private or unexpected English pack')
+    resources = receipt.get('resources')
+    require(isinstance(resources, list), 'Missing localization resource evidence')
+    html = bundle.read('www/index.html').decode('utf-8')
+    expected_paths = set()
+    for pack in packs:
+        identity = pack['id']
+        kind = 'ui' if identity == 'ui' else 'game'
+        version = 'ui-en-v1' if identity == 'ui' else 'new-en'
+        name = pack.get('path', '')
+        require(pack.get('kind') == kind and pack.get('contentLocale') == 'en'
+                and pack.get('contentVersion') == version, 'English pack identity differs')
+        require(isinstance(name, str) and re.fullmatch(r'www/assets/brand/locale-en-' + identity + r'-[A-Z0-9]+\.json', name),
+                'Invalid English pack path')
+        require(type(pack.get('bytes')) is int and pack['bytes'] > 0
+                and isinstance(pack.get('sha256'), str) and re.fullmatch(r'[a-f0-9]{64}', pack['sha256']),
+                'Invalid English pack byte evidence')
+        evidence = {key: pack[key] for key in ('path', 'bytes', 'sha256')}
+        require(resources.count(evidence) == 1, 'English pack missing from resource evidence')
+        require(name.rsplit('/', 1)[1] in html, 'Bundled HTML does not reference an English pack')
+        data = bundle.read(name)
+        require(len(data) == pack['bytes'] and hashlib.sha256(data).hexdigest() == pack['sha256'],
+                'Actual English pack differs from prepared receipt')
+        payload = json.loads(data)
+        require(isinstance(payload, dict) and payload.get('schemaVersion') == 1
+                and payload.get('id') == identity and payload.get('kind') == kind
+                and payload.get('contentLocale') == 'en' and payload.get('contentVersion') == version,
+                'Actual English pack envelope differs')
+        shape = dict if identity in ('ui', 'fabraka') else list
+        require(isinstance(payload.get('data'), shape) and len(payload['data']) > 0,
+                'Actual English pack data is empty or has the wrong shape')
+        expected_paths.add(name)
+    if getattr(bundle, 'archive', None):
+        actual_paths = [name[len(bundle.prefix):] for name in bundle.archive.namelist()
+                        if name.startswith(bundle.prefix + 'www/assets/brand/locale-en-') and name.endswith('.json')]
+    else:
+        actual_paths = ['www/assets/brand/' + path.name
+                        for path in (bundle.path / 'www/assets/brand').glob('locale-en-*.json')]
+    require(len(actual_paths) == len(expected_paths) and set(actual_paths) == expected_paths,
+            'Actual English pack inventory contains missing, stale or unexpected files')
+
+
 def verify(bundle, env, prepared=False):
     receipt = json.loads(bundle.read('www/release-features.json'))
     require(receipt.get('schemaVersion') == 1, 'Unknown release feature receipt schema')
@@ -57,6 +114,7 @@ def verify(bundle, env, prepared=False):
     require(not warmth or private, 'Warmth requires private audio')
     require(profile != 'complete-preview' or environment == 'mafia-preview' and private and warmth
             and policy in TICKET_POLICIES and mode == 'testflight-owned', 'Incomplete complete-preview profile')
+    verify_localization(bundle, receipt, required=profile == 'complete-preview')
     native = json.loads(bundle.read('www/native-config.json'))
     require(receipt.get('environment') == environment and receipt.get('apiOrigin') == ORIGINS[environment]
             == native.get('apiOrigin') and receipt.get('profile') == profile,

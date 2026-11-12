@@ -7,11 +7,21 @@ import os from 'node:os';
 import { SAMPLE_BANK } from '../../src/shared/fx/sample-bank.js';
 import { MUSIC_BANK } from '../../src/shared/fx/music-bank.js';
 import { configOf } from '../../server/design/db.mjs';
+import { routeRequest } from '../../server/worker.mjs';
 const BASE = process.env.E2E_BASE_URL || 'http://localhost:3000';
 const PREVIEW_URL = new URL(BASE);
 const IS_LOCAL_PREVIEW = PREVIEW_URL.protocol === 'http:' && ['localhost', '127.0.0.1', '[::1]'].includes(PREVIEW_URL.hostname);
 const UI_CONFIG_URL = new URL('/api/ui-config?schemaVersion=1&registryVersion=1', BASE).href;
 const DEFAULT_UI_CONFIG = JSON.stringify(await configOf({}));
+const CONTENT_CAPABILITIES_URL = new URL('/api/content/capabilities', BASE).href;
+// The file-only preview has no API. Evaluate this exact public GET through the
+// actual worker router with no DB or service bindings; hosted targets stay real.
+const LOCAL_CONTENT_CAPABILITIES = IS_LOCAL_PREVIEW ? await routeRequest(
+  new Request(CONTENT_CAPABILITIES_URL, { headers: { Origin: PREVIEW_URL.origin } }),
+  { ALLOWED_ORIGINS: PREVIEW_URL.origin }, {},
+) : null;
+if (LOCAL_CONTENT_CAPABILITIES && !LOCAL_CONTENT_CAPABILITIES.ok) throw new Error('local worker content capabilities failed');
+const LOCAL_CONTENT_CAPABILITIES_BODY = await LOCAL_CONTENT_CAPABILITIES?.text();
 const OUT = path.resolve(process.argv[2] || path.join(os.tmpdir(), 'maydan-e2e', 'smoke'));
 await fs.mkdir(OUT, { recursive: true });
 const results = [], errors = [], responses = [];
@@ -65,13 +75,18 @@ try {
     }, { max: CUE_MAX_FRAMES, frames: DECODE_FRAMES });
     const page = await context.newPage();
     // The file-only preview intentionally returns 503 for APIs. Supply only the
-    // real default-design contract with an empty environment: no DB, account,
-    // remote service or published design. Other API failures remain test errors;
+    // real default-design and content-capability contracts with empty bindings:
+    // no DB, account, remote service or published design. Other API failures remain test errors;
     // hosted targets always exercise their real design-config endpoint.
     if (IS_LOCAL_PREVIEW) await page.route(UI_CONFIG_URL, (route) => {
       if (route.request().method() !== 'GET') return route.continue();
       return route.fulfill({ status: 200, contentType: 'application/json',
         headers: { 'Cache-Control': 'no-store' }, body: DEFAULT_UI_CONFIG });
+    });
+    if (IS_LOCAL_PREVIEW) await page.route(CONTENT_CAPABILITIES_URL, (route) => {
+      if (route.request().method() !== 'GET') return route.continue();
+      return route.fulfill({ status: LOCAL_CONTENT_CAPABILITIES.status,
+        headers: Object.fromEntries(LOCAL_CONTENT_CAPABILITIES.headers), body: LOCAL_CONTENT_CAPABILITIES_BODY });
     });
     page.setDefaultTimeout(12000);
     const cueCount = () => page.evaluate(() => window.__cues.length);
@@ -135,7 +150,7 @@ try {
     check(`${name}: volume survives reload`, await slider.inputValue() === '40');
     await tap(page.getByRole('switch', { name: 'الصوت', exact: true }), 'mute switch', { expect: 'none' });
     check(`${name}: mute disables volume/preview`, await slider.isDisabled() && await page.getByRole('button', { name: 'تجربة الصوت', exact: true }).isDisabled());
-    await tap(page.getByRole('navigation', { name: 'أقسام ميدان' }).getByRole('link', { name: 'الألعاب', exact: true }), 'games tab while muted', { expect: 'none' });
+    await tap(page.getByRole('navigation', { name: 'أقسام ميدان' }).getByRole('link', { name: 'العب', exact: true }), 'games tab while muted', { expect: 'none' });
     await go('settings?section=audio');
     await tap(page.getByRole('switch', { name: 'الصوت', exact: true }), 'unmute switch');
     await go('settings?section=display');

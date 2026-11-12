@@ -2,7 +2,7 @@
 .mamnoo { --game-accent: #a3494e; display: grid; gap: 14px; align-content: start; }
 .mamnoo-setup .card:not(.resume-card) { border-color: #e2d3be; background: transparent; box-shadow: none; }
 .mamnoo-meta { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); width: 100%; padding: 10px 0; border-radius: 15px; color: #4b2d5b; background: #f8ecd8; text-align: center; }
-.mamnoo-meta > span { min-width: 0; padding: 0 6px; display: grid; justify-items: center; gap: 2px; font-size: 12px; }
+.mamnoo-meta > span { min-width: 0; padding: 0 6px; display: grid; justify-items: center; gap: 2px; font-size:14px; }
 .mamnoo-meta > span + span { border-inline-start: 1px solid #cdbba6; }
 .mamnoo-meta b { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; font-size: 15px; overflow-wrap: anywhere; }
 .mamnoo-meta svg { width: 16px; height: 16px; }
@@ -10,11 +10,11 @@
 .mamnoo-head > .clay-avatar { width: 44px; height: 44px; flex: none; }
 .mamnoo-head .grow { min-width: 0; }
 .mamnoo-head .grow b { display: block; font-size: 17px; overflow-wrap: anywhere; }
-.mamnoo-head .grow small { color: #664d63; font-size: 11px; }
+.mamnoo-head .grow small { color: #664d63; font-size:14px; }
 .mamnoo-head .badge { font-size: 15px; padding-inline: 8px; }
 .mamnoo-head .timer { flex: none; }
 .mamnoo-head .timer-num { font-size: 23px; }
-.mamnoo-head .timer-sub { font-size: 9px; }
+.mamnoo-head .timer-sub { font-size:14px; }
 .mamnoo-judge { display: grid; gap: 22px; padding-block: 9px 0; }
 .mamnoo-card, .mamnoo-forbidden-panel { position: relative; border: 1px solid #c9a3d5; border-radius: 19px; padding: 20px 13px 13px; text-align: center; background: #eddcf4; }
 .mamnoo-card-label, .mamnoo-forbidden-panel h3 { position: absolute; inset-block-start: 0; left: 50%; translate: -50% -50%; border-radius: 999px; padding: 3px 14px; white-space: nowrap; font-size: 14px; font-weight: 900; }
@@ -52,3 +52,16 @@
   .mamnoo-buttons .btn { min-height: 54px; flex-direction: row; }
   .mamnoo-word { font-size: 39px; }
 }
+/* Playful Studio: the word and its forbidden clues remain separate and legible. */
+.mamnoo { --game-accent: #A53D4D; }
+.mamnoo :is(.mamnoo-meta,.mamnoo-head,.mamnoo-intro .who) { background: #FFFDF9; border: 1px solid #DFD1DC; color: #352139; border-radius: 20px; }
+.mamnoo .mamnoo-card { background: #EEE3F5; border-color: #D8CAD9; border-radius: 24px; padding-block: 24px 18px; }
+.mamnoo .mamnoo-word { color: #352139; }
+.mamnoo .mamnoo-card-label { background: #76518D; }
+.mamnoo .mamnoo-forbidden-panel { background: #FFE5DB; border-color: #E8B7AD; border-radius: 24px; padding-block: 24px 18px; }
+.mamnoo .mamnoo-forbidden-panel h3 { background: #FFB7A7; color: #652736; }
+.mamnoo .mamnoo-buttons .btn { border-radius: 20px; }
+.mamnoo .mamnoo-buttons .mamnoo-buzz { --btn-bg: #FF8A70; --btn-ledge: #D26B57; color: #352139; }
+.mamnoo .mamnoo-tally>span { background: #FFFDF9; border-radius: 16px; }
+.mamnoo .mamnoo-tally .is-correct { background: #DDF2EA; color: #12614F; }
+.mamnoo .mamnoo-team-hero strong { background: #EEE3F5; color: #352139; border-radius: 16px; }

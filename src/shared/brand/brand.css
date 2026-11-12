@@ -1,4 +1,4 @@
-/* الهوية المعتمدة: صلصال ناعم، عاجي، فيروزي، بنفسجي وذهبي.
+/* الهوية المعتمدة: Playful Studio، عاجي دافئ، فيروزي ومرجاني.
    يُحقن هذا الملف آخر الأنماط (PlatformApp) فتغلب قواعده ui.css/setup.css/platform.css عند تساوي الخصوصية،
    والإطارات المفتاحية clay-* هنا على مستوى المستند فتستعملها الألعاب بالاسم. */
 
@@ -13,10 +13,14 @@
   -webkit-user-select: none; user-select: none; pointer-events: none;
 }
 .clay-art    { width: 112px; height: 112px; background-size: 300% 200%; }
+.playful-game-art { background: none; aspect-ratio: 1; }
+.playful-game-art > img { width: 100%; height: 100%; object-fit: contain; user-select: none; }
+.menu-game-art { display: inline-grid; place-items: center; flex: 0 0 auto; }
+.menu-game-art > .playful-game-art { width: 100%; height: 100%; min-width: 0; }
 .clay-avatar { width: 44px;  height: 44px;  background-size: 200% 200%; }
 .clay-trophy { display: block; width: 200px; height: auto; object-fit: contain; margin-inline: auto; mix-blend-mode: normal; filter: var(--art-shadow-trophy); pointer-events: none; }
 .clay-world  { display: block; width: 100%; height: auto; user-select: none; pointer-events: none; }
-.brand-mark  { width: 52px; height: 52px; border-radius: 17px; flex: 0 0 auto; box-shadow: inset 0 1px 0 #FFFFFF55, 0 3px 0 #6A3A8A, 0 7px 14px rgba(var(--clay-ink), .16); }
+.brand-mark  { width: 52px; height: 52px; border-radius: 16px; flex: 0 0 auto; box-shadow: var(--shadow-soft); }
 .brand-name { display: block; font-size: 36px; font-weight: 800; color: var(--plum); line-height: 1.12; }
 .brand-sub { font-size: 14px; font-weight: 700; color: var(--plum); }
 
@@ -32,10 +36,10 @@
 .clay-stage.no-contact::after { content: none; }
 
 /* هبوط + طفو (idle): الحركة على .clay-lift والظل يتنفس عكسها؛ الرسم نفسه ساكن */
-.clay-stage > .clay-lift { animation: clay-drop .7s var(--ease-spring) both; }
-.clay-stage::after        { animation: clay-shadow-land .7s var(--ease-spring) both; }
-.clay-stage.clay-idle > .clay-lift { animation: clay-drop .7s var(--ease-spring) both, clay-float 3.4s ease-in-out .8s infinite; }
-.clay-stage.clay-idle::after       { animation: clay-shadow-land .7s var(--ease-spring) both, clay-shadow-breathe 3.4s ease-in-out .8s infinite; }
+.clay-stage > .clay-lift { animation: clay-drop 260ms var(--ease-out) both; }
+.clay-stage::after        { animation: clay-shadow-land 260ms var(--ease-out) both; }
+.clay-stage.clay-idle > .clay-lift { animation: clay-drop 260ms var(--ease-out) both, clay-float 3.4s ease-in-out .8s 2; }
+.clay-stage.clay-idle::after       { animation: clay-shadow-land 260ms var(--ease-out) both, clay-shadow-breathe 3.4s ease-in-out .8s 2; }
 .clay-stage.clay-static > .clay-lift, .clay-stage.clay-static::after { animation: none; }   /* قوائم وبطاقات صامتة */
 
 /* ردود الفعل: الصنف يُضاف ≤700ms عبر useReaction ويُزال بـ setTimeout */
@@ -45,11 +49,11 @@
 .clay-stage.clay-jump::after, .clay-stage.clay-squash::after { animation: clay-shadow-react .6s ease-out both; }
 
 /* ضغط: أي زر يحوي حاملًا */
-button:active > .clay-stage > .clay-lift, .clay-stage.is-pressed > .clay-lift { transform: scale(1.06, .94) translateY(2px); transition: transform .12s var(--ease-out); }
+button:active > .clay-stage > .clay-lift, .clay-stage.is-pressed > .clay-lift { transform: scale(.98) translateY(1px); transition: transform var(--dur-press) var(--ease-out); }
 
-@keyframes clay-drop { 0% { opacity: 0; transform: translateY(-44px) scale(.6); } 55% { opacity: 1; transform: translateY(6px) scale(1.08, .92); } 78% { transform: translateY(-3px) scale(.98, 1.03); } 100% { transform: none; } }
+@keyframes clay-drop { from { opacity: 0; transform: translateY(8px) scale(.96); } to { opacity: 1; transform: none; } }
 @keyframes clay-shadow-land { 0% { opacity: 0; transform: scale(.35); } 55% { opacity: 1; transform: scale(1.15); } 100% { opacity: 1; transform: none; } }
-@keyframes clay-float { 0%, 100% { transform: none; } 50% { transform: translateY(-6px) rotate(-1.5deg); } }
+@keyframes clay-float { 0%, 100% { transform: none; } 50% { transform: translateY(-3px) rotate(-.5deg); } }
 @keyframes clay-shadow-breathe { 0%, 100% { transform: none; opacity: 1; } 50% { transform: scaleX(.86); opacity: .62; } }
 @keyframes clay-jump { 0% { transform: none; } 28% { transform: translateY(-20px) scale(.92, 1.1); } 55% { transform: translateY(0) scale(1.1, .9); } 75% { transform: translateY(-7px); } 100% { transform: none; } }
 @keyframes clay-wiggle { 0%, 100% { transform: none; } 20% { transform: rotate(-8deg); } 40% { transform: rotate(7deg); } 60% { transform: rotate(-4deg); } 80% { transform: rotate(3deg); } }
@@ -119,7 +123,7 @@ button:active > .clay-stage > .clay-lift, .clay-stage.is-pressed > .clay-lift { 
 .podium-trophy::before { content: ""; position: absolute; z-index: 2; top: 22%; inset-inline-start: 30%; width: 14px; height: 14px; border-radius: 50%; background: radial-gradient(circle, #fff 0 30%, #fff0 70%); opacity: 0; pointer-events: none; animation: ui-sparkle 2.4s ease-in-out 1.8s 3; }
 
 /* ── الشعار المنحوت (يبقى الفلتر تحت تقليل الحركة: ظل ثابت لا حركة) ── */
-.wordmark-art { display: block; font-weight: 800; font-size: clamp(86px, 24vw, 150px); line-height: 1.35; color: #FFF3DA; -webkit-text-stroke: 9px #9250BD; paint-order: stroke fill; text-shadow: 0 5px #683493, 0 8px #683493, 0 -2px #fff; filter: drop-shadow(0 6px 3px #51327340); }
+.wordmark-art { display: block; font-weight: 800; font-size: clamp(72px, 21vw, 130px); line-height: 1.3; color: var(--plum); text-shadow: 0 2px 0 #fff; }
 
 /* ── الأقراص/البلاطات الحاملة (plinths) ── */
 .beep-bomb { position: relative; width: 150px; height: 150px; margin: 0 auto; display: grid; place-items: center; border-radius: 50%;
@@ -145,29 +149,28 @@ button:active > .clay-stage > .clay-lift, .clay-stage.is-pressed > .clay-lift { 
 /* ═══ الأسطح: لغة حافة صلصالية واحدة — ضوء علوي، حافة صلبة 3–5px، ظل محيط ناعم ═══ */
 
 /* ── الأزرار: يهبط الجسم بمقدار الحافة وتنطوي الحافة ── */
-.btn { border-radius: 20px; font-weight: 800; border-width: 1px; padding-bottom: calc(10px + 0px);
-  background-image: linear-gradient(180deg, #FFFFFF33, #FFFFFF00 26%), var(--btn-bg);
-  box-shadow: inset 0 2px 1px #FFFFFFB3, inset 0 -1px 0 #35254712, 0 var(--ledge) 0 var(--clay-ledge), 0 8px 14px #4524521F;
-  transition: transform .22s var(--ease-spring), box-shadow .22s var(--ease-spring), filter .15s ease, background-color .15s ease, border-color .15s ease, opacity .15s ease; }
-.btn:active:not(:disabled) { transform: translateY(var(--ledge)); transition-duration: .08s; box-shadow: inset 0 2px 3px rgba(91,61,36,.14), 0 0 0 var(--clay-ledge), 0 1px 2px #63432F14; }
-.btn-primary, .btn-accent { --ledge: var(--ledge-lg); --btn-bg: linear-gradient(180deg, #087E92, #065D76); --btn-fg: #fff; --btn-border: #58CDD9; font-size: 20px;
-  box-shadow: inset 0 2px 1px #FFFFFFA6, inset 0 -1px 0 #03485F, 0 var(--ledge-lg) 0 #03485F, 0 10px 18px #07566B38; }
-.btn-primary:active:not(:disabled), .btn-accent:active:not(:disabled) { box-shadow: inset 0 2px 4px #04525C55, 0 0 0 #066A77, 0 1px 2px #106F7C2E; }
+.btn { border-radius: 20px; font-weight: 800; border-width: 1px; padding-bottom: 10px;
+  background: var(--btn-bg); box-shadow: inset 0 1px 0 #FFFFFF99, var(--shadow-soft);
+  transition: transform var(--dur-release) var(--ease-out), box-shadow var(--dur-release) var(--ease-out), background-color 160ms ease, border-color 160ms ease, opacity 160ms ease; }
+.btn:active:not(:disabled) { transform: translateY(1px) scale(.98); transition-duration: var(--dur-press); box-shadow: var(--shadow-press); }
+.btn-primary, .btn-accent { --btn-bg: var(--accent); --btn-fg: #fff; --btn-border: #087165; font-size: 18px;
+  box-shadow: inset 0 1px 0 #FFFFFF40, 0 2px 0 #066357, 0 5px 12px #08796D20; }
+.btn-primary:active:not(:disabled), .btn-accent:active:not(:disabled) { box-shadow: inset 0 1px 3px #034D4540, 0 1px 1px #08796D18; }
 .btn-lg:active:not(:disabled) { transform: translateY(var(--ledge-lg)); }
-.btn-secondary { --btn-bg: linear-gradient(180deg, #FCF8FF, #EBDDFA); --btn-fg: #4F286B; --btn-border: #CDA7E7; --clay-ledge: #B991D1; }
+.btn-secondary { --btn-bg: var(--surface-2); --btn-fg: var(--plum); --btn-border: #D6C2E0; }
 .btn-danger  { --btn-bg: #FCE9E3; --btn-fg: #A42F32; --btn-border: #EDB1AA; box-shadow: inset 0 2px #fff9, 0 var(--ledge) 0 #DEB4A9, 0 6px 12px #63432F14; }
 .btn-danger:active:not(:disabled)  { box-shadow: inset 0 2px 3px #A42F3222, 0 0 0 #DEB4A9; }
 .btn-success { --btn-bg: #DEF2E9; --btn-fg: #165F4D; --btn-border: #8EC6B2; box-shadow: inset 0 2px #fff9, 0 var(--ledge) 0 #A1CCBC, 0 6px 12px #63432F14; }
 .btn-success:active:not(:disabled) { box-shadow: inset 0 2px 3px #165F4D22, 0 0 0 #A1CCBC; }
 .btn-ghost, .btn-ghost:active { box-shadow: none; transform: none; background-image: none; }
-.btn:disabled { opacity: .58; transform: none; box-shadow: inset 0 1px 0 #FFFFFF99, 0 1px 0 var(--clay-ledge); background-image: var(--btn-bg); }
-.btn-lg { min-height: 60px; font-size: 23px; }
+.btn:disabled { opacity: .58; transform: none; box-shadow: none; background: var(--btn-bg); }
+.btn-lg { min-height: 56px; font-size: 20px; }
 .btn-sm { font-size: 15px; }
 .btn-icon { border-radius: 17px; }
 /* الزر المسلّح (مفعّل للتو): وهج ×2 + تنفّس ×3 — الصنف .is-armed يضيفه JSX عند التفعيل.
    الوهج حلقة داخلية (inset) لأن .btn يقصّ ما يتجاوزه (overflow: hidden لأجل التموّج). */
-.btn.is-armed:not(:disabled) { animation: ui-breathe 1.8s ease-in-out .3s 3; }
-.btn.is-armed:not(:disabled)::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: -1; box-shadow: inset 0 0 0 3px #FFFFFFB8, inset 0 0 22px #18B7BE99; opacity: 0; animation: ui-glow 2.6s ease-in-out .6s 2; }
+.btn.is-armed:not(:disabled) { animation: ui-pop-select 180ms var(--ease-out) 1; }
+.btn.is-armed:not(:disabled)::after { content: none; }
 
 /* ── البطاقات ── */
 .card { background: var(--top-light), var(--surface); backdrop-filter: none; -webkit-backdrop-filter: none; border-color: var(--stroke); box-shadow: var(--shadow-lift-1); }
@@ -176,19 +179,19 @@ button.card:focus-visible { outline: 3px solid var(--purple); outline-offset: 4p
 button.card:active { transform: translateY(var(--ledge)); transition-duration: .08s; box-shadow: var(--shadow-press); }
 .badge-new { background: var(--purple); box-shadow: none; }
 .badge-accent { color: var(--plum); }
-.input { background: #FFFDF6; border-color: #DCC7B1; box-shadow: inset 0 2px 3px #7356311A, 0 1px 0 #fff; }
-.input::placeholder { color: #82748B; opacity: 1; }
-.input:focus { border-color: var(--purple); box-shadow: inset 0 2px 3px #7356311A, 0 0 0 3px #9250BD1F; }
+.input { background: var(--surface); border-color: var(--stroke-strong); box-shadow: inset 0 1px 2px #35213906; }
+.input::placeholder { color: var(--muted); opacity: 1; }
+.input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px #08796D1F; }
 
 /* ── المقطع ── */
-.segment { background: #EEE4D8; box-shadow: inset 0 2px 3px rgba(91,61,36,.10); }
+.segment { background: var(--surface); box-shadow: var(--shadow-row); }
 .segment button { transition: color .15s; }
-.segment button.selected { background: var(--top-light), #FFFCF4; box-shadow: inset 0 1px 0 #fff, 0 2px 0 var(--clay-ledge), 0 3px 6px #5B3C2620; animation: ui-pop-select .28s var(--ease-spring); }
-.segment button.selected.accent { color: #fff; background: var(--top-light), var(--purple); box-shadow: inset 0 1px 0 #ffffff66, 0 2px 0 #61347C, 0 4px 8px #9250BD33; }
+.segment button.selected { background: var(--surface-mint); color: var(--accent); box-shadow: none; animation: ui-pop-select var(--dur-tab) var(--ease-out); }
+.segment button.selected.accent { color: #fff; background: var(--accent); box-shadow: inset 0 1px 0 #ffffff33, 0 2px 0 #066357; }
 
 /* ── الحوارات والتنبيهات ── */
 .sheet-handle { background: #BFA7CC; }
-.modal { background: var(--top-light), var(--bg-2); border: 1px solid var(--stroke-strong); border-radius: 26px; box-shadow: inset 0 2px 1px #fff, 0 5px 0 var(--clay-ledge), 0 24px 48px rgba(91,61,36,.20); }
+.modal { background: var(--surface); border: 1px solid var(--stroke); border-radius: 24px; box-shadow: var(--shadow); }
 .sheet { background: var(--top-light), var(--bg-2); box-shadow: 0 -2px 0 #fff, 0 -12px 32px rgba(91,61,36,.16); }
 .toast { color: var(--text); background: var(--top-light), #FFFCF2; box-shadow: inset 0 1px 0 #fff, 0 3px 0 var(--clay-ledge), 0 10px 22px rgba(91,61,36,.16); }
 .toast.is-success { border-inline-start: 4px solid var(--success); }
@@ -231,8 +234,8 @@ html[data-reduced-motion="true"] .btn:active:not(:disabled), html[data-reduced-m
 
 /* Shared clarity system. Profile skins remain scoped to their own surface. */
 .btn { text-wrap: pretty; max-width: 100%; }
-.btn-sm { font-size: 15px; min-height: 44px; }
-.btn-icon { min-width: 44px; flex-shrink: 0; }
+.btn-sm { font-size: 14px; min-height: var(--touch-target); }
+.btn-icon { min-width: var(--touch-target); flex-shrink: 0; }
 .topbar .btn-icon { box-shadow: inset 0 1px #fff, 0 2px 0 var(--clay-ledge-soft); }
 .card, .setting, .step { overflow-wrap: anywhere; }
 .setting .text { min-width: 0; }
@@ -240,7 +243,7 @@ html[data-reduced-motion="true"] .btn:active:not(:disabled), html[data-reduced-m
 .m-filter-row button { min-width:44px; }
 .setting .text small, .card-muted { line-height: 1.65; }
 .modal-head h2, .sheet h2 { line-height: 1.45; }
-.btn:focus-visible, .game-card:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #713793; outline-offset: 3px; }
+.btn:focus-visible, .game-card:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 html[data-large-text="true"] .btn { font-size:22px; }
 html[data-large-text="true"] .btn-lg { font-size:26px; }
 html[data-large-text="true"] .btn-sm { font-size:18px; }

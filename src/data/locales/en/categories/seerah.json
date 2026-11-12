@@ -1,0 +1,550 @@
+{
+  "id": "seerah",
+  "name": "The Prophet’s Life",
+  "icon": "🕋",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "Early life and family",
+      "q": "To which clan of Quraysh did the Prophet Muhammad belong?",
+      "a": "Banu Hashim",
+      "alt": [
+        "Bani Hashim"
+      ],
+      "sourceUrl": "https://sunnah.com/muslim:2276",
+      "verified": true,
+      "qid": "seerah-200-911",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "The beginning of the mission",
+      "q": "According to Ibn Abbas's report in Sahih al-Bukhari, how old was the Prophet when his mission began?",
+      "a": "Forty",
+      "alt": [
+        "40",
+        "Forty years old"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:3902",
+      "verified": true,
+      "qid": "seerah-200-912",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "The Hijrah",
+      "q": "In which cave did the Prophet and his companion spend three nights during the Hijrah?",
+      "a": "Cave of Thawr",
+      "alt": [
+        "Thawr"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:3905",
+      "verified": true,
+      "qid": "seerah-200-913",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Medina",
+      "q": "Which mosque did the Prophet establish while staying among Banu Amr ibn Awf during the Hijrah?",
+      "a": "Quba Mosque",
+      "alt": [
+        "Quba",
+        "Masjid Quba"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:3906",
+      "verified": true,
+      "qid": "seerah-200-914",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Campaigns",
+      "q": "In which battle did some archers leave their positions to seek spoils?",
+      "a": "Uhud",
+      "alt": [
+        "Battle of Uhud"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:3039",
+      "verified": true,
+      "qid": "seerah-200-915",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Companions",
+      "q": "Which companion said he served the Prophet for ten years without being addressed with a word of irritation?",
+      "a": "Anas ibn Malik",
+      "alt": [
+        "Anas"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:6038",
+      "verified": true,
+      "qid": "seerah-200-916",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "The beginning of the mission",
+      "q": "What was the name of the mount the Prophet rode on the Night Journey?",
+      "a": "Al-Buraq",
+      "alt": [
+        "Buraq"
+      ],
+      "sourceUrl": "https://sunnah.com/muslim:162a",
+      "verified": true,
+      "qid": "seerah-200-917",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Early life and family",
+      "q": "Which kunyah did a man call out in the market, causing the Prophet to turn toward him?",
+      "a": "Abu al-Qasim",
+      "alt": [
+        "Abul Qasim"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:3537",
+      "verified": true,
+      "qid": "seerah-200-918",
+      "difficultyTarget": 0.8,
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 400,
+      "topic": "The beginning of the mission",
+      "q": "Which cousin of Khadijah heard the account of the Prophet's first encounter with the angel of revelation?",
+      "a": "Waraqah ibn Nawfal",
+      "alt": [
+        "Waraqa ibn Nawfal",
+        "Waraqah"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:3",
+      "verified": true,
+      "qid": "seerah-400-911",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "The Hijrah",
+      "q": "Who split her waistband to tie the bag of provisions for the Hijrah?",
+      "a": "Asma bint Abi Bakr",
+      "alt": [
+        "Asma",
+        "Dhat al-Nitaqayn"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:3905",
+      "verified": true,
+      "qid": "seerah-400-912",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Companions",
+      "q": "Which scribe of revelation did the first caliph commission to collect the Quran?",
+      "a": "Zayd ibn Thabit",
+      "alt": [
+        "Zaid ibn Thabit"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:4986",
+      "verified": true,
+      "qid": "seerah-400-913",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Campaigns",
+      "q": "Who took the Muslim banner at Mu'tah after the three appointed commanders were killed?",
+      "a": "Khalid ibn al-Walid",
+      "alt": [
+        "Khalid"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:4262",
+      "verified": true,
+      "qid": "seerah-400-914",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Companions",
+      "q": "For which poet did the Prophet pray that God would support him with the Holy Spirit?",
+      "a": "Hassan ibn Thabit",
+      "alt": [
+        "Hassan"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:3212",
+      "verified": true,
+      "qid": "seerah-400-915",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Daily life",
+      "q": "According to Anas's report, what metal was the Prophet's seal ring made from?",
+      "a": "Silver",
+      "alt": [],
+      "sourceUrl": "https://sunnah.com/bukhari:5877",
+      "verified": true,
+      "qid": "seerah-400-916",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Daily life",
+      "q": "What was the name of the Prophet's she-camel that knelt on the journey to Hudaybiyyah?",
+      "a": "Al-Qaswa",
+      "alt": [
+        "Qaswa"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:2731",
+      "verified": true,
+      "qid": "seerah-400-917",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "Which ruler tore up the Prophet's letter delivered through the governor of Bahrain?",
+      "a": "Khosrow",
+      "topic": "Treaties and delegations",
+      "sourceUrl": "https://sunnah.com/bukhari:64",
+      "alt": [
+        "Kisra",
+        "Khosrow II"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 400,
+      "qid": "seerah-400-918",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 600,
+      "topic": "Early life and family",
+      "q": "Which of the Prophet's wet nurses was a freedwoman of his uncle Abu Lahab?",
+      "a": "Thuwaybah",
+      "alt": [
+        "Thuwayba"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:5101",
+      "verified": true,
+      "qid": "seerah-600-911",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "The beginning of the mission",
+      "q": "According to Aishah's report, in what form did revelation first come to the Prophet before the angel's visit?",
+      "a": "True dreams",
+      "alt": [
+        "Good dreams",
+        "Truthful dreams"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:3",
+      "verified": true,
+      "qid": "seerah-600-912",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "The Hijrah",
+      "q": "Which freedman of the Prophet's Hijrah companion brought sheep to the cave at night?",
+      "a": "Amir ibn Fuhayrah",
+      "alt": [
+        "Amir ibn Fuhaira"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:3905",
+      "verified": true,
+      "qid": "seerah-600-913",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Medina",
+      "q": "At which companion's home did the Prophet stay on arriving in Medina?",
+      "a": "Abu Ayyub al-Ansari",
+      "alt": [
+        "Abu Ayyub",
+        "Khalid ibn Zayd"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:3932",
+      "verified": true,
+      "qid": "seerah-600-914",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Campaigns",
+      "q": "Who commanded the archers ordered to hold their positions at Uhud?",
+      "a": "Abdullah ibn Jubayr",
+      "alt": [
+        "Abd Allah ibn Jubayr"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:3039",
+      "verified": true,
+      "qid": "seerah-600-915",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Treaties and delegations",
+      "q": "Which wife advised the Prophet to begin sacrificing and shaving after the Treaty of Hudaybiyyah?",
+      "a": "Umm Salamah",
+      "alt": [
+        "Umm Salama",
+        "Hind bint Abi Umayyah"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:2731",
+      "verified": true,
+      "qid": "seerah-600-916",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Companions",
+      "q": "Which companion accompanied the Najran delegation and was described as the trustworthy one of the community?",
+      "a": "Abu Ubaydah ibn al-Jarrah",
+      "alt": [
+        "Abu Ubaidah ibn al-Jarrah",
+        "Abu Ubaydah"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:4380",
+      "verified": true,
+      "qid": "seerah-600-917",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Daily life",
+      "q": "Which vegetable did the Prophet seek around the edges of the bowl at a tailor's meal?",
+      "a": "Gourd",
+      "alt": [
+        "Duba",
+        "Pumpkin"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:5439",
+      "verified": true,
+      "qid": "seerah-600-918",
+      "difficultyTarget": 0.4,
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 800,
+      "topic": "Early life and family",
+      "q": "Which companion was the Prophet's foster brother and the father of a girl who became his stepdaughter?",
+      "a": "Abu Salamah",
+      "alt": [
+        "Abu Salama",
+        "Abdullah ibn Abd al-Asad"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:5101",
+      "verified": true,
+      "qid": "seerah-800-911",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "The beginning of the mission",
+      "q": "What title did Khadijah's cousin use for the angel of revelation after hearing the Prophet's account?",
+      "a": "Al-Namus",
+      "alt": [
+        "Namus",
+        "Al-Namus al-Akbar"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:3",
+      "verified": true,
+      "qid": "seerah-800-912",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "The Hijrah",
+      "q": "Which chief of Al-Qarah offered protection in Mecca to the Prophet's future Hijrah companion?",
+      "a": "Ibn al-Daghinah",
+      "alt": [
+        "Ibn al-Dughunnah"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:3905",
+      "verified": true,
+      "qid": "seerah-800-913",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "Medina",
+      "q": "What were the names of the two orphans who owned the land where the Prophet's Mosque was built?",
+      "a": "Sahl and Suhayl",
+      "alt": [
+        "Suhayl and Sahl"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:3906",
+      "verified": true,
+      "qid": "seerah-800-914",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "Treaties and delegations",
+      "q": "Which Quraysh negotiator agreed the wording of the Treaty of Hudaybiyyah with the Prophet?",
+      "a": "Suhayl ibn Amr",
+      "alt": [
+        "Suhail ibn Amr"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:2731",
+      "verified": true,
+      "qid": "seerah-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "Daily life",
+      "q": "What was Abu Talhah's horse called, which the Prophet borrowed when Medina's people were alarmed?",
+      "a": "Mandub",
+      "alt": [
+        "Mandoob"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:2862",
+      "verified": true,
+      "qid": "seerah-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "Daily life",
+      "q": "According to Ibn Umar's report, at which place near Mecca did the Prophet spend the night before entering the city?",
+      "a": "Dhu Tuwa",
+      "alt": [
+        "Dhi Tuwa",
+        "Tuwa"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:1573",
+      "verified": true,
+      "qid": "seerah-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which companion saw the call to prayer in a dream and then taught it to Bilal?",
+      "a": "Abdullah ibn Zayd",
+      "topic": "Medina",
+      "sourceUrl": "https://sunnah.com/abudawud:499",
+      "alt": [
+        "Abd Allah ibn Zayd"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "seerah-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 1000,
+      "topic": "Campaigns",
+      "q": "At which well were the Quran reciters among the Prophet's companions killed?",
+      "a": "Bi'r Ma'unah",
+      "alt": [
+        "Bir Mauna",
+        "Well of Maunah"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:4090",
+      "verified": true,
+      "qid": "seerah-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "topic": "Treaties and delegations",
+      "q": "Which Khuza'i informed the Prophet of Quraysh's preparations to block his entry to Mecca during Hudaybiyyah?",
+      "a": "Budayl ibn Warqa",
+      "alt": [
+        "Budail ibn Warqa"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:2731",
+      "verified": true,
+      "qid": "seerah-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which wife of the Prophet worked with her hands and gave generously, earning the description of having the longest hand?",
+      "a": "Zaynab bint Jahsh",
+      "topic": "Early life and family",
+      "sourceUrl": "https://sunnah.com/muslim:2452",
+      "alt": [
+        "Zainab bint Jahsh"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-10-08",
+      "p": 1000,
+      "qid": "seerah-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Who brought news of Quraysh to the Prophet and his companion while they stayed in the cave?",
+      "a": "Abdullah ibn Abi Bakr",
+      "topic": "The Hijrah",
+      "sourceUrl": "https://sunnah.com/bukhari:3905",
+      "alt": [
+        "Abd Allah ibn Abi Bakr"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "seerah-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Whom did the Prophet send to gather enemy news on a cold night during the Battle of the Trench?",
+      "a": "Hudhayfah ibn al-Yaman",
+      "topic": "Campaigns",
+      "sourceUrl": "https://sunnah.com/muslim:1788",
+      "alt": [
+        "Hudhaifa ibn al-Yaman",
+        "Hudhayfah"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "seerah-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which melodious camel driver did the Prophet ask to slow down out of consideration for the women riding?",
+      "a": "Anjashah",
+      "topic": "Daily life",
+      "sourceUrl": "https://sunnah.com/bukhari:6211",
+      "alt": [
+        "Anjasha"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-10-08",
+      "p": 1000,
+      "qid": "seerah-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "From which companion did the Prophet buy a camel, then return both the camel and its price?",
+      "a": "Jabir ibn Abdullah",
+      "topic": "Daily life",
+      "sourceUrl": "https://sunnah.com/bukhari:2097",
+      "alt": [
+        "Jabir"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "seerah-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Who arrived in chains during the negotiations at Hudaybiyyah?",
+      "a": "Abu Jandal ibn Suhayl",
+      "topic": "Treaties and delegations",
+      "sourceUrl": "https://sunnah.com/bukhari:2731",
+      "alt": [
+        "Abu Jandal"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "seerah-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

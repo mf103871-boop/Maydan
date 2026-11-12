@@ -5,6 +5,7 @@
 import { BADEEHA_PROTOCOL, BADEEHA_TIMERS, BADEEHA_MAX_TEAMS, ROOM_TTL, HOST_GRACE, AVATARS } from '../src/online/shared.js';
 import MaydanLogicBeta, { pointsAfterHints } from '../src/games/badeeha/logic.js';
 import { active, playing, member, transferHost, admitMember, newMember, fail, extendForMatch, kickSeat, colorOf } from './room-model.mjs';
+import { getCategories } from '../src/data/game-content.js';
 
 const { MODES, ROUND_SIZES } = MaydanLogicBeta;
 const TOOLS = ['double', 'two', 'time'];
@@ -37,8 +38,24 @@ export function normalizeSettings(input) {
   return { mode, roundSize: value.roundSize, timer: value.timer, categories: [...categories], deck: clean };
 }
 
+// New localized decks are checked against the pinned public manifest. Legacy
+// Arabic sessions retain the historical shape-only contract and identifiers.
+export function validateLocalizedDeck(settings, identity) {
+  if (identity.contentLocale !== 'en') return;
+  let categories;
+  try { categories = getCategories(identity.contentLocale, identity.contentVersion); }
+  catch { fail('CONTENT_UNAVAILABLE', 409); }
+  const catalog = new Map(categories.map(category => [category.id, new Map(category.qs.map((question, index) =>
+    [MaydanLogicBeta.questionId(category.id, question, index), question.p]))]));
+  for (const id of settings.categories) {
+    const questions = catalog.get(id);
+    if (!questions || settings.deck[id].some(cell => questions.get(cell.qid) !== cell.p)) fail('QUESTIONS', 409);
+  }
+}
+
 export function createRoom(code, input, now) {
   const settings = normalizeSettings(input.settings);
+  validateLocalizedDeck(settings, input);
   return { game: 'badeeha', code, revision: 0, createdAt: now, expiresAt: now + ROOM_TTL,
     hostId: input.id, hostMissingSince: now, phase: 'lobby', matchId: 0, round: 0, rounds: settings.roundSize,
     settings, deadlineAt: null, reason: null, members: [newMember(input, now, { host: true })], banned: [],
@@ -98,6 +115,7 @@ export function action(room, actorId, command, now) {
       leaveRoom(room, kickSeat(room, actorId, command, now, host), now); break;
     case 'start': {
       host(); phase('lobby');
+      validateLocalizedDeck(room.settings, room);
       const teams = active(room);
       if (teams.length < 2 || teams.length > BADEEHA_MAX_TEAMS || !teams.every((m) => m.connected && m.ready)) fail('NOT_READY_BADEEHA', 409);
       extendForMatch(room, now);

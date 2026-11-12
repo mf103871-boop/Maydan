@@ -1,3 +1,4 @@
+import { tr } from '../shared/i18n/core.js';
 import React, { createContext, useContext, useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { useAccount } from '../shared/account/context.js';
 import { resolveAccountServer } from '../shared/account/api.js';
@@ -22,9 +23,9 @@ const METHODS = ['createGroup', 'loadGroup', 'loadCallMembers', 'loadOlderGroup'
   'markGroupRead', 'changeGroupMessage', 'retryGroupMessage', 'sendVoiceNote', 'getVoiceUrl', 'setNotificationPreferences', 'setConversationMuted',
   'sendGameInvite', 'rejectGameInvite', 'updateGroupAvatar', 'reportGroupMessage'];
 const ended = call => !call || ['ended', 'rejected', 'cancelled', 'missed', 'expired'].includes(call.status);
-const callEndNotice = reason => reason === 'ownership-lost' ? 'انتقلت المكالمة إلى جهازك الآخر.' :
-  reason === 'authorization-timeout' ? 'انتهت المكالمة لتعذّر التحقق من الاتصال. حاول مجددًا.' :
-    reason === 'authorization-revoked' ? 'انتهت المكالمة لأن الوصول إليها لم يعد متاحًا.' : null;
+const callEndNotice = reason => reason === 'ownership-lost' ? tr("انتقلت المكالمة إلى جهازك الآخر.") :
+  reason === 'authorization-timeout' ? tr("انتهت المكالمة لتعذّر التحقق من الاتصال. حاول مجددًا.") :
+    reason === 'authorization-revoked' ? tr("انتهت المكالمة لأن الوصول إليها لم يعد متاحًا.") : null;
 
 export function LammaProvider({ children }) {
   const account = useAccount(), social = useSocial(), { sound } = usePlatform();
@@ -62,7 +63,7 @@ export function LammaProvider({ children }) {
     authorizationEpoch: client.authorizationEpoch, authorization: authorization() });
   const currentIdentity = identity => Boolean(identity.owner && ownerRef.current === identity.owner && client.userId === identity.owner &&
     client.epoch === identity.epoch && client.authorizationEpoch === identity.authorizationEpoch && authorization() === identity.authorization);
-  const staleCall = () => Object.assign(new Error('تغيّر الحساب أو الاتصال. حاول مجددًا.'), { code: 'STALE' });
+  const staleCall = () => Object.assign(new Error(tr("تغيّر الحساب أو الاتصال. حاول مجددًا.")), { code: 'STALE' });
   const assertIdentity = identity => { if (!currentIdentity(identity)) throw staleCall(); };
   if (!mafiaRef.current) mafiaRef.current = new MafiaVoiceSession({
     request: (code, body) => accountRef.current.requestAuthenticated('/api/rooms/' + encodeURIComponent(code) + '/voice', { method: 'POST', body }),
@@ -105,7 +106,7 @@ export function LammaProvider({ children }) {
     if (owner && isNativeShell()) {
       deviceRef.current = null;
       deviceReady.current = accountRef.current.ensureNativeSocialSession().then(result => {
-        if (ownerRef.current !== owner || result?.userId !== owner || !result.deviceId) throw new Error('انتظر اكتمال تسجيل الدخول ثم حاول مجددًا.');
+        if (ownerRef.current !== owner || result?.userId !== owner || !result.deviceId) throw new Error(tr("انتظر اكتمال تسجيل الدخول ثم حاول مجددًا."));
         deviceRef.current = result.deviceId;
         engine.applyNativeSnapshot(result.call);
         return result.deviceId;
@@ -160,7 +161,7 @@ export function LammaProvider({ children }) {
         !safe.preferences.mutedConversations.some(m => m.scope === 'group' && m.conversationId === g.id));
       if (group) setNotification({ id: lammaId(), messageId: group.lastMessage?.seq, userId: owner, scope: 'group', groupId: group.id, conversationId: group.id,
         audioReceipt:typeof group.lastMessage?.senderId==='string'&&group.lastMessage.senderId!==owner?claimLiveAudio?.('group',group.id,group.lastMessage?.seq):null,
-        title: socialInterruption.getSnapshot().local || socialInterruption.getSnapshot().communicationLocked || !safe.preferences.previews ? 'رسالة جديدة في ميدان' : `رسالة جديدة في ${group.name}` });
+        title: socialInterruption.getSnapshot().local || socialInterruption.getSnapshot().communicationLocked || !safe.preferences.previews ? tr("رسالة جديدة في ميدان") : tr("رسالة جديدة في {v0}", {v0: group.name}) });
     }
     previous.current = Object.fromEntries(safe.groups.map(g => [g.id, g.unreadCount]));
   }, [safe.groups, safe.loading, safe.preferences, owner, client, claimLiveAudio]);
@@ -245,8 +246,8 @@ export function LammaProvider({ children }) {
   async function connect(action, { isCurrent = () => true, muted } = {}) {
     const identity = callIdentity(owner); assertIdentity(identity);
     if (!isCurrent()) throw staleCall();
-    if (socialInterruption.getSnapshot().communicationLocked) throw new Error('التواصل خلال المباراة متاح داخل مجلس مافيا فقط.');
-    if (connecting.current || activeRef.current) throw new Error('لديك مكالمة جارية بالفعل.');
+    if (socialInterruption.getSnapshot().communicationLocked) throw new Error(tr("التواصل خلال المباراة متاح داخل مجلس مافيا فقط."));
+    if (connecting.current || activeRef.current) throw new Error(tr("لديك مكالمة جارية بالفعل."));
     connecting.current = true; const epoch = client.epoch, attempt = ++connectGeneration.current; let result;
     setConnectingCall({ owner, attempt });
     // Fetch the web SDK alongside the authenticated call request, rather than
@@ -255,15 +256,15 @@ export function LammaProvider({ children }) {
     try {
       const deviceId = await deviceReady.current; assertIdentity(identity);
       if (!isCurrent()) throw staleCall();
-      if (!deviceId || attempt !== connectGeneration.current) throw new Error('تم إلغاء المكالمة.');
+      if (!deviceId || attempt !== connectGeneration.current) throw new Error(tr("تم إلغاء المكالمة."));
       result = await action(deviceId); assertIdentity(identity);
       if (!isCurrent()) throw staleCall();
-      if (attempt !== connectGeneration.current) throw new Error('تم إلغاء المكالمة.');
+      if (attempt !== connectGeneration.current) throw new Error(tr("تم إلغاء المكالمة."));
       const call = { ...result.call, _ownerId: owner };
       client.setCallContext(call); setActiveCall(call); activeRef.current = call;
       await engine.connect(result, { muted: muted ?? socialInterruption.getSnapshot().privateTurn }); assertIdentity(identity);
       if (!isCurrent()) throw staleCall();
-      if (attempt !== connectGeneration.current) throw new Error('تم إلغاء المكالمة.');
+      if (attempt !== connectGeneration.current) throw new Error(tr("تم إلغاء المكالمة."));
       callFeedback('call.connected', () => currentIdentity(identity) && isCurrent() && attempt === connectGeneration.current && activeRef.current?.id === call.id && engine.state.connected && engine.state.callId === call.id);
       client.refresh({ quiet: true }).catch(() => {}); return result.call;
     } catch (e) {

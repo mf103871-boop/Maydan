@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import { MENU_ITEMS, menuSection, menuRouteVisible, keyboardOccupiesViewport, menuBadges } from '../src/platform/menu-navigation.js';
 
 test('menu navigation has four ordered destinations with compatible hashes', () => {
-  assert.deepEqual(MENU_ITEMS.map(item => item.path), ['/', '/friends', '/store', '/settings']);
-  assert.deepEqual(MENU_ITEMS.map(item => item.label), ['الألعاب', 'الأصدقاء', 'المتجر', 'الإعدادات']);
+  assert.deepEqual(MENU_ITEMS.map(item => item.path), ['/', '/friends', '/store', '/profile']);
+  assert.deepEqual(MENU_ITEMS.map(item => item.label), ['العب', 'الأصدقاء', 'المتجر', 'أنا']);
 });
 test('game and room flows hide navigation, menu entry and details retain it', () => {
   for (const name of ['play', 'room', 'online', 'friend-group']) assert.equal(menuRouteVisible({ name }), false, name);
@@ -13,12 +13,12 @@ test('game and room flows hide navigation, menu entry and details retain it', ()
   assert.equal(menuRouteVisible({ name: 'friends' }, { presentation: 'page', view: { type: 'list' } }), true);
   assert.equal(menuRouteVisible({ name: 'friends' }, { presentation: 'page', view: { type: 'profile' } }), false);
 });
-test('nested menu sections highlight their owner and profile keeps its origin', () => {
+test('settings live under Me, while other players profiles keep their origin', () => {
   assert.equal(menuSection({ name: 'friend-group' }), 'friends');
-  for (const name of ['terms', 'privacy', 'moderation', 'about']) assert.equal(menuSection({ name }), 'settings');
+  for (const name of ['settings', 'terms', 'privacy', 'moderation', 'about']) assert.equal(menuSection({ name }), 'profile');
   assert.equal(menuSection({ name: 'game' }), 'games');
-  assert.equal(menuSection({ name: 'profile' }, 'friends'), 'friends');
-  assert.equal(menuSection({ name: 'profile' }, 'settings'), 'settings');
+  assert.equal(menuSection({ name: 'profile', params:{id:'friend'} }, 'friends'), 'friends');
+  assert.equal(menuSection({ name: 'profile' }, 'friends'), 'profile');
 });
 test('keyboard detection ignores browser chrome, hardware focus and pinch zoom', () => {
   const baseline = { layoutHeight: 844, visualHeight: 540, editable: true };

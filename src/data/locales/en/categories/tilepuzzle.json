@@ -1,0 +1,1099 @@
+{
+  "id": "tilepuzzle",
+  "name": "Picture Pieces",
+  "icon": "🧩",
+  "defaultType": "image",
+  "qs": [
+    {
+      "p": 200,
+      "q": "What animal do the picture pieces reveal?",
+      "a": "Giraffe",
+      "qid": "tilepuzzle-200-901",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [],
+      "topic": "Animals",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-200-901.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-200-901.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What food do the picture pieces reveal?",
+      "a": "Burger",
+      "qid": "tilepuzzle-200-902",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Hamburger"
+      ],
+      "topic": "Food",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-200-902.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-200-902.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What device do the picture pieces reveal?",
+      "a": "Laptop",
+      "qid": "tilepuzzle-200-903",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Laptop computer"
+      ],
+      "topic": "Devices",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-200-903.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-200-903.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What type of vehicle do the pieces reveal?",
+      "a": "School bus",
+      "qid": "tilepuzzle-200-904",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [],
+      "topic": "Transport",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-200-904.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-200-904.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What natural phenomenon do the pieces reveal?",
+      "a": "Rainbow",
+      "qid": "tilepuzzle-200-906",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [],
+      "topic": "Nature",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-200-906.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-200-906.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What group of musical instruments do the pieces reveal?",
+      "a": "Drum kit",
+      "qid": "tilepuzzle-200-907",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Drum set"
+      ],
+      "topic": "Music",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-200-907.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-200-907.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What artist's tool do the pieces reveal?",
+      "a": "Paint palette",
+      "qid": "tilepuzzle-200-908",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Artist's palette",
+        "Palette"
+      ],
+      "topic": "Hobbies and tools",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-200-908.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-200-908.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "Which sport is this venue designed for?",
+      "a": "Football",
+      "qid": "tilepuzzle-200-921",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Soccer"
+      ],
+      "topic": "Places",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-200-905.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-200-905.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "Which bird do the picture pieces reveal?",
+      "a": "Flamingo",
+      "qid": "tilepuzzle-400-901",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [],
+      "topic": "Animals",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-400-901.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-400-901.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What food do the picture pieces reveal?",
+      "a": "Waffle",
+      "qid": "tilepuzzle-400-902",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Belgian waffle"
+      ],
+      "topic": "Food",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-400-902.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-400-902.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What device do the picture pieces reveal?",
+      "a": "Camera",
+      "qid": "tilepuzzle-400-903",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [],
+      "topic": "Devices",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-400-903.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-400-903.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What form of transport do the pieces reveal?",
+      "a": "Hot-air balloon",
+      "qid": "tilepuzzle-400-904",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [],
+      "topic": "Transport",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-400-904.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-400-904.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What amusement ride do the pieces reveal?",
+      "a": "Carousel",
+      "qid": "tilepuzzle-400-905",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Merry-go-round"
+      ],
+      "topic": "Places",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-400-905.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-400-905.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What natural phenomenon do the pieces reveal?",
+      "a": "Aurora",
+      "qid": "tilepuzzle-400-906",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Northern lights",
+        "Aurora borealis"
+      ],
+      "topic": "Nature",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-400-906.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-400-906.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What craft tool do the pieces reveal?",
+      "a": "Potter's wheel",
+      "qid": "tilepuzzle-400-908",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Pottery wheel"
+      ],
+      "topic": "Hobbies and tools",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-400-908.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-400-908.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What scientific instrument do the pieces reveal?",
+      "a": "Telescope",
+      "qid": "tilepuzzle-400-921",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [],
+      "topic": "Hobbies and tools",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-800-908.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-800-908.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "Which bird do the picture pieces reveal?",
+      "a": "Toucan",
+      "qid": "tilepuzzle-600-901",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [],
+      "topic": "Animals",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-600-901.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-600-901.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What baked food do the picture pieces reveal?",
+      "a": "Pretzel",
+      "qid": "tilepuzzle-600-902",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [],
+      "topic": "Food",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-600-902.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-600-902.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What older device do the pieces reveal?",
+      "a": "Gramophone",
+      "qid": "tilepuzzle-600-903",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Phonograph"
+      ],
+      "topic": "Devices",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-600-903.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-600-903.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What construction machine do the pieces reveal?",
+      "a": "Excavator",
+      "qid": "tilepuzzle-600-904",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Digger"
+      ],
+      "topic": "Transport",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-600-904.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-600-904.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What type of building do the pieces reveal?",
+      "a": "Greenhouse",
+      "qid": "tilepuzzle-600-905",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Glasshouse"
+      ],
+      "topic": "Places",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-600-905.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-600-905.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What natural phenomenon do the pieces reveal?",
+      "a": "Geyser",
+      "qid": "tilepuzzle-600-906",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [],
+      "topic": "Nature",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-600-906.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-600-906.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What craft tool do the pieces reveal?",
+      "a": "Spinning wheel",
+      "qid": "tilepuzzle-600-908",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [],
+      "topic": "Hobbies and tools",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-600-908.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-600-908.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What musical instrument do the pieces reveal?",
+      "a": "Harp",
+      "qid": "tilepuzzle-600-921",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [],
+      "topic": "Music",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-400-907.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-400-907.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What animal do the picture pieces reveal?",
+      "a": "Axolotl",
+      "qid": "tilepuzzle-800-901",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Mexican axolotl"
+      ],
+      "topic": "Animals",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-800-901.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-800-901.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What fruit do the picture pieces reveal?",
+      "a": "Mangosteen",
+      "qid": "tilepuzzle-800-902",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [],
+      "topic": "Food",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-800-902.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-800-902.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What natural formation do the pieces reveal?",
+      "a": "Salt flats",
+      "qid": "tilepuzzle-800-906",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Salt pan"
+      ],
+      "topic": "Nature",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-800-906.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-800-906.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What musical instrument do the pieces reveal?",
+      "a": "Pan flute",
+      "qid": "tilepuzzle-800-907",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Panpipes"
+      ],
+      "topic": "Music",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-800-907.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-800-907.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What older device do the pieces reveal?",
+      "a": "Overhead projector",
+      "qid": "tilepuzzle-800-921",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [],
+      "topic": "Devices",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-1000-903.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-1000-903.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What energy source powers the mechanism in the picture?",
+      "a": "Flowing water",
+      "qid": "tilepuzzle-800-922",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Water",
+        "Hydropower"
+      ],
+      "topic": "Machines and energy",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "quality-watermill.webp",
+        "type": "image",
+        "title": "Visual deduction scene",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/tilepuzzle-800-903.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What type of bridge do the pieces reveal?",
+      "a": "Bascule bridge",
+      "qid": "tilepuzzle-800-923",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Drawbridge"
+      ],
+      "topic": "Transport and engineering",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "quality-drawbridge.webp",
+        "type": "image",
+        "title": "Visual deduction scene",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/tilepuzzle-800-904.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What type of ancient structure do the pieces reveal?",
+      "a": "Ancient theater",
+      "qid": "tilepuzzle-800-924",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Ancient theatre",
+        "Roman theater",
+        "Greek theater"
+      ],
+      "topic": "Places",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-800-905.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-800-905.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What animal do the picture pieces reveal?",
+      "a": "Pangolin",
+      "qid": "tilepuzzle-1000-901",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [],
+      "topic": "Animals",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-1000-901.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-1000-901.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What vegetable do the pieces reveal?",
+      "a": "Romanesco",
+      "qid": "tilepuzzle-1000-902",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Romanesco broccoli",
+        "Romanesco cauliflower"
+      ],
+      "topic": "Food",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-1000-902.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-1000-902.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What kind of vehicle do the pieces reveal?",
+      "a": "Hovercraft",
+      "qid": "tilepuzzle-1000-904",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Air-cushion vehicle"
+      ],
+      "topic": "Transport",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-1000-904.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-1000-904.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What architectural feature do the pieces reveal?",
+      "a": "Windcatcher",
+      "qid": "tilepuzzle-1000-905",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Wind tower",
+        "Badgir",
+        "Barjeel"
+      ],
+      "topic": "Places",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-1000-905.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-1000-905.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What rock formation do the pieces reveal?",
+      "a": "Basalt columns",
+      "qid": "tilepuzzle-1000-906",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Columnar basalt"
+      ],
+      "topic": "Nature",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-1000-906.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-1000-906.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What musical instrument do the pieces reveal?",
+      "a": "Handpan",
+      "qid": "tilepuzzle-1000-907",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [],
+      "topic": "Music",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "tilepuzzle-1000-907.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-1000-907.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What historical instrument do the pieces reveal?",
+      "a": "Astrolabe",
+      "qid": "tilepuzzle-1000-921",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [],
+      "topic": "Hobbies and tools",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/451699",
+      "media": {
+        "src": "quality-astrolabe-met.webp",
+        "type": "image",
+        "title": "Planispheric Astrolabe, MET 63.166a–j",
+        "author": "Muhammad Zaman al-Munajjim al-Asturlabi / The Metropolitan Museum of Art",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Planispheric_Astrolabe_MET_DP105325.jpg",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What is the purpose of the tubes hanging below the instrument?",
+      "a": "Amplifying sound",
+      "qid": "tilepuzzle-1000-922",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "Sound amplification",
+        "Resonance"
+      ],
+      "topic": "Music",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://hub.yamaha.com/drums/percussion/anatomy-of-a-marimba/",
+      "media": {
+        "src": "tilepuzzle-600-907.webp",
+        "type": "image",
+        "title": "Illustrated scene for a picture puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/tilepuzzle-600-907.json"
+        }
+      }
+    }
+  ]
+}

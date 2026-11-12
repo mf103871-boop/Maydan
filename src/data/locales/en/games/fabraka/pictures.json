@@ -1,0 +1,877 @@
+[
+  {
+    "id": "fab3-picture-001",
+    "factId": "fab3-picture-001",
+    "kind": "picture",
+    "illustration": "fab3-001",
+    "image": "media/fabraka-v3/fab3-001.webp",
+    "imageDescription": "A wooden object with a rounded, domed head and a short handle below.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "This wooden object helped people ___ without shrinking the fabric.",
+    "answer": "Darn socks",
+    "aliases": [
+      "Mend socks",
+      "Repair socks",
+      "Darn clothing"
+    ],
+    "decoys": [
+      "Press dough into molds",
+      "Polish metal pots",
+      "Flatten wet clay",
+      "Plug bottles"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "The rounded head sits inside a sock under a hole, supporting the fabric while repair stitches are sewn.",
+    "sourceUrl": "https://museum.tweed.nsw.gov.au/files/assets/museum/v/1/documents/visit/school-resource-sheets/darning-mushroom.pdf",
+    "sourceTitle": "Tweed Regional Museum — Darning Mushroom",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-002",
+    "factId": "fab3-picture-002",
+    "kind": "picture",
+    "illustration": "fab3-002",
+    "image": "media/fabraka-v3/fab3-002.webp",
+    "imageDescription": "A flat wooden object with two short opposing prongs and an opening below them.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "Thread is looped around this tool's two prongs to ___.",
+    "answer": "Make cord from thread",
+    "aliases": [
+      "Braid cord",
+      "Make cords",
+      "Braid thread"
+    ],
+    "decoys": [
+      "Separate cotton seeds",
+      "Measure fabric thickness",
+      "Comb flax fibers",
+      "Widen buttonholes"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "Loops transfer between the prongs and interlock into a cord; the tool is a lucet.",
+    "sourceUrl": "https://www.crafthub.eu/material/braiding/",
+    "sourceTitle": "CraftHub / UWTSD — Braiding",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-003",
+    "factId": "fab3-picture-003",
+    "kind": "picture",
+    "illustration": "fab3-003",
+    "image": "media/fabraka-v3/fab3-003.webp",
+    "imageDescription": "A small elongated object with pointed ends, curved sides, and a narrow gap between them.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "This small object holds thread to help a craftsperson ___.",
+    "answer": "Make knotted lace",
+    "aliases": [
+      "Make lace",
+      "Tat lace",
+      "Create tatted lace"
+    ],
+    "decoys": [
+      "Roll paper beads",
+      "Shell pistachios",
+      "Close paper bags",
+      "Sharpen sewing needles"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "A tatting shuttle stores thread and passes it through loops to create lace from knots.",
+    "sourceUrl": "https://web.prm.ox.ac.uk/england/englishness-Lace-Techniques.html",
+    "sourceTitle": "Pitt Rivers Museum, University of Oxford — Lace Techniques",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-004",
+    "factId": "fab3-picture-004",
+    "kind": "picture",
+    "illustration": "fab3-004",
+    "image": "media/fabraka-v3/fab3-004.webp",
+    "imageDescription": "A smooth wooden stick with a broad handle and a long, slightly tapered end.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "This stick is used in yarn work to ___.",
+    "answer": "Wind yarn into a ball",
+    "aliases": [
+      "Wind a yarn ball",
+      "Make a ball of wool"
+    ],
+    "decoys": [
+      "Measure sleeve length",
+      "Stretch wool hats",
+      "Comb rug edges",
+      "Tighten coat buttons"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "Yarn is wound around the stick, which is then withdrawn to leave a center-pull ball.",
+    "sourceUrl": "https://www.stephanwoodworking.com/Nostepinne.htm",
+    "sourceTitle": "Stephan Woodworking — Nostepinne or Nostepinde: Yarn Ball Winders",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-005",
+    "factId": "fab3-picture-005",
+    "kind": "picture",
+    "illustration": "fab3-005",
+    "image": "media/fabraka-v3/fab3-005.webp",
+    "imageDescription": "A long wooden object with pointed ends and a small spool in its central hollow.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "This object passes between a loom's threads to ___.",
+    "answer": "Carry the weft thread",
+    "aliases": [
+      "Pass the weaving thread",
+      "Carry thread through a loom"
+    ],
+    "decoys": [
+      "Press fabric folds",
+      "Trim rug edges",
+      "Dye wool",
+      "Count embroidery stitches"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "The shuttle carries a spool of weft across the warp threads during weaving.",
+    "sourceUrl": "https://schachtspindle.com/products/boat-shuttles",
+    "sourceTitle": "Schacht Spindle Company — Boat Shuttles",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-006",
+    "factId": "fab3-picture-006",
+    "kind": "picture",
+    "illustration": "fab3-006",
+    "image": "media/fabraka-v3/fab3-006.webp",
+    "imageDescription": "A low metal base topped with a dense cluster of short upright pins.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "This base covered with pins is used to ___.",
+    "answer": "Hold flower stems",
+    "aliases": [
+      "Arrange flowers",
+      "Secure flowers"
+    ],
+    "decoys": [
+      "Clean paintbrushes",
+      "Comb raw wool",
+      "Pierce book covers",
+      "Dry fruit slices"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "Flower stems sit on the pins at chosen angles inside a vessel; the base is called a kenzan.",
+    "sourceUrl": "https://www.niwaki.com/us/kenzan-accessories",
+    "sourceTitle": "Niwaki — Kenzan",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-007",
+    "factId": "fab3-picture-007",
+    "kind": "picture",
+    "illustration": "fab3-007",
+    "image": "media/fabraka-v3/fab3-007.webp",
+    "imageDescription": "A low, slightly sloping wooden board with a wide U-shaped notch at one end.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "The notch at the end helps its owner ___.",
+    "answer": "Remove a boot",
+    "aliases": [
+      "Take off shoes",
+      "Pull off a boot"
+    ],
+    "decoys": [
+      "Hold a door open",
+      "Open jar lids",
+      "Tighten short ropes",
+      "Carry hot plates"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "A heel rests in the notch while the other foot presses the base, allowing the boot to be pulled off hands-free.",
+    "sourceUrl": "https://dnr.illinois.gov/content/dam/soi/en/web/dnr/education/documents/prairiewhatisitactivity.pdf",
+    "sourceTitle": "Illinois State Museum — What Is It? (Bootjack)",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-008",
+    "factId": "fab3-picture-008",
+    "kind": "picture",
+    "illustration": "fab3-008",
+    "image": "media/fabraka-v3/fab3-008.webp",
+    "imageDescription": "Two pale hinged arms with long tapered tips and broader handles.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "This two-pronged tool was used to ___.",
+    "answer": "Stretch glove fingers",
+    "aliases": [
+      "Stretch gloves",
+      "Widen leather gloves"
+    ],
+    "decoys": [
+      "Separate book pages",
+      "Remove olive stones",
+      "Widen spectacle frames",
+      "Turn toast"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "The tips go inside a leather glove finger and spread apart to make it easier to wear.",
+    "sourceUrl": "https://www.nps.gov/long/blogs/glove-stretcher.htm",
+    "sourceTitle": "National Park Service — Glove Stretcher",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-009",
+    "factId": "fab3-picture-009",
+    "kind": "picture",
+    "illustration": "fab3-009",
+    "image": "media/fabraka-v3/fab3-009.webp",
+    "imageDescription": "A small handle with a thin metal shaft ending in a rounded hook.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "When getting dressed, this small hook helped people ___.",
+    "answer": "Pull buttons through buttonholes",
+    "aliases": [
+      "Fasten buttons",
+      "Button clothes"
+    ],
+    "decoys": [
+      "Tie shoelaces",
+      "Cut loose threads",
+      "Widen shirt collars",
+      "Flatten sleeve folds"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "The hook passes through a buttonhole, catches the button's shank, and pulls it through, including on boots and gloves.",
+    "sourceUrl": "https://www.boylstonhistory.org/images/Buttonhooks.pdf",
+    "sourceTitle": "Boylston Historical Society and Museum — The Buttonhook: A Handy Victorian Era Tool",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-010",
+    "factId": "fab3-picture-010",
+    "kind": "picture",
+    "illustration": "fab3-010",
+    "image": "media/fabraka-v3/fab3-010.webp",
+    "imageDescription": "A hinged metal tool with two handles and short opposing jaws with cutting edges.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "Before granulated sugar became common, this tool was used to ___.",
+    "answer": "Cut sugar loaves",
+    "aliases": [
+      "Break up solid sugar",
+      "Cut lumps of sugar"
+    ],
+    "decoys": [
+      "Remove cherry stems",
+      "Split chestnut shells",
+      "Cut tea leaves",
+      "Crush coffee beans"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "Sugar was sold in solid loaves, and these nippers cut smaller pieces from them.",
+    "sourceUrl": "https://www.mgmnc.org/blog/2026/04/20/sugar-nips",
+    "sourceTitle": "Mountain Gateway Museum — Sugar Nips",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-011",
+    "factId": "fab3-picture-011",
+    "kind": "picture",
+    "illustration": "fab3-011",
+    "image": "media/fabraka-v3/fab3-011.webp",
+    "imageDescription": "A long handle ending in a small hollow bell-shaped cap.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "The hollow end is placed over a flame to ___.",
+    "answer": "Extinguish candles",
+    "aliases": [
+      "Put out a candle",
+      "Snuff candles"
+    ],
+    "decoys": [
+      "Shape hot wax",
+      "Hold candles upright",
+      "Measure wick length",
+      "Shield candles from wind"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "The bell covers the flame until it goes out; this is a covered snuffer, not wick-trimming scissors.",
+    "sourceUrl": "https://www.collections.dickensmuseum.com/object-dh57",
+    "sourceTitle": "Charles Dickens Museum — Candle-snuffers (DH57)",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-012",
+    "factId": "fab3-picture-012",
+    "kind": "picture",
+    "illustration": "fab3-012",
+    "image": "media/fabraka-v3/fab3-012.webp",
+    "imageDescription": "Long metal scissors with finger rings and a small rectangular box near the tips.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "The little box on these scissors catches debris while ___.",
+    "answer": "Trimming a candle wick",
+    "aliases": [
+      "Cutting candle wicks",
+      "Shortening a wick"
+    ],
+    "decoys": [
+      "Cutting decorative flowers",
+      "Trimming paper edges",
+      "Cutting fabric ribbons",
+      "Collecting wood chips"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "The tool cuts the burnt tip to improve the flame, and the box catches the piece that is cut off.",
+    "sourceUrl": "https://wesleysheritage.org.uk/object/candle-wick-trimmer/",
+    "sourceTitle": "Museum of Methodism — Candle Wick Trimmer",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-013",
+    "factId": "fab3-picture-013",
+    "kind": "picture",
+    "illustration": "fab3-013",
+    "image": "media/fabraka-v3/fab3-013.webp",
+    "imageDescription": "A short wooden handle attached to a round metal base with an engraved pattern.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "The engraved base is pressed into soft material to ___.",
+    "answer": "Seal letters with wax",
+    "aliases": [
+      "Make a wax seal",
+      "Stamp wax",
+      "Seal envelopes"
+    ],
+    "decoys": [
+      "Stamp patterns on bread",
+      "Flatten clothing buttons",
+      "Mark bars of soap",
+      "Press flower petals"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "The base leaves an impression in soft wax that remains when it cools, as in correspondence seals.",
+    "sourceUrl": "https://shop.getty.edu/products/sealing-wax-stamp-kit",
+    "sourceTitle": "Getty Museum Store — Sealing Wax Stamp Kit",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-014",
+    "factId": "fab3-picture-014",
+    "kind": "picture",
+    "illustration": "fab3-014",
+    "image": "media/fabraka-v3/fab3-014.webp",
+    "imageDescription": "A small container with a broad perforated lid shaped like a shallow dish.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "After a letter was written in ink, this container was used to ___.",
+    "answer": "Dry the ink",
+    "aliases": [
+      "Blot excess ink",
+      "Sprinkle ink-drying powder"
+    ],
+    "decoys": [
+      "Perfume the letter",
+      "Erase words with powder",
+      "Color envelope edges",
+      "Store a pen nib"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "Powder was sprinkled on wet ink to absorb it; similar containers were also used to prepare paper before writing.",
+    "sourceUrl": "https://www.metmuseum.org/art/collection/search/833963",
+    "sourceTitle": "The Metropolitan Museum of Art — Pouncepot (part of a set)",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-015",
+    "factId": "fab3-picture-015",
+    "kind": "picture",
+    "illustration": "fab3-015",
+    "image": "media/fabraka-v3/fab3-015.webp",
+    "imageDescription": "A wooden handle topped with a small cup and connected to a ball by string.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "The challenge in this wooden game is to ___.",
+    "answer": "Catch the ball in the cup",
+    "aliases": [
+      "Land the ball in the cup",
+      "Catch a tethered ball"
+    ],
+    "decoys": [
+      "Spin the ball on a table",
+      "Hit a distant target",
+      "Untie the string without touching the ball",
+      "Balance the cup on the ball"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "The player tosses the tethered ball and tries to catch it in the cup, a form of bilboquet.",
+    "sourceUrl": "https://coopermanhistorylives.com/products/wooden-bilbo-catcher-spindle-cup-ball",
+    "sourceTitle": "Cooperman HistoryLives — Bilbo-Catcher (Bilboquet)",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-016",
+    "factId": "fab3-picture-016",
+    "kind": "picture",
+    "illustration": "fab3-016",
+    "image": "media/fabraka-v3/fab3-016.webp",
+    "imageDescription": "Hemispherical cups on arms around a vertical axis.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "These cups rotate around their axis to ___.",
+    "answer": "Measure wind speed",
+    "aliases": [
+      "Determine wind speed"
+    ],
+    "decoys": [
+      "Find north",
+      "Measure rainfall",
+      "Measure air humidity",
+      "Measure air pressure"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "Wind turns the cups, and their rotation rate is used to calculate speed; direction is usually measured separately.",
+    "sourceUrl": "https://weather.metoffice.gov.uk/guides/observations/how-we-measure-wind",
+    "sourceTitle": "Met Office — How we measure wind",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-017",
+    "factId": "fab3-picture-017",
+    "kind": "picture",
+    "illustration": "fab3-017",
+    "image": "media/fabraka-v3/fab3-017.webp",
+    "imageDescription": "A horizontal disc with radial markings and a thin upright piece with a sloping edge.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "This dial and its raised piece use the Sun to ___.",
+    "answer": "Tell time from a shadow",
+    "aliases": [
+      "Tell the time",
+      "Measure time",
+      "Act as a sundial"
+    ],
+    "decoys": [
+      "Measure air temperature",
+      "Predict rainfall",
+      "Date rocks",
+      "Measure sunlight intensity"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "The raised part's shadow moves with the Sun's apparent motion, and time is read from its position on the markings.",
+    "sourceUrl": "https://collection.kotsanasmuseum.com/en/exhibits/106071/",
+    "sourceTitle": "Kotsanas Museum — Level horizontal sundial",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-018",
+    "factId": "fab3-picture-018",
+    "kind": "picture",
+    "illustration": "fab3-018",
+    "image": "media/fabraka-v3/fab3-018.webp",
+    "imageDescription": "An upright transparent cylinder with measurement markings and a wide upper opening.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "This cylinder collects what enters from above to ___.",
+    "answer": "Measure rainfall",
+    "aliases": [
+      "Measure the amount of rain",
+      "Measure precipitation"
+    ],
+    "decoys": [
+      "Measure soil moisture",
+      "Estimate wind speed",
+      "Measure water salinity",
+      "Measure evaporation"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "The container collects rain over a set period, and its markings indicate the amount that fell.",
+    "sourceUrl": "https://weather.metoffice.gov.uk/guides/observations/how-we-measure-rainfall",
+    "sourceTitle": "Met Office — How we measure rainfall",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-019",
+    "factId": "fab3-picture-019",
+    "kind": "picture",
+    "illustration": "fab3-019",
+    "image": "media/fabraka-v3/fab3-019.webp",
+    "imageDescription": "A long U-shaped metal piece with a short handle at its base.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "A musician uses this object's vibrations to ___.",
+    "answer": "Tune musical instruments",
+    "aliases": [
+      "Provide a reference pitch",
+      "Set an instrument's pitch"
+    ],
+    "decoys": [
+      "Make an instrument louder",
+      "Measure string length",
+      "Set the playing tempo",
+      "Record melodies"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "When struck, the fork produces a specific pitch that musicians compare with their instrument.",
+    "sourceUrl": "https://americanhistory.si.edu/acoustics/tuning-forks",
+    "sourceTitle": "Smithsonian National Museum of American History — Tuning Forks",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-020",
+    "factId": "fab3-picture-020",
+    "kind": "picture",
+    "illustration": "fab3-020",
+    "image": "media/fabraka-v3/fab3-020.webp",
+    "imageDescription": "A symmetrical metal weight with a pointed bottom, suspended from a string at the top.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "Hanging this object from a still string helps a builder ___.",
+    "answer": "Find a vertical line",
+    "aliases": [
+      "Check a wall is vertical",
+      "Check plumb"
+    ],
+    "decoys": [
+      "Measure wall moisture",
+      "Measure glass thickness",
+      "Weigh stones",
+      "Calculate room area"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "Gravity makes the weighted string a vertical reference against which a wall's lean can be checked.",
+    "sourceUrl": "https://gem.eg/en/collection/artefacts/plumb-line-level",
+    "sourceTitle": "Grand Egyptian Museum — Plumb Line Level",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-021",
+    "factId": "fab3-picture-021",
+    "kind": "picture",
+    "illustration": "fab3-021",
+    "image": "media/fabraka-v3/fab3-021.webp",
+    "imageDescription": "Two thin crossed arms with four pointed ends and a visible lengthwise slot near the pivot screw.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "An artist adjusts the joint of this tool to ___.",
+    "answer": "Transfer measurements at a set ratio",
+    "aliases": [
+      "Scale measurements",
+      "Enlarge or reduce drawings",
+      "Measure proportions"
+    ],
+    "decoys": [
+      "Cut equal paper strips",
+      "Bend metal wires",
+      "Hold boards while gluing",
+      "Check a table's tilt"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "One pair of tips measures a distance; the opposite pair gives a scaled distance determined by the joint's position.",
+    "sourceUrl": "https://files.eric.ed.gov/fulltext/ED083371.pdf#page=18",
+    "sourceTitle": "Department of the Army — General Drafting, TM 5-581A: Proportional Dividers",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-022",
+    "factId": "fab3-picture-022",
+    "kind": "picture",
+    "illustration": "fab3-022",
+    "image": "media/fabraka-v3/fab3-022.webp",
+    "imageDescription": "A wooden shaft passing through a sliding block with a locking screw and a small point near one end.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "A carpenter adjusts the sliding block on this tool to ___.",
+    "answer": "Mark a line parallel to a wood edge",
+    "aliases": [
+      "Mark parallel lines",
+      "Mark wood"
+    ],
+    "decoys": [
+      "Check wood moisture",
+      "Widen nail holes",
+      "Clamp boards together",
+      "Weigh a piece of wood"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "The block rests against an edge while a small point scratches a line a fixed distance from it.",
+    "sourceUrl": "https://www.faithfulltools.com/p/FAIRMARK/Marking-Gauge",
+    "sourceTitle": "Faithfull Tools — Marking Gauge",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-023",
+    "factId": "fab3-picture-023",
+    "kind": "picture",
+    "illustration": "fab3-023",
+    "image": "media/fabraka-v3/fab3-023.webp",
+    "imageDescription": "A metal center holding a short blade, with a handle extending from each side.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "A carpenter grips both side handles to ___.",
+    "answer": "Shape and smooth wood",
+    "aliases": [
+      "Shave wood",
+      "Smooth wooden edges",
+      "Carve wood"
+    ],
+    "decoys": [
+      "Test nail hardness",
+      "Bend sheet metal",
+      "Saw timber into planks",
+      "Hammer small nails"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "The blade removes thin layers of wood, allowing controlled shaping and smoothing of surfaces and edges.",
+    "sourceUrl": "https://www.lie-nielsen.com/products/1-sp-boggs-f-boggs-spokeshaves?node=4091&path=spokeshaves",
+    "sourceTitle": "Lie-Nielsen Toolworks — Boggs Flat Spokeshave",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-024",
+    "factId": "fab3-picture-024",
+    "kind": "picture",
+    "illustration": "fab3-024",
+    "image": "media/fabraka-v3/fab3-024.webp",
+    "imageDescription": "A smooth wooden block shaped like a complete foot, with a rounded toe and a heel.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "This wooden form gave a craftsperson a base for ___.",
+    "answer": "Shaping a shoe during manufacture",
+    "aliases": [
+      "Making shoes",
+      "Molding shoe leather",
+      "Forming footwear"
+    ],
+    "decoys": [
+      "Practicing dance steps",
+      "Measuring footprint depth",
+      "Printing tracks in sand",
+      "Only drying socks"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "A shoemaker stretches leather around the foot-shaped last to give the shoe its shape during construction.",
+    "sourceUrl": "https://metc.org/decoding-the-past-shoemaker/",
+    "sourceTitle": "Museum of Early Trades & Crafts — The Shoemaker",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-025",
+    "factId": "fab3-picture-025",
+    "kind": "picture",
+    "illustration": "fab3-025",
+    "image": "media/fabraka-v3/fab3-025.webp",
+    "imageDescription": "A short leather strap with a side opening and a small metal disc covered in dimples.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "A sailmaker wears this leather item to help ___.",
+    "answer": "Push a needle through thick fabric",
+    "aliases": [
+      "Sew sails",
+      "Protect the palm while sewing",
+      "Sew heavy canvas"
+    ],
+    "decoys": [
+      "Pull nails from wood",
+      "Measure wind strength",
+      "Wind ropes onto reels",
+      "Carry a hot lamp"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "The needle's end rests on the dimpled metal plate, allowing it to be pushed firmly through canvas while protecting the palm.",
+    "sourceUrl": "https://www.staugustinelighthouse.org/2016/07/06/whats-in-a-collection-sailmakers-palm/",
+    "sourceTitle": "St. Augustine Lighthouse & Maritime Museum — What’s in a Collection? Sailmaker’s Palm",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-026",
+    "factId": "fab3-picture-026",
+    "kind": "picture",
+    "illustration": "fab3-026",
+    "image": "media/fabraka-v3/fab3-026.webp",
+    "imageDescription": "A long smooth object with a broad base tapering to a sharp point.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "When working with rope, this pointed object helps ___.",
+    "answer": "Separate rope strands for splicing",
+    "aliases": [
+      "Open rope strands",
+      "Splice ropes",
+      "Make a rope splice"
+    ],
+    "decoys": [
+      "Weigh rope",
+      "Cut rope in one stroke",
+      "Burn rope ends",
+      "Dye rope from inside"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "Its point opens a gap between strands so other strands can pass through to create an interwoven splice.",
+    "sourceUrl": "https://victoriancollections.net.au/items/61ca4e93dd33b340e6bf0505",
+    "sourceTitle": "Flagstaff Hill Maritime Museum and Village — Tool: Fid",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-027",
+    "factId": "fab3-picture-027",
+    "kind": "picture",
+    "illustration": "fab3-027",
+    "image": "media/fabraka-v3/fab3-027.webp",
+    "imageDescription": "A thin turned wooden piece with a small head, narrow neck, and a longer slightly swollen body.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "In lace-making, this small object's job is to ___.",
+    "answer": "Hold and move thread",
+    "aliases": [
+      "Carry lace thread",
+      "Wind lace thread"
+    ],
+    "decoys": [
+      "Cut fabric edges",
+      "Iron lace ribbons",
+      "Dye tiny knots",
+      "Pierce fine needles"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "Thread winds around the narrow neck; the body is held to move and interlace it without touching the thread directly.",
+    "sourceUrl": "https://cowperandnewtonmuseum.org.uk/bobbins-and-lacemaking/",
+    "sourceTitle": "Cowper & Newton Museum — Bobbins and Lacemaking",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-028",
+    "factId": "fab3-picture-028",
+    "kind": "picture",
+    "illustration": "fab3-028",
+    "image": "media/fabraka-v3/fab3-028.webp",
+    "imageDescription": "A hollow cylindrical wooden vessel with a separate engraved round insert attached to a handle.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "The hollow and pattern inside this object were used to ___.",
+    "answer": "Shape and decorate butter",
+    "aliases": [
+      "Mold butter",
+      "Stamp a pattern on butter"
+    ],
+    "decoys": [
+      "Dry tea herbs",
+      "Press citrus peel",
+      "Sift bread flour",
+      "Separate egg yolks"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "Butter is pressed into the mold, and the engraved insert leaves a pattern that could identify its maker.",
+    "sourceUrl": "https://www.metmuseum.org/art/collection/search/1053",
+    "sourceTitle": "The Metropolitan Museum of Art — Butter Mold",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-029",
+    "factId": "fab3-picture-029",
+    "kind": "picture",
+    "illustration": "fab3-029",
+    "image": "media/fabraka-v3/fab3-029.webp",
+    "imageDescription": "A broad hollow ring with prominent bumps on its inner surface.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "The bumps inside this ring help ___.",
+    "answer": "Remove corn kernels from a cob",
+    "aliases": [
+      "Shell corn",
+      "Strip corn kernels"
+    ],
+    "decoys": [
+      "Peel oranges",
+      "Slice onion rings",
+      "Open walnuts",
+      "Scrape fish scales"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "A cob is pushed and twisted through the hand tool, and the internal bumps separate its kernels.",
+    "sourceUrl": "https://d-lab.mit.edu/resources/publications/how-corn-sheller",
+    "sourceTitle": "MIT D-Lab — How To: Corn Sheller",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-030",
+    "factId": "fab3-picture-030",
+    "kind": "picture",
+    "illustration": "fab3-030",
+    "image": "media/fabraka-v3/fab3-030.webp",
+    "imageDescription": "A short handle ending in a metal arm that holds a small sharp-toothed wheel.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "The toothed wheel makes a trail of marks on paper to ___.",
+    "answer": "Perforate drawing lines for transfer",
+    "aliases": [
+      "Transfer a pattern",
+      "Prick holes along a drawing"
+    ],
+    "decoys": [
+      "Cut paper circles",
+      "Sharpen pencils",
+      "Press flowers between pages",
+      "Tear stamp edges"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "The wheel follows a pattern to make successive holes, through which the design can be transferred to another surface.",
+    "sourceUrl": "https://www.rosebrand.com/pounce-wheel",
+    "sourceTitle": "Rose Brand — Pounce Wheel",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-031",
+    "factId": "fab3-picture-031",
+    "kind": "picture",
+    "illustration": "fab3-031",
+    "image": "media/fabraka-v3/fab3-031.webp",
+    "imageDescription": "A pale flat smooth object with one rounded end and one tapered end.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "A bookbinder uses this object's smooth edge to ___.",
+    "answer": "Fold paper and press creases",
+    "aliases": [
+      "Crease paper",
+      "Flatten paper folds",
+      "Fold paper"
+    ],
+    "decoys": [
+      "Scrape dried ink",
+      "Cut glass sheets",
+      "Sharpen calligraphy pens",
+      "Separate weaving threads"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "The smooth edge makes sharp creases and flattens paper for bookbinding and paper crafts.",
+    "sourceUrl": "https://library.ucdavis.edu/news/tools-of-the-preservation-trade/",
+    "sourceTitle": "UC Davis Library — Tools of the Preservation Trade",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-032",
+    "factId": "fab3-picture-032",
+    "kind": "picture",
+    "illustration": "fab3-032",
+    "image": "media/fabraka-v3/fab3-032.webp",
+    "imageDescription": "A short hollow wooden cylinder with small metal pins around its upper rim.",
+    "imageCredit": "AI-generated illustrative photograph of a real tool",
+    "text": "Looping yarn over this object's pins produces ___.",
+    "answer": "A knitted cord",
+    "aliases": [
+      "A yarn cord",
+      "A small knitted tube",
+      "Spool-knitted cord"
+    ],
+    "decoys": [
+      "A wound ball of yarn",
+      "A broad piece of fabric",
+      "Newly dyed thread",
+      "Thread-covered buttons"
+    ],
+    "category": "Mystery tools",
+    "curious": true,
+    "explanation": "Loops are lifted over the pins in sequence, making a knitted cord emerge from the middle hole; this is spool knitting.",
+    "sourceUrl": "https://blog.clover-usa.com/2021/03/31/wonder-knitter-tutorial/amp/",
+    "sourceTitle": "Clover Needlecraft — Wonder Knitter Tutorial",
+    "verifiedAt": "2026-09-18"
+  }
+]

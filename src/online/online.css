@@ -1,7 +1,7 @@
 .online-screen{--online-purple:#713A91;max-width:680px;margin-inline:auto;padding-bottom:40px;gap:18px}
 .online-screen h1,.online-screen h2,.online-screen p{margin:0}
 .online-screen h2{font-size:1.25rem}.online-screen .card{padding:22px}
-.online-label{font-size:.85rem;font-weight:700;color:#785541}
+.online-label{font-size:.875rem;font-weight:700;color:#785541}
 .online-intro{text-align:center;background:var(--top-light),linear-gradient(150deg,#fffaf0,#f3e4f5);display:flex;flex-direction:column;align-items:center;gap:8px}
 .online-intro .clay-art{width:108px;height:108px;flex:none}.online-intro h1{font-size:clamp(1.5rem,5.5vw,2rem);line-height:1.4}.online-intro p{font-size:.92rem;color:#66536d}
 /* بطل المدخل: حامل يهبط ويطفو (مفتاحه اللعبة فيعيد الهبوط عند التبديل)، والنص يدخل كصف عند تبديل الوضع */
@@ -20,18 +20,18 @@
 .online-notice.online-double{width:fit-content;max-width:100%;margin-inline:auto;text-align:center;background:#fff3d6;border-color:#e3c27a;color:#7a4d10;font-weight:800;animation:ui-stamp .48s var(--ease-pop,cubic-bezier(.2,1.4,.4,1)) both}
 .online-notice.online-double .fire{display:inline-block;margin-inline-end:6px;animation:ui-wobble .6s ease-in-out .3s 2}
 .online-invite{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;background:var(--top-light),#f4e9f5}
-.online-invite p{font-size:.85rem;margin:2px 0 12px;color:#66536d;max-width:290px}.online-invite img{border-radius:14px;width:136px;height:136px;box-shadow:inset 0 2px #fff,0 3px 0 #D9C5AB,0 8px 16px rgba(91,61,36,.10)}
+.online-invite p{font-size:.875rem;margin:2px 0 12px;color:#66536d;max-width:290px}.online-invite img{border-radius:14px;width:136px;height:136px;box-shadow:inset 0 2px #fff,0 3px 0 #D9C5AB,0 8px 16px rgba(91,61,36,.10)}
 .online-invite img.is-ready{animation:ui-pop-in .4s var(--ease-spring) both}
 .online-room-code{display:block;font-size:clamp(2.1rem,9vw,3rem);letter-spacing:.13em;color:#663385;line-height:1.25}
 .online-invite-link{width:100%}.online-players{padding:0;margin:0;list-style:none;display:flex;flex-direction:column;gap:8px}
 .online-players li{display:flex;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid #eadfce;animation:ui-row-in .35s var(--ease-out) both;animation-delay:calc(var(--i,0) * 45ms)}.online-players li:last-child{border-bottom:0}
 .online-players li.is-winner{animation:ui-row-in .35s var(--ease-out) both,ui-bounce .5s var(--ease-spring) both;animation-delay:calc(var(--i,0) * 45ms),calc(300ms + var(--i,0) * 100ms)}
-.online-players .clay-avatar{width:48px;height:48px;flex:none}.online-players b{overflow-wrap:anywhere}.online-players .grow{min-width:0}.online-players small{display:block;font-size:.78rem;color:#68596b}
+.online-players .clay-avatar{width:48px;height:48px;flex:none}.online-players b{overflow-wrap:anywhere}.online-players .grow{min-width:0}.online-players small{display:block;font-size:.875rem;color:#68596b}
 /* نقطة الحضور: تنبض وتطلق حلقة واحدة عند الجاهزية */
 .online-presence{position:relative;width:10px;height:10px;background:#b49a77;border-radius:50%;flex:none;transition:background-color .3s ease,box-shadow .3s ease}.online-presence.ready{background:#087d77;box-shadow:0 0 0 4px #d4efdf;animation:ui-pop-select .3s var(--ease-spring)}
 .online-presence.ready::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid #087d77;opacity:0;pointer-events:none;animation:ui-ring-out 1s ease-out 1}
 /* حالة الاتصال: نقطة تتوهّج حتى يتم الاتصال */
-.online-connection{color:#755c29;background:#fff0c5;border-radius:24px;text-align:center;padding:8px 12px;font-size:.85rem;transition:background-color .3s ease,color .3s ease}.online-connection.connected{color:#08645f;background:#dff1e9}
+.online-connection{color:#755c29;background:#fff0c5;border-radius:24px;text-align:center;padding:8px 12px;font-size:.875rem;transition:background-color .3s ease,color .3s ease}.online-connection.connected{color:#08645f;background:#dff1e9}
 .online-connection::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;margin-inline-end:8px;vertical-align:middle;background:currentColor}
 .online-connection:not(.connected)::before{animation:ui-glow 1.2s ease-in-out infinite}
 /* سؤال المباراة: بطاقة تنقلب لكل جولة والرسم يهبط على حامله */
@@ -45,7 +45,7 @@
 /* بلاطات التصويت: تنبثق بالتتابع، حافة تنضغط، وتنبض بنفسجية عند الاختيار */
 .online-vote-choice{border:2px solid #dfd2bb;background:var(--top-light),#fffcf5;box-shadow:inset 0 2px 1px #fff,0 4px 0 #dfd2bb,0 8px 14px rgba(91,61,36,.08);border-radius:20px;padding:12px 6px;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;font:inherit;color:#493652;min-height:112px;min-width:0;transition:transform .2s var(--ease-spring),box-shadow .2s var(--ease-spring),background-color .18s,border-color .18s;animation:ui-pop-in .4s var(--ease-spring) both;animation-delay:calc(var(--i,0) * 40ms)}
 .online-vote-choice:active:not(:disabled){transform:translateY(4px);transition-duration:.08s;box-shadow:inset 0 2px 4px rgba(91,61,36,.16),0 0 0 #dfd2bb}
-.online-vote-choice .clay-avatar{width:62px;height:62px}.online-vote-choice b{font-size:.9rem;line-height:1.3;overflow-wrap:anywhere;max-width:100%}.online-vote-choice small{font-size:.7rem}
+.online-vote-choice .clay-avatar{width:62px;height:62px}.online-vote-choice b{font-size:.9rem;line-height:1.3;overflow-wrap:anywhere;max-width:100%}.online-vote-choice small{font-size:.875rem}
 .online-vote-choice>.clay-stage{--contact-inset:18%;--contact-y:-2px}
 .online-vote-choice.selected{border-color:#713a91;box-shadow:inset 0 2px 1px #fff,0 4px 0 #713a91,0 8px 14px #713a9133;background:var(--top-light),#efdef7;animation:ui-pop-select .3s var(--ease-spring)}
 .online-vote-choice.selected>.clay-stage>.clay-lift{animation:clay-squash .42s var(--ease-spring)}
@@ -58,7 +58,7 @@
 .online-waiting{position:relative;padding-inline-start:18px}
 .online-waiting::before{content:"";position:absolute;inset-inline-start:0;top:.55em;width:10px;height:10px;border-radius:50%;background:#9250bd;animation:ui-glow 1.5s ease-in-out infinite}
 .online-home-card{display:flex;align-items:center;gap:12px;width:100%;text-align:start;cursor:pointer;font:inherit;color:inherit;background:linear-gradient(120deg,#e6f4ed,#eee1f7)!important;border:2px solid #ad8ac3!important}
-.online-home-card .clay-art{width:76px;height:76px;flex:none}.online-home-card strong,.online-home-card small{display:block}.online-home-card strong{font-size:1.25rem}.online-home-card small{color:#66536d;margin-top:4px}.online-home-card .online-new{background:#713a91;color:white;border-radius:10px;padding:2px 8px;font-size:.73rem;margin-inline-start:auto}
+.online-home-card .clay-art{width:76px;height:76px;flex:none}.online-home-card strong,.online-home-card small{display:block}.online-home-card strong{font-size:1.25rem}.online-home-card small{color:#66536d;margin-top:4px}.online-home-card .online-new{background:#713a91;color:white;border-radius:10px;padding:2px 8px;font-size:.875rem;margin-inline-start:auto}
 @media(max-width:400px){.online-screen .card{padding:16px}.online-vote-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.online-invite{justify-content:center;text-align:center}.online-invite>div{width:100%}.online-invite p{max-width:none}.online-home-card .clay-art{width:58px;height:58px}.online-home-card .online-new{display:none}}
 @media(prefers-reduced-motion:reduce){.online-screen *{transition:none!important;animation:none!important}}
 .online-game-picker { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
@@ -106,17 +106,17 @@
 .room-reaction-layer{position:fixed;inset-inline:0;bottom:calc(110px + var(--safe-bottom,0px));height:0;pointer-events:none;z-index:40}
 .room-reaction-float{position:absolute;bottom:0;display:grid;justify-items:center;gap:2px;animation:room-reaction-rise 2.6s ease-out forwards}
 .room-reaction-float b{font-size:2.1rem;line-height:1;font-weight:400}
-.room-reaction-float small{font-size:.72rem;font-weight:800;color:#5b3d24;background:#fffaf0e6;border-radius:10px;padding:1px 8px;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.room-reaction-float small{font-size:.875rem;font-weight:800;color:#5b3d24;background:#fffaf0e6;border-radius:10px;padding:1px 8px;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .room-reaction-float.lane-0{inset-inline-start:10%}.room-reaction-float.lane-1{inset-inline-start:28%}.room-reaction-float.lane-2{inset-inline-start:46%}.room-reaction-float.lane-3{inset-inline-start:64%}.room-reaction-float.lane-4{inset-inline-start:80%}
 @keyframes room-reaction-rise{0%{opacity:0;transform:translateY(12px) scale(.6)}12%{opacity:1;transform:translateY(0) scale(1.08)}75%{opacity:1}100%{opacity:0;transform:translateY(-170px) scale(1)}}
 html[data-reduced-motion="true"] .room-reaction-float{animation:none}
 
 
-.online-room-chrome.mafia-room-compact{gap:8px}.mafia-room-tools{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px}.mafia-room-tools strong{font-size:13px}.mafia-room-tools .online-connection{font-size:11px;padding:5px 8px;margin:0}.online-screen:has(.phase-night){padding-top:calc(8px + var(--safe-top,0px));padding-inline:10px}
+.online-room-chrome.mafia-room-compact{gap:8px}.mafia-room-tools{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px}.mafia-room-tools strong{font-size:14px}.mafia-room-tools .online-connection{font-size:14px;padding:5px 8px;margin:0}.online-screen:has(.phase-night){padding-top:calc(8px + var(--safe-top,0px));padding-inline:10px}
 
 /* The online view uses the same answer/result rhythm as the local game. */
 .online-fabraka .fab-opt{min-height:56px;padding:12px 14px;gap:8px;line-height:1.6;border-radius:15px;box-shadow:inset 0 1px #fff,0 2px 0 var(--stroke)}
-.online-fabraka .fab-opt small{flex:none;font-size:12px;padding:3px 7px;border-radius:7px;background:var(--surface-2);line-height:1.5}
+.online-fabraka .fab-opt small{flex:none;font-size:14px;padding:3px 7px;border-radius:7px;background:var(--surface-2);line-height:1.5}
 .online-fabraka .fab-opt:disabled{opacity:.78}
 .online-fabraka .fab-reveal-card{padding:18px 15px;border-radius:19px}
 .online-fabraka .fab-reveal-card h3{font-size:clamp(21px,5.5vw,27px);line-height:1.55}
@@ -125,5 +125,25 @@ html[data-reduced-motion="true"] .room-reaction-float{animation:none}
 .online-fabraka .online-fab-total{min-width:0;padding:10px 0;gap:8px}
 .online-fabraka .online-fab-total .grow{min-width:0;flex:1}
 .online-fabraka .online-fab-total b{overflow-wrap:anywhere;line-height:1.5}
-.online-fabraka .online-fab-total small{font-size:13px;line-height:1.7}
+.online-fabraka .online-fab-total small{font-size:14px;line-height:1.7}
 .online-fabraka .online-fab-total strong{color:var(--accent,#087D89);font-size:18px}
+/* Shared online actions use the Studio touch and surface scale. */
+.online-screen .room-reaction { min-width: 48px; min-height: 48px; border-color: #DFD1DC; background: #FFFDF9; }
+.online-screen .online-question { background: #EEE3F5; color: #352139; border-color: #D8CAD9; border-radius: 24px; }
+.online-screen .online-vote-choice { min-height: 64px; border-radius: 20px; border-color: #DFD1DC; background: #FFFDF9; }
+.online-screen .online-vote-choice.selected { background: #DDF2EA; border-color: #08796D; }
+.online-screen .online-fabraka .fab-opt { background: #FFFDF9; border-radius: 20px; border-color: #DFD1DC; }
+.online-screen .online-fabraka .fab-opt.selected { background: #DDF2EA; border-color: #08796D; }
+.online-screen .online-fabraka .fab-reveal-card { border-radius: 24px; }
+/* Secondary room setup controls follow the same 48px touch scale. */
+.online-screen summary,[data-design-screen="online.entry"] summary,
+[data-design-screen="online.lobby"] summary,.online-fabraka summary { min-height:48px; align-content:center; }
+.online-field small,.online-language small,.mafia-noir small { font-size:14px; }
+.badeeha-segment button,.badeeha-picker button { min-height:48px!important; min-width:48px; }
+.badeeha-picker button span { font-size:14px; }
+.online-badeeha .badeeha-tools small { color:#705F70; }
+.online-public-create > small { font-size:14px; }
+.online-lobby-frame .online-lobby-body summary { min-height:48px; }
+.online-screen .ers-category-details summary,.online-screen .ers-rules summary,
+[data-design-screen="online.entry"] .ers-category-details summary,
+[data-design-screen="online.entry"] .ers-rules summary { min-height:48px; }

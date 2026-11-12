@@ -6,6 +6,7 @@ import { chromium, webkit } from 'playwright';
 import http from 'node:http';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { PLUS_CATALOG_VERSION } from '../../src/plus/catalog.js';
 
 const me = { id: 'me', userId: 'me', name: 'عمر', code: 'MDN-OMAR', avatarPreset: 'falcon' };
 const peers = Array.from({ length: 28 }, (_, index) => ({ id: `person-${index + 1}`, userId: `person-${index + 1}`, name: ['أحمد', 'ليان', 'سارة', 'خالد', 'نور', 'لينا', 'كريم', 'ريم', 'سامي', 'جود', 'رنا'][index] || `صديق ${index + 1}`, avatarPreset: ['lion', 'cat', 'falcon'][index % 3], online: index % 2 === 0, conversationId: `direct-${index + 1}` }));
@@ -17,6 +18,11 @@ let unread = true;
 async function api(url, method, body, owner) {
   if (url === '/api/fixture/unread') { unread = body.enabled; return {}; }
   const owned = owner === 'me';
+  if (url === '/api/cosmetics/catalog') return { version: PLUS_CATALOG_VERSION, serverTime: Date.now() };
+  if (url === '/api/me/cosmetics' || url === '/api/me/cosmetics/inventory') {
+    assert.equal(method, 'GET', 'navigation never writes cosmetic preferences or inventory');
+    return { preferred: {}, effective: {}, revision: 1, plusActive: false, serverTime: Date.now(), ownedItemIds: [], grants: [], monthly: { windows: [] } };
+  }
   if (url === '/api/social/state') return { user: owned ? me : { id: owner, name: 'حساب آخر' }, friends: owned ? peers : [], incoming: owned ? [{ id: 'request-1', user: { id: 'new-friend', name: 'هدى', avatarPreset: 'cat' } }] : [], outgoing: [], blocked: [], conversations: owned ? peers.map((user, index) => ({ id: user.conversationId, user, unreadCount: unread && index === 0 ? 2 : 0, lastMessage: { text: 'جاهزين نلعب؟', createdAt: Date.now() - index * 1000 } })) : [] };
   if (url === '/api/social/groups') return { groups: owned ? [{ ...group, unreadCount: unread ? 3 : 0 }] : [], incoming: [] };
   if (url === '/api/social/groups/group-1') return { group, members: members.map(user => ({ ...user, role: user.id === me.id ? 'owner' : 'member' })), invitations: [] };
@@ -46,7 +52,7 @@ const members=${JSON.stringify(members)};window.nativeLog=[];
 let snapshot={userId:'me',callId:'voice-1',scope:'group',conversationId:'group-1',state:'connected',muted:false,participants:members.map(user=>({id:user.id,userId:user.id,name:user.name,local:user.id==='me',muted:false,speaking:user.id==='person-1'}))};
 const sendSnapshot=patch=>{snapshot={...snapshot,...patch};window.maydanNative.event('socialCall',snapshot)};
 window.MaydanNative={postMessage(raw){const message=JSON.parse(raw);window.nativeLog.push({type:message.type,muted:message.muted});queueMicrotask(()=>{if(message.type==='socialCallMute')sendSnapshot({muted:message.muted});window.maydanNative.resolve(message.id,{ok:true,result:{authorized:true,status:'granted'}})})}};
-const sound={volume:.75,play(){},stop(){},setDucking(){},music:{volume:.35,play(){},sting(){}}};
+const sound={volume:.75,play(){},stop(){},setDucking(){},music:{volume:.35,play(){},sting(){},scene(){},releaseScene(){}}};
 const roster=[{id:'a',name:'أحمد',color:'#178879',emoji:'🦊'},{id:'b',name:'عمر',color:'#dc7849',emoji:'🐻'},{id:'c',name:'ليان',color:'#7768b6',emoji:'🐱'}];
 const platform={sound,toast(){},settings:{soundOn:false,musicOn:false,hapticsOn:false,splashSeen:true,reducedMotion:true},setSettings(){},haptics:{vibrate(){}},confetti:{fire(){},clear(){}},roster,setRoster(){},storage:{get(){},set(){}},version:'1.8-fixture'};
 function Observer(){const lamma=useLamma(),ui=useSocialUI(),social=useSocial();window.fixture={...window.fixture,navigate,getMedia:()=>lamma.media,getCall:()=>lamma.activeCall,getUI:()=>({view:ui.view,drafts:ui.drafts,listState:ui.listState}),openChat:()=>ui.openChat('person-1'),openGroup:()=>ui.openGroup('group-1'),refresh:()=>Promise.all([social.refresh(),lamma.refreshGroups()]),resume:()=>socialInterruption.resume()};return null}
@@ -82,6 +88,17 @@ const settle = page => page.evaluate(() => new Promise(resolve => requestAnimati
 const tab = (page, name) => nav(page).getByRole('link').filter({ hasText: name });
 async function route(page, pathname) { await page.evaluate(pathname => window.fixture.navigate(pathname), pathname); await page.waitForFunction(pathname => location.hash === '#' + pathname, pathname); await settle(page); }
 async function select(page, name, pathname) { await tab(page, name).click(); await page.waitForFunction(pathname => location.hash === '#' + pathname, pathname); await settle(page); }
+async function openSettings(page, section) {
+  await select(page, 'أنا', '/profile');
+  await page.locator('[data-design-id="profile-settings"]').click();
+  await page.waitForFunction(() => location.hash === '#/settings');
+  assert.equal(await tab(page, 'أنا').getAttribute('aria-current'), 'page', 'settings remain inside Me');
+  if (section) {
+    await page.locator(`[data-settings-section="${section}"]`).click();
+    await page.waitForFunction(value => location.hash === '#/settings?section=' + value, section);
+  }
+  await settle(page);
+}
 async function shot(page, browser, name) {
   if (name !== 'failure') {
     const dismiss = page.getByRole('button', { name: 'إخفاء التنبيه', exact: true });
@@ -109,22 +126,27 @@ async function run(browser, name) {
     await page.goto(origin + '/#/'); await nav(page).waitFor(); await page.getByTestId('call-dock').waitFor(); await settle(page);
     assert.equal(await nav(page).getByRole('link').count(), 4);
     const initialBoxes = await nav(page).getByRole('link').evaluateAll(elements => elements.map(el => ({ name: el.innerText, x: el.getBoundingClientRect().x, width: el.getBoundingClientRect().width, height: el.getBoundingClientRect().height })));
-    assert.ok(initialBoxes.every((box, index) => box.width >= 44 && box.height >= 44 && (!index || box.x < initialBoxes[index - 1].x)), 'four labelled44px tabs follow physical right-to-left order');
-    assert.equal(await tab(page, 'الألعاب').getAttribute('aria-current'), 'page');
-    assert.equal(await nav(page).boundingBox().then(box => box.height), 76);
+    assert.ok(initialBoxes.every((box, index) => box.width >= 48 && box.height >= 48 && (!index || box.x < initialBoxes[index - 1].x)), 'four labelled48px tabs follow physical right-to-left order');
+    assert.deepEqual(await nav(page).getByRole('link').evaluateAll(links => links.map(link => link.getAttribute('href'))), ['#/', '#/friends', '#/store', '#/profile']);
+    assert.equal(await tab(page, 'العب').getAttribute('aria-current'), 'page');
+    assert.ok(await nav(page).boundingBox().then(box => box.y + box.height <= 845 && box.height >= 48), 'the measured menu fits the viewport');
     await page.waitForFunction(() => document.querySelector('.menu-navigation-badge')?.textContent === '5');
     assert.equal(await page.locator('.lamma-launcher').isVisible(), false, 'no duplicate launcher on menu pages');
     await page.getByTestId('call-dock-collapse').click(); await page.getByTestId('call-dock-drag').press('End'); await settle(page); await callAboveMenu(page, 'games');
     const nativeBefore = await page.evaluate(() => nativeLog.filter(event => /socialCall(Connect|End)/.test(event.type)).length);
     await shot(page, name, 'games'); await noOverflow(page, 'games');
     await page.evaluate(() => window.scrollTo(0, 420)); await page.waitForFunction(() => scrollY > 200); const homeScroll = await page.evaluate(() => scrollY);
-    await select(page, 'المتجر', '/store'); await page.getByRole('heading', { name: 'قريبًا في متجر ميدان', exact: true }).waitFor();
-    assert.equal(await page.locator('.store-screen button').count(), 0, 'coming-soon store has no fictitious purchase buttons');
+    await select(page, 'المتجر', '/store'); await page.getByRole('heading', { name: 'تصفح المظهر والإطارات', exact: true }).waitFor();
+    assert.ok(await page.locator('[data-design-id="store-product"]').count() > 0, 'the real store exposes its catalogue without purchasing during navigation');
     await callAboveMenu(page, 'store'); await shot(page, name, 'store');
-    await select(page, 'الألعاب', '/'); await page.waitForFunction(value => Math.abs(scrollY - value) < 2, homeScroll);
-    await tab(page, 'الألعاب').click(); await page.waitForFunction(() => scrollY === 0);
-    await select(page, 'الإعدادات', '/settings'); await page.getByRole('heading', { name: 'الصوت والموسيقى', exact: true }).waitFor(); await shot(page, name, 'settings');
-    await page.getByRole('button', { name: 'مسح كل البيانات', exact: true }).click(); await page.getByRole('dialog', { name: 'مسح كل البيانات؟', exact: true }).waitFor();
+    await select(page, 'العب', '/'); await page.waitForFunction(value => Math.abs(scrollY - value) < 2, homeScroll);
+    await tab(page, 'العب').click(); await page.waitForFunction(() => scrollY === 0);
+    await openSettings(page, 'audio'); await page.getByRole('heading', { name: 'الصوت والموسيقى', exact: true }).waitFor(); await shot(page, name, 'settings');
+    await page.locator('.settings-screen [data-design-id="back"]').click(); await page.waitForFunction(() => location.hash === '#/settings');
+    await page.locator('.settings-screen [data-design-id="back"]').click(); await page.waitForFunction(() => location.hash === '#/profile');
+    assert.equal(await tab(page, 'أنا').getAttribute('aria-current'), 'page', 'Back returns through Settings to Me');
+    await openSettings(page, 'account');
+    await page.getByRole('button', { name: 'مسح كل البيانات', exact: true }).click(); await page.getByRole('dialog', { name: 'مسح بيانات هذا الجهاز؟', exact: true }).waitFor();
     await page.waitForFunction(() => document.querySelector('[data-testid="menu-navigation"]').hidden);
     assert.ok(await page.locator('#root').evaluate(el => el.inert), 'general dialogs own interaction above the menu');
     await page.getByRole('button', { name: 'إلغاء', exact: true }).click(); await nav(page).waitFor();
@@ -138,16 +160,16 @@ async function run(browser, name) {
     await select(page, 'المتجر', '/store'); await select(page, 'الأصدقاء', '/friends'); assert.ok(Math.abs(await friendList.evaluate(el => el.scrollTop) - listScroll) < 2, 'friends list scroll survives switching tabs');
     const filters = page.getByRole('group', { name: 'تصفية الأصدقاء', exact: true }); await filters.getByRole('button', { name: 'المتصلون', exact: true }).click();
     const search = page.getByRole('textbox', { name: 'البحث في اللّمة', exact: true }); await search.fill('أحمد');
-    await select(page, 'الإعدادات', '/settings'); await select(page, 'الأصدقاء', '/friends'); assert.equal(await search.inputValue(), 'أحمد'); assert.equal(await filters.getByRole('button', { name: 'المتصلون', exact: true }).getAttribute('aria-pressed'), 'true');
+    await openSettings(page); await select(page, 'الأصدقاء', '/friends'); assert.equal(await search.inputValue(), 'أحمد'); assert.equal(await filters.getByRole('button', { name: 'المتصلون', exact: true }).getAttribute('aria-pressed'), 'true');
     await page.getByRole('button', { name: 'محادثة مع أحمد', exact: true }).click(); await page.waitForFunction(() => location.hash === '#/friends/person-1');
     await page.getByRole('textbox', { name: 'اكتب رسالة', exact: true }).fill('مسودة لا تضيع 🎮'); await page.waitForFunction(() => document.querySelector('[data-testid="menu-navigation"]').hidden);
-    await page.getByRole('button', { name: 'العودة للّمة', exact: true }).first().click(); await nav(page).waitFor(); await select(page, 'المتجر', '/store'); await select(page, 'الأصدقاء', '/friends');
+    await page.getByRole('button', { name: 'العودة للأصدقاء', exact: true }).first().click(); await nav(page).waitFor(); await select(page, 'المتجر', '/store'); await select(page, 'الأصدقاء', '/friends');
     await page.getByRole('button', { name: 'محادثة مع أحمد', exact: true }).click(); assert.equal(await page.getByRole('textbox', { name: 'اكتب رسالة', exact: true }).inputValue(), 'مسودة لا تضيع 🎮');
     await page.goBack(); await page.waitForFunction(() => location.hash === '#/friends'); await nav(page).waitFor();
     await search.fill(''); await filters.getByRole('button', { name: 'الكل', exact: true }).click();
-    await page.getByRole('navigation', { name: 'أقسام اللّمة', exact: true }).getByRole('button', { name: /اللّمات/ }).click(); await page.getByRole('button', { name: /شلّة الخميس/ }).click();
+    await page.getByRole('navigation', { name: 'أقسام اللّمة', exact: true }).getByRole('button', { name: /الشِّلل/ }).click(); await page.getByRole('button', { name: /شلّة الخميس/ }).click();
     await page.waitForFunction(() => location.hash === '#/friends/group/group-1'); await page.getByText('جاهزين نلعب مع بعض؟', { exact: true }).waitFor(); assert.equal(await nav(page).isVisible(), false);
-    await page.getByRole('textbox', { name: 'اكتب رسالة', exact: true }).fill('مسودة للشلّة'); await page.getByRole('button', { name: 'العودة للّمة', exact: true }).first().click(); await nav(page).waitFor();
+    await page.getByRole('textbox', { name: 'اكتب رسالة', exact: true }).fill('مسودة للشلّة'); await page.getByRole('button', { name: 'العودة للأصدقاء', exact: true }).first().click(); await nav(page).waitFor();
     await select(page, 'المتجر', '/store'); await route(page, '/friends/group/group-1'); assert.equal(await page.getByRole('textbox', { name: 'اكتب رسالة', exact: true }).inputValue(), 'مسودة للشلّة', 'group deep link shares the same draft store');
     await route(page, '/friends'); await nav(page).waitFor(); await page.getByRole('navigation', { name: 'أقسام اللّمة', exact: true }).getByRole('button', { name: 'الأصدقاء', exact: true }).click();
     await search.focus(); await page.evaluate(() => window.setFixtureViewport({ height: 420, offsetTop: 24 })); await page.waitForFunction(() => document.querySelector('[data-testid="menu-navigation"]').hidden);
@@ -155,7 +177,7 @@ async function run(browser, name) {
     await page.evaluate(() => { document.activeElement.blur(); window.setFixtureViewport({ height: 844, offsetTop: 0 }); }); await nav(page).waitFor();
     await select(page, 'المتجر', '/store'); await page.evaluate(async () => { await fetch('/api/fixture/unread', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ enabled: false }) }); await window.fixture.refresh(); });
     await page.locator('.menu-navigation-dot').waitFor(); assert.equal(await page.locator('.menu-navigation-badge').count(), 0, 'request dot appears when no unread messages remain');
-    await select(page, 'الألعاب', '/'); await route(page, '/game/fabraka'); await page.locator('.details-hero').waitFor(); await nav(page).waitFor();
+    await select(page, 'العب', '/'); await route(page, '/game/fabraka'); await page.locator('.game-instructions-steps').waitFor(); await nav(page).waitFor();
     await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight)); await settle(page);
     const sticky = await page.locator('.setup-sticky').boundingBox(), menu = await nav(page).boundingBox(); assert.ok(sticky.y + sticky.height <= menu.y + 1, 'game-detail actions remain above the menu');
     assert.ok(await page.locator('.call-game-viewport > .screen').evaluate(el => parseFloat(getComputedStyle(el).paddingBottom) >= parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--menu-nav-space'))));
@@ -174,12 +196,12 @@ async function run(browser, name) {
     await route(page, '/room/123456'); await page.locator('.online-screen').waitFor(); assert.equal(await nav(page).isVisible(), false, 'room route hides bottom menu');
     await route(page, '/'); await nav(page).waitFor();
     await page.setViewportSize({ width: 844, height: 390 }); await page.evaluate(() => window.setFixtureViewport({ width: 844, height: 390 })); await settle(page);
-    await page.waitForFunction(() => document.querySelector('[data-testid="menu-navigation"]').getBoundingClientRect().height === 64);
+    await page.waitForFunction(() => Math.abs(document.querySelector('[data-testid="menu-navigation"]').getBoundingClientRect().height - parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--menu-nav-space'))) < 1);
     await callAboveMenu(page, 'landscape games'); await noOverflow(page, 'landscape games'); await shot(page, name, 'games-landscape');
     await select(page, 'الأصدقاء', '/friends'); await page.getByRole('region', { name: 'الأصدقاء واللّمة', exact: true }).waitFor(); await noOverflow(page, 'landscape friends');
     const friendsRect = await page.locator('.lamma-page-panel').boundingBox(), landscapeMenu = await nav(page).boundingBox(); assert.ok(friendsRect.y + friendsRect.height <= landscapeMenu.y + 1, 'landscape friends panel fits above menu'); await shot(page, name, 'friends-landscape');
     await page.evaluate(() => window.fixture.openChat()); await page.getByRole('textbox', { name: 'اكتب رسالة', exact: true }).waitFor(); await noOverflow(page, 'landscape chat'); assert.equal(await nav(page).isVisible(), false); await shot(page, name, 'chat-landscape');
-    await page.getByRole('button', { name: 'العودة للّمة', exact: true }).first().click(); await select(page, 'المتجر', '/store');
+    await page.getByRole('button', { name: 'العودة للأصدقاء', exact: true }).first().click(); await select(page, 'المتجر', '/store');
     assert.equal(await page.evaluate(() => nativeLog.filter(event => /socialCall(Connect|End)/.test(event.type)).length), nativeBefore, 'all menu and conversation navigation keeps media connection intact');
     await page.evaluate(() => window.fixture.setOwner(null)); await page.waitForFunction(() => !window.fixture.getCall()); assert.equal(await page.getByTestId('call-dock').count(), 0);
     await select(page, 'الأصدقاء', '/friends'); await page.getByRole('heading', { name: 'الجمعة تبدأ بأصحابك', exact: true }).waitFor(); assert.equal(await page.locator('.menu-navigation-badge,.menu-navigation-dot').count(), 0); assert.equal(await page.getByRole('button', { name: 'محادثة مع أحمد', exact: true }).count(), 0);
@@ -217,14 +239,14 @@ async function runGameplayBack(browser, name, native = false) {
     const prompt = await page.locator('.beep-prompt').textContent();
     const sameRound = async () => { assert.equal(await page.evaluate(() => location.hash), '#/play/beep'); assert.equal(await page.locator('.beep-prompt').textContent(), prompt); };
     await page.locator('.lamma-launcher').click(); await page.getByRole('dialog', { name: 'الأصدقاء واللّمة', exact: true }).waitFor();
-    await page.getByRole('button', { name: 'أضف صديقًا', exact: true }).click(); await page.getByRole('dialog', { name: 'أضف صديقًا', exact: true }).waitFor();
+    await page.getByRole('button', { name: 'البحث', exact: true }).click(); await page.getByRole('dialog', { name: 'البحث عن أصدقاء', exact: true }).waitFor();
     if (native) {
       const field = page.getByRole('textbox', { name: 'ابحث بالاسم أو رمز الصديق', exact: true });
       await field.dispatchEvent('compositionstart', { bubbles: true }); await pressBack();
-      assert.equal(await page.getByRole('dialog', { name: 'أضف صديقًا', exact: true }).isVisible(), true, 'native Back leaves IME composition intact');
+      assert.equal(await page.getByRole('dialog', { name: 'البحث عن أصدقاء', exact: true }).isVisible(), true, 'native Back leaves IME composition intact');
       await field.dispatchEvent('compositionend', { bubbles: true });
     }
-    await pressBack(); await page.getByRole('dialog', { name: 'أضف صديقًا', exact: true }).waitFor({ state: 'hidden' });
+    await pressBack(); await page.getByRole('dialog', { name: 'البحث عن أصدقاء', exact: true }).waitFor({ state: 'hidden' });
     assert.equal(await page.getByRole('dialog', { name: 'الأصدقاء واللّمة', exact: true }).isVisible(), true, 'Back closes only the top dialog'); await sameRound();
     await pressBack(); await page.getByRole('dialog', { name: 'الأصدقاء واللّمة', exact: true }).waitFor({ state: 'hidden' });
     if (native) assert.equal(await page.evaluate(() => window.fixtureLegacyBack), 0, 'native layers cannot invoke Badeeha legacy Back behind an overlay');

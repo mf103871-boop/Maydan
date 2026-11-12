@@ -1,0 +1,486 @@
+{
+  "id": "shopping",
+  "name": "Style and Shopping",
+  "icon": "💄",
+  "qs": [
+    {
+      "p": 200,
+      "q": "What fabric has a dense, soft pile surface?",
+      "a": "Velvet",
+      "qid": "shopping-200-911",
+      "topic": "Fibers and fabrics",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/velvet",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "q": "What smooth fabric has a shiny face and a dull reverse?",
+      "a": "Satin",
+      "qid": "shopping-200-912",
+      "topic": "Fibers and fabrics",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/satin",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "q": "What traditional Japanese long robe has wide sleeves?",
+      "a": "Kimono",
+      "qid": "shopping-200-913",
+      "topic": "Clothing and cuts",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/kimono",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "q": "What is a small, flat evening bag carried in the hand without a handle called?",
+      "a": "Clutch",
+      "qid": "shopping-200-914",
+      "topic": "Bags and shoes",
+      "verified": true,
+      "alt": [
+        "Clutch bag"
+      ],
+      "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/clutch-bag",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "q": "You want to cover a small blemish rather than the whole face. Which product provides concentrated coverage?",
+      "a": "Concealer",
+      "qid": "shopping-200-915",
+      "topic": "Beauty and cosmetics",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://www.maybelline.com/makeup-tips/face/foundation-vs-concealer",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "q": "What gemstone-weight unit equals 200 milligrams?",
+      "a": "Carat",
+      "qid": "shopping-200-916",
+      "topic": "Jewelry and gemstones",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://4cs.gia.edu/en-us/diamond-carat-weight/",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "q": "What decorative technique attaches cut-out fabric shapes to another fabric?",
+      "a": "Appliqué",
+      "qid": "shopping-200-917",
+      "topic": "Sewing and decoration",
+      "verified": true,
+      "alt": [
+        "Applique"
+      ],
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/applique",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "q": "What French term describes high-end clothing made by hand for an individual client?",
+      "a": "Haute couture",
+      "qid": "shopping-200-918",
+      "topic": "Fashion design",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/haute-couture?topic=clothing-general-words",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 400,
+      "q": "What thin, sheer, relatively stiff fabric is often used in evening dresses?",
+      "a": "Organza",
+      "qid": "shopping-400-911",
+      "topic": "Fibers and fabrics",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://www.ahdictionary.com/word/search.html?q=organza",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "q": "What luxury fiber is collected from the soft undercoat of certain goats?",
+      "a": "Cashmere",
+      "qid": "shopping-400-912",
+      "topic": "Fibers and fabrics",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://www.agmrc.org/commodities-products/livestock-dairy-poultry/goats/goats-for-fiber",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "q": "What knitted sweater opens at the front and usually fastens with buttons?",
+      "a": "Cardigan",
+      "qid": "shopping-400-913",
+      "topic": "Clothing and cuts",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/cardigan?q=cardigans",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "q": "What very high, slender shoe heel resembles a needle?",
+      "a": "Stiletto",
+      "qid": "shopping-400-914",
+      "topic": "Bags and shoes",
+      "verified": true,
+      "alt": [
+        "Stiletto heel"
+      ],
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/stiletto",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "q": "What preparatory cosmetic is applied before foundation to help makeup last?",
+      "a": "Primer",
+      "qid": "shopping-400-915",
+      "topic": "Beauty and cosmetics",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://www.maybelline.com/makeup-tips/face/what-is-makeup-primer",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "q": "Which color corrector neutralizes redness in the skin?",
+      "a": "Green",
+      "qid": "shopping-400-916",
+      "topic": "Beauty and cosmetics",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://www.maybelline.com/makeup-tips/face/what-is-makeup-primer",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "q": "What gemstone cut has a smooth domed top and a flat base?",
+      "a": "Cabochon",
+      "qid": "shopping-400-917",
+      "topic": "Jewelry and gemstones",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://www.gia.edu/gia-news-research-value-factors-gem-cutting-styles-definitions",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "q": "What French term describes ready-to-wear clothing made in standard sizes?",
+      "a": "Prêt-à-porter",
+      "qid": "shopping-400-918",
+      "topic": "Fashion design",
+      "verified": true,
+      "alt": [
+        "Pret-a-porter"
+      ],
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/pret-a-porter",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 600,
+      "q": "What fiber comes from Angora goats?",
+      "a": "Mohair",
+      "qid": "shopping-600-911",
+      "topic": "Fibers and fabrics",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://www.agmrc.org/commodities-products/livestock-dairy-poultry/goats/goats-for-fiber",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "What wood-pulp fiber uses a solvent-recovery process and is sold by Lenzing under Tencel?",
+      "a": "Lyocell",
+      "qid": "shopping-600-912",
+      "topic": "Fibers and fabrics",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://www.lenzing.com/products/textile-fibers/tenceltm-lyocell/",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "What short flared frill is added around the waist of a blouse or dress?",
+      "a": "Peplum",
+      "qid": "shopping-600-913",
+      "topic": "Clothing and cuts",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/peplum?topic=parts-of-clothes",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "What canvas shoe traditionally has a rope sole?",
+      "a": "Espadrille",
+      "qid": "shopping-600-914",
+      "topic": "Bags and shoes",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/espadrille",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "What technique gathers fabric into small pleats secured with decorative stitches?",
+      "a": "Smocking",
+      "qid": "shopping-600-915",
+      "topic": "Sewing and decoration",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/smocking",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "What makeup technique, named after flashing lights, emphasizes features using highlighter alone?",
+      "a": "Strobing",
+      "qid": "shopping-600-916",
+      "topic": "Beauty and cosmetics",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://www.lorealparisusa.com/beauty-magazine/makeup/face-makeup/strobing-tips-for-every-skin-tone",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "What jewelry technique solders fine metal wires into lace-like patterns?",
+      "a": "Filigree",
+      "qid": "shopping-600-917",
+      "topic": "Jewelry and gemstones",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://www.gia.edu/gia-news-research/metalwork-takes-bow-techniques-enhance-gemstone-jewelry",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "What cutting technique made famous by Madeleine Vionnet slices fabric diagonally for a fluid drape?",
+      "a": "Bias cutting",
+      "qid": "shopping-600-918",
+      "topic": "Sewing and decoration",
+      "verified": true,
+      "alt": [
+        "Bias cut"
+      ],
+      "sourceUrl": "https://www.vam.ac.uk/articles/madeleine-vionnet-an-introduction",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 800,
+      "q": "What treatment exposes cotton to caustic soda under tension to increase luster and dye absorption?",
+      "a": "Mercerization",
+      "qid": "shopping-800-911",
+      "topic": "Fibers and fabrics",
+      "verified": true,
+      "alt": [
+        "Mercerisation"
+      ],
+      "sourceUrl": "https://cottonworks.com/encyclopedia-item/mercerization/",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "q": "What lightweight fabric alternates smooth and puckered stripes?",
+      "a": "Seersucker",
+      "qid": "shopping-800-912",
+      "topic": "Fibers and fabrics",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/seersucker",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "q": "What sleeves are full at the shoulder and narrow at the wrist, with a French name referring to a leg of lamb?",
+      "a": "Gigot sleeves",
+      "qid": "shopping-800-913",
+      "topic": "Clothing and cuts",
+      "verified": true,
+      "alt": [
+        "Leg-of-mutton sleeves"
+      ],
+      "sourceUrl": "https://fashionhistory.fitnyc.edu/leg-of-mutton-sleeves/",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "q": "What extremely high platform shoes were worn by Venetian women during the Renaissance?",
+      "a": "Chopines",
+      "qid": "shopping-800-914",
+      "topic": "Bags and shoes",
+      "verified": true,
+      "alt": [
+        "Chopine"
+      ],
+      "sourceUrl": "https://fashionhistory.fitnyc.edu/chopines/",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "q": "Which designer became famous for a knitted sweater with an illusionary bow?",
+      "a": "Elsa Schiaparelli",
+      "qid": "shopping-800-915",
+      "topic": "Fashion design",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/157240",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Fabric is tied or folded to keep dye off selected areas. What is the Japanese technique called?",
+      "a": "Shibori",
+      "topic": "Sewing and decoration",
+      "verified": true,
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/79595",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "shopping-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "What enameling technique places color in recesses carved into metal?",
+      "a": "Champlevé",
+      "topic": "Jewelry and gemstones",
+      "verified": true,
+      "sourceUrl": "https://www.metmuseum.org/fr/perspectives/metalworking-champleve-enameling",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Champleve"
+      ],
+      "p": 800,
+      "qid": "shopping-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "What perfume did Lanvin create in 1927 as a gift for its founder's daughter?",
+      "a": "Arpège",
+      "topic": "Beauty and cosmetics",
+      "verified": true,
+      "sourceUrl": "https://eu.lanvin.com/pages/jeanne-lanvin",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Arpege"
+      ],
+      "p": 800,
+      "qid": "shopping-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which Andean animal was central to a 1994 agreement between Loro Piana and Peru for sourcing its fiber?",
+      "a": "Vicuña",
+      "topic": "Fibers and fabrics",
+      "verified": true,
+      "sourceUrl": "https://it.loropiana.com/en/our-world/vicuna",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Vicuna"
+      ],
+      "p": 1000,
+      "qid": "shopping-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What leather alternative made by Ananas Anam uses pineapple-leaf fibers?",
+      "a": "Piñatex",
+      "topic": "Fibers and fabrics",
+      "verified": true,
+      "sourceUrl": "https://www.ananas-anam.com/faqs/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Pinatex"
+      ],
+      "p": 1000,
+      "qid": "shopping-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What French term describes a triangular fabric insert added to widen the lower part of a skirt?",
+      "a": "Godet",
+      "topic": "Clothing and cuts",
+      "verified": true,
+      "sourceUrl": "https://web.mit.edu/knoiva/www/Old/apparel/terms/construction/godet.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "shopping-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What shoemaking method connects the upper and sole through a leather welt and two separate rows of stitching?",
+      "a": "Goodyear welt",
+      "topic": "Bags and shoes",
+      "verified": true,
+      "sourceUrl": "https://www.crockettandjones.com/blogs/the-article/goodyear-welted-uncovered",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Goodyear welting"
+      ],
+      "p": 1000,
+      "qid": "shopping-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What red cosmetic pigment is extracted from cochineal insects?",
+      "a": "Carmine",
+      "topic": "Beauty and cosmetics",
+      "verified": true,
+      "sourceUrl": "https://apnews.com/article/6e6b998a78deb12e2b99a42f23358f08",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "shopping-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "A band of light moves across a gemstone like a cat's eye. What is this optical effect called?",
+      "a": "Chatoyancy",
+      "topic": "Jewelry and gemstones",
+      "verified": true,
+      "sourceUrl": "https://www.gia.edu/articles/gems-gemology-summary-guide-to-phenomenal-gems",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Chatoyance"
+      ],
+      "p": 1000,
+      "qid": "shopping-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What quilting technique adds localized stuffing to raise motifs above the fabric surface?",
+      "a": "Trapunto",
+      "topic": "Sewing and decoration",
+      "verified": true,
+      "sourceUrl": "https://boiseartmuseum.org/exhibition/common-threads-audio-guide/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "shopping-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which French designer was known for robes de style in the 1920s?",
+      "a": "Jeanne Lanvin",
+      "topic": "Fashion design",
+      "verified": true,
+      "sourceUrl": "https://www.parismuseescollections.paris.fr/fr/expositions/jeanne-lanvin",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "shopping-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

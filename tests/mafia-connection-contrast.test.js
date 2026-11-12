@@ -20,7 +20,7 @@ test('Mafia connection status keeps readable state palettes at phone, keyboard a
             return { contrast: (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05), color: s.color, background: s.backgroundColor, fontSize: s.fontSize };
           });
           assert.ok(values.contrast >= 4.5, `${status} at ${viewport.width}×${viewport.height}: ${JSON.stringify(values)}`);
-          assert.equal(values.fontSize, '11px', 'contrast repair must preserve the compact status layout');
+          assert.equal(values.fontSize, '14px', 'connection status follows the Studio minimum readable text size');
           assert.equal(values.color, status === 'connected' ? 'rgb(158, 215, 194)' : 'rgb(180, 197, 214)', 'retain the state-specific foreground identity');
         }
       }

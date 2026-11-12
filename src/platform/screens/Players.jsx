@@ -1,3 +1,4 @@
+import { tr } from '../../shared/i18n/core.js';
 import { Avatar, AvatarPicker, ClayStage } from '../../shared/brand/art.jsx';
 // دفتر اللاعبين: إضافة وحذف حتى 12 لاعبًا يُعاد استخدامهم في كل الألعاب الفردية.
 import React, { useState, useRef, useEffect } from 'react';
@@ -55,7 +56,7 @@ export function Players() {
       rosterRef.current = next;
       setRoster(next);
       setLeavingId(null);
-      toast(`حُذف ${player.name}`);
+      toast(tr("حُذف {v0}", {v0: player.name}));
       // التركيز يتبع القائمة بدل السقوط إلى body بعد زوال زر الحذف.
       requestAnimationFrame(() => document.querySelector('.players-screen .score-row button, .players-screen [data-design-id="add-player"]')?.focus());
     };
@@ -63,46 +64,46 @@ export function Players() {
     leaveTimer.current = setTimeout(commit, wait(220));
   };
   return (
-    <Screen data-design-screen="players" dir={getDirection()} className="stack players-screen" aria-label="دفتر اللاعبين">
+    <Screen data-design-screen="players" dir={getDirection()} className="stack players-screen" aria-label={tr("دفتر اللاعبين")}>
       <style>{styles}</style>
-      <TopBar data-design-id="topbar" title="دفتر اللاعبين" eyebrow={`${roster.length} من ${ROSTER_LIMIT}`} start={<IconButton data-design-id="back" label="رجوع" onClick={back}><IconBack /></IconButton>} />
-      <nav className="players-kind" aria-label="قوائم اللاعبين"><span aria-current="page">لاعبون محليون</span><Button data-design-id="friends" variant="ghost" icon={<IconUsers />} onClick={() => navigate('/friends')}>أصدقاء أونلاين</Button></nav>
+      <TopBar data-design-id="topbar" title={tr("دفتر اللاعبين")} eyebrow={tr("{v0} من {v1}", {v0: roster.length, v1: ROSTER_LIMIT})} start={<IconButton data-design-id="back" label={tr("رجوع")} onClick={back}><IconBack /></IconButton>} />
+      <nav className="players-kind" aria-label={tr("قوائم اللاعبين")}><span aria-current="page">{tr("لاعبون محليون")}</span><Button data-design-id="friends" variant="ghost" icon={<IconUsers />} onClick={() => navigate('/friends')}>{tr("أصدقاء أونلاين")}</Button></nav>
       <div data-design-id="players" className="scoreboard">
         {roster.map((p) => (
           <div key={p.id} data-design-id="player-row" className={`score-row ${leavingId === p.id ? 'is-leaving' : ''}`} style={{ '--row-color': p.color }}>
             <ClayStage className="clay-static no-contact"><Avatar player={p} className="avatar" /></ClayStage>
             <span className="name">{p.name}</span>
-            <IconButton data-design-id="player-edit" label={`تعديل ${p.name}`} onClick={() => openEditor(p)}><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" aria-hidden="true"><path d="m14 5 5 5m-14 9 1-5L16 4a2 2 0 0 1 3 0l1 1a2 2 0 0 1 0 3L10 18Z"/></svg></IconButton>
-            <IconButton data-design-id="player-remove" label={`حذف ${p.name}`} onClick={() => setRemoving(p)}><IconTrash /></IconButton>
+            <IconButton data-design-id="player-edit" label={tr("تعديل {v0}", {v0: p.name})} onClick={() => openEditor(p)}><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" aria-hidden="true"><path d="m14 5 5 5m-14 9 1-5L16 4a2 2 0 0 1 3 0l1 1a2 2 0 0 1 0 3L10 18Z"/></svg></IconButton>
+            <IconButton data-design-id="player-remove" label={tr("حذف {v0}", {v0: p.name})} onClick={() => setRemoving(p)}><IconTrash /></IconButton>
           </div>
         ))}
         {roster.length === 0 && (
           <>
             {/* الحالة الفارغة: أربع شخصيات تهبط وتطفو بتدرّج (حلقة الشاشة الوحيدة) */}
             <div className="roster-empty" aria-hidden="true">{[0, 1, 2, 3].map((i) => <ClayStage key={i} style={{ '--i': i }}><Avatar index={i} /></ClayStage>)}</div>
-            <p className="muted center">لا لاعبين بعد. أضف أول لاعب للعب على هذا الجهاز.</p>
+            <p className="muted center">{tr("لا لاعبين بعد. أضف أول لاعب للعب على هذا الجهاز.")}</p>
           </>
         )}
       </div>
-      <Button data-design-id="add-player" variant="accent" size="lg" full icon={<IconPlus />} onClick={() => openEditor()} disabled={roster.length >= ROSTER_LIMIT}>إضافة لاعب</Button>
+      <Button data-design-id="add-player" variant="accent" size="lg" full icon={<IconPlus />} onClick={() => openEditor()} disabled={roster.length >= ROSTER_LIMIT}>{tr("إضافة لاعب")}</Button>
       {editor && (
-        <Modal title={editor.id ? 'تعديل اللاعب' : 'إضافة لاعب'} onClose={() => setEditor(null)} footer={<>
-          <Button data-design-id="save" variant="accent" full onClick={save}>{editor.id ? 'حفظ التعديلات' : 'إضافة'}</Button>
-          <Button data-design-id="cancel" variant="ghost" full onClick={() => setEditor(null)}>إلغاء</Button>
+        <Modal title={editor.id ? tr("تعديل اللاعب") : tr("إضافة لاعب")} onClose={() => setEditor(null)} footer={<>
+          <Button data-design-id="save" variant="accent" full onClick={save}>{editor.id ? tr("حفظ التعديلات") : tr("إضافة")}</Button>
+          <Button data-design-id="cancel" variant="ghost" full onClick={() => setEditor(null)}>{tr("إلغاء")}</Button>
         </>}>
-          <label className="field"><span>اسم اللاعب</span>
-            <input data-design-id="name-input" className="input" value={name} maxLength={20} placeholder="مثال: سارة" onChange={(e) => { setName(e.target.value); setError(''); }} {...submitKeys} />
+          <label className="field"><span>{tr("اسم اللاعب")}</span>
+            <input data-design-id="name-input" className="input" value={name} maxLength={20} placeholder={tr("مثال: سارة")} onChange={(e) => { setName(e.target.value); setError(''); }} {...submitKeys} />
           </label>
-          <div className="field"><span>الشخصية (اختياري)</span><AvatarPicker data-design-id="avatar-picker" value={emoji} onChange={setEmoji} /></div>
+          <div className="field"><span>{tr("الشخصية (اختياري)")}</span><AvatarPicker data-design-id="avatar-picker" value={emoji} onChange={setEmoji} /></div>
           {error && <p className="setup-error" role="alert">{error}</p>}
         </Modal>
       )}
       {removing && (
-        <Modal title={`حذف ${removing.name}؟`} onClose={() => setRemoving(null)} footer={<>
-          <Button data-design-id="confirm" variant="danger" size="lg" full onClick={() => remove(removing)}>حذف</Button>
-          <Button data-design-id="cancel" variant="ghost" full onClick={() => setRemoving(null)}>إلغاء</Button>
+        <Modal title={tr("حذف {v0}؟", {v0: removing.name})} onClose={() => setRemoving(null)} footer={<>
+          <Button data-design-id="confirm" variant="danger" size="lg" full onClick={() => remove(removing)}>{tr("حذف")}</Button>
+          <Button data-design-id="cancel" variant="ghost" full onClick={() => setRemoving(null)}>{tr("إلغاء")}</Button>
         </>}>
-          <p className="muted">يُحذف من الدفتر فقط؛ نتائج الألعاب السابقة لا تتأثر.</p>
+          <p className="muted">{tr("يُحذف من الدفتر فقط؛ نتائج الألعاب السابقة لا تتأثر.")}</p>
         </Modal>
       )}
     </Screen>

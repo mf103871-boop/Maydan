@@ -12,8 +12,8 @@
 .mafia-noir .btn-primary{color:#16181e;border-color:#d9b980;background:linear-gradient(#d9bd88,#ba9762);box-shadow:0 2px 0 #6c4d29,inset 0 1px #ffefc7}
 .mafia-noir .btn-ghost{background:#141c2944;border-color:#79869a30;box-shadow:none;color:#c7cfda}
 .mafia-noir .btn:disabled,.mafia-noir button:disabled{opacity:.5;cursor:default}.mafia-noir .btn:disabled{transform:none;filter:none}
-.mafia-noir .mafia-muted{font-size:12px;line-height:1.8;color:var(--m-soft)}
-.mafia-noir .mafia-kicker{font-size:10px;letter-spacing:.04em;font-weight:800;color:var(--m-gold);line-height:1.7}
+.mafia-noir .mafia-muted{font-size:14px;line-height:1.8;color:var(--m-soft)}
+.mafia-noir .mafia-kicker{font-size:14px;letter-spacing:.04em;font-weight:800;color:var(--m-gold);line-height:1.7}
 .mafia-noir .mafia-noir-icon{object-fit:contain;display:block;flex-shrink:0;width:64px;height:64px;border-radius:16px}
 .mafia-noir .mafia-role-art{display:block;flex-shrink:0;width:70px;background-repeat:no-repeat;background-color:#171c26;border-radius:8px;box-shadow:inset 0 0 0 1px #e4cfab24}
 .mafia-noir .mafia-scene-art{position:relative;display:block;flex-shrink:0;width:100%;overflow:hidden;background-color:#151c29;container-type:size}.mafia-noir .mafia-scene-art>span{position:absolute;display:block;left:50%;top:50%;transform:translate(-50%,-50%);width:max(100%,160px);width:max(100cqw,100cqh);background-repeat:no-repeat}
@@ -22,30 +22,30 @@
 .mafia-noir .mafia-mode-picker{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .mafia-noir .mafia-mode-picker button{position:relative;display:grid;gap:7px;text-align:right;align-content:center;border:1px solid #516073;border-radius:11px;background:linear-gradient(140deg,#1e2c3a,#1a202d);padding:14px 12px;color:var(--m-ink)}
 .mafia-noir .mafia-mode-picker button[aria-pressed=true]{border-color:#d6b67d;background:linear-gradient(140deg,#37414a,#2b2b32);box-shadow:inset 0 0 0 1px #d6b67d40}
-.mafia-noir .mafia-mode-picker button[aria-pressed=true]:after{content:'✓';position:absolute;left:8px;top:6px;color:var(--m-gold);font-size:12px}
-.mafia-noir .mafia-mode-picker strong{font-size:14px}.mafia-noir .mafia-mode-picker small{font-size:11px;color:#b5becc}
+.mafia-noir .mafia-mode-picker button[aria-pressed=true]:after{content:'✓';position:absolute;left:8px;top:6px;color:var(--m-gold);font-size:14px}
+.mafia-noir .mafia-mode-picker strong{font-size:14px}.mafia-noir .mafia-mode-picker small{font-size:14px;color:#b5becc}
 .mafia-noir .mafia-settings-row{display:flex;gap:10px;flex-wrap:wrap}.mafia-noir .mafia-settings-row>*{flex:1 1 135px;min-width:0}
-.mafia-noir.mafia-settings label,.mafia-noir.mafia-directory label,.mafia-noir .mafia-lobby-settings label{display:grid;gap:7px;font-size:13px;font-weight:700}.mafia-noir.mafia-settings select,.mafia-noir.mafia-directory select,.mafia-noir .mafia-lobby-settings select{width:100%}
+.mafia-noir.mafia-settings label,.mafia-noir.mafia-directory label,.mafia-noir .mafia-lobby-settings label{display:grid;gap:7px;font-size:14px;font-weight:700}.mafia-noir.mafia-settings select,.mafia-noir.mafia-directory select,.mafia-noir .mafia-lobby-settings select{width:100%}
 .mafia-noir.mafia-directory{gap:13px;margin-block:10px}
 .mafia-noir .mafia-directory-heading{display:flex;justify-content:space-between;align-items:center;gap:14px}
-.mafia-noir .mafia-directory-heading p{font-size:12px;color:var(--m-soft);line-height:1.8;margin-top:4px}
+.mafia-noir .mafia-directory-heading p{font-size:14px;color:var(--m-soft);line-height:1.8;margin-top:4px}
 .mafia-noir .mafia-directory-heading .mafia-noir-icon{width:74px;height:74px;filter:drop-shadow(0 8px 14px #0008)}
 .mafia-noir .mafia-directory-filters{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
 .mafia-noir .mafia-directory-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.mafia-noir .mafia-directory-actions .btn{font-size:13px;padding-inline:10px}
+.mafia-noir .mafia-directory-actions .btn{font-size:14px;padding-inline:10px}
 .mafia-noir .mafia-room-list{display:grid;gap:10px}
 .mafia-noir .mafia-directory-room{display:grid;grid-template-columns:46px minmax(0,1fr) auto;align-items:center;gap:11px;padding:14px 12px;background:linear-gradient(125deg,#1d2936,#151d29);border:1px solid #67788b45;border-radius:14px;box-shadow:0 4px 16px #0002}
 .mafia-noir .mafia-room-medallion{width:46px;height:57px;overflow:hidden;border:1px solid #bda87c55;border-radius:10px;background:#0b1018}.mafia-noir .mafia-room-medallion .mafia-noir-icon{width:56px;height:56px;margin-inline:-5px}
-.mafia-noir .mafia-room-tag{font-size:10px;color:var(--m-gold)}.mafia-noir .mafia-directory-room-copy{min-width:0}.mafia-noir .mafia-directory-room h3{font-size:15px;overflow-wrap:anywhere}
-.mafia-noir .mafia-directory-room p{font-size:11px;color:#b6bfce;margin-top:3px}.mafia-noir .mafia-directory-room p span{color:#88bca9}
-.mafia-noir .mafia-directory-room .btn{padding-inline:13px;align-self:center;font-size:13px}
+.mafia-noir .mafia-room-tag{font-size:14px;color:var(--m-gold)}.mafia-noir .mafia-directory-room-copy{min-width:0}.mafia-noir .mafia-directory-room h3{font-size:15px;overflow-wrap:anywhere}
+.mafia-noir .mafia-directory-room p{font-size:14px;color:#b6bfce;margin-top:3px}.mafia-noir .mafia-directory-room p span{color:#88bca9}
+.mafia-noir .mafia-directory-room .btn{padding-inline:13px;align-self:center;font-size:14px}
 .mafia-noir .mafia-room-capacity{display:flex;gap:3px;margin-top:8px}.mafia-noir .mafia-room-capacity i{display:block;width:10px;height:4px;background:#65728642;border-radius:2px}.mafia-noir .mafia-room-capacity .occupied{background:#c3aa7b}
-.mafia-noir .mafia-empty{display:grid;gap:12px;overflow:hidden;border:1px solid #7180923a;border-radius:14px;background:#141d29;padding:15px;text-align:center;font-size:13px;line-height:1.8;color:var(--m-soft)}
+.mafia-noir .mafia-empty{display:grid;gap:12px;overflow:hidden;border:1px solid #7180923a;border-radius:14px;background:#141d29;padding:15px;text-align:center;font-size:14px;line-height:1.8;color:var(--m-soft)}
 .mafia-noir .mafia-empty:has(.mafia-scene-art){padding:0}.mafia-noir .mafia-empty .mafia-scene-art{height:135px;aspect-ratio:auto!important;mask-image:linear-gradient(#000 60%,transparent)}.mafia-noir .mafia-empty>div{padding:0 20px 20px}.mafia-noir .mafia-empty h3{color:var(--m-ink);margin-bottom:6px}
 .mafia-noir.mafia-lobby-info{padding:0;gap:12px;border:1px solid var(--m-border);border-radius:16px;background:#131b27;overflow:hidden}
 .mafia-noir .mafia-lobby-art{position:relative;display:flex;align-items:center;gap:14px;padding:32px 20px 22px;background:linear-gradient(90deg,#0d14279a,#101723ee),var(--mafia-environment) center 48%/cover}
-.mafia-noir .mafia-lobby-art .mafia-noir-icon{width:80px;height:80px}.mafia-noir .mafia-lobby-art h2{font-size:24px}.mafia-noir .mafia-lobby-art p{font-size:12px;color:#c5c8d0}
-.mafia-noir .mafia-lobby-brief{display:grid;gap:12px;padding:0 16px;font-size:13px;line-height:1.8}.mafia-noir .mafia-composition{display:flex;gap:6px;flex-wrap:wrap}.mafia-noir .mafia-composition span{padding:4px 9px;background:#56627422;border:1px solid #69768a3b;border-radius:6px;color:#d8c29c;font-size:11px}
+.mafia-noir .mafia-lobby-art .mafia-noir-icon{width:80px;height:80px}.mafia-noir .mafia-lobby-art h2{font-size:24px}.mafia-noir .mafia-lobby-art p{font-size:14px;color:#c5c8d0}
+.mafia-noir .mafia-lobby-brief{display:grid;gap:12px;padding:0 16px;font-size:14px;line-height:1.8}.mafia-noir .mafia-composition{display:flex;gap:6px;flex-wrap:wrap}.mafia-noir .mafia-composition span{padding:4px 9px;background:#56627422;border:1px solid #69768a3b;border-radius:6px;color:#d8c29c;font-size:14px}
 .mafia-noir.mafia-lobby-info>.btn{margin:0 12px 12px;width:calc(100% - 24px)}.mafia-noir .mafia-lobby-settings{display:grid;gap:12px;margin:0 12px}
 .mafia-noir.mafia-online-shell{animation:none!important;transform:none}
 .mafia-noir.mafia-online-shell>.online-room-chrome{animation:none}
@@ -53,42 +53,42 @@
 .mafia-noir.mafia-shell{position:relative;display:grid;gap:10px;min-width:0;border:1px solid #6a76873b;border-radius:15px;padding:12px;background:radial-gradient(ellipse at 90% 0%,#354b602b,transparent 45%),var(--m-bg);isolation:isolate;box-shadow:0 12px 40px #0003}
 .mafia-noir.mafia-shell.has-player-rail{padding-bottom:126px}
 .mafia-noir .mafia-heading{position:sticky;top:calc(env(safe-area-inset-top,0px) + 4px);z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:65px;padding:7px 11px;background:linear-gradient(100deg,#1c2532,#141c28);border:1px solid #71829542;border-radius:11px;box-shadow:0 4px 15px #0005}
-.mafia-noir .mafia-heading h1{font-size:22px;line-height:1.35;color:#f3eee4}.mafia-noir .mafia-heading p{font-size:10px;color:var(--m-soft);margin-top:1px}.mafia-noir .mafia-heading .mafia-kicker{font-size:9px}
+.mafia-noir .mafia-heading h1{font-size:22px;line-height:1.35;color:#f3eee4}.mafia-noir .mafia-heading p{font-size:14px;color:var(--m-soft);margin-top:1px}.mafia-noir .mafia-heading .mafia-kicker{font-size:14px}
 .mafia-noir .mafia-clock{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:0 0 56px;min-height:52px;border:1px solid #b69b6c88;border-radius:8px;background:linear-gradient(#2d3540,#222932);font-variant-numeric:tabular-nums;box-shadow:inset 0 1px #eedbb729}
-.mafia-noir .mafia-clock b{font-size:25px;font-weight:800;line-height:1.05;color:#eed4a2}.mafia-noir .mafia-clock small{font-size:9px;color:#b9c1cc}.mafia-noir .mafia-clock.urgent{border-color:#e3a59a;background:#482b2b}.mafia-noir .mafia-clock.urgent b{color:#ffc7b8}
+.mafia-noir .mafia-clock b{font-size:25px;font-weight:800;line-height:1.05;color:#eed4a2}.mafia-noir .mafia-clock small{font-size:14px;color:#b9c1cc}.mafia-noir .mafia-clock.urgent{border-color:#e3a59a;background:#482b2b}.mafia-noir .mafia-clock.urgent b{color:#ffc7b8}
 .mafia-noir .mafia-voice{display:grid;gap:8px;padding:10px;border:1px solid #65788b3b;border-radius:10px;background:#17222e}
-.mafia-noir .mafia-voice b{display:block;font-size:12px;line-height:1.5}.mafia-noir .mafia-voice b:before{content:'';display:inline-block;width:6px;height:6px;margin-left:7px;vertical-align:middle;border-radius:50%;background:#8fc2af;box-shadow:0 0 8px #8fc2af50}
-.mafia-noir .mafia-voice small{display:block;color:var(--m-soft);font-size:10px;line-height:1.7;margin-top:2px}.mafia-noir .mafia-voice>p{font-size:12px;color:#f1b7a2;line-height:1.7}
-.mafia-noir .mafia-voice-actions{display:flex;flex-wrap:wrap;gap:6px;align-items:stretch}.mafia-noir .mafia-voice-actions>.btn{flex:1 1 110px;min-height:44px;padding:7px;font-size:12px}.mafia-noir .mafia-voice-actions>label{flex:1 1 80px;min-width:0;max-width:120px;display:flex}.mafia-noir .mafia-voice-actions select{width:100%;padding:6px;font-size:16px;border-color:#526173;background:#101a26}
+.mafia-noir .mafia-voice b{display:block;font-size:14px;line-height:1.5}.mafia-noir .mafia-voice b:before{content:'';display:inline-block;width:6px;height:6px;margin-left:7px;vertical-align:middle;border-radius:50%;background:#8fc2af;box-shadow:0 0 8px #8fc2af50}
+.mafia-noir .mafia-voice small{display:block;color:var(--m-soft);font-size:14px;line-height:1.7;margin-top:2px}.mafia-noir .mafia-voice>p{font-size:14px;color:#f1b7a2;line-height:1.7}
+.mafia-noir .mafia-voice-actions{display:flex;flex-wrap:wrap;gap:6px;align-items:stretch}.mafia-noir .mafia-voice-actions>.btn{flex:1 1 110px;min-height:44px;padding:7px;font-size:14px}.mafia-noir .mafia-voice-actions>label{flex:1 1 80px;min-width:0;max-width:120px;display:flex}.mafia-noir .mafia-voice-actions select{width:100%;padding:6px;font-size:16px;border-color:#526173;background:#101a26}
 .mafia-noir .mafia-secret{border:1px solid #c4aa764a;border-radius:10px;background:linear-gradient(110deg,#2b2d30,#1d2532)}
-.mafia-noir .mafia-secret-top{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:0 8px;font-size:12px;color:#d5c4a7}.mafia-noir .mafia-secret-top .btn{border:none;font-size:12px;background:transparent;color:#ecd4a7;padding-inline:8px}.mafia-noir .mafia-secret-seal{font-size:13px;margin-left:7px;color:#c9a566}
+.mafia-noir .mafia-secret-top{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:0 8px;font-size:14px;color:#d5c4a7}.mafia-noir .mafia-secret-top .btn{border:none;font-size:14px;background:transparent;color:#ecd4a7;padding-inline:8px}.mafia-noir .mafia-secret-seal{font-size:14px;margin-left:7px;color:#c9a566}
 .mafia-noir .mafia-tabs{display:flex;border-bottom:1px solid #68758b44;padding:0 2px;gap:4px;background:#0c131e;min-width:0}
-.mafia-noir .mafia-tabs button{position:relative;flex:1;border:0;min-width:44px;background:transparent;border-radius:6px 6px 0 0;color:var(--m-soft);font-weight:700;font-size:13px;padding:9px 4px}
+.mafia-noir .mafia-tabs button{position:relative;flex:1;border:0;min-width:44px;background:transparent;border-radius:6px 6px 0 0;color:var(--m-soft);font-weight:700;font-size:14px;padding:9px 4px}
 .mafia-noir .mafia-tabs button[aria-selected=true]{color:#e5ca96;background:linear-gradient(#c9a56b0d,#c9a56b1d)}.mafia-noir .mafia-tabs button[aria-selected=true]:after{content:'';position:absolute;bottom:-1px;right:15%;left:15%;height:2px;background:#ddba7b}
 .mafia-noir .mafia-council-columns{display:grid;gap:10px;min-width:0}.mafia-noir .mafia-ability{display:grid;gap:9px;padding:13px;border:1px solid #9b885c6e;border-radius:11px;background:linear-gradient(135deg,#292b31,#1a2230)}
-.mafia-noir .mafia-ability h3{font-size:16px;color:#ead1a2}.mafia-noir .mafia-ability p{font-size:12px;line-height:1.7;overflow-wrap:anywhere}
-.mafia-noir .mafia-target-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.mafia-noir .mafia-target-grid button{min-width:0;min-height:44px;padding:7px 5px;border:1px solid #63738b88;border-radius:8px;background:#242f3e;color:#e3e8ed;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.mafia-noir .mafia-target-grid button span{font-size:10px;color:#c1ac85;margin-left:4px}.mafia-noir .mafia-target-grid button[aria-pressed=true]{background:#64583c;border-color:#e3c38e;color:#fff4d4;box-shadow:inset 0 0 0 1px #e3c38e55}
+.mafia-noir .mafia-ability h3{font-size:16px;color:#ead1a2}.mafia-noir .mafia-ability p{font-size:14px;line-height:1.7;overflow-wrap:anywhere}
+.mafia-noir .mafia-target-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.mafia-noir .mafia-target-grid button{min-width:0;min-height:44px;padding:7px 5px;border:1px solid #63738b88;border-radius:8px;background:#242f3e;color:#e3e8ed;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mafia-noir .mafia-target-grid button span{font-size:14px;color:#c1ac85;margin-left:4px}.mafia-noir .mafia-target-grid button[aria-pressed=true]{background:#64583c;border-color:#e3c38e;color:#fff4d4;box-shadow:inset 0 0 0 1px #e3c38e55}
 .mafia-noir .mafia-ability>[data-design-id=ability-submit]{background:linear-gradient(#bca271,#a08759);color:#10151d;border-color:#ceb584;font-weight:800;box-shadow:0 2px 0 #6b5537}
-.mafia-noir .mafia-action-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px}.mafia-noir .mafia-action-tabs .btn{font-size:12px;padding:7px 4px}.mafia-noir .mafia-action-tabs .btn[aria-pressed=true]{border-color:#c9ad77;background:#605238}
+.mafia-noir .mafia-action-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px}.mafia-noir .mafia-action-tabs .btn{font-size:14px;padding:7px 4px}.mafia-noir .mafia-action-tabs .btn[aria-pressed=true]{border-color:#c9ad77;background:#605238}
 .mafia-noir .mafia-kill-ballot{display:grid;gap:9px}
 .mafia-noir .mafia-chat{min-width:0;display:flex;flex-direction:column;overflow:hidden;border:1px solid #63738a45;border-radius:12px;background:#121a26}
-.mafia-noir .mafia-panel-heading{display:flex;align-items:center;gap:8px;min-height:44px;padding:8px 11px;border-bottom:1px solid #5d6a7b35;background:#1a2532}.mafia-noir .mafia-panel-heading h3{font-size:13px}.mafia-noir .mafia-panel-heading .btn{margin-inline-start:auto;font-size:11px;padding:7px}
-.mafia-noir .mafia-channel-tag{font-size:9px;color:#9bc8b9;border:1px solid #75a59366;border-radius:4px;padding:2px 5px;background:#213c3433}.mafia-noir .channel-team .mafia-channel-tag{color:#dfb1ac;border-color:#b27a7a77;background:#4c282b44}
+.mafia-noir .mafia-panel-heading{display:flex;align-items:center;gap:8px;min-height:44px;padding:8px 11px;border-bottom:1px solid #5d6a7b35;background:#1a2532}.mafia-noir .mafia-panel-heading h3{font-size:14px}.mafia-noir .mafia-panel-heading .btn{margin-inline-start:auto;font-size:14px;padding:7px}
+.mafia-noir .mafia-channel-tag{font-size:14px;color:#9bc8b9;border:1px solid #75a59366;border-radius:4px;padding:2px 5px;background:#213c3433}.mafia-noir .channel-team .mafia-channel-tag{color:#dfb1ac;border-color:#b27a7a77;background:#4c282b44}
 .mafia-noir .mafia-chat-messages{min-height:230px;max-height:min(49dvh,460px);overflow:auto;overscroll-behavior:contain;padding:10px;scrollbar-width:thin;scrollbar-color:#5a6678 #131b27;scroll-padding:10px}
 .mafia-noir .mafia-narrative{display:grid;grid-template-columns:106px minmax(0,1fr);align-items:stretch;overflow:hidden;border:1px solid #7b8b9e3b;border-radius:9px;background:#253342;margin-bottom:14px}
 .mafia-noir .mafia-narrative .mafia-scene-art{align-self:stretch;height:100%;min-height:130px;aspect-ratio:auto!important;mask-image:linear-gradient(to left,#000 50%,#000b)}
-.mafia-noir .mafia-narrative>div{position:relative;padding:12px 10px 12px 13px;background:linear-gradient(to left,#253342b0,#253342)}.mafia-noir .mafia-narrative h3{font-size:15px;color:#f2dcc0;margin-top:4px}.mafia-noir .mafia-narrative p{font-size:11px;line-height:1.9;color:#bfcbd7;margin-top:6px}.mafia-noir .mafia-narrative.is-compact{grid-template-columns:74px minmax(0,1fr)}.mafia-noir .mafia-narrative.is-compact .mafia-scene-art{min-height:102px}.mafia-noir .mafia-narrative.is-compact>div{padding:8px}.mafia-noir .mafia-narrative.is-compact p{font-size:10px;margin-top:3px}
-.mafia-noir .mafia-event-card{display:flex;gap:8px;padding:10px;margin-block:8px;border:1px solid #9c866433;border-radius:8px;background:linear-gradient(100deg,#433a2a33,#34312b44);color:#d9c6a5}.mafia-noir .mafia-event-card>span{font-size:10px;line-height:2}.mafia-noir .mafia-event-card small{font-size:9px;color:#bba77f}.mafia-noir .mafia-event-card p{font-size:12px;line-height:1.8;overflow-wrap:anywhere}
-.mafia-noir .mafia-message{display:flex;gap:8px;align-items:flex-start;margin-block:10px;max-width:95%}.mafia-noir .mafia-message>div{padding:8px 11px;background:#273445;border:1px solid #6e7a8d28;border-radius:10px 2px 10px 10px;min-width:0}.mafia-noir .mafia-message b{font-size:10px;color:#d8bf92}.mafia-noir .mafia-message p{font-size:13px;line-height:1.8;overflow-wrap:anywhere;white-space:pre-wrap}.mafia-noir .mafia-message-seat{display:grid;place-items:center;flex:0 0 26px;min-height:30px;border-radius:7px;background:#151e2b;border:1px solid #63748a77;color:#c3cdd9;font-size:11px}.mafia-noir .mafia-message.is-own{margin-right:24px;max-width:calc(100% - 24px)}.mafia-noir .mafia-message.is-own>div{background:#253d3e;border-color:#75a49b33}.mafia-noir .mafia-message.is-own b{color:#acd2c4}
-.mafia-noir .mafia-chat-empty{text-align:center;padding:20px 12px;font-size:12px;color:#97a4b7;line-height:1.8}.mafia-noir .mafia-chat form{display:flex;gap:7px;padding:9px;border-top:1px solid #63738a40;background:#16212e}.mafia-noir .mafia-chat form input{width:100%;flex:1;font-size:16px;padding:10px}.mafia-noir .mafia-chat form .btn{flex:0 0 58px;padding-inline:7px;background:#2e494b;border-color:#6c928c;color:#e4ebe5}.mafia-noir .mafia-chat-locked{font-size:11px;color:#a4adbd;padding:12px;border-top:1px solid #63738a33;text-align:center;line-height:1.7}
-.mafia-noir .mafia-reports,.mafia-noir .mafia-notebook{padding:16px;border:1px solid #61718a4a;border-radius:12px;background:#16202d;min-width:0}.mafia-noir .mafia-reports>p,.mafia-noir .mafia-notebook p{font-size:12px;line-height:1.8;margin-top:8px}.mafia-noir .mafia-reports article{padding:12px;border-inline-start:2px solid #bda270;background:#a58f6820;margin-top:12px;border-radius:5px}.mafia-noir .mafia-reports article b{font-size:11px;color:#d5b889}.mafia-noir .mafia-reports article p{font-size:13px;line-height:1.8;margin-top:5px}.mafia-noir .mafia-notebook label{display:block;font-size:12px;margin-top:16px}.mafia-noir .mafia-notebook textarea{display:block;width:100%;min-height:190px;margin-top:7px;resize:vertical}
-.mafia-noir .mafia-notice{font-size:12px;line-height:1.8;padding:12px;border:1px solid #a9916166;border-radius:9px;background:#41352250;color:#decdaa}
+.mafia-noir .mafia-narrative>div{position:relative;padding:12px 10px 12px 13px;background:linear-gradient(to left,#253342b0,#253342)}.mafia-noir .mafia-narrative h3{font-size:15px;color:#f2dcc0;margin-top:4px}.mafia-noir .mafia-narrative p{font-size:14px;line-height:1.9;color:#bfcbd7;margin-top:6px}.mafia-noir .mafia-narrative.is-compact{grid-template-columns:74px minmax(0,1fr)}.mafia-noir .mafia-narrative.is-compact .mafia-scene-art{min-height:102px}.mafia-noir .mafia-narrative.is-compact>div{padding:8px}.mafia-noir .mafia-narrative.is-compact p{font-size:14px;margin-top:3px}
+.mafia-noir .mafia-event-card{display:flex;gap:8px;padding:10px;margin-block:8px;border:1px solid #9c866433;border-radius:8px;background:linear-gradient(100deg,#433a2a33,#34312b44);color:#d9c6a5}.mafia-noir .mafia-event-card>span{font-size:14px;line-height:2}.mafia-noir .mafia-event-card small{font-size:14px;color:#bba77f}.mafia-noir .mafia-event-card p{font-size:14px;line-height:1.8;overflow-wrap:anywhere}
+.mafia-noir .mafia-message{display:flex;gap:8px;align-items:flex-start;margin-block:10px;max-width:95%}.mafia-noir .mafia-message>div{padding:8px 11px;background:#273445;border:1px solid #6e7a8d28;border-radius:10px 2px 10px 10px;min-width:0}.mafia-noir .mafia-message b{font-size:14px;color:#d8bf92}.mafia-noir .mafia-message p{font-size:14px;line-height:1.8;overflow-wrap:anywhere;white-space:pre-wrap}.mafia-noir .mafia-message-seat{display:grid;place-items:center;flex:0 0 26px;min-height:30px;border-radius:7px;background:#151e2b;border:1px solid #63748a77;color:#c3cdd9;font-size:14px}.mafia-noir .mafia-message.is-own{margin-right:24px;max-width:calc(100% - 24px)}.mafia-noir .mafia-message.is-own>div{background:#253d3e;border-color:#75a49b33}.mafia-noir .mafia-message.is-own b{color:#acd2c4}
+.mafia-noir .mafia-chat-empty{text-align:center;padding:20px 12px;font-size:14px;color:#97a4b7;line-height:1.8}.mafia-noir .mafia-chat form{display:flex;gap:7px;padding:9px;border-top:1px solid #63738a40;background:#16212e}.mafia-noir .mafia-chat form input{width:100%;flex:1;font-size:16px;padding:10px}.mafia-noir .mafia-chat form .btn{flex:0 0 58px;padding-inline:7px;background:#2e494b;border-color:#6c928c;color:#e4ebe5}.mafia-noir .mafia-chat-locked{font-size:14px;color:#a4adbd;padding:12px;border-top:1px solid #63738a33;text-align:center;line-height:1.7}
+.mafia-noir .mafia-reports,.mafia-noir .mafia-notebook{padding:16px;border:1px solid #61718a4a;border-radius:12px;background:#16202d;min-width:0}.mafia-noir .mafia-reports>p,.mafia-noir .mafia-notebook p{font-size:14px;line-height:1.8;margin-top:8px}.mafia-noir .mafia-reports article{padding:12px;border-inline-start:2px solid #bda270;background:#a58f6820;margin-top:12px;border-radius:5px}.mafia-noir .mafia-reports article b{font-size:14px;color:#d5b889}.mafia-noir .mafia-reports article p{font-size:14px;line-height:1.8;margin-top:5px}.mafia-noir .mafia-notebook label{display:block;font-size:14px;margin-top:16px}.mafia-noir .mafia-notebook textarea{display:block;width:100%;min-height:190px;margin-top:7px;resize:vertical}
+.mafia-noir .mafia-notice{font-size:14px;line-height:1.8;padding:12px;border:1px solid #a9916166;border-radius:9px;background:#41352250;color:#decdaa}
 .mafia-noir .mafia-player-rail{position:fixed;z-index:25;bottom:0;left:50%;transform:translateX(-50%);width:min(calc(100% - 20px),950px);padding:7px 8px calc(8px + env(safe-area-inset-bottom,0px));border:1px solid #7d8a9b66;border-bottom:0;border-radius:13px 13px 0 0;background:linear-gradient(#202b39f5,#111a27fa);box-shadow:0 -8px 25px #0005;backdrop-filter:blur(14px)}
-.mafia-noir .mafia-rail-heading{display:flex;justify-content:space-between;gap:10px;padding:0 4px 6px;font-size:9px;color:#d3c1a1}.mafia-noir .mafia-rail-heading>span+span{color:#98a5b7}
+.mafia-noir .mafia-rail-heading{display:flex;justify-content:space-between;gap:10px;padding:0 4px 6px;font-size:14px;color:#d3c1a1}.mafia-noir .mafia-rail-heading>span+span{color:#98a5b7}
 .mafia-noir .mafia-seats{display:flex;gap:7px;overflow-x:auto;overflow-y:hidden;max-width:100%;scrollbar-width:none;overscroll-behavior-x:contain;scroll-snap-type:x proximity;padding:2px 2px 4px}.mafia-noir .mafia-seats::-webkit-scrollbar{display:none}
 .mafia-noir .mafia-seat{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;flex:0 0 64px;min-height:76px;min-width:44px;padding:5px 4px 4px;border:1px solid #73829b60;border-radius:9px;background:linear-gradient(#2d3b4e,#202a39);color:#e4e5e7;scroll-snap-align:start;opacity:1!important;box-shadow:0 2px 0 #060d18}
-.mafia-noir .mafia-seat .avatar,.mafia-noir .mafia-seat .clay-avatar,.mafia-noir .mafia-seat .player-avatar{width:34px!important;height:34px!important}.mafia-noir .mafia-seat b{font-size:10px;width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.4}.mafia-noir .mafia-seat small{font-size:8px;color:#a5b4c5;line-height:1.4}.mafia-noir .mafia-seat-number{position:absolute;right:4px;top:2px;font-size:9px;color:#dfbd83;text-shadow:0 1px #000}
+.mafia-noir .mafia-seat .avatar,.mafia-noir .mafia-seat .clay-avatar,.mafia-noir .mafia-seat .player-avatar{width:34px!important;height:34px!important}.mafia-noir .mafia-seat b{font-size:14px;width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.4}.mafia-noir .mafia-seat small{font-size:14px;color:#a5b4c5;line-height:1.4}.mafia-noir .mafia-seat-number{position:absolute;right:4px;top:2px;font-size:14px;color:#dfbd83;text-shadow:0 1px #000}
 .mafia-noir .mafia-seat.eliminated{background:#222733;border-style:dashed}.mafia-noir .mafia-seat.eliminated .avatar,.mafia-noir .mafia-seat.eliminated .clay-avatar,.mafia-noir .mafia-seat.eliminated .player-avatar{filter:grayscale(1);opacity:.45}.mafia-noir .mafia-seat.speaking{border-color:#91d8b8;box-shadow:0 0 0 1px #91d8b8,0 0 10px #91d8b833}.mafia-noir .mafia-seat.speaking small{color:#a6e0c2}
 .mafia-noir.mafia-shell:not(.mafia-compact-game):has(input:focus,textarea:focus) .mafia-player-rail{display:none}
 /* Private illustrations are in an actual modal, never underneath a CSS cover. */
@@ -96,21 +96,21 @@
 .mafia-noir.modal .modal-head{padding:14px 16px;border-bottom:1px solid #6d7d913d;background:linear-gradient(115deg,#26303d,#141d2b)}.mafia-noir.modal .modal-head h2{font-size:18px;color:#e7d7b8}.mafia-noir.modal .modal-body{padding:16px}.mafia-noir.modal .modal-foot{padding:12px 16px;background:#0f1825;border-top:1px solid #61718a44;display:grid;gap:8px}
 .mafia-noir.mafia-role-dialog{width:min(100% - 24px,390px)}.mafia-noir.mafia-role-dialog .modal-body{padding:0}.mafia-noir .mafia-secret-content{display:block;background:linear-gradient(#172231,#17202b)}.mafia-noir .mafia-role-portrait{position:relative;overflow:hidden;display:grid;place-items:center;padding:10px 10px 0;background:radial-gradient(ellipse at 50% 35%,#6a674b66,#121d2d 75%)}
 .mafia-noir .mafia-role-portrait .mafia-role-art{width:min(76%,240px);border:1px solid #c6b08266;border-radius:5px 5px 0 0;box-shadow:0 0 34px #c1b17a20}
-.mafia-noir .mafia-role-portrait>span:last-child{position:absolute;bottom:10px;padding:3px 12px;border:1px solid #d2b87888;border-radius:3px;background:#131c29df;color:#ecd7ad;font-size:10px;letter-spacing:.07em}
-.mafia-noir .mafia-role-description{position:relative;display:grid;gap:8px;padding:18px 22px 21px;text-align:center;border-top:1px solid #c1a97666}.mafia-noir .mafia-role-description h2{font-size:29px;color:#f5e2b9;line-height:1.4}.mafia-noir .mafia-role-description p{font-size:14px;line-height:1.8}.mafia-noir .mafia-role-description small{font-size:10px;line-height:1.8;color:#a4afc0}.mafia-noir .faction-mafia .mafia-role-description{background:linear-gradient(#3a262d,#1b202b)}.mafia-noir .faction-shadow .mafia-role-description{background:linear-gradient(#302d49,#1b202b)}
-.mafia-noir .mafia-guide{display:grid;gap:14px}.mafia-noir .mafia-guide p{font-size:13px;line-height:1.9}.mafia-noir .mafia-guide>.row-between{display:flex;justify-content:space-between;align-items:center;gap:10px}.mafia-noir .mafia-role-catalog{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.mafia-noir .mafia-role-tile{display:grid;gap:9px;align-content:start;padding:10px;border:1px solid #7d8d9e49;border-radius:9px;background:linear-gradient(145deg,#243240,#171f2e);min-width:0}.mafia-noir .mafia-role-tile .mafia-role-art{width:100%;border-radius:6px}.mafia-noir .mafia-role-tile h4{font-size:15px;color:#ead2a3}.mafia-noir .mafia-role-tile small{font-size:10px;color:#9fc5bb}.mafia-noir .mafia-role-tile p{font-size:11px;line-height:1.9;margin-top:6px}.mafia-noir .mafia-role-tile.faction-mafia small{color:#e1b2ac}.mafia-noir .mafia-role-tile.faction-shadow small{color:#c8b9ec}
-.mafia-noir .mafia-role-disclosure{min-width:0;text-align:start;border-top:1px solid #83919f45;padding-top:9px}.mafia-noir .mafia-role-disclosure>summary{cursor:pointer;min-height:40px;align-content:center;font-size:12px;font-weight:700;color:#ead2a3;line-height:1.8;border-radius:4px}.mafia-noir .mafia-role-disclosure>summary:focus-visible{outline:2px solid #ead2a3;outline-offset:3px}.mafia-noir .mafia-role-disclosure[open]>summary{margin-bottom:12px}.mafia-noir .mafia-role-tile:has(>.mafia-role-disclosure[open]){grid-column:1/-1}.mafia-noir .mafia-role-tile:has(>.mafia-role-disclosure[open])>.mafia-role-art{width:min(100%,150px);justify-self:center}
-.mafia-noir .mafia-role-details{display:grid;gap:12px;text-align:start;font-size:12px;line-height:1.9;overflow-wrap:anywhere;color:#d6dce4}.mafia-noir .mafia-role-details dl{display:grid;gap:10px;margin:0}.mafia-noir .mafia-role-details dl>div{display:grid;gap:2px}.mafia-noir .mafia-role-details dt,.mafia-noir .mafia-role-details h5{font-size:12px;color:#ead2a3;font-weight:700;margin:0}.mafia-noir .mafia-role-details dd{margin:0}.mafia-noir .mafia-role-details ul{margin:3px 0 0;padding-inline-start:19px}.mafia-noir .mafia-role-details li+li{margin-top:4px}.mafia-noir .mafia-role-details .mafia-role-balance{padding:7px 10px;border:1px solid #bea57a70;border-radius:6px;background:#e8cf9220}.mafia-noir .mafia-role-details .mafia-role-example{margin:0;padding:10px;border-inline-start:3px solid #b6a07b;background:#0e172766;font-size:12px;line-height:1.9}
+.mafia-noir .mafia-role-portrait>span:last-child{position:absolute;bottom:10px;padding:3px 12px;border:1px solid #d2b87888;border-radius:3px;background:#131c29df;color:#ecd7ad;font-size:14px;letter-spacing:.07em}
+.mafia-noir .mafia-role-description{position:relative;display:grid;gap:8px;padding:18px 22px 21px;text-align:center;border-top:1px solid #c1a97666}.mafia-noir .mafia-role-description h2{font-size:29px;color:#f5e2b9;line-height:1.4}.mafia-noir .mafia-role-description p{font-size:14px;line-height:1.8}.mafia-noir .mafia-role-description small{font-size:14px;line-height:1.8;color:#a4afc0}.mafia-noir .faction-mafia .mafia-role-description{background:linear-gradient(#3a262d,#1b202b)}.mafia-noir .faction-shadow .mafia-role-description{background:linear-gradient(#302d49,#1b202b)}
+.mafia-noir .mafia-guide{display:grid;gap:14px}.mafia-noir .mafia-guide p{font-size:14px;line-height:1.9}.mafia-noir .mafia-guide>.row-between{display:flex;justify-content:space-between;align-items:center;gap:10px}.mafia-noir .mafia-role-catalog{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.mafia-noir .mafia-role-tile{display:grid;gap:9px;align-content:start;padding:10px;border:1px solid #7d8d9e49;border-radius:9px;background:linear-gradient(145deg,#243240,#171f2e);min-width:0}.mafia-noir .mafia-role-tile .mafia-role-art{width:100%;border-radius:6px}.mafia-noir .mafia-role-tile h4{font-size:15px;color:#ead2a3}.mafia-noir .mafia-role-tile small{font-size:14px;color:#9fc5bb}.mafia-noir .mafia-role-tile p{font-size:14px;line-height:1.9;margin-top:6px}.mafia-noir .mafia-role-tile.faction-mafia small{color:#e1b2ac}.mafia-noir .mafia-role-tile.faction-shadow small{color:#c8b9ec}
+.mafia-noir .mafia-role-disclosure{min-width:0;text-align:start;border-top:1px solid #83919f45;padding-top:9px}.mafia-noir .mafia-role-disclosure>summary{cursor:pointer;min-height:40px;align-content:center;font-size:14px;font-weight:700;color:#ead2a3;line-height:1.8;border-radius:4px}.mafia-noir .mafia-role-disclosure>summary:focus-visible{outline:2px solid #ead2a3;outline-offset:3px}.mafia-noir .mafia-role-disclosure[open]>summary{margin-bottom:12px}.mafia-noir .mafia-role-tile:has(>.mafia-role-disclosure[open]){grid-column:1/-1}.mafia-noir .mafia-role-tile:has(>.mafia-role-disclosure[open])>.mafia-role-art{width:min(100%,150px);justify-self:center}
+.mafia-noir .mafia-role-details{display:grid;gap:12px;text-align:start;font-size:14px;line-height:1.9;overflow-wrap:anywhere;color:#d6dce4}.mafia-noir .mafia-role-details dl{display:grid;gap:10px;margin:0}.mafia-noir .mafia-role-details dl>div{display:grid;gap:2px}.mafia-noir .mafia-role-details dt,.mafia-noir .mafia-role-details h5{font-size:14px;color:#ead2a3;font-weight:700;margin:0}.mafia-noir .mafia-role-details dd{margin:0}.mafia-noir .mafia-role-details ul{margin:3px 0 0;padding-inline-start:19px}.mafia-noir .mafia-role-details li+li{margin-top:4px}.mafia-noir .mafia-role-details .mafia-role-balance{padding:7px 10px;border:1px solid #bea57a70;border-radius:6px;background:#e8cf9220}.mafia-noir .mafia-role-details .mafia-role-example{margin:0;padding:10px;border-inline-start:3px solid #b6a07b;background:#0e172766;font-size:14px;line-height:1.9}
 .mafia-noir.mafia-guide-dialog,.mafia-noir.mafia-role-dialog,.mafia-noir.mafia-history-dialog{display:flex;flex-direction:column}.mafia-noir.mafia-guide-dialog .modal-head,.mafia-noir.mafia-history-dialog .modal-head,.mafia-noir.mafia-role-dialog .modal-head,.mafia-noir.mafia-role-dialog .modal-foot{flex-shrink:0}.mafia-noir.mafia-guide-dialog .modal-body,.mafia-noir.mafia-role-dialog .modal-body,.mafia-noir.mafia-history-dialog .modal-body{min-height:0;overflow-y:auto;overscroll-behavior:contain}
 .mafia-noir.mafia-safety textarea{display:block;width:100%;min-height:110px;margin-top:10px}.mafia-noir.mafia-safety p,.mafia-noir.mafia-confirm p{font-size:14px;line-height:1.8}.mafia-noir.mafia-confirm .modal-foot{grid-template-columns:1fr 1fr}
-.mafia-noir .mafia-results{display:grid;gap:14px;justify-items:center;text-align:center}.mafia-noir .mafia-results>.mafia-noir-icon{width:100px;height:100px}.mafia-noir .mafia-results p{font-size:13px;line-height:1.9;color:#b6bfcd}.mafia-noir .mafia-results>ol{text-align:right;font-size:13px;line-height:1.9;padding-inline-start:22px}
-.mafia-noir .mafia-recap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:100%}.mafia-noir .mafia-recap article{display:grid;justify-items:center;align-content:start;gap:5px;padding:10px;border:1px solid #6f7e9344;border-radius:10px;background:#1c2838}.mafia-noir .mafia-recap article .mafia-role-art{width:100%;margin-bottom:6px}.mafia-noir .mafia-recap article b{font-size:14px}.mafia-noir .mafia-recap article span{font-size:12px}.mafia-noir .mafia-recap article small{font-size:10px;color:#baa77f;line-height:1.7}
+.mafia-noir .mafia-results{display:grid;gap:14px;justify-items:center;text-align:center}.mafia-noir .mafia-results>.mafia-noir-icon{width:100px;height:100px}.mafia-noir .mafia-results p{font-size:14px;line-height:1.9;color:#b6bfcd}.mafia-noir .mafia-results>ol{text-align:right;font-size:14px;line-height:1.9;padding-inline-start:22px}
+.mafia-noir .mafia-recap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:100%}.mafia-noir .mafia-recap article{display:grid;justify-items:center;align-content:start;gap:5px;padding:10px;border:1px solid #6f7e9344;border-radius:10px;background:#1c2838}.mafia-noir .mafia-recap article .mafia-role-art{width:100%;margin-bottom:6px}.mafia-noir .mafia-recap article b{font-size:14px}.mafia-noir .mafia-recap article span{font-size:14px}.mafia-noir .mafia-recap article small{font-size:14px;color:#baa77f;line-height:1.7}
 .mafia-noir.mafia-waiting{padding:40px 24px;text-align:center;justify-items:center;gap:20px;min-height:300px}.mafia-noir.mafia-waiting>div{display:grid;justify-items:center;gap:18px}.mafia-noir.mafia-waiting .mafia-noir-icon{width:110px;height:110px}.mafia-noir.mafia-waiting p{font-size:14px;line-height:1.9;color:#b5c0ce}
-.mafia-noir .mafia-history-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.mafia-noir .mafia-history-stats article{display:grid;justify-items:center;gap:5px;padding:11px;border:1px solid #7180973b;border-radius:10px;background:#1d2a3b;text-align:center}.mafia-noir .mafia-history-stats span,.mafia-noir .mafia-history-stats small{font-size:11px}.mafia-noir .mafia-history ol{padding:0;list-style:none;display:grid;gap:9px}.mafia-noir .mafia-history li{display:grid;gap:5px;padding:12px;border:1px solid #687a9244;border-radius:8px;background:#1b2635}.mafia-noir .mafia-history time{font-size:11px;color:#9da9bc}
-.mafia-noir.phase-night .mafia-heading{min-height:58px}.mafia-noir.phase-night .mafia-voice{padding:7px 9px;gap:5px}.mafia-noir.phase-night .mafia-voice small{display:none}.mafia-noir.phase-night .mafia-ability{padding:10px;gap:7px}.mafia-noir.phase-night .mafia-ability p{font-size:11px;line-height:1.6}.mafia-noir.phase-night .mafia-ability h3{font-size:15px}.mafia-noir.phase-night .mafia-chat-messages{max-height:300px;min-height:150px}
-@media(min-width:768px){.mafia-noir.mafia-shell{padding:18px;gap:12px}.mafia-noir.mafia-shell.has-player-rail{padding-bottom:132px}.mafia-noir .mafia-voice{grid-template-columns:minmax(180px,1fr) minmax(350px,1.2fr);align-items:center}.mafia-noir .mafia-voice>p{grid-column:1/-1}.mafia-noir .mafia-target-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.mafia-noir .mafia-chat-messages{max-height:520px;min-height:320px}.mafia-noir .mafia-recap{grid-template-columns:repeat(4,minmax(0,1fr))}.mafia-noir .mafia-role-catalog{grid-template-columns:repeat(3,minmax(0,1fr))}.mafia-noir .mafia-seats{justify-content:center}.mafia-noir .mafia-player-rail{width:min(calc(100% - 48px),950px)}.mafia-noir .mafia-narrative{grid-template-columns:140px minmax(0,1fr)}.mafia-noir .mafia-narrative h3{font-size:19px}.mafia-noir .mafia-narrative p{font-size:13px}.mafia-noir .mafia-narrative>div{padding:18px}.mafia-noir .mafia-narrative .mafia-scene-art{max-height:180px}}
-@media(max-width:359px){.mafia-noir.mafia-shell{padding:8px;gap:7px}.mafia-noir .mafia-heading{padding:6px 8px}.mafia-noir .mafia-heading h1{font-size:20px}.mafia-noir .mafia-heading .mafia-kicker{font-size:8px}.mafia-noir .mafia-voice-actions{gap:4px}.mafia-noir .mafia-voice-actions>.btn{font-size:10px;flex-basis:92px;padding-inline:4px}.mafia-noir .mafia-voice-actions>label{flex-basis:70px;max-width:90px}.mafia-noir .mafia-voice b{font-size:11px}.mafia-noir .mafia-secret-top{font-size:11px}.mafia-noir .mafia-secret-top .btn{font-size:11px}.mafia-noir .mafia-narrative{grid-template-columns:82px minmax(0,1fr)}.mafia-noir .mafia-narrative>div{padding:9px}.mafia-noir .mafia-narrative h3{font-size:13px}.mafia-noir .mafia-directory-room{grid-template-columns:36px minmax(0,1fr) auto;gap:7px;padding:12px 8px}.mafia-noir .mafia-room-medallion{width:36px}.mafia-noir .mafia-directory-room h3{font-size:13px}.mafia-noir .mafia-directory-room .btn{padding-inline:9px;font-size:12px}.mafia-noir .mafia-directory-actions .btn{font-size:11px}}
-@media(orientation:landscape) and (max-height:550px){.mafia-noir.mafia-shell{padding:9px;gap:7px}.mafia-noir.mafia-shell.has-player-rail{padding-bottom:105px}.mafia-noir .mafia-heading{top:3px;min-height:52px}.mafia-noir .mafia-heading h1{font-size:18px}.mafia-noir .mafia-clock{min-height:44px;flex-basis:54px}.mafia-noir .mafia-heading .mafia-kicker,.mafia-noir .mafia-heading p{font-size:8px}.mafia-noir .mafia-voice{grid-template-columns:minmax(120px,.8fr) minmax(270px,1.5fr);gap:8px}.mafia-noir .mafia-voice small{display:none}.mafia-noir .mafia-target-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.mafia-noir .mafia-rail-heading{display:none}.mafia-noir .mafia-player-rail{padding-top:5px}.mafia-noir .mafia-seat{min-height:69px;flex-basis:62px}.mafia-noir .mafia-seat .avatar,.mafia-noir .mafia-seat .clay-avatar,.mafia-noir .mafia-seat .player-avatar{width:29px!important;height:29px!important}.mafia-noir .mafia-chat-messages{max-height:220px;min-height:160px}.mafia-noir .mafia-role-portrait .mafia-role-art{width:145px}.mafia-noir .mafia-secret-content{display:grid;grid-template-columns:180px 1fr}.mafia-noir.mafia-role-dialog{width:min(100% - 24px,600px)}.mafia-noir .mafia-role-description{border-top:0;padding:16px}.mafia-noir .mafia-role-description h2{font-size:23px}.mafia-noir .mafia-role-description p{font-size:12px}}
+.mafia-noir .mafia-history-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.mafia-noir .mafia-history-stats article{display:grid;justify-items:center;gap:5px;padding:11px;border:1px solid #7180973b;border-radius:10px;background:#1d2a3b;text-align:center}.mafia-noir .mafia-history-stats span,.mafia-noir .mafia-history-stats small{font-size:14px}.mafia-noir .mafia-history ol{padding:0;list-style:none;display:grid;gap:9px}.mafia-noir .mafia-history li{display:grid;gap:5px;padding:12px;border:1px solid #687a9244;border-radius:8px;background:#1b2635}.mafia-noir .mafia-history time{font-size:14px;color:#9da9bc}
+.mafia-noir.phase-night .mafia-heading{min-height:58px}.mafia-noir.phase-night .mafia-voice{padding:7px 9px;gap:5px}.mafia-noir.phase-night .mafia-voice small{display:none}.mafia-noir.phase-night .mafia-ability{padding:10px;gap:7px}.mafia-noir.phase-night .mafia-ability p{font-size:14px;line-height:1.6}.mafia-noir.phase-night .mafia-ability h3{font-size:15px}.mafia-noir.phase-night .mafia-chat-messages{max-height:300px;min-height:150px}
+@media(min-width:768px){.mafia-noir.mafia-shell{padding:18px;gap:12px}.mafia-noir.mafia-shell.has-player-rail{padding-bottom:132px}.mafia-noir .mafia-voice{grid-template-columns:minmax(180px,1fr) minmax(350px,1.2fr);align-items:center}.mafia-noir .mafia-voice>p{grid-column:1/-1}.mafia-noir .mafia-target-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.mafia-noir .mafia-chat-messages{max-height:520px;min-height:320px}.mafia-noir .mafia-recap{grid-template-columns:repeat(4,minmax(0,1fr))}.mafia-noir .mafia-role-catalog{grid-template-columns:repeat(3,minmax(0,1fr))}.mafia-noir .mafia-seats{justify-content:center}.mafia-noir .mafia-player-rail{width:min(calc(100% - 48px),950px)}.mafia-noir .mafia-narrative{grid-template-columns:140px minmax(0,1fr)}.mafia-noir .mafia-narrative h3{font-size:19px}.mafia-noir .mafia-narrative p{font-size:14px}.mafia-noir .mafia-narrative>div{padding:18px}.mafia-noir .mafia-narrative .mafia-scene-art{max-height:180px}}
+@media(max-width:359px){.mafia-noir.mafia-shell{padding:8px;gap:7px}.mafia-noir .mafia-heading{padding:6px 8px}.mafia-noir .mafia-heading h1{font-size:20px}.mafia-noir .mafia-heading .mafia-kicker{font-size:14px}.mafia-noir .mafia-voice-actions{gap:4px}.mafia-noir .mafia-voice-actions>.btn{font-size:14px;flex-basis:92px;padding-inline:4px}.mafia-noir .mafia-voice-actions>label{flex-basis:70px;max-width:90px}.mafia-noir .mafia-voice b{font-size:14px}.mafia-noir .mafia-secret-top{font-size:14px}.mafia-noir .mafia-secret-top .btn{font-size:14px}.mafia-noir .mafia-narrative{grid-template-columns:82px minmax(0,1fr)}.mafia-noir .mafia-narrative>div{padding:9px}.mafia-noir .mafia-narrative h3{font-size:14px}.mafia-noir .mafia-directory-room{grid-template-columns:36px minmax(0,1fr) auto;gap:7px;padding:12px 8px}.mafia-noir .mafia-room-medallion{width:36px}.mafia-noir .mafia-directory-room h3{font-size:14px}.mafia-noir .mafia-directory-room .btn{padding-inline:9px;font-size:14px}.mafia-noir .mafia-directory-actions .btn{font-size:14px}}
+@media(orientation:landscape) and (max-height:550px){.mafia-noir.mafia-shell{padding:9px;gap:7px}.mafia-noir.mafia-shell.has-player-rail{padding-bottom:105px}.mafia-noir .mafia-heading{top:3px;min-height:52px}.mafia-noir .mafia-heading h1{font-size:18px}.mafia-noir .mafia-clock{min-height:44px;flex-basis:54px}.mafia-noir .mafia-heading .mafia-kicker,.mafia-noir .mafia-heading p{font-size:14px}.mafia-noir .mafia-voice{grid-template-columns:minmax(120px,.8fr) minmax(270px,1.5fr);gap:8px}.mafia-noir .mafia-voice small{display:none}.mafia-noir .mafia-target-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.mafia-noir .mafia-rail-heading{display:none}.mafia-noir .mafia-player-rail{padding-top:5px}.mafia-noir .mafia-seat{min-height:69px;flex-basis:62px}.mafia-noir .mafia-seat .avatar,.mafia-noir .mafia-seat .clay-avatar,.mafia-noir .mafia-seat .player-avatar{width:29px!important;height:29px!important}.mafia-noir .mafia-chat-messages{max-height:220px;min-height:160px}.mafia-noir .mafia-role-portrait .mafia-role-art{width:145px}.mafia-noir .mafia-secret-content{display:grid;grid-template-columns:180px 1fr}.mafia-noir.mafia-role-dialog{width:min(100% - 24px,600px)}.mafia-noir .mafia-role-description{border-top:0;padding:16px}.mafia-noir .mafia-role-description h2{font-size:23px}.mafia-noir .mafia-role-description p{font-size:14px}}
 @media(prefers-reduced-motion:reduce){.mafia-noir *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 /* Keep all three voice controls on one mobile row without wrapping a night action. */
@@ -119,7 +119,7 @@
 .mafia-noir .mafia-voice-actions>label{max-width:none}
 .mafia-noir .mafia-voice-actions:has(>button:only-child){grid-template-columns:1fr}
 .mafia-noir .mafia-ability-heading{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.mafia-noir .mafia-ability-heading small{font-size:10px;color:#bba782;white-space:nowrap}
+.mafia-noir .mafia-ability-heading small{font-size:14px;color:#bba782;white-space:nowrap}
 /* Short opacity/transform entrances; nothing loops during discussion. */
 @keyframes mafia-noir-reveal{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
 @keyframes mafia-noir-story{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
@@ -140,7 +140,7 @@ html[data-reduced-motion=true] .mafia-noir *{animation:none!important;transition
 .mafia-noir .mafia-heading .mafia-secret{flex:0 0 auto;border:0;background:transparent}
 .mafia-noir .mafia-heading .mafia-secret-top{padding:0}
 .mafia-noir .mafia-heading .mafia-secret-top>span{display:none}
-.mafia-noir .mafia-heading .mafia-secret-top .btn{max-width:94px;padding:5px 7px;white-space:normal;font-size:11px;border:1px solid #bba47466;background:#bba47410}
+.mafia-noir .mafia-heading .mafia-secret-top .btn{max-width:94px;padding:5px 7px;white-space:normal;font-size:14px;border:1px solid #bba47466;background:#bba47410}
 .mafia-noir .mafia-heading .mafia-secret-top .btn>span{display:none}
 .mafia-noir.phase-opening .mafia-chat-messages,.mafia-noir.phase-discussion .mafia-chat-messages{height:clamp(72px,calc(100dvh - 624px),400px);min-height:72px;max-height:none}
 @media(orientation:landscape) and (max-height:550px){.mafia-noir.phase-opening .mafia-chat-messages,.mafia-noir.phase-discussion .mafia-chat-messages{height:170px}}
@@ -157,14 +157,14 @@ html[data-reduced-motion=true] .mafia-noir *{animation:none!important;transition
 .mafia-noir .mafia-results{width:100%;max-width:900px;margin-inline:auto;gap:10px;justify-items:stretch;text-align:start}
 .mafia-results .mafia-result-summary{display:grid;grid-template-columns:64px minmax(0,1fr);gap:10px;padding:12px;border:1px solid #bda37155;border-radius:12px;background:linear-gradient(135deg,#2c2c32,#172331);box-shadow:inset 0 1px #f6d89915}
 .mafia-noir .mafia-results .mafia-result-art{width:64px;height:76px;mask-image:none;border-radius:8px;align-self:start}
-.mafia-noir .mafia-result-copy{min-width:0}.mafia-noir .mafia-result-copy h2{font-size:20px;line-height:1.5;overflow-wrap:anywhere}.mafia-noir .mafia-result-copy p{font-size:12px;line-height:1.7;margin-top:4px}.mafia-result-copy>small{display:block;font-size:11px;color:#d6bd8b;margin-top:5px}
+.mafia-noir .mafia-result-copy{min-width:0}.mafia-noir .mafia-result-copy h2{font-size:20px;line-height:1.5;overflow-wrap:anywhere}.mafia-noir .mafia-result-copy p{font-size:14px;line-height:1.7;margin-top:4px}.mafia-result-copy>small{display:block;font-size:14px;color:#d6bd8b;margin-top:5px}
 .mafia-result-actions{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:7px}.mafia-result-actions>.btn{min-height:44px}.mafia-result-actions>p{width:100%}
-.mafia-result-section-heading{display:flex;align-items:center;justify-content:space-between;gap:8px}.mafia-noir .mafia-result-section-heading h3{font-size:14px}.mafia-result-section-heading>small{font-size:11px;color:#b7c2ce}
+.mafia-result-section-heading{display:flex;align-items:center;justify-content:space-between;gap:8px}.mafia-noir .mafia-result-section-heading h3{font-size:14px}.mafia-result-section-heading>small{font-size:14px;color:#b7c2ce}
 .mafia-results .mafia-recap{gap:6px}.mafia-recap-player{min-width:0;align-self:start;border:1px solid #6f7e9344;border-radius:9px;background:#1c2838;overflow:hidden}.mafia-recap-player[open]{grid-column:1/-1}
 .mafia-recap-player>summary{min-height:64px;display:grid;grid-template-columns:24px minmax(0,1fr) 10px;align-items:center;gap:6px;padding:8px;list-style:none;cursor:pointer}.mafia-recap-player>summary::-webkit-details-marker{display:none}.mafia-recap-player>summary::after{content:'+';color:#dbc28e}.mafia-recap-player[open]>summary::after{content:'−'}
-.mafia-result-seat{display:grid;place-items:center;width:24px;height:28px;border-radius:6px;background:#101b29;color:#d4b77c;font-size:12px}.mafia-result-player-copy{display:grid;gap:2px;min-width:0;overflow-wrap:anywhere}.mafia-result-player-copy>b{font-size:13px;line-height:1.35}.mafia-result-player-copy>span{font-size:12px;line-height:1.3;color:#e4d7bc}.mafia-result-player-copy>small{font-size:10px;line-height:1.4;color:#bdc9d5}
-.mafia-result-player-detail{display:grid;grid-template-columns:minmax(90px,32%) minmax(0,1fr);align-items:center;gap:8px;padding:9px;border-top:1px solid #6f7e9344}.mafia-noir .mafia-result-player-art{width:100%;max-width:170px;margin:auto;grid-row:span 2}.mafia-noir .mafia-result-player-detail p{font-size:12px;line-height:1.8}.mafia-result-player-detail>small{font-size:11px;color:#d6bd8b}
-.mafia-result-replay{border:1px solid #6f7e9344;border-radius:9px;background:#141e2b;overflow:hidden}.mafia-result-replay>summary{min-height:44px;padding:10px 12px;cursor:pointer;font-size:13px}.mafia-result-replay>summary small{font-size:11px;color:#b9c7d5;margin-inline-start:8px}.mafia-result-replay>ol{margin:0;padding:8px 30px 12px 12px;font-size:12px;line-height:1.9}.mafia-result-replay li+li{margin-top:5px}
+.mafia-result-seat{display:grid;place-items:center;width:24px;height:28px;border-radius:6px;background:#101b29;color:#d4b77c;font-size:14px}.mafia-result-player-copy{display:grid;gap:2px;min-width:0;overflow-wrap:anywhere}.mafia-result-player-copy>b{font-size:14px;line-height:1.35}.mafia-result-player-copy>span{font-size:14px;line-height:1.3;color:#e4d7bc}.mafia-result-player-copy>small{font-size:14px;line-height:1.4;color:#bdc9d5}
+.mafia-result-player-detail{display:grid;grid-template-columns:minmax(90px,32%) minmax(0,1fr);align-items:center;gap:8px;padding:9px;border-top:1px solid #6f7e9344}.mafia-noir .mafia-result-player-art{width:100%;max-width:170px;margin:auto;grid-row:span 2}.mafia-noir .mafia-result-player-detail p{font-size:14px;line-height:1.8}.mafia-result-player-detail>small{font-size:14px;color:#d6bd8b}
+.mafia-result-replay{border:1px solid #6f7e9344;border-radius:9px;background:#141e2b;overflow:hidden}.mafia-result-replay>summary{min-height:44px;padding:10px 12px;cursor:pointer;font-size:14px}.mafia-result-replay>summary small{font-size:14px;color:#b9c7d5;margin-inline-start:8px}.mafia-result-replay>ol{margin:0;padding:8px 30px 12px 12px;font-size:14px;line-height:1.9}.mafia-result-replay li+li{margin-top:5px}
 .mafia-noir .mafia-seat .player-avatar:not(:has(img)){filter:grayscale(.8) saturate(.35) brightness(.88)}
 .mafia-noir .mafia-seat.eliminated .player-avatar:not(:has(img)){filter:grayscale(1) brightness(.68)}
 /* The floating call column (shown only when the voice panel cannot own the
@@ -183,109 +183,109 @@ html[data-startup-background-visible] .mafia-noir.mafia-shell.has-player-rail:no
 .mafia-noir .mafia-directory-heading{gap:8px}.mafia-noir .mafia-directory-heading .mafia-noir-icon{width:48px;height:48px}
 .mafia-noir .mafia-directory-room{padding:9px;gap:7px;border-radius:8px;grid-template-columns:34px minmax(0,1fr) auto}
 .mafia-noir .mafia-directory-room h3{font-size:15px}.mafia-noir .mafia-room-medallion{width:32px}
-.mafia-noir .mafia-room-tags{display:flex;gap:6px;flex-wrap:wrap;align-items:center}.mafia-noir .mafia-room-tag,.mafia-noir .mafia-directory-room p{font-size:12px}
-.mafia-noir .mafia-voice-badge{display:inline-flex;align-items:center;gap:3px;font-size:11px;white-space:nowrap;padding:3px 6px;border:1px solid #91a3b04d;border-radius:5px;color:#ccddd7;background:#172c30}
-.mafia-noir .mafia-directory-pages{display:flex;justify-content:space-between;gap:8px}.mafia-noir .mafia-loading{font-size:13px}
+.mafia-noir .mafia-room-tags{display:flex;gap:6px;flex-wrap:wrap;align-items:center}.mafia-noir .mafia-room-tag,.mafia-noir .mafia-directory-room p{font-size:14px}
+.mafia-noir .mafia-voice-badge{display:inline-flex;align-items:center;gap:3px;font-size:14px;white-space:nowrap;padding:3px 6px;border:1px solid #91a3b04d;border-radius:5px;color:#ccddd7;background:#172c30}
+.mafia-noir .mafia-directory-pages{display:flex;justify-content:space-between;gap:8px}.mafia-noir .mafia-loading{font-size:14px}
 .mafia-noir .mafia-name-field{display:grid;gap:5px}.mafia-noir .mafia-name-field input{width:100%}
 .mafia-noir.mafia-shell.mafia-compact-game{display:flex;flex-direction:column;gap:5px;min-height:0;height:100%;padding:6px;border-radius:9px;overflow:hidden}
 .mafia-noir.mafia-compact-game .mafia-heading{position:relative;top:auto;z-index:1;min-height:48px;padding:5px 8px;gap:6px;flex-shrink:0;border-radius:7px}
-.mafia-noir.mafia-compact-game .mafia-heading h1{font-size:19px}.mafia-noir.mafia-compact-game .mafia-heading p{font-size:11px}
-.mafia-noir.mafia-compact-game .mafia-heading .mafia-kicker{font-size:10px}.mafia-noir.mafia-compact-game .mafia-heading .btn{min-height:44px;padding:5px 7px;min-width:44px}
+.mafia-noir.mafia-compact-game .mafia-heading h1{font-size:19px}.mafia-noir.mafia-compact-game .mafia-heading p{font-size:14px}
+.mafia-noir.mafia-compact-game .mafia-heading .mafia-kicker{font-size:14px}.mafia-noir.mafia-compact-game .mafia-heading .btn{min-height:44px;padding:5px 7px;min-width:44px}
 .mafia-noir.mafia-compact-game .mafia-clock{min-height:44px;flex-basis:48px;min-width:44px}
 .mafia-noir.mafia-compact-game .mafia-voice{display:flex;align-items:center;gap:5px;padding:4px 6px;min-height:44px;flex-shrink:0;flex-wrap:wrap}
 .mafia-noir.mafia-compact-game .mafia-voice>div:first-child{flex:1;min-width:90px}.mafia-noir.mafia-compact-game .mafia-voice small{display:none}
-.mafia-noir.mafia-compact-game .mafia-voice b{font-size:11px}.mafia-noir.mafia-compact-game .mafia-voice-actions{display:flex;gap:4px;flex-wrap:nowrap}
-.mafia-noir.mafia-compact-game .mafia-voice-actions>.btn{min-width:44px;max-width:100px;min-height:44px;padding:4px 5px;font-size:11px;flex:none}
+.mafia-noir.mafia-compact-game .mafia-voice b{font-size:14px}.mafia-noir.mafia-compact-game .mafia-voice-actions{display:flex;gap:4px;flex-wrap:nowrap}
+.mafia-noir.mafia-compact-game .mafia-voice-actions>.btn{min-width:44px;max-width:100px;min-height:44px;padding:4px 5px;font-size:14px;flex:none}
 .mafia-noir.mafia-compact-game .mafia-voice-actions>label{max-width:75px}.mafia-noir.mafia-compact-game .mafia-voice-actions select{min-height:44px}
 .mafia-noir.mafia-compact-game .mafia-activity{flex:1;min-height:104px;display:flex;flex-direction:column;overflow:hidden;min-width:0}
 .mafia-noir.mafia-compact-game .mafia-activity>[role=tabpanel],.mafia-noir.mafia-compact-game .mafia-activity>div:not(.mafia-tabs){flex:1;min-height:0}
 .mafia-noir.mafia-compact-game .mafia-council-columns{display:flex;flex-direction:column;min-height:0;height:100%;gap:4px}
-.mafia-noir.mafia-compact-game .mafia-tabs{flex-shrink:0}.mafia-noir.mafia-compact-game .mafia-tabs button{font-size:12px;min-height:44px;padding:5px}
-.mafia-noir.mafia-compact-game .mafia-ability{flex-shrink:0;max-height:45%;overflow:auto;padding:7px;gap:4px}.mafia-noir.mafia-compact-game .mafia-ability h3{font-size:13px}
-.mafia-noir.mafia-compact-game .mafia-ability p{font-size:12px;line-height:1.5}.mafia-noir.mafia-compact-game .mafia-ability .btn{padding:5px 9px;font-size:12px}
+.mafia-noir.mafia-compact-game .mafia-tabs{flex-shrink:0}.mafia-noir.mafia-compact-game .mafia-tabs button{font-size:14px;min-height:44px;padding:5px}
+.mafia-noir.mafia-compact-game .mafia-ability{flex-shrink:0;max-height:45%;overflow:auto;padding:7px;gap:4px}.mafia-noir.mafia-compact-game .mafia-ability h3{font-size:14px}
+.mafia-noir.mafia-compact-game .mafia-ability p{font-size:14px;line-height:1.5}.mafia-noir.mafia-compact-game .mafia-ability .btn{padding:5px 9px;font-size:14px}
 .mafia-noir .mafia-selection-summary{color:#f0d5a7}.mafia-noir.mafia-compact-game .mafia-action-tabs{display:flex;gap:5px}.mafia-noir.mafia-compact-game .mafia-action-tabs>.btn{flex:1}
-.mafia-noir.mafia-compact-game .mafia-chat{flex:1;min-height:0}.mafia-noir.mafia-compact-game .mafia-panel-heading{padding:5px 8px;min-height:28px;flex-shrink:0}.mafia-noir.mafia-compact-game .mafia-panel-heading h3{font-size:12px}
+.mafia-noir.mafia-compact-game .mafia-chat{flex:1;min-height:0}.mafia-noir.mafia-compact-game .mafia-panel-heading{padding:5px 8px;min-height:28px;flex-shrink:0}.mafia-noir.mafia-compact-game .mafia-panel-heading h3{font-size:14px}
 .mafia-noir.mafia-compact-game .mafia-chat-messages{flex:1;min-height:0!important;height:auto!important;max-height:none!important;padding:7px;overflow:auto}
 .mafia-noir.mafia-compact-game .mafia-chat form{padding:4px;gap:4px;flex-shrink:0}.mafia-noir.mafia-compact-game .mafia-chat form input{min-height:44px;font-size:16px;padding:7px}
-.mafia-noir.mafia-compact-game .mafia-chat form .btn{flex-basis:52px;min-height:44px;font-size:12px}.mafia-noir.mafia-compact-game .mafia-chat-locked{padding:7px;flex-shrink:0;font-size:12px}
-.mafia-noir .mafia-chat-welcome{padding:9px;color:#c7c3b8;font-size:13px;line-height:1.6}
-.mafia-noir.mafia-compact-game .mafia-narrative{grid-template-columns:1fr;margin-bottom:8px}.mafia-noir.mafia-compact-game .mafia-narrative .mafia-scene-art{aspect-ratio:16/9!important;min-height:0;max-height:150px;mask-image:none;height:auto}.mafia-noir.mafia-compact-game .mafia-narrative>div{padding:8px}.mafia-noir.mafia-compact-game .mafia-narrative .mafia-kicker{display:none}.mafia-noir.mafia-compact-game .mafia-narrative p{font-size:12px;line-height:1.6}
-.mafia-noir .mafia-event-card.has-scene{display:block;padding:0;overflow:hidden}.mafia-noir .mafia-event-card.has-scene .mafia-event-art{width:100%;min-height:0;aspect-ratio:16/9;max-height:180px;border-radius:0}.mafia-noir .mafia-event-card.has-scene>div{padding:7px 9px}.mafia-noir .mafia-event-card p{font-size:13px}.mafia-noir .mafia-event-card small{font-size:10px}
+.mafia-noir.mafia-compact-game .mafia-chat form .btn{flex-basis:52px;min-height:44px;font-size:14px}.mafia-noir.mafia-compact-game .mafia-chat-locked{padding:7px;flex-shrink:0;font-size:14px}
+.mafia-noir .mafia-chat-welcome{padding:9px;color:#c7c3b8;font-size:14px;line-height:1.6}
+.mafia-noir.mafia-compact-game .mafia-narrative{grid-template-columns:1fr;margin-bottom:8px}.mafia-noir.mafia-compact-game .mafia-narrative .mafia-scene-art{aspect-ratio:16/9!important;min-height:0;max-height:150px;mask-image:none;height:auto}.mafia-noir.mafia-compact-game .mafia-narrative>div{padding:8px}.mafia-noir.mafia-compact-game .mafia-narrative .mafia-kicker{display:none}.mafia-noir.mafia-compact-game .mafia-narrative p{font-size:14px;line-height:1.6}
+.mafia-noir .mafia-event-card.has-scene{display:block;padding:0;overflow:hidden}.mafia-noir .mafia-event-card.has-scene .mafia-event-art{width:100%;min-height:0;aspect-ratio:16/9;max-height:180px;border-radius:0}.mafia-noir .mafia-event-card.has-scene>div{padding:7px 9px}.mafia-noir .mafia-event-card p{font-size:14px}.mafia-noir .mafia-event-card small{font-size:14px}
 .mafia-noir.mafia-compact-game .mafia-player-rail{position:relative;z-index:1;bottom:auto;left:auto;transform:none;width:100%;padding:5px;background:#111a27;border:1px solid #74809655;border-radius:8px;box-shadow:none;backdrop-filter:none;flex-shrink:0;margin:0;max-height:45%;overflow:auto;overscroll-behavior:contain}
-.mafia-noir.mafia-compact-game .mafia-rail-heading{display:flex;font-size:11px;padding:0 2px 4px}.mafia-noir.mafia-compact-game .mafia-seats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;padding:0;overflow:visible;scroll-snap-type:none}
+.mafia-noir.mafia-compact-game .mafia-rail-heading{display:flex;font-size:14px;padding:0 2px 4px}.mafia-noir.mafia-compact-game .mafia-seats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;padding:0;overflow:visible;scroll-snap-type:none}
 .mafia-noir.mafia-compact-game .mafia-seat{min-width:44px;width:100%;min-height:62px;height:66px;display:flex;flex-direction:column;gap:1px;padding:4px 3px 3px;border-radius:6px;overflow:hidden;opacity:1!important}
 .mafia-noir.mafia-compact-game .mafia-seat:disabled{opacity:1!important}.mafia-noir.mafia-compact-game .mafia-seat-portrait{display:flex;justify-content:center;position:relative;height:30px}.mafia-noir.mafia-compact-game .mafia-seat .avatar,.mafia-noir.mafia-compact-game .mafia-seat .clay-avatar,.mafia-noir.mafia-compact-game .mafia-seat .player-avatar{width:30px!important;height:30px!important}
-.mafia-noir .mafia-seat-seal{position:absolute;left:-9px;bottom:0;width:12px;height:17px;object-fit:cover;border-radius:2px}.mafia-noir .mafia-seat-copy{display:block;min-width:0;width:100%}.mafia-noir.mafia-compact-game .mafia-seat b{display:block;font-size:11px;line-height:1.2}.mafia-noir.mafia-compact-game .mafia-seat small{display:block;font-size:10px;line-height:1.2}.mafia-noir.mafia-compact-game .mafia-seat-number{font-size:11px}
+.mafia-noir .mafia-seat-seal{position:absolute;left:-9px;bottom:0;width:12px;height:17px;object-fit:cover;border-radius:2px}.mafia-noir .mafia-seat-copy{display:block;min-width:0;width:100%}.mafia-noir.mafia-compact-game .mafia-seat b{display:block;font-size:14px;line-height:1.2}.mafia-noir.mafia-compact-game .mafia-seat small{display:block;font-size:14px;line-height:1.2}.mafia-noir.mafia-compact-game .mafia-seat-number{font-size:14px}
 .mafia-noir .mafia-seat.is-target{border-color:#bcaa86}.mafia-noir .mafia-seat.selected{border-color:#f2cd89;box-shadow:inset 0 0 0 2px #f2cd89;background:#4b432f}
-.mafia-noir .mafia-lobby-ready{display:flex;align-items:center;gap:5px;padding-bottom:4px}.mafia-noir .mafia-lobby-ready>.btn{flex:1;min-height:44px;padding:5px}.mafia-noir .mafia-lobby-ready>span{font-size:12px;flex:1;text-align:center}.mafia-noir .mafia-rail-note{font-size:11px;color:#b9c4cc;margin-bottom:5px;text-align:center}
-.mafia-noir.mafia-compact-game .mafia-reports,.mafia-noir.mafia-compact-game .mafia-notebook{height:100%;overflow:auto}.mafia-noir .mafia-observer-delay{font-size:12px;background:#343023;color:#f3deab;padding:6px;flex-shrink:0}
-.mafia-noir.mafia-compact-game.is-finished{overflow:auto;height:auto;min-height:0}.mafia-noir.mafia-compact-game .mafia-notice{margin:0;padding:5px 8px;font-size:12px;flex-shrink:0}
+.mafia-noir .mafia-lobby-ready{display:flex;align-items:center;gap:5px;padding-bottom:4px}.mafia-noir .mafia-lobby-ready>.btn{flex:1;min-height:44px;padding:5px}.mafia-noir .mafia-lobby-ready>span{font-size:14px;flex:1;text-align:center}.mafia-noir .mafia-rail-note{font-size:14px;color:#b9c4cc;margin-bottom:5px;text-align:center}
+.mafia-noir.mafia-compact-game .mafia-reports,.mafia-noir.mafia-compact-game .mafia-notebook{height:100%;overflow:auto}.mafia-noir .mafia-observer-delay{font-size:14px;background:#343023;color:#f3deab;padding:6px;flex-shrink:0}
+.mafia-noir.mafia-compact-game.is-finished{overflow:auto;height:auto;min-height:0}.mafia-noir.mafia-compact-game .mafia-notice{margin:0;padding:5px 8px;font-size:14px;flex-shrink:0}
 .mafia-noir.mafia-compact-game:has(input:focus,textarea:focus,.mafia-chat form:focus-within,.mafia-chat form:active) .mafia-player-rail{display:block}.mafia-noir.mafia-compact-game:has(input:focus,textarea:focus,.mafia-chat form:focus-within,.mafia-chat form:active) .mafia-seats{max-height:66px;overflow-y:auto}.mafia-noir.mafia-compact-game:has(input:focus,textarea:focus,.mafia-chat form:focus-within,.mafia-chat form:active) .mafia-rail-heading,.mafia-noir.mafia-compact-game:has(input:focus,textarea:focus,.mafia-chat form:focus-within,.mafia-chat form:active) .mafia-rail-note{display:none}
 @media(max-width:359px){.mafia-noir .mafia-directory-filters{grid-template-columns:minmax(0,1fr) minmax(0,1fr) 44px}.mafia-noir .mafia-directory-filters>label:nth-child(3){grid-column:1/3;grid-row:2}.mafia-noir .mafia-directory-filters>.btn{grid-column:3;grid-row:1/3;align-self:end}.mafia-noir.mafia-compact-game .mafia-seat{height:62px;min-height:62px}.mafia-noir.mafia-compact-game .mafia-voice>div:first-child{display:none}}
-@media(orientation:landscape) and (max-height:550px){.mafia-noir.mafia-compact-game:not(.is-finished){display:grid;grid-template-columns:minmax(0,1fr) 218px;grid-template-rows:auto auto minmax(80px,1fr);grid-template-areas:'heading players' 'voice players' 'activity players';gap:4px}.mafia-noir.mafia-compact-game>.mafia-heading{grid-area:heading}.mafia-noir.mafia-compact-game>.mafia-voice,.mafia-noir.mafia-compact-game>.mafia-observer-delay{grid-area:voice}.mafia-noir.mafia-compact-game>.mafia-activity{grid-area:activity}.mafia-noir.mafia-compact-game>.mafia-player-rail{grid-area:players;align-self:stretch;max-height:none;overflow:auto}.mafia-noir.mafia-compact-game .mafia-seat{height:64px;min-height:64px}.mafia-noir.mafia-compact-game .mafia-rail-heading{font-size:10px}.mafia-noir.mafia-compact-game .mafia-rail-heading>span:last-child{display:none}.mafia-noir.mafia-compact-game .mafia-ability{max-height:55%}.mafia-noir.mafia-compact-game .mafia-narrative .mafia-scene-art{max-height:120px}}
+@media(orientation:landscape) and (max-height:550px){.mafia-noir.mafia-compact-game:not(.is-finished){display:grid;grid-template-columns:minmax(0,1fr) 218px;grid-template-rows:auto auto minmax(80px,1fr);grid-template-areas:'heading players' 'voice players' 'activity players';gap:4px}.mafia-noir.mafia-compact-game>.mafia-heading{grid-area:heading}.mafia-noir.mafia-compact-game>.mafia-voice,.mafia-noir.mafia-compact-game>.mafia-observer-delay{grid-area:voice}.mafia-noir.mafia-compact-game>.mafia-activity{grid-area:activity}.mafia-noir.mafia-compact-game>.mafia-player-rail{grid-area:players;align-self:stretch;max-height:none;overflow:auto}.mafia-noir.mafia-compact-game .mafia-seat{height:64px;min-height:64px}.mafia-noir.mafia-compact-game .mafia-rail-heading{font-size:14px}.mafia-noir.mafia-compact-game .mafia-rail-heading>span:last-child{display:none}.mafia-noir.mafia-compact-game .mafia-ability{max-height:55%}.mafia-noir.mafia-compact-game .mafia-narrative .mafia-scene-art{max-height:120px}}
 
-.mafia-compact-game .mafia-activity>.mafia-notice{margin:0;padding:5px 8px;font-size:11px;flex-shrink:0}.mafia-compact-game .mafia-activity>.mafia-observer-delay{margin:0;flex-shrink:0}.mafia-tools-panel .stack{max-height:45dvh;overflow:auto}.mafia-tools-panel .modal-head{position:sticky;top:0;z-index:2;background:#101a24}
+.mafia-compact-game .mafia-activity>.mafia-notice{margin:0;padding:5px 8px;font-size:14px;flex-shrink:0}.mafia-compact-game .mafia-activity>.mafia-observer-delay{margin:0;flex-shrink:0}.mafia-tools-panel .stack{max-height:45dvh;overflow:auto}.mafia-tools-panel .modal-head{position:sticky;top:0;z-index:2;background:#101a24}
 
-.mafia-lobby-voice-note{font-size:11px;margin:0;color:#d1c5ad;flex-shrink:0}.mafia-noir .mafia-lobby-panel .modal-head{position:sticky;top:0;z-index:2;background:#101a24}
+.mafia-lobby-voice-note{font-size:14px;margin:0;color:#d1c5ad;flex-shrink:0}.mafia-noir .mafia-lobby-panel .modal-head{position:sticky;top:0;z-index:2;background:#101a24}
 .mafia-noir .mafia-reward-summary{border:1px solid var(--mafia-line,#76694c);border-radius:16px;padding:18px;background:#192432;margin-block:16px;text-align:start}.mafia-noir .mafia-reward-summary h3{margin:0 0 10px;color:#ead7ab}.mafia-noir .mafia-reward-xp{font-size:24px;color:#ead7ab}.mafia-noir .mafia-reward-summary p{line-height:1.8}.mafia-noir .mafia-reward-summary ul{padding-inline-start:24px}
 
 /* A single activity viewport, compact controls, and an always reachable dock.
    Only the timeline scrolls in normal play; action details open on demand. */
 .mafia-noir.mafia-density{position:relative;border-radius:10px;background:linear-gradient(150deg,#142c33 0,#171b2c 42%,#0c1321 100%);gap:4px;padding:5px}
 .mafia-noir.mafia-density .mafia-heading{min-height:52px;padding:3px 5px;gap:3px;background:linear-gradient(135deg,#213942,#24263d);border-color:#9e8b6560}
-.mafia-density .mafia-phase-copy{min-width:0;flex:1}.mafia-noir.mafia-density .mafia-phase-copy h1{font-size:14px;line-height:1.4;overflow-wrap:anywhere}.mafia-noir.mafia-density .mafia-phase-copy p{font-size:10px;line-height:1.5;color:#d4d8dc}.mafia-density .mafia-phase-copy strong{font-weight:600}
-.mafia-noir.mafia-density .mafia-clock{flex:0 0 44px;padding:2px;min-height:44px;min-width:44px;border-radius:8px}.mafia-density .mafia-clock b{font-size:20px;line-height:1.15}.mafia-density .mafia-clock small{font-size:9px}
+.mafia-density .mafia-phase-copy{min-width:0;flex:1}.mafia-noir.mafia-density .mafia-phase-copy h1{font-size:14px;line-height:1.4;overflow-wrap:anywhere}.mafia-noir.mafia-density .mafia-phase-copy p{font-size:14px;line-height:1.5;color:#d4d8dc}.mafia-density .mafia-phase-copy strong{font-weight:600}
+.mafia-noir.mafia-density .mafia-clock{flex:0 0 44px;padding:2px;min-height:44px;min-width:44px;border-radius:8px}.mafia-density .mafia-clock b{font-size:20px;line-height:1.15}.mafia-density .mafia-clock small{font-size:14px}
 .mafia-noir.mafia-density .mafia-tool,.mafia-noir.mafia-density [data-design-id=role-toggle]{position:relative;display:flex;align-items:center;justify-content:center;flex:0 0 44px;width:44px;min-width:44px;min-height:44px;padding:8px}
 .mafia-tool svg,.mafia-voice-icon svg,[data-design-id=role-toggle] svg,.mafia-action-trigger svg{width:21px;height:21px;flex:none}.mafia-tool-dot{position:absolute;width:7px;height:7px;inset-inline-end:6px;top:6px;background:#6de2c5;border-radius:50%}
 .mafia-noir.mafia-density .mafia-secret{display:block;width:44px;min-width:44px;flex:0 0 44px;margin:0;padding:0;border:0;background:none;box-shadow:none}.mafia-density .mafia-secret-top{padding:0;display:block}.mafia-density .mafia-secret-top>span{display:none}
-.mafia-noir.mafia-density .mafia-voice{min-height:44px;padding:0 5px;gap:4px;background:#132630;border-color:#5f81845c;flex-wrap:nowrap}.mafia-noir.mafia-density .mafia-voice>div:first-child{min-width:0;flex:1}.mafia-noir.mafia-density .mafia-voice b{font-size:10px;line-height:1.4}.mafia-noir.mafia-density .mafia-voice-actions>.mafia-voice-icon{width:44px;min-width:44px;max-width:44px;padding:7px}.mafia-density .mafia-voice-actions select{max-width:100px}.mafia-density .mafia-voice>p{font-size:11px;max-width:100%}
-.mafia-noir.mafia-density .mafia-activity{position:relative;min-height:80px;gap:3px;isolation:isolate}.mafia-noir.mafia-density .mafia-chat{height:100%;display:flex;flex-direction:column;position:relative;border-radius:7px;background:#0e1826d9}.mafia-noir.mafia-density .mafia-panel-heading{min-height:25px;padding:3px 7px}.mafia-density .mafia-panel-heading h3{font-size:11px}.mafia-density .mafia-channel-tag{font-size:9px}
+.mafia-noir.mafia-density .mafia-voice{min-height:44px;padding:0 5px;gap:4px;background:#132630;border-color:#5f81845c;flex-wrap:nowrap}.mafia-noir.mafia-density .mafia-voice>div:first-child{min-width:0;flex:1}.mafia-noir.mafia-density .mafia-voice b{font-size:14px;line-height:1.4}.mafia-noir.mafia-density .mafia-voice-actions>.mafia-voice-icon{width:44px;min-width:44px;max-width:44px;padding:7px}.mafia-density .mafia-voice-actions select{max-width:100px}.mafia-density .mafia-voice>p{font-size:14px;max-width:100%}
+.mafia-noir.mafia-density .mafia-activity{position:relative;min-height:80px;gap:3px;isolation:isolate}.mafia-noir.mafia-density .mafia-chat{height:100%;display:flex;flex-direction:column;position:relative;border-radius:7px;background:#0e1826d9}.mafia-noir.mafia-density .mafia-panel-heading{min-height:25px;padding:3px 7px}.mafia-density .mafia-panel-heading h3{font-size:14px}.mafia-density .mafia-channel-tag{font-size:14px}
 .mafia-timeline-frame,.mafia-timeline-body{display:flex;flex-direction:column;flex:1;min-height:0;min-width:0}.mafia-timeline-body[hidden]{display:none}.mafia-density.is-finished .mafia-activity{display:block;overflow:visible;flex:none}.mafia-density.is-finished .mafia-timeline-frame{margin-top:8px;gap:5px}.mafia-density.is-finished .mafia-timeline-body:not([hidden]){height:min(60dvh,400px);flex:none;overflow:hidden}
-.mafia-noir.mafia-density .mafia-chat-messages{padding:5px 7px;overscroll-behavior:contain;overflow-anchor:none;scrollbar-width:thin;scroll-padding-top:8px}.mafia-density .mafia-timeline-info{font-size:10px;color:#b9c8cd;margin-bottom:7px;line-height:1.6}.mafia-density .mafia-timeline-info summary{cursor:pointer;min-height:22px}.mafia-density .mafia-timeline-info p{padding:5px;background:#192839;border-radius:5px}
-.mafia-noir.mafia-density .mafia-event-card{display:flex;padding:6px 8px;gap:7px;border-radius:7px;min-height:0;margin:5px 0;border-color:#bdac7936;background:#29302e80}.mafia-density .mafia-event-card>div{min-width:0}.mafia-noir.mafia-density .mafia-event-card p{font-size:12px;line-height:1.6}.mafia-density .mafia-event-card small{font-size:9px;color:#dec78f}.mafia-noir.mafia-density .mafia-message{margin:5px 0;padding:6px;gap:6px;border-radius:7px}.mafia-density .mafia-message b{font-size:11px}.mafia-density .mafia-message p,.mafia-long-message{font-size:12px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere}.mafia-long-message summary{font-size:12px;line-height:1.6;cursor:pointer}.mafia-long-message summary span{display:inline;color:#8ad5c9;font-size:10px}.mafia-density .mafia-message-seat{width:23px;height:23px;font-size:11px}
+.mafia-noir.mafia-density .mafia-chat-messages{padding:5px 7px;overscroll-behavior:contain;overflow-anchor:none;scrollbar-width:thin;scroll-padding-top:8px}.mafia-density .mafia-timeline-info{font-size:14px;color:#b9c8cd;margin-bottom:7px;line-height:1.6}.mafia-density .mafia-timeline-info summary{cursor:pointer;min-height:22px}.mafia-density .mafia-timeline-info p{padding:5px;background:#192839;border-radius:5px}
+.mafia-noir.mafia-density .mafia-event-card{display:flex;padding:6px 8px;gap:7px;border-radius:7px;min-height:0;margin:5px 0;border-color:#bdac7936;background:#29302e80}.mafia-density .mafia-event-card>div{min-width:0}.mafia-noir.mafia-density .mafia-event-card p{font-size:14px;line-height:1.6}.mafia-density .mafia-event-card small{font-size:14px;color:#dec78f}.mafia-noir.mafia-density .mafia-message{margin:5px 0;padding:6px;gap:6px;border-radius:7px}.mafia-density .mafia-message b{font-size:14px}.mafia-density .mafia-message p,.mafia-long-message{font-size:14px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere}.mafia-long-message summary{font-size:14px;line-height:1.6;cursor:pointer}.mafia-long-message summary span{display:inline;color:#8ad5c9;font-size:14px}.mafia-density .mafia-message-seat{width:23px;height:23px;font-size:14px}
 .mafia-noir.mafia-density .mafia-event-card,.mafia-noir.mafia-density .mafia-message{animation:none}
-.mafia-noir.mafia-density .mafia-chat form{padding:4px;gap:4px;min-height:52px;background:#152735;border-top:1px solid #93aba33b}.mafia-noir.mafia-density .mafia-chat form input{height:44px;min-height:44px;padding:7px 9px;border-radius:8px;font-size:16px}.mafia-density .mafia-chat form .btn{min-height:44px;padding:6px}.mafia-density .mafia-chat-locked{min-height:38px;display:flex;align-items:center;margin:0;padding:5px 8px;font-size:11px}.mafia-new-messages{position:absolute;bottom:58px;inset-inline-end:10px;z-index:2;min-height:44px;padding:6px 12px;border:1px solid #79c4b7;border-radius:20px;background:#184e51;color:#fff;font-size:12px;box-shadow:0 3px 12px #0006}
-.mafia-noir.mafia-density .mafia-player-rail{max-height:none;overflow:visible;padding:4px;background:linear-gradient(160deg,#1e303c,#202039);border-color:#9f8c665c;flex:none}.mafia-noir.mafia-density .mafia-seats{justify-content:flex-start;grid-template-columns:repeat(6,minmax(0,1fr));gap:3px;max-height:none;overflow:visible}.mafia-noir.mafia-density .mafia-seat{height:59px;min-height:59px;padding:3px 2px;min-width:44px;border-radius:7px;background:linear-gradient(#35414d,#242b39)}.mafia-noir.mafia-density .mafia-seat-portrait{height:27px}.mafia-noir.mafia-density .mafia-seat .avatar,.mafia-noir.mafia-density .mafia-seat .clay-avatar,.mafia-noir.mafia-density .mafia-seat .player-avatar{width:27px!important;height:27px!important}.mafia-noir.mafia-density .mafia-seat b{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.3}.mafia-noir.mafia-density .mafia-seat small{font-size:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.3}.mafia-noir.mafia-density .mafia-rail-heading{font-size:9px;padding:1px 2px 4px}.mafia-density .mafia-seat.speaking{border-color:#75e1b6;box-shadow:0 0 0 1px #75e1b6,inset 0 0 12px #31a56c30}.mafia-density .mafia-seat.eliminated{filter:grayscale(.8)}
-.mafia-action-dock{margin-bottom:4px}.mafia-action-trigger{display:flex;align-items:center;gap:6px;width:100%;padding:5px 8px;min-height:44px;border:1px solid #a9caad80;border-radius:7px;color:#f0dfad;background:linear-gradient(120deg,#344b43,#303447);font-size:12px;text-align:start}.mafia-action-trigger strong{flex:1}.mafia-action-trigger>span{font-size:10px}.mafia-noir.mafia-density .mafia-action-dock .mafia-ability{max-height:min(26dvh,160px);overflow:auto;margin-top:4px;padding:6px;overscroll-behavior:contain}.mafia-noir.mafia-density .mafia-ability p{font-size:11px}.mafia-noir.mafia-density .mafia-ability .btn{min-height:44px;padding:5px 8px}.mafia-density .mafia-ability-heading h3{font-size:12px}.mafia-density .mafia-ability-heading small{font-size:10px}
-.mafia-density .mafia-decision-status{font-size:10px;line-height:1.5;padding:4px 5px;color:#b6ecd0;background:#1d3a36;border-radius:5px;margin-bottom:4px}
-.mafia-event-overlay{position:absolute;left:50%;top:12%;transform:translateX(-50%);width:min(91%,420px);max-height:135px;z-index:3;display:grid;grid-template-columns:92px minmax(0,1fr);border:1px solid #bba578aa;border-radius:12px;background:#14232bef;box-shadow:0 10px 24px #0008;overflow:hidden;pointer-events:none;animation:mafia-event-enter .24s ease-out}.mafia-event-overlay .mafia-scene-art{width:92px;height:100%;min-height:88px;max-height:125px;aspect-ratio:auto;object-fit:cover}.mafia-event-overlay>div{align-self:center;padding:12px 9px}.mafia-event-overlay strong{display:block;font-size:18px;color:#f0dba8;line-height:1.45}.mafia-event-overlay small{display:block;font-size:10px;line-height:1.6;color:#dae5e2;margin-top:3px}@keyframes mafia-event-enter{from{opacity:0;transform:translate(-50%,7px)}to{opacity:1;transform:translate(-50%,0)}}
+.mafia-noir.mafia-density .mafia-chat form{padding:4px;gap:4px;min-height:52px;background:#152735;border-top:1px solid #93aba33b}.mafia-noir.mafia-density .mafia-chat form input{height:44px;min-height:44px;padding:7px 9px;border-radius:8px;font-size:16px}.mafia-density .mafia-chat form .btn{min-height:44px;padding:6px}.mafia-density .mafia-chat-locked{min-height:38px;display:flex;align-items:center;margin:0;padding:5px 8px;font-size:14px}.mafia-new-messages{position:absolute;bottom:58px;inset-inline-end:10px;z-index:2;min-height:44px;padding:6px 12px;border:1px solid #79c4b7;border-radius:20px;background:#184e51;color:#fff;font-size:14px;box-shadow:0 3px 12px #0006}
+.mafia-noir.mafia-density .mafia-player-rail{max-height:none;overflow:visible;padding:4px;background:linear-gradient(160deg,#1e303c,#202039);border-color:#9f8c665c;flex:none}.mafia-noir.mafia-density .mafia-seats{justify-content:flex-start;grid-template-columns:repeat(6,minmax(0,1fr));gap:3px;max-height:none;overflow:visible}.mafia-noir.mafia-density .mafia-seat{height:59px;min-height:59px;padding:3px 2px;min-width:44px;border-radius:7px;background:linear-gradient(#35414d,#242b39)}.mafia-noir.mafia-density .mafia-seat-portrait{height:27px}.mafia-noir.mafia-density .mafia-seat .avatar,.mafia-noir.mafia-density .mafia-seat .clay-avatar,.mafia-noir.mafia-density .mafia-seat .player-avatar{width:27px!important;height:27px!important}.mafia-noir.mafia-density .mafia-seat b{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.3}.mafia-noir.mafia-density .mafia-seat small{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.3}.mafia-noir.mafia-density .mafia-rail-heading{font-size:14px;padding:1px 2px 4px}.mafia-density .mafia-seat.speaking{border-color:#75e1b6;box-shadow:0 0 0 1px #75e1b6,inset 0 0 12px #31a56c30}.mafia-density .mafia-seat.eliminated{filter:grayscale(.8)}
+.mafia-action-dock{margin-bottom:4px}.mafia-action-trigger{display:flex;align-items:center;gap:6px;width:100%;padding:5px 8px;min-height:44px;border:1px solid #a9caad80;border-radius:7px;color:#f0dfad;background:linear-gradient(120deg,#344b43,#303447);font-size:14px;text-align:start}.mafia-action-trigger strong{flex:1}.mafia-action-trigger>span{font-size:14px}.mafia-noir.mafia-density .mafia-action-dock .mafia-ability{max-height:min(26dvh,160px);overflow:auto;margin-top:4px;padding:6px;overscroll-behavior:contain}.mafia-noir.mafia-density .mafia-ability p{font-size:14px}.mafia-noir.mafia-density .mafia-ability .btn{min-height:44px;padding:5px 8px}.mafia-density .mafia-ability-heading h3{font-size:14px}.mafia-density .mafia-ability-heading small{font-size:14px}
+.mafia-density .mafia-decision-status{font-size:14px;line-height:1.5;padding:4px 5px;color:#b6ecd0;background:#1d3a36;border-radius:5px;margin-bottom:4px}
+.mafia-event-overlay{position:absolute;left:50%;top:12%;transform:translateX(-50%);width:min(91%,420px);max-height:135px;z-index:3;display:grid;grid-template-columns:92px minmax(0,1fr);border:1px solid #bba578aa;border-radius:12px;background:#14232bef;box-shadow:0 10px 24px #0008;overflow:hidden;pointer-events:none;animation:mafia-event-enter .24s ease-out}.mafia-event-overlay .mafia-scene-art{width:92px;height:100%;min-height:88px;max-height:125px;aspect-ratio:auto;object-fit:cover}.mafia-event-overlay>div{align-self:center;padding:12px 9px}.mafia-event-overlay strong{display:block;font-size:18px;color:#f0dba8;line-height:1.45}.mafia-event-overlay small{display:block;font-size:14px;line-height:1.6;color:#dae5e2;margin-top:3px}@keyframes mafia-event-enter{from{opacity:0;transform:translate(-50%,7px)}to{opacity:1;transform:translate(-50%,0)}}
 .mafia-noir.mafia-density:has(input:focus,textarea:focus) .mafia-seats{display:flex;overflow-x:auto;overflow-y:visible;max-height:none;padding-bottom:3px;scroll-snap-type:x proximity}.mafia-noir.mafia-density:has(input:focus,textarea:focus) .mafia-seat{flex:0 0 48px;scroll-snap-align:center}.mafia-noir.mafia-density:has(input:focus,textarea:focus) .mafia-rail-heading{display:none}
-.mafia-noir.mafia-density:has(.mafia-action-dock.is-open) .mafia-seats{display:flex;overflow-x:auto;overflow-y:visible;padding-bottom:3px;scroll-snap-type:x proximity}.mafia-noir.mafia-density:has(.mafia-action-dock.is-open) .mafia-seat{flex:0 0 48px;scroll-snap-align:center}.mafia-noir.mafia-density.mafia-lobby-screen .mafia-heading h1{font-size:14px}.mafia-density.mafia-lobby-screen .mafia-kicker{font-size:9px}
+.mafia-noir.mafia-density:has(.mafia-action-dock.is-open) .mafia-seats{display:flex;overflow-x:auto;overflow-y:visible;padding-bottom:3px;scroll-snap-type:x proximity}.mafia-noir.mafia-density:has(.mafia-action-dock.is-open) .mafia-seat{flex:0 0 48px;scroll-snap-align:center}.mafia-noir.mafia-density.mafia-lobby-screen .mafia-heading h1{font-size:14px}.mafia-density.mafia-lobby-screen .mafia-kicker{font-size:14px}
 .mafia-directory-dense{height:100%;min-height:0;padding:0!important}.mafia-directory-dense .mafia-directory-filters{grid-template-columns:repeat(3,minmax(0,1fr))}.mafia-private-panel .mafia-reports,.mafia-private-panel .mafia-notebook{height:auto;max-height:none}
 @media(orientation:landscape) and (max-height:550px){.mafia-noir.mafia-density:not(.is-finished){display:grid;grid-template-columns:minmax(0,1fr) 218px;grid-template-rows:auto auto minmax(0,1fr);grid-template-areas:"heading players" "voice players" "activity players";gap:4px}.mafia-noir.mafia-density .mafia-activity{min-height:0}.mafia-noir.mafia-density>.mafia-player-rail{max-height:100%;min-height:0;overflow:auto}.mafia-noir.mafia-density .mafia-seats{display:flex;overflow-x:auto;overflow-y:visible;padding-bottom:2px}.mafia-noir.mafia-density .mafia-seat{flex:0 0 50px;height:50px;min-height:50px}.mafia-noir.mafia-density .mafia-seat-portrait{height:22px}.mafia-noir.mafia-density .mafia-seat .avatar,.mafia-noir.mafia-density .mafia-seat .clay-avatar{height:22px!important;width:22px!important}.mafia-noir.mafia-density .mafia-seat small{display:none}.mafia-density .mafia-rail-heading{display:none}.mafia-noir.mafia-density .mafia-action-dock .mafia-ability{max-height:95px}.mafia-event-overlay{max-height:100px;top:4%}}
 @media(prefers-reduced-motion:reduce){.mafia-event-overlay{animation:none}.mafia-density .mafia-clock{animation:none!important}.mafia-density .mafia-chat-messages{scroll-behavior:auto}}
 
 /* Compact, readable Arabic game copy; metadata never replaces action labels. */
 .mafia-noir.mafia-density .mafia-message p, .mafia-noir.mafia-density .mafia-long-message { font-size: 14px; line-height: 1.75; }
-.mafia-noir.mafia-density .mafia-event-card p, .mafia-noir.mafia-density .mafia-ability p { font-size: 13px; line-height: 1.7; }
-.mafia-noir.mafia-density .mafia-message b, .mafia-noir.mafia-density .mafia-event-card small { font-size: 12px; }
-.mafia-noir.mafia-density .mafia-clock small, .mafia-noir.mafia-density .mafia-voice b, .mafia-noir.mafia-density .mafia-panel-heading h3 { font-size: 12px; }
-.mafia-noir.mafia-density .mafia-action-trigger, .mafia-noir.mafia-density .mafia-ability .btn { font-size: 13px; }
-.mafia-noir.mafia-density .mafia-decision-status, .mafia-noir.mafia-density .mafia-chat-locked { font-size: 12px; line-height: 1.6; }
+.mafia-noir.mafia-density .mafia-event-card p, .mafia-noir.mafia-density .mafia-ability p { font-size:14px; line-height: 1.7; }
+.mafia-noir.mafia-density .mafia-message b, .mafia-noir.mafia-density .mafia-event-card small { font-size:14px; }
+.mafia-noir.mafia-density .mafia-clock small, .mafia-noir.mafia-density .mafia-voice b, .mafia-noir.mafia-density .mafia-panel-heading h3 { font-size:14px; }
+.mafia-noir.mafia-density .mafia-action-trigger, .mafia-noir.mafia-density .mafia-ability .btn { font-size:14px; }
+.mafia-noir.mafia-density .mafia-decision-status, .mafia-noir.mafia-density .mafia-chat-locked { font-size:14px; line-height: 1.6; }
 .mafia-noir.mafia-density .mafia-seat { min-height: 70px; height: auto; }
-.mafia-noir.mafia-density .mafia-seat b { font-size: 11px; line-height: 1.4; }
-.mafia-noir.mafia-density .mafia-seat small { font-size: 10px; line-height: 1.4; }
+.mafia-noir.mafia-density .mafia-seat b { font-size:14px; line-height: 1.4; }
+.mafia-noir.mafia-density .mafia-seat small { font-size:14px; line-height: 1.4; }
 .mafia-noir.mafia-density .mafia-action-dock .mafia-ability { scroll-padding-block: 8px; }
 @media (orientation: landscape) and (max-height: 550px) {
   .mafia-noir.mafia-density .mafia-seat { min-height: 50px; height: 50px; }
-  .mafia-noir.mafia-density .mafia-message p, .mafia-noir.mafia-density .mafia-long-message { font-size: 13px; }
+  .mafia-noir.mafia-density .mafia-message p, .mafia-noir.mafia-density .mafia-long-message { font-size:14px; }
 }
 
 /* M03–M06: private descriptions and review text stay readable inside scrollable dialogs. */
-.mafia-noir .mafia-role-description small{font-size:12px;line-height:1.8;color:#bdc8d6}
+.mafia-noir .mafia-role-description small{font-size:14px;line-height:1.8;color:#bdc8d6}
 .mafia-noir .mafia-role-tile{padding:12px;gap:10px;border-color:#8b809161}
 .mafia-noir .mafia-role-tile h4{font-size:17px;line-height:1.5;overflow-wrap:anywhere}
-.mafia-noir .mafia-role-tile p{font-size:13px;line-height:1.8}
-.mafia-noir .mafia-role-tile small{font-size:12px;line-height:1.6}
-.mafia-noir .mafia-role-disclosure>summary{min-height:44px;font-size:13px}
-.mafia-noir .mafia-role-details,.mafia-noir .mafia-role-details .mafia-role-example{font-size:13px;line-height:1.85}
-.mafia-noir .mafia-role-details :is(dt,h5){font-size:13px}
-.mafia-noir .mafia-reports>p,.mafia-noir .mafia-notebook p{font-size:13px;line-height:1.8}
+.mafia-noir .mafia-role-tile p{font-size:14px;line-height:1.8}
+.mafia-noir .mafia-role-tile small{font-size:14px;line-height:1.6}
+.mafia-noir .mafia-role-disclosure>summary{min-height:44px;font-size:14px}
+.mafia-noir .mafia-role-details,.mafia-noir .mafia-role-details .mafia-role-example{font-size:14px;line-height:1.85}
+.mafia-noir .mafia-role-details :is(dt,h5){font-size:14px}
+.mafia-noir .mafia-reports>p,.mafia-noir .mafia-notebook p{font-size:14px;line-height:1.8}
 .mafia-noir .mafia-reports article{padding:12px 13px;border-inline-start-width:3px}
-.mafia-noir .mafia-reports article b{font-size:12px}
+.mafia-noir .mafia-reports article b{font-size:14px}
 .mafia-noir .mafia-reports article p{font-size:14px;line-height:1.8}
-.mafia-noir .mafia-result-player-copy>small{font-size:12px;line-height:1.5}
-.mafia-noir .mafia-result-player-detail p,.mafia-noir .mafia-result-replay>ol{font-size:13px;line-height:1.85}
+.mafia-noir .mafia-result-player-copy>small{font-size:14px;line-height:1.5}
+.mafia-noir .mafia-result-player-detail p,.mafia-noir .mafia-result-replay>ol{font-size:14px;line-height:1.85}
 .mafia-noir .mafia-result-replay>summary{font-size:14px;line-height:1.7}
 @media(max-width:359px){.mafia-noir .mafia-role-catalog{grid-template-columns:1fr}.mafia-noir .mafia-role-tile>.mafia-role-art{width:min(100%,180px);justify-self:center}}
 
@@ -343,7 +343,7 @@ html[data-startup-background-visible] .mafia-noir.mafia-shell.has-player-rail:no
 }
 .mafia-noir.mafia-density .mafia-phase-copy p {
   color: #e8d3e6;
-  font-size: 12px;
+  font-size:14px;
   line-height: 1.35;
 }
 .mafia-noir.mafia-density .mafia-phase-copy p strong {
@@ -381,7 +381,7 @@ html[data-startup-background-visible] .mafia-noir.mafia-shell.has-player-rail:no
   justify-content: center;
   padding-inline: 5px;
   font-weight: 800;
-  font-size: 13px;
+  font-size:14px;
   background: linear-gradient(#f8e6f4, #e6c9e7);
   color: var(--council-ink);
   border-color: #e2bce1;
@@ -457,7 +457,7 @@ html[data-startup-background-visible] .mafia-noir.mafia-shell.has-player-rail:no
 .mafia-noir .mafia-recovery strong { display: block; font-size: 15px; }
 .mafia-noir .mafia-defense-summary svg { width: 24px; height: 24px; flex: none; }
 .mafia-noir .mafia-defense-summary span,
-.mafia-noir .mafia-recovery p { font-size: 13px; line-height: 1.65; }
+.mafia-noir .mafia-recovery p { font-size:14px; line-height: 1.65; }
 .mafia-noir .mafia-recovery { display: grid; gap: 2px; }
 .mafia-noir .mafia-phase-feature {
   display: grid;
@@ -538,7 +538,7 @@ html[data-startup-background-visible] .mafia-noir.mafia-shell.has-player-rail:no
 .mafia-noir .mafia-choice-portrait { width: 34px; height: 34px; }
 .mafia-noir .mafia-choice-portrait .avatar { width: 34px; height: 34px; }
 .mafia-noir .mafia-choice-name { font-weight: 800; min-width: 0; overflow-wrap: anywhere; }
-.mafia-noir .mafia-choice-name small { margin-inline-start: 5px; font-size: 11px; }
+.mafia-noir .mafia-choice-name small { margin-inline-start: 5px; font-size:14px; }
 .mafia-noir .mafia-choice-radio {
   border: 1px solid #8e7186;
   border-radius: 50%;
@@ -559,7 +559,7 @@ html[data-startup-background-visible] .mafia-noir.mafia-shell.has-player-rail:no
   border-radius: 9px;
   color: var(--council-ink);
   background: #eedce7;
-  font-size: 13px;
+  font-size:14px;
   line-height: 1.65;
 }
 .mafia-noir .mafia-verdict-candidate {
@@ -685,7 +685,7 @@ html[data-startup-background-visible] .mafia-noir.mafia-shell.has-player-rail:no
   padding: 5px 8px 10px;
 }
 .mafia-directory-title h1 { margin: 0; font-size: clamp(25px, 7vw, 38px); line-height: 1.25; }
-.mafia-directory-title span { color: #e5bbdf; font-size: 13px; }
+.mafia-directory-title span { color: #e5bbdf; font-size:14px; }
 .mafia-directory-title .mafia-noir-icon { width: 53px; height: 53px; flex: 0 0 auto; }
 .mafia-noir .mafia-directory-actions { gap: 6px; }
 .mafia-noir .mafia-directory-actions .btn {
@@ -712,7 +712,7 @@ html[data-startup-background-visible] .mafia-noir.mafia-shell.has-player-rail:no
 .mafia-directory-option-tabs { display: grid; grid-template-columns: 1fr 1fr 44px; gap: 5px; }
 .mafia-directory-option-tabs .btn { min-height: 44px; min-width: 0; padding-inline: 3px; }
 .mafia-directory-paper .mafia-directory-filters { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.mafia-noir.mafia-directory .mafia-directory-paper label { min-width: 0; gap: 3px; font-size: 12px; }
+.mafia-noir.mafia-directory .mafia-directory-paper label { min-width: 0; gap: 3px; font-size:14px; }
 .mafia-noir.mafia-directory .mafia-directory-paper select {
   min-width: 0;
   font-size: 16px;
@@ -768,7 +768,14 @@ html[data-startup-background-visible] .mafia-noir.mafia-shell.has-player-rail:no
   border-color: #a45ca6;
 }
 .mafia-noir.mafia-density.mafia-lobby-screen .mafia-heading { grid-template-columns: minmax(0,1fr) auto auto auto; text-align: start; }
+.mafia-lobby-screen .mafia-heading > div { min-width: 0; }
+.mafia-lobby-screen .mafia-heading .mafia-kicker { display: block; max-width: 100%; }
 .mafia-noir.mafia-density.mafia-lobby-screen .mafia-heading h1 { font-size: clamp(16px, 5vw, 22px); }
+.mafia-lobby-language { min-width: 0; flex: 0 0 auto; grid-area: language; }
+.mafia-lobby-language > .online-field { display: grid; grid-template-columns: minmax(0,1fr) minmax(112px,1fr); align-items: center; gap: 3px 8px; }
+.mafia-lobby-language > .online-field > span { min-width: 0; overflow-wrap: anywhere; }
+.mafia-lobby-language > .online-field > :is(select,strong) { display: flex; align-items: center; min-height: 48px; padding: 6px 10px; }
+.mafia-lobby-language > .online-field > small { grid-column: 1 / -1; line-height: 1.35; }
 .mafia-lobby-players { min-height: 0; flex: 0 0 auto; overflow: auto; scrollbar-width: thin; }
 .mafia-noir.mafia-density.mafia-lobby-screen .mafia-lobby-players .mafia-seats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .mafia-noir.mafia-density.mafia-lobby-screen .mafia-seat { min-height: 59px; padding-block: 6px; }
@@ -776,7 +783,7 @@ html[data-startup-background-visible] .mafia-noir.mafia-shell.has-player-rail:no
   position: relative;
   justify-content: center;
   gap: 4px;
-  font-size: 10px;
+  font-size:14px;
   color: #dac1d7;
   border-style: dashed;
   background: #422543;
@@ -799,15 +806,24 @@ html[data-startup-background-visible] .mafia-noir.mafia-shell.has-player-rail:no
   .mafia-noir .mafia-directory-paper .mafia-directory-filters > label:nth-child(3) { grid-column: auto; grid-row: auto; }
 }
 @media (max-height: 600px) {
-  .mafia-lobby-players { max-height: 125px; }
+  .mafia-lobby-screen .mafia-heading h1,
+  .mafia-lobby-screen .mafia-heading .mafia-kicker { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  /* Keep the explanatory copy available to assistive technology without
+     reserving another row above the chat on a short viewport. Status/errors
+     remain visible; the labelled 48px language control is always in the lobby. */
+  .mafia-lobby-language > .online-field > small:not([role]) { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .mafia-noir.mafia-density.mafia-lobby-screen .mafia-chat-messages { padding-block: 2px; }
+  .mafia-lobby-players { max-height: 84px; }
   .mafia-lobby-screen:has(.mafia-chat input:focus) .mafia-lobby-players { max-height: 61px; }
 }
 @media (orientation: landscape) and (max-height: 550px) {
   .mafia-noir.mafia-density.mafia-lobby-screen {
     grid-template-rows: auto minmax(0,1fr) auto auto;
-    grid-template-areas: "heading seats" "activity seats" "voice seats" "controls controls";
+    grid-template-areas: "heading language" "activity seats" "voice seats" "controls controls";
   }
-  .mafia-noir.mafia-density.mafia-lobby-screen > .mafia-player-rail { grid-area: controls; }
+  .mafia-noir.mafia-density.mafia-lobby-screen > .mafia-player-rail { grid-area: controls; display: flex; align-items: center; gap: 8px; }
+  .mafia-lobby-screen > .mafia-player-rail .mafia-rail-note { flex: 1; margin: 0; }
+  .mafia-lobby-screen > .mafia-player-rail .mafia-lobby-ready { flex: 2; }
   .mafia-lobby-screen > .mafia-lobby-players { grid-area: seats; max-height: 100%; }
   .mafia-noir.mafia-density.mafia-lobby-screen .mafia-lobby-players .mafia-seats { display: grid; }
   .mafia-lobby-screen > .mafia-lobby-voice-note { display: none; }
@@ -878,8 +894,8 @@ html[data-startup-background-visible] .mafia-noir.mafia-shell.has-player-rail:no
 }
 .mafia-ranked-board { display: grid; gap: 5px; padding-inline-start: 22px; margin: 0; }
 .mafia-ranked-board li { padding: 7px 9px; border: 1px solid #46627a; border-radius: 8px; background: #14263b; }
-.mafia-ranked-board li span { display: block; color: #c8dce7; font-size: 12px; margin-top: 3px; }
-.mafia-community-chip { display: inline-flex; padding: 3px 8px; border-radius: 999px; background: #1f4b55; color: #def9f6; margin-bottom: 5px; font-size: 12px; }
+.mafia-ranked-board li span { display: block; color: #c8dce7; font-size:14px; margin-top: 3px; }
+.mafia-community-chip { display: inline-flex; padding: 3px 8px; border-radius: 999px; background: #1f4b55; color: #def9f6; margin-bottom: 5px; font-size:14px; }
 .mafia-community-panel .mafia-community article.mafia-community-event { border-color: #90815b; }
 .mafia-community-panel .mafia-community article a { color: #a0e4e7; }
 
@@ -913,3 +929,148 @@ html[data-startup-background-visible] .mafia-noir.mafia-shell.has-player-rail:no
 @media (orientation: landscape) and (max-height: 550px) {
   .mafia-noir.mafia-density .mafia-decision-scroll { display: block; }
 }
+/* Playful Studio: the same light game-club surfaces as the platform.
+   Selectors change presentation only; private role/ability visibility is still
+   controlled by the match component and its public/private state. */
+.mafia-noir {
+  --m-bg:#fff8f0; --m-panel:#fffdf9; --m-ink:#352139; --m-soft:#705f70;
+  --m-gold:#76518d; --m-border:#dfd1dc; --text:#352139; --muted:#705f70;
+  --council-paper:#fffdf9; --council-ink:#352139; --council-muted:#705f70;
+  --council-edge:#dfd1dc; --council-teal:#08796d; --council-lilac:#eee3f5;
+  color:#352139; color-scheme:light;
+}
+.mafia-noir.mafia-shell,.mafia-noir.mafia-density,.mafia-noir.mafia-directory {
+  background:#fff8f0; color:#352139; border-color:#dfd1dc;
+}
+.mafia-noir :is(button,summary,input,select,textarea) { min-height:48px; }
+.mafia-noir .btn { min-height:48px; min-width:48px; border-radius:16px; background:#fffdf9; border-color:#dfd1dc; color:#352139; box-shadow:0 2px 0 #e3d7df; }
+.mafia-noir .btn-primary { background:#08796d; border-color:#08796d; color:#fff; box-shadow:0 2px 0 #066155; }
+.mafia-noir .btn-ghost { background:transparent; color:#705f70; box-shadow:none; }
+.mafia-noir :is(input,select,textarea) { color:#352139; background:#fffdf9; border-color:#d8cad9; border-radius:14px; box-shadow:none; }
+.mafia-noir :is(button,input,select,textarea,summary):focus-visible { outline:3px solid #08796d; outline-offset:3px; }
+.mafia-noir :is(.mafia-kicker,.mafia-selection-summary,.mafia-rail-heading) { color:#76518d; }
+.mafia-noir.mafia-density .mafia-heading {
+  background:#eee3f5; color:#352139; border:1px solid #ddcfe6; border-radius:20px;
+  padding:10px; box-shadow:0 2px 0 #e3d7e9; gap:8px;
+}
+.mafia-noir.mafia-density .mafia-phase-copy :is(h1,p,p strong),
+.mafia-noir.mafia-density .mafia-heading .mafia-kicker { color:#352139; text-shadow:none; }
+.mafia-noir.mafia-density .mafia-phase-copy h1 { font-size:20px; line-height:1.3; }
+.mafia-noir.mafia-density .mafia-phase-copy p { font-size:14px; }
+.mafia-noir.mafia-density .mafia-phase-copy p strong { font-size:24px; }
+.mafia-noir.mafia-density .mafia-clock { color:#075f55; background:#e2f3ed; border-color:#afd3c7; min-height:48px; border-radius:16px; box-shadow:none; }
+.mafia-noir.mafia-density .mafia-clock :is(b,small,span) { color:inherit; }
+.mafia-noir.mafia-density .mafia-match-tools .btn,
+.mafia-noir.mafia-density .mafia-action-trigger { color:#352139; background:#fffdf9; border-color:#d8cad9; min-height:48px; border-radius:16px; box-shadow:0 2px 0 #dfd1dc; }
+.mafia-noir.mafia-density .mafia-activity { border-radius:20px; padding:5px; box-shadow:0 3px 12px #35213908; }
+.mafia-noir.mafia-density .mafia-chat { border-radius:16px; }
+.mafia-noir.mafia-density :is(.mafia-panel-heading,.mafia-chat form) { background:#fff8f0; border-color:#e7dce5; }
+.mafia-noir.mafia-density .mafia-panel-heading { padding:8px 10px; }
+.mafia-noir.mafia-density .mafia-chat form { padding:8px; gap:8px; }
+.mafia-noir.mafia-density .mafia-chat form input { height:48px; min-height:48px; border-radius:14px; }
+.mafia-noir.mafia-density .mafia-chat form .btn { min-height:48px; border-radius:14px; background:#08796d; color:white; border-color:#08796d; }
+.mafia-noir.mafia-density .mafia-chat-messages { padding:10px; }
+.mafia-noir.mafia-density :is(.mafia-message,.mafia-event-card) { background:transparent; border-color:#e7dce5; border-radius:16px; }
+.mafia-noir.mafia-density .mafia-message>div { border-color:#e7dce5; border-radius:16px; background:#fffdf9; }
+.mafia-noir.mafia-density .mafia-message.is-own>div { background:#e2f3ed; border-color:#afd3c7; }
+.mafia-noir.mafia-density .mafia-message-seat { background:#eee3f5; border-color:#d8c5e4; color:#352139; }
+.mafia-noir.mafia-density .mafia-voice { background:#e2f3ed; border-color:#bfd9cc; border-radius:16px; padding:8px; }
+.mafia-noir.mafia-density .mafia-voice b { color:#352139; }
+.mafia-noir.mafia-density .mafia-voice-actions .btn { min-height:48px; color:#075f55; background:#fffdf9; border-color:#afd3c7; }
+.mafia-noir.mafia-density .mafia-player-rail { background:#fffdf9; border-color:#dfd1dc; border-radius:20px; padding:8px; }
+.mafia-noir.mafia-density .mafia-seats { grid-template-columns:repeat(4,minmax(0,1fr)); gap:6px; }
+.mafia-noir.mafia-density .mafia-seat { height:78px; min-height:78px; min-width:48px; padding:5px 3px; color:#352139; background:#f6eff7; border-color:#dfd1dc; border-radius:14px; }
+.mafia-noir.mafia-density .mafia-seat :is(b,small) { font-size:14px; color:#352139; line-height:1.35; }
+.mafia-noir.mafia-density .mafia-seat.selected { background:#e2f3ed; border-color:#08796d; }
+.mafia-noir.mafia-density .mafia-seat.speaking { border-color:#08796d; box-shadow:0 0 0 1px #08796d; }
+.mafia-noir.mafia-density .mafia-seat-empty { color:#705f70; background:#fff8f0; }
+.mafia-noir .mafia-choice-row { min-height:52px; border-radius:16px; background:#fffdf9; border-color:#dfd1dc; }
+.mafia-noir .mafia-choice-row[aria-pressed=true] { background:#e2f3ed; border-color:#08796d; }
+.mafia-noir.mafia-density .mafia-action-dock .mafia-ability { border-radius:20px; padding:12px; }
+.mafia-noir.mafia-density .mafia-decision-actions>.btn { min-height:48px; min-width:48px; }
+.mafia-noir .mafia-event-overlay { color:#352139; background:#fffdf9f5; border-color:#dfd1dc; border-radius:20px; box-shadow:0 8px 28px #35213922; }
+.mafia-noir .mafia-event-overlay :is(h2,p,strong,span) { color:#352139; text-shadow:none; }
+.mafia-noir:is(.mafia-paper-dialog,.mafia-role-dialog,.mafia-guide-dialog,.mafia-history-dialog,.mafia-ranked-panel,.mafia-community-panel) { background:#fffdf9; border-color:#dfd1dc; color:#352139; border-radius:24px; }
+.mafia-noir:is(.mafia-ranked-panel,.mafia-community-panel) :is(.modal-head,.mafia-notice,.mafia-ranked-card,.mafia-ranked-season,fieldset,article,li) { background:#fff8f0; color:#352139; border-color:#dfd1dc; }
+.mafia-noir:is(.mafia-ranked-panel,.mafia-community-panel) :is(h2,h3,h4,p,small,.mafia-muted) { color:#352139; }
+.mafia-noir:is(.mafia-ranked-panel,.mafia-community-panel) .btn { background:#eee3f5; color:#352139; border-color:#d8c5e4; }
+.mafia-noir:is(.mafia-ranked-panel,.mafia-community-panel) .btn-primary:not(:disabled) { background:#08796d; color:#fff; border-color:#08796d; }
+.mafia-noir.mafia-guide-dialog.mafia-paper-dialog .mafia-role-tile { background:#fff8f0; border-color:#dfd1dc; color:#352139; border-radius:20px; }
+.mafia-noir.mafia-guide-dialog.mafia-paper-dialog .mafia-role-tile :is(h4,p,small,dt,dd,li,.mafia-role-example,summary) { color:#352139; }
+@media(orientation:landscape) and (max-height:550px) {
+  .mafia-noir.mafia-density .mafia-heading { padding:6px; }
+  .mafia-noir.mafia-density .mafia-phase-copy p strong { font-size:20px; }
+  .mafia-noir.mafia-density .mafia-seats { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .mafia-noir.mafia-density .mafia-seat { height:72px; min-height:72px; }
+  .mafia-noir.mafia-density .mafia-seat small { display:block; }
+  .mafia-noir.mafia-density .mafia-player-rail { overflow:auto; }
+}
+/* Finish the light palette at the nested lobby and accessibility controls. */
+.mafia-noir .mafia-heading :is(h1,h2,.mafia-kicker) { color:#352139; }
+.mafia-noir .mafia-heading p,.mafia-noir .mafia-chat-empty { color:#705F70; }
+.mafia-noir .mafia-timeline-info>summary,.mafia-noir .mafia-long-message>summary,
+.mafia-noir .mafia-role-disclosure>summary { min-height:48px; align-content:center; cursor:pointer; }
+.mafia-noir.mafia-density .mafia-voice-actions>.mafia-voice-icon { width:48px; min-width:48px; max-width:48px; }
+.mafia-noir .mafia-voice .btn-primary { background:#08796D; color:#FFF; border-color:#08796D; }
+.mafia-noir.mafia-density .mafia-seat { box-shadow:0 2px 0 #DFD1DC; }
+.mafia-noir.mafia-density .mafia-seat.selected { box-shadow:inset 0 0 0 1px #08796D,0 2px 0 #9CC8BB; }
+.mafia-noir.mafia-density .mafia-seat.speaking { box-shadow:0 0 0 2px #08796D; }
+.mafia-noir.mafia-density:has(.mafia-action-dock.is-open) .mafia-seat { flex-basis:80px; }
+.mafia-noir.mafia-density:has(input:focus,textarea:focus) .mafia-seat { flex-basis:80px; }
+.mafia-noir .mafia-lobby-ready .btn { min-height:48px; }
+/* Compact portrait keeps the conversation usable; the roster scrolls inside
+   its own rail instead of compressing messages or shrinking touch targets. */
+@media (orientation:portrait) and (max-height:740px) {
+  .mafia-noir.mafia-density .mafia-player-rail { max-height:min(25dvh,160px); overflow:auto; }
+  .mafia-noir.mafia-density .mafia-heading { padding:6px; gap:4px; }
+  .mafia-noir.mafia-density .mafia-phase-copy h1 { font-size:16px; }
+  .mafia-noir.mafia-density .mafia-phase-copy p strong { font-size:20px; }
+  .mafia-noir.mafia-density .mafia-voice { padding:4px 6px; }
+}
+@media (orientation:landscape) and (max-height:550px) {
+  .mafia-noir.mafia-density .mafia-clock { min-height:32px; height:32px; }
+  .mafia-noir.mafia-density .mafia-activity { padding:3px; }
+  .mafia-noir.mafia-density .mafia-panel-heading { padding-block:6px; }
+}
+@media (orientation:landscape) and (max-height:550px) {
+  .mafia-noir.mafia-density .mafia-phase-copy h1 { display:none; }
+  .mafia-noir.mafia-density .mafia-heading { gap:4px; padding:4px 6px; }
+  .mafia-noir.mafia-density .mafia-voice { padding:4px 6px; }
+}
+.mafia-noir.mafia-directory .online-directory-view { color:#352139; --directory-accent:#08796D; }
+.mafia-noir.mafia-directory .mafia-directory-title :is(h1,span),
+.mafia-noir.mafia-directory .mafia-directory-list-label { color:#352139; }
+.mafia-noir.mafia-directory .mafia-directory-actions .btn { min-height:48px; background:#FFFDF9; color:#352139; border-color:#DFD1DC; box-shadow:0 2px 0 #DFD1DC; }
+.mafia-noir.mafia-directory .mafia-directory-actions .btn-primary { background:#08796D; color:#FFF; border-color:#08796D; }
+.mafia-noir.mafia-directory .mafia-directory-list-label .btn { color:#08796D; min-height:48px; }
+.mafia-noir.mafia-directory .mafia-directory-option-tabs { grid-template-columns:1fr 1fr 48px; }
+.mafia-noir.mafia-directory .mafia-directory-option-tabs .btn { min-height:48px; }
+.mafia-noir.mafia-directory .online-directory-row { border-radius:20px; background:#FFFDF9; border-color:#DFD1DC; box-shadow:0 3px 12px #35213908; }
+.mafia-noir.mafia-directory .online-directory-profile { background:#EEE3F5; color:#352139; border-color:#D8CAD9; box-shadow:none; }
+.mafia-noir.mafia-directory .online-directory-profile small { color:#705F70; }
+.mafia-noir.mafia-directory .online-directory-empty { background:#FFFDF9; color:#705F70; border-color:#D8CAD9; }
+.mafia-noir .mafia-lobby-art { background:#EEE3F5; color:#352139; border-color:#D8CAD9; border-radius:24px; }
+.mafia-noir .mafia-lobby-art :is(h2,p,.mafia-kicker) { color:#352139; }
+/* Audit fixes for privacy, history, urgent timers and private role variants. */
+.mafia-noir :is(.mafia-channel-tag,.mafia-chat-locked,.mafia-rail-note),
+.mafia-noir .channel-team .mafia-channel-tag,
+.mafia-noir .mafia-rail-heading > span+span,
+.mafia-noir.mafia-waiting p,.mafia-noir .mafia-history time { color:#705F70; }
+.mafia-noir .mafia-channel-tag { background:#E2F3ED; border-color:#B7D5C9; }
+.mafia-noir .channel-team .mafia-channel-tag { background:#EEE3F5; border-color:#D8CAD9; }
+.mafia-noir .mafia-chat-locked { background:#FFF8F0; }
+.mafia-noir .mafia-seat-number { color:#352139; text-shadow:none; }
+.mafia-noir .mafia-history-stats article { background:#EEE3F5; border-color:#D8CAD9; }
+.mafia-noir .mafia-result-section-heading h3 { color:#352139; }
+.mafia-noir.mafia-density .mafia-clock.urgent { background:#FFE2D9; border-color:#D49B91; }
+.mafia-noir.mafia-density .mafia-clock.urgent :is(b,small,svg) { color:#7B2835; }
+.mafia-noir.mafia-density .mafia-voice-actions .btn:not(:disabled) { background:#DDF2EA; color:#075F55; border-color:#B7D5C9; }
+.mafia-noir.mafia-density .mafia-voice-actions .btn-primary:not(:disabled) { background:#08796D; color:#FFF; border-color:#08796D; }
+.mafia-noir .mafia-voice-actions select { background:#FFFDF9; color:#352139; border-color:#D8CAD9; }
+.mafia-noir .mafia-lobby-tools .btn,.mafia-noir .mafia-night-tabs .btn { min-width:48px; min-height:48px; }
+.mafia-noir [data-design-id="night-attack-tab"],.mafia-noir [data-design-id="night-ability-tab"],
+.mafia-noir [data-design-id="invite"],.mafia-noir [data-design-id="room-settings"] { min-width:48px; min-height:48px; }
+.mafia-noir.mafia-density p.mafia-chat-locked { color:#352139; background:#FFF8F0; }
+.mafia-noir.mafia-density .mafia-result-section-heading :is(h3,small) { color:#352139; }
+.mafia-noir.mafia-compact-game .mafia-heading > .btn,
+.mafia-noir.mafia-density .mafia-action-tabs > .btn { min-width:48px; min-height:48px; }

@@ -1,0 +1,496 @@
+{
+  "id": "geo",
+  "name": "Geography",
+  "icon": "🌍",
+  "qs": [
+    {
+      "p": 200,
+      "q": "You sail out of the Red Sea between Yemen and Djibouti. Which strait do you pass through?",
+      "a": "Bab el-Mandeb",
+      "qid": "geo-200-911",
+      "topic": "Straits and borders",
+      "verified": true,
+      "alt": [
+        "Bab al-Mandab"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.eia.gov/todayinenergy/detail.php?id=32352"
+    },
+    {
+      "p": 200,
+      "q": "Which mountain range stretches across Morocco, Algeria, and Tunisia?",
+      "a": "Atlas Mountains",
+      "qid": "geo-200-912",
+      "topic": "Mountains and peaks",
+      "verified": true,
+      "alt": [
+        "Atlas"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.esa.int/Applications/Observing_the_Earth/Earth_from_Space_Africa_s_Atlas_Mountains"
+    },
+    {
+      "p": 200,
+      "q": "Which river flows through London?",
+      "a": "Thames",
+      "qid": "geo-200-913",
+      "topic": "Rivers and lakes",
+      "verified": true,
+      "alt": [
+        "River Thames"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://pla.co.uk/visiting-thames"
+    },
+    {
+      "p": 200,
+      "q": "What desert stretches across southern Mongolia and northern China?",
+      "a": "Gobi Desert",
+      "qid": "geo-200-914",
+      "topic": "Deserts and forests",
+      "verified": true,
+      "alt": [
+        "Gobi"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/gobi-dust-storm-46908/"
+    },
+    {
+      "p": 200,
+      "q": "Which landlocked European country contains the Alps and the cities of Zurich and Geneva?",
+      "a": "Switzerland",
+      "qid": "geo-200-915",
+      "topic": "Countries",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.aboutswitzerland.eda.admin.ch/en/geography"
+    },
+    {
+      "p": 200,
+      "q": "What tropical grassland with scattered trees covers large parts of Africa?",
+      "a": "Savanna",
+      "qid": "geo-200-916",
+      "topic": "Climate and regions",
+      "verified": true,
+      "alt": [
+        "Savannah"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://ucmp.berkeley.edu/exhibits/biomes/grasslands.php"
+    },
+    {
+      "p": 200,
+      "q": "What belt contains many of the Pacific Ocean's volcanoes and earthquakes?",
+      "a": "Ring of Fire",
+      "qid": "geo-200-917",
+      "topic": "Landforms",
+      "verified": true,
+      "alt": [
+        "Pacific Ring of Fire"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.usgs.gov/faqs/what-ring-fire"
+    },
+    {
+      "p": 200,
+      "q": "Which Yemeni island is famous for its dragon's blood trees?",
+      "a": "Socotra",
+      "qid": "geo-200-918",
+      "topic": "Islands and archipelagos",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://whc.unesco.org/document/168956"
+    },
+    {
+      "p": 400,
+      "q": "Which Ecuadorian archipelago is famous for its giant tortoises?",
+      "a": "Galápagos Islands",
+      "qid": "geo-400-911",
+      "topic": "Islands and archipelagos",
+      "verified": true,
+      "alt": [
+        "Galapagos"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.darwinfoundation.org/en/our-work/land/giant-tortoise-conservation/"
+    },
+    {
+      "p": 400,
+      "q": "Which river rises in Lebanon and flows north through Syria?",
+      "a": "Orontes River",
+      "qid": "geo-400-912",
+      "topic": "Rivers and lakes",
+      "verified": true,
+      "alt": [
+        "Orontes",
+        "Al-Asi"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://waterinventory.org/sites/waterinventory.org/files/chapters/Chapter-07-Orontes-River-Basin-web_1.pdf"
+    },
+    {
+      "p": 400,
+      "q": "Which ocean surrounds Antarctica?",
+      "a": "Southern Ocean",
+      "qid": "geo-400-913",
+      "topic": "Continents and oceans",
+      "verified": true,
+      "alt": [
+        "Antarctic Ocean"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.bas.ac.uk/about/education-and-schools/antarctic-factsheet/"
+    },
+    {
+      "p": 400,
+      "q": "What are the cold northern coniferous forests of Siberia and Canada called?",
+      "a": "Taiga",
+      "qid": "geo-400-914",
+      "topic": "Deserts and forests",
+      "verified": true,
+      "alt": [
+        "Boreal forest"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/introduction-to-boreas/"
+    },
+    {
+      "p": 400,
+      "q": "A ship travels from the Aegean Sea into the Sea of Marmara. Which strait does it cross?",
+      "a": "Dardanelles",
+      "qid": "geo-400-915",
+      "topic": "Straits and borders",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://earthobservatory.nasa.gov/images/7327/gallipoli-and-dardanelles-strait-turkey"
+    },
+    {
+      "p": 400,
+      "q": "Which Atlantic current carries warm water north along America's east coast and influences Western Europe's climate?",
+      "a": "Gulf Stream",
+      "qid": "geo-400-916",
+      "topic": "Climate and regions",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://cdn.oceanservice.noaa.gov/oceanserviceprod/education/tutorial_currents/lessons/currents_tutorial.pdf"
+    },
+    {
+      "p": 400,
+      "q": "Which nearly enclosed northern European sea has relatively low salinity because many rivers flow into it?",
+      "a": "Baltic Sea",
+      "qid": "geo-400-917",
+      "topic": "Continents and oceans",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://stateofthebalticsea.helcom.fi/overview/about-the-baltic-sea/"
+    },
+    {
+      "p": 400,
+      "q": "Which river separates the capital cities of Kinshasa and Brazzaville?",
+      "a": "Congo River",
+      "qid": "geo-400-918",
+      "topic": "Rivers and lakes",
+      "verified": true,
+      "alt": [
+        "Congo"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/kinshasa-and-brazzaville-4329/"
+    },
+    {
+      "p": 600,
+      "q": "What system of valleys caused by a splitting crust extends from the Afar region toward Mozambique?",
+      "a": "East African Rift",
+      "qid": "geo-600-911",
+      "topic": "Landforms",
+      "verified": true,
+      "alt": [
+        "East African Rift System"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.usgs.gov/publications/seismicity-earth-1900-2013-east-african-rift"
+    },
+    {
+      "p": 600,
+      "q": "What famous pyramid-shaped Alpine peak overlooks the village of Zermatt?",
+      "a": "Matterhorn",
+      "qid": "geo-600-912",
+      "topic": "Mountains and peaks",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://zermatt.swiss/en/p/matterhorn-01tVj000005DoH6IAK"
+    },
+    {
+      "p": 600,
+      "q": "What strait separates Sicily from southern mainland Italy?",
+      "a": "Strait of Messina",
+      "qid": "geo-600-913",
+      "topic": "Straits and borders",
+      "verified": true,
+      "alt": [
+        "Messina Strait"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.esa.int/Applications/Observing_the_Earth/Earth_from_Space_The_Strait_of_Messina"
+    },
+    {
+      "p": 600,
+      "q": "What large salt depression lies between Tozeur and Kebili in southern Tunisia?",
+      "a": "Chott el Djerid",
+      "qid": "geo-600-914",
+      "topic": "Rivers and lakes",
+      "verified": true,
+      "alt": [
+        "Chott Djerid"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://rsis.ramsar.org/ris/1699?language=en"
+    },
+    {
+      "p": 600,
+      "q": "What semiarid belt lies between the Sahara and tropical grasslands?",
+      "a": "Sahel",
+      "qid": "geo-600-915",
+      "topic": "Deserts and forests",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/lake-chad/"
+    },
+    {
+      "p": 600,
+      "q": "What hot wind blows from the Sahara toward southern Europe?",
+      "a": "Sirocco",
+      "qid": "geo-600-916",
+      "topic": "Climate and regions",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/wind/wind-names"
+    },
+    {
+      "p": 600,
+      "q": "What narrow Greek canal separates the Peloponnese from the mainland?",
+      "a": "Corinth Canal",
+      "qid": "geo-600-917",
+      "topic": "Straits and borders",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://corinthcanal.com/images/CORINTHIAN_WEEK.pdf"
+    },
+    {
+      "p": 600,
+      "q": "Limestone has dissolved into caves and sinkholes. What type of landscape has formed?",
+      "a": "Karst",
+      "qid": "geo-600-918",
+      "topic": "Landforms",
+      "verified": true,
+      "alt": [
+        "Karst landscape"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.usgs.gov/geology-and-ecology-of-national-parks/geology-mammoth-cave-national-park"
+    },
+    {
+      "p": 800,
+      "q": "Which Ecuadorian summit is farther from Earth's center than Mount Everest's summit?",
+      "a": "Chimborazo",
+      "qid": "geo-800-911",
+      "topic": "Mountains and peaks",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://oceanservice.noaa.gov/facts/highestpoint.html"
+    },
+    {
+      "p": 800,
+      "q": "Which island group between Brazil and South Africa is known as the world's most remote inhabited archipelago?",
+      "a": "Tristan da Cunha",
+      "qid": "geo-800-912",
+      "topic": "Islands and archipelagos",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.tristandc.com/news-2018-02-06-bluebelt.php"
+    },
+    {
+      "p": 800,
+      "q": "Which Icelandic hot spring gave geysers their name?",
+      "a": "Geysir",
+      "qid": "geo-800-913",
+      "topic": "Landforms",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.south.is/static/files/brochures/south-2015-saman.pdf"
+    },
+    {
+      "p": 800,
+      "q": "What is the oceanic point farthest from any land called?",
+      "a": "Point Nemo",
+      "qid": "geo-800-914",
+      "topic": "Continents and oceans",
+      "verified": true,
+      "alt": [
+        "Oceanic pole of inaccessibility"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://oceanservice.noaa.gov/facts/nemo.html"
+    },
+    {
+      "p": 800,
+      "q": "Which Icelandic island formed in an eruption beginning in 1963 and became a laboratory for studying colonization by life?",
+      "a": "Surtsey",
+      "qid": "geo-800-915",
+      "topic": "Islands and archipelagos",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://whc.unesco.org/en/list/1267"
+    },
+    {
+      "p": 800,
+      "q": "What broad high plateau lies in the Andes between Bolivia and Peru?",
+      "a": "Altiplano",
+      "qid": "geo-800-916",
+      "topic": "Mountains and peaks",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://earthobservatory.nasa.gov/IOTD/view.php?id=1152"
+    },
+    {
+      "p": 800,
+      "q": "What cold, dry wind grows strong near the Rhône delta and the coast of Provence?",
+      "a": "Mistral",
+      "qid": "geo-800-917",
+      "topic": "Climate and regions",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/wind/wind-names"
+    },
+    {
+      "q": "Which sea is bounded by ocean currents on every side instead of coasts?",
+      "a": "Sargasso Sea",
+      "topic": "Continents and oceans",
+      "sourceUrl": "https://oceanservice.noaa.gov/facts/sargassosea.html",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "geo-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 1000,
+      "q": "What diverse shrubland characterizes South Africa's Cape Floristic Region?",
+      "a": "Fynbos",
+      "qid": "geo-1000-911",
+      "topic": "Deserts and forests",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://pza.sanbi.org/vegetation/fynbos-biome"
+    },
+    {
+      "q": "What streamlined oval hill is formed from glacial deposits?",
+      "a": "Drumlin",
+      "topic": "Landforms",
+      "sourceUrl": "https://apps.usgs.gov/thesaurus/term-simple.php?code=337&thcode=3",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "geo-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which natural channel connects part of the Orinoco's flow to the Amazon basin through the Rio Negro?",
+      "a": "Casiquiare",
+      "topic": "Rivers and lakes",
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/when-rivers-take-a-weird-turn-154394/",
+      "alt": [
+        "Casiquiare canal"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "geo-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which dry northeasterly wind carries Saharan dust into West Africa?",
+      "a": "Harmattan",
+      "topic": "Climate and regions",
+      "sourceUrl": "https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/wind/wind-names",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "geo-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which French archipelago in the southern Indian Ocean is also known as the Desolation Islands?",
+      "a": "Kerguelen Islands",
+      "topic": "Islands and archipelagos",
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/kerguelen-islands-89328/",
+      "alt": [
+        "Kerguelen"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "geo-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "In which Russian republic is the Lena Pillars Nature Park located?",
+      "a": "Sakha",
+      "topic": "Countries",
+      "sourceUrl": "https://whc.unesco.org/en/list/1299",
+      "alt": [
+        "Yakutia"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "geo-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What is the largest known lake beneath Antarctica's ice sheet?",
+      "a": "Lake Vostok",
+      "topic": "Rivers and lakes",
+      "sourceUrl": "https://www.bas.ac.uk/news/team-discovers-antarctic-sub-glacial-lake-from-over-20000-years-ago/",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "geo-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "When traveling between Bali and Lombok, you cross a boundary between distinct animal populations. What is it called?",
+      "a": "Wallace Line",
+      "topic": "Straits and borders",
+      "sourceUrl": "https://www.kew.org/read-and-watch/alfred-russel-wallace-treasures",
+      "alt": [
+        "Wallace's Line"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "geo-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

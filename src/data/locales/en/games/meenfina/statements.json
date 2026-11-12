@@ -1,0 +1,952 @@
+[
+  {
+    "id": "meenfina-w1-001",
+    "text": "Who answers the phone while half asleep?",
+    "tag": "Sleep"
+  },
+  {
+    "id": "meenfina-w1-002",
+    "text": "Who falls asleep in the car before it even moves?",
+    "tag": "Sleep"
+  },
+  {
+    "id": "meenfina-w1-003",
+    "text": "Who needs three alarms to wake up?",
+    "tag": "Sleep"
+  },
+  {
+    "id": "meenfina-w1-004",
+    "text": "Who asks for five more minutes and sleeps for an hour?",
+    "tag": "Sleep"
+  },
+  {
+    "id": "meenfina-w1-005",
+    "text": "Who wakes up before the alarm and proudly switches it off?",
+    "tag": "Sleep"
+  },
+  {
+    "id": "meenfina-w1-006",
+    "text": "Who falls asleep halfway through a film and then asks what happened?",
+    "tag": "Sleep"
+  },
+  {
+    "id": "meenfina-w1-007",
+    "text": "Who would choose a nap over any other plan?",
+    "tag": "Sleep"
+  },
+  {
+    "id": "meenfina-w1-008",
+    "text": "Who stays up until dawn and still gets up early as if nothing happened?",
+    "tag": "Sleep"
+  },
+  {
+    "id": "meenfina-w1-009",
+    "text": "Who needs their own pillow wherever they sleep?",
+    "tag": "Sleep"
+  },
+  {
+    "id": "meenfina-w1-010",
+    "text": "Who can find the fridge in the dark while half asleep?",
+    "tag": "Sleep"
+  },
+  {
+    "id": "meenfina-w1-011",
+    "text": "Who knows every restaurant in town?",
+    "tag": "Restaurants"
+  },
+  {
+    "id": "meenfina-w1-012",
+    "text": "Who tastes everyone else's food before starting their own?",
+    "tag": "Food"
+  },
+  {
+    "id": "meenfina-w1-013",
+    "text": "Who opens the fridge every ten minutes to check whether anything has changed?",
+    "tag": "Food"
+  },
+  {
+    "id": "meenfina-w1-014",
+    "text": "Who eats dessert before lunch?",
+    "tag": "Food"
+  },
+  {
+    "id": "meenfina-w1-015",
+    "text": "Who orders the same dish every time we go out?",
+    "tag": "Food"
+  },
+  {
+    "id": "meenfina-w1-016",
+    "text": "Who finishes eating before everyone else has started?",
+    "tag": "Food"
+  },
+  {
+    "id": "meenfina-w1-017",
+    "text": "Who eats so slowly that the food goes cold?",
+    "tag": "Food"
+  },
+  {
+    "id": "meenfina-w1-018",
+    "text": "Who puts ketchup on everything?",
+    "tag": "Food"
+  },
+  {
+    "id": "meenfina-w1-019",
+    "text": "Who says they are not hungry and then tries every dish on the table?",
+    "tag": "Food"
+  },
+  {
+    "id": "meenfina-w1-020",
+    "text": "Who saves the best bite for last?",
+    "tag": "Food"
+  },
+  {
+    "id": "meenfina-w1-021",
+    "text": "Who opens the bag of chips in the car before getting home?",
+    "tag": "Food"
+  },
+  {
+    "id": "meenfina-w1-022",
+    "text": "Who always has less than ten percent phone battery?",
+    "tag": "Phones"
+  },
+  {
+    "id": "meenfina-w1-023",
+    "text": "Who checks their phone for the time and forgets to look at the time?",
+    "tag": "Phones"
+  },
+  {
+    "id": "meenfina-w1-024",
+    "text": "Who keeps thousands of photos and never deletes one?",
+    "tag": "Phones"
+  },
+  {
+    "id": "meenfina-w1-025",
+    "text": "Who keeps their phone volume at maximum everywhere?",
+    "tag": "Phones"
+  },
+  {
+    "id": "meenfina-w1-026",
+    "text": "Who misses a call and texts Did you call? three hours later?",
+    "tag": "Phones"
+  },
+  {
+    "id": "meenfina-w1-027",
+    "text": "Who hears about every app update before anyone else?",
+    "tag": "Phones"
+  },
+  {
+    "id": "meenfina-w1-028",
+    "text": "Who photographs their food before eating it?",
+    "tag": "Phones"
+  },
+  {
+    "id": "meenfina-w1-029",
+    "text": "Who is unbothered by thousands of unread messages?",
+    "tag": "Phones"
+  },
+  {
+    "id": "meenfina-w1-030",
+    "text": "Who sends a five-minute voice message instead of two words?",
+    "tag": "Phones"
+  },
+  {
+    "id": "meenfina-w1-031",
+    "text": "Who remembers the Wi-Fi password of every home they visit?",
+    "tag": "Phones"
+  },
+  {
+    "id": "meenfina-w1-032",
+    "text": "Who walks while looking at their phone and notices nobody ahead?",
+    "tag": "Phones"
+  },
+  {
+    "id": "meenfina-w1-033",
+    "text": "Who says they are on the way before leaving home?",
+    "tag": "Running late"
+  },
+  {
+    "id": "meenfina-w1-034",
+    "text": "Who arrives an hour early and sits waiting?",
+    "tag": "Timekeeping"
+  },
+  {
+    "id": "meenfina-w1-035",
+    "text": "Who is exactly ten minutes late to every appointment?",
+    "tag": "Running late"
+  },
+  {
+    "id": "meenfina-w1-036",
+    "text": "Who turns two minutes into half an hour before going out?",
+    "tag": "Running late"
+  },
+  {
+    "id": "meenfina-w1-037",
+    "text": "Who is always the last person to get in the car?",
+    "tag": "Running late"
+  },
+  {
+    "id": "meenfina-w1-038",
+    "text": "Who goes back into the house three times before finally leaving?",
+    "tag": "Running late"
+  },
+  {
+    "id": "meenfina-w1-039",
+    "text": "Who rushes everyone else and then ends up being late?",
+    "tag": "Running late"
+  },
+  {
+    "id": "meenfina-w1-040",
+    "text": "Who arrives at the very last second as if they planned it?",
+    "tag": "Running late"
+  },
+  {
+    "id": "meenfina-w1-041",
+    "text": "Who looks for glasses that are sitting on their head?",
+    "tag": "Forgetfulness"
+  },
+  {
+    "id": "meenfina-w1-042",
+    "text": "Who walks into a room and forgets why?",
+    "tag": "Forgetfulness"
+  },
+  {
+    "id": "meenfina-w1-043",
+    "text": "Who asks where their keys are every morning?",
+    "tag": "Forgetfulness"
+  },
+  {
+    "id": "meenfina-w1-044",
+    "text": "Who remembers faces but forgets names?",
+    "tag": "Forgetfulness"
+  },
+  {
+    "id": "meenfina-w1-045",
+    "text": "Who forgets where they parked the car?",
+    "tag": "Forgetfulness"
+  },
+  {
+    "id": "meenfina-w1-046",
+    "text": "Who writes a shopping list and forgets to take it?",
+    "tag": "Forgetfulness"
+  },
+  {
+    "id": "meenfina-w1-048",
+    "text": "Who remembers every birthday and never misses an appointment?",
+    "tag": "Memory"
+  },
+  {
+    "id": "meenfina-w1-049",
+    "text": "Who sorts their belongings by color?",
+    "tag": "Tidiness"
+  },
+  {
+    "id": "meenfina-w1-050",
+    "text": "Who cannot go to bed until every dish is washed?",
+    "tag": "Tidiness"
+  },
+  {
+    "id": "meenfina-w1-051",
+    "text": "Who makes the bed before their eyes are fully open?",
+    "tag": "Tidiness"
+  },
+  {
+    "id": "meenfina-w1-052",
+    "text": "Who knows where everything is, even things they did not put away?",
+    "tag": "Tidiness"
+  },
+  {
+    "id": "meenfina-w1-053",
+    "text": "Who reorganizes things that someone else has just tidied?",
+    "tag": "Tidiness"
+  },
+  {
+    "id": "meenfina-w1-054",
+    "text": "Who uses a chair as a wardrobe?",
+    "tag": "Messiness"
+  },
+  {
+    "id": "meenfina-w1-055",
+    "text": "Who claims to know where everything is on a desk buried in paper?",
+    "tag": "Messiness"
+  },
+  {
+    "id": "meenfina-w1-056",
+    "text": "Who has things in their bag that have been there for years?",
+    "tag": "Messiness"
+  },
+  {
+    "id": "meenfina-w1-057",
+    "text": "Who only tidies their room when guests are coming?",
+    "tag": "Messiness"
+  },
+  {
+    "id": "meenfina-w1-058",
+    "text": "Who cannot speak before their first cup of coffee?",
+    "tag": "Coffee"
+  },
+  {
+    "id": "meenfina-w1-059",
+    "text": "Who measures the day in cups of coffee?",
+    "tag": "Coffee"
+  },
+  {
+    "id": "meenfina-w1-060",
+    "text": "Who drinks coffee at midnight and falls asleep straight afterward?",
+    "tag": "Coffee"
+  },
+  {
+    "id": "meenfina-w1-061",
+    "text": "Who can identify coffee beans by their smell?",
+    "tag": "Coffee"
+  },
+  {
+    "id": "meenfina-w1-062",
+    "text": "Who has a coffee order longer than their home address?",
+    "tag": "Coffee"
+  },
+  {
+    "id": "meenfina-w1-063",
+    "text": "Who drinks hot tea in the middle of summer?",
+    "tag": "Tea"
+  },
+  {
+    "id": "meenfina-w1-064",
+    "text": "Who offers guests tea before they have even sat down?",
+    "tag": "Tea"
+  },
+  {
+    "id": "meenfina-w1-065",
+    "text": "Who leaves a cup of tea somewhere and searches the whole house for it?",
+    "tag": "Tea"
+  },
+  {
+    "id": "meenfina-w2-001",
+    "text": "Who retells the same joke at every gathering?",
+    "tag": "Laughter"
+  },
+  {
+    "id": "meenfina-w2-002",
+    "text": "Who can perfectly imitate family members' voices?",
+    "tag": "Laughter"
+  },
+  {
+    "id": "meenfina-w2-003",
+    "text": "Who turns any serious situation into a comedy sketch?",
+    "tag": "Laughter"
+  },
+  {
+    "id": "meenfina-w2-004",
+    "text": "Who laughs loudly enough for the neighbors to hear?",
+    "tag": "Laughter"
+  },
+  {
+    "id": "meenfina-w2-005",
+    "text": "Who invents funny nicknames for everyone?",
+    "tag": "Laughter"
+  },
+  {
+    "id": "meenfina-w2-006",
+    "text": "Who cannot stop laughing at serious moments?",
+    "tag": "Laughter"
+  },
+  {
+    "id": "meenfina-w2-007",
+    "text": "Who tells the same story and still makes us laugh every time?",
+    "tag": "Stories"
+  },
+  {
+    "id": "meenfina-w2-008",
+    "text": "Who starts dancing in the kitchen for no reason?",
+    "tag": "Optimism"
+  },
+  {
+    "id": "meenfina-w2-009",
+    "text": "Who arranges their clothes by color?",
+    "tag": "Tidiness"
+  },
+  {
+    "id": "meenfina-w2-010",
+    "text": "Who writes a shopping list and actually sticks to it?",
+    "tag": "Organization"
+  },
+  {
+    "id": "meenfina-w2-011",
+    "text": "Who has their suitcase ready a week before the trip?",
+    "tag": "Travel"
+  },
+  {
+    "id": "meenfina-w2-012",
+    "text": "Who could find everything at home with their eyes closed?",
+    "tag": "Tidiness"
+  },
+  {
+    "id": "meenfina-w2-013",
+    "text": "Who cannot sleep until their room is tidy?",
+    "tag": "Tidiness"
+  },
+  {
+    "id": "meenfina-w2-014",
+    "text": "Who sets a reminder for everything, even drinking water?",
+    "tag": "Timekeeping"
+  },
+  {
+    "id": "meenfina-w2-015",
+    "text": "Who arrives half an hour before everyone else?",
+    "tag": "Timekeeping"
+  },
+  {
+    "id": "meenfina-w2-016",
+    "text": "Who keeps papers and receipts neatly filed?",
+    "tag": "Organization"
+  },
+  {
+    "id": "meenfina-w2-017",
+    "text": "Who plans a trip hour by hour?",
+    "tag": "Organization"
+  },
+  {
+    "id": "meenfina-w2-018",
+    "text": "Who knows food is cooked just by its smell?",
+    "tag": "Cooking"
+  },
+  {
+    "id": "meenfina-w2-019",
+    "text": "Who samples the food before it reaches the table?",
+    "tag": "Cooking"
+  },
+  {
+    "id": "meenfina-w2-020",
+    "text": "Who cooks delicious meals without a recipe?",
+    "tag": "Cooking"
+  },
+  {
+    "id": "meenfina-w2-021",
+    "text": "Who takes a photo of a dish before taking the first bite?",
+    "tag": "Photography"
+  },
+  {
+    "id": "meenfina-w2-022",
+    "text": "Who knows the name of every spice?",
+    "tag": "Cooking"
+  },
+  {
+    "id": "meenfina-w2-023",
+    "text": "Who tries a new recipe every week?",
+    "tag": "Cooking"
+  },
+  {
+    "id": "meenfina-w2-024",
+    "text": "Who makes the best cup of tea in the family?",
+    "tag": "Tea"
+  },
+  {
+    "id": "meenfina-w2-025",
+    "text": "Who cooks for ten even when there are only three of us?",
+    "tag": "Cooking"
+  },
+  {
+    "id": "meenfina-w2-026",
+    "text": "Who knows cake recipes by heart?",
+    "tag": "Cooking"
+  },
+  {
+    "id": "meenfina-w2-027",
+    "text": "Who is the person we turn to for advice?",
+    "tag": "Wisdom"
+  },
+  {
+    "id": "meenfina-w2-028",
+    "text": "Who calms everyone down when a discussion gets heated?",
+    "tag": "Wisdom"
+  },
+  {
+    "id": "meenfina-w2-029",
+    "text": "Who thinks for a long time before answering?",
+    "tag": "Wisdom"
+  },
+  {
+    "id": "meenfina-w2-030",
+    "text": "Who always has the perfect proverb for the moment?",
+    "tag": "Wisdom"
+  },
+  {
+    "id": "meenfina-w2-031",
+    "text": "Who can settle an argument between siblings with one word?",
+    "tag": "Wisdom"
+  },
+  {
+    "id": "meenfina-w2-032",
+    "text": "Who says I told you so and is actually right?",
+    "tag": "Wisdom"
+  },
+  {
+    "id": "meenfina-w2-033",
+    "text": "Who listens more than they talk?",
+    "tag": "Wisdom"
+  },
+  {
+    "id": "meenfina-w2-034",
+    "text": "Who can see the other side of any story?",
+    "tag": "Wisdom"
+  },
+  {
+    "id": "meenfina-w2-035",
+    "text": "Who says everything will be fine in every situation?",
+    "tag": "Optimism"
+  },
+  {
+    "id": "meenfina-w2-036",
+    "text": "Who wakes up smiling even on exam day?",
+    "tag": "Optimism"
+  },
+  {
+    "id": "meenfina-w2-037",
+    "text": "Who sees rain as a chance to play rather than a problem?",
+    "tag": "Optimism"
+  },
+  {
+    "id": "meenfina-w2-038",
+    "text": "Who supports their team to the final minute even when it is losing?",
+    "tag": "Cheering"
+  },
+  {
+    "id": "meenfina-w2-040",
+    "text": "Who starts the day with a song?",
+    "tag": "Music"
+  },
+  {
+    "id": "meenfina-w2-041",
+    "text": "Who reacts to a small gift as if it were treasure?",
+    "tag": "Optimism"
+  },
+  {
+    "id": "meenfina-w2-042",
+    "text": "Who dreams about the next trip before the current one ends?",
+    "tag": "Travel"
+  },
+  {
+    "id": "meenfina-w2-043",
+    "text": "Who hides behind everyone else in family photos?",
+    "tag": "Shyness"
+  },
+  {
+    "id": "meenfina-w2-044",
+    "text": "Who smiles instead of answering when given a compliment?",
+    "tag": "Shyness"
+  },
+  {
+    "id": "meenfina-w2-045",
+    "text": "Who prefers texting to phone calls?",
+    "tag": "Phones"
+  },
+  {
+    "id": "meenfina-w2-046",
+    "text": "Who whispers when talking in front of guests?",
+    "tag": "Shyness"
+  },
+  {
+    "id": "meenfina-w2-047",
+    "text": "Who always chooses the back row?",
+    "tag": "Shyness"
+  },
+  {
+    "id": "meenfina-w2-048",
+    "text": "Who needs a whole hour to feel comfortable around new guests?",
+    "tag": "Shyness"
+  },
+  {
+    "id": "meenfina-w2-049",
+    "text": "Who says anything is fine when asked what they want to eat?",
+    "tag": "Shyness"
+  },
+  {
+    "id": "meenfina-w2-050",
+    "text": "Who writes a long message and deletes it before sending?",
+    "tag": "Phones"
+  },
+  {
+    "id": "meenfina-w2-051",
+    "text": "Who comes up with a new idea every five minutes?",
+    "tag": "Ideas"
+  },
+  {
+    "id": "meenfina-w2-052",
+    "text": "Who suggests a new game at every family gathering?",
+    "tag": "Games"
+  },
+  {
+    "id": "meenfina-w2-053",
+    "text": "Who turns empty boxes into works of art?",
+    "tag": "Creativity"
+  },
+  {
+    "id": "meenfina-w2-054",
+    "text": "Who says I have an idea and we know it will be a long evening?",
+    "tag": "Ideas"
+  },
+  {
+    "id": "meenfina-w2-055",
+    "text": "Who mixes two unlikely foods and calls it an invention?",
+    "tag": "Creativity"
+  },
+  {
+    "id": "meenfina-w2-056",
+    "text": "Who starts a new project before finishing the last one?",
+    "tag": "Creativity"
+  },
+  {
+    "id": "meenfina-w2-057",
+    "text": "Who carries a little notebook for their ideas?",
+    "tag": "Ideas"
+  },
+  {
+    "id": "meenfina-w2-058",
+    "text": "Who chooses a project's name before starting it?",
+    "tag": "Creativity"
+  },
+  {
+    "id": "meenfina-w2-059",
+    "text": "Who hears the news before it is announced?",
+    "tag": "News"
+  },
+  {
+    "id": "meenfina-w2-060",
+    "text": "Who knows every neighbor by name?",
+    "tag": "News"
+  },
+  {
+    "id": "meenfina-w2-061",
+    "text": "Who follows every match and remembers the scores?",
+    "tag": "Games"
+  },
+  {
+    "id": "meenfina-w2-062",
+    "text": "Who shares every news update in the family group?",
+    "tag": "News"
+  },
+  {
+    "id": "meenfina-w2-063",
+    "text": "Who knows who is visiting before the doorbell rings?",
+    "tag": "News"
+  },
+  {
+    "id": "meenfina-w2-064",
+    "text": "Who knows the birthdays of the entire extended family?",
+    "tag": "Memory"
+  },
+  {
+    "id": "meenfina-w2-065",
+    "text": "Who opens every gathering by asking for the latest news?",
+    "tag": "News"
+  },
+  {
+    "id": "meenfina-w3-001",
+    "text": "Who starts packing a full week before departure?",
+    "tag": "Travel"
+  },
+  {
+    "id": "meenfina-w3-002",
+    "text": "Who checks their passport ten times on the way to the airport?",
+    "tag": "Travel"
+  },
+  {
+    "id": "meenfina-w3-003",
+    "text": "Who arrives at the airport four hours before the flight?",
+    "tag": "Travel"
+  },
+  {
+    "id": "meenfina-w3-004",
+    "text": "Who asks for a window seat on every flight?",
+    "tag": "Travel"
+  },
+  {
+    "id": "meenfina-w3-005",
+    "text": "Who falls asleep before takeoff and wakes up at landing?",
+    "tag": "Sleep"
+  },
+  {
+    "id": "meenfina-w3-006",
+    "text": "Who buys presents for everyone in every city they visit?",
+    "tag": "Travel"
+  },
+  {
+    "id": "meenfina-w3-007",
+    "text": "Who memorizes a new city's map before arriving?",
+    "tag": "Travel"
+  },
+  {
+    "id": "meenfina-w3-008",
+    "text": "Who packs a charger, scissors, a towel, and everything else imaginable?",
+    "tag": "Travel"
+  },
+  {
+    "id": "meenfina-w3-009",
+    "text": "Who comes home from a trip with a heavier suitcase?",
+    "tag": "Travel"
+  },
+  {
+    "id": "meenfina-w3-010",
+    "text": "Who photographs the clouds through the plane window on every flight?",
+    "tag": "Photography"
+  },
+  {
+    "id": "meenfina-w3-011",
+    "text": "Who asks Are we there yet? every five minutes?",
+    "tag": "Road trips"
+  },
+  {
+    "id": "meenfina-w3-012",
+    "text": "Who trusts their memory of the route more than the map app?",
+    "tag": "Road trips"
+  },
+  {
+    "id": "meenfina-w3-013",
+    "text": "Who sings along to the car radio at full volume?",
+    "tag": "Music"
+  },
+  {
+    "id": "meenfina-w3-014",
+    "text": "Who coaches the driver from the back seat?",
+    "tag": "Road trips"
+  },
+  {
+    "id": "meenfina-w3-016",
+    "text": "Who wants to stop at every roadside rest area?",
+    "tag": "Road trips"
+  },
+  {
+    "id": "meenfina-w3-017",
+    "text": "Who controls both the air conditioning and radio from the passenger seat?",
+    "tag": "Road trips"
+  },
+  {
+    "id": "meenfina-w3-018",
+    "text": "Who chooses a shortcut that makes the journey longer?",
+    "tag": "Road trips"
+  },
+  {
+    "id": "meenfina-w3-019",
+    "text": "Who remembers street names and license plates without trying?",
+    "tag": "Memory"
+  },
+  {
+    "id": "meenfina-w3-020",
+    "text": "Who celebrates finding a parking space right outside the door?",
+    "tag": "Road trips"
+  },
+  {
+    "id": "meenfina-w3-021",
+    "text": "Who spends longer explaining a game's rules than playing it?",
+    "tag": "Games"
+  },
+  {
+    "id": "meenfina-w3-022",
+    "text": "Who says one last round and then plays ten more?",
+    "tag": "Games"
+  },
+  {
+    "id": "meenfina-w3-023",
+    "text": "Who takes a card game against children very seriously?",
+    "tag": "Games"
+  },
+  {
+    "id": "meenfina-w3-024",
+    "text": "Who dances with joy after winning even the simplest game?",
+    "tag": "Games"
+  },
+  {
+    "id": "meenfina-w3-025",
+    "text": "Who asks for a rematch after losing the first round?",
+    "tag": "Games"
+  },
+  {
+    "id": "meenfina-w3-026",
+    "text": "Who solves a riddle before the question is finished?",
+    "tag": "Games"
+  },
+  {
+    "id": "meenfina-w3-027",
+    "text": "Who remembers every family game's score from years ago?",
+    "tag": "Memory"
+  },
+  {
+    "id": "meenfina-w3-028",
+    "text": "Who changes the rules halfway through a game?",
+    "tag": "Games"
+  },
+  {
+    "id": "meenfina-w3-029",
+    "text": "Who cheers for both teams in the same match?",
+    "tag": "Cheering"
+  },
+  {
+    "id": "meenfina-w3-030",
+    "text": "Who beats everyone at chess and calls it luck?",
+    "tag": "Wisdom"
+  },
+  {
+    "id": "meenfina-w3-031",
+    "text": "Who takes a hundred photos of a meal before eating?",
+    "tag": "Photography"
+  },
+  {
+    "id": "meenfina-w3-032",
+    "text": "Who asks to retake the group photo ten times until it is perfect?",
+    "tag": "Photography"
+  },
+  {
+    "id": "meenfina-w3-033",
+    "text": "Who runs out of phone battery before noon?",
+    "tag": "Phones"
+  },
+  {
+    "id": "meenfina-w3-034",
+    "text": "Who explains new gadgets to everyone else?",
+    "tag": "Technology"
+  },
+  {
+    "id": "meenfina-w3-036",
+    "text": "Who knows about new phones before they are announced?",
+    "tag": "Technology"
+  },
+  {
+    "id": "meenfina-w3-037",
+    "text": "Who sends a long voice note instead of a single word?",
+    "tag": "Phones"
+  },
+  {
+    "id": "meenfina-w3-039",
+    "text": "Who shares photos in the family group at three in the morning?",
+    "tag": "News"
+  },
+  {
+    "id": "meenfina-w3-040",
+    "text": "Who knows the Wi-Fi password by heart?",
+    "tag": "Technology"
+  },
+  {
+    "id": "meenfina-w3-041",
+    "text": "Who takes a selfie at every landmark?",
+    "tag": "Photography"
+  },
+  {
+    "id": "meenfina-w3-042",
+    "text": "Who enters a shop for one item and leaves with a full cart?",
+    "tag": "Shopping"
+  },
+  {
+    "id": "meenfina-w3-043",
+    "text": "Who tries every perfume sample before leaving the shop?",
+    "tag": "Shopping"
+  },
+  {
+    "id": "meenfina-w3-044",
+    "text": "Who knows about sales before the shops do?",
+    "tag": "Shopping"
+  },
+  {
+    "id": "meenfina-w3-045",
+    "text": "Who finishes shopping in five minutes and waits for everyone by the door?",
+    "tag": "Shopping"
+  },
+  {
+    "id": "meenfina-w3-046",
+    "text": "Who leaves their carefully written grocery list at home?",
+    "tag": "Forgetfulness"
+  },
+  {
+    "id": "meenfina-w3-047",
+    "text": "Who knows the supermarket layout as if they work there?",
+    "tag": "Shopping"
+  },
+  {
+    "id": "meenfina-w3-048",
+    "text": "Who buys reusable bags and forgets to bring them every time?",
+    "tag": "Forgetfulness"
+  },
+  {
+    "id": "meenfina-w3-049",
+    "text": "Who tries something at every free sample stand?",
+    "tag": "Shopping"
+  },
+  {
+    "id": "meenfina-w3-050",
+    "text": "Who reads the entire menu and always orders the same dish?",
+    "tag": "Restaurants"
+  },
+  {
+    "id": "meenfina-w3-051",
+    "text": "Who asks what everyone else is ordering before deciding?",
+    "tag": "Restaurants"
+  },
+  {
+    "id": "meenfina-w3-052",
+    "text": "Who asks the waiter about the ingredients in every dish?",
+    "tag": "Restaurants"
+  },
+  {
+    "id": "meenfina-w3-053",
+    "text": "Who finds a restaurant's best dish on the very first visit?",
+    "tag": "Restaurants"
+  },
+  {
+    "id": "meenfina-w3-054",
+    "text": "Who orders dessert before the main course arrives?",
+    "tag": "Food"
+  },
+  {
+    "id": "meenfina-w3-055",
+    "text": "Who reaches over to someone else's plate for just a taste?",
+    "tag": "Food"
+  },
+  {
+    "id": "meenfina-w3-056",
+    "text": "Who asks for extra sauce with everything, even dessert?",
+    "tag": "Food"
+  },
+  {
+    "id": "meenfina-w3-057",
+    "text": "Who befriends the waiter before the water arrives?",
+    "tag": "Restaurants"
+  },
+  {
+    "id": "meenfina-w3-058",
+    "text": "Who arrives at a party before the hosts do?",
+    "tag": "Timekeeping"
+  },
+  {
+    "id": "meenfina-w3-059",
+    "text": "Who knows the names of every relative, their children, and their grandchildren?",
+    "tag": "News"
+  },
+  {
+    "id": "meenfina-w3-060",
+    "text": "Who starts dancing as soon as the party music begins?",
+    "tag": "Parties"
+  },
+  {
+    "id": "meenfina-w3-061",
+    "text": "Who has a family-gathering story that everyone laughs at every time?",
+    "tag": "Stories"
+  },
+  {
+    "id": "meenfina-w3-062",
+    "text": "Who starts cutting the cake without being asked?",
+    "tag": "Parties"
+  },
+  {
+    "id": "meenfina-w3-063",
+    "text": "Who gathers the children into a team to play?",
+    "tag": "Parties"
+  },
+  {
+    "id": "meenfina-w3-064",
+    "text": "Who says goodbye and then stays by the door for another hour?",
+    "tag": "Parties"
+  },
+  {
+    "id": "meenfina-w3-065",
+    "text": "Who photographs everyone at a party but appears in none of the pictures?",
+    "tag": "Photography"
+  }
+]

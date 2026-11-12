@@ -1,3 +1,4 @@
+import { tr } from '../shared/i18n/core.js';
 import React, { useEffect, useRef, useState } from 'react';
 import { useAccount } from '../shared/account/context.js';
 import { reviewDrawingPath } from './client.js';
@@ -31,8 +32,8 @@ export function ReviewDrawing({ path }) {
   }, [shown]);
   if (!owner || !valid) return null;
   return <div className="review-image review-drawing">
-    {shown?.evidence ? <><canvas ref={canvas} width={1000} height={1000} role="img" aria-label="نسخة الرسمة وقت الإبلاغ" style={{ width: '100%', aspectRatio: '1', background: '#fff', borderRadius: 16 }} /><p className="moderation-note">نسخة خاصة محفوظة من الغرفة · الدور {shown.evidence.round}</p></>
-      : shown?.error ? <div role="status"><p>تعذّر تحميل الرسمة.</p><button type="button" className="review-retry" onClick={() => setRetry(value => value + 1)}>إعادة المحاولة</button></div>
-      : <p role="status">جارٍ تحميل الرسمة للمراجعة…</p>}
+    {shown?.evidence ? <><canvas ref={canvas} width={1000} height={1000} role="img" aria-label={tr("نسخة الرسمة وقت الإبلاغ")} style={{ width: '100%', aspectRatio: '1', background: '#fff', borderRadius: 16 }} /><p className="moderation-note">{tr("نسخة خاصة محفوظة من الغرفة · الدور ")}{shown.evidence.round}</p></>
+      : shown?.error ? <div role="status"><p>{tr("تعذّر تحميل الرسمة.")}</p><button type="button" className="review-retry" onClick={() => setRetry(value => value + 1)}>{tr("إعادة المحاولة")}</button></div>
+      : <p role="status">{tr("جارٍ تحميل الرسمة للمراجعة…")}</p>}
   </div>;
 }

@@ -16,8 +16,8 @@ test('coverage inventory preserves every node and exact conditional explanation 
   // A deliberate coverage/content change must update this semantic baseline;
   // whitespace, constant names and sharing structure do not affect it.
   const semantics = JSON.stringify({ DESIGN_CONDITIONAL_NODE_REASONS, DESIGN_RENDERED_NODE_IDS });
-  // Secret voting now exposes an explicit submit action before passing the phone.
-  assert.equal(createHash('sha256').update(semantics).digest('hex'), '2b9dee072717631ef07260e878bf28fb98a55fe0b153d8fa0bc43d28313b4235');
+  // Direction B adds content/UI language, connected friends and profile disclosures.
+  assert.equal(createHash('sha256').update(semantics).digest('hex'), '3d321a886059275aaca721a550bb50e0c11d2d7975160cd156a514494a06acdd');
 });
 
 test('semantic scene registry has stable unique identities and the eight actual games', () => {

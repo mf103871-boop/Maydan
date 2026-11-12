@@ -14,6 +14,7 @@ from smoke_simulator_launch import LaunchSmoke, SmokeFailure
 from smoke_app_update_gate import UpdateGateSmoke
 from smoke_audio_stream import AudioStreamSmoke
 from smoke_drawing_orientation import DrawingOrientationSmoke
+from smoke_locale import LocaleSmoke
 
 
 class ReleaseSmoke:
@@ -21,38 +22,37 @@ class ReleaseSmoke:
         self.output = output.resolve()
         self.output.mkdir(parents=True, exist_ok=True)
         self.normal = LaunchSmoke(app, self.output / 'launch-smoke')
+        self.locale = LocaleSmoke(app, self.output / 'locale-smoke')
         self.update = UpdateGateSmoke(app, self.output / 'update-gate-smoke')
         self.audio = AudioStreamSmoke(app, self.output / 'audio-stream-smoke')
         self.orientation = DrawingOrientationSmoke(app, self.output / 'drawing-orientation-smoke')
-        self.report = {'passed': False, 'normalStartup': False, 'updateGate': False, 'audioStream': False, 'drawingOrientation': False, 'sameInstalledApp': True}
+        self.report = {'passed': False, 'normalStartup': False, 'localization': False, 'updateGate': False, 'audioStream': False, 'drawingOrientation': False, 'sameInstalledApp': True}
 
     def run(self):
-        variables = ('SIMCTL_CHILD_MAYDAN_SIMULATOR_APP_POLICY', 'SIMCTL_CHILD_MAYDAN_SIMULATOR_AUDIO', 'SIMCTL_CHILD_MAYDAN_SIMULATOR_ORIENTATION')
+        variables = ('SIMCTL_CHILD_MAYDAN_SIMULATOR_APP_POLICY', 'SIMCTL_CHILD_MAYDAN_SIMULATOR_AUDIO', 'SIMCTL_CHILD_MAYDAN_SIMULATOR_ORIENTATION', 'SIMCTL_CHILD_MAYDAN_SIMULATOR_LOCALE')
         previous = {variable: os.environ.pop(variable, None) for variable in variables}
         try:
             # Leave the verified simulator alive, but not its app process. The
             # update scenario injects its finite environment only for next launch.
             if self.normal.run(cleanup=False, terminate_after=True) != 0:
-                self.report['error'] = 'Normal startup failed; update scenario was not run.'
+                self.report['error'] = 'Normal startup failed; later scenarios were not run.'
             else:
                 self.report['normalStartup'] = True
-                if self.update.run(prepared=self.normal) != 0:
-                    self.report['error'] = 'Update UI scenario failed.'
+                # Locale ends with a retained Arabic choice and a stopped process.
+                # The existing Arabic update-panel checks then retain their exact
+                # assertions, independent of the simulator's system language.
+                phases = [(self.locale, 'localization', False), (self.update, 'updateGate', True),
+                          (self.audio, 'audioStream', True), (self.orientation, 'drawingOrientation', False)]
+                for phase, key, terminate in phases:
+                    if phase.run(prepared=self.normal) != 0:
+                        self.report['error'] = f'{key} scenario failed.'
+                        break
+                    self.report[key] = True
+                    if terminate:
+                        phase.terminate_for_relaunch()
+                        phase.write_summary()
                 else:
-                    self.report['updateGate'] = True
-                    self.update.terminate_for_relaunch()
-                    self.update.write_summary()
-                    if self.audio.run(prepared=self.normal) != 0:
-                        self.report['error'] = 'Actual WK streaming audio scenario failed.'
-                    else:
-                        self.report['audioStream'] = True
-                        self.audio.terminate_for_relaunch()
-                        self.audio.write_summary()
-                        if self.orientation.run(prepared=self.normal) != 0:
-                            self.report['error'] = 'Actual UIKit drawing orientation scenario failed.'
-                        else:
-                            self.report['drawingOrientation'] = True
-                            self.report['passed'] = True
+                    self.report['passed'] = True
         except (OSError, ValueError, SmokeFailure) as error:
             self.report['error'] = str(error)
         finally:
@@ -64,6 +64,7 @@ class ReleaseSmoke:
                 else:
                     os.environ[variable] = value
             self.report['normalEvidence'] = str(self.normal.output)
+            self.report['localizationEvidence'] = str(self.locale.output)
             self.report['updateEvidence'] = str(self.update.output)
             self.report['audioEvidence'] = str(self.audio.output)
             self.report['drawingOrientationEvidence'] = str(self.orientation.output)

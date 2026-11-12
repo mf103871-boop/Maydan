@@ -94,14 +94,14 @@ function optionsFor(room) {
   for (const [id, submission] of Object.entries(f.submissions)) {
     if (!submission.text) continue;
     if (matchesTruth(submission.text, question(room))) { truth.owners.push(id); continue; }
-    let group = groups.slice(1).find((o) => sameAnswer(o.text, submission.text));
+    let group = groups.slice(1).find((o) => sameAnswer(o.text, submission.text, room.contentLocale || 'ar'));
     if (!group) { group = option(submission.text); groups.push(group); }
     group.owners.push(id);
     if (!has(f.helped, id)) group.earners.push(id);
   }
   for (const answer of question(room).decoys || []) {
     if (groups.length >= 4) break;
-    if (matchesTruth(answer, question(room)) || groups.some((o) => sameAnswer(o.text, answer))) continue;
+    if (matchesTruth(answer, question(room)) || groups.some((o) => sameAnswer(o.text, answer, room.contentLocale || 'ar'))) continue;
     groups.push(option(answer));
   }
   f.options = shuffled(groups); f.truthWriters = [...truth.owners];
@@ -219,7 +219,7 @@ export function action(room, actorId, command, now, deck = []) {
       const answer = text(command.text);
       if (command.aliases !== undefined && (!Array.isArray(command.aliases) || command.aliases.length > 3)) fail('ANSWER');
       const aliases = (command.aliases || []).map(text);
-      f.question = { ...f.question, answer, aliases, explanation: `هذه إجابة ${actor.name} عن نفسه في هذه الجولة.` };
+      f.question = { ...f.question, answer, aliases, explanation: room.contentLocale === 'en' ? `This is ${actor.name}'s own answer for this round.` : `هذه إجابة ${actor.name} عن نفسه في هذه الجولة.` };
       deadline(room, 'write', now, room.settings.writeSeconds); break;
     }
     case 'skip_prompt': {

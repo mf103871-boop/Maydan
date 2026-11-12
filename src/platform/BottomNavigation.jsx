@@ -7,8 +7,10 @@ import { navigate } from './router.js';
 import { usePlatform } from './context.js';
 import { MENU_ITEMS, menuSection, menuRouteVisible, keyboardOccupiesViewport, menuBadges } from './menu-navigation.js';
 import css from './bottom-navigation.css';
+import { useI18n } from '../shared/i18n/react.jsx';
 
 const paths = {
+  profile: 'M20 21v-2a7 7 0 0 0-14 0v2M17 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z',
   games: 'M7 7h10a4 4 0 0 1 4 3.4l1 6.1a2.5 2.5 0 0 1-4.2 2.2L15 16H9l-2.8 2.7A2.5 2.5 0 0 1 2 16.5l1-6.1A4 4 0 0 1 7 7ZM7 10v5M4.5 12.5h5M16 11h.01M19 14h.01M9 7V5h6',
   friends: 'M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 3a4 4 0 0 1 0 8M22 21v-2a4 4 0 0 0-3-3.87M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z',
   store: 'M5 8h14l2 12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1L5 8Zm3 0V6a4 4 0 0 1 8 0v2',
@@ -47,6 +49,7 @@ function useMenuObstructions() {
 }
 
 export function BottomNavigation({ route }) {
+  const { t, dir } = useI18n();
   const account = useAccount();
   const social = useSocial(); const lamma = useLamma(); const ui = useSocialUI();
   const { sound, haptics } = usePlatform();
@@ -82,7 +85,7 @@ export function BottomNavigation({ route }) {
       window.scrollTo({ top: 0, behavior: 'instant' });
     } else navigate(item.path);
   };
-  return <><style>{css}</style><nav ref={nav} data-design-screen="shell.navigation" data-design-id="navigation" className="menu-navigation" aria-label="أقسام ميدان" data-testid="menu-navigation" hidden={!visible} dir="rtl">{MENU_ITEMS.map(item => <a key={item.id} data-design-id={item.id} data-design-required={item.id === 'games' || item.id === 'settings' ? 'true' : undefined} href={'#' + item.path} className={'menu-navigation-item' + (active === item.id ? ' is-active' : '')} aria-current={active === item.id ? 'page' : undefined} onClick={event => select(event, item)}><span className="menu-navigation-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={paths[item.icon]} /></svg>{item.id === 'friends' && (badges.unread > 0 ? <b className="menu-navigation-badge" aria-label={`${badges.unread} رسالة غير مقروءة`}>{badges.unread > 99 ? '99+' : badges.unread}</b> : badges.requests > 0 ? <span className="menu-navigation-dot" aria-label="طلبات جديدة" /> : null)}</span><span>{item.label}</span></a>)}</nav></>;
+  return <><style>{css}</style><nav ref={nav} data-design-screen="shell.navigation" data-design-id="navigation" className="menu-navigation" aria-label={t('أقسام ميدان')} data-testid="menu-navigation" hidden={!visible} dir={dir}>{MENU_ITEMS.map(item => <a key={item.id} data-design-id={item.id === 'profile' ? 'settings' : item.id} data-design-required={item.id === 'games' || item.id === 'profile' ? 'true' : undefined} href={'#' + item.path} className={'menu-navigation-item' + (active === item.id ? ' is-active' : '')} aria-current={active === item.id ? 'page' : undefined} onClick={event => select(event, item)}><span className="menu-navigation-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={paths[item.icon]} /></svg>{item.id === 'friends' && (badges.unread > 0 ? <b className="menu-navigation-badge" aria-label={t('{count} رسالة غير مقروءة', { count: badges.unread })}>{badges.unread > 99 ? '99+' : badges.unread}</b> : badges.requests > 0 ? <span className="menu-navigation-dot" aria-label={t('طلبات جديدة')} /> : null)}</span><span>{t(item.label)}</span></a>)}</nav></>;
 }
 
 // Keep menu scroll positions in this mounted shell, never in persistent storage.

@@ -1,0 +1,528 @@
+{
+  "id": "egyptdrama",
+  "name": "Egyptian Drama",
+  "icon": "🇪🇬",
+  "style": "story",
+  "qs": [
+    {
+      "qid": "egyptdrama-200-911",
+      "p": 200,
+      "topic": "I Will Not Live in My Father's Robes",
+      "q": "In I Will Not Live in My Father's Robes, what is Abdel Ghafour's only son's name?",
+      "a": "Abdel Wahab",
+      "alt": [
+        "Abdelwahab"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010312/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "egyptdrama-200-912",
+      "p": 200,
+      "topic": "Al Mal Wal Banoun",
+      "q": "In Al Mal Wal Banoun, which illegal business is linked to the origin of Salama's wealth?",
+      "a": "Antiquities smuggling",
+      "alt": [
+        "Illegal antiquities trading"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1723192/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "egyptdrama-200-913",
+      "p": 200,
+      "topic": "Layali Al-Helmiya",
+      "q": "In Layali Al-Helmiya, which rural rival of Selim buys a share in the factory?",
+      "a": "Suleiman Ghanem",
+      "alt": [
+        "Soliman Ghanem"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010572/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "egyptdrama-200-914",
+      "p": 200,
+      "topic": "Al Shahd Wal Dumu'",
+      "q": "In Al Shahd Wal Dumu', which wife of Shawqi struggles to support the family after his death?",
+      "a": "Zeinab",
+      "alt": [
+        "Zaynab"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1650915/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "egyptdrama-200-915",
+      "p": 200,
+      "topic": "Yawmiyat Wanis",
+      "q": "In Yawmiyat Wanis, what is the name of Wanis's father, who shares the family's daily life?",
+      "a": "Abu al-Fadl",
+      "alt": [
+        "Aboul Fadl"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1011316/cast",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "egyptdrama-200-916",
+      "p": 200,
+      "topic": "Zaat",
+      "q": "In Zaat, at which television headquarters does the heroine get a job?",
+      "a": "Maspero",
+      "alt": [
+        "Maspero building"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1975418/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "egyptdrama-200-917",
+      "p": 200,
+      "topic": "I Will Not Live in My Father's Robes",
+      "q": "In I Will Not Live in My Father's Robes, which merchant employs Abdel Ghafour and teaches him business?",
+      "a": "Ibrahim Sardina",
+      "alt": [
+        "Sardina",
+        "Hajj Sardina"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010312/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "egyptdrama-200-918",
+      "p": 200,
+      "topic": "Raafat Al Haggan",
+      "q": "In Raafat Al Haggan, which officer prepares the protagonist for his mission?",
+      "a": "Mohsen Momtaz",
+      "alt": [
+        "Muhsin Mumtaz"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1011599/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "egyptdrama-400-911",
+      "p": 400,
+      "topic": "Al Raya Al Bayda",
+      "q": "In Al Raya Al Bayda, what position did Mofid Abu al-Ghar hold before retirement?",
+      "a": "Ambassador",
+      "alt": [
+        "Diplomat"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1205935/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "egyptdrama-400-912",
+      "p": 400,
+      "topic": "Al Mal Wal Banoun",
+      "q": "In Al Mal Wal Banoun, which daughter of Salama is loved by Abbas al-Daw's son?",
+      "a": "Ferial",
+      "alt": [
+        "Feryal"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1723192/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "egyptdrama-400-913",
+      "p": 400,
+      "topic": "Layali Al-Helmiya",
+      "q": "In Layali Al-Helmiya, which aristocratic wife does Selim divorce near the beginning?",
+      "a": "Nazek al-Silahdar",
+      "alt": [
+        "Nazek"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010572/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "egyptdrama-400-914",
+      "p": 400,
+      "topic": "Al Shahd Wal Dumu'",
+      "q": "In Al Shahd Wal Dumu', how does the older brother deprive his sibling of his share in the company's warehouse?",
+      "a": "Burning the warehouse",
+      "alt": [
+        "Setting the warehouse on fire"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1650915/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "egyptdrama-400-915",
+      "p": 400,
+      "topic": "Yawmiyat Wanis",
+      "q": "In Yawmiyat Wanis, what breaks the ornamental plants, although Sharaf al-Din is wrongly blamed?",
+      "a": "The neighbors' cat",
+      "alt": [
+        "A cat",
+        "Cat"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1011316/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "egyptdrama-400-916",
+      "p": 400,
+      "topic": "Zaat",
+      "q": "In Zaat, in which technical department does the heroine work at the television station?",
+      "a": "Editing",
+      "alt": [
+        "Video editing",
+        "The editing department"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1975418/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "egyptdrama-400-917",
+      "p": 400,
+      "topic": "I Will Not Live in My Father's Robes",
+      "q": "In I Will Not Live in My Father's Robes, what large object does Abdel Ghafour buy to dismantle and resell?",
+      "a": "A jumbo jet",
+      "alt": [
+        "An airplane",
+        "A passenger plane"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010312/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "egyptdrama-400-918",
+      "p": 400,
+      "topic": "Raafat Al Haggan",
+      "q": "In Raafat Al Haggan, what is the name of the protagonist's German wife, to whom he reveals his secret?",
+      "a": "Helen",
+      "alt": [
+        "Helene"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1011599/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "egyptdrama-600-911",
+      "p": 600,
+      "topic": "Al Mal Wal Banoun",
+      "q": "In Al Mal Wal Banoun, which young man is accused of killing Lola before the real killer is exposed?",
+      "a": "Youssef",
+      "alt": [
+        "Youssef Abbas al-Daw"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1723192/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "egyptdrama-600-912",
+      "p": 600,
+      "topic": "Layali Al-Helmiya",
+      "q": "In Layali Al-Helmiya, which aunt raises Ali after his mother's death?",
+      "a": "Anisa",
+      "sourceUrl": "https://elcinema.com/work/1010572/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Aneesa"
+      ]
+    },
+    {
+      "qid": "egyptdrama-600-913",
+      "p": 600,
+      "topic": "Al Shahd Wal Dumu'",
+      "q": "In Al Shahd Wal Dumu', which wife supports the older brother against his sibling's family?",
+      "a": "Dawlat",
+      "alt": [
+        "Dawlet"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1650915/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "egyptdrama-600-914",
+      "p": 600,
+      "topic": "Yawmiyat Wanis",
+      "q": "In Yawmiyat Wanis, whose story does Ezz al-Din copy and claim as his own?",
+      "a": "Yusuf Idris",
+      "sourceUrl": "https://elcinema.com/work/1011316/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Youssef Idris"
+      ]
+    },
+    {
+      "qid": "egyptdrama-600-915",
+      "p": 600,
+      "topic": "I Will Not Live in My Father's Robes",
+      "q": "In I Will Not Live in My Father's Robes, what name does Rosaline choose after converting to Islam?",
+      "a": "Amina",
+      "sourceUrl": "https://elcinema.com/work/1010312/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Ameena"
+      ]
+    },
+    {
+      "qid": "egyptdrama-600-916",
+      "p": 600,
+      "topic": "Raafat Al Haggan",
+      "q": "In Raafat Al Haggan, what does he leave his wife to identify trusted intelligence officers?",
+      "a": "Half a banknote",
+      "alt": [
+        "Half a currency note"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1011599/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "egyptdrama-600-917",
+      "p": 600,
+      "topic": "Al Raya Al Bayda",
+      "q": "In Al Raya Al Bayda, which son of Hanafi returns the forged rental contract to Mofid?",
+      "a": "Al-Arabi",
+      "sourceUrl": "https://elcinema.com/work/1205935/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "El Arabi"
+      ]
+    },
+    {
+      "qid": "egyptdrama-600-918",
+      "p": 600,
+      "topic": "Al Mal Wal Banoun",
+      "q": "In Al Mal Wal Banoun, what is Ali's real profession, concealed behind his claim to work for the police?",
+      "a": "Percussionist",
+      "alt": [
+        "Drummer"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1723192/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "I Will Not Live in My Father's Robes",
+      "q": "In I Will Not Live in My Father's Robes, which faculty does the only son enter after secondary school?",
+      "a": "Economics and Political Science",
+      "alt": [
+        "Faculty of Economics and Political Science"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010312/episodes",
+      "qid": "egyptdrama-800-911",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Raafat Al Haggan",
+      "q": "At the start of Raafat Al Haggan, what agent number is used when Aziz is informed of his death?",
+      "a": "313",
+      "sourceUrl": "https://elcinema.com/work/1011599/episodes",
+      "qid": "egyptdrama-800-912",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "alt": []
+    },
+    {
+      "topic": "Al Raya Al Bayda",
+      "q": "In Al Raya Al Bayda, which lawyer is tricked into signing the forged rental contract?",
+      "a": "Anis",
+      "alt": [
+        "Anees"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1205935/episodes",
+      "qid": "egyptdrama-800-913",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Al Mal Wal Banoun",
+      "q": "In Al Mal Wal Banoun season one, who kills Lola on Salama's orders?",
+      "a": "Al-Qass",
+      "alt": [
+        "El Qass",
+        "El Os"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1723192/episodes",
+      "qid": "egyptdrama-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Layali Al-Helmiya",
+      "q": "In Layali Al-Helmiya season one, who tricks Suleiman into selling his factory shares?",
+      "a": "Tawfiq",
+      "alt": [
+        "Tawfiq al-Badri"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010572/episodes",
+      "qid": "egyptdrama-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Al Shahd Wal Dumu'",
+      "q": "In Al Shahd Wal Dumu' season one, which friend of Hafez arranges the theft of Shawqi's money?",
+      "a": "Mokhtar",
+      "alt": [
+        "Mukhtar"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1650915/episodes",
+      "qid": "egyptdrama-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Yawmiyat Wanis",
+      "q": "In Yawmiyat Wanis season one, which crop spoils while the father waits for its price to rise?",
+      "a": "Tomatoes",
+      "alt": [
+        "Tomato"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1011316/episodes",
+      "qid": "egyptdrama-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Zaat",
+      "q": "In Zaat, which son of the heroine is poisoned by spoiled milk?",
+      "a": "Amgad",
+      "alt": [
+        "Amjad"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1975418/episodes",
+      "qid": "egyptdrama-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "I Will Not Live in My Father's Robes",
+      "q": "In I Will Not Live in My Father's Robes, which sheikh's recommendation does Abdel Ghafour mention when seeking work?",
+      "a": "Hanafi al-Anbari",
+      "alt": [
+        "Sheikh Hanafi al-Anbari",
+        "Hanafi"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010312/episodes",
+      "qid": "egyptdrama-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Raafat Al Haggan",
+      "q": "In Raafat Al Haggan, to whom does his wife give the aircraft catalog to have her message reach Egyptian intelligence?",
+      "a": "Nihad",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1011599/episodes",
+      "qid": "egyptdrama-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Al Raya Al Bayda",
+      "q": "In Al Raya Al Bayda, which woman accuses Hisham of assault and demands his dismissal?",
+      "a": "Samha",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1205935/episodes",
+      "qid": "egyptdrama-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Al Mal Wal Banoun",
+      "q": "In Al Mal Wal Banoun season one, which woman asks Lola's killer to deny committing the crime?",
+      "a": "Bisa",
+      "alt": [
+        "Beesa"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1723192/episodes",
+      "qid": "egyptdrama-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Layali Al-Helmiya",
+      "q": "Who kills two British soldiers in Layali Al-Helmiya season one?",
+      "a": "Zakariya",
+      "alt": [
+        "Zakaria"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010572/episodes",
+      "qid": "egyptdrama-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Al Shahd Wal Dumu'",
+      "q": "In Al Shahd Wal Dumu' season one, whom does Ihsan marry after Hajj Radwan dies?",
+      "a": "Abdel Badie",
+      "alt": [
+        "Abd al-Badi"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1650915/episodes",
+      "qid": "egyptdrama-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Yawmiyat Wanis",
+      "q": "In Yawmiyat Wanis season one, which grandson does Mama Zouzou ask to see?",
+      "a": "Hossam",
+      "alt": [
+        "Husam"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1011316/episodes",
+      "qid": "egyptdrama-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Zaat",
+      "q": "In Zaat, which husband of Samiha is imprisoned over illegal building permits after the earthquake?",
+      "a": "Wagdy",
+      "alt": [
+        "Wajdi"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1975418/episodes",
+      "qid": "egyptdrama-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    }
+  ]
+}

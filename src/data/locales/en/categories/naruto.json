@@ -1,0 +1,509 @@
+{
+  "id": "naruto",
+  "name": "Naruto",
+  "icon": "🌀",
+  "style": "story",
+  "qs": [
+    {
+      "qid": "naruto-200-911",
+      "p": 200,
+      "topic": "Team Seven",
+      "q": "Which pink-haired teammate of Naruto becomes a medical ninja?",
+      "a": "Sakura Haruno",
+      "alt": [
+        "Sakura"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1743",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "naruto-200-912",
+      "p": 200,
+      "topic": "Teachers",
+      "q": "Which sage takes Naruto on a long training journey and teaches him summoning?",
+      "a": "Jiraiya",
+      "alt": [],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1643",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "naruto-200-913",
+      "p": 200,
+      "topic": "Tailed beasts",
+      "q": "Which host of the Eight-Tails trains Naruto to control tailed-beast power?",
+      "a": "Killer B",
+      "alt": [
+        "Killer Bee",
+        "B"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1611",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "naruto-200-914",
+      "p": 200,
+      "topic": "Families",
+      "q": "Which mother of Naruto helps him overcome the fox's hatred within his consciousness?",
+      "a": "Kushina Uzumaki",
+      "alt": [
+        "Kushina"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1611",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "naruto-200-915",
+      "p": 200,
+      "topic": "Opponents",
+      "q": "To whom does Naruto's rival turn for greater power after leaving the village?",
+      "a": "Orochimaru",
+      "alt": [],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1856",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "naruto-200-916",
+      "p": 200,
+      "topic": "Techniques",
+      "q": "Which eye does Team Seven's leader use to read opponents' movements and copy their techniques?",
+      "a": "Sharingan",
+      "alt": [],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1903",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "naruto-200-917",
+      "p": 200,
+      "topic": "Places",
+      "q": "Which valley hosts two decisive battles between Naruto and his rival?",
+      "a": "The Valley of the End",
+      "alt": [
+        "Valley of the End",
+        "Final Valley"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1858",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "naruto-200-918",
+      "p": 200,
+      "topic": "Battles and strategies",
+      "q": "Which Hyuga prodigy does Naruto defeat in the opening match of the Chunin Exam finals?",
+      "a": "Neji Hyuga",
+      "alt": [
+        "Neji"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1610",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "naruto-400-911",
+      "p": 400,
+      "topic": "Team Seven",
+      "q": "Which former teammate of Team Seven's leader is revealed behind the mask of the man claiming to be Madara?",
+      "a": "Obito Uchiha",
+      "alt": [
+        "Obito"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1611",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "naruto-400-912",
+      "p": 400,
+      "topic": "Teachers",
+      "q": "Which Hokage trains Naruto's female teammate in healing and powerful strikes?",
+      "a": "Tsunade",
+      "alt": [],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1743",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "naruto-400-913",
+      "p": 400,
+      "topic": "Tailed beasts",
+      "q": "Which beast awakens during the war and takes the masked man as its host?",
+      "a": "The Ten-Tails",
+      "alt": [
+        "Ten Tails",
+        "Juubi"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1611",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "naruto-400-914",
+      "p": 400,
+      "topic": "Families",
+      "q": "Which Hyuga girl intervenes to protect Naruto after Pain pins him down?",
+      "a": "Hinata Hyuga",
+      "alt": [
+        "Hinata"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1610",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "naruto-400-915",
+      "p": 400,
+      "topic": "Opponents",
+      "q": "Which ninja controls Pain's bodies and meets Naruto after the battle?",
+      "a": "Nagato",
+      "alt": [],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1610",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "naruto-400-916",
+      "p": 400,
+      "topic": "Techniques",
+      "q": "Which black-flame technique does Sasuke use to protect his teammates against the Eight-Tails' host?",
+      "a": "Amaterasu",
+      "alt": [],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1858",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "naruto-400-917",
+      "p": 400,
+      "topic": "Places",
+      "q": "On which mountain does Naruto train in Sage Mode before facing Pain?",
+      "a": "Mount Myoboku",
+      "alt": [
+        "Myoboku",
+        "Mount Myōboku"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1610",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "naruto-400-918",
+      "p": 400,
+      "topic": "Battles and strategies",
+      "q": "Which Mist swordsman does Team Seven face on its Land of Waves mission?",
+      "a": "Zabuza Momochi",
+      "alt": [
+        "Zabuza"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1903",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "naruto-600-911",
+      "p": 600,
+      "topic": "Team Seven",
+      "q": "Who is the Uchiha police chief and father of the two brothers who survive the clan massacre?",
+      "a": "Fugaku Uchiha",
+      "alt": [
+        "Fugaku"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1856",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "naruto-600-912",
+      "p": 600,
+      "topic": "Teachers",
+      "q": "Which teacher of Ino, Choji, and Shikamaru is killed by Hidan?",
+      "a": "Asuma Sarutobi",
+      "alt": [
+        "Asuma"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1910",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "Tailed beasts",
+      "q": "Which teammate of Kakashi became the Three-Tails' host?",
+      "a": "Rin Nohara",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1903",
+      "alt": [
+        "Rin"
+      ],
+      "verified": true,
+      "p": 600,
+      "qid": "naruto-600-913",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "naruto-600-914",
+      "p": 600,
+      "topic": "Families",
+      "q": "Which Sand kunoichi rescues Shikamaru from Tayuya and later becomes his wife?",
+      "a": "Temari",
+      "alt": [],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1910",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "naruto-600-915",
+      "p": 600,
+      "topic": "Opponents",
+      "q": "Which Root leader uses Karin as a shield while fighting Sasuke?",
+      "a": "Danzo Shimura",
+      "alt": [
+        "Danzo",
+        "Danzō"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1858",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "Techniques",
+      "q": "Which technique does Kakashi use to transport targets into another dimension?",
+      "a": "Kamui",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1903",
+      "verified": true,
+      "p": 600,
+      "qid": "naruto-600-916",
+      "difficultyTarget": 0.4,
+      "alt": []
+    },
+    {
+      "qid": "naruto-600-917",
+      "p": 600,
+      "topic": "Places",
+      "q": "Which village does Jiraiya infiltrate on his final mission to investigate Pain's identity?",
+      "a": "The Hidden Rain Village",
+      "alt": [
+        "Amegakure",
+        "Hidden Rain"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1643",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "naruto-600-918",
+      "p": 600,
+      "topic": "Battles and strategies",
+      "q": "Which young ninja intercepts a lightning attack with his body to save the Mist swordsman at the bridge?",
+      "a": "Haku",
+      "alt": [],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1903",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "Team Seven",
+      "q": "Which elderly woman teams up with Team Seven's medical ninja to defeat Sasori?",
+      "a": "Chiyo",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1743",
+      "alt": [
+        "Granny Chiyo"
+      ],
+      "verified": true,
+      "p": 800,
+      "qid": "naruto-800-911",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "naruto-800-912",
+      "p": 800,
+      "topic": "Teachers",
+      "q": "Which opponent grants the three legendary ninja the title Sannin in recognition of their strength?",
+      "a": "Hanzo",
+      "alt": [
+        "Hanzo of the Salamander"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1643",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "naruto-800-913",
+      "p": 800,
+      "topic": "Tailed beasts",
+      "q": "Which strategist is killed by a tailed-beast attack after passing his final plan to his son Shikamaru?",
+      "a": "Shikaku Nara",
+      "alt": [
+        "Shikaku"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1910",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "naruto-800-914",
+      "p": 800,
+      "topic": "Families",
+      "q": "Which father of Team Seven's leader meets his son between life and death after the battle with Pain?",
+      "a": "Sakumo Hatake",
+      "alt": [
+        "Sakumo"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1904",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "naruto-800-915",
+      "p": 800,
+      "topic": "Opponents",
+      "q": "Whose blood does Shikamaru use to trick Hidan into harming his partner?",
+      "a": "Kakuzu",
+      "alt": [],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1910",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "Techniques",
+      "q": "Which illusion traps the world in an endless dream during the Fourth Shinobi World War?",
+      "a": "Infinite Tsukuyomi",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1611",
+      "alt": [],
+      "verified": true,
+      "p": 800,
+      "qid": "naruto-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "naruto-800-917",
+      "p": 800,
+      "topic": "Places",
+      "q": "Where does Shikamaru bury Hidan after blowing him apart to prevent his return?",
+      "a": "The Nara clan forest",
+      "alt": [
+        "Nara Forest",
+        "The Nara clan's land"
+      ],
+      "sourceUrl": "https://naruto-official.com/en/news/01_1910",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "Battles and strategies",
+      "q": "Which former student first confronts Jiraiya when he infiltrates Pain's village?",
+      "a": "Konan",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1643",
+      "verified": true,
+      "p": 800,
+      "qid": "naruto-800-918",
+      "difficultyTarget": 0.25,
+      "alt": []
+    },
+    {
+      "topic": "Teachers",
+      "q": "Who trains Naruto to walk on water before Jiraiya takes over?",
+      "a": "Ebisu",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1643",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "naruto-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Tailed beasts",
+      "q": "Which seal does Jiraiya remove to correct Naruto's disrupted chakra control?",
+      "a": "The Five Elements Seal",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1643",
+      "alt": [
+        "Five Elements Seal",
+        "Five-Pronged Seal"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "naruto-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Families",
+      "q": "Which father of Ino is killed with the chief strategist when the Allied headquarters is destroyed?",
+      "a": "Inoichi Yamanaka",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1611",
+      "alt": [
+        "Inoichi"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "naruto-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Opponents",
+      "q": "Which Second Tsuchikage does Naruto face after he is reanimated during the war?",
+      "a": "Mū",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1611",
+      "alt": [
+        "Mu"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "naruto-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Techniques",
+      "q": "What defense protects Team Seven from the moon-based illusion affecting the world?",
+      "a": "Susanoo",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1611",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "naruto-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Places",
+      "q": "In which town does Jiraiya find the candidate for Fifth Hokage?",
+      "a": "Tanzaku",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1643",
+      "alt": [
+        "Tanzaku Town"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "naruto-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Battles and strategies",
+      "q": "What does Shikamaru observe to understand how Tayuya controls her summoned fighters?",
+      "a": "Her finger movements",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1910",
+      "verified": true,
+      "p": 1000,
+      "qid": "naruto-1000-918",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Her fingers while playing the flute"
+      ]
+    },
+    {
+      "topic": "Team Seven",
+      "q": "Why can Naruto no longer walk on water after a new seal is placed on his abdomen?",
+      "a": "Disrupted chakra control",
+      "sourceUrl": "https://naruto-official.com/en/news/01_1643",
+      "alt": [
+        "His chakra flow is disrupted",
+        "Chakra interference"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "naruto-1000-921",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

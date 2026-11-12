@@ -135,7 +135,7 @@ export function normalizeMafiaSettings(input = {}) {
   const community = input.community ?? 'ar', voiceMode = input.voiceMode ?? 'optional';
   if (typeof (input.roomName ?? '') !== 'string') return null;
   const roomName = (input.roomName ?? '').normalize('NFKC').trim().replace(/\s+/g,' ');
-  if (Array.from(roomName).length > 30 || /[\p{Cc}\p{Cf}]/u.test(roomName) || community !== 'ar' || !['optional','off'].includes(voiceMode)) return null;
+  if (Array.from(roomName).length > 30 || /[\p{Cc}\p{Cf}]/u.test(roomName) || !['ar','en'].includes(community) || !['optional','off'].includes(voiceMode)) return null;
   if (!['classic', 'shadow'].includes(mode) || !['private', 'public'].includes(visibility) || !Number.isInteger(capacity) || capacity < (mode === 'shadow' ? 9 : 6) || capacity > (mode === 'shadow' ? 12 : 8)) return null;
   if(input.experimentalRole!=null&&input.experimentalRole!=='tracker')return null;
   if(input.experimentalRole==='tracker'&&(visibility!=='private'||capacity<8))return null;

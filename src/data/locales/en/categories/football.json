@@ -1,0 +1,511 @@
+{
+  "id": "football",
+  "name": "Football",
+  "icon": "⚽",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Which national team beat Italy 4–0 in the Euro 2012 final?",
+      "a": "Spain",
+      "qid": "football-200-911",
+      "topic": "European Championship",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.uefa.com/news/0252-0cdc4f07099d-36a02f333f87-1000--spain-overpower-exhausted-italy-to-win-uefa-euro-2012-final/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which team stunned the hosts to win Euro 2004?",
+      "a": "Greece",
+      "qid": "football-200-912",
+      "topic": "European Championship",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.uefa.com/uefaeuro/history/news/0254-0d7b673abd33-d04e3bb2cd62-1000/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which team won its first Asian Cup by beating China in the 1984 final?",
+      "a": "Saudi Arabia",
+      "qid": "football-200-913",
+      "topic": "Asian Cup",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.the-afc.com/en/national/afc_asian_cup/news/flashback_saudi_arabias_historic_triumph_at_the_1984_afc_asian_cup%C2%A0.html",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which country hosted the 2015 Asian Cup and beat South Korea in the final?",
+      "a": "Australia",
+      "qid": "football-200-914",
+      "topic": "Asian Cup",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.the-afc.com/en/national/afc_asian_cup/news/on_this_day_australia_crowned_champions_of_asia.html",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which team won its first Africa Cup of Nations in the 2021 edition by beating Egypt?",
+      "a": "Senegal",
+      "qid": "football-200-915",
+      "topic": "Africa Cup of Nations",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.cafonline.com/afcon2025/news/match-stats-senegal-vs-egypt-totalenergies-caf-africa-cup-of-nations-morocco-2025-semi-final/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which team won its first Copa América title on home soil in 2015?",
+      "a": "Chile",
+      "qid": "football-200-916",
+      "topic": "Copa América",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://copaamerica.com/es/novedades/chile-cuantas-veces-gano-conmebol-copa-america",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "How many meters separate the penalty mark from the midpoint of the goal line?",
+      "a": "11 meters",
+      "qid": "football-200-917",
+      "topic": "Laws of the game",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.theifab.com/laws/latest/the-field-of-play/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "11",
+        "Eleven"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "A foul occurs, but the offended team benefits from play continuing. What principle does the referee apply?",
+      "a": "Advantage",
+      "qid": "football-200-918",
+      "topic": "Refereeing",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://theifab.com/laws/latest/the-referee/#powers-and-duties",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which substitute scored the only goal of the Euro 2016 final?",
+      "a": "Éder",
+      "qid": "football-400-911",
+      "topic": "European Championship",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.uefa.com/uefaeuro/history/news/025a-0ec0db63e375-e3d06be8c923-1000--euro-2016-all-you-need-to-know/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Eder"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Which team beat Germany 2–0 in the Euro 1992 final?",
+      "a": "Denmark",
+      "qid": "football-400-912",
+      "topic": "European Championship",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.uefa.com/uefaeuro/history/news/0253-0d7b301f026e-4388f32eaa87-1000--gatecrashing-denmark-down-germany-in-euro-1992-final/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Whose header decided the 2007 Asian Cup final?",
+      "a": "Younis Mahmoud",
+      "qid": "football-400-913",
+      "topic": "Asian Cup",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.the-afc.com/en/more/news/asian_icons_younis_mahmoud_iraq.html",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Younes Mahmoud"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Which team won the 2011 Asian Cup?",
+      "a": "Japan",
+      "qid": "football-400-914",
+      "topic": "Asian Cup",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.the-afc.com/en/national/afc_asian_cup/news/tadanari_lee_recalls_2011_final_high.html",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which team won AFCON 2019 under Djamel Belmadi?",
+      "a": "Algeria",
+      "qid": "football-400-915",
+      "topic": "Africa Cup of Nations",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.cafonline.com/afcon2025/news/a-year-ago-algeria-ruled-the-continent/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Who scored the only goal against Brazil in the 2021 Copa América final?",
+      "a": "Ángel Di María",
+      "qid": "football-400-916",
+      "topic": "Copa América",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://copaamerica.com/es/novedades/di-maria-historico-campeon-copa-america",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Angel Di Maria"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What is the minimum number of players a team needs to start a football match?",
+      "a": "7",
+      "qid": "football-400-917",
+      "topic": "Laws of the game",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.theifab.com/laws/latest/the-players/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Seven"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "A referee holds one arm above the head when awarding a free kick. What type of kick is it?",
+      "a": "Indirect free kick",
+      "qid": "football-400-918",
+      "topic": "Refereeing",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.theifab.com/laws/latest/free-kicks/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Indirect"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Who captained the Netherlands to the Euro 1988 title?",
+      "a": "Ruud Gullit",
+      "qid": "football-600-911",
+      "topic": "European Championship",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.uefa.com/uefaeuro/history/news/025b-0ed955722c3e-d9f74ab7998d-1000--euro-1988-all-you-need-to-know/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Who scored the Netherlands' famous narrow-angle volley in the Euro 1988 final?",
+      "a": "Marco van Basten",
+      "qid": "football-600-912",
+      "topic": "European Championship",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.uefa.com/uefaeuro/history/news/0253-0d7b2f78ca99-40f24ef873fd-1000/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Who finished the 2019 Asian Cup with nine goals, including an overhead kick in the final?",
+      "a": "Almoez Ali",
+      "qid": "football-600-913",
+      "topic": "Asian Cup",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://assets.the-afc.com/migration/a/f/AFC%20Quarterly%20Issue%2026.pdf",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Al-Moez Ali"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Who scored the extra-time winner in the 2015 Asian Cup final?",
+      "a": "James Troisi",
+      "qid": "football-600-914",
+      "topic": "Asian Cup",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.the-afc.com/en/national/afc_asian_cup/news/on_this_day_australia_crowned_champions_of_asia.html",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Whose early deflected shot decided the AFCON 2019 final?",
+      "a": "Baghdad Bounedjah",
+      "qid": "football-600-915",
+      "topic": "Africa Cup of Nations",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.cafonline.com/afcon2025/news/a-year-ago-algeria-ruled-the-continent/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which team beat Paraguay 3–0 to win Copa América 2011?",
+      "a": "Uruguay",
+      "qid": "football-600-916",
+      "topic": "Copa América",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://cdn.conmebol.com/wp-content/uploads/documents/copaamericaweb-es.pdf",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "How many meters must opponents stay from the ball at a free kick outside their penalty area?",
+      "a": "9.15 meters",
+      "qid": "football-600-917",
+      "topic": "Laws of the game",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.theifab.com/laws/latest/free-kicks/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "9.15",
+        "Ten yards"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "What does IFAB, the body that approves football's Laws of the Game, stand for?",
+      "a": "International Football Association Board",
+      "qid": "football-600-918",
+      "topic": "Refereeing",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.theifab.com/organisation/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which striker headed the only goal in the Euro 2004 final?",
+      "a": "Angelos Charisteas",
+      "qid": "football-800-911",
+      "topic": "European Championship",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.uefa.com/uefaeuro/history/news/0254-0d7b673abd33-d04e3bb2cd62-1000/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which German coach led the Euro 2004 champions?",
+      "a": "Otto Rehhagel",
+      "qid": "football-800-912",
+      "topic": "European Championship",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.uefa.com/uefaeuro/history/news/0254-0d7b673abd33-d04e3bb2cd62-1000/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which Japanese substitute decided the 2011 Asian Cup final with a volley?",
+      "a": "Tadanari Lee",
+      "qid": "football-800-913",
+      "topic": "Asian Cup",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.the-afc.com/en/national/afc_asian_cup/news/tadanari_lee_recalls_2011_final_high.html",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which team won the AFCON 2012 final 8–7 on penalties?",
+      "a": "Zambia",
+      "qid": "football-800-914",
+      "topic": "Africa Cup of Nations",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.cafonline.com/afcon2025/news/one-year-to-afcon-2025-unforgettable-tournament-finales/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which Peruvian striker was Copa América 2011's top scorer with five goals?",
+      "a": "Paolo Guerrero",
+      "qid": "football-800-915",
+      "topic": "Copa América",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://cdn.conmebol.com/wp-content/uploads/documents/copaamericaweb-es.pdf",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "q": "Who won the best-player award at the 2015 Asian Cup?",
+      "a": "Massimo Luongo",
+      "topic": "Asian Cup",
+      "verified": true,
+      "sourceUrl": "https://www.the-afc.com/en/more/news/mvp_award_%E2%80%98the_icing_on_the_cake%E2%80%99_for_livewire_luongo.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "football-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which goalkeeper won the Ballon d'Or in 1963?",
+      "a": "Lev Yashin",
+      "topic": "Stars and awards",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/ballondor/news/0292-1c2705cb8fd5-8f2dcb111a8a-1000--ballon-d-or-how-are-the-winners-decided/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "football-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Who became the first French Ballon d'Or winner in 1958?",
+      "a": "Raymond Kopa",
+      "topic": "Stars and awards",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/ballondor/news/0292-1c2705cb8fd5-8f2dcb111a8a-1000--ballon-d-or-how-are-the-winners-decided/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "football-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 1000,
+      "q": "Which Japanese full-back supplied the cross for the winning goal in the 2011 Asian Cup final?",
+      "a": "Yuto Nagatomo",
+      "qid": "football-1000-911",
+      "topic": "Asian Cup",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "source": "https://www.the-afc.com/en/about_afc/afc_annual_awards/news/shortlist_rekindles_asian_cup_memories.html",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Yūto Nagatomo"
+      ]
+    },
+    {
+      "q": "Which Czech goalkeeper conceded the golden goal in the Euro 1996 final?",
+      "a": "Petr Kouba",
+      "topic": "European Championship",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/uefaeuro/history/news/025e-0f99be7db66e-04b0e76360bb-1000--classics-euro-96-final/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "football-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which German missed the penalty immediately before Panenka's decisive kick in the Euro 1976 final?",
+      "a": "Uli Hoeneß",
+      "topic": "European Championship",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/uefaeuro/history/news/0252-0cdc4f44202f-a028ba3167e3-1000--panenka-the-hero-for-czechoslovakia/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Uli Hoeness"
+      ],
+      "p": 1000,
+      "qid": "football-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Who captained the 2004 Asian Cup winners?",
+      "a": "Tsuneyasu Miyamoto",
+      "topic": "Asian Cup",
+      "verified": true,
+      "sourceUrl": "https://www.the-afc.com/en/national/afc_asian_cup/news/flashback_japan_2004.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "football-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Nigerian won the best-player award at AFCON 2004?",
+      "a": "Jay-Jay Okocha",
+      "topic": "Africa Cup of Nations",
+      "verified": true,
+      "sourceUrl": "https://www.cafonline.com/fr/can2025/infos/tout-ce-qu-il-faut-savoir-sur-la-totalenergies-caf-coupe-d-afrique-des-nations-maroc-2025/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Augustine Okocha"
+      ],
+      "p": 1000,
+      "qid": "football-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Who shared the Copa América 1999 top-scorer position with Ronaldo on five goals?",
+      "a": "Rivaldo",
+      "topic": "Copa América",
+      "verified": true,
+      "sourceUrl": "https://copaamerica.com/en/news/top-scorer-every-edition-conmebol-copa-america",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "football-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Who coached Tunisia to the AFCON 2004 title?",
+      "a": "Roger Lemerre",
+      "topic": "Coaches",
+      "verified": true,
+      "sourceUrl": "https://www.cafonline.com/fr/can2025/infos/tout-ce-qu-il-faut-savoir-sur-la-totalenergies-caf-coupe-d-afrique-des-nations-maroc-2025/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "football-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Yugoslav goalkeeper saved Puskás's penalty in the 1952 Olympic final?",
+      "a": "Vladimir Beara",
+      "topic": "Stars and awards",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/news-media/news/0218-0e15a7bb937f-80e550b52621-1000--goalkeeping-idol-vladimir-beara-mourned/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "football-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

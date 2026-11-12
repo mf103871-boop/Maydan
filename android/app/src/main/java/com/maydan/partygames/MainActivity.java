@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowInsets;
+import android.view.WindowInsetsController;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
@@ -20,7 +21,11 @@ import android.widget.Toast;
 import android.window.OnBackInvokedDispatcher;
 
 import androidx.webkit.WebViewAssetLoader;
+import androidx.webkit.WebViewCompat;
 import androidx.webkit.WebViewFeature;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.ByteArrayInputStream;
 import java.util.Collections;
@@ -37,26 +42,30 @@ public final class MainActivity extends Activity {
 
     private WebView webView;
     private RewardedIntegration rewarded;
+    private LinearLayout root;
+    private TextView banner;
 
     @Override
     protected void onCreate(Bundle state) {
         super.onCreate(state);
         if (!WebViewFeature.isFeatureSupported(WebViewFeature.WEB_MESSAGE_LISTENER)) {
             TextView message = new TextView(this);
-            message.setText(R.string.webview_update);
+            message.setText(NativeLocalization.text(this, R.string.webview_update));
             message.setGravity(Gravity.CENTER);
             setContentView(message);
+            applyLightSystemBars();
             return;
         }
 
-        LinearLayout root = new LinearLayout(this);
+        root = new LinearLayout(this);
         root.setOrientation(LinearLayout.VERTICAL);
         root.setBackgroundColor(Color.rgb(255, 248, 233));
         setContentView(root);
+        applyLightSystemBars();
         applySystemInsets(root);
 
-        TextView banner = new TextView(this);
-        banner.setText(R.string.offline_preview);
+        banner = new TextView(this);
+        banner.setText(NativeLocalization.text(this, R.string.offline_preview));
         banner.setGravity(Gravity.CENTER);
         banner.setTextColor(Color.rgb(58, 37, 69));
         banner.setTextSize(13);
@@ -68,6 +77,7 @@ public final class MainActivity extends Activity {
         root.addView(webView, new LinearLayout.LayoutParams(-1, 0, 1));
         configureWebView();
         rewarded = new RewardedIntegration(this, webView, root);
+        refreshLocalization();
         if (state == null || webView.restoreState(state) == null) webView.loadUrl(HOME);
         if (Build.VERSION.SDK_INT >= 33) {
             getOnBackInvokedDispatcher().registerOnBackInvokedCallback(
@@ -90,7 +100,23 @@ public final class MainActivity extends Activity {
     @Override
     protected void onDestroy() {
         if (rewarded != null) rewarded.destroy();
+        if (webView != null && WebViewFeature.isFeatureSupported(WebViewFeature.WEB_MESSAGE_LISTENER)) {
+            WebViewCompat.removeWebMessageListener(webView, "MaydanLocale");
+        }
         super.onDestroy();
+    }
+
+    private void applyLightSystemBars() {
+        if (Build.VERSION.SDK_INT >= 30 && getWindow().getInsetsController() != null) {
+            int appearance = WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
+                | WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS;
+            getWindow().getInsetsController().setSystemBarsAppearance(appearance, appearance);
+        } else {
+            int appearance = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+            if (Build.VERSION.SDK_INT >= 26) appearance |= View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+            getWindow().getDecorView().setSystemUiVisibility(
+                getWindow().getDecorView().getSystemUiVisibility() | appearance);
+        }
     }
 
     private void applySystemInsets(View root) {
@@ -115,6 +141,22 @@ public final class MainActivity extends Activity {
         settings.setSupportMultipleWindows(false);
         settings.setJavaScriptCanOpenWindowsAutomatically(false);
 
+        WebViewCompat.addWebMessageListener(webView, "MaydanLocale",
+            Collections.singleton("https://" + HOST), (view, message, origin, mainFrame, reply) -> {
+                if (view != webView || !mainFrame || !"https".equals(origin.getScheme())
+                    || !HOST.equals(origin.getHost()) || origin.getPort() != -1 || origin.getUserInfo() != null
+                    || view.getUrl() == null || !isLocalAsset(Uri.parse(view.getUrl()))) return;
+                String data = message.getData();
+                if (data == null || data.length() > 128) return;
+                try {
+                    JSONObject request = new JSONObject(data);
+                    if (!"setLocale".equals(request.optString("type", ""))) return;
+                    if (NativeLocalization.setLocale(this, request.optString("locale", ""))) refreshLocalization();
+                } catch (JSONException ignored) {
+                    // Invalid messages cannot change the shell's locale.
+                }
+            });
+
         WebViewAssetLoader loader = new WebViewAssetLoader.Builder()
             .addPathHandler(ASSET_PATH, new WebViewAssetLoader.AssetsPathHandler(this))
             .build();
@@ -123,7 +165,7 @@ public final class MainActivity extends Activity {
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                 if (isLocalAsset(request.getUrl()) && request.isForMainFrame()) return false;
                 if (request.isForMainFrame()) {
-                    Toast.makeText(MainActivity.this, R.string.offline_navigation, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, NativeLocalization.text(MainActivity.this, R.string.offline_navigation), Toast.LENGTH_SHORT).show();
                 }
                 return true;
             }
@@ -143,10 +185,20 @@ public final class MainActivity extends Activity {
                     response.setMimeType("font/woff2");
                 } else if (path.endsWith(".opus")) {
                     response.setMimeType("audio/ogg");
+                } else if (path.endsWith(".json")) {
+                    response.setMimeType("application/json");
+                    response.setEncoding("UTF-8");
                 }
                 return response;
             }
         });
+    }
+
+    private void refreshLocalization() {
+        root.setLayoutDirection("en".equals(NativeLocalization.locale(this))
+            ? View.LAYOUT_DIRECTION_LTR : View.LAYOUT_DIRECTION_RTL);
+        banner.setText(NativeLocalization.text(this, R.string.offline_preview));
+        if (rewarded != null) rewarded.refreshLocalization();
     }
 
     private static boolean isLocalAsset(Uri url) {

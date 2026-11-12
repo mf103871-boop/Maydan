@@ -12,7 +12,10 @@ function focusFirst(layer){
   const node=layer.node;
   if(node.contains(document.activeElement))return;
   const marked=[...node.querySelectorAll('[autofocus],[data-autofocus]')].find(visible);
-  focus(marked||focusables(node.querySelector('.modal-body')||node)[0]||focusables(node)[0]||node);
+  // A long preview/paywall opens at its heading, with a visible way to close.
+  // Explicit form autofocus still wins and retains keyboard avoidance behavior.
+  const close=[...node.querySelectorAll('[data-design-id="close"],[data-design-id="sheet-drag-handle"]')].find(visible);
+  focus(marked||close||focusables(node.querySelector('.modal-body')||node)[0]||focusables(node)[0]||node);
 }
 function sync(){
   const active=top();

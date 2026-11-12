@@ -1,0 +1,494 @@
+{
+  "id": "demonslayer",
+  "name": "Demon Slayer",
+  "icon": "👺",
+  "style": "story",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "Breathing Styles and abilities",
+      "q": "What dance does Tanjiro inherit from his father?",
+      "a": "Hinokami Kagura",
+      "alt": [
+        "Dance of the Fire God"
+      ],
+      "verified": true,
+      "qid": "demonslayer-200-911",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Tanjiro_Kamado",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "The Corps",
+      "q": "Which leader of the Corps is revered by all its warriors?",
+      "a": "Kagaya Ubuyashiki",
+      "alt": [
+        "Kagaya"
+      ],
+      "verified": true,
+      "qid": "demonslayer-200-912",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Ubuyashiki_family",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "The Corps",
+      "q": "How long must a candidate survive the Corps' Final Selection?",
+      "a": "Seven days",
+      "alt": [
+        "7 days",
+        "Seven nights"
+      ],
+      "verified": true,
+      "qid": "demonslayer-200-913",
+      "sourceUrl": "https://demonslayer-anime.com/risshihen/story/04.html",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Demons",
+      "q": "Which demon controls the train passengers' dreams?",
+      "a": "Enmu",
+      "alt": [],
+      "verified": true,
+      "qid": "demonslayer-200-914",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Lower_Ranks",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Demons",
+      "q": "Which demon faces the Flame Hashira after the train demon is defeated?",
+      "a": "Akaza",
+      "alt": [],
+      "verified": true,
+      "qid": "demonslayer-200-915",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Places and journeys",
+      "q": "What mansion houses injured warriors during their recovery?",
+      "a": "The Butterfly Mansion",
+      "alt": [
+        "Butterfly Mansion"
+      ],
+      "verified": true,
+      "qid": "demonslayer-200-916",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tanjiro_Kamado#In_Demon_Slayer:_Kimetsu_no_Yaiba",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "The Kamado family",
+      "q": "What is Nezuko's blood-igniting ability called?",
+      "a": "Exploding Blood",
+      "alt": [
+        "Blood Burst"
+      ],
+      "verified": true,
+      "qid": "demonslayer-200-917",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Nezuko_Kamado#In_Demon_Slayer:_Kimetsu_no_Yaiba",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "Companions and teachers",
+      "q": "Which fox-masked boy helps Tanjiro learn to cut the boulder during training?",
+      "a": "Sabito",
+      "alt": [],
+      "verified": true,
+      "qid": "demonslayer-200-918",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tanjiro_Kamado#In_Demon_Slayer:_Kimetsu_no_Yaiba",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 400,
+      "topic": "Demons",
+      "q": "Which rare plant does Muzan seek for centuries?",
+      "a": "Blue Spider Lily",
+      "alt": [],
+      "verified": true,
+      "qid": "demonslayer-400-911",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_%E2%80%93_Swordsmith_Village_Arc#ep45",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Weapons and swordsmiths",
+      "q": "Which swordsmith makes Tanjiro's blades and becomes furious when he breaks them?",
+      "a": "Hotaru Haganezuka",
+      "alt": [
+        "Haganezuka"
+      ],
+      "verified": true,
+      "qid": "demonslayer-400-912",
+      "sourceUrl": "https://demonslayer-anime.com/sva/character/",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Places and journeys",
+      "q": "In which district does Tanjiro first encounter Muzan?",
+      "a": "Asakusa",
+      "alt": [],
+      "verified": true,
+      "qid": "demonslayer-400-913",
+      "sourceUrl": "https://kimetsu.com/anime/risshihen/story/?story=8",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Places and journeys",
+      "q": "On which mountain does the spider-demon family live?",
+      "a": "Mount Natagumo",
+      "alt": [
+        "Natagumo"
+      ],
+      "verified": true,
+      "qid": "demonslayer-400-914",
+      "sourceUrl": "https://demonslayer-anime.com/risshihen/story/15.html",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "The Hashira",
+      "q": "What does Uzui lose in the Entertainment District battle before retiring?",
+      "a": "His left hand and left eye",
+      "alt": [
+        "Left hand and left eye"
+      ],
+      "verified": true,
+      "qid": "demonslayer-400-915",
+      "sourceUrl": "https://kimetsu.com/anime/hashirageikohen/character/",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "The Corps",
+      "q": "Which boy succeeds Kagaya as leader of the Corps?",
+      "a": "Kiriya Ubuyashiki",
+      "alt": [
+        "Kiriya"
+      ],
+      "verified": true,
+      "qid": "demonslayer-400-916",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Ubuyashiki_family",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Breathing Styles and abilities",
+      "q": "What Breathing Style does Kokushibo use?",
+      "a": "Moon Breathing",
+      "alt": [],
+      "verified": true,
+      "qid": "demonslayer-400-917",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Upper_Ranks",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Demons",
+      "q": "Which demon moves between ceramic pots during the Swordsmith Village battle?",
+      "a": "Gyokko",
+      "alt": [],
+      "verified": true,
+      "qid": "demonslayer-400-918",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_%E2%80%93_Swordsmith_Village_Arc#Episodes",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 600,
+      "topic": "Companions and teachers",
+      "q": "Which teacher raises and trains Zenitsu?",
+      "a": "Jigoro Kuwajima",
+      "alt": [
+        "Jigoro"
+      ],
+      "verified": true,
+      "qid": "demonslayer-600-911",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Supporting_characters",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "The Hashira",
+      "q": "What is the name of Obanai's snake?",
+      "a": "Kaburamaru",
+      "alt": [],
+      "verified": true,
+      "qid": "demonslayer-600-912",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "The Hashira",
+      "q": "What is the name of the Flame Hashira's father, who held the title before him?",
+      "a": "Shinjuro",
+      "alt": [
+        "Shinjuro Rengoku"
+      ],
+      "verified": true,
+      "qid": "demonslayer-600-913",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Rengoku_family",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Demons",
+      "q": "Which Upper Rank Four demon produces multiple manifestations when beheaded?",
+      "a": "Hantengu",
+      "alt": [],
+      "verified": true,
+      "qid": "demonslayer-600-914",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_%E2%80%93_Swordsmith_Village_Arc#Episodes",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Weapons and swordsmiths",
+      "q": "What is the wooden training doll used by the warriors called?",
+      "a": "Yoriichi Type Zero",
+      "alt": [
+        "Yoriichi Type 0"
+      ],
+      "verified": true,
+      "qid": "demonslayer-600-915",
+      "sourceUrl": "https://demonslayer-anime.com/sva/story/02.html",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "Which man shelters Tanjiro on the night his family is attacked?",
+      "a": "Saburo",
+      "alt": [],
+      "p": 600,
+      "topic": "The Kamado family",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Minor_characters",
+      "verified": true,
+      "qid": "demonslayer-600-916",
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "Breathing Styles and abilities",
+      "q": "Which Corps fighter temporarily gains demonic powers by eating demon flesh?",
+      "a": "Genya Shinazugawa",
+      "alt": [
+        "Genya"
+      ],
+      "sourceUrl": "https://kimetsu.com/anime/hashirageikohen/character/",
+      "qid": "demonslayer-600-917",
+      "p": 600,
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "topic": "The Kamado family",
+      "q": "Which ancestor of Tanjiro receives Yoriichi's earrings and preserves his movements?",
+      "a": "Sumiyoshi",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "qid": "demonslayer-600-918",
+      "p": 600,
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "p": 800,
+      "topic": "Weapons and swordsmiths",
+      "q": "What is the name of the chief of the village where the swords are made?",
+      "a": "Tecchin Tecchikawahara",
+      "alt": [
+        "Tecchin"
+      ],
+      "verified": true,
+      "qid": "demonslayer-800-911",
+      "sourceUrl": "https://demonslayer-anime.com/sva/story/05.html",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "Demons",
+      "q": "During which Japanese era does Muzan become a demon?",
+      "a": "The Heian era",
+      "alt": [
+        "Heian period",
+        "Heian"
+      ],
+      "verified": true,
+      "qid": "demonslayer-800-912",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Muzan_Kibutsuji",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "Demons",
+      "q": "What was Kokushibo's human name?",
+      "a": "Michikatsu Tsugikuni",
+      "alt": [
+        "Michikatsu"
+      ],
+      "verified": true,
+      "qid": "demonslayer-800-913",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Upper_Ranks",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "The Hashira",
+      "q": "What is Muichiro's twin brother's name?",
+      "a": "Yuichiro Tokito",
+      "alt": [
+        "Yuichiro"
+      ],
+      "verified": true,
+      "qid": "demonslayer-800-914",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "Companions and teachers",
+      "q": "What is the original name of Zenitsu's sparrow, nicknamed Chuntaro?",
+      "a": "Ukogi",
+      "alt": [],
+      "verified": true,
+      "qid": "demonslayer-800-915",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Supporting_characters",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which udon vendor becomes angry when Tanjiro leaves his food behind?",
+      "a": "Toyo",
+      "alt": [],
+      "p": 800,
+      "topic": "Places and journeys",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Minor_characters",
+      "verified": true,
+      "qid": "demonslayer-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "Places and journeys",
+      "q": "Which boy inherits the training doll in the Swordsmith Village?",
+      "a": "Kotetsu",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "qid": "demonslayer-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Weapons and swordsmiths",
+      "q": "Which swordsmith becomes angry when Inosuke chips his two new blades?",
+      "a": "Kozo Kanamori",
+      "alt": [
+        "Kanamori"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "qid": "demonslayer-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "q": "Which deceased swordsmith made Muichiro's swords before Kanamori?",
+      "a": "Tetsuido",
+      "alt": [],
+      "p": 1000,
+      "topic": "Weapons and swordsmiths",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Swordsmith_Village",
+      "verified": true,
+      "qid": "demonslayer-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Companions and teachers",
+      "q": "Which mother of Inosuke is killed by Doma after fleeing from him?",
+      "a": "Kotoha Hashibira",
+      "alt": [
+        "Kotoha"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "qid": "demonslayer-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Demons",
+      "q": "Which martial-arts teacher takes in Hakuji while he is human?",
+      "a": "Keizo",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "qid": "demonslayer-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Demons",
+      "q": "What is the name of Hakuji's teacher's daughter, whom he loves before becoming a demon?",
+      "a": "Koyuki",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "qid": "demonslayer-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "The Hashira",
+      "q": "Which wife of Uzui does he find himself after she attempts to escape Daki?",
+      "a": "Hinatsuru",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "qid": "demonslayer-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "The Hashira",
+      "q": "Which mother of Rengoku teaches him to protect the weak?",
+      "a": "Ruka",
+      "alt": [
+        "Ruka Rengoku"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "qid": "demonslayer-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "The Kamado family",
+      "q": "Which fifteen-year-old descendant of Tanjiro and Kanao appears in the modern-day epilogue?",
+      "a": "Sumihiko Kamado",
+      "alt": [
+        "Sumihiko"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters",
+      "qid": "demonslayer-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "The Corps",
+      "q": "What discovery explains why the four manifestations survive after being beheaded together in the Swordsmith Village?",
+      "a": "There is a fifth demon",
+      "alt": [
+        "A separate original body exists"
+      ],
+      "sourceUrl": "https://kimetsu.com/anime/story/detail/?ep=ep06&series=katanakaji",
+      "qid": "demonslayer-1000-921",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    }
+  ]
+}

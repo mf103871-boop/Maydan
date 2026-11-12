@@ -1,0 +1,522 @@
+{
+  "id": "ramadanseries",
+  "name": "Ramadan Series",
+  "icon": "🌛",
+  "style": "story",
+  "qs": [
+    {
+      "qid": "ramadanseries-200-911",
+      "p": 200,
+      "topic": "Al Kabeer Awi",
+      "q": "In Al Kabeer Awi, which brother returns from America and challenges his brother in the election?",
+      "a": "Johnny",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1096845/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "ramadanseries-200-912",
+      "p": 200,
+      "topic": "Gaafar El Omda",
+      "q": "In Gaafar El Omda, what is the name of the abducted child's mother, who never stops awaiting his return?",
+      "a": "Thuraya",
+      "sourceUrl": "https://elcinema.com/work/2077046/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Soraya",
+        "Thurayya"
+      ]
+    },
+    {
+      "qid": "ramadanseries-200-913",
+      "p": 200,
+      "topic": "Taht El Wesaya",
+      "q": "In Taht El Wesaya, which mother flees with her two children and her husband's boat?",
+      "a": "Hanan",
+      "sourceUrl": "https://elcinema.com/work/2077491/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": []
+    },
+    {
+      "qid": "ramadanseries-200-914",
+      "p": 200,
+      "topic": "El Prince",
+      "q": "In El Prince, which older brother leads the conspiracy against the protagonist?",
+      "a": "Fathi",
+      "sourceUrl": "https://elcinema.com/work/2059626/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Fathy"
+      ]
+    },
+    {
+      "qid": "ramadanseries-200-916",
+      "p": 200,
+      "topic": "Ashghal Shaqqa",
+      "q": "In Ashghal Shaqqa, what is Hamdy's medical specialty?",
+      "a": "Forensic medicine",
+      "alt": [
+        "Forensic pathology"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2083457/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "ramadanseries-200-917",
+      "p": 200,
+      "topic": "Al Maddah",
+      "q": "In Al Maddah, what is the name of Ghaleb's daughter whom the protagonist loves?",
+      "a": "Rehab",
+      "sourceUrl": "https://elcinema.com/work/2068005/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Rihab"
+      ]
+    },
+    {
+      "qid": "ramadanseries-200-918",
+      "p": 200,
+      "topic": "El Le'ba",
+      "q": "In El Le'ba, what is Waseem's wife's name?",
+      "a": "Esraa",
+      "sourceUrl": "https://elcinema.com/work/2010352/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Isra"
+      ]
+    },
+    {
+      "qid": "ramadanseries-200-921",
+      "p": 200,
+      "topic": "El Prince",
+      "q": "In El Prince, what trade does the protagonist practice in his father's workshop?",
+      "a": "Car painting",
+      "alt": [
+        "Automotive painting",
+        "Spray-painting cars"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2059626/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "ramadanseries-400-912",
+      "p": 400,
+      "topic": "Gaafar El Omda",
+      "q": "In Gaafar El Omda, which wife is behind the kidnapping of Gaafar's son?",
+      "a": "Dalal",
+      "sourceUrl": "https://elcinema.com/work/2077046/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": []
+    },
+    {
+      "qid": "ramadanseries-400-913",
+      "p": 400,
+      "topic": "Taht El Wesaya",
+      "q": "In Taht El Wesaya, to which city does the heroine take the boat to begin a new life?",
+      "a": "Damietta",
+      "sourceUrl": "https://elcinema.com/work/2077491/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Dumyat"
+      ]
+    },
+    {
+      "qid": "ramadanseries-400-914",
+      "p": 400,
+      "topic": "El Prince",
+      "q": "In El Prince, which young daughter does her father search for after leaving prison?",
+      "a": "Mariam",
+      "sourceUrl": "https://elcinema.com/work/2059626/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Maryam"
+      ]
+    },
+    {
+      "qid": "ramadanseries-400-916",
+      "p": 400,
+      "topic": "Ashghal Shaqqa",
+      "q": "In Ashghal Shaqqa, what profession does Yasmine try to return to after giving birth?",
+      "a": "TV presenter",
+      "alt": [
+        "Television host",
+        "Broadcaster"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2083457/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "ramadanseries-400-917",
+      "p": 400,
+      "topic": "Al Maddah",
+      "q": "In Al Maddah season one, which brother is imprisoned after drugs are found in a bag at home?",
+      "a": "Hassan",
+      "sourceUrl": "https://elcinema.com/work/2068005/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Hasan"
+      ]
+    },
+    {
+      "qid": "ramadanseries-400-918",
+      "p": 400,
+      "topic": "El Le'ba",
+      "q": "At the end of El Le'ba season one, who is revealed to be running the mysterious challenges?",
+      "a": "Samir",
+      "sourceUrl": "https://elcinema.com/work/2010352/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Sameer"
+      ]
+    },
+    {
+      "qid": "ramadanseries-400-921",
+      "p": 400,
+      "topic": "B 100 Wesh",
+      "q": "In B 100 Wesh, which nurse joins the gang after overhearing their plan to seize Ghazal's fortune?",
+      "a": "Naglaa",
+      "sourceUrl": "https://elcinema.com/work/2056512/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Najla"
+      ]
+    },
+    {
+      "qid": "ramadanseries-400-922",
+      "p": 400,
+      "topic": "El Le'ba",
+      "q": "In El Le'ba season one, what are the contestants asked to steal from an abandoned house?",
+      "a": "A painting",
+      "alt": [
+        "Painting"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2010352/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "ramadanseries-600-911",
+      "p": 600,
+      "topic": "Al Kabeer Awi",
+      "q": "In Al Kabeer Awi season one, what technology does Al Kabeer ban before secretly learning to use it?",
+      "a": "The internet",
+      "alt": [
+        "Internet"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1096845/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "ramadanseries-600-912",
+      "p": 600,
+      "topic": "Gaafar El Omda",
+      "q": "In Gaafar El Omda, which man carried out the child's abduction and is pursued by the father for the truth?",
+      "a": "Bilal Shama",
+      "alt": [
+        "Bilal"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2077046/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "ramadanseries-600-913",
+      "p": 600,
+      "topic": "Taht El Wesaya",
+      "q": "In Taht El Wesaya, which sailor helps the heroine devise a plan to bring the crew back to work?",
+      "a": "Rabie",
+      "sourceUrl": "https://elcinema.com/work/2077491/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Rabi"
+      ]
+    },
+    {
+      "qid": "ramadanseries-600-916",
+      "p": 600,
+      "topic": "Ashghal Shaqqa",
+      "q": "In Ashghal Shaqqa, which domestic worker steals the apartment's furniture?",
+      "a": "Ayla",
+      "sourceUrl": "https://elcinema.com/work/2083457/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Aila"
+      ]
+    },
+    {
+      "qid": "ramadanseries-600-917",
+      "p": 600,
+      "topic": "Al Maddah",
+      "q": "In Al Maddah season one, who reads the protagonist's thoughts and confronts him about Ghaleb's incident?",
+      "a": "Misbah",
+      "sourceUrl": "https://elcinema.com/work/2068005/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Mesbah"
+      ]
+    },
+    {
+      "qid": "ramadanseries-600-921",
+      "p": 600,
+      "topic": "B 100 Wesh",
+      "q": "At the start of B 100 Wesh, what does Omar pretend to be to steal the heroine's jewelry?",
+      "a": "A police officer",
+      "alt": [
+        "Police officer",
+        "Policeman"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2056512/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "ramadanseries-600-922",
+      "p": 600,
+      "topic": "Al Kabeer Awi",
+      "q": "In Al Kabeer Awi, what is the brothers' American mother's name?",
+      "a": "Samantha",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1096845/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "ramadanseries-600-923",
+      "p": 600,
+      "topic": "B 100 Wesh",
+      "q": "In B 100 Wesh, which gang member impersonates Ghazal to withdraw his money?",
+      "a": "Sebaey",
+      "sourceUrl": "https://elcinema.com/work/2056512/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Sibai",
+        "Sibaei"
+      ]
+    },
+    {
+      "topic": "Al Kabeer Awi",
+      "q": "In Al Kabeer Awi season one, who sells fake tickets for Nicole Saba's concert?",
+      "a": "Hagras",
+      "sourceUrl": "https://elcinema.com/work/1096845/episodes",
+      "verified": true,
+      "p": 800,
+      "qid": "ramadanseries-800-911",
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Hagress"
+      ]
+    },
+    {
+      "topic": "Gaafar El Omda",
+      "q": "In Gaafar El Omda, which woman raised Seif but died before revealing his identity to Gaafar?",
+      "a": "Fatma",
+      "sourceUrl": "https://elcinema.com/work/2077046/episodes",
+      "verified": true,
+      "p": 800,
+      "qid": "ramadanseries-800-912",
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Fatima"
+      ]
+    },
+    {
+      "topic": "Taht El Wesaya",
+      "q": "In Taht El Wesaya, which sister of the heroine is imprisoned because of false testimony?",
+      "a": "Sanaa",
+      "sourceUrl": "https://elcinema.com/work/2077491/episodes",
+      "verified": true,
+      "p": 800,
+      "qid": "ramadanseries-800-913",
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Sana"
+      ]
+    },
+    {
+      "topic": "El Prince",
+      "q": "In El Prince, who finds Radwan's daughter at the transport terminal and takes her home?",
+      "a": "Mahmoud",
+      "sourceUrl": "https://elcinema.com/work/2059626/episodes",
+      "verified": true,
+      "p": 800,
+      "qid": "ramadanseries-800-914",
+      "difficultyTarget": 0.25,
+      "alt": []
+    },
+    {
+      "topic": "B 100 Wesh",
+      "q": "In B 100 Wesh, to which country do the gang plan to travel after selling their possessions?",
+      "a": "Switzerland",
+      "sourceUrl": "https://elcinema.com/work/2056512/episodes",
+      "verified": true,
+      "p": 800,
+      "qid": "ramadanseries-800-915",
+      "difficultyTarget": 0.25,
+      "alt": []
+    },
+    {
+      "topic": "Ashghal Shaqqa",
+      "q": "In Ashghal Shaqqa, which housekeeper's hearing impairment causes trouble for Hamdy?",
+      "a": "Safiya",
+      "sourceUrl": "https://elcinema.com/work/2083457/episodes",
+      "verified": true,
+      "p": 800,
+      "qid": "ramadanseries-800-916",
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Safiyya"
+      ]
+    },
+    {
+      "topic": "Al Maddah",
+      "q": "In Al Maddah season one, who blackmails Saber with a video of him escaping with the gold?",
+      "a": "Abdel Razek",
+      "sourceUrl": "https://elcinema.com/work/2068005/episodes",
+      "alt": [
+        "Abd al-Razzaq",
+        "Abdelrazek"
+      ],
+      "verified": true,
+      "p": 800,
+      "qid": "ramadanseries-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "El Le'ba",
+      "q": "In El Le'ba season one, with which television presenter must the competitors appear to win the ninth task?",
+      "a": "Sherif Amer",
+      "sourceUrl": "https://elcinema.com/work/2010352/episodes",
+      "verified": true,
+      "p": 800,
+      "qid": "ramadanseries-800-918",
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Shareef Amer"
+      ]
+    },
+    {
+      "topic": "Al Kabeer Awi",
+      "q": "In Al Kabeer Awi season one, what container spoils the sniping attempt?",
+      "a": "A washbasin",
+      "sourceUrl": "https://elcinema.com/work/1096845/episodes",
+      "alt": [
+        "Washing basin",
+        "Wash tub"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "ramadanseries-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Gaafar El Omda",
+      "q": "In Gaafar El Omda, which maid passes news of the household to the Fathallah family?",
+      "a": "Saada",
+      "sourceUrl": "https://elcinema.com/work/2077046/episodes",
+      "verified": true,
+      "p": 1000,
+      "qid": "ramadanseries-1000-912",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Sa'da"
+      ]
+    },
+    {
+      "topic": "Taht El Wesaya",
+      "q": "In Taht El Wesaya, who forges the heroine's identity card and is later threatened by Saleh?",
+      "a": "Shaaban",
+      "sourceUrl": "https://elcinema.com/work/2077491/episodes",
+      "verified": true,
+      "p": 1000,
+      "qid": "ramadanseries-1000-913",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Shaban"
+      ]
+    },
+    {
+      "topic": "El Prince",
+      "q": "In El Prince, who tricks Radwan's brother by presenting a girl as Radwan's missing daughter?",
+      "a": "Kilani",
+      "sourceUrl": "https://elcinema.com/work/2059626/episodes",
+      "verified": true,
+      "p": 1000,
+      "qid": "ramadanseries-1000-914",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Keilani"
+      ]
+    },
+    {
+      "topic": "B 100 Wesh",
+      "q": "What is the name of the matchmaking company founded by the gang in B 100 Wesh?",
+      "a": "Tawfiq Rasein Fil Halal",
+      "sourceUrl": "https://elcinema.com/work/2056512/episodes",
+      "verified": true,
+      "p": 1000,
+      "qid": "ramadanseries-1000-915",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Tawfiq Rasin fi al-Halal"
+      ]
+    },
+    {
+      "topic": "Ashghal Shaqqa",
+      "q": "In Ashghal Shaqqa, which housekeeper forges a rental contract and evicts the couple?",
+      "a": "Fayza",
+      "sourceUrl": "https://elcinema.com/work/2083457/episodes",
+      "verified": true,
+      "p": 1000,
+      "qid": "ramadanseries-1000-916",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Faiza"
+      ]
+    },
+    {
+      "topic": "Al Maddah",
+      "q": "In Al Maddah season one, what is the name of Saber's biological mother whom he searches for?",
+      "a": "Afaf",
+      "sourceUrl": "https://elcinema.com/work/2068005/episodes",
+      "verified": true,
+      "p": 1000,
+      "qid": "ramadanseries-1000-917",
+      "difficultyTarget": 0.15,
+      "alt": []
+    },
+    {
+      "topic": "El Le'ba",
+      "q": "In El Le'ba season one, where does Mazo walk for the fake mission that Waseem tricks him into taking?",
+      "a": "Ain Sokhna",
+      "sourceUrl": "https://elcinema.com/work/2010352/episodes",
+      "verified": true,
+      "p": 1000,
+      "qid": "ramadanseries-1000-918",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Ain Sukhna",
+        "Al-Ain al-Sokhna"
+      ]
+    }
+  ]
+}

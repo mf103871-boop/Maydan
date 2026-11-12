@@ -1,3 +1,4 @@
+import { tr } from '../shared/i18n/core.js';
 // إطار كل لعبة: شريط علوي بلون اللعبة، زر خروج مع تأكيد أثناء اللعب، وحارس زر الرجوع.
 import React, { useEffect, useState, useCallback } from 'react';
 import { IconButton, ConfirmModal, ErrorBoundary } from '../shared/ui/components.jsx';
@@ -64,7 +65,7 @@ export function GameFrame({ game, inGame, exitMessage, beforeExit, children, onE
     return () => { if (meta && previous) meta.setAttribute('content', previous); };
   }, [game.accent]);
 
-  const clearLabel = !clearedActive && game.activeKeys?.length ? 'مسح المباراة الجارية وإعادة المحاولة' : 'مسح كل بيانات هذه اللعبة';
+  const clearLabel = !clearedActive && game.activeKeys?.length ? tr("مسح المباراة الجارية وإعادة المحاولة") : tr("مسح كل بيانات هذه اللعبة");
   const clearGameData = () => {
     if (!clearedActive && clearActiveGameData(game)) { setClearedActive(true); leave(`/play/${game.id}`); return; }
     try { createStorage(game.id).clear(); } catch (error) { /* ignore */ }
@@ -74,10 +75,10 @@ export function GameFrame({ game, inGame, exitMessage, beforeExit, children, onE
   return (
     <div data-design-screen="shell.game-frame" className="game-frame" style={{ '--game-accent': game.accent }}>
       <div data-design-id="header" className="game-bar">
-        <IconButton data-design-id="home" data-design-required="true" label="العودة إلى المنصة" onClick={() => requestExit('/')}><IconHome /></IconButton>
+        <IconButton data-design-id="home" data-design-required="true" label={tr("العودة إلى المنصة")} onClick={() => requestExit('/')}><IconHome /></IconButton>
         <span data-design-id="title" className="title">{game.name}</span>
         {game.id === 'jabeen' && <span className="online-social-slot" data-social-game-launcher />}
-        <IconButton data-design-id="sound" label={platform.settings.soundOn ? 'كتم الصوت' : 'تشغيل الصوت'} aria-pressed={!platform.settings.soundOn} onClick={() => platform.setSettings({ soundOn: !platform.settings.soundOn })}>
+        <IconButton data-design-id="sound" label={platform.settings.soundOn ? tr("كتم الصوت") : tr("تشغيل الصوت")} aria-pressed={!platform.settings.soundOn} onClick={() => platform.setSettings({ soundOn: !platform.settings.soundOn })}>
           {/* الأيقونة مفتاحها حالة الصوت: تنبثق عند التبديل */}
           <span key={String(platform.settings.soundOn)} className="icon-swap">{platform.settings.soundOn ? <IconVolume /> : <IconVolumeOff />}</span>
         </IconButton>
@@ -86,8 +87,8 @@ export function GameFrame({ game, inGame, exitMessage, beforeExit, children, onE
         {/* لعبة تتعطّل لا تُسقط المنصة: رسالة، عودة للرئيسية، ومسح بيانات اللعبة. */}
         <ErrorBoundary
           resetKey={game.id}
-          title="تعطّلت اللعبة"
-          message={`حدث خطأ غير متوقع في ${game.name}. يمكنك العودة إلى الرئيسية، أو مسح بيانات هذه اللعبة إن تكرّر الخطأ.`}
+          title={tr("تعطّلت اللعبة")}
+          message={tr("حدث خطأ غير متوقع في {v0}. يمكنك العودة إلى الرئيسية، أو مسح بيانات هذه اللعبة إن تكرّر الخطأ.", {v0: game.name})}
           clearLabel={clearLabel}
           onHome={() => leave('/')}
           onClear={clearGameData}
@@ -96,7 +97,7 @@ export function GameFrame({ game, inGame, exitMessage, beforeExit, children, onE
         </ErrorBoundary>
       </div>
       {confirming && (
-        <ConfirmModal title="الخروج من اللعبة؟" placement="bottom" danger message={exitMessage || 'سيضيع تقدّم الجولة الحالية.'} confirmLabel="خروج" cancelLabel="متابعة اللعب"
+        <ConfirmModal title={tr("الخروج من اللعبة؟")} placement="bottom" danger message={exitMessage || tr("سيضيع تقدّم الجولة الحالية.")} confirmLabel={tr("خروج")} cancelLabel={tr("متابعة اللعب")}
           onConfirm={() => { setConfirming(null); leave(confirming); }} onCancel={() => setConfirming(null)} />
       )}
     </div>

@@ -1,0 +1,512 @@
+{
+  "id": "history",
+  "name": "History",
+  "icon": "📜",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Which Macedonian leader overthrew the Achaemenid Persian Empire?",
+      "a": "Alexander the Great",
+      "alt": [
+        "Alexander III of Macedon"
+      ],
+      "topic": "Ancient civilizations",
+      "verified": true,
+      "qid": "history-200-911",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.metmuseum.org/exhibitions/listings/2016/pergamon/exhibition-galleries"
+    },
+    {
+      "p": 200,
+      "q": "Which city did Caliph al-Mansur build as the Abbasid capital?",
+      "a": "Baghdad",
+      "alt": [],
+      "topic": "Middle Ages",
+      "verified": true,
+      "qid": "history-200-912",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://rucforsk.ruc.dk/ws/portalfiles/portal/63367903/2018_11_03_Shanghai_International_Studies_Islamic_Scientific_Thought.pdf"
+    },
+    {
+      "p": 200,
+      "q": "Who was the last queen of Ptolemaic Egypt?",
+      "a": "Cleopatra VII",
+      "alt": [
+        "Cleopatra"
+      ],
+      "topic": "Egypt and Mesopotamia",
+      "verified": true,
+      "qid": "history-200-913",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.britishmuseum.org/collection/term/BIOG57627"
+    },
+    {
+      "p": 200,
+      "q": "Which volcano buried ancient Pompeii?",
+      "a": "Mount Vesuvius",
+      "alt": [
+        "Vesuvius"
+      ],
+      "topic": "Greece and Rome",
+      "verified": true,
+      "qid": "history-200-914",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://pompeiisites.org/en/pompeii-map/analysis/pompeii-after-the-eruption/"
+    },
+    {
+      "p": 200,
+      "q": "In which battle did the Mamluks halt the Mongol advance in 1260?",
+      "a": "Ain Jalut",
+      "alt": [
+        "Ayn Jalut"
+      ],
+      "topic": "Wars and revolutions",
+      "verified": true,
+      "qid": "history-200-915",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.metmuseum.org/essays/the-art-of-the-mamluk-period-1250-1517"
+    },
+    {
+      "p": 200,
+      "q": "In which country is Angkor Wat located?",
+      "a": "Cambodia",
+      "alt": [],
+      "topic": "Archaeology and landmarks",
+      "verified": true,
+      "qid": "history-200-916",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://whc.unesco.org/en/list/668"
+    },
+    {
+      "p": 200,
+      "q": "Which art form's early commercial shows were associated with the Lumière brothers in Paris in 1895?",
+      "a": "Cinema",
+      "alt": [
+        "Film",
+        "Motion pictures"
+      ],
+      "topic": "Historical milestones",
+      "verified": true,
+      "qid": "history-200-917",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.institut-lumiere.org/le-cinematographe-lumiere"
+    },
+    {
+      "p": 200,
+      "q": "Who wrote Romeo and Juliet?",
+      "a": "William Shakespeare",
+      "alt": [
+        "Shakespeare"
+      ],
+      "topic": "Historical figures",
+      "verified": true,
+      "qid": "history-200-918",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.folger.edu/explore/shakespeares-works/romeo-and-juliet/"
+    },
+    {
+      "p": 400,
+      "q": "Which ancient American civilization used the Haab and Tzolkin calendars?",
+      "a": "Maya",
+      "alt": [
+        "Mayan civilization"
+      ],
+      "topic": "Ancient civilizations",
+      "verified": true,
+      "qid": "history-400-911",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://maya.nmai.si.edu/calendar/calendar-system"
+    },
+    {
+      "p": 400,
+      "q": "Which famous Babylonian epic survives on clay tablets from Ashurbanipal's library?",
+      "a": "Epic of Gilgamesh",
+      "alt": [
+        "Gilgamesh"
+      ],
+      "topic": "Egypt and Mesopotamia",
+      "verified": true,
+      "qid": "history-400-912",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.britishmuseum.org/collection/object/W_K-3588"
+    },
+    {
+      "p": 400,
+      "q": "Which Greek poet is traditionally credited with the Iliad and the Odyssey?",
+      "a": "Homer",
+      "alt": [],
+      "topic": "Greece and Rome",
+      "verified": true,
+      "qid": "history-400-913",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://searcharchives.bl.uk/catalog/032-002110325"
+    },
+    {
+      "p": 400,
+      "q": "Which ancient astronomical instrument has a rotating star-pointer framework and can be used to tell time?",
+      "a": "Astrolabe",
+      "topic": "Middle Ages",
+      "verified": true,
+      "qid": "history-400-914",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://mhs.web.ox.ac.uk/spherical-astrolabe",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which British navigator mapped Australia's east coast on his first voyage?",
+      "a": "James Cook",
+      "alt": [
+        "Captain Cook"
+      ],
+      "topic": "Voyages and discoveries",
+      "verified": true,
+      "qid": "history-400-915",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.rmg.co.uk/collections/objects/rmgc-object-543610"
+    },
+    {
+      "p": 400,
+      "q": "Which country includes Easter Island and its stone moai statues?",
+      "a": "Chile",
+      "alt": [],
+      "topic": "Archaeology and landmarks",
+      "verified": true,
+      "qid": "history-400-916",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://whc.unesco.org/en/list/715"
+    },
+    {
+      "p": 400,
+      "q": "Which Muslim scholar wrote the Book of Optics on light and vision?",
+      "a": "Ibn al-Haytham",
+      "alt": [
+        "Alhazen"
+      ],
+      "topic": "Historical figures",
+      "verified": true,
+      "qid": "history-400-917",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.unesco.org/en/articles/sm-razaullah-ansari-ibn-al-haythams-scientific-method"
+    },
+    {
+      "p": 400,
+      "q": "What decisive battle between Muslim and Byzantine forces took place in the Levant in 636?",
+      "a": "Battle of Yarmouk",
+      "alt": [
+        "Yarmuk",
+        "Yarmouk"
+      ],
+      "topic": "Wars and revolutions",
+      "verified": true,
+      "qid": "history-400-918",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://islamansiklopedisi.org.tr/yermuk-savasi"
+    },
+    {
+      "p": 600,
+      "q": "Which ancient Indus city is famous for its Great Bath and planned streets?",
+      "a": "Mohenjo-daro",
+      "alt": [],
+      "topic": "Ancient civilizations",
+      "verified": true,
+      "qid": "history-600-911",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://whc.unesco.org/en/list/138"
+    },
+    {
+      "p": 600,
+      "q": "Which civilization flourished on Crete and left the palace of Knossos and snake-goddess figurines?",
+      "a": "Minoan civilization",
+      "alt": [
+        "Minoans"
+      ],
+      "topic": "Greece and Rome",
+      "verified": true,
+      "qid": "history-600-912",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.heraklionmuseum.gr/en/exhibit/the-snake-goddesses/"
+    },
+    {
+      "p": 600,
+      "q": "Which caliphal city did the Umayyads build near Córdoba in the tenth century?",
+      "a": "Madinat al-Zahra",
+      "alt": [
+        "Medina Azahara"
+      ],
+      "topic": "Archaeology and landmarks",
+      "verified": true,
+      "qid": "history-600-913",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://whc.unesco.org/en/list/1560"
+    },
+    {
+      "p": 600,
+      "q": "Which ruler of Mali became famous for his pilgrimage and gold caravan through Cairo in the fourteenth century?",
+      "a": "Mansa Musa",
+      "alt": [
+        "Musa I"
+      ],
+      "topic": "Middle Ages",
+      "verified": true,
+      "qid": "history-600-914",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.metmuseum.org/essays/the-trans-saharan-gold-trade-7th-14th-century"
+    },
+    {
+      "p": 600,
+      "q": "Which traveler described an Abbasid embassy's journey to the Volga Bulgars in the tenth century?",
+      "a": "Ibn Fadlan",
+      "alt": [
+        "Ahmad ibn Fadlan"
+      ],
+      "topic": "Voyages and discoveries",
+      "verified": true,
+      "qid": "history-600-915",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.jstor.org/stable/j.ctt1gk093h"
+    },
+    {
+      "p": 600,
+      "q": "Which Muslim scholar wrote the astronomical work known as the Mas'udic Canon?",
+      "a": "Al-Biruni",
+      "alt": [],
+      "topic": "Historical figures",
+      "verified": true,
+      "qid": "history-600-916",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://muslimheritage.com/the-science-of-al-biruni/"
+    },
+    {
+      "p": 600,
+      "q": "Reliefs at Deir el-Bahri show an expedition to which land?",
+      "a": "Land of Punt",
+      "alt": [
+        "Punt"
+      ],
+      "topic": "Voyages and discoveries",
+      "verified": true,
+      "qid": "history-600-917",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://egymonuments.gov.eg/monuments/hatshepsut-temple/"
+    },
+    {
+      "p": 600,
+      "q": "Which traveler and geographer was known in Europe as Leo Africanus?",
+      "a": "Al-Hasan al-Wazzan",
+      "alt": [
+        "Hasan al-Wazzan"
+      ],
+      "topic": "Historical figures",
+      "verified": true,
+      "qid": "history-600-918",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/20/42/60/25/2020426025/2020426025.pdf"
+    },
+    {
+      "p": 800,
+      "q": "Which ancient Egyptian medical papyrus in Leipzig is named after the scholar who acquired it?",
+      "a": "Ebers Papyrus",
+      "alt": [],
+      "topic": "Egypt and Mesopotamia",
+      "verified": true,
+      "qid": "history-800-911",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.ub.uni-leipzig.de/ueber-uns/ausstellungen/dauerausstellung/papyrus-ebers"
+    },
+    {
+      "p": 800,
+      "q": "Operation Neptune covered the Normandy sea landings. What larger operation included it?",
+      "a": "Operation Overlord",
+      "alt": [
+        "Overlord"
+      ],
+      "topic": "Wars and revolutions",
+      "verified": true,
+      "qid": "history-800-912",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.history.navy.mil/browse-by-topic/wars-conflicts-and-operations/world-war-ii/1944/overlord/operation-neptune.html"
+    },
+    {
+      "p": 800,
+      "q": "What ancient bronze astronomical mechanism was recovered from a Greek shipwreck?",
+      "a": "Antikythera mechanism",
+      "alt": [],
+      "topic": "Ancient civilizations",
+      "verified": true,
+      "qid": "history-800-913",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://antikythera-mechanism.namuseum.gr/en/"
+    },
+    {
+      "p": 800,
+      "q": "Which English nobleman entered Tutankhamun's tomb with Howard Carter when it was opened in 1922?",
+      "a": "Lord Carnarvon",
+      "alt": [
+        "George Herbert",
+        "5th Earl of Carnarvon"
+      ],
+      "topic": "Egypt and Mesopotamia",
+      "verified": true,
+      "qid": "history-800-914",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.highclerecastle.co.uk/visit-us/egyptian-exhibition"
+    },
+    {
+      "p": 800,
+      "q": "Which Roman town near Pompeii was buried by the same eruption, preserving wood and scrolls?",
+      "a": "Herculaneum",
+      "alt": [],
+      "topic": "Greece and Rome",
+      "verified": true,
+      "qid": "history-800-915",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://ercolano.cultura.gov.it/organic-finds/?lang=en"
+    },
+    {
+      "p": 800,
+      "q": "What long embroidered work depicts the Norman conquest of England in 1066?",
+      "a": "Bayeux Tapestry",
+      "alt": [],
+      "topic": "Middle Ages",
+      "verified": true,
+      "qid": "history-800-916",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.bayeuxmuseum.com/en/the-bayeux-tapestry/discover-the-bayeux-tapestry/"
+    },
+    {
+      "p": 800,
+      "q": "Which Russian cruiser is associated with firing the signal for the storming of the Winter Palace in 1917?",
+      "a": "Aurora",
+      "alt": [
+        "Cruiser Aurora"
+      ],
+      "topic": "Wars and revolutions",
+      "verified": true,
+      "qid": "history-800-917",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://navalmuseum.ru/news/memorable?id=423"
+    },
+    {
+      "q": "Which ancient Egyptian official was tutor to Hatshepsut's daughter Neferure?",
+      "a": "Senenmut",
+      "topic": "Historical figures",
+      "sourceUrl": "https://www.metmuseum.org/exhibitions/listings/2006/hatshepsut",
+      "alt": [
+        "Senmut"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "history-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 1000,
+      "q": "Which Swiss traveler visited Petra in 1812 and introduced its ruins to Europeans?",
+      "a": "Johann Ludwig Burckhardt",
+      "alt": [
+        "John Lewis Burckhardt",
+        "Burckhardt"
+      ],
+      "topic": "Archaeology and landmarks",
+      "verified": true,
+      "qid": "history-1000-911",
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://www.visitpetra.jo/en/page/12/History-of-Petra"
+    },
+    {
+      "q": "What inlaid Sumerian object shows scenes of war on one side and peace on the other?",
+      "a": "Standard of Ur",
+      "topic": "Egypt and Mesopotamia",
+      "sourceUrl": "https://www.britishmuseum.org/sites/default/files/2023-10/Whats_inside_gallery_backpack.pdf",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "history-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Persian king commissioned the clay cylinder after entering Babylon in 539 BCE?",
+      "a": "Cyrus the Great",
+      "topic": "Ancient civilizations",
+      "sourceUrl": "https://www.metmuseum.org/exhibitions/listings/2013/cyrus-cylinder",
+      "alt": [
+        "Cyrus II"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "history-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "The Rosetta Stone has hieroglyphs and Greek. What third script was used for everyday Egyptian writing?",
+      "a": "Demotic",
+      "topic": "Egypt and Mesopotamia",
+      "sourceUrl": "https://www.britishmuseum.org/collection/galleries/egyptian-sculpture",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "history-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "At which English site was an Anglo-Saxon burial ship discovered in 1939?",
+      "a": "Sutton Hoo",
+      "topic": "Middle Ages",
+      "sourceUrl": "https://www.nationaltrust.org.uk/visit/suffolk/sutton-hoo/history-of-archaeology-at-sutton-hoo",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "history-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What rock inscription near Kermanshah did Darius I commission to record his accession?",
+      "a": "Behistun Inscription",
+      "topic": "Archaeology and landmarks",
+      "sourceUrl": "https://whc.unesco.org/fr/list/1222",
+      "alt": [
+        "Bisitun Inscription"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "history-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Who brought the Victoria back to Spain, completing the first circumnavigation after Magellan's death?",
+      "a": "Juan Sebastián Elcano",
+      "topic": "Voyages and discoveries",
+      "sourceUrl": "https://ejercito.defensa.gob.es/museo/HECHOS_HISTORICOS/HECHOS_HISTORICOS/09.06_sept_SE_COMPLETO_LA_PRIMERA_VUELTA_AL_MUNDO_POR_ELCANO.html",
+      "alt": [
+        "Juan Sebastian Elcano",
+        "Elcano"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "history-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Italian scientist invented the mercury barometer in the seventeenth century?",
+      "a": "Evangelista Torricelli",
+      "topic": "Historical figures",
+      "sourceUrl": "https://catalogue.museogalileo.it/section/MeteorologyThermologyBarometersHygrometers.html",
+      "alt": [
+        "Torricelli"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "history-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

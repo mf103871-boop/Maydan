@@ -1,0 +1,474 @@
+{
+  "id": "capitals",
+  "name": "Capital Cities",
+  "icon": "🏙️",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Which Brazilian capital was purpose-built rather than chosen from an existing city?",
+      "a": "Brasília",
+      "qid": "capitals-200-911",
+      "topic": "Former capitals and names",
+      "verified": true,
+      "alt": [
+        "Brasilia"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://whc.unesco.org/fr/list/445"
+    },
+    {
+      "p": 200,
+      "q": "What is the capital of Mauritania?",
+      "a": "Nouakchott",
+      "qid": "capitals-200-912",
+      "topic": "Arab capitals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "p": 200,
+      "q": "What is the capital of Norway?",
+      "a": "Oslo",
+      "qid": "capitals-200-913",
+      "topic": "European capitals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "p": 200,
+      "q": "What is the capital of Canada?",
+      "a": "Ottawa",
+      "qid": "capitals-200-914",
+      "topic": "Capitals of the Americas",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "p": 200,
+      "q": "What is the capital of New Zealand?",
+      "a": "Wellington",
+      "qid": "capitals-200-915",
+      "topic": "Oceanian capitals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "p": 200,
+      "q": "The Dutch government and parliament sit in a city that is not the capital. Which city?",
+      "a": "The Hague",
+      "qid": "capitals-200-916",
+      "topic": "Cities mistaken for capitals",
+      "verified": true,
+      "alt": [
+        "Den Haag"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.government.nl/binaries/government/documenten/publications/2017/04/21/culture-at-a-first-glance/CIB2015_ENG_publicatie_v8_DEF.pdf"
+    },
+    {
+      "p": 200,
+      "q": "Which capital of Azerbaijan stands on the Caspian Sea?",
+      "a": "Baku",
+      "qid": "capitals-200-917",
+      "topic": "Asian capitals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://azerbaijan.az/en/information/110"
+    },
+    {
+      "p": 200,
+      "q": "What ancient Greek name did Jordan's capital once bear?",
+      "a": "Philadelphia",
+      "qid": "capitals-200-918",
+      "topic": "Arab capitals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://international.visitjordan.com/uploads/brochures/H%26C-English2022.pdf"
+    },
+    {
+      "p": 400,
+      "q": "What is the capital of North Korea?",
+      "a": "Pyongyang",
+      "qid": "capitals-400-911",
+      "topic": "Asian capitals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "p": 400,
+      "q": "What is the capital of Uganda?",
+      "a": "Kampala",
+      "qid": "capitals-400-912",
+      "topic": "African capitals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "p": 400,
+      "q": "What is the capital of Kazakhstan?",
+      "a": "Astana",
+      "qid": "capitals-400-913",
+      "topic": "Former capitals and names",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "p": 400,
+      "q": "What is the capital of the Comoros?",
+      "a": "Moroni",
+      "qid": "capitals-400-914",
+      "topic": "Arab capitals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "p": 400,
+      "q": "What is the capital of Slovenia?",
+      "a": "Ljubljana",
+      "qid": "capitals-400-915",
+      "topic": "European capitals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "p": 400,
+      "q": "What is the capital of Uruguay?",
+      "a": "Montevideo",
+      "qid": "capitals-400-916",
+      "topic": "Capitals of the Americas",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "p": 400,
+      "q": "What is South Africa's administrative capital?",
+      "a": "Pretoria",
+      "qid": "capitals-400-917",
+      "topic": "Cities mistaken for capitals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.gov.za/about-sa/south-africas-provinces"
+    },
+    {
+      "p": 400,
+      "q": "In which city did Australia's parliament meet before moving to Canberra?",
+      "a": "Melbourne",
+      "qid": "capitals-400-918",
+      "topic": "Oceanian capitals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.aph.gov.au/Visit_Parliament/About_the_Building/History_of_Parliament_House"
+    },
+    {
+      "p": 600,
+      "q": "What is the capital of Samoa?",
+      "a": "Apia",
+      "qid": "capitals-600-911",
+      "topic": "Oceanian capitals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "p": 600,
+      "q": "What is the capital of the Himalayan kingdom of Bhutan?",
+      "a": "Thimphu",
+      "qid": "capitals-600-912",
+      "topic": "Asian capitals",
+      "verified": true,
+      "alt": [
+        "Thimpu"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "p": 600,
+      "q": "What is the capital of Burkina Faso?",
+      "a": "Ouagadougou",
+      "qid": "capitals-600-913",
+      "topic": "African capitals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "p": 600,
+      "q": "What is the capital of Vanuatu?",
+      "a": "Port Vila",
+      "qid": "capitals-600-914",
+      "topic": "Oceanian capitals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "p": 600,
+      "q": "Which historic city occupied the site where Riyadh later developed?",
+      "a": "Hajr al-Yamamah",
+      "qid": "capitals-600-915",
+      "topic": "Arab capitals",
+      "verified": true,
+      "alt": [
+        "Hajr",
+        "Hajar al-Yamamah"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.rcrc.gov.sa/wp-content/uploads/2023/05/المناخ-الاستثماري-في-مدينة-الرياض-1433-هـ-1.pdf"
+    },
+    {
+      "p": 600,
+      "q": "What is the capital of Moldova?",
+      "a": "Chișinău",
+      "qid": "capitals-600-916",
+      "topic": "European capitals",
+      "verified": true,
+      "alt": [
+        "Chisinau",
+        "Kishinev"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "p": 600,
+      "q": "What is the capital of Seychelles?",
+      "a": "Victoria",
+      "qid": "capitals-600-917",
+      "topic": "African capitals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "p": 600,
+      "q": "Which Philippine city was the official capital before Manila regained that status?",
+      "a": "Quezon City",
+      "qid": "capitals-600-918",
+      "topic": "Cities mistaken for capitals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://quezoncity.gov.ph/about-the-city-government/history/"
+    },
+    {
+      "p": 800,
+      "q": "What is the capital of Suriname?",
+      "a": "Paramaribo",
+      "qid": "capitals-800-911",
+      "topic": "Capitals of the Americas",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "p": 800,
+      "q": "What is the capital of Myanmar?",
+      "a": "Naypyidaw",
+      "qid": "capitals-800-912",
+      "topic": "Former capitals and names",
+      "verified": true,
+      "alt": [
+        "Nay Pyi Taw"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "p": 800,
+      "q": "To which city did Sri Lanka's parliament move from Colombo in 1982?",
+      "a": "Sri Jayawardenepura Kotte",
+      "qid": "capitals-800-913",
+      "topic": "Cities mistaken for capitals",
+      "verified": true,
+      "alt": [
+        "Sri Jayewardenepura Kotte",
+        "Kotte"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.parliament.lk/en/home/parliament-news/view/2548"
+    },
+    {
+      "p": 800,
+      "q": "Which Aztec city was Mexico City built over?",
+      "a": "Tenochtitlan",
+      "qid": "capitals-800-914",
+      "topic": "Capitals of the Americas",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://whc.unesco.org/en/list/412"
+    },
+    {
+      "p": 800,
+      "q": "Which South African city is often called the judicial capital and houses the Supreme Court of Appeal?",
+      "a": "Bloemfontein",
+      "qid": "capitals-800-915",
+      "topic": "African capitals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.gov.za/about-sa/south-africas-provinces"
+    },
+    {
+      "q": "What is the capital of Montenegro?",
+      "a": "Podgorica",
+      "topic": "European capitals",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "capitals-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "What is the capital of Lesotho?",
+      "a": "Maseru",
+      "topic": "African capitals",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "capitals-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "What is the capital of Brunei?",
+      "a": "Bandar Seri Begawan",
+      "topic": "Asian capitals",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "capitals-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 1000,
+      "q": "What name did Norway's capital bear before it regained its current name in 1925?",
+      "a": "Kristiania",
+      "qid": "capitals-1000-911",
+      "topic": "Former capitals and names",
+      "verified": true,
+      "alt": [
+        "Christiania"
+      ],
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://statistikkbanken.oslo.kommune.no/statbank/pxweb/no/db1/db1__Befolkning__Folkemengde/OK-BEF008.px/"
+    },
+    {
+      "p": 1000,
+      "q": "Which ancient fortress was the origin of Armenia's capital?",
+      "a": "Erebuni",
+      "qid": "capitals-1000-912",
+      "topic": "Asian capitals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://www.yerevan.am/en/old-yerevan/"
+    },
+    {
+      "p": 1000,
+      "q": "Which European capital's name originally meant 'merchants' harbor'?",
+      "a": "Copenhagen",
+      "qid": "capitals-1000-913",
+      "topic": "European capitals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://cphmuseum.kk.dk/sites/default/files/2021-10/133_PDFsam_Gammel%20Strand%20Cultural%20historical%20report.pdf"
+    },
+    {
+      "q": "What is the capital of Malawi?",
+      "a": "Lilongwe",
+      "topic": "African capitals",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "capitals-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What is the capital of East Timor?",
+      "a": "Dili",
+      "topic": "Asian capitals",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "capitals-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What is the capital of the Federated States of Micronesia?",
+      "a": "Palikir",
+      "topic": "Oceanian capitals",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "capitals-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What is the capital of Saint Kitts and Nevis?",
+      "a": "Basseterre",
+      "topic": "Capitals of the Americas",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "capitals-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What is the capital of Dominica?",
+      "a": "Roseau",
+      "topic": "Capitals of the Americas",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "capitals-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

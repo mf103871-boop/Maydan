@@ -3,6 +3,8 @@
 // بطاقة «استئناف» لمباراة منتهية. يُعيد هل الحفظ يصل إلى تخزين دائم.
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { saveSession, clearSession, SESSION_KEY } from '../lib/session.js';
+import { stampContentIdentity } from '../lib/content-storage.js';
+import { tr } from '../i18n/core.js';
 
 const SAVED_MESSAGE = 'تقدم اللعبة محفوظ على هذا الجهاز. يمكنك استئنافها من شاشة إعدادها عند العودة.';
 const UNSAVED_MESSAGE = 'تعذر حفظ آخر تقدم. مغادرة اللعبة أو إغلاق الصفحة قد يفقد هذه الجولة.';
@@ -15,9 +17,9 @@ export function useSessionSave({ api, state, snapshot, phaseKey, active, key = S
     clearTimeout(timer.current); timer.current = 0;
     const { state: current, snapshot: build, active: live } = latest.current;
     if (!live) return; // مباراة منتهية: لا تُكتب لقطة فوق مفتاح حُذف
-    const ok = saveSession(api.storage, build ? build(current) : current, key);
+    const ok = saveSession(api.storage, stampContentIdentity(build ? build(current) : current, api), key);
     setSaveOk(ok);
-    api.setExitMessage?.(ok ? SAVED_MESSAGE : UNSAVED_MESSAGE);
+    api.setExitMessage?.(tr(ok ? SAVED_MESSAGE : UNSAVED_MESSAGE));
   }, [api, key]);
   const lastPhase = useRef(null);
   useEffect(() => {

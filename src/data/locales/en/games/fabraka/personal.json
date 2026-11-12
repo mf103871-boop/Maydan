@@ -1,0 +1,962 @@
+[
+  {
+    "id": "fab3-friend-001",
+    "factId": "fab3-friend-001",
+    "kind": "friend",
+    "text": "The silly password to {name}'s imaginary castle is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Door, stop showing off",
+      "The popcorn has arrived",
+      "Secret potato",
+      "Open sesame seeds",
+      "A key made of air",
+      "Guard, take a break",
+      "The treasure is elsewhere",
+      "Top-secret cucumber"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-002",
+    "factId": "fab3-friend-002",
+    "kind": "friend",
+    "text": "{name}'s signature red-carpet entrance is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "An exaggerated royal bow",
+      "A slow spin and wave",
+      "Applauding themselves",
+      "Walking on tiptoe",
+      "Waving at the wrong camera",
+      "Clearing a path for an imaginary guest",
+      "Offering a hat to the crowd",
+      "One step forward, one step for photos"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-003",
+    "factId": "fab3-friend-003",
+    "kind": "friend",
+    "text": "{name}'s imaginary tortoise race bans ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Yawning near the finish",
+      "Overtaking their own shadows",
+      "Carrying shortcut maps",
+      "Pretending to be rocks",
+      "Stopping for a nap",
+      "Sitting on the starting line",
+      "Swapping shells mid-race",
+      "Using a fan for extra speed"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-004",
+    "factId": "fab3-friend-004",
+    "kind": "friend",
+    "text": "{name}'s map to a chest of clothes pegs is titled ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Fortune on the Washing Line",
+      "The Missing Shirt Files",
+      "Laundry Gold",
+      "Island of Little Things",
+      "A Treasure with a Grip",
+      "The Final Load",
+      "The Chest That Stays Dry",
+      "Legacy of the Great Peg"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-005",
+    "factId": "fab3-friend-005",
+    "kind": "friend",
+    "text": "{name}'s plan for a giant pillow blocking the road is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Declare nap time",
+      "Call a bed-making team",
+      "Quietly remove its cover",
+      "Tickle it until it moves",
+      "Put up a Soft Road sign",
+      "Inflate it until it floats",
+      "Wait for its dream to finish",
+      "Find a bed big enough"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-006",
+    "factId": "fab3-friend-006",
+    "kind": "friend",
+    "text": "{name}'s favorite compliment from a magic mirror is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Even your shadow looks tidy",
+      "Your smile needs a frame",
+      "You belong on a notebook cover",
+      "Your shoes love this look",
+      "Style has your mailing address",
+      "The floor applauds your footsteps",
+      "That hairstyle has opinions",
+      "Your reflection arrived smiling"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-007",
+    "factId": "fab3-friend-007",
+    "kind": "friend",
+    "text": "{name}'s excuse for a staircase turning into a maze is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "The second floor moved",
+      "The stairs took a break",
+      "The arrow led to the roof",
+      "The last step wanted a permit",
+      "The hallway rearranged itself",
+      "The stairs demanded a riddle",
+      "The ground floor went upstairs",
+      "The exit is still being drawn"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-008",
+    "factId": "fab3-friend-008",
+    "kind": "friend",
+    "text": "{name}'s message in a bottle begins ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Did the cap arrive too?",
+      "Please return the bottle",
+      "This is not a bill",
+      "The message arrived before me",
+      "Greetings from a shore I cannot name",
+      "Have you got a pen for the reply?",
+      "This message cannot swim",
+      "Open carefully: contains curiosity"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-009",
+    "factId": "fab3-friend-009",
+    "kind": "friend",
+    "text": "{name}'s museum label for a clothes peg reads ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Retired guardian of socks",
+      "The last knight of the line",
+      "Champion against the wind",
+      "Wooden grip from the hanging age",
+      "The quiet clutch",
+      "Rescuer of wandering handkerchiefs",
+      "An anti-escape machine",
+      "A hero with no power button"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-010",
+    "factId": "fab3-friend-010",
+    "kind": "friend",
+    "text": "{name}'s kingdom, small enough to fit in a box, is called ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "The Republic of Crumbs",
+      "The Kingdom of Margins",
+      "Little Button Land",
+      "The Shelf Principality",
+      "The Box-Corner Sultanate",
+      "The United Lids",
+      "The Land Between Two Pages",
+      "The Kingdom at a Glance"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-011",
+    "factId": "fab3-friend-011",
+    "kind": "friend",
+    "text": "{name}'s peace treaty between two socks begins ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "No disappearing in the wash",
+      "Take turns on the right foot",
+      "Visit the drawer every evening",
+      "No blaming the washer without proof",
+      "Separate visits need the pair's consent",
+      "Share the new patch equally",
+      "No jumping behind the wardrobe",
+      "Respect different colors"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-012",
+    "factId": "fab3-friend-012",
+    "kind": "friend",
+    "text": "{name}'s invisible-ink painting is titled ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Everything Under Control",
+      "A View Yet to Arrive",
+      "Transparent Peace",
+      "The Painting Is on Holiday",
+      "Behind the Blink",
+      "Invisible Traffic",
+      "An Idea Before Arrival",
+      "Wait Until You Imagine It"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-013",
+    "factId": "fab3-friend-013",
+    "kind": "friend",
+    "text": "{name}'s statue in the laughter garden is posed ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Clapping with one hand",
+      "Waving at a distant vehicle",
+      "Shielding its head from an idea",
+      "Searching an empty pocket",
+      "Leaning toward a question mark",
+      "Holding an invisible trophy",
+      "Preparing to sneeze",
+      "Standing on an uncertain foot"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-014",
+    "factId": "fab3-friend-014",
+    "kind": "friend",
+    "text": "The first item at {name}'s meeting of chairs is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "A chair's right to stand",
+      "Fair weight distribution",
+      "Wheels wandering off alone",
+      "Legs complaining about the floor",
+      "Leave for tired armrests",
+      "Chairs without tables",
+      "Who gets the front row?",
+      "Seats objecting to long meetings"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-015",
+    "factId": "fab3-friend-015",
+    "kind": "friend",
+    "text": "The office sport at {name}'s imaginary championship is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Stapler high jump",
+      "Slow-file racing",
+      "Paper tossing",
+      "Sealed-envelope wrestling",
+      "Pencil relay",
+      "Ruler skating",
+      "Free-throw paper clips",
+      "Synchronized notebook lifting"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-016",
+    "factId": "fab3-friend-016",
+    "kind": "friend",
+    "text": "{name}'s performance to persuade a magic door to open is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "A silent theatrical greeting",
+      "A speech about hinges",
+      "A trick with an ordinary pen",
+      "A row of organized applause",
+      "A short poem about wood",
+      "A silent dance of keys",
+      "Acting as a happy window",
+      "Imitating an official doorbell"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-017",
+    "factId": "fab3-friend-017",
+    "kind": "friend",
+    "text": "Upon finding a doorbell on the Moon, {name} would ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Ring and wait",
+      "Look for a doormat",
+      "Leave the owner a note",
+      "Check the building number",
+      "Listen behind the door",
+      "Search for a mailbox",
+      "Prepare a greeting for the residents",
+      "Look for the stairs"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-018",
+    "factId": "fab3-friend-018",
+    "kind": "friend",
+    "text": "The note beside the X on {name}'s treasure map says ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Dig at your enthusiasm's risk",
+      "The treasure may be behind you",
+      "Replace the soil after visiting",
+      "Do not leave the chest open",
+      "The lid is heavier than expected",
+      "Leave some for the mapmaker",
+      "Ignore the upside-down arrow",
+      "Yes, this really is the right place"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-019",
+    "factId": "fab3-friend-019",
+    "kind": "friend",
+    "text": "In a city without street names, {name} gives directions by saying ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Follow the smell of bread",
+      "Turn at the stubborn door",
+      "Walk until the paving changes",
+      "Ask the neighborhood's longest shadow",
+      "Count the blue doors",
+      "Follow the row of flowerpots",
+      "Stop at the tree with a bench",
+      "Turn where the shadow ends"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-020",
+    "factId": "fab3-friend-020",
+    "kind": "friend",
+    "text": "{name}'s first time-capsule tip for the future is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Never trust an easy-open lid",
+      "Keep a spare key",
+      "Find out who owns the charger",
+      "Do not neglect the other sock",
+      "Label everyone's cups",
+      "Check that the pen has a cap",
+      "Do not put off folding the map",
+      "Ask the clock if it is sure"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-021",
+    "factId": "fab3-friend-021",
+    "kind": "friend",
+    "text": "{name}'s special cup-stacking award goes to ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "The tidiest collapse",
+      "The most confident tower",
+      "The calmest rescue attempt",
+      "The best name before falling",
+      "The longest moment of balance",
+      "The bravest cup at the bottom",
+      "The best pre-collapse retreat",
+      "The tower that waited its turn"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-022",
+    "factId": "fab3-friend-022",
+    "kind": "friend",
+    "text": "{name}'s first fix for a shadow lagging one step behind is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Stop at the first wall",
+      "Give it an earlier appointment",
+      "Walk backward a little",
+      "Leave a note on the ground",
+      "Slow the footsteps",
+      "Draw it a waiting line",
+      "Try light from another direction",
+      "Wave for it to catch up"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-023",
+    "factId": "fab3-friend-023",
+    "kind": "friend",
+    "text": "{name}'s formal speech on the importance of bubbles opens ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Distinguished round guests",
+      "Before this discussion bursts",
+      "Let us take an orderly breath",
+      "Our topic is light but important",
+      "Welcome to everyone still unpopped",
+      "Some points need more air",
+      "Please do not clap too hard",
+      "Today's meeting may float away"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-024",
+    "factId": "fab3-friend-024",
+    "kind": "friend",
+    "text": "The opening shot of {name}'s silent film about a lost key shows ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "A door staring at an empty pocket",
+      "A bag emptied onto a table",
+      "A hand searching inside a shoe",
+      "A key resting on a shelf",
+      "A patient lock",
+      "A foot stopping at a threshold",
+      "A circle drawn around nothing",
+      "A lamp lighting another pocket"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-025",
+    "factId": "fab3-friend-025",
+    "kind": "friend",
+    "text": "The first button in {name}'s storybook elevator is labeled ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Just Before the Ending",
+      "An Adventure Without Stairs",
+      "The Palace After the Party",
+      "The Chapter with the Missing Door",
+      "A Door Seeking Its Room",
+      "The Line That Became a Street",
+      "A Passage to a Title",
+      "A City Under the Comma"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-026",
+    "factId": "fab3-friend-026",
+    "kind": "friend",
+    "text": "{name}'s imaginary calendar has a new day called ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Still-Early Day",
+      "Postponed-Plans Day",
+      "Found-the-Key Day",
+      "No-Comma Day",
+      "Fresh-Page Day",
+      "One-Extra-Step Day",
+      "Fine-but-Wait Day",
+      "Before-I-Forget Day"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-027",
+    "factId": "fab3-friend-027",
+    "kind": "friend",
+    "text": "{name}'s notice for a lost cloud reads ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Cloud seeking a suitable sky",
+      "Wanted: clear directions for the wind",
+      "Found a gray shadow? Call us",
+      "White cloud forgot its address",
+      "Sky wanted, shadow parking preferred",
+      "Cloud waiting for directions",
+      "Whose rain is this?",
+      "Cloud returned, direction still missing"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-028",
+    "factId": "fab3-friend-028",
+    "kind": "friend",
+    "text": "To welcome a friendly giant, {name} would first ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Allow more room for the handshake",
+      "Write Welcome on the roof",
+      "Put the chair outside the hall",
+      "Raise the doorway sign",
+      "Set up a window for conversation",
+      "Send a bedsheet-sized invitation",
+      "Clear a place for the hat",
+      "Move the welcome desk to the balcony"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-029",
+    "factId": "fab3-friend-029",
+    "kind": "friend",
+    "text": "The first rule in {name}'s library of chatty books is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Indexes speak first",
+      "No spoiling endings for visitors",
+      "Each chapter waits its turn",
+      "Exclamation marks close at night",
+      "Whisper before the first page",
+      "Do not interrupt the reader",
+      "Debates stay outside the covers",
+      "Every book deserves a breath"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-030",
+    "factId": "fab3-friend-030",
+    "kind": "friend",
+    "text": "After winning a pebble-sorting contest, {name} would thank ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "The stone that stayed still",
+      "The level ground",
+      "Everyone who respected the spacing",
+      "The shadow over the playing field",
+      "Pebbles that kept in line",
+      "The shoe that stayed away",
+      "The roundness inspection committee",
+      "Everyone who held in a sneeze"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-031",
+    "factId": "fab3-friend-031",
+    "kind": "friend",
+    "text": "{name}'s missing-comma notice describes it as ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Small and fond of pauses",
+      "Curved and opposed to rushing",
+      "Last seen after a greeting",
+      "Wearing a dot on its shoulder",
+      "Giving sentences a short breath",
+      "Not a full stop",
+      "Resting before the next idea",
+      "Finder, please keep words apart"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-032",
+    "factId": "fab3-friend-032",
+    "kind": "friend",
+    "text": "{name}'s reply to an apology from a slow clock is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Forgiven, but we missed the appointment",
+      "We need an adjustment session",
+      "Five quiet minutes will compensate",
+      "At least you were politely late",
+      "Warn me before the appointment next time",
+      "One more chance at noon",
+      "We will not start without your hands",
+      "Your apology is finally on time"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-033",
+    "factId": "fab3-friend-033",
+    "kind": "friend",
+    "text": "The first clue in {name}'s missing-eraser case is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Crumbs under the notebook",
+      "A broken pencil line",
+      "A drawer closing nervously",
+      "An apology from the pencil",
+      "An open pencil case",
+      "A clean patch on the page",
+      "Dusty fingerprints on a ruler",
+      "A group photo of the stationery"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-034",
+    "factId": "fab3-friend-034",
+    "kind": "friend",
+    "text": "For a costume party allowing no fabric, {name} chooses ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "A cardboard question mark",
+      "A giant picture frame",
+      "A box labeled Surprise",
+      "A newspaper crown",
+      "A cloud of crumpled paper",
+      "A window made from a box",
+      "A tree made of old newspapers",
+      "A giant foam dot"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-035",
+    "factId": "fab3-friend-035",
+    "kind": "friend",
+    "text": "{name}'s name for a tiny hole in the wall is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "The Window of Possibilities",
+      "A Curiosity-Sized Gateway",
+      "Headquarters of the Next Idea",
+      "The Secret Floor",
+      "A Balcony for the Smallest Guest",
+      "The Wind's Tiny Office",
+      "An Exit for a Thread of Light",
+      "The Passage That Forgot to Grow"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-036",
+    "factId": "fab3-friend-036",
+    "kind": "friend",
+    "text": "The strangest foul in a puppet match refereed by {name} is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Falling before kickoff",
+      "Swapping heads mid-match",
+      "Getting a hand from the crowd",
+      "Hiding in the substitutes' box",
+      "Taping down an opponent",
+      "Keeping the ball in a pocket",
+      "Sleeping in the attacking box",
+      "Changing batteries without permission"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-037",
+    "factId": "fab3-friend-037",
+    "kind": "friend",
+    "text": "{name} first tests an applause button when ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "A stubborn jar opens",
+      "A queue becomes straight",
+      "The elevator arrives",
+      "The end of the tape is found",
+      "Two socks finally match",
+      "A chair stops squeaking",
+      "A house of cards is finished",
+      "A pen lands on the table"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-038",
+    "factId": "fab3-friend-038",
+    "kind": "friend",
+    "text": "{name}'s travel guide to the inside of a book warns ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Do not stand at a plot twist",
+      "Carry a permit to cross the margins",
+      "Leave endings where you find them",
+      "Do not touch the ellipses",
+      "Beware the cliffhanger chapter",
+      "Do not jump the character queue",
+      "Keep your page number for the return",
+      "No swimming in the ink"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-039",
+    "factId": "fab3-friend-039",
+    "kind": "friend",
+    "text": "The entrance sign at {name}'s paper tower reads ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "No sneezing near reception",
+      "Fold tickets before entering",
+      "The elevator is still being drawn",
+      "Residents prefer a gentle breeze",
+      "Please turn down the wind",
+      "Enter through the right-hand fold",
+      "Do not lean bags against the wall",
+      "The top floor needs a paper clip"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-040",
+    "factId": "fab3-friend-040",
+    "kind": "friend",
+    "text": "{name}'s compliment to persuade a storybook gate to open is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Your hinges never say too much",
+      "Your frame suits a palace",
+      "You look wonderfully upright",
+      "Your handle has real presence",
+      "Your wood understands dignity",
+      "Your edges never interrupt the wall",
+      "Best posture in the corridor",
+      "Your opening lifts the spirits"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-041",
+    "factId": "fab3-friend-041",
+    "kind": "friend",
+    "text": "{name}'s comment on mixed-up museum labels is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "The vase has clearly become a general",
+      "The exhibits need an introduction",
+      "The names went for a walk",
+      "This explanation needs explaining",
+      "The clock is explaining the chair",
+      "Give every object a name tag",
+      "The guide is playing hide-and-seek",
+      "The painting borrowed a statue's name"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-042",
+    "factId": "fab3-friend-042",
+    "kind": "friend",
+    "text": "The welcome message on {name}'s flying carpet says ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Fasten your imagination for takeoff",
+      "Please wipe your dusty thoughts",
+      "Today's destination follows the breeze",
+      "Do not tickle the edges",
+      "Leave shoes beside the idea",
+      "Each passenger gets a corner",
+      "Board from the fringed side",
+      "The pilot is straightening the corners"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-043",
+    "factId": "fab3-friend-043",
+    "kind": "friend",
+    "text": "The first task to join {name}'s patience club is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Wait for a drawn progress bar",
+      "Guard an ice cube until it vanishes",
+      "Count a shadow's slow footsteps",
+      "Read a list titled Wait",
+      "Watch a title that has not started",
+      "Guard an empty place in a queue",
+      "Wait for a dot to become a line",
+      "Open a letter inside many envelopes"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-044",
+    "factId": "fab3-friend-044",
+    "kind": "friend",
+    "text": "The final line of a story written by {name} is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Then they found the key in the door",
+      "Everyone agreed to repeat the scene",
+      "But the box demanded a receipt",
+      "Since then, the drawer apologizes",
+      "The map turned out to be upside down",
+      "At last, the narrator sat down",
+      "The key returned to demand a holiday",
+      "The story began seeking a new title"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-045",
+    "factId": "fab3-friend-045",
+    "kind": "friend",
+    "text": "{name}'s Paper Island postmark says ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Arrives before the first raindrop",
+      "Fold only in the recipient's presence",
+      "A letter that respects its edges",
+      "Do not open in a draft",
+      "Protect the address from the wind",
+      "Deliver at the first crease",
+      "Counted without tearing",
+      "Mail as light as paper"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-046",
+    "factId": "fab3-friend-046",
+    "kind": "friend",
+    "text": "{name}'s auction for the last puzzle piece opens ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Who will complete the picture?",
+      "A little piece with great importance",
+      "A corner looking for an owner",
+      "For anyone who tried every angle",
+      "Who remembers where the sea was?",
+      "Curiosity is included with purchase",
+      "Last chance for the missing corner",
+      "The picture awaits the hammer"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-047",
+    "factId": "fab3-friend-047",
+    "kind": "friend",
+    "text": "The first emergency rule in {name}'s block castle is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Keep feet away from the gate",
+      "Do not lean on the rescue table",
+      "Save the shortest tower first",
+      "Follow the arrow made of blocks",
+      "No clapping near the walls",
+      "Collect pieces before counting towers",
+      "Leave room for the roof to land",
+      "Do not approach wearing only socks"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  },
+  {
+    "id": "fab3-friend-048",
+    "factId": "fab3-friend-048",
+    "kind": "friend",
+    "text": "{name}'s entry for Best Unanswerable Question is ___.",
+    "answer": "",
+    "aliases": [],
+    "decoys": [
+      "Does a shadow get bored of copying?",
+      "Where does the end of a circle stand?",
+      "Who organizes a question mark's thoughts?",
+      "Does tomorrow wait its turn?",
+      "Does an idea end at the final full stop?",
+      "Who wakes the first alarm clock?",
+      "Where does a circular queue begin?",
+      "Does a blank page have an opinion?"
+    ],
+    "category": "About our friends",
+    "explanation": "The round host chooses an answer to this imaginary situation, and the other players try to guess it."
+  }
+]

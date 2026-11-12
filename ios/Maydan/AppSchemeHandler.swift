@@ -127,7 +127,8 @@ final class AppSchemeHandler: NSObject, WKURLSchemeHandler {
     private func reply(for request: URLRequest) -> Reply {
         let method = (request.httpMethod ?? "GET").uppercased()
         if let url = request.url, url == Self.migrationURL, method == "GET" || method == "HEAD" {
-            let html = Data("<!doctype html><html lang=\"ar\"><meta charset=\"utf-8\"><title>نقل المحفوظات</title><body></body></html>".utf8)
+            let title = NativeLocalization.text("نقل المحفوظات")
+            let html = Data("<!doctype html><html lang=\"\(NativeLocalization.locale)\"><meta charset=\"utf-8\"><title>\(title)</title><body></body></html>".utf8)
             return Reply(response: HTTPURLResponse(url: url, statusCode: 200, httpVersion: "HTTP/1.1", headerFields: [
                 "Content-Type": "text/html; charset=utf-8", "Content-Length": String(html.count),
                 "Cache-Control": "no-store", "Content-Security-Policy": Self.contentSecurityPolicy

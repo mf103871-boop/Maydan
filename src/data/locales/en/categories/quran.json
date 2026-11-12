@@ -1,0 +1,549 @@
+{
+  "id": "quran",
+  "name": "The Quran",
+  "icon": "📖",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Which surah contains Ayat al-Kursi and the story of a king granted great knowledge and physical strength?",
+      "a": "Al-Baqarah",
+      "qid": "quran-200-911",
+      "topic": "Surahs and passages",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": [
+        "https://quran.com/2/255",
+        "https://quran.com/2/247"
+      ],
+      "verifiedAt": "2026-10-08",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which person does the Quran describe as receiving wisdom and advising his son?",
+      "a": "Luqman",
+      "qid": "quran-200-912",
+      "topic": "People and communities",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://quran.com/31/12-13",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "What did the person with knowledge of the Scripture bring to Solomon in the blink of an eye?",
+      "a": "The Queen of Sheba's throne",
+      "qid": "quran-200-914",
+      "topic": "Objects and materials",
+      "verified": true,
+      "alt": [
+        "Her throne",
+        "The throne",
+        "Bilqis's throne"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://quran.com/27/38-40",
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 200,
+      "q": "According to the Quran, in how many days did God create the heavens and the earth?",
+      "a": "Six days",
+      "qid": "quran-200-915",
+      "topic": "Numbers and periods",
+      "verified": true,
+      "alt": [
+        "6",
+        "Six",
+        "6 days"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://quran.com/7/54"
+    },
+    {
+      "p": 200,
+      "q": "On which mountain did Noah's ark come to rest?",
+      "a": "Mount Judi",
+      "qid": "quran-200-916",
+      "topic": "Places",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://quran.com/11/44",
+      "alt": [
+        "Al-Judi",
+        "Judi"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "What substance is associated with the seal of the sealed nectar in Surah Al-Mutaffifin?",
+      "a": "Musk",
+      "qid": "quran-200-917",
+      "topic": "Words and descriptions",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://quran.com/83/26",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which is the only surah that does not open with the basmalah?",
+      "a": "At-Tawbah",
+      "qid": "quran-200-918",
+      "topic": "Quranic studies",
+      "verified": true,
+      "alt": [
+        "Al-Tawbah",
+        "Bara'ah"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://quran.com/9"
+    },
+    {
+      "q": "Which fragrant plant is mentioned alongside grain with husks in Surah Ar-Rahman?",
+      "a": "Rayhan",
+      "topic": "Animals and plants",
+      "sourceUrl": "https://quran.com/55/12",
+      "alt": [
+        "Sweet basil",
+        "Basil",
+        "Fragrant plants"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-10-08",
+      "p": 200,
+      "qid": "quran-200-921",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 400,
+      "q": "Which surah explains that people were made into nations and tribes so they may know one another?",
+      "a": "Al-Hujurat",
+      "qid": "quran-400-911",
+      "topic": "Surahs and passages",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://quran.com/49/13",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which king was granted great knowledge and physical strength?",
+      "a": "Talut",
+      "qid": "quran-400-912",
+      "topic": "People and communities",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://quran.com/2/247",
+      "alt": [
+        "Saul"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What molten metal did Dhul-Qarnayn pour over the barrier against Gog and Magog?",
+      "a": "Copper",
+      "qid": "quran-400-914",
+      "topic": "Objects and materials",
+      "verified": true,
+      "alt": [
+        "Molten copper",
+        "Qitr"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://quran.com/18/96"
+    },
+    {
+      "p": 400,
+      "q": "In the story of the two disputants, how many ewes did the man seeking the other's single ewe own?",
+      "a": "Ninety-nine",
+      "qid": "quran-400-915",
+      "topic": "Numbers and periods",
+      "verified": true,
+      "alt": [
+        "99"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://quran.com/38/23",
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 400,
+      "q": "Which city is mentioned with Harut and Marut in the Quran?",
+      "a": "Babylon",
+      "qid": "quran-400-916",
+      "topic": "Places",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://quran.com/al-baqarah/102",
+      "alt": [
+        "Babil"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What apparent water seen by a thirsty person is used as a comparison for the disbelievers' deeds?",
+      "a": "A mirage",
+      "qid": "quran-400-917",
+      "topic": "Words and descriptions",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://quran.com/24/39",
+      "alt": [
+        "Mirage"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Which surah opens by describing a defeat that will be followed by victory?",
+      "a": "Ar-Rum",
+      "qid": "quran-400-918",
+      "topic": "Surahs and passages",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://quran.com/30/2-4",
+      "alt": [
+        "Al-Rum"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Which fruit is mentioned with date palms in the description of two gardens in Surah Ar-Rahman?",
+      "a": "Pomegranates",
+      "qid": "quran-400-921",
+      "topic": "Animals and plants",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://quran.com/ar-rahman/68",
+      "verifiedAt": "2026-10-08",
+      "alt": [
+        "Pomegranate"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Which surah asks people to recognize the signs within themselves?",
+      "a": "Adh-Dhariyat",
+      "qid": "quran-600-911",
+      "topic": "Surahs and passages",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://quran.com/adh-dhariyat/21",
+      "alt": [
+        "Al-Dhariyat"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Whom did Pharaoh order to build a lofty structure so he might reach the pathways?",
+      "a": "Haman",
+      "qid": "quran-600-912",
+      "topic": "People and communities",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://quran.com/40/36",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which Arabic word refers to the coins the Companions of the Cave sent to buy food?",
+      "a": "Wariq",
+      "qid": "quran-600-914",
+      "topic": "Objects and materials",
+      "verified": true,
+      "alt": [
+        "Al-wariq",
+        "Wariqikum"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://quran.com/18/19"
+    },
+    {
+      "p": 600,
+      "q": "Which Arabic word describes the producers of sparks immediately after the opening oath in Surah Al-Adiyat?",
+      "a": "Al-muriyat",
+      "qid": "quran-600-915",
+      "topic": "Words and descriptions",
+      "verified": true,
+      "alt": [
+        "Muriyat"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://quran.com/al-adiyat/2"
+    },
+    {
+      "p": 600,
+      "q": "What elevated place has men who recognize everyone by their marks?",
+      "a": "Al-A'raf",
+      "qid": "quran-600-916",
+      "topic": "Places",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://quran.com/7/46",
+      "alt": [
+        "The heights",
+        "Araf"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "In Surah Ya-Sin, what is the Moon compared to at the end of its phases?",
+      "a": "An old date stalk",
+      "qid": "quran-600-917",
+      "topic": "Words and descriptions",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://quran.com/ya-sin/39",
+      "alt": [
+        "An old palm stalk",
+        "Al-urjun al-qadim"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Which spring is named after the mention of a ginger-flavored drink in Surah Al-Insan?",
+      "a": "Salsabil",
+      "qid": "quran-600-918",
+      "topic": "Places",
+      "verified": true,
+      "alt": [
+        "Salsabeel"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://quran.com/76/18"
+    },
+    {
+      "p": 600,
+      "q": "What plant did God cause to grow over Jonah after he escaped the fish?",
+      "a": "A gourd plant",
+      "qid": "quran-600-921",
+      "topic": "Animals and plants",
+      "verified": true,
+      "alt": [
+        "Gourd",
+        "Yaqtin"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://quran.com/as-saffat/146",
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 800,
+      "q": "Which surah asks people to look at fruit as it develops and ripens?",
+      "a": "Al-An'am",
+      "qid": "quran-800-911",
+      "topic": "Surahs and passages",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://quran.com/6/99",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which group is named before the rabbis in the verse about judging by the Torah in Surah Al-Ma'idah?",
+      "a": "The rabbaniyyun",
+      "qid": "quran-800-912",
+      "topic": "People and communities",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://quran.com/5/44",
+      "alt": [
+        "Rabbaniyyun",
+        "Devout scholars"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "What Arabic word accompanies planks in the description of Noah's ark in Surah Al-Qamar?",
+      "a": "Dusur",
+      "qid": "quran-800-914",
+      "topic": "Objects and materials",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://quran.com/54/13",
+      "alt": [
+        "Dussur"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "What combined period does the Quran give for pregnancy and weaning?",
+      "a": "Thirty months",
+      "qid": "quran-800-915",
+      "topic": "Numbers and periods",
+      "verified": true,
+      "alt": [
+        "30 months"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://quran.com/al-ahqaf/15"
+    },
+    {
+      "p": 800,
+      "q": "Which Arabic word describes the sky in the oath preceding the statement that people's speech is contradictory?",
+      "a": "Hubuk",
+      "qid": "quran-800-917",
+      "topic": "Words and descriptions",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://quran.com/adh-dhariyat/7",
+      "alt": [
+        "Al-hubuk"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "Which Arabic word means the rain emerging from clouds in Surah An-Nur?",
+      "a": "Wadq",
+      "qid": "quran-800-918",
+      "topic": "Words and descriptions",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://quran.com/24/43",
+      "alt": [
+        "Al-wadq"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "Which tree is described as having clustered fruit in Surah Al-Waqi'ah?",
+      "a": "Talh",
+      "qid": "quran-800-921",
+      "topic": "Animals and plants",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://quran.com/al-waqiah/29",
+      "verifiedAt": "2026-10-08",
+      "alt": [
+        "Talh trees",
+        "Banana trees",
+        "Bananas"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "Where does Surah Al-Mutaffifin place the record of the righteous?",
+      "a": "Illiyyun",
+      "qid": "quran-800-922",
+      "topic": "Places",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://quran.com/83/18",
+      "alt": [
+        "Illiyin",
+        "Illiyyin"
+      ],
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "q": "Which surah compares God's single command to the blink of an eye?",
+      "a": "Al-Qamar",
+      "topic": "Surahs and passages",
+      "sourceUrl": "https://quran.com/54/50",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "quran-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which people are mentioned after the Companions of the Thicket in Surah Qaf?",
+      "a": "The people of Tubba",
+      "topic": "People and communities",
+      "sourceUrl": "https://quran.com/50/14",
+      "alt": [
+        "People of Tubba",
+        "Tubba"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "quran-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Arabic word describes the substance likened to the face-scalding water in Surah Al-Kahf?",
+      "a": "Muhl",
+      "topic": "Objects and materials",
+      "sourceUrl": "https://quran.com/18/29",
+      "alt": [
+        "Al-muhl"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "quran-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Arabic word describes the ruined garden in Surah Al-Qalam?",
+      "a": "Sarim",
+      "topic": "Comparisons",
+      "sourceUrl": "https://quran.com/al-qalam/20",
+      "alt": [
+        "Al-sarim"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "quran-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Arabic word names the elevated place that sheltered Jesus and his mother, with security and flowing water?",
+      "a": "Rabwah",
+      "topic": "Places",
+      "sourceUrl": "https://quran.com/23/50",
+      "alt": [
+        "Rabwa"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "quran-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Arabic word names the source of abundant rain in Surah An-Naba?",
+      "a": "Al-mu'sirat",
+      "topic": "Words and descriptions",
+      "sourceUrl": "https://quran.com/78/14",
+      "alt": [
+        "Mu'sirat",
+        "Musirat"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-10-08",
+      "p": 1000,
+      "qid": "quran-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Arabic word describes the green cushions mentioned alongside fine carpets in Surah Ar-Rahman?",
+      "a": "Rafraf",
+      "topic": "Words and descriptions",
+      "sourceUrl": "https://quran.com/55/76",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-10-08",
+      "p": 1000,
+      "qid": "quran-1000-918",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "q": "Which Arabic word is used for low-hanging clusters of dates?",
+      "a": "Qinwan",
+      "qid": "quran-1000-921",
+      "topic": "Animals and plants",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://quran.com/6/99",
+      "alt": [
+        "Qinwan daniyah"
+      ],
+      "verifiedAt": "2026-10-08"
+    }
+  ]
+}

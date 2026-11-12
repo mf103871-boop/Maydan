@@ -1,3 +1,4 @@
+import { roomContentIdentity } from './content-locale.mjs';
 import { publicSnapshot } from './mafia-model.mjs';
 import { fail } from './room-model.mjs';
 import { all,first,run,stmt } from './lamma/common.mjs';
@@ -8,6 +9,7 @@ const STREAM_LIMIT=4*1024*1024,encodedSize=value=>new TextEncoder().encode(JSON.
 export async function loadObserverStream(storage){const manifest=await storage.get('mafia:observer-stream');if(!manifest)return {stream:null,chunks:0};if(!Number.isInteger(manifest.chunks))return {stream:manifest,chunks:0};const parts=await Promise.all(Array.from({length:manifest.chunks},(_,i)=>storage.get(`mafia:observer:${i}`)));const size=parts.reduce((n,p)=>n+p.length,0),bytes=new Uint8Array(size);let offset=0;for(const part of parts){bytes.set(part,offset);offset+=part.length;}return {stream:JSON.parse(new TextDecoder().decode(bytes)),chunks:manifest.chunks};}
 export async function saveObserverStream(storage,stream,previousChunks=0){const bytes=new TextEncoder().encode(JSON.stringify(stream)),chunks=Math.ceil(bytes.length/STORAGE_CHUNK);for(let i=0;i<chunks;i++)await storage.put(`mafia:observer:${i}`,bytes.slice(i*STORAGE_CHUNK,(i+1)*STORAGE_CHUNK));for(let i=chunks;i<previousChunks;i++)await storage.put(`mafia:observer:${i}`,null);await storage.put('mafia:observer-stream',{schemaVersion:2,chunks});return chunks;}
 const clone=value=>structuredClone(value);
+const localizedPublicSnapshot=room=>({...publicSnapshot(room),...roomContentIdentity(room)});
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 // Empty collections may be omitted by a delta or an older persisted checkpoint.
 // Public observers always receive the same shape and no private chat channels.
@@ -24,7 +26,7 @@ function arrayPatch(before,after){let drop=0;while(drop<before.length&&before[dr
 function diff(before,after){const set={},arrays={};for(const [key,value]of Object.entries(after)){if(key==='log') {if(!same(before?.log||[],value))arrays.log=arrayPatch(before?.log||[],value);}else if(key==='chats'){if(!same(before?.chats?.public||[],value.public))arrays.chat=arrayPatch(before?.chats?.public||[],value.public);}else if(!same(before?.[key],value))set[key]=value;}return {set,arrays};}
 function apply(view,patch){const result={...(view||{}),...clone(patch.set)};for(const [key,p]of Object.entries(patch.arrays)){if(key==='log')result.log=[...(result.log||[]).slice(p.drop),...clone(p.add)];else result.chats={public:[...(result.chats?.public||[]).slice(p.drop),...clone(p.add)],team:[],observers:[]};}return publicCollections(result);}
 export function advanceObserverStream(previous,room,now=Date.now()) {
-  const next=room?publicSnapshot(room):null,patch=next?diff(previous?.latest,next):null,changed=patch&&(Object.keys(patch.set).length||Object.keys(patch.arrays).length);
+  const next=room?localizedPublicSnapshot(room):null,patch=next?diff(previous?.latest,next):null,changed=patch&&(Object.keys(patch.set).length||Object.keys(patch.arrays).length);
   const initializeSubjects=room&&previous?.subjectsVersion!==1;
   if(previous?.schemaVersion===2&&previous.sizeBytes<=STREAM_LIMIT&&Object.keys(previous.endBuffers||{}).length<=4&&Object.keys(previous.ends||{}).length<=8&&!initializeSubjects&&!changed&&!(previous.pending[0]?.releaseAt<=now))return previous;
   const stream=clone(previous||{schemaVersion:2,seq:0,visible:null,visibleAt:null,latest:null,pending:[],ends:{},endBuffers:{}});stream.schemaVersion=2;
@@ -40,7 +42,7 @@ export function advanceObserverStream(previous,room,now=Date.now()) {
   // Storage uses 128KiB UTF-8 chunks, not one oversized DO value. Under abnormal
   // backlog spectators resynchronize from a fresh, fully delayed checkpoint;
   // this never aborts a live match or exposes a newer-than-30-second projection.
-  if(stream.pending.length>4096||encodedSize(stream)>STREAM_LIMIT){let checkpoint=room?publicSnapshot(room):stream.latest;if(checkpoint&&encodedSize(checkpoint)>1024*1024)checkpoint=null;stream.visible=null;stream.visibleAt=null;stream.visibleSubjects={};stream.latest=checkpoint;stream.pending=checkpoint?[{seq:++stream.seq,at:now,releaseAt:now+OBSERVER_DELAY,patch:diff(null,checkpoint),subjects:clone(stream.latestSubjects||{})}]:[];stream.resynchronizedAt=now;for(const key of Object.keys(stream.endBuffers).sort((a,b)=>Number(a)-Number(b))){if(encodedSize(stream)<=STREAM_LIMIT)break;delete stream.endBuffers[key];}}
+  if(stream.pending.length>4096||encodedSize(stream)>STREAM_LIMIT){let checkpoint=room?localizedPublicSnapshot(room):stream.latest;if(checkpoint&&encodedSize(checkpoint)>1024*1024)checkpoint=null;stream.visible=null;stream.visibleAt=null;stream.visibleSubjects={};stream.latest=checkpoint;stream.pending=checkpoint?[{seq:++stream.seq,at:now,releaseAt:now+OBSERVER_DELAY,patch:diff(null,checkpoint),subjects:clone(stream.latestSubjects||{})}]:[];stream.resynchronizedAt=now;for(const key of Object.keys(stream.endBuffers).sort((a,b)=>Number(a)-Number(b))){if(encodedSize(stream)<=STREAM_LIMIT)break;delete stream.endBuffers[key];}}
   stream.sizeBytes=encodedSize(stream)+32;
   return stream;
 }
@@ -63,7 +65,7 @@ export function observerView(room,stream,observer,now=Date.now()) {
   const offer=Boolean(delayed&&observerCanPromote(delayed,stream,{...observer,matchAtJoin:delayed.matchId||0},now));
   const state=publicCollections(visible?clone(visible):{protocol:room.protocol||2,game:'mafia',code:room.code,phase:'waiting',matchId:0,round:null,deadlineAt:null,members:[],participants:[],outcome:null,replay:null});
   if(state.deadlineAt!=null)state.deadlineAt+=OBSERVER_DELAY;
-  return {...state,scope:'observer',delayed:true,delayMs:OBSERVER_DELAY,you:null,serverNow:now,revision:stream?.visibleSeq||0,
+  return {...roomContentIdentity(state),...state,scope:'observer',delayed:true,delayMs:OBSERVER_DELAY,you:null,serverNow:now,revision:stream?.visibleSeq||0,
     observer:{id:observer.id,delayMs:OBSERVER_DELAY,viewTime:ending?.releaseAt<=now?ending.at:stream?.visibleAt??null,canPromote:offer,...(offer?{promotionSettingsRevision:delayed.settingsRevision||0}:{}),completedMatches:Object.values(stream?.endBuffers||{}).filter(e=>e.releaseAt<=now).map(e=>({matchId:e.view.matchId,outcome:e.view.outcome,replay:e.view.replay}))},
     mafiaVoice:{available:false,callId:null,quiet:true,canPublish:false}};
 }

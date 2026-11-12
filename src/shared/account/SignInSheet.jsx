@@ -1,3 +1,4 @@
+import { tr } from '../i18n/core.js';
 // تسجيل الدخول: أزرار المزوّدين في ورقة سفلية، وتُعاد في الجدار وفي الإعدادات.
 // الدخول يخدم غرضًا واحدًا: أن يعمل الاشتراك على كل أجهزة اللاعب.
 import React, { useEffect } from 'react';
@@ -36,34 +37,34 @@ export function SignInButtons({ onDone, designScreen = 'account.signin' }) {
   const busy = account.busy === 'signin';
   const run = async (provider) => { const result = await account.signIn(provider); if (result && onDone) onDone(); };
   if (account.offline) return <p className="online-notice" role="status">{accountErrorText('OFFLINE')}</p>;
-  if (loadProviders && ['idle','loading'].includes(account.signInProvidersStatus)) return <p className="online-notice" role="status">نتحقق من طرق تسجيل الدخول…</p>;
-  if (loadProviders && account.signInProvidersStatus === 'error') return <div className="stack"><p className="online-notice error" role="alert">{accountErrorText(account.signInProvidersError)}</p><Button onClick={() => loadProviders({retry:true})}>إعادة محاولة تسجيل الدخول</Button></div>;
-  if (providers?.apple === false && providers?.google === false) return <p className="online-notice" role="status">تسجيل الدخول غير متاح حاليًا. جرّب مجددًا بعد قليل.</p>;
+  if (loadProviders && ['idle','loading'].includes(account.signInProvidersStatus)) return <p className="online-notice" role="status">{tr("نتحقق من طرق تسجيل الدخول…")}</p>;
+  if (loadProviders && account.signInProvidersStatus === 'error') return <div className="stack"><p className="online-notice error" role="alert">{accountErrorText(account.signInProvidersError)}</p><Button onClick={() => loadProviders({retry:true})}>{tr("إعادة محاولة تسجيل الدخول")}</Button></div>;
+  if (providers?.apple === false && providers?.google === false) return <p className="online-notice" role="status">{tr("تسجيل الدخول غير متاح حاليًا. جرّب مجددًا بعد قليل.")}</p>;
   return (
     <div data-design-screen={designScreen || undefined} data-design-id="providers" className="account-providers">
       {(!providers || providers.apple !== false) && (
-        <Button variant="primary" size="lg" full loading={busy} icon={<AppleMark />} data-design-id="signin-apple" data-design-required="true" data-provider="apple" onClick={() => run('apple')}>المتابعة بحساب Apple</Button>
+        <Button variant="primary" size="lg" full loading={busy} icon={<AppleMark />} data-design-id="signin-apple" data-design-required="true" data-provider="apple" onClick={() => run('apple')}>{tr("المتابعة بحساب Apple")}</Button>
       )}
       {(!providers || providers.google !== false) && (
-        <Button variant="secondary" size="lg" full disabled={busy} icon={<GoogleMark />} data-design-id="signin-google" data-design-required="true" data-provider="google" onClick={() => run('google')}>المتابعة بحساب Google</Button>
+        <Button variant="secondary" size="lg" full disabled={busy} icon={<GoogleMark />} data-design-id="signin-google" data-design-required="true" data-provider="google" onClick={() => run('google')}>{tr("المتابعة بحساب Google")}</Button>
       )}
         {account.error && account.signInProvidersStatus !== 'error' && <p className="online-notice error" role="alert">{accountErrorText(account.error)}</p>}
     </div>
   );
 }
 
-export function SignInSheet({ open, onClose, title = 'تسجيل الدخول', note = SIGN_IN_NOTE }) {
+export function SignInSheet({ open, onClose, title = tr("تسجيل الدخول"), note = SIGN_IN_NOTE }) {
   const account = useAccount();
   if (!open) return null;
   return (
     <Sheet data-design-screen="account.signin" open={open} onClose={onClose} title={title}>
       <div data-design-id="content" className="account-signin">
-        <p className="card-muted">{note}</p>
+        <p className="card-muted">{tr(note)}</p>
         <SignInButtons designScreen={null} onDone={onClose} />
         {(account.error === 'PREVIEW_ONLY' || account.signInProvidersError === 'PREVIEW_ONLY') && (
-          <a className="btn btn-secondary btn-full" href={PUBLISHED_SETTINGS_URL} target="_blank" rel="noopener noreferrer">فتح الموقع المنشور لتسجيل الدخول ↗</a>
+          <a className="btn btn-secondary btn-full" href={PUBLISHED_SETTINGS_URL} target="_blank" rel="noopener noreferrer">{tr("فتح الموقع المنشور لتسجيل الدخول ↗")}</a>
         )}
-        <p data-design-id="privacy-note" data-design-required="true" className="account-fineprint">يتم الدخول عبر حساب Apple أو Google. <a data-design-id="privacy-link" href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a> · <a data-design-id="terms-link" href={LEGAL_ROUTES.terms}>شروط الاستخدام</a></p>
+        <p data-design-id="privacy-note" data-design-required="true" className="account-fineprint">{tr("يتم الدخول عبر حساب Apple أو Google. ")}<a data-design-id="privacy-link" href={LEGAL_ROUTES.privacy}>{tr("سياسة الخصوصية")}</a> · <a data-design-id="terms-link" href={LEGAL_ROUTES.terms}>{tr("شروط الاستخدام")}</a></p>
       </div>
     </Sheet>
   );

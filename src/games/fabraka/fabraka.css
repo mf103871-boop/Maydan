@@ -5,7 +5,7 @@
 .fab-heading { font-size: 24px; font-weight: 900; text-align: center; }
 .fab-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-bottom: 12px; border-bottom: 1px solid var(--stroke); }
 .fab-bar > div { display: grid; gap: 3px; min-width: 0; }
-.fab-bar small { color: var(--muted); font-size: 12px; }
+.fab-bar small { color: var(--muted); font-size:14px; }
 .fab-bar small.fab-fire { display: inline-block; transform-origin: 50% 100%; animation: ui-bounce .5s var(--ease-spring) 2; }
 .fab-bar .btn { flex: 0 0 auto; }
 /* الحامل الكبير (رسم اللعبة أو الرمز التعبيري): هبوط ثم طفو؛ الحركة على .clay-lift لا على الرسم */
@@ -20,7 +20,7 @@
 .fab-intro > :nth-child(n + 5) { animation-delay: 340ms; }
 .fab-intro > .fab-big { animation: none; }
 .fab-intro .scoreboard { width: 100%; }
-.fab-eyebrow { color: var(--game-accent); font-size: 13px; font-weight: 800; }
+.fab-eyebrow { color: var(--game-accent); font-size:14px; font-weight: 800; }
 /* بوابة الخصوصية: الشخصية على حامل بلا قرص خلفي، والنص يدخل متدرّجًا */
 .fab-avatar { width: 110px; height: 110px; display: inline-grid; place-items: center; margin-inline: auto; font-size: 64px; --contact-inset: 16%; --clay-contact: color-mix(in srgb, var(--player-color, #B57BFF) 45%, rgba(var(--clay-ink, 81, 50, 115), .35)); }
 .fab-gate > * { animation: ui-lift-in .38s var(--ease-out) both; }
@@ -44,14 +44,14 @@
 .fab-picture-open img { display: block; width: 100%; height: 100%; object-fit: contain; transition: opacity .2s ease; }
 .fab-picture-stage:not(.is-ready) img { opacity: 0; }
 .fab-picture-open:focus-visible { outline: 3px solid var(--game-accent); outline-offset: -5px; }
-.fab-picture-zoom { position: absolute; bottom: 12px; inset-inline-end: 12px; padding: 7px 12px; border-radius: 999px; color: var(--text); background: var(--surface); border: 1px solid var(--stroke); font-size: 13px; box-shadow: var(--shadow-row); }
+.fab-picture-zoom { position: absolute; bottom: 12px; inset-inline-end: 12px; padding: 7px 12px; border-radius: 999px; color: var(--text); background: var(--surface); border: 1px solid var(--stroke); font-size:14px; box-shadow: var(--shadow-row); }
 .fab-picture-status { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; color: var(--muted); font-size: 15px; line-height: 1.8; }
-.fab-illustration figcaption, .fab-picture-credit { color: var(--muted); text-align: center; font-size: 11px; padding-top: 7px; line-height: 1.7; }
+.fab-illustration figcaption, .fab-picture-credit { color: var(--muted); text-align: center; font-size:14px; padding-top: 7px; line-height: 1.7; }
 .fab-picture-modal { width: min(96vw, 1100px); max-width: 1100px; }
 .fab-picture-full { display: block; width: 100%; max-height: 75dvh; object-fit: contain; border-radius: 16px; }
 @media (prefers-reduced-motion: reduce) { .fab-picture-open img { transition: none; } }
 .fab-input { font-size: 18px; min-height: 54px; }
-.fab-hint { font-size: 13px; color: var(--muted); line-height: 1.8; }
+.fab-hint { font-size:14px; color: var(--muted); line-height: 1.8; }
 .fab-note, .fab-save-error { padding: 12px 14px; border: 1px solid var(--stroke-strong); border-radius: 14px; background: var(--fab-tint); font-size: 14px; line-height: 1.8; box-shadow: var(--shadow-row); }
 .fab-note { transform-origin: 50% 0; animation: ui-unfold .3s var(--ease-out) both; }
 .fab-save-error { border-color: var(--warning); animation: ui-nudge .4s ease-out both; }
@@ -66,7 +66,7 @@
 .fab-abstain[aria-pressed="true"] { animation: ui-wobble .3s ease-in-out; }
 .fab-toggle { display: flex; align-items: flex-start; gap: 10px; padding: 12px 0; border-top: 1px solid var(--stroke); cursor: pointer; font-weight: 700; }
 .fab-toggle input { width: 23px; height: 23px; flex: 0 0 auto; margin-top: 3px; accent-color: var(--game-accent); }
-.fab-toggle small { display: block; color: var(--muted); font-weight: 400; font-size: 12px; padding-top: 5px; }
+.fab-toggle small { display: block; color: var(--muted); font-weight: 400; font-size:14px; padding-top: 5px; }
 .fab-details { width: 100%; padding: 12px 14px; border: 1px solid var(--stroke); border-radius: 14px; background: var(--surface); text-align: start; box-shadow: var(--shadow-row); }
 .fab-details > summary { cursor: pointer; min-height: 30px; font-weight: 700; line-height: 1.8; }
 .fab-details[open] > summary { margin-bottom: 12px; }
@@ -74,7 +74,7 @@
 .fab-details > .btn { margin-top: 10px; }
 .fab-details .stack { margin-top: 10px; gap: 8px; }
 .fab-categories { display: flex; flex-wrap: wrap; gap: 8px; }
-.fab-categories .chip { min-height: 44px; font-size: 13px; }
+.fab-categories .chip { min-height: 44px; font-size:14px; }
 .fab-categories .chip small { color: var(--muted); font-variant-numeric: tabular-nums; }
 .fab-categories .chip:disabled { opacity: .45; cursor: not-allowed; }
 .fab-categories .chip[aria-pressed="true"] { border-color: var(--game-accent); background: var(--fab-tint); }
@@ -87,7 +87,7 @@ button.fab-opt:not(:disabled), .fab-mode, .fab-abstain { cursor: pointer; }
 .fabraka button:focus-visible, .fab-details summary:focus-visible, .fab-toggle input:focus-visible { outline: 3px solid var(--game-accent); outline-offset: 3px; }
 .fab-opt:disabled { color: var(--muted); background: var(--surface); border-style: dashed; cursor: default; box-shadow: none; }
 .fab-opt .grow { flex: 1; min-width: 0; }
-.fab-opt .tag { font-size: 11px; padding: 4px 8px; border-radius: 20px; background: var(--surface-2); color: var(--muted); flex: 0 0 auto; }
+.fab-opt .tag { font-size:14px; padding: 4px 8px; border-radius: 20px; background: var(--surface-2); color: var(--muted); flex: 0 0 auto; }
 .fab-abstain { color: var(--muted); border-radius: 13px; padding: 12px; min-height: 46px; }
 .fab-panel.is-skipping { animation: ui-nudge .3s ease-out; }
 /* المؤقت: الرقم يُلكم كل ثانية ثم ينبض، وحلقة حمراء تتسع عند الاستعجال؛ التظليل الأحمر من Clock */
@@ -117,17 +117,17 @@ button.fab-opt:not(:disabled), .fab-mode, .fab-abstain { cursor: pointer; }
 .fab-round-scores article > div { display: flex; align-items: center; gap: 10px; }
 .fab-round-scores b { flex: 1; min-width: 0; font-size: 17px; }
 .fab-round-scores strong { display: inline-block; color: var(--success); font-variant-numeric: tabular-nums; animation: ui-pop-in .4s var(--ease-spring) both; animation-delay: calc(200ms + var(--i, 0) * 70ms); }
-.fab-round-scores p { color: var(--muted); font-size: 12px; padding-top: 8px; }
+.fab-round-scores p { color: var(--muted); font-size:14px; padding-top: 8px; }
 .fab-laugh { animation: ui-pop-in .5s var(--ease-spring) .5s both; }
 .fab-awards { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
 .fab-awards .card { text-align: center; display: grid; align-content: start; gap: 8px; padding: 16px 10px; animation: ui-pop-in .45s var(--ease-spring) both; animation-delay: calc(1000ms + var(--i, 0) * 120ms); }
 .fab-awards .card:nth-child(2) { --i: 1 } .fab-awards .card:nth-child(3) { --i: 2 } .fab-awards .card:nth-child(n + 4) { --i: 3 }
 .fab-award-icon { display: inline-block; font-size: 34px; animation: ui-bounce .5s var(--ease-spring) both; animation-delay: calc(1200ms + var(--i, 0) * 120ms); }
 .fab-awards h3 { font-size: 17px; }
-.fab-awards small { color: var(--muted); font-size: 11px; }
+.fab-awards small { color: var(--muted); font-size:14px; }
 .fab-table-wrap { overflow-x: auto; border: 1px solid var(--stroke); border-radius: 16px; box-shadow: var(--shadow-row); animation: ui-lift-in .4s var(--ease-out) 1.4s both; }
 .fab-highlights { animation: ui-lift-in .4s var(--ease-out) 1.5s both; }
-.fab-stats { width: 100%; border-collapse: collapse; font-size: 13px; text-align: center; font-variant-numeric: tabular-nums; }
+.fab-stats { width: 100%; border-collapse: collapse; font-size:14px; text-align: center; font-variant-numeric: tabular-nums; }
 .fab-stats caption { font-size: 19px; font-weight: 800; text-align: start; padding: 15px 12px; }
 .fab-stats td, .fab-stats th { padding: 12px 8px; border-top: 1px solid var(--stroke); }
 .fab-stats th:first-child { text-align: start; max-width: 130px; }
@@ -137,10 +137,10 @@ button.fab-opt:not(:disabled), .fab-mode, .fab-abstain { cursor: pointer; }
 .fab-training { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 @media (max-width: 380px) {
   .fab-bar { gap: 5px; }
-  .fab-bar b { font-size: 13px; }
-  .fab-bar .btn { padding-inline: 8px; font-size: 12px; }
+  .fab-bar b { font-size:14px; }
+  .fab-bar .btn { padding-inline: 8px; font-size:14px; }
   .fab-q { font-size: 21px; }
-  .fab-stats td, .fab-stats th { padding: 10px 5px; font-size: 12px; }
+  .fab-stats td, .fab-stats th { padding: 10px 5px; font-size:14px; }
   .fab-round-scores article > div { gap: 6px; }
 }
 
@@ -149,7 +149,7 @@ button.fab-opt:not(:disabled), .fab-mode, .fab-abstain { cursor: pointer; }
 
 /* G06/G07: give the answer and confirmed result priority over decoration. */
 .fabraka .fab-opt{min-height:56px;padding:12px 14px;line-height:1.6;gap:8px;border-radius:15px;box-shadow:inset 0 1px #fff,0 2px 0 var(--stroke)}
-.fabraka .fab-opt .tag{font-size:12px;line-height:1.5;max-width:38%;white-space:normal;text-align:center}
+.fabraka .fab-opt .tag{font-size:14px;line-height:1.5;max-width:38%;white-space:normal;text-align:center}
 .fabraka .fab-opt.selected{box-shadow:inset 0 0 0 1px var(--game-accent),0 2px 0 color-mix(in srgb,var(--game-accent) 45%,var(--stroke))}
 .fabraka .fab-reveal-card{padding:18px 15px;border-radius:19px;overflow-wrap:anywhere}
 .fabraka .fab-reveal-card h3{font-size:clamp(21px,5.5vw,27px);line-height:1.55}
@@ -159,10 +159,10 @@ button.fab-opt:not(:disabled), .fab-mode, .fab-abstain { cursor: pointer; }
 .fabraka .fab-round-scores :is(.avatar,.clay-avatar){width:38px;height:38px;flex:none}
 .fabraka .fab-round-scores b{overflow-wrap:anywhere;line-height:1.5}
 .fabraka .fab-round-scores strong,.fabraka .fab-round-scores .badge{flex:none;white-space:nowrap;font-variant-numeric:tabular-nums}
-.fabraka .fab-round-scores p{font-size:13px;line-height:1.8}
+.fabraka .fab-round-scores p{font-size:14px;line-height:1.8}
 .fabraka .fab-awards .card{gap:6px;padding:14px 10px}
 .fabraka .fab-awards :is(h3,p){overflow-wrap:anywhere;line-height:1.6}
-.fabraka .fab-awards small{font-size:12px;line-height:1.6}
+.fabraka .fab-awards small{font-size:14px;line-height:1.6}
 @media(max-width:359px){.fabraka .fab-round-scores article>div{flex-wrap:wrap}.fabraka .fab-round-scores b{flex-basis:calc(100% - 55px)}}
 
 .fabraka .fab-bar { border:1px solid #d9bfe7; border-radius:15px; background:#f0e3f7; color:#513168; padding:7px 11px; }
@@ -170,7 +170,7 @@ button.fab-opt:not(:disabled), .fab-mode, .fab-abstain { cursor: pointer; }
 .fabraka .fab-bar .btn { min-height:44px; }
 .fabraka .fab-question { display:grid; justify-items:center; gap:9px; }
 .fabraka .fab-q { width:100%; margin:0; background:#f2e7f8; border:1px solid #dbc3e8; border-radius:15px; padding:14px 12px; }
-.fabraka .fab-mode-pill { width:max-content; max-width:100%; justify-self:start; border-radius:20px; margin:0; padding:4px 10px; background:#eee0f7; color:#56366d; font-size:.78rem; font-weight:800; }
+.fabraka .fab-mode-pill { width:max-content; max-width:100%; justify-self:start; border-radius:20px; margin:0; padding:4px 10px; background:#eee0f7; color:#56366d; font-size:.875rem; font-weight:800; }
 .fabraka .fab-mode-pill.is-private { background:#f7e9d2; color:#794719; }
 .fabraka .fab-gate { background:#fffaf1; border:1px solid #e3d3c4; border-radius:21px; padding:20px 14px; }
 .fabraka .fab-gate .pass-lock { display:grid; place-items:center; width:72px; height:72px; margin-inline:auto; border-radius:50%; background:#e8d2f3; color:#593171; }
@@ -182,6 +182,22 @@ button.fab-opt:not(:disabled), .fab-mode, .fab-abstain { cursor: pointer; }
 .fabraka .fab-opt.selected .fab-choice-dot::after { content:''; width:9px; height:9px; border-radius:50%; background:#087980; }
 .fabraka .fab-reveal-card.is-truth { background:#fff0ce; border-color:#d7ac60; color:#67471f; }
 .fabraka .fab-reveal-card.is-lie { background:#eee2f8; border-color:#c5a6dd; color:#533469; }
-.fabraka .fab-reveal-label { color:inherit; font-size:.85rem; }
+.fabraka .fab-reveal-label { color:inherit; font-size:.875rem; }
 .fab-pacing > summary { min-height:44px; align-content:center; cursor:pointer; }
 .fab-setup .segment > button, .fab-setup .fab-toggle { min-height:44px; }
+/* Playful Studio: private handoff and public answers stay distinct. */
+.fabraka { --game-accent: #76518D; --fab-tint: #EEE3F5; }
+.fabraka :is(.fab-bar,.fab-q,.fab-gate) { border-radius: 24px; border-color: #DFD1DC; background: #FFFDF9; color: #352139; }
+.fabraka .fab-q { background: #EEE3F5; padding: 20px 16px; }
+.fabraka .fab-bar { padding: 10px 12px; border-radius: 20px; }
+.fabraka .fab-bar .btn,.fab-pacing>summary,.fab-setup .segment>button,.fab-setup .fab-toggle,.fab-funny-choice select { min-height: 48px; }
+.fabraka .fab-gate-hint { background: #EEE3F5; color: #352139; border-radius: 16px; padding: 12px; }
+.fabraka .fab-mode-pill.is-private { background: #FFE5DB; color: #652736; }
+.fabraka .fab-opt { border-radius: 20px; background: #FFFDF9; border-color: #DFD1DC; box-shadow: 0 2px 0 #DFD1DC; }
+.fabraka .fab-opt.selected { background: #DDF2EA; border-color: #08796D; box-shadow: inset 0 0 0 1px #08796D; }
+.fabraka .fab-reveal-card { border-radius: 24px; }
+.fabraka .fab-reveal-card.is-truth { background: #DDF2EA; border-color: #86B7A9; color: #12614F; }
+.fabraka .fab-reveal-card.is-lie { background: #EEE3F5; border-color: #CBB7D7; color: #352139; }
+.fabraka .fab-round-scores article { background: #FFFDF9; border-radius: 20px; border-color: #DFD1DC; }
+.fabraka .fab-details>summary { min-height:48px; align-content:center; cursor:pointer; }
+.fabraka .field>span { font-size:14px; }

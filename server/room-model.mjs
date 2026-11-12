@@ -1,5 +1,5 @@
 import { MIN_PLAYERS, ROUND_OPTIONS, VOTE_SECONDS, ROOM_TTL, HOST_GRACE, AVATARS, PROTOCOL } from '../src/online/shared.js';
-import { TITLES, DEFAULT_TITLE } from '../src/games/meenfina/logic.js';
+import { titleFor, DEFAULT_TITLE } from '../src/games/meenfina/logic.js';
 import { active, playing, absent, graceDeadlines, memberOrNull, member, newMember, colorOf, fail, admitMember, extendForMatch } from '../src/shared/room-primitives.mjs';
 export * from '../src/shared/room-primitives.mjs';
 
@@ -158,7 +158,7 @@ export function snapshot(room, viewerId, now) {
     round: room.round, rounds: room.rounds, voteSeconds: room.voteSeconds, deadlineAt: room.deadlineAt, reason: room.reason,
     members: room.members.map((m) => ({ id: m.id, name: m.name, avatar: m.avatar, emoji: AVATARS[m.avatar], color: colorOf(m),
       connected: m.connected, ready: m.ready, left: m.left, score: room.scores[m.id] || 0,
-      title: TITLES[Object.entries(room.tags[m.id] || {}).sort((a, b) => b[1] - a[1])[0]?.[0]] || DEFAULT_TITLE })),
+      title: titleFor(room, m.id, room.contentLocale || 'ar') || (room.contentLocale === 'en' ? 'Star of the session' : DEFAULT_TITLE) })),
     participants: room.participants, question: question(room),
     submittedCount: Object.keys(room.votes).length,
     myVote: Object.hasOwn(room.votes, viewerId) ? { submitted: true, targetId: room.votes[viewerId] } : { submitted: false },

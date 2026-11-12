@@ -37,7 +37,7 @@ export function selectRankedGroup(input,blocks,now) {
   // tighter. An incompatible anchor does not block the entire queue.
   for(let anchorIndex=0;anchorIndex<candidates.length;anchorIndex++){
     const anchor=candidates[anchorIndex],range=rankedRatingWindow(anchor.joined_at,now);
-    const pool=candidates.slice(anchorIndex+1).filter(row=>!graph.get(anchor.user_id).has(row.user_id)&&Math.abs(row.rating-anchor.rating)<=range)
+    const pool=candidates.slice(anchorIndex+1).filter(row=>(row.content_locale||'ar')===(anchor.content_locale||'ar')&&!graph.get(anchor.user_id).has(row.user_id)&&Math.abs(row.rating-anchor.rating)<=range)
       .sort((a,b)=>Math.abs(a.rating-anchor.rating)-Math.abs(b.rating-anchor.rating)||a.joined_at-b.joined_at||compare(a.user_id,b.user_id));
     if(pool.length<policy.groupSize-1)continue;
     let allowance=Math.min(policy.searchNodesPerAnchor,remaining);
