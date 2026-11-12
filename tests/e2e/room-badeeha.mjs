@@ -52,7 +52,7 @@ test('two phones play Badeeha: turns, aids, reveal, judge, steal, undo and end',
   const { page: h } = host;
   await h.locator('[data-design-id="create-public-room"]').click();
   assert.equal(await h.locator('.badeeha-picker').evaluate(element => getComputedStyle(element).maxHeight), '300px', 'all categories stay inside a bounded scrolling picker');
-  assert.equal(await h.locator('.badeeha-picker button').first().evaluate(element => getComputedStyle(element).minHeight), '44px', 'category controls keep a full touch target');
+  assert.equal(await h.locator('.badeeha-picker button').first().evaluate(element => getComputedStyle(element).minHeight), '48px', 'category controls keep a full touch target');
   await h.locator('[data-design-id="name-input"]').fill('المضيف');
   const create = h.getByRole('button', { name: 'أنشئ الغرفة' });
   assert.equal(await create.isDisabled(), true, 'six categories are needed first');

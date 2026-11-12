@@ -215,7 +215,7 @@ export function MafiaLobby({ state, me, isHost = false, disabled = false, startD
   const canStart = players.length >= minimum && players.every(player => player.connected && player.ready);
   return <section data-design-screen="online.mafia.lobby" className="mafia-noir mafia-shell mafia-compact-game mafia-density mafia-lobby-screen" dir={uiDirection()}><PresentationStyles sheet={css}/>
     <header data-design-id="header" className="mafia-heading"><div><span className="mafia-kicker">{tr("غرفة الانتظار · ")}{ar(players.length)}{tr(" من ")}{ar(state.settings.capacity)}</span><h1>{state.settings.roomName || tr("مجلس مافيا")}</h1></div><span className="mafia-voice-badge">{state.settings.voiceMode === 'off' ? tr("نص فقط") : tr("صوت ونص")}</span>{!tutorial && <><Button data-design-id="invite" aria-label={tr("دعوة لاعبين")} onClick={() => setPanel('invite')}>{tr("دعوة")}</Button><Button data-design-id="room-settings" aria-label={tr("إعدادات المجلس")} onClick={() => setPanel('settings')}>⋯</Button></>}</header>
-    {languageControl}
+    {languageControl && <div className="mafia-lobby-language">{languageControl}</div>}
     <section className="mafia-lobby-players" aria-label={tr("مقاعد الانتظار")}><MafiaPlayerCards state={state} me={me} voice={voice} disabled={disabled} tutorial={Boolean(tutorial)} onManage={tutorial ? undefined : player => setManaged(player)}/></section>
     <main className="mafia-activity"><MafiaChat state={state} you={state.you} me={me} accountId={accountId} members={players} disabled={disabled} act={act}/></main>
     {state.settings.voiceMode !== 'off' && <MafiaVoice state={state} voice={voice}/>}

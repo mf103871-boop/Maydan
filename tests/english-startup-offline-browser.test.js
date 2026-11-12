@@ -8,15 +8,62 @@ import path from 'node:path';
 import { build } from 'esbuild';
 import { chromium, webkit } from 'playwright';
 import { ROOT, DIST, esbuildOptions, renderHtml, renderServiceWorker, audioCueAssets } from '../scripts/lib.mjs';
+import { SAMPLE_BANK } from '../src/shared/fx/sample-bank.js';
+
+function loopbackPackageInputs() {
+  // This fixture deliberately serves the public, same-origin shell. The native
+  // CI job can also enable the origin-restricted Warmth audition: inheriting
+  // only its SW cue list would cache private audio while this shell correctly
+  // selects the public bank. Capture both build inputs under one public mode,
+  // synchronously, and restore the caller's release environment before any await.
+  const names = ['MAYDAN_PRIVATE_AUDIO_PREVIEW', 'MAYDAN_WARMTH_PREVIEW'];
+  const previous = names.map(name => process.env[name]);
+  try {
+    for (const name of names) process.env[name] = '0';
+    return {
+      options: esbuildOptions({ minify: true, assets: 'files', version: 'language-browser', roomsUrl: 'same-origin' }),
+      audioCues: audioCueAssets(),
+    };
+  } finally {
+    names.forEach((name, index) => {
+      if (previous[index] === undefined) delete process.env[name];
+      else process.env[name] = previous[index];
+    });
+  }
+}
+
+test('loopback language fixture keeps the public shell and audio cache aligned under native Warmth CI inputs', () => {
+  const nativeInputs = {
+    MAYDAN_PRIVATE_AUDIO_PREVIEW: '1', MAYDAN_WARMTH_PREVIEW: '1',
+    IOS_RELEASE_ENVIRONMENT: 'mafia-preview', MAYDAN_ROOMS_URL: 'https://maydan-mafia-preview.mf103871.workers.dev',
+  };
+  const previous = Object.fromEntries(Object.keys(nativeInputs).map(name => [name, process.env[name]]));
+  try {
+    Object.assign(process.env, nativeInputs);
+    const { options, audioCues } = loopbackPackageInputs();
+    assert.equal(options.define.__MAYDAN_ROOMS_URL__, '"same-origin"');
+    assert.equal(options.define.__MAYDAN_AUDIO_PREVIEW__, 'false');
+    assert.equal(options.define.__MAYDAN_WARMTH_PREVIEW__, 'false');
+    assert.equal(options.define.__MAYDAN_WARMTH_PACK__, 'null');
+    assert.deepEqual(audioCues, [...new Set(Object.values(SAMPLE_BANK).map(entry => './' + entry.url))]);
+    for (const [name, value] of Object.entries(nativeInputs)) assert.equal(process.env[name], value, `preserve ${name}`);
+  } finally {
+    for (const [name, value] of Object.entries(previous)) {
+      if (value === undefined) delete process.env[name];
+      else process.env[name] = value;
+    }
+  }
+});
 
 let compiled;
 function packagedApp() {
   return compiled ||= (async () => {
-    const result = await build(esbuildOptions({ minify: true, assets: 'files', version: 'language-browser', roomsUrl: 'same-origin' }));
+    const { options, audioCues } = loopbackPackageInputs();
+    const result = await build(options);
     const files = result.outputFiles.filter(file => !file.path.endsWith('.js'));
     const urls = files.map(file => './' + path.relative(DIST, file.path).replaceAll('\\', '/'));
     const html = await renderHtml(result.outputFiles.find(file => file.path.endsWith('.js')).text, { version: 'language-browser', assets: urls });
-    const sw = renderServiceWorker(await readFile(path.join(ROOT, 'public/sw.js'), 'utf8'), { id: 'language-browser', audioCues: audioCueAssets(), brandAssets: urls.filter(url => !/\/locale-en-[^/]+\.json$/.test(url)) });
+    const sw = renderServiceWorker(await readFile(path.join(ROOT, 'public/sw.js'), 'utf8'), { id: 'language-browser', audioCues, brandAssets: urls.filter(url => !/\/locale-en-[^/]+\.json$/.test(url)) });
     return { html, sw, assets: new Map(files.map(file => ['/' + path.relative(DIST, file.path).replaceAll('\\', '/'), file.contents])) };
   })();
 }
@@ -57,6 +104,17 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
   assert.ok(englishReads > 0);
   await page.evaluate(async () => { await navigator.serviceWorker.register('/sw.js'); await navigator.serviceWorker.ready; });
   await page.waitForFunction(() => !!navigator.serviceWorker.controller);
+  const cachedCues = await page.evaluate(async entries => {
+    const cache = await caches.open('maydan-platform-language-browser');
+    return Promise.all(entries.map(async entry => {
+      const response = await cache.match('./' + entry.url);
+      return { url: entry.url, ok: !!response?.ok, type: response?.headers.get('content-type'), bytes: response ? (await response.arrayBuffer()).byteLength : 0 };
+    }));
+  }, Object.values(SAMPLE_BANK));
+  assert.equal(cachedCues.length, Object.keys(SAMPLE_BANK).length);
+  for (const [index, entry] of Object.values(SAMPLE_BANK).entries()) {
+    assert.deepEqual(cachedCues[index], { url: entry.url, ok: true, type: 'audio/mp4', bytes: entry.bytes }, 'every actual public cue must finish caching before the offline transition');
+  }
   const beforeRetry = englishReads; blockEnglish = false;
   await page.getByRole('button', { name: 'Try again', exact: true }).click();
   await page.locator('button[data-game="ersomha"]').waitFor();

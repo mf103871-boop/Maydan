@@ -197,7 +197,10 @@ test('one browser player plays a whole public Mafia match through the real UI', 
     if (r.phase === 'verdict') {
       for (const id of alive.filter((id) => id !== seatId)) await botOf(id).command('verdict', { approve: true });
       if (me.alive) {
-        const trigger=page.locator('[data-design-id="action-open"]');if(await trigger.getAttribute('aria-expanded')!=='true')await trigger.click();
+        // Verdict opens automatically after the phase transition commits. A
+        // read-then-toggle can race that effect and close the panel just as it
+        // opens. Require the actual default-open state before choosing a vote.
+        await page.locator('[data-design-id="action-open"][aria-expanded="true"]').waitFor();
         await page.locator('[data-design-id="verdict-yes"]').click();
         await page.getByRole('button', { name: 'اعتمد اختياري' }).click();
         await until(() => Object.hasOwn(room().verdictVotes, seatId), 'the browser verdict reached the server');
@@ -221,10 +224,10 @@ test('one browser player plays a whole public Mafia match through the real UI', 
   await context.close();
 });
 
-test('real host lobby controls remain hit-testable with the startup notice in both orientations', { timeout: 180_000 }, async () => {
-  const people = []; for (let n = 0; n < 12; n++) people.push({ ...await person(n % 6), name: `لاعب العرض ${n + 1}` });
+for (const uiLocale of ['ar', 'en']) test(`real host lobby controls remain hit-testable with the startup notice in both orientations (${uiLocale})`, { timeout: 180_000 }, async () => {
+  const people = []; for (let n = 0; n < 12; n++) people.push({ ...await person(n % 6), name: uiLocale === 'en' ? `Long Display Name ${n + 1}` : `لاعب العرض ${n + 1}`, capabilities: { mafia: 2, localizedContent: 1 } });
   const [host] = people;
-  const { code } = await api(host, '/api/rooms', { ...host, settings: { mode: 'shadow', capacity: 12, visibility: 'public', voiceMode: 'off', roomName: 'فحص عناصر المجلس' } });
+  const { code } = await api(host, '/api/rooms', { ...host, contentLocale: uiLocale, contentVersion: uiLocale === 'en' ? 'new-en' : 'legacy-ar', settings: { mode: 'shadow', capacity: 12, visibility: 'public', voiceMode: 'off', roomName: uiLocale === 'en' ? 'Long English waiting room name' : 'فحص عناصر المجلس' } });
   const bots = [];
   for (const p of people.slice(1)) {
     await api(p, `/api/rooms/${code}/join`, p);
@@ -233,37 +236,52 @@ test('real host lobby controls remain hit-testable with the startup notice in bo
   }
   await until(() => bots.every(client => client.state?.members.filter(member => member.connected).length === 11), 'layout bots connected');
   for (const client of bots) await client.command('ready', { ready: true });
-  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, locale: 'ar', reducedMotion: 'reduce' });
-  await context.addInitScript(({ key, token, server, code, seat, owner }) => {
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, locale: uiLocale, reducedMotion: 'reduce' });
+  const initialize = (context, player) => context.addInitScript(({ key, token, server, code, seat, owner, uiLocale }) => {
     localStorage.setItem(key, JSON.stringify(token));
     localStorage.setItem(`maydan:online:${server}:${code}`, JSON.stringify(seat));
     localStorage.setItem(`maydan:online:${server}:roomOwner:${code}`, JSON.stringify(owner));
-  }, { key: environmentStorageKey('maydan:account:', app.url) + 'session', token: host.authorization, server: app.url, code, seat: { id: host.id, token: host.token }, owner: host.accountId });
+    localStorage.setItem('maydan:platform:settings', JSON.stringify({ uiLocale, soundOn: false, musicOn: false, reducedMotion: true }));
+  }, { key: environmentStorageKey('maydan:account:', app.url) + 'session', token: player.authorization, server: app.url, code, seat: { id: player.id, token: player.token }, owner: player.accountId, uiLocale });
+  await initialize(context, host);
   const page = await context.newPage(), errors = [], checks = [];
   page.on('pageerror', error => errors.push(error.message));
-  const output = `.cache/mafia-layout-${process.env.MAFIA_E2E_ENGINE === 'webkit' ? 'webkit' : 'chromium'}`;
+  const output = `.cache/mafia-layout-${process.env.MAFIA_E2E_ENGINE === 'webkit' ? 'webkit' : 'chromium'}-${uiLocale}`;
   await mkdir(output, { recursive: true });
-  const settle = () => page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
-  async function controls(notice, width, height) {
+  async function controls(notice, width, height, target = page, hostControls = true) {
+    const page = target;
     await page.locator('.mafia-lobby-players').evaluate(players => { players.scrollTop = 0; players.scrollLeft = 0; });
-    await settle();
-    const values = await page.evaluate(() => {
+    await page.evaluate(() => document.fonts.ready);
+    await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    const values = await page.evaluate(hostControls => {
       const result = { width: innerWidth, height: innerHeight, overflow: document.documentElement.scrollWidth > innerWidth + 1, notice: document.documentElement.hasAttribute('data-startup-background-visible'), floatingLauncherVisible: [...document.querySelectorAll('.lamma-launcher')].some(element => getComputedStyle(element).display !== 'none'), controls: [] };
-      for (const id of ['message-input', 'send', 'ready', 'start', 'exit']) {
+      for (const id of ['message-input', 'send', 'ready', ...(hostControls ? ['start', 'content-language'] : []), 'exit']) {
         const element = document.querySelector(`[data-design-id="${id}"]`), rect = element.getBoundingClientRect();
         const points = [[.5,.5],[.25,.25],[.75,.75]].map(([x,y]) => { const hit = document.elementFromPoint(rect.x + rect.width*x, rect.y + rect.height*y); return hit === element || element.contains(hit) || element.disabled && getComputedStyle(element).pointerEvents === 'none' && hit === element.parentElement; });
         result.controls.push({ id, x: rect.x, y: rect.y, width: rect.width, height: rect.height, bottom: rect.bottom, disabled: !!element.disabled, hit: points.every(Boolean), hits: points });
       }
+      const heading = document.querySelector('.mafia-lobby-screen .mafia-heading'), copy = heading.firstElementChild, badge = heading.querySelector('.mafia-voice-badge');
+      const copyBox = copy.getBoundingClientRect(), badgeBox = badge.getBoundingClientRect(), rtl = getComputedStyle(heading).direction === 'rtl';
+      result.headerCopyClear = rtl ? copyBox.left >= badgeBox.right - .5 : copyBox.right <= badgeBox.left + .5;
+      result.kickerClippedWithinCell = getComputedStyle(copy.querySelector('.mafia-kicker')).display === 'block';
+      const language = document.querySelector('.mafia-lobby-language select');
+      if (language) {
+        const style = getComputedStyle(language), measure = document.createElement('canvas').getContext('2d');
+        measure.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+        result.languageText = { text: language.selectedOptions[0].text, measuredWidth: measure.measureText(language.selectedOptions[0].text).width, availableWidth: language.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight) - 26 };
+      }
       return result;
-    });
+    }, hostControls);
     await page.screenshot({ path: `${output}/${notice}-${width}x${height}.png` }); checks.push({ notice, width, height, ...values });
     assert.equal(values.floatingLauncherVisible, false, 'Mafia hides only the redundant global launcher');
     assert.equal(values.overflow, false, `${notice} ${width}: horizontal overflow`);
+    assert.ok(values.headerCopyClear && values.kickerClippedWithinCell, `${notice} ${width}: room title/kicker stay in their own grid cell`);
+    if (values.languageText) assert.ok(values.languageText.measuredWidth <= values.languageText.availableWidth, `${notice} ${width}: selected language is fully readable ${JSON.stringify(values.languageText)}`);
     for (const control of values.controls) {
-      assert.ok(control.width >= 44 && control.height >= 44, `${notice} ${width}: touch target ${JSON.stringify(control)}`);
+      assert.ok(control.width >= 48 && control.height >= 48, `${notice} ${width}: touch target ${JSON.stringify(control)}`);
       assert.ok(control.y >= 0 && control.bottom <= height + 1 && control.hit, `${notice} ${width}: obscured control ${JSON.stringify(control)}`);
     }
-    assert.equal(values.controls.find(control => control.id === 'start').disabled, false, 'the real ready host can start');
+    if (hostControls) assert.equal(values.controls.find(control => control.id === 'start').disabled, false, 'the real ready host can start');
     assert.equal(await page.locator('[data-design-id="player-seat"]').count(), 12);
     const lastCard = await page.locator('[data-design-id="player-seat"]').last().evaluate(card => {
       const players = card.closest('.mafia-lobby-players'), grid = card.closest('.mafia-seats');
@@ -277,19 +295,36 @@ test('real host lobby controls remain hit-testable with the startup notice in bo
   }
   try {
     await page.goto(`${webOrigin}/#/room/${code}`);
-    await page.waitForFunction(() => { const button = [...document.querySelectorAll('.splash button')].find(node => !node.disabled && node.textContent.includes('الدخول بالصور المتاحة')); button?.click(); return !document.querySelector('.splash') && document.querySelector('[data-design-screen="online.mafia.lobby"]'); }, null, { timeout: 30000 });
+    await page.waitForFunction(() => { document.querySelector('.splash .startup-download-actions button:last-child:not(:disabled)')?.click(); return !document.querySelector('.splash') && document.querySelector('[data-design-screen="online.mafia.lobby"]'); }, null, { timeout: 30000 });
+    await page.waitForFunction(locale => document.documentElement.lang === locale, uiLocale);
+    assert.equal(await page.locator('.mafia-lobby-language select').inputValue(), uiLocale);
+    assert.equal(await page.locator('.mafia-lobby-language select').getAttribute('aria-label'), uiLocale === 'en' ? 'Match language' : 'لغة المباراة');
     await until(() => bots.every(client => client.state?.members.every(member => member.connected && member.ready)), 'layout host and bots ready');
     await page.waitForFunction(() => document.documentElement.hasAttribute('data-startup-background-visible'));
     for (const [width, height] of [[320,568],[390,844],[430,932],[844,390]]) { await page.setViewportSize({ width, height }); await page.evaluate(() => document.activeElement?.blur()); await controls('notice-visible', width, height); }
     await page.setViewportSize({ width: 390, height: 490 }); await page.locator('[data-design-id="message-input"]').fill('مسودة لا تُرسل');
     await page.waitForFunction(() => !document.documentElement.hasAttribute('data-startup-background-visible')); await controls('keyboard-focused',390,490);
     await page.locator('[data-design-id="message-input"]').fill(''); await page.evaluate(() => document.activeElement?.blur());
-    await page.waitForFunction(() => document.documentElement.hasAttribute('data-startup-background-visible')); await page.getByRole('button', { name: 'إخفاء حالة الصور', exact: true }).click();
+    await page.waitForFunction(() => document.documentElement.hasAttribute('data-startup-background-visible')); await page.locator('.startup-background-close').click();
     await page.waitForFunction(() => !document.querySelector('.startup-background'));
     for (const [width, height] of [[320,568],[390,844],[430,932],[844,390]]) { await page.setViewportSize({ width, height }); await controls('notice-closed', width, height); }
+    // Reconnect an existing seat in a second real browser. A guest sees the same
+    // content identity but cannot change it; its composer/ready/exit remain usable.
+    bots.at(-1).stop();
+    const guestContext = await browser.newContext({ viewport: { width: 320, height: 568 }, locale: uiLocale, reducedMotion: 'reduce' });
+    try {
+      await initialize(guestContext, people.at(-1));
+      const guest = await guestContext.newPage(); guest.on('pageerror', error => errors.push(error.message));
+      await guest.goto(`${webOrigin}/#/room/${code}`);
+      await guest.waitForFunction(() => { document.querySelector('.splash .startup-download-actions button:last-child:not(:disabled)')?.click(); return !document.querySelector('.splash') && document.querySelector('[data-design-screen="online.mafia.lobby"]'); }, null, { timeout: 30000 });
+      assert.equal(await guest.locator('.mafia-lobby-language select').count(), 0);
+      assert.equal(await guest.locator('.mafia-lobby-language strong').getAttribute('lang'), uiLocale);
+      assert.equal(await guest.locator('.mafia-lobby-language strong').innerText(), uiLocale === 'en' ? 'English' : 'العربية');
+      for (const [width, height] of [[320,568],[844,390]]) { await guest.setViewportSize({ width, height }); await controls('guest-readonly', width, height, guest, false); }
+    } finally { await guestContext.close(); }
     assert.deepEqual(errors, []);
   } finally {
-    await writeFile(`${output}/results.json`, JSON.stringify({ checks, errors, realApp: true, realLocalRoom: true, realSplash: true, physicalIPhone: false }, null, 2));
+    await writeFile(`${output}/results.json`, JSON.stringify({ uiLocale, contentLocale: uiLocale, checks, errors, realApp: true, realLocalRoom: true, realSplash: true, physicalIPhone: false }, null, 2));
     await context.close();
   }
 });

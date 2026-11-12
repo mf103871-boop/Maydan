@@ -768,7 +768,14 @@ html[data-startup-background-visible] .mafia-noir.mafia-shell.has-player-rail:no
   border-color: #a45ca6;
 }
 .mafia-noir.mafia-density.mafia-lobby-screen .mafia-heading { grid-template-columns: minmax(0,1fr) auto auto auto; text-align: start; }
+.mafia-lobby-screen .mafia-heading > div { min-width: 0; }
+.mafia-lobby-screen .mafia-heading .mafia-kicker { display: block; max-width: 100%; }
 .mafia-noir.mafia-density.mafia-lobby-screen .mafia-heading h1 { font-size: clamp(16px, 5vw, 22px); }
+.mafia-lobby-language { min-width: 0; flex: 0 0 auto; grid-area: language; }
+.mafia-lobby-language > .online-field { display: grid; grid-template-columns: minmax(0,1fr) minmax(112px,1fr); align-items: center; gap: 3px 8px; }
+.mafia-lobby-language > .online-field > span { min-width: 0; overflow-wrap: anywhere; }
+.mafia-lobby-language > .online-field > :is(select,strong) { display: flex; align-items: center; min-height: 48px; padding: 6px 10px; }
+.mafia-lobby-language > .online-field > small { grid-column: 1 / -1; line-height: 1.35; }
 .mafia-lobby-players { min-height: 0; flex: 0 0 auto; overflow: auto; scrollbar-width: thin; }
 .mafia-noir.mafia-density.mafia-lobby-screen .mafia-lobby-players .mafia-seats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .mafia-noir.mafia-density.mafia-lobby-screen .mafia-seat { min-height: 59px; padding-block: 6px; }
@@ -799,15 +806,24 @@ html[data-startup-background-visible] .mafia-noir.mafia-shell.has-player-rail:no
   .mafia-noir .mafia-directory-paper .mafia-directory-filters > label:nth-child(3) { grid-column: auto; grid-row: auto; }
 }
 @media (max-height: 600px) {
-  .mafia-lobby-players { max-height: 125px; }
+  .mafia-lobby-screen .mafia-heading h1,
+  .mafia-lobby-screen .mafia-heading .mafia-kicker { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  /* Keep the explanatory copy available to assistive technology without
+     reserving another row above the chat on a short viewport. Status/errors
+     remain visible; the labelled 48px language control is always in the lobby. */
+  .mafia-lobby-language > .online-field > small:not([role]) { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .mafia-noir.mafia-density.mafia-lobby-screen .mafia-chat-messages { padding-block: 2px; }
+  .mafia-lobby-players { max-height: 84px; }
   .mafia-lobby-screen:has(.mafia-chat input:focus) .mafia-lobby-players { max-height: 61px; }
 }
 @media (orientation: landscape) and (max-height: 550px) {
   .mafia-noir.mafia-density.mafia-lobby-screen {
     grid-template-rows: auto minmax(0,1fr) auto auto;
-    grid-template-areas: "heading seats" "activity seats" "voice seats" "controls controls";
+    grid-template-areas: "heading language" "activity seats" "voice seats" "controls controls";
   }
-  .mafia-noir.mafia-density.mafia-lobby-screen > .mafia-player-rail { grid-area: controls; }
+  .mafia-noir.mafia-density.mafia-lobby-screen > .mafia-player-rail { grid-area: controls; display: flex; align-items: center; gap: 8px; }
+  .mafia-lobby-screen > .mafia-player-rail .mafia-rail-note { flex: 1; margin: 0; }
+  .mafia-lobby-screen > .mafia-player-rail .mafia-lobby-ready { flex: 2; }
   .mafia-lobby-screen > .mafia-lobby-players { grid-area: seats; max-height: 100%; }
   .mafia-noir.mafia-density.mafia-lobby-screen .mafia-lobby-players .mafia-seats { display: grid; }
   .mafia-lobby-screen > .mafia-lobby-voice-note { display: none; }
