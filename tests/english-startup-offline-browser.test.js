@@ -9,6 +9,8 @@ import { build } from 'esbuild';
 import { chromium, webkit } from 'playwright';
 import { ROOT, DIST, esbuildOptions, renderHtml, renderServiceWorker, audioCueAssets } from '../scripts/lib.mjs';
 import { SAMPLE_BANK } from '../src/shared/fx/sample-bank.js';
+import { LOCAL_TERMS_KEY } from '../src/shared/legal/acceptance.js';
+import { termsIdentity } from '../src/shared/legal/terms.js';
 
 function loopbackPackageInputs() {
   // This fixture deliberately serves the public, same-origin shell. The native
@@ -117,7 +119,21 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
   }
   const beforeRetry = englishReads; blockEnglish = false;
   await page.getByRole('button', { name: 'Try again', exact: true }).click();
+  // The actual first-use boundary now precedes Home. Make the real explicit
+  // guest choice; never seed acceptance or bypass the production boundary.
+  const consent = page.locator('.terms-consent');
+  await consent.getByRole('heading', { name: 'Before we play', exact: true }).waitFor();
+  const choice = consent.getByRole('checkbox'), accept = consent.getByRole('button', { name: 'Agree and continue', exact: true });
+  assert.equal(await choice.isChecked(), false);
+  assert.equal(await accept.isDisabled(), true);
+  assert.equal(await page.locator('button[data-game]').count(), 0);
+  await choice.check();
+  await accept.click();
   await page.locator('button[data-game="ersomha"]').waitFor();
+  const acceptance = await page.evaluate(key => JSON.parse(localStorage.getItem(key)), LOCAL_TERMS_KEY);
+  assert.deepEqual({ termsVersion: acceptance.termsVersion, locale: acceptance.locale, documentHash: acceptance.documentHash }, termsIdentity('en'));
+  assert.equal(acceptance.accepted, true);
+  assert.ok(Number.isSafeInteger(acceptance.acceptedAtClient) && acceptance.acceptedAtClient > 0);
   assert.equal(await page.locator('html').getAttribute('lang'), 'en');
   assert.equal(await page.locator('html').getAttribute('dir'), 'ltr');
   assert.ok(englishReads > beforeRetry);
@@ -127,6 +143,8 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
   await assert.rejects(fetch(origin + '/network-proof'), /fetch failed/);
   await page.reload();
   await page.locator('button[data-game="ersomha"]').waitFor();
+  assert.equal(await page.locator('.terms-consent').count(), 0, 'the explicit local choice survives the actual offline reload');
+  assert.deepEqual(await page.evaluate(key => JSON.parse(localStorage.getItem(key)), LOCAL_TERMS_KEY), acceptance);
   assert.equal(await page.locator('html').getAttribute('lang'), 'en');
   assert.equal(await page.getByText('Could not load English. Please try again.', { exact: true }).count(), 0);
   assert.equal(englishReads, beforeOffline, 'English dictionary must survive document reload without a network response');

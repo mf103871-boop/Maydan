@@ -8,9 +8,12 @@ import { SAMPLE_BANK } from '../../src/shared/fx/sample-bank.js';
 import { MUSIC_BANK } from '../../src/shared/fx/music-bank.js';
 import { configOf } from '../../server/design/db.mjs';
 import { routeRequest } from '../../server/worker.mjs';
+import { handleLegalRequest } from '../../server/legal/terms.mjs';
+import { acceptTermsIfShown } from '../../tests/helpers/terms-consent.mjs';
 const BASE = process.env.E2E_BASE_URL || 'http://localhost:3000';
 const PREVIEW_URL = new URL(BASE);
 const IS_LOCAL_PREVIEW = PREVIEW_URL.protocol === 'http:' && ['localhost', '127.0.0.1', '[::1]'].includes(PREVIEW_URL.hostname);
+function assertLocalGuest(request){if(!IS_LOCAL_PREVIEW||request.method()!=='POST'||request.headers().authorization)throw new Error('The loopback legal fixture accepts guest POST only');}
 const UI_CONFIG_URL = new URL('/api/ui-config?schemaVersion=1&registryVersion=1', BASE).href;
 const DEFAULT_UI_CONFIG = JSON.stringify(await configOf({}));
 const CONTENT_CAPABILITIES_URL = new URL('/api/content/capabilities', BASE).href;
@@ -88,6 +91,13 @@ try {
       return route.fulfill({ status: LOCAL_CONTENT_CAPABILITIES.status,
         headers: Object.fromEntries(LOCAL_CONTENT_CAPABILITIES.headers), body: LOCAL_CONTENT_CAPABILITIES_BODY });
     });
+    // File-only loopback has no account DB. Use the actual guest acceptance and
+    // HMAC implementation with a synthetic fixture key for online directory UI.
+    if(IS_LOCAL_PREVIEW)await page.route(new URL('/api/legal/accept',BASE).href,async route=>{
+      const input=route.request();assertLocalGuest(input);
+      const response=await handleLegalRequest(new Request(input.url(),{method:input.method(),headers:input.headers(),body:input.postData()}),{SESSION_SECRET:'loopback-smoke-guest-terms-fixture'});
+      await route.fulfill({status:response.status,headers:Object.fromEntries(response.headers),body:await response.text()});
+    });
     page.setDefaultTimeout(12000);
     const cueCount = () => page.evaluate(() => window.__cues.length);
     // tap(): clicks and asserts what the tap delegate produced — at least one cue for a plain
@@ -115,6 +125,7 @@ try {
       await page.goto(`${BASE}/?smoke=${++navigation}#/${route}`, { waitUntil: 'load' });
       await page.locator('.splash').waitFor({ state: 'detached' });
       await page.locator('.game-loading').waitFor({ state: 'detached' });
+      await acceptTermsIfShown(page,{required:false});
       await page.locator('.screen, .m-root').first().waitFor({ state: 'visible' });
     };
     const overflow = async (label) => {

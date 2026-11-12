@@ -1,9 +1,10 @@
 // Public counterpart of Privacy in src/platform/screens/Legal.jsx. Keep its
 // policy paragraphs and date aligned; the contract test checks that copy.
 // Data-type names follow ios/PRIVACY-DISCLOSURES.md and PrivacyInfo.xcprivacy.
+import { OPERATIONAL_PRIVACY } from '../../src/shared/legal/privacy-operations.js';
 const ORIGIN = 'https://maydan-game.mf103871.workers.dev';
 const SUPPORT_EMAIL = 'mf103871@gmail.com';
-const UPDATED = '2026-11-11';
+const UPDATED = '2026-11-12';
 const DATA_TYPES = [
   ['Name', 'الاسم', 'اسم الحساب واسم العرض وأسماء اللاعبين.'],
   ['EmailAddress', 'البريد الإلكتروني', 'البريد الذي يشاركه مزوّد تسجيل الدخول، بما فيه بريد Apple الوسيط.'],
@@ -112,6 +113,7 @@ const HTML = `<!doctype html>
     <p class="updated">آخر تحديث: <time datetime="${UPDATED}" dir="ltr">${UPDATED}</time></p>
   </header>
   <main aria-labelledby="privacy-title">
+    <section aria-labelledby="operations-title"><h2 id="operations-title">المشغّل والموافقة ورصد التشغيل</h2>${OPERATIONAL_PRIVACY.ar.map(text=>`<p>${text}</p>`).join('')}</section>
     ${POLICY}
     <section aria-labelledby="data-types-title">
       <h2 id="data-types-title">ملخص أنواع البيانات</h2>

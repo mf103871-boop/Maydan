@@ -2,6 +2,7 @@
 import { routeRequest, scheduled } from './worker.mjs';
 import { privacyPageResponse } from './legal/privacy.mjs';
 import { supportPageResponse } from './legal/support.mjs';
+import { termsPageResponse } from './legal/terms.mjs';
 import { studioSiteResponse } from './design/site.mjs';
 export { Room, RequestLimiter, SocialHub, LammaJobs } from './worker.mjs';
 
@@ -60,6 +61,7 @@ export default {
   async fetch(request, env, context) {
     const url = new URL(request.url);
     if (url.pathname === '/app-ads.txt') return appAdsResponse(request, env);
+    if (['/api/legal/terms','/api/legal/terms/'].includes(url.pathname)) return termsPageResponse(request.method,url.searchParams.get('lang')||'ar');
     if(url.pathname==='/studio' || url.pathname.startsWith('/studio/') || url.pathname==='/api/studio' || url.pathname.startsWith('/api/studio/')){
       const studio=await studioSiteResponse(request,env);if(studio)return studio;
     }

@@ -29,6 +29,9 @@ import { freeBadeehaRoom } from './rewarded/badeeha-free.mjs';
 import { routeTutorials } from './tutorials/router.mjs';
 import { routeOnlineDirectory, cleanupOnlineDirectory } from './online-directory.mjs';
 import { withRequestMetrics } from './performance.mjs';
+import { routeCreator } from './creator/router.mjs';
+import { pruneCreatorAnalytics } from './creator/db.mjs';
+import { handleLegalRequest, requireCurrentTerms } from './legal/terms.mjs';
 export { LammaJobs } from './lamma/jobs.mjs';
 export { SocialHub } from './social/realtime.mjs';
 export { Room };
@@ -39,7 +42,8 @@ export const LIMIT_WINDOWS = { create: 600_000, join: 60_000, leave: 60_000, soc
   auth: 600_000, me: 60_000, billing: 600_000, trial: 60_000, socialRead: 60_000, socialWrite: 60_000,
   socialReadIP: 60_000, socialWriteIP: 60_000,
   profileRead: 60_000, profileWrite: 60_000, profileImage: 60_000, webhook: 60_000,
-  designRead: 60_000, designWrite: 60_000, designWriteIP: 60_000 };
+  designRead: 60_000, designWrite: 60_000, designWriteIP: 60_000,
+  creatorReadIP:60000,creatorPresenceIP:60000,creatorRead:60000,creatorPresence:60000,legal:60000 };
 // حدّ كل نوع داخل نافذته. مسارات الحسابات أقلّ سخاءً من قراءة الحالة لأنها تكتب أو تنادي مزوّدًا.
 // `webhook` سخيّ عمدًا (إشعارات آبل قد تصل دفعة)، لكنه يمنع سيلًا من عنوان واحد
 // على مسار عام يتحقق من توقيع قبل أي مصادقة.
@@ -49,7 +53,8 @@ export const LIMITS = { create: 8, join: 40, leave: 100, socket: 100,
   // the existing read quota per authenticated account (writes also have D1 quotas).
   socialReadIP: 2400, socialWriteIP: 1200,
   profileRead: 240, profileWrite: 30, profileImage: 600, webhook: 300,
-  designRead: 1200, designWrite: 120, designWriteIP: 1200 };
+  designRead: 1200, designWrite: 120, designWriteIP: 1200,
+  creatorReadIP:1200,creatorPresenceIP:2400,creatorRead:30,creatorPresence:6,legal:60 };
 export class RequestLimiter {
   constructor(ctx) { this.ctx = ctx; }
   async fetch(request) {
@@ -119,7 +124,7 @@ async function routeMeasuredRequest(request, env, context) {
   if (!origin && !isPublicAccountPath(url.pathname) && !publicImage && !rewardedCallback) return json({ error: 'ORIGIN' }, 403);
   const headers = origin ? { 'access-control-allow-origin': origin, vary: 'Origin',
     'access-control-allow-methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
-    'access-control-allow-headers': 'Content-Type, Authorization, Range, X-Design-Name, X-Maydan-Gameplay-Capability',
+    'access-control-allow-headers': 'Content-Type, Authorization, Range, X-Design-Name, X-Maydan-Gameplay-Capability, X-Maydan-Terms',
     'access-control-expose-headers': 'x-maydan-session',
     'access-control-max-age': '600' } : {};
   if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
@@ -146,8 +151,19 @@ async function routeMeasuredRequest(request, env, context) {
   }
   if (rewardedCallback) return rewardedWebhook(request, env, url, charge);
   try {
+    const termsEnabled=String(env.TERMS_ENFORCEMENT_ENABLED)==='1';
+    const admission=request.method==='POST' && (url.pathname==='/api/rooms' || /^\/api\/rooms\/\d{6}\/join$/.test(url.pathname)
+      || /^\/api\/rooms\/\d{6}\/observe(?:\/promote)?$/.test(url.pathname)
+      || ['/api/matchmaking/join','/api/mafia/ranked/queue/join','/api/creator/presence'].includes(url.pathname));
+    if (url.pathname==='/api/creator/presence' && request.method==='POST' || termsEnabled && admission) {
+      const principal=env.DB ? await readSession(env,request,{rotate:false}) : null;
+      await requireCurrentTerms(env,principal?.user.id,{request});
+    }
+    if (['/api/legal/status','/api/legal/accept'].includes(url.pathname)) await charge('legal');
     // الحسابات أولًا: مساراتها تحت /api/ ولا تتقاطع مع تعبير الغرف.
-    response = await routeRewarded(request, env, url)
+    response = await handleLegalRequest(request,env)
+      || await routeCreator(request,env,url,charge)
+      || await routeRewarded(request, env, url)
       || await routePlus(request, env, url, charge)
       || await routeTutorials(request, env, url, charge)
       || await routeOnlineDirectory(request, env, url, charge)
@@ -237,6 +253,7 @@ async function routeMeasuredRequest(request, env, context) {
 }
 // Cron Trigger (wrangler triggers.crons): تنظيف الجلسات ورموز الدخول وسجل webhooks.
 export async function scheduled(event, env) {
+  if (env.DB) await pruneCreatorAnalytics(env,Date.now());
   await cleanupOnlineDirectory(env);
   await cleanupMafia(env,Date.now(),reportRetentionMs(env));
   await cleanupLamma(env,Date.now(),messageRetentionMs(env),reportRetentionMs(env));

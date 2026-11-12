@@ -12,12 +12,13 @@ import { createHash } from 'node:crypto';
 import { build } from 'esbuild';
 import { chromium } from 'playwright';
 import { BRAND_ASSET_DIR, mediaVersions } from '../lib.mjs';
+import { acceptTermsIfShown } from '../../tests/helpers/terms-consent.mjs';
 
 const ROOT = fileURLToPath(new URL('../..', import.meta.url));
 const DIST = path.join(ROOT, 'dist');
 const OUT = path.resolve(process.argv[2] || path.join(os.tmpdir(), 'maydan-e2e', 'startup-images'));
 const hash = (bytes) => createHash('sha256').update(bytes).digest('hex');
-const results = [], errors = [], requests = [], contexts = [], stylesheetResponses = [];
+const results = [], errors = [], requests = [], contexts = [], stylesheetResponses = [], termsChoices = [];
 const pageRequests = new WeakMap();
 let browser, server, currentPage, base, gateRelease;
 let scenario = 'prepare', gateEnabled = true, failedPath = null, serviceWorkerHeld = true;
@@ -104,6 +105,7 @@ async function newPage(context) {
 }
 async function ready(page, screen = '.home-screen') {
   await page.locator('.splash').waitFor({ state: 'detached', timeout: 10000 });
+  if (await acceptTermsIfShown(page, { required: false, locale: 'ar' })) termsChoices.push({ scenario, screen, explicitUncheckedChoice: true });
   await page.locator(screen).waitFor({ timeout: 10000 });
   await page.waitForFunction(() => [...document.querySelectorAll('link[rel="stylesheet"]')].every(link => !!link.sheet));
 }
@@ -216,7 +218,7 @@ try {
   await ready(page);
   const autoEntryMs = Date.now() - firstLaunchAt;
   const whileHeld = await layout(page);
-  check('automatic menu entry takes less than five seconds while image responses remain held', gateEnabled && autoEntryMs < 5000 && whileHeld.mountedGame && !whileHeld.splash, { autoEntryMs, ...whileHeld });
+  check('menu entry with explicit first-use consent takes less than five seconds while image responses remain held', gateEnabled && autoEntryMs < 5000 && whileHeld.mountedGame && !whileHeld.splash, { autoEntryMs, ...whileHeld });
   check('pending image download remains visible and nonblocking after entry', await page.locator('.startup-background').isVisible() && whileHeld.background.includes('بالخلفية'), whileHeld);
   const bankKeys = new Set(bankImages.map(entry => entry.key));
   const eagerBankRequests = requests.filter(request => request.image && bankKeys.has(request.key));
@@ -321,6 +323,7 @@ try {
   check('repaired shell permits real service-worker installation and control', await failurePage.evaluate(() => !!navigator.serviceWorker.controller));
   await screenshot(failurePage, 'retry-success');
   check('no browser JavaScript errors in any scenario', errors.length === 0, errors);
+  check('both fresh contexts explicitly accept terms once and later launches retain the choice', termsChoices.length === 2 && termsChoices[0].scenario === 'first-launch-delayed-menu' && termsChoices[1].scenario === 'injected-single-failure', termsChoices);
   check('actual packaged stylesheets load with successful CSS responses', stylesheetResponses.length > 0 && stylesheetResponses.every(response => response.status === 200 && /^text\/css(?:;|$)/i.test(response.contentType || '')), stylesheetResponses);
   check('dist was unchanged during regression run', sourceHashes.html === hash(await fs.readFile(path.join(DIST, 'index.html'))) && sourceHashes.serviceWorker === hash(await fs.readFile(path.join(DIST, 'sw.js'))));
 } catch (error) {
@@ -333,7 +336,7 @@ try {
   await fs.writeFile(path.join(OUT, 'results.json'), JSON.stringify({
     startedAt, completedAt: new Date().toISOString(), sourceHashes,
     scope: 'Real unmodified dist and real headless Chromium; 10 startup shell images verified by exact bytes/cache/offline decode/retry. The separate 510-image game bank is checked for distinct real dist files, not eagerly downloaded on Home. Server delay/503 only; SW script held during queue-owner probes then real SW installation/offline behavior checked. Foreground DOM images are distinguished from elective fetches. External requests aborted; no mocked source/image/account responses or payment/production requests.',
-    expectedImages: expected, separateBankImages: bankImages, results, errors, requests, stylesheetResponses, cachedAfterFirst, cachedAfterRetry,
+    expectedImages: expected, separateBankImages: bankImages, results, errors, requests, stylesheetResponses, termsChoices, cachedAfterFirst, cachedAfterRetry,
     summary: { passed: results.filter((r) => r.ok).length, failed: results.filter((r) => !r.ok).length, total: results.length },
   }, null, 2) + '\n');
 }

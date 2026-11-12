@@ -12,6 +12,7 @@ import { startLocalServer } from '../../server/local.mjs';
 import { esbuildOptions, renderHtml, readPkg, mediaVersions } from '../../scripts/lib.mjs';
 import { RoomClient, newCredentials } from '../../src/online/client.js';
 import { ROOM_CAPABILITIES } from '../../src/online/shared.js';
+import { acceptTermsIfShown } from '../helpers/terms-consent.mjs';
 
 let web, app, browser, webOrigin, html;
 const guests = [];
@@ -22,7 +23,7 @@ before(async () => {
   });
   await new Promise((resolve) => web.listen(0, '127.0.0.1', resolve));
   webOrigin = `http://127.0.0.1:${web.address().port}`;
-  app = await startLocalServer({ port: 0, origins: webOrigin, vars: {} });
+  app = await startLocalServer({ port: 0, origins: webOrigin, vars: {SESSION_SECRET:'room-update-guest-terms-fixture'} });
   process.env.MAYDAN_ROOMS_URL = app.url;
   const pkg = await readPkg();
   const result = await build(esbuildOptions({ minify: false, version: pkg.version, media: await mediaVersions() }));
@@ -88,6 +89,7 @@ test('an updated room server keeps the seat and the reloaded page rejoins the sa
     return !document.querySelector('.splash') && document.querySelector('[data-design-screen]');
   }, null, { timeout: 20_000 });
   await enter();
+  await acceptTermsIfShown(page);
   // Quick reactions both ways while waiting in the lobby.
   const heard = []; const unsubscribe = guests[0].subscribeReactions((event) => heard.push(event));
   await page.getByRole('button', { name: 'أرسل 😂' }).click();

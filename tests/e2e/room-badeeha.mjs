@@ -9,6 +9,7 @@ import { build } from 'esbuild';
 import { chromium } from 'playwright';
 import { startLocalServer } from '../../server/local.mjs';
 import { esbuildOptions, renderHtml, readPkg, mediaVersions } from '../../scripts/lib.mjs';
+import { acceptTermsIfShown } from '../helpers/terms-consent.mjs';
 
 let web, app, browser, webOrigin, html;
 before(async () => {
@@ -18,7 +19,7 @@ before(async () => {
   });
   await new Promise((resolve) => web.listen(0, '127.0.0.1', resolve));
   webOrigin = `http://127.0.0.1:${web.address().port}`;
-  app = await startLocalServer({ port: 0, origins: webOrigin, vars: {} });
+  app = await startLocalServer({ port: 0, origins: webOrigin, vars: {SESSION_SECRET:'badeeha-guest-terms-fixture'} });
   process.env.MAYDAN_ROOMS_URL = app.url;
   const pkg = await readPkg();
   const result = await build(esbuildOptions({ minify: false, version: pkg.version, media: await mediaVersions() }));
@@ -42,6 +43,7 @@ async function phone(hash, initialize) {
     if (button) button.click();
     return !document.querySelector('.splash') && document.querySelector('[data-design-screen]');
   }, null, { timeout: 20_000 });
+  await acceptTermsIfShown(page,{required:false});
   return { context, page, errors };
 }
 const answer = (page) => page.locator('.badeeha-answer').textContent();

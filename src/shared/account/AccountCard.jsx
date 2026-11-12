@@ -29,6 +29,8 @@ export function subscriptionLine(me, premium, promo = null, now = Date.now()) {
   const info = (me && me.premium) || {};
   // اشتراك الخادم يُذكر فقط إن كان ساريًا؛ منتهٍ + رمز على الجهاز = «برمز هدية».
   const serverActive = isPremium(me, now);
+  if (serverActive && info.creatorLifetime === true) return getUiLocale() === 'en'
+    ? 'Maydan creator · Lifetime Plus' : 'صانع ميدان · بلس دائم';
   const source = serverActive ? info.source : (promo ? 'promo' : null);
   // رمز الهدية دائم عمليًا: لا يُعرض له تاريخ انتهاء.
   const until = source === 'promo' ? '' : formatUntil(info.until);

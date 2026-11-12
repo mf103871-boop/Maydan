@@ -16,8 +16,8 @@ test('coverage inventory preserves every node and exact conditional explanation 
   // A deliberate coverage/content change must update this semantic baseline;
   // whitespace, constant names and sharing structure do not affect it.
   const semantics = JSON.stringify({ DESIGN_CONDITIONAL_NODE_REASONS, DESIGN_RENDERED_NODE_IDS });
-  // Direction B adds content/UI language, connected friends and profile disclosures.
-  assert.equal(createHash('sha256').update(semantics).digest('hex'), '3d321a886059275aaca721a550bb50e0c11d2d7975160cd156a514494a06acdd');
+  // Direction B plus the server-granted, owner-only Creator management action.
+  assert.equal(createHash('sha256').update(semantics).digest('hex'), 'c076fa64db44fa8710bee389d02f95ef25a2bcd726ec516df076719183952422');
 });
 
 test('semantic scene registry has stable unique identities and the eight actual games', () => {
@@ -38,6 +38,16 @@ test('semantic scene registry has stable unique identities and the eight actual 
   assert.equal(retiredSetup.retired,true,'removed saved-session controls remain compatibility records only');
   assert.match(retiredSetup.coverageReason,/Retired saved-session setup disclosure/);
   assert.equal(DESIGN_RENDERED_NODE_IDS['online.entry'].includes('setup-presets-toggle'),false,'no placeholder preset control is claimed as rendered');
+});
+
+test('creator dashboard remains a protected conditional management action, never a public fixture control', () => {
+  const control = getNodeDefinition('settings', 'creator-analytics');
+  assert.equal(control.kind, 'button');
+  assert.equal(control.required, true);
+  assert.equal(control.editableText, false);
+  assert.equal(control.editableIcon, false);
+  assert.match(control.coverageReason, /authenticated account response grants the server creator capability/);
+  assert.equal(DESIGN_RENDERED_NODE_IDS.settings.includes('creator-analytics'), false);
 });
 
 test('local UI rebuild preserves retired saved-design IDs while protecting real mode and safety actions', () => {

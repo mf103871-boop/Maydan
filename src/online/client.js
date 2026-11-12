@@ -1,6 +1,7 @@
 import { GAME_PROTOCOLS, ROOM_CAPABILITIES, validateServerUrl } from './shared.js';
 import { supportsMafiaRuleset } from './mafia-shared.js';
 import { createMafiaClientMetrics } from './mafia-metrics.mjs';
+import { getGuestTermsReceipt } from '../shared/legal/acceptance.js';
 export class ClientError extends Error {
   constructor(code) { super(code); this.code = code; }
 }
@@ -61,7 +62,8 @@ export async function post(server, path, data, options = fetch) {
   const timeout = setTimeout(() => controller.abort(), 15_000);
   try {
     if (data?.contentLocale === 'en') await requireEnglishServer(server, {fetchImpl,signal:controller.signal});
-    const response = await fetchImpl(`${server}${path}`, { method: 'POST', headers: { 'content-type': 'application/json', ...(extraHeaders || {}) },
+    const termsReceipt = getGuestTermsReceipt(server);
+    const response = await fetchImpl(`${server}${path}`, { method: 'POST', headers: { 'content-type': 'application/json', ...(termsReceipt ? {'x-maydan-terms':termsReceipt} : {}), ...(extraHeaders || {}) },
       body: JSON.stringify(data), signal: controller.signal, credentials: 'omit', cache: 'no-store' });
     let result;
     try { result = await response.json(); } catch { throw new ClientError('NETWORK'); }
