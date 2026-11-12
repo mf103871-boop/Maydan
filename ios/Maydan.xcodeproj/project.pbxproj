@@ -6,6 +6,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A10000000000000000000014 /* NativeLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000016 /* NativeLocalization.swift */; };
+		A10000000000000000000015 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D10000000000000000000004 /* InfoPlist.strings */; };
 		A10000000000000000000013 /* DrawingOrientationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000015 /* DrawingOrientationPolicy.swift */; };
 		A10000000000000000000012 /* NativeAudioPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000014 /* NativeAudioPolicy.swift */; };
 		A10000000000000000000010 /* AppUpdatePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000012 /* AppUpdatePolicy.swift */; };
@@ -28,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B10000000000000000000016 /* NativeLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeLocalization.swift; sourceTree = "<group>"; };
+		B10000000000000000000017 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B10000000000000000000018 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B10000000000000000000015 /* DrawingOrientationPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingOrientationPolicy.swift; sourceTree = "<group>"; };
 		B10000000000000000000014 /* NativeAudioPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAudioPolicy.swift; sourceTree = "<group>"; };
 		B10000000000000000000012 /* AppUpdatePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdatePolicy.swift; sourceTree = "<group>"; };
@@ -84,6 +89,8 @@
 				B10000000000000000000003 /* GameViewController.swift */,
 				B10000000000000000000009 /* AppSchemeHandler.swift */,
 				B1000000000000000000000A /* NativeConfig.swift */,
+				B10000000000000000000016 /* NativeLocalization.swift */,
+				D10000000000000000000004 /* InfoPlist.strings */,
 				B1000000000000000000000B /* StorageMigration.swift */,
 				B1000000000000000000000C /* StoreManager.swift */,
 				B1000000000000000000000D /* AuthCoordinator.swift */,
@@ -103,6 +110,15 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXVariantGroup section */
+		D10000000000000000000004 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (B10000000000000000000017 /* ar */, B10000000000000000000018 /* en */,);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin PBXNativeTarget section */
 		E10000000000000000000001 /* Maydan */ = {
@@ -154,6 +170,7 @@
 				A10000000000000000000004 /* Assets.xcassets in Resources */,
 				A10000000000000000000005 /* www in Resources */,
 				A10000000000000000000006 /* PrivacyInfo.xcprivacy in Resources */,
+				A10000000000000000000015 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +193,7 @@
 				A10000000000000000000003 /* GameViewController.swift in Sources */,
 				A10000000000000000000007 /* AppSchemeHandler.swift in Sources */,
 				A10000000000000000000008 /* NativeConfig.swift in Sources */,
+				A10000000000000000000014 /* NativeLocalization.swift in Sources */,
 				A10000000000000000000009 /* StorageMigration.swift in Sources */,
 				A1000000000000000000000A /* StoreManager.swift in Sources */,
 				A1000000000000000000000B /* AuthCoordinator.swift in Sources */,

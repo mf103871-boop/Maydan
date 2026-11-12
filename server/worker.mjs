@@ -1,4 +1,5 @@
 import { Room } from './room.mjs';
+import { englishContentEnabled } from './content-locale.mjs';
 import { readJson, json, errorResponse, sha256, credentials, createLimit } from './protocol.mjs';
 import { fail } from './room-model.mjs';
 import { isPublicAccountPath, roomGate, routeAccounts } from './accounts/router.mjs';
@@ -122,6 +123,9 @@ async function routeMeasuredRequest(request, env, context) {
     'access-control-expose-headers': 'x-maydan-session',
     'access-control-max-age': '600' } : {};
   if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
+  if (url.pathname === '/api/content/capabilities' && request.method === 'GET') {
+    return json({ localizedContent: 1, contentVersions: { ar: 'legacy-ar', ...(englishContentEnabled(env) ? { en: 'new-en' } : {}) } }, 200, headers);
+  }
   let response; let limiter = null; let charged = null;
   // حصّة واحدة لكل عنوان يوميًا، تتفرّع بالنوع؛ المفتاح ملخّص فقط ولا يُخزَّن العنوان.
   async function charge(kind, code = 'RATE_LIMIT', authenticatedUserId = null) {

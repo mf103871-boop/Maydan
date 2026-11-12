@@ -222,9 +222,9 @@ final class RewardedAdCoordinator: NSObject, FullScreenContentDelegate, MFMailCo
         guard !busy else { return .busy }
         guard canPresent() else { return .blocked }
         guard hasImpression else { return .unavailable }
-        let subject = "بلاغ عن إعلان غير ملائم في ميدان"
+        let subject = NativeLocalization.text("بلاغ عن إعلان غير ملائم في ميدان")
         let support = "mf103871@gmail.com"
-        let prompt = "صِف الإعلان وسبب البلاغ دون إدخال معلومات شخصية:"
+        let prompt = NativeLocalization.text("صِف الإعلان وسبب البلاغ دون إدخال معلومات شخصية:")
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
@@ -234,7 +234,8 @@ final class RewardedAdCoordinator: NSObject, FullScreenContentDelegate, MFMailCo
             host.present(mail, animated: true)
             return .shown
         }
-        let share = UIActivityViewController(activityItems: ["\(subject)\nدعم ميدان: \(support)\n\(prompt)"], applicationActivities: nil)
+        let supportLabel = NativeLocalization.text("دعم ميدان")
+        let share = UIActivityViewController(activityItems: ["\(subject)\n\(supportLabel): \(support)\n\(prompt)"], applicationActivities: nil)
         share.popoverPresentationController?.sourceView = host.view
         share.popoverPresentationController?.sourceRect = CGRect(
             x: host.view.bounds.midX, y: host.view.bounds.midY, width: 1, height: 1

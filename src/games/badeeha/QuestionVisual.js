@@ -1,3 +1,4 @@
+import { tr } from '../../shared/i18n/core.js';
 // عرض السؤال بكل أنواعه (نص، صور بمؤثراتها، صوت، فيديو، اختيار، ترتيب، شفرة…). مكوّن مستقل
 // تعرضه بَديهة على جهاز واحد وتعيد استعماله بَديهة أونلاين؛ كل ما يتغير يصل خصائص.
 import React from "../../design/react.js";
@@ -58,7 +59,7 @@ export function QuestionVisual({ question, packId = null, revealed = false, hint
       "div",
       null,
       hBeta("div", { className: "m-code", dir: question.dir || "ltr", lang: /[A-Za-z]/.test(question.q || "") ? "en" : undefined }, question.q),
-      question.hint && hBeta("p", { className: "m-hint" }, `تلميح: ${question.hint}`),
+      question.hint && hBeta("p", { className: "m-hint" }, tr("تلميح: {v0}", {v0: question.hint})),
     );
   if (question.type === "audio") return hBeta("div", null, ownText, hBeta(MediaAudio, { key: url, url, revealed, soundOn, volume, sound }));
   if (question.type === "video") return hBeta("div", null, ownText, hBeta(MediaVideo, { key: url, url, soundOn, volume, sound }));
@@ -82,7 +83,7 @@ export function QuestionVisual({ question, packId = null, revealed = false, hint
               hBeta(
                 "span",
                 { className: "m-diff-frame" },
-                hBeta("img", { src: one, alt: `الصورة ${index + 1}`, className: "m-media-img", onLoad: onReady, onError }),
+                hBeta("img", { src: one, alt: tr("الصورة {v0}", {v0: index + 1}), className: "m-media-img", onLoad: onReady, onError }),
                 revealed &&
                   question.spot &&
                   hBeta("span", {
@@ -104,7 +105,7 @@ export function QuestionVisual({ question, packId = null, revealed = false, hint
       hBeta(
         "div",
         { className: "m-tf" },
-        ["صح", "خطأ"].map((label) =>
+        ["صح", tr("خطأ")].map((label) =>
           hBeta(
             "span",
             { key: label, className: revealed && String(question.a).trim() === label ? "is-answer" : "" },
@@ -162,7 +163,7 @@ export function QuestionVisual({ question, packId = null, revealed = false, hint
           hBeta(
             "div",
             { key: index, className: index < hintsUsed || revealed ? "is-open" : "" },
-            index < hintsUsed || revealed ? hint : `تلميح ${index + 1}`,
+            index < hintsUsed || revealed ? hint : tr("تلميح {v0}", {v0: index + 1}),
           ),
         ),
       ),
@@ -176,7 +177,7 @@ export function QuestionVisual({ question, packId = null, revealed = false, hint
             className: "m-secondary m-small",
             onClick: onHint,
           },
-          `اطلب تلميحًا (تُخصم ${HINT_COST_PERCENT}% من النقاط)`,
+          tr("اطلب تلميحًا (تُخصم {v0}% من النقاط)", {v0: HINT_COST_PERCENT}),
         ),
     );
   }
@@ -187,7 +188,7 @@ export function QuestionVisual({ question, packId = null, revealed = false, hint
       question.image
         ? hBeta("img", {
             src: question.image,
-            alt: "صورة السؤال",
+            alt: tr("صورة السؤال"),
             className: revealed ? "m-zoom-image revealed" : "m-zoom-image",
           })
         : hBeta(
@@ -196,7 +197,7 @@ export function QuestionVisual({ question, packId = null, revealed = false, hint
               className: revealed ? "m-zoom-emoji revealed" : "m-zoom-emoji",
               style: { transformOrigin: question.origin || "50% 50%" },
               role: "img",
-              "aria-label": "صورة مقرّبة",
+              "aria-label": tr("صورة مقرّبة"),
             },
             question.emoji,
           ),
@@ -208,12 +209,12 @@ export function QuestionVisual({ question, packId = null, revealed = false, hint
       question.image
         ? hBeta("img", {
             src: question.image,
-            alt: "ظل الصورة",
+            alt: tr("ظل الصورة"),
             className: revealed ? "revealed" : "",
           })
         : hBeta(
             "span",
-            { className: revealed ? "revealed" : "", role: "img", "aria-label": "ظل صورة" },
+            { className: revealed ? "revealed" : "", role: "img", "aria-label": tr("ظل صورة") },
             question.emoji,
           ),
     );
@@ -222,7 +223,7 @@ export function QuestionVisual({ question, packId = null, revealed = false, hint
       "div",
       null,
       hBeta("div", { className: "m-emoji-line", dir: "ltr" }, question.q),
-      question.hint && hBeta("p", { className: "m-hint" }, `تلميح: ${question.hint}`),
+      question.hint && hBeta("p", { className: "m-hint" }, tr("تلميح: {v0}", {v0: question.hint})),
     );
   if (question.type === "order") {
     const items = revealed ? question.items : mixedItems;
@@ -294,10 +295,10 @@ export function QuestionVisual({ question, packId = null, revealed = false, hint
                 className: "m-sound-play",
                 onClick: () => onPlaySound?.(question.sound),
                 disabled: !soundOn || !onPlaySound,
-                "aria-label": "تشغيل صوت السؤال",
+                "aria-label": tr("تشغيل صوت السؤال"),
               },
               hBeta("span", { "aria-hidden": "true" }, soundOn ? "🔊" : "🔇"),
-              hBeta("b", null, soundOn ? "شغّل الصوت" : "الصوت مكتوم"),
+              hBeta("b", null, soundOn ? tr("شغّل الصوت") : tr("الصوت مكتوم")),
             )
           : hBeta("p", { className: "m-question-text" }, question.q);
 }

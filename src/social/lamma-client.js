@@ -1,3 +1,4 @@
+import { tr } from '../shared/i18n/core.js';
 import { mergeMessages, socialError } from './client.js';
 import { getCosmetic } from '../plus/catalog.js';
 
@@ -11,7 +12,7 @@ const ERRORS = {
   AUDIO_INVALID: 'تعذّر قراءة التسجيل. سجّله مجددًا.', CALL_ANSWERED: 'فُتحت المكالمة على جهازك الآخر.',
   CALL_RECONNECTING: 'يجري تحديث اتصال المكالمة. حاول بعد لحظة.', GROUP_INVITE_UNAVAILABLE: 'لم تعد دعوة الشلّة متاحة.',
 };
-export const lammaError = e => ERRORS[e?.code] || socialError(e);
+export const lammaError = e => tr(ERRORS[e?.code] || socialError(e));
 export const lammaId = () => globalThis.crypto.randomUUID();
 export const DEFAULT_PREFERENCES = { messages: true, friendRequests: true, groupInvites: true, calls: true, previews: false, sound: true, mutedConversations: [] };
 export const emptyLamma = () => ({ groups: [], groupInvites: [], groupConversations: {}, callMembers: {}, calls: [], loading: false,
@@ -285,7 +286,7 @@ export class LammaClient {
     const epoch = this.epoch, authorizationEpoch = this.authorizationEpoch;
     const sticker = stickerId ? getCosmetic(stickerId, { kind: 'sticker' }) : null;
     if (stickerId && !sticker) throw Object.assign(new Error('هذا الملصق غير متاح.'), { code: 'INVALID' });
-    if (sticker) text = `ملصق: ${sticker.label}`;
+    if (sticker) text = tr("ملصق: {v0}", {v0: sticker.label});
     const kind = sticker ? 'sticker' : 'text';
     this.assert(epoch); text = String(text || '').trim();
     if (!text || text.length > 2000) throw Object.assign(new Error('اكتب رسالة من حرف إلى 2000 حرف.'), { code: 'INVALID' });

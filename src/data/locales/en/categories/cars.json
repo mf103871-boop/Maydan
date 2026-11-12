@@ -1,0 +1,519 @@
+{
+  "id": "cars",
+  "name": "Cars",
+  "icon": "🚗",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Which automaker produced its first cars in Gothenburg, Sweden, in 1927?",
+      "a": "Volvo",
+      "qid": "cars-200-911",
+      "topic": "Manufacturers",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.volvocars.com/se/our-heritage/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "What number became the name of the Porsche sports car initially shown as the 901 in 1963?",
+      "a": "911",
+      "qid": "cars-200-912",
+      "topic": "Models",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.porsche.com/stories/innovation/a-brief-history-of-the-porsche-911/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which inventor patented his gasoline-powered car in January 1886?",
+      "a": "Carl Benz",
+      "qid": "cars-200-913",
+      "topic": "History",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://group.mercedes-benz.com/company/tradition/company-history/1885-1886.html",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Karl Benz"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "How many hours does the main Le Mans endurance race last?",
+      "a": "24",
+      "qid": "cars-200-914",
+      "topic": "Racing",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.24h-lemans.com/en/info/the-race",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Twenty-four hours"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "What device allows the driven wheels to rotate at different speeds in a turn?",
+      "a": "Differential",
+      "qid": "cars-200-915",
+      "topic": "Parts",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.eaton.com/in/en-us/products/differentials-traction-control.html",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Exhaust gases drive a compressor that forces more air into the engine. What is the device?",
+      "a": "Turbocharger",
+      "qid": "cars-200-916",
+      "topic": "Technology",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.garrettmotion.com/wp-content/uploads/2020/06/Catalog-Volume-8_Full-Version_FINAL_web-version_June_2020_PAGES.pdf",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Turbo"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "What long-roof family-car body is called an estate in Britain?",
+      "a": "Station wagon",
+      "qid": "cars-200-917",
+      "topic": "Body styles",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.volvocars.com/uk/cars/wagon/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Wagon"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Which Italian sports-car company did Ferruccio establish in 1963?",
+      "a": "Lamborghini",
+      "qid": "cars-200-918",
+      "topic": "History",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.lamborghini.com/en-en/history/company",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which Czech automaker is based in Mladá Boleslav?",
+      "a": "Škoda",
+      "qid": "cars-400-911",
+      "topic": "Manufacturers",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.skoda-auto.com/other/imprint",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Skoda"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What is the code for Mazda's small roadster launched in 1989 and also called the Miata?",
+      "a": "MX-5",
+      "qid": "cars-400-912",
+      "topic": "Models",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.mazda.com/en/about/history/greatcar/roadster/04/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "MX5"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Which automaker uses the Spirit of Ecstasy hood ornament?",
+      "a": "Rolls-Royce",
+      "qid": "cars-400-913",
+      "topic": "Badges",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.rolls-roycemotorcars.com/en_US/inspiring-greatness/values/the-spirit-of-ecstasy.html",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which Citroën amazed the 1955 Paris Motor Show with its design and hydropneumatic suspension?",
+      "a": "DS 19",
+      "qid": "cars-400-914",
+      "topic": "History",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.media.stellantis.com/uk-en/ds/press/ds-a-70-year-history",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Citroen DS19"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "In what kind of racing does a co-driver read corner instructions from pace notes?",
+      "a": "Rallying",
+      "qid": "cars-400-915",
+      "topic": "Racing",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.wrc.com/en/misc/about-wrc",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Rally"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Which shaft converts reciprocating piston movement into rotation inside an engine?",
+      "a": "Crankshaft",
+      "qid": "cars-400-916",
+      "topic": "Parts",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.ms-motorservice.com/int/en/technipedia/structure-and-function-of-the-crankshaft-1127",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "A car recovers energy while slowing and converts it to electricity. What braking system does it use?",
+      "a": "Regenerative braking",
+      "qid": "cars-400-917",
+      "topic": "Technology",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.bosch-mobility.com/en/solutions/driving-safety/regenerative-braking-systems/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which shaft with shaped lobes controls when intake and exhaust valves open?",
+      "a": "Camshaft",
+      "qid": "cars-400-918",
+      "topic": "Parts",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.ms-motorservice.com/MediaAssets/671352_bf_50020042-02_web.pdf",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which Romanian Renault-owned brand began producing the 1100 in 1968?",
+      "a": "Dacia",
+      "qid": "cars-600-911",
+      "topic": "Manufacturers",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.dacia.ro/despre-dacia/istoric.html",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which electric car did Nissan launch in 2010 with the code ZE0?",
+      "a": "Leaf",
+      "qid": "cars-600-912",
+      "topic": "Models",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.nissan-global.com/EN/COMPANY/PROFILE/HERITAGE/2010/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Nissan Leaf"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Which British car brand replaced its circular badge with outstretched wings in 1927?",
+      "a": "Aston Martin",
+      "qid": "cars-600-913",
+      "topic": "Badges",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.astonmartin.com/de/our-world/intensity-driven",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "What name did Porsche give its open-top version with a fixed rollover bar in 1965?",
+      "a": "Targa",
+      "qid": "cars-600-914",
+      "topic": "Body styles",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.porsche.com/stories/innovation/911-targa-the-open-top-style-icon/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which Scottish driver won world titles in 1969, 1971, and 1973?",
+      "a": "Jackie Stewart",
+      "qid": "cars-600-915",
+      "topic": "Racing",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.formula1.com/en/information/drivers-hall-of-fame-jackie-stewart.18715uErEG7LS83UDkeqP4",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "q": "Which engineer designed the original Mini introduced in 1959?",
+      "a": "Alec Issigonis",
+      "topic": "History",
+      "verified": true,
+      "sourceUrl": "https://www.mini.com/en_MS/home/heritage/1959-the-mini-was-born.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 600,
+      "qid": "cars-600-916",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "What type of engine is the Wankel design developed by Mazda?",
+      "a": "Rotary engine",
+      "qid": "cars-600-917",
+      "topic": "Technology",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://newsroom.mazda.com/en/publicity/release/2002/200207/0705ae.html",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Wankel rotary engine"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Who combined motorcycle world titles with the 1964 Formula One championship?",
+      "a": "John Surtees",
+      "qid": "cars-600-918",
+      "topic": "Racing",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.formula1.com/en/latest/article/50-years-on-john-surtees-on-his-unique-bike-car-double.60TDlv4eb6RlRED1Vb8DYb",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "What wedge-shaped Lancia concept did Gandini design for Bertone in 1970?",
+      "a": "Stratos Zero",
+      "qid": "cars-800-911",
+      "topic": "Models",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.media.stellantis.com/it-it/lancia/press/il-viaggio-verso-il-lancia-design-day-il-design-brutale-di-stratos-rally-037-e-delta",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which Italian car badge combines Milan's cross with the Visconti serpent?",
+      "a": "Alfa Romeo",
+      "qid": "cars-800-912",
+      "topic": "Badges",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.alfaromeo.com/history",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which 1948 American car is known for a central headlight that turns with the steering?",
+      "a": "Tucker 48",
+      "qid": "cars-800-913",
+      "topic": "History",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.si.edu/stories/1948-tucker-sedan",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Tucker Torpedo"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "What French term describes the single load-bearing shell construction used by the Lotus 25?",
+      "a": "Monocoque",
+      "qid": "cars-800-914",
+      "topic": "Body styles",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.lotuscars.com/en-KW/lotus-story/race-cars/type-25",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "q": "Which engineer began designing the Ferrari 250 GTO from the 250 GT SWB?",
+      "a": "Giotto Bizzarrini",
+      "topic": "History",
+      "verified": true,
+      "sourceUrl": "https://www.ferrari.com/en-OM/history/moments/1962/masterpiece/more",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "cars-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which Italian designer styled the DeLorean DMC-12?",
+      "a": "Giorgetto Giugiaro",
+      "topic": "Body styles",
+      "verified": true,
+      "sourceUrl": "https://www.giorgettofabriziogiugiaro.it/projects/vehicles/dmc-12",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "cars-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "What long Nürburgring circuit is nicknamed the Green Hell?",
+      "a": "Nordschleife",
+      "topic": "Racing",
+      "verified": true,
+      "sourceUrl": "https://www.nuerburgring.de/info/nuerburgring/race-tracks/nordschleife",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "cars-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "q": "Which Swedish supercar maker was founded in 1994?",
+      "a": "Koenigsegg",
+      "qid": "cars-800-918",
+      "topic": "Manufacturers",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.koenigsegg.com/history",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "q": "Which Austrian engineer designed the streamlined Tatra T87?",
+      "a": "Hans Ledwinka",
+      "topic": "History",
+      "verified": true,
+      "sourceUrl": "https://museum.okstate.edu/site-files/2017/oklahoma-and-beyond/osuma-kravis-catalogue-2017.pdf",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "cars-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What was the model number of Saab's first production car, with a 764 cc two-cylinder engine?",
+      "a": "92",
+      "topic": "Models",
+      "verified": true,
+      "sourceUrl": "https://www.lanemotormuseum.org/collection/cars/item/saab/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Saab 92"
+      ],
+      "p": 1000,
+      "qid": "cars-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which four-wheel-drive Ferguson won the Formula One Oulton Park Gold Cup in 1961?",
+      "a": "P99",
+      "topic": "Technology",
+      "verified": true,
+      "sourceUrl": "https://www.formula1.com/en/latest/article/from-the-six-wheeled-tyrrell-to-the-dual-rear-wing-ferrari-10-of-the.1uvMU2qhHxAphWRhgjxwCj",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Ferguson P99"
+      ],
+      "p": 1000,
+      "qid": "cars-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What was the code of the Chaparral that used two fans to suck air from beneath it in 1970 Can-Am?",
+      "a": "2J",
+      "topic": "Racing",
+      "verified": true,
+      "sourceUrl": "https://petroleummuseum.org/chaparral-2j/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Chaparral 2J"
+      ],
+      "p": 1000,
+      "qid": "cars-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which American inventor patented a windshield wiper operated from inside the car in 1903?",
+      "a": "Mary Anderson",
+      "topic": "Parts",
+      "verified": true,
+      "sourceUrl": "https://www.invent.org/inductees/mary-anderson",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "cars-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which engineer developed the three-point seat belt in 1959?",
+      "a": "Nils Bohlin",
+      "topic": "Technology",
+      "verified": true,
+      "sourceUrl": "https://www.volvogroup.com/en/about-us/heritage/three-point-safety-belt.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "cars-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What was the code of the experimental Mercedes shown with a Wankel engine in 1969?",
+      "a": "C111",
+      "topic": "Models",
+      "verified": true,
+      "sourceUrl": "https://www.mercedes-benz.com/en/innovation/milestones/technology/mercedes-benz-c-111/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "C 111"
+      ],
+      "p": 1000,
+      "qid": "cars-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What was the code of the six-wheeled Tyrrell that won the 1976 Swedish Grand Prix?",
+      "a": "P34",
+      "topic": "Body styles",
+      "verified": true,
+      "sourceUrl": "https://www.formula1.com/en/latest/article/from-the-six-wheeled-tyrrell-to-the-dual-rear-wing-ferrari-10-of-the.1uvMU2qhHxAphWRhgjxwCj",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Tyrrell P34"
+      ],
+      "p": 1000,
+      "qid": "cars-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

@@ -10,8 +10,18 @@ import meenfina from '../games/meenfina/index.js';
 import ersomha from '../games/ersomha/index.js';
 
 import mafia from '../games/mafia/index.js';
+import { tr, gameName } from '../shared/i18n/core.js';
 
-export const GAMES = [badeeha, mafia, ersomha, beep, mamnoo, jabeen, fabraka, meenfina];
+// Read copy at render time so a language switch preserves the mounted game and its state.
+export const GAMES = [badeeha, mafia, ersomha, beep, mamnoo, jabeen, fabraka, meenfina].map(game => ({
+  ...game,
+  get name() { return gameName(game); },
+  get tagline() { return tr(game.tagline); },
+  get description() { return tr(game.description); },
+  get duration() { return tr(game.duration); },
+  get howToPlay() { return game.howToPlay.map(step => tr(step)); },
+  get tags() { return game.tags.map(tag => tr(tag)); },
+}));
 
 export function getGame(id) {
   return GAMES.find((game) => game.id === id) || null;

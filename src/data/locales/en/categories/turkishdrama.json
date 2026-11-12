@@ -1,0 +1,503 @@
+{
+  "id": "turkishdrama",
+  "name": "Turkish Drama",
+  "icon": "🇹🇷",
+  "style": "story",
+  "qs": [
+    {
+      "qid": "turkishdrama-200-911",
+      "p": 200,
+      "topic": "Magnificent Century",
+      "q": "In Magnificent Century, which concubine becomes the sultan's wife?",
+      "a": "Hürrem",
+      "alt": [
+        "Hurrem",
+        "Hayam",
+        "Huyam"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Muhteşem_Yüzyıl",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "turkishdrama-200-912",
+      "p": 200,
+      "topic": "Forbidden Love",
+      "q": "In Forbidden Love, which wealthy widower marries the young heroine?",
+      "a": "Adnan",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Aşk-ı_Memnu_(2008_TV_series)",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "turkishdrama-200-913",
+      "p": 200,
+      "topic": "Çukur",
+      "q": "In Çukur, which youngest son returns to his family after his brother Kahraman is killed?",
+      "a": "Yamaç",
+      "alt": [
+        "Yamac"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Çukur",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "turkishdrama-200-914",
+      "p": 200,
+      "topic": "Endless Love",
+      "q": "In Endless Love, which businessman does Nihan marry despite loving someone else?",
+      "a": "Emir",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kara_Sevda",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "turkishdrama-200-915",
+      "p": 200,
+      "topic": "Love for Rent",
+      "q": "In Love for Rent, which businessman employs the heroine as his personal assistant?",
+      "a": "Ömer",
+      "alt": [
+        "Omer"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kiralık_Aşk",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "turkishdrama-200-916",
+      "p": 200,
+      "topic": "Daydreamer",
+      "q": "In Daydreamer, which photographer temporarily returns to run his father's company?",
+      "a": "Can",
+      "alt": [
+        "Can Divit"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Erkenci_Kuş",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "turkishdrama-200-917",
+      "p": 200,
+      "topic": "Fatmagül",
+      "q": "In Fatmagül, what is the name of the heroine's first fiancé, who works as a fisherman?",
+      "a": "Mustafa",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fatmagül%27ün_Suçu_Ne%3F",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "turkishdrama-200-921",
+      "p": 200,
+      "topic": "Fatmagül",
+      "q": "In Fatmagül, to which major city do the heroine and her husband's family move for a fresh start?",
+      "a": "Istanbul",
+      "alt": [
+        "İstanbul"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fatmagül%27ün_Suçu_Ne%3F",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "turkishdrama-400-911",
+      "p": 400,
+      "topic": "Magnificent Century",
+      "q": "In Magnificent Century, which friend of the sultan becomes grand vizier and marries his sister?",
+      "a": "Ibrahim Pasha",
+      "alt": [
+        "Pargalı Ibrahim Pasha",
+        "Ibrahim"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Muhteşem_Yüzyıl",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "turkishdrama-400-912",
+      "p": 400,
+      "topic": "Forbidden Love",
+      "q": "In Forbidden Love, which daughter of the businessman becomes engaged to Behlül?",
+      "a": "Nihal",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Aşk-ı_Memnu_(2008_TV_series)",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "turkishdrama-400-913",
+      "p": 400,
+      "topic": "Çukur",
+      "q": "In Çukur, what trade does the family ban within the neighborhood despite its own criminal activities?",
+      "a": "Drug trafficking",
+      "alt": [
+        "Drugs",
+        "Drug dealing"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Çukur",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "turkishdrama-400-914",
+      "p": 400,
+      "topic": "Endless Love",
+      "q": "In Endless Love, which engineering discipline does the protagonist study?",
+      "a": "Mining engineering",
+      "alt": [
+        "Mining"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kara_Sevda",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "turkishdrama-400-915",
+      "p": 400,
+      "topic": "Love for Rent",
+      "q": "At the start of Love for Rent, why does the heroine accept money and join Neriman's plan?",
+      "a": "To repay her brother's debt",
+      "alt": [
+        "To save her brother from creditors"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kiralık_Aşk",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "turkishdrama-400-917",
+      "p": 400,
+      "topic": "Fatmagül",
+      "q": "In Fatmagül, which woman raised the heroine's husband and supports her through her ordeal?",
+      "a": "Meryem",
+      "alt": [
+        "Meryem Aksoy",
+        "Ebe Nine"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fatmagül%27ün_Suçu_Ne%3F",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "turkishdrama-400-918",
+      "p": 400,
+      "topic": "Valley of the Wolves",
+      "q": "In Valley of the Wolves, which intelligence official trains the hero and assigns his secret mission?",
+      "a": "Aslan Akbey",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Valley_of_the_Wolves_(TV_series)",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "turkishdrama-400-921",
+      "p": 400,
+      "topic": "Forbidden Love",
+      "q": "In Forbidden Love, what is Deniz's role in the household?",
+      "a": "The children's governess",
+      "alt": [
+        "Governess",
+        "Private tutor",
+        "Nanny"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Aşk-ı_Memnu_(2008_TV_series)",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "turkishdrama-600-911",
+      "p": 600,
+      "topic": "Magnificent Century",
+      "q": "In Magnificent Century, what is the name of the sultan's only daughter by his favorite wife?",
+      "a": "Mihrimah",
+      "alt": [
+        "Mihrimah Sultan"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Muhteşem_Yüzyıl",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "turkishdrama-600-912",
+      "p": 600,
+      "topic": "Forbidden Love",
+      "q": "In Forbidden Love, which driver loves the homeowner's daughter and discovers the secret affair?",
+      "a": "Beşir",
+      "alt": [
+        "Besir"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Aşk-ı_Memnu_(2008_TV_series)",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "turkishdrama-600-913",
+      "p": 600,
+      "topic": "Çukur",
+      "q": "In Çukur, what is Vartolu's real name, revealed when he is identified as Idris's son?",
+      "a": "Salih",
+      "alt": [
+        "Salih Koçovalı",
+        "Salih Kocovali"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Çukur",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "turkishdrama-600-914",
+      "p": 600,
+      "topic": "Endless Love",
+      "q": "In Endless Love, what is Nihan's twin brother's name?",
+      "a": "Ozan",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kara_Sevda",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "turkishdrama-600-915",
+      "p": 600,
+      "topic": "Love for Rent",
+      "q": "In Love for Rent, what products does the businessman design and sell through his company?",
+      "a": "Shoes",
+      "alt": [
+        "Footwear"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kiralık_Aşk",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "turkishdrama-600-916",
+      "p": 600,
+      "topic": "Daydreamer",
+      "q": "In Daydreamer, what field does the Fikri Harika agency work in?",
+      "a": "Advertising",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Erkenci_Kuş",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "Valley of the Wolves",
+      "q": "In Valley of the Wolves, which friend of Polat Alemdar had Memati as his right-hand man?",
+      "a": "Süleyman Çakır",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Valley_of_the_Wolves_(TV_series)",
+      "alt": [
+        "Suleyman Cakir"
+      ],
+      "verified": true,
+      "p": 600,
+      "qid": "turkishdrama-600-918",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "turkishdrama-600-921",
+      "p": 600,
+      "topic": "Valley of the Wolves",
+      "q": "What was the Valley of the Wolves hero's original name before his face and identity changed?",
+      "a": "Ali Candan",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Valley_of_the_Wolves_(TV_series)",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "turkishdrama-800-911",
+      "p": 800,
+      "topic": "Magnificent Century",
+      "q": "In Magnificent Century, which pasha marries the sultan's daughter and receives her mother's political support?",
+      "a": "Rüstem Pasha",
+      "alt": [
+        "Rustem Pasha",
+        "Rustem"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Muhteşem_Yüzyıl",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "turkishdrama-800-913",
+      "p": 800,
+      "topic": "Çukur",
+      "q": "In Çukur, which garbage collector with a strong memory and sniping skills supports the family?",
+      "a": "Aliço",
+      "alt": [
+        "Alico"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Çukur",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "turkishdrama-800-914",
+      "p": 800,
+      "topic": "Endless Love",
+      "q": "In Endless Love, which woman loves the hero and is revealed to be his rival's sister?",
+      "a": "Asu",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kara_Sevda",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "turkishdrama-800-915",
+      "p": 800,
+      "topic": "Love for Rent",
+      "q": "At the start of Love for Rent season two, in which Italian city does the businessman live after the separation?",
+      "a": "Rome",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kiralık_Aşk",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "turkishdrama-800-916",
+      "p": 800,
+      "topic": "Daydreamer",
+      "q": "In Daydreamer, on which islands does the heroine dream of living?",
+      "a": "The Galápagos Islands",
+      "alt": [
+        "Galapagos Islands",
+        "Galapagos"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Erkenci_Kuş",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "turkishdrama-800-917",
+      "p": 800,
+      "topic": "Fatmagül",
+      "q": "In Fatmagül, what does Mukaddes find that reveals Selim's connection to the assault?",
+      "a": "His engagement ring",
+      "alt": [
+        "Selim's ring",
+        "An engagement ring"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fatmagül%27ün_Suçu_Ne%3F",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "turkishdrama-800-918",
+      "p": 800,
+      "topic": "Valley of the Wolves",
+      "q": "At the end of the original Valley of the Wolves, which encrypted cylinder contains information sought by Amon?",
+      "a": "Cryptex",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Valley_of_the_Wolves_(TV_series)",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "turkishdrama-800-921",
+      "p": 800,
+      "topic": "Daydreamer",
+      "q": "In Daydreamer, which bird's name does the heroine give the mysterious man she met on the balcony?",
+      "a": "Albatross",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Erkenci_Kuş",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "Magnificent Century",
+      "q": "In Magnificent Century, which Safavid spy enters the palace posing as an Assyrian concubine?",
+      "a": "Firuze",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Muhteşem_Yüzyıl",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "turkishdrama-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Forbidden Love",
+      "q": "In the Arabic dub of Forbidden Love, what is the name of the driver Hilmi sends to spy on the family?",
+      "a": "Saif",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Aşk-ı_Memnu_(2008_TV_series)",
+      "alt": [
+        "Sayf"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "turkishdrama-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Çukur",
+      "q": "In Çukur, what is Efsun's daughter's name?",
+      "a": "Masal",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Çukur",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "turkishdrama-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Endless Love",
+      "q": "In Endless Love, to which city does Kemal go to work in the mines after separating from Nihan?",
+      "a": "Zonguldak",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kara_Sevda",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "turkishdrama-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Love for Rent",
+      "q": "In Love for Rent, which nephew does Neriman summon to get close to Defne during Ömer's absence?",
+      "a": "Pamir",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kiralık_Aşk",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "turkishdrama-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Daydreamer",
+      "q": "In Daydreamer, what is the name of Can's former girlfriend, a physicist working in Europe?",
+      "a": "Polen",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Erkenci_Kuş",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "turkishdrama-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Fatmagül",
+      "q": "In Fatmagül, to which island do Selim and Erdoğan flee before being returned for trial?",
+      "a": "Malta",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fatmagül%27ün_Suçu_Ne%3F",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "turkishdrama-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Valley of the Wolves",
+      "q": "In Valley of the Wolves, what is the Turkish name of Aslan Akbey's mentor?",
+      "a": "Doğu Eşrefoğlu",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Valley_of_the_Wolves_(TV_series)",
+      "alt": [
+        "Dogu Esrefoglu"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "turkishdrama-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

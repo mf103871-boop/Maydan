@@ -1,0 +1,1367 @@
+{
+  "icon": "⏳",
+  "id": "beforeafter",
+  "name": "Before or After?",
+  "qs": [
+    {
+      "q": "Was the first Macintosh launched before or after the first iPhone?",
+      "a": "Before",
+      "topic": "Computing history",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://www.computerhistory.org/timeline/1984/",
+        "https://www.computerhistory.org/timeline/2007/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "macintosh",
+          "iphone"
+        ],
+        "years": [
+          1984,
+          2007
+        ]
+      },
+      "p": 200,
+      "qid": "beforeafter-200-911",
+      "difficultyTarget": 0.8
+    },
+    {
+      "q": "Was Hubble launched before or after Apollo 11's Moon landing?",
+      "a": "After",
+      "topic": "Space missions",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://science.nasa.gov/mission/hubble/",
+        "https://www.nasa.gov/mission/apollo-11/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "hubble",
+          "apollo11"
+        ],
+        "years": [
+          1990,
+          1969
+        ]
+      },
+      "p": 200,
+      "qid": "beforeafter-200-912",
+      "difficultyTarget": 0.8
+    },
+    {
+      "q": "Did Dubai Metro open before or after Doha Metro?",
+      "a": "Before",
+      "topic": "Metro networks",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://rta.ae/wps/portal/rta/ae/home/news-and-media/all-news/NewsDetails/dubai-metro-accomplishes-a-decade-of-happy-journeys-for-riders",
+        "https://en.wikipedia.org/wiki/Doha_Metro"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "dubaimetro",
+          "dohametro"
+        ],
+        "years": [
+          2009,
+          2019
+        ]
+      },
+      "p": 200,
+      "qid": "beforeafter-200-913",
+      "difficultyTarget": 0.8
+    },
+    {
+      "q": "Were the Beijing Summer Olympics before or after the Sydney Summer Olympics?",
+      "a": "After",
+      "topic": "Olympic Games",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://en.wikipedia.org/wiki/2008_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/2000_Summer_Olympics"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "beijing",
+          "sydneygames"
+        ],
+        "years": [
+          2008,
+          2000
+        ]
+      },
+      "p": 200,
+      "qid": "beforeafter-200-914",
+      "difficultyTarget": 0.8
+    },
+    {
+      "q": "Was the Statue of Liberty dedicated before or after the Empire State Building opened?",
+      "a": "Before",
+      "topic": "Architectural landmarks",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://www.nps.gov/stli/learn/statue-of-liberty-facts.htm",
+        "https://www.esbnyc.com/about/history"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "liberty",
+          "empirestate"
+        ],
+        "years": [
+          1886,
+          1931
+        ]
+      },
+      "p": 200,
+      "qid": "beforeafter-200-915",
+      "difficultyTarget": 0.8
+    },
+    {
+      "q": "Did Burj Khalifa open before or after the Sydney Opera House?",
+      "a": "After",
+      "topic": "Architectural landmarks",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://en.wikipedia.org/wiki/Burj_Khalifa",
+        "https://www.sydneyoperahouse.com/our-story"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "burjkhalifa",
+          "sydneyopera"
+        ],
+        "years": [
+          2010,
+          1973
+        ]
+      },
+      "p": 200,
+      "qid": "beforeafter-200-916",
+      "difficultyTarget": 0.8
+    },
+    {
+      "q": "Was E.T. released before or after the original animated Lion King?",
+      "a": "Before",
+      "topic": "Film releases",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial",
+        "https://movies.disney.com/the-lion-king"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "et",
+          "lionking"
+        ],
+        "years": [
+          1982,
+          1994
+        ]
+      },
+      "p": 200,
+      "qid": "beforeafter-200-917",
+      "difficultyTarget": 0.8
+    },
+    {
+      "q": "Was the original animated Beauty and the Beast released before or after the original animated Jungle Book?",
+      "a": "After",
+      "topic": "Film releases",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://movies.disney.com/beauty-and-the-beast",
+        "https://movies.disney.com/the-jungle-book-1967"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "beautybeast",
+          "junglebook"
+        ],
+        "years": [
+          1991,
+          1967
+        ]
+      },
+      "p": 200,
+      "qid": "beforeafter-200-918",
+      "difficultyTarget": 0.8
+    },
+    {
+      "q": "Was the Apple I completed before or after the first Macintosh launched?",
+      "a": "Before",
+      "topic": "Computing history",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://www.computerhistory.org/timeline/1976/",
+        "https://www.computerhistory.org/timeline/1984/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "apple1",
+          "macintosh"
+        ],
+        "years": [
+          1976,
+          1984
+        ]
+      },
+      "p": 400,
+      "qid": "beforeafter-400-911",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "Was Hubble launched before or after Voyager 1?",
+      "a": "After",
+      "topic": "Space missions",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://science.nasa.gov/mission/hubble/",
+        "https://science.nasa.gov/mission/voyager/voyager-1/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "hubble",
+          "voyager1"
+        ],
+        "years": [
+          1990,
+          1977
+        ]
+      },
+      "p": 400,
+      "qid": "beforeafter-400-912",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "Did the London Underground open before or after the Paris Métro?",
+      "a": "Before",
+      "topic": "Metro networks",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://foi.tfl.gov.uk/FOI-0773-2324/TUBE160%20Heritage%20Leaflet.pdf",
+        "https://en.wikipedia.org/wiki/Paris_M%C3%A9tro"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "londonmetro",
+          "parismetro"
+        ],
+        "years": [
+          1863,
+          1900
+        ]
+      },
+      "p": 400,
+      "qid": "beforeafter-400-913",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "Were the Montreal Summer Olympics before or after the Munich Summer Olympics?",
+      "a": "After",
+      "topic": "Olympic Games",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://en.wikipedia.org/wiki/1976_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1972_Summer_Olympics"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "montreal",
+          "munich"
+        ],
+        "years": [
+          1976,
+          1972
+        ]
+      },
+      "p": 400,
+      "qid": "beforeafter-400-914",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "Did the Golden Gate Bridge open before or after the Space Needle?",
+      "a": "Before",
+      "topic": "Architectural landmarks",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://en.wikipedia.org/wiki/Golden_Gate_Bridge",
+        "https://www.spaceneedle.com/history"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "goldengate",
+          "spaceneedle"
+        ],
+        "years": [
+          1937,
+          1962
+        ]
+      },
+      "p": 400,
+      "qid": "beforeafter-400-915",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "Did Louvre Abu Dhabi open before or after Dubai Metro began operating?",
+      "a": "After",
+      "topic": "Architectural landmarks",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi",
+        "https://rta.ae/wps/portal/rta/ae/home/news-and-media/all-news/NewsDetails/dubai-metro-accomplishes-a-decade-of-happy-journeys-for-riders"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "louvreabudhabi",
+          "dubaimetro"
+        ],
+        "years": [
+          2017,
+          2009
+        ]
+      },
+      "p": 400,
+      "qid": "beforeafter-400-916",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "Was the first Back to the Future released before or after the original animated Aladdin?",
+      "a": "Before",
+      "topic": "Film releases",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://www.universalpicturesathome.com/movies/back-to-the-future",
+        "https://movies.disney.com/aladdin"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "bttf",
+          "aladdin"
+        ],
+        "years": [
+          1985,
+          1992
+        ]
+      },
+      "p": 400,
+      "qid": "beforeafter-400-917",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "Was the first Jurassic Park released before or after E.T.?",
+      "a": "After",
+      "topic": "Film releases",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://www.universalpicturesathome.com/movies/jurassic-park",
+        "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "jurassicpark",
+          "et"
+        ],
+        "years": [
+          1993,
+          1982
+        ]
+      },
+      "p": 400,
+      "qid": "beforeafter-400-918",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "Was the Apple I completed before or after the IBM Personal Computer was announced?",
+      "a": "Before",
+      "topic": "Computing history",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://www.computerhistory.org/timeline/1976/",
+        "https://www.computerhistory.org/timeline/1981/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "apple1",
+          "ibmpc"
+        ],
+        "years": [
+          1976,
+          1981
+        ]
+      },
+      "p": 600,
+      "qid": "beforeafter-600-911",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "Was Cassini launched before or after Hubble?",
+      "a": "After",
+      "topic": "Space missions",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://science.nasa.gov/mission/cassini/",
+        "https://science.nasa.gov/mission/hubble/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "cassini",
+          "hubble"
+        ],
+        "years": [
+          1997,
+          1990
+        ]
+      },
+      "p": 600,
+      "qid": "beforeafter-600-912",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "Did Tokyo's first subway line open before or after the Moscow Metro?",
+      "a": "Before",
+      "topic": "Metro networks",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://en.wikipedia.org/wiki/Tokyo_Metro",
+        "https://en.wikipedia.org/wiki/Moscow_Metro"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "tokyometro",
+          "moscowmetro"
+        ],
+        "years": [
+          1927,
+          1935
+        ]
+      },
+      "p": 600,
+      "qid": "beforeafter-600-913",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "Were the Sydney Summer Olympics before or after the Atlanta Summer Olympics?",
+      "a": "After",
+      "topic": "Olympic Games",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://en.wikipedia.org/wiki/2000_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1996_Summer_Olympics"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "sydneygames",
+          "atlanta"
+        ],
+        "years": [
+          2000,
+          1996
+        ]
+      },
+      "p": 600,
+      "qid": "beforeafter-600-914",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "Did the Empire State Building open before or after the Golden Gate Bridge?",
+      "a": "Before",
+      "topic": "Architectural landmarks",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://www.esbnyc.com/about/history",
+        "https://en.wikipedia.org/wiki/Golden_Gate_Bridge"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "empirestate",
+          "goldengate"
+        ],
+        "years": [
+          1931,
+          1937
+        ]
+      },
+      "p": 600,
+      "qid": "beforeafter-600-915",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "Did Louvre Abu Dhabi open before or after Burj Khalifa?",
+      "a": "After",
+      "topic": "Architectural landmarks",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi",
+        "https://en.wikipedia.org/wiki/Burj_Khalifa"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "louvreabudhabi",
+          "burjkhalifa"
+        ],
+        "years": [
+          2017,
+          2010
+        ]
+      },
+      "p": 600,
+      "qid": "beforeafter-600-916",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "Was the original Jaws released before or after E.T.?",
+      "a": "Before",
+      "topic": "Film releases",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://www.universalpicturesathome.com/movies/jaws",
+        "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "jaws",
+          "et"
+        ],
+        "years": [
+          1975,
+          1982
+        ]
+      },
+      "p": 600,
+      "qid": "beforeafter-600-917",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "Was the original animated Beauty and the Beast released before or after the first Back to the Future?",
+      "a": "After",
+      "topic": "Film releases",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://movies.disney.com/beauty-and-the-beast",
+        "https://www.universalpicturesathome.com/movies/back-to-the-future"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "beautybeast",
+          "bttf"
+        ],
+        "years": [
+          1991,
+          1985
+        ]
+      },
+      "p": 600,
+      "qid": "beforeafter-600-918",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "Was the Intel 4004 introduced before or after the Apple I was completed?",
+      "a": "Before",
+      "topic": "Computing history",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://www.computerhistory.org/timeline/1971/",
+        "https://www.computerhistory.org/timeline/1976/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "intel4004",
+          "apple1"
+        ],
+        "years": [
+          1971,
+          1976
+        ]
+      },
+      "p": 800,
+      "qid": "beforeafter-800-911",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Did ARPANET begin operating before or after Apollo 8 launched?",
+      "a": "After",
+      "topic": "Space missions",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://www.computerhistory.org/timeline/1969/",
+        "https://www.nasa.gov/mission/apollo-8/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "arpanet",
+          "apollo8"
+        ],
+        "years": [
+          1969,
+          1968
+        ]
+      },
+      "p": 800,
+      "qid": "beforeafter-800-912",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Did the Paris Métro open before or after New York's first subway line?",
+      "a": "Before",
+      "topic": "Metro networks",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://en.wikipedia.org/wiki/Paris_M%C3%A9tro",
+        "https://en.wikipedia.org/wiki/New_York_City_Subway"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "parismetro",
+          "newyorkmetro"
+        ],
+        "years": [
+          1900,
+          1904
+        ]
+      },
+      "p": 800,
+      "qid": "beforeafter-800-913",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Were the Moscow Summer Olympics before or after the Montreal Summer Olympics?",
+      "a": "After",
+      "topic": "Olympic Games",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://en.wikipedia.org/wiki/1980_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1976_Summer_Olympics"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "moscow",
+          "montreal"
+        ],
+        "years": [
+          1980,
+          1976
+        ]
+      },
+      "p": 800,
+      "qid": "beforeafter-800-914",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Was the Statue of Liberty dedicated before or after the Eiffel Tower was completed?",
+      "a": "Before",
+      "topic": "Architectural landmarks",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://www.nps.gov/stli/learn/statue-of-liberty-facts.htm",
+        "https://www.toureiffel.paris/en/the-monument/history"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "liberty",
+          "eiffel"
+        ],
+        "years": [
+          1886,
+          1889
+        ]
+      },
+      "p": 800,
+      "qid": "beforeafter-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Was the original animated Jungle Book released before or after the Space Needle opened?",
+      "a": "After",
+      "topic": "Architectural landmarks",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://movies.disney.com/the-jungle-book-1967",
+        "https://www.spaceneedle.com/history"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "junglebook",
+          "spaceneedle"
+        ],
+        "years": [
+          1967,
+          1962
+        ]
+      },
+      "p": 800,
+      "qid": "beforeafter-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Was the original animated Beauty and the Beast released before or after the first Jurassic Park?",
+      "a": "Before",
+      "topic": "Film releases",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://movies.disney.com/beauty-and-the-beast",
+        "https://www.universalpicturesathome.com/movies/jurassic-park"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "beautybeast",
+          "jurassicpark"
+        ],
+        "years": [
+          1991,
+          1993
+        ]
+      },
+      "p": 800,
+      "qid": "beforeafter-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Was the original animated Aladdin released before or after Hubble launched?",
+      "a": "After",
+      "topic": "Film releases",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://movies.disney.com/aladdin",
+        "https://science.nasa.gov/mission/hubble/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "aladdin",
+          "hubble"
+        ],
+        "years": [
+          1992,
+          1990
+        ]
+      },
+      "p": 800,
+      "qid": "beforeafter-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Was the IBM Personal Computer announced before or after E.T. was released?",
+      "a": "Before",
+      "topic": "Computing history",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://www.computerhistory.org/timeline/1981/",
+        "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "ibmpc",
+          "et"
+        ],
+        "years": [
+          1981,
+          1982
+        ]
+      },
+      "p": 1000,
+      "qid": "beforeafter-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Was Voyager 1 launched before or after the Apple I was completed?",
+      "a": "After",
+      "topic": "Space missions",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://science.nasa.gov/mission/voyager/voyager-1/",
+        "https://www.computerhistory.org/timeline/1976/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "voyager1",
+          "apple1"
+        ],
+        "years": [
+          1977,
+          1976
+        ]
+      },
+      "p": 1000,
+      "qid": "beforeafter-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Did the Moscow Metro open before or after Snow White and the Seven Dwarfs was released?",
+      "a": "Before",
+      "topic": "Metro networks",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://en.wikipedia.org/wiki/Moscow_Metro",
+        "https://movies.disney.com/snow-white-and-the-seven-dwarfs"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "moscowmetro",
+          "snowwhite"
+        ],
+        "years": [
+          1935,
+          1937
+        ]
+      },
+      "p": 1000,
+      "qid": "beforeafter-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Did the Sydney Opera House open before or after the Munich Summer Olympics?",
+      "a": "After",
+      "topic": "Olympic Games",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://www.sydneyoperahouse.com/our-story",
+        "https://en.wikipedia.org/wiki/1972_Summer_Olympics"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "sydneyopera",
+          "munich"
+        ],
+        "years": [
+          1973,
+          1972
+        ]
+      },
+      "p": 1000,
+      "qid": "beforeafter-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Did the Empire State Building open before or after the Moscow Metro began operating?",
+      "a": "Before",
+      "topic": "Architectural landmarks",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://www.esbnyc.com/about/history",
+        "https://en.wikipedia.org/wiki/Moscow_Metro"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "empirestate",
+          "moscowmetro"
+        ],
+        "years": [
+          1931,
+          1935
+        ]
+      },
+      "p": 1000,
+      "qid": "beforeafter-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Was the first Back to the Future released before or after the first Macintosh launched?",
+      "a": "After",
+      "topic": "Computing history",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://www.universalpicturesathome.com/movies/back-to-the-future",
+        "https://www.computerhistory.org/timeline/1984/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "bttf",
+          "macintosh"
+        ],
+        "years": [
+          1985,
+          1984
+        ]
+      },
+      "p": 1000,
+      "qid": "beforeafter-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Was the original animated Aladdin released before or after the first Jurassic Park?",
+      "a": "Before",
+      "topic": "Film releases",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://movies.disney.com/aladdin",
+        "https://www.universalpicturesathome.com/movies/jurassic-park"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "aladdin",
+          "jurassicpark"
+        ],
+        "years": [
+          1992,
+          1993
+        ]
+      },
+      "p": 1000,
+      "qid": "beforeafter-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Was the first iPhone launched before or after New Horizons?",
+      "a": "After",
+      "topic": "Space missions",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "Before",
+        "After"
+      ],
+      "source": [
+        "https://www.computerhistory.org/timeline/2007/",
+        "https://science.nasa.gov/mission/new-horizons/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "iphone",
+          "newhorizons"
+        ],
+        "years": [
+          2007,
+          2006
+        ]
+      },
+      "p": 1000,
+      "qid": "beforeafter-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

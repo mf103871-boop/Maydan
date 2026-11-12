@@ -1,0 +1,495 @@
+{
+  "id": "animals",
+  "name": "Animals",
+  "icon": "🐾",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Which fish carries eggs in a pouch on the male's belly?",
+      "a": "Seahorse",
+      "qid": "animals-200-911",
+      "topic": "Marine animals",
+      "verified": true,
+      "alt": [
+        "Sea horse"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://oceanservice.noaa.gov/facts/seahorse.html"
+    },
+    {
+      "p": 200,
+      "q": "What is the tailed aquatic stage in a typical frog life cycle called?",
+      "a": "Tadpole",
+      "qid": "animals-200-912",
+      "topic": "Reptiles and amphibians",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.nhm.ac.uk/discover/frogspawn-tadpoles-and-froglets.html"
+    },
+    {
+      "p": 200,
+      "q": "Which insect emits flashes of light from the rear of its abdomen at night?",
+      "a": "Firefly",
+      "qid": "animals-200-913",
+      "topic": "Insects and spiders",
+      "verified": true,
+      "alt": [
+        "Lightning bug"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://ssec.si.edu/stemvisions-blog/love-air-cicadas"
+    },
+    {
+      "p": 200,
+      "q": "Which African animal makes calls that resemble laughter?",
+      "a": "Spotted hyena",
+      "qid": "animals-200-914",
+      "topic": "Mammals",
+      "verified": true,
+      "alt": [
+        "Spotted hyaena"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/spotted-hyena"
+    },
+    {
+      "p": 200,
+      "q": "Which Australian egg-laying mammal has a duck-like bill?",
+      "a": "Platypus",
+      "qid": "animals-200-915",
+      "topic": "Mammals",
+      "verified": true,
+      "alt": [
+        "Duck-billed platypus"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/platypus"
+    },
+    {
+      "p": 200,
+      "q": "What material forms a shark's skeleton instead of bone?",
+      "a": "Cartilage",
+      "qid": "animals-200-916",
+      "topic": "Marine animals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.fisheries.noaa.gov/feature-story/12-shark-facts-may-surprise-you"
+    },
+    {
+      "p": 200,
+      "q": "Which fish in the Amazon's rivers shocks prey with electricity?",
+      "a": "Electric eel",
+      "qid": "animals-200-917",
+      "topic": "Abilities and senses",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://nationalzoo.si.edu/animals/electric-eel"
+    },
+    {
+      "p": 200,
+      "q": "A narwhal's tusk looks like a horn, but it is an elongated version of what?",
+      "a": "A tooth",
+      "qid": "animals-200-918",
+      "topic": "Anatomy and adaptations",
+      "verified": true,
+      "alt": [
+        "Tooth"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://naturalhistory.si.edu/exhibits/narwhal-revealing-arctic-legend"
+    },
+    {
+      "p": 400,
+      "q": "What small blue bird dives into rivers to catch fish?",
+      "a": "Kingfisher",
+      "qid": "animals-400-911",
+      "topic": "Birds",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.rspb.org.uk/birds-and-wildlife/kingfisher"
+    },
+    {
+      "p": 400,
+      "q": "What tough carbohydrate combines with proteins to form insect exoskeletons?",
+      "a": "Chitin",
+      "qid": "animals-400-912",
+      "topic": "Insects and spiders",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://genent.cals.ncsu.edu/exo-ii/"
+    },
+    {
+      "p": 400,
+      "q": "Which butterfly migrates thousands of kilometers to Mexican forests each autumn?",
+      "a": "Monarch butterfly",
+      "qid": "animals-400-913",
+      "topic": "Behavior and migration",
+      "verified": true,
+      "alt": [
+        "Monarch"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.fs.usda.gov/wildflowers/pollinators/Monarch_Butterfly/documents/Monarch-Monitoring_en.pdf"
+    },
+    {
+      "p": 400,
+      "q": "What Arabic term describes a camel calf from birth until weaning?",
+      "a": "Hiwar",
+      "qid": "animals-400-914",
+      "topic": "Young animals and groups",
+      "verified": true,
+      "alt": [
+        "Huwar",
+        "Hawaar"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.arabicacademy.gov.eg/ar/search_engine/roots/حور"
+    },
+    {
+      "p": 400,
+      "q": "Which large African mammal secretes a reddish fluid that protects its skin from sunlight?",
+      "a": "Hippopotamus",
+      "qid": "animals-400-915",
+      "topic": "Mammals",
+      "verified": true,
+      "alt": [
+        "Hippo"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/hippo"
+    },
+    {
+      "p": 400,
+      "q": "Which Mexican amphibian usually retains external gills and larval traits into adulthood?",
+      "a": "Axolotl",
+      "qid": "animals-400-916",
+      "topic": "Reptiles and amphibians",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.nhm.ac.uk/discover/axolotls-amphibians-that-never-grow-up.html"
+    },
+    {
+      "p": 400,
+      "q": "What bee dance communicates the location of food?",
+      "a": "Waggle dance",
+      "qid": "animals-400-917",
+      "topic": "Abilities and senses",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.sussex.ac.uk/lasi/sussexplan/dances"
+    },
+    {
+      "q": "Octopus blood is blue. Which metal is part of its oxygen-carrying molecule?",
+      "a": "Copper",
+      "topic": "Anatomy and adaptations",
+      "verified": true,
+      "sourceUrl": "https://ocean.si.edu/ocean-life/invertebrates/octopuses-squids-and-relatives",
+      "verifiedAt": "2026-09-25",
+      "p": 400,
+      "qid": "animals-400-918",
+      "difficultyTarget": 0.6,
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "What large bird of prey lives in the Andes?",
+      "a": "Andean condor",
+      "qid": "animals-600-911",
+      "topic": "Birds",
+      "verified": true,
+      "alt": [
+        "Condor"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/andean-condor"
+    },
+    {
+      "p": 600,
+      "q": "Which fish attaches itself to sharks using a suction disc on its head?",
+      "a": "Remora",
+      "qid": "animals-600-912",
+      "topic": "Marine animals",
+      "verified": true,
+      "alt": [
+        "Suckerfish"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/sharksucker/"
+    },
+    {
+      "p": 600,
+      "q": "Silk emerges from the rear of a spider's abdomen. What are the organs that release it called?",
+      "a": "Spinnerets",
+      "qid": "animals-600-913",
+      "topic": "Insects and spiders",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://australian.museum/learn/animals/spiders/spider-facts/"
+    },
+    {
+      "p": 600,
+      "q": "Which animal crosses Christmas Island's roads by the millions on its way to the sea?",
+      "a": "Red crab",
+      "qid": "animals-600-914",
+      "topic": "Behavior and migration",
+      "verified": true,
+      "alt": [
+        "Christmas Island red crab"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://parksaustralia.gov.au/news/millions-of-crabs-march-on-christmas-island/"
+    },
+    {
+      "p": 600,
+      "q": "Which nocturnal Madagascan animal uses a long middle finger to extract grubs?",
+      "a": "Aye-aye",
+      "qid": "animals-600-915",
+      "topic": "Mammals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://lemur.duke.edu/discover/meet-the-lemurs/aye-aye/"
+    },
+    {
+      "p": 600,
+      "q": "Which Australian bird famously imitates other birds and sometimes machinery?",
+      "a": "Lyrebird",
+      "qid": "animals-600-916",
+      "topic": "Birds",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://australian.museum/learn/animals/birds/superb-lyrebird/"
+    },
+    {
+      "p": 600,
+      "q": "Which Australian marsupial has fingerprints remarkably similar to human ones?",
+      "a": "Koala",
+      "qid": "animals-600-918",
+      "topic": "Anatomy and adaptations",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://digital.library.adelaide.edu.au/items/ad4f9181-6877-4d5b-bcf9-55a0446bd65b/full"
+    },
+    {
+      "q": "Which Congo forest animal has striped legs and is the giraffe's closest living relative?",
+      "a": "Okapi",
+      "topic": "Mammals",
+      "verified": true,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/okapi",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 600,
+      "qid": "animals-600-921",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 800,
+      "q": "Which pale European cave amphibian has reduced eyes covered by skin?",
+      "a": "Olm",
+      "qid": "animals-800-911",
+      "topic": "Reptiles and amphibians",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.postojnska-jama.eu/en/postojna-cave/10-years-of-the-world-famous-baby-dragons-from-postojna-cave"
+    },
+    {
+      "p": 800,
+      "q": "Which Australian bird decorates its courtship bower with blue objects such as feathers and bottle caps?",
+      "a": "Satin bowerbird",
+      "qid": "animals-800-912",
+      "topic": "Behavior and migration",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://australian.museum/learn/animals/birds/satin-bowerbird/"
+    },
+    {
+      "p": 800,
+      "q": "What organ in the roof of a snake's mouth analyzes scent chemicals?",
+      "a": "Jacobson's organ",
+      "qid": "animals-800-913",
+      "topic": "Abilities and senses",
+      "verified": true,
+      "alt": [
+        "Vomeronasal organ"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://museum-publications.australian.museum/media/dd/Uploads/Documents/38092/ams370_vXIX_05_lowres.19e9251.pdf"
+    },
+    {
+      "q": "Which New Zealand reptile has a visible third eye on top of its head when young?",
+      "a": "Tuatara",
+      "topic": "Reptiles and amphibians",
+      "verified": true,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/tuatara",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "animals-800-914",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which mollusk adjusts liquid and gas inside shell chambers to control buoyancy?",
+      "a": "Nautilus",
+      "topic": "Marine animals",
+      "verified": true,
+      "sourceUrl": "https://ocean.si.edu/ocean-life/invertebrates/octopuses-squids-and-relatives",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "animals-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which long-legged African bird of prey kills snakes by stamping on them?",
+      "a": "Secretarybird",
+      "topic": "Birds",
+      "verified": true,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/secretary-bird",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Secretary bird"
+      ],
+      "p": 800,
+      "qid": "animals-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which nearly hairless East African rodent lives in colonies led by a queen?",
+      "a": "Naked mole-rat",
+      "topic": "Behavior and migration",
+      "verified": true,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/naked-mole-rat",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "animals-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "q": "Which fish thought extinct was found alive near South Africa in 1938?",
+      "a": "Coelacanth",
+      "qid": "animals-800-921",
+      "topic": "Marine animals",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.nhm.ac.uk/discover/coelacanths-the-fish-that-outdid-the-loch-ness-monster.html"
+    },
+    {
+      "p": 1000,
+      "q": "What circulating fluid directly bathes an insect's organs?",
+      "a": "Hemolymph",
+      "qid": "animals-1000-911",
+      "topic": "Insects and spiders",
+      "verified": true,
+      "alt": [
+        "Haemolymph"
+      ],
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://genent.cals.ncsu.edu/bug-bytes/circulatory-system/"
+    },
+    {
+      "q": "Which Asian mammal has a prehensile tail and a scent resembling popcorn?",
+      "a": "Binturong",
+      "topic": "Mammals",
+      "verified": true,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/binturong",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Bearcat"
+      ],
+      "p": 1000,
+      "qid": "animals-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which huge American eagle hunts monkeys and sloths in rainforest trees?",
+      "a": "Harpy eagle",
+      "topic": "Birds",
+      "verified": true,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/harpy-eagle",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "animals-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What protein transports oxygen in octopus blood instead of hemoglobin?",
+      "a": "Hemocyanin",
+      "topic": "Anatomy and adaptations",
+      "verified": true,
+      "sourceUrl": "https://ocean.si.edu/ocean-life/invertebrates/octopuses-squids-and-relatives",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Haemocyanin"
+      ],
+      "p": 1000,
+      "qid": "animals-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "A squid changes color by using muscles to expand pigment cells. What are these cells called?",
+      "a": "Chromatophores",
+      "topic": "Abilities and senses",
+      "verified": true,
+      "sourceUrl": "https://ocean.si.edu/ocean-life/invertebrates/octopuses-squids-and-relatives",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "animals-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which hedgehog-like Madagascan mammal includes species that communicate by rubbing specialized spines?",
+      "a": "Tenrec",
+      "topic": "Mammals",
+      "verified": true,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/tenrec",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "animals-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What falling organic material does the vampire squid feed on in the deep sea?",
+      "a": "Marine snow",
+      "topic": "Behavior and migration",
+      "verified": true,
+      "sourceUrl": "https://ocean.si.edu/ocean-life/invertebrates/octopuses-squids-and-relatives",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "animals-1000-918",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "A baby echidna laps milk from its mother's skin. Which structure found in most mammals does she lack?",
+      "a": "Nipples",
+      "topic": "Anatomy and adaptations",
+      "verified": true,
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/echidna",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Teats"
+      ],
+      "p": 1000,
+      "qid": "animals-1000-921",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

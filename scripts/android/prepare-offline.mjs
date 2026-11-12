@@ -1,8 +1,8 @@
 import { createHash } from 'node:crypto';
-import { cp, mkdir, readFile, realpath, rm, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, realpath, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import sharp from 'sharp';
-import { buildOnce, DIST, ROOT } from '../lib.mjs';
+import { buildOnce, ROOT } from '../lib.mjs';
 import { ticketPolicyEnabled } from '../../src/shared/account/gameplay-policy.mjs';
 
 const generatedParent = path.join(ROOT, 'android/app/build/generated');
@@ -30,13 +30,15 @@ await rm(generated, { recursive: true, force: true });
 await mkdir(path.join(generated, 'assets'), { recursive: true });
 
 const version = '1.9';
-const { buildId } = await buildOnce({ minify: true, includeStudio: false, version, roomsUrl: '' });
-const excluded = new Set(['pricing', 'pay.html', 'sw.js', '_headers', '_redirects']);
 const assets = path.join(generated, 'assets');
-await cp(DIST, assets, { recursive: true, filter: source => {
-  const [entry] = path.relative(DIST, source).split(path.sep);
-  return !excluded.has(entry);
-} });
+// This explicit output is already owned and cleaned above. Do not replace the
+// shared web dist while another preview or native preparation is using it.
+const { buildId } = await buildOnce({ minify: true, includeStudio: false, version, roomsUrl: '', outdir: assets });
+for (const entry of ['pricing', 'pay.html', 'sw.js', '_headers', '_redirects']) {
+  const target = path.resolve(assets, entry);
+  if (path.dirname(target) !== assets) throw new Error('Android exclusion escaped its generated asset directory.');
+  await rm(target, { recursive: true, force: true });
+}
 const icon = path.join(generated, 'res/drawable-nodpi/maydan_launcher.png');
 await mkdir(path.dirname(icon), { recursive: true });
 await sharp(path.join(ROOT, 'public/icons/icon-1024.png')).resize(192).png().toFile(icon);

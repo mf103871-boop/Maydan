@@ -6,7 +6,7 @@ import tempfile
 import unittest
 import zipfile
 
-from verify_release_features import PreparedBundle, expected_warmth, verify
+from verify_release_features import PreparedBundle, expected_warmth, verify, verify_localization
 from verify_runtime_dependencies import Bundle
 
 
@@ -55,7 +55,29 @@ class ReleaseFeaturesTests(unittest.TestCase):
         finally:
             bundle.close()
 
+    def add_localization(self):
+        packs = []
+        for identity in ['ui', 'badeeha', 'beep', 'fabraka', 'jabeen', 'mamnoo', 'meenfina']:
+            kind = 'ui' if identity == 'ui' else 'game'
+            version = 'ui-en-v1' if identity == 'ui' else 'new-en'
+            name = f'www/assets/brand/locale-en-{identity}-TEST1234.json'
+            payload = {'schemaVersion': 1, 'id': identity, 'kind': kind, 'contentLocale': 'en',
+                       'contentVersion': version, 'data': {'test': 'content'} if identity in ('ui', 'fabraka') else ['content']}
+            data = json.dumps(payload).encode()
+            self.write(name, data)
+            evidence = {'path': name, 'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()}
+            self.receipt['resources'].append(evidence)
+            packs.append({'id': identity, 'kind': kind, 'contentLocale': 'en', 'contentVersion': version, **evidence})
+        self.receipt['localization'] = {'schemaVersion': 1, 'uiLocales': ['ar', 'en'],
+                                        'contentVersions': {'ar': 'legacy-ar', 'en': 'new-en'},
+                                        'publicPacks': packs, 'privateContent': 'server-only'}
+        html = self.read('www/index.html') + '\n'.join(Path(pack['path']).name for pack in packs).encode()
+        self.write('www/index.html', html)
+        self.receipt['resources'][0] = {'path': 'www/index.html', 'bytes': len(html), 'sha256': hashlib.sha256(html).hexdigest()}
+        self.save_receipt()
+
     def test_same_receipt_verifies_prepared_app_and_exported_ipa(self):
+        self.add_localization()
         self.assertEqual(verify(PreparedBundle(self.app), self.env, prepared=True)['build'], '57')
         self.assertEqual(self.verify_app()['version'], '1.9')
         ipa = Path(self.temp.name) / 'Maydan.ipa'
@@ -68,6 +90,69 @@ class ReleaseFeaturesTests(unittest.TestCase):
             self.assertEqual(verify(with_bundle, self.env)['sourceCommit'], self.env['GITHUB_SHA'])
         finally:
             with_bundle.close()
+
+    def test_complete_preview_requires_localization_even_when_legacy_compatibility_does_not(self):
+        self.assertEqual(verify(PreparedBundle(self.app), self.env, prepared=True)['profile'], 'compatibility')
+        env = {**self.env, 'IOS_RELEASE_PROFILE': 'complete-preview', 'IOS_RELEASE_ENVIRONMENT': 'mafia-preview',
+               'MAYDAN_PRIVATE_AUDIO_PREVIEW': '1', 'MAYDAN_WARMTH_PREVIEW': '1',
+               'MAYDAN_GAMEPLAY_ACCESS_POLICY': 'game-entry-ticket-v2', 'IOS_REWARDED_MODE': 'testflight-owned'}
+        with self.assertRaisesRegex(ValueError, 'localization receipt'):
+            verify(PreparedBundle(self.app), env, prepared=True)
+
+    def test_localization_requires_exact_public_ids_versions_and_resource_evidence(self):
+        self.add_localization()
+        original = json.loads(json.dumps(self.receipt))
+        changes = [
+            lambda value: value['localization']['publicPacks'].pop(),
+            lambda value: value['localization']['publicPacks'][0].update({'id': 'ersomha'}),
+            lambda value: value['localization']['publicPacks'][0].update({'id': 'badeeha'}),
+            lambda value: value['localization']['publicPacks'][0].update({'contentVersion': 'new-en'}),
+            lambda value: value['localization']['publicPacks'][1].update({'kind': 'ui'}),
+            lambda value: value['localization']['publicPacks'][1].update({'contentLocale': 'ar'}),
+            lambda value: value['localization']['publicPacks'][1].update({'path': 'www/../private.json'}),
+            lambda value: value['localization'].update({'uiLocales': ['en']}),
+            lambda value: value['localization'].update({'contentVersions': {'ar': 'changed', 'en': 'new-en'}}),
+            lambda value: value['localization'].update({'privateContent': 'public'}),
+            lambda value: value['resources'].pop(),
+        ]
+        for change in changes:
+            with self.subTest(change=changes.index(change)):
+                self.receipt = json.loads(json.dumps(original)); change(self.receipt)
+                with self.assertRaises(ValueError):
+                    verify_localization(PreparedBundle(self.app), self.receipt, required=True)
+
+    def test_localization_checks_actual_bytes_and_rejects_stale_or_private_pack_files(self):
+        self.add_localization()
+        pack = self.receipt['localization']['publicPacks'][0]
+        original = self.read(pack['path'])
+        self.write(pack['path'], b'replaced')
+        with self.assertRaisesRegex(ValueError, 'Actual English pack differs'):
+            self.verify_app()
+        self.write(pack['path'], original)
+        for filename in ['locale-en-ui-OLDHASH.json', 'locale-en-ersomha-PRIVATE.json']:
+            name = 'www/assets/brand/' + filename
+            self.write(name, original)
+            with self.assertRaisesRegex(ValueError, 'inventory contains'):
+                self.verify_app()
+            (self.app / name).unlink()
+
+    def test_rehashed_wrong_locale_envelope_or_data_cannot_pass_and_html_must_reference_each_pack(self):
+        self.add_localization()
+        pack = self.receipt['localization']['publicPacks'][0]
+        original = self.read(pack['path'])
+        for change in [{'contentLocale': 'ar'}, {'contentVersion': 'wrong'}, {'kind': 'game'},
+                       {'data': []}, {'data': {}}, {'id': 'ersomha'}]:
+            payload = json.loads(original); payload.update(change)
+            data = json.dumps(payload).encode(); self.write(pack['path'], data)
+            pack.update({'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()})
+            at = next(i for i, resource in enumerate(self.receipt['resources']) if resource['path'] == pack['path'])
+            self.receipt['resources'][at] = {key: pack[key] for key in ('path', 'bytes', 'sha256')}
+            with self.assertRaisesRegex(ValueError, 'Actual English pack (envelope|data)'):
+                verify_localization(PreparedBundle(self.app), self.receipt, required=True)
+        self.write(pack['path'], original)
+        self.write('www/index.html', b'<html>no locale URLs</html>')
+        with self.assertRaisesRegex(ValueError, 'does not reference'):
+            verify_localization(PreparedBundle(self.app), self.receipt, required=True)
 
     def test_replaced_html_audio_or_api_cannot_reuse_prepared_evidence(self):
         for name in ['www/index.html', 'www/audio/selected/music.m4a', 'www/native-config.json']:

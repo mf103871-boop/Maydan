@@ -1,0 +1,538 @@
+{
+  "id": "proverbs",
+  "name": "Arab Proverbs",
+  "icon": "🧿",
+  "qs": [
+    {
+      "qid": "proverbs-200-911",
+      "p": 200,
+      "q": "What behavior does the proverb 'kindness ends in a slap' criticize?",
+      "a": "Repaying kindness with harm",
+      "topic": "Character and feelings",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/books/75241938/1/",
+      "alt": [
+        "Ingratitude"
+      ]
+    },
+    {
+      "qid": "proverbs-200-912",
+      "p": 200,
+      "q": "What contrast is expressed by 'a rose outside, a monkey inside'?",
+      "a": "A fine appearance hiding a bad character",
+      "topic": "Appearances and pretension",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/books/75241938/2/",
+      "alt": [
+        "Beautiful exterior and ugly interior"
+      ]
+    },
+    {
+      "qid": "proverbs-200-913",
+      "p": 200,
+      "q": "When hosts say 'al-bisat Ahmadi' to their guests, what are they encouraging?",
+      "a": "Dispensing with formality",
+      "topic": "Cooperation and relationships",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/books/75241938/2/",
+      "alt": [
+        "Relaxing formalities",
+        "Making oneself at home"
+      ]
+    },
+    {
+      "qid": "proverbs-200-914",
+      "p": 200,
+      "q": "What sort of favor is rejected by 'neither your onion nor my tears'?",
+      "a": "A favor followed by harm",
+      "topic": "Caution and consequences",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/books/75241938/22/",
+      "alt": [
+        "Help that causes trouble"
+      ]
+    },
+    {
+      "qid": "proverbs-200-915",
+      "p": 200,
+      "q": "What lesson is expressed by 'one grain tips the scale'?",
+      "a": "Even a small thing can make a difference",
+      "topic": "Work and planning",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/books/75241938/5/",
+      "alt": [
+        "Small contributions matter"
+      ]
+    },
+    {
+      "qid": "proverbs-200-916",
+      "p": 200,
+      "q": "What does 'the knowledgeable need no introduction' imply?",
+      "a": "An expert does not need an explanation",
+      "topic": "Knowledge and experience",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/books/75241938/17/",
+      "alt": [
+        "No need to explain to someone who already knows"
+      ]
+    },
+    {
+      "qid": "proverbs-200-917",
+      "p": 200,
+      "q": "A promise is dismissed as 'ink on paper'. What does that mean?",
+      "a": "A written promise with no action",
+      "topic": "Character and feelings",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/books/75241938/5/",
+      "alt": [
+        "An unfulfilled written promise"
+      ]
+    },
+    {
+      "qid": "proverbs-200-918",
+      "p": 200,
+      "q": "What virtue is praised by 'a little coffee satisfies the craving'?",
+      "a": "Contentment with little",
+      "topic": "Money and contentment",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/books/75241938/2/",
+      "alt": [
+        "Moderation",
+        "Being satisfied with little"
+      ]
+    },
+    {
+      "qid": "proverbs-400-911",
+      "p": 400,
+      "q": "Why is 'the jug broke, and here is its spout' said to someone asking for proof?",
+      "a": "The evidence is plain to see",
+      "topic": "Knowledge and experience",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/books/75241938/1/",
+      "alt": [
+        "Obvious evidence"
+      ]
+    },
+    {
+      "qid": "proverbs-400-912",
+      "p": 400,
+      "q": "Two choices are described as 'five coins of onions, or onions for five coins'. What is the point?",
+      "a": "Both lead to the same result",
+      "topic": "Work and planning",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/books/75241938/2/",
+      "alt": [
+        "There is no real difference"
+      ]
+    },
+    {
+      "qid": "proverbs-400-913",
+      "p": 400,
+      "q": "What behavior is praised by 'the one who loves you chews your pebbles for you'?",
+      "a": "Overlooking a loved one's faults",
+      "topic": "Cooperation and relationships",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/books/75241938/5/",
+      "alt": [
+        "Forgiving the beloved's mistakes"
+      ]
+    },
+    {
+      "qid": "proverbs-400-914",
+      "p": 400,
+      "q": "What does 'do not celebrate until the child is swaddled' caution against?",
+      "a": "Celebrating before success is certain",
+      "topic": "Caution and consequences",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/books/75241938/23/",
+      "alt": [
+        "Premature celebration"
+      ]
+    },
+    {
+      "qid": "proverbs-400-915",
+      "p": 400,
+      "q": "What responsibility is emphasized by 'the leader of the people is their servant'?",
+      "a": "Serving the community",
+      "topic": "Cooperation and relationships",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/books/75241938/21/",
+      "alt": [
+        "Service to the group"
+      ]
+    },
+    {
+      "qid": "proverbs-400-916",
+      "p": 400,
+      "q": "What is valued in 'a cheerful face is a second gift'?",
+      "a": "Welcoming people warmly",
+      "topic": "Character and feelings",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/books/75241938/2/",
+      "alt": [
+        "Kind reception"
+      ]
+    },
+    {
+      "qid": "proverbs-400-917",
+      "p": 400,
+      "q": "What should come before judgment in 'do not condemn or praise until a year and six months have passed'?",
+      "a": "Enough experience to judge",
+      "topic": "Knowledge and experience",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/books/75241938/22/",
+      "alt": [
+        "Adequate experience"
+      ]
+    },
+    {
+      "qid": "proverbs-400-918",
+      "p": 400,
+      "q": "Who is mocked by 'sitting on a rough mat while boasting grandly'?",
+      "a": "Someone boasting about what they do not have",
+      "topic": "Appearances and pretension",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/books/75241938/20/",
+      "alt": [
+        "An empty boaster"
+      ]
+    },
+    {
+      "qid": "proverbs-600-911",
+      "p": 600,
+      "q": "What does 'the familiar thing has no glow' suggest?",
+      "a": "Familiarity reduces appeal",
+      "topic": "Appearances and pretension",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/books/75241938/5/",
+      "alt": [
+        "The familiar loses its shine"
+      ]
+    },
+    {
+      "qid": "proverbs-600-912",
+      "p": 600,
+      "q": "What burden is heavier in 'a passing caravan is better than a tethered donkey'?",
+      "a": "An ongoing expense",
+      "topic": "Money and contentment",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/books/75241938/20/",
+      "alt": [
+        "Continuing upkeep"
+      ]
+    },
+    {
+      "qid": "proverbs-600-913",
+      "p": 600,
+      "q": "Who is criticized by 'he could not find a family, so he got a horse'?",
+      "a": "Someone choosing a substitute that cannot fill the need",
+      "topic": "Work and planning",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/books/75241938/23/",
+      "alt": [
+        "An inadequate replacement"
+      ]
+    },
+    {
+      "qid": "proverbs-600-914",
+      "p": 600,
+      "q": "What does jawab mean in the proverb asking Abu al-Husayn to read it?",
+      "a": "A letter",
+      "topic": "Words and stories behind proverbs",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/books/75241938/27/",
+      "alt": [
+        "Written message"
+      ]
+    },
+    {
+      "qid": "proverbs-600-915",
+      "p": 600,
+      "q": "What lesson is conveyed by choosing a dress and a veil over an extravagant dress alone?",
+      "a": "Allocating spending wisely",
+      "topic": "Money and contentment",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/books/75241938/2/",
+      "alt": [
+        "Good budgeting"
+      ]
+    },
+    {
+      "qid": "proverbs-600-916",
+      "p": 600,
+      "q": "You call a modest gift 'love's onion is a sheep'. What do you mean?",
+      "a": "A small gift from a loved one is precious",
+      "topic": "Cooperation and relationships",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/books/75241938/2/",
+      "alt": [
+        "A little from someone loved means a lot"
+      ]
+    },
+    {
+      "qid": "proverbs-600-917",
+      "p": 600,
+      "q": "What is a nabbout in the proverb 'is affection won with a nabbout?'",
+      "a": "A thick stick",
+      "topic": "Words and stories behind proverbs",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/books/75241938/5/",
+      "alt": [
+        "A cudgel",
+        "A club"
+      ]
+    },
+    {
+      "qid": "proverbs-600-918",
+      "p": 600,
+      "q": "What failing is criticized by 'all that music ends in a squeak'?",
+      "a": "Work that produces no useful result",
+      "topic": "Caution and consequences",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/books/75241938/1/",
+      "alt": [
+        "Pointless effort"
+      ]
+    },
+    {
+      "qid": "proverbs-800-911",
+      "p": 800,
+      "q": "Who is addressed by 'follower of fine appearances, your hopes will fail'?",
+      "a": "Someone deceived by outward looks",
+      "topic": "Appearances and pretension",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/75241938/27/",
+      "alt": [
+        "One impressed only by appearance"
+      ]
+    },
+    {
+      "qid": "proverbs-800-912",
+      "p": 800,
+      "q": "In work, what does the proverb about grain pursuing the bucket describe?",
+      "a": "Work arriving continuously and in abundance",
+      "topic": "Work and planning",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/75241938/5/",
+      "alt": [
+        "An unending flow of tasks"
+      ]
+    },
+    {
+      "qid": "proverbs-800-913",
+      "p": 800,
+      "q": "What habit is criticized by 'teach me how to be annoying: repeat whatever you say'?",
+      "a": "Burdening people with repeated talk",
+      "topic": "Cooperation and relationships",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/75241938/27/",
+      "alt": [
+        "Repetitive speech"
+      ]
+    },
+    {
+      "qid": "proverbs-800-914",
+      "p": 800,
+      "q": "In Ahmad Taymur's explanation, what does 'do not proclaim what you do not know' caution against?",
+      "a": "Praising before trying",
+      "topic": "Knowledge and experience",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/75241938/22/",
+      "alt": [
+        "Praise without experience"
+      ]
+    },
+    {
+      "qid": "proverbs-800-915",
+      "p": 800,
+      "q": "What does 'a year at sea rather than one day going south' favor in travel?",
+      "a": "Comfort over a shorter distance",
+      "topic": "Caution and consequences",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/75241938/2/",
+      "alt": [
+        "An easier journey over a shorter one"
+      ]
+    },
+    {
+      "qid": "proverbs-800-916",
+      "p": 800,
+      "q": "What material does nakh refer to in 'he was on nakh, now he is on a mat'?",
+      "a": "Rough fabric woven from halfa grass",
+      "topic": "Words and stories behind proverbs",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/75241938/21/",
+      "alt": [
+        "Coarse halfa-grass cloth"
+      ]
+    },
+    {
+      "qid": "proverbs-800-917",
+      "p": 800,
+      "q": "What is the point of 'no thousand for me and no thousand for you'?",
+      "a": "Both are boasting of imaginary wealth",
+      "topic": "Money and contentment",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/75241938/22/",
+      "alt": [
+        "Neither possesses the money they boast about"
+      ]
+    },
+    {
+      "q": "Who is bariha in 'give the bow to bariha'?",
+      "a": "The bowmaker",
+      "topic": "Words and stories behind proverbs",
+      "sourceUrl": "https://ddl.ae/uploads/books/167.html",
+      "alt": [
+        "The person who makes the bow"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "proverbs-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "proverbs-1000-911",
+      "p": 1000,
+      "q": "What does mada'i mean in the Alexandrian saying 'barefoot but ahead of the mada'i'?",
+      "a": "Women who invite guests to weddings",
+      "topic": "Words and stories behind proverbs",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://www.safahat.org/books/75241938/5/",
+      "alt": [
+        "Wedding invitation callers"
+      ]
+    },
+    {
+      "q": "In the famous story behind 'he returned with Hunayn's shoes', what was Hunayn's trade?",
+      "a": "Shoemaker",
+      "topic": "Work and planning",
+      "sourceUrl": "https://ddl.ae/uploads/books/167.html",
+      "alt": [
+        "Cobbler"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "proverbs-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What palace did Sinimmar build in the story about his reward?",
+      "a": "Al-Khawarnaq",
+      "topic": "Work and planning",
+      "sourceUrl": "https://www.islamweb.net/ar/library/content/122/4031/",
+      "alt": [
+        "Khawarnaq"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "proverbs-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What did al-Kusa'i break and then regret in the proverb's story?",
+      "a": "His bow",
+      "topic": "Caution and consequences",
+      "sourceUrl": "https://islamport.com/l/adb/5494/4387.htm",
+      "alt": [
+        "A bow"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "proverbs-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "In the famous story about Baraqish bringing disaster on her people, what animal was she?",
+      "a": "A female dog",
+      "topic": "Caution and consequences",
+      "sourceUrl": "https://ablibrary.net/book_content/b/14229/180",
+      "alt": [
+        "Dog"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "proverbs-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Who wore a necklace to recognize himself and became proverbial for foolishness?",
+      "a": "Habannaqa",
+      "topic": "Appearances and pretension",
+      "sourceUrl": "https://ddl.ae/uploads/books/167.html",
+      "alt": [
+        "Habanqa"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "proverbs-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "In the story of Shann and Tabaqa, what did 'will you carry me or shall I carry you?' mean on the road?",
+      "a": "Let us take turns talking during the journey",
+      "topic": "Cooperation and relationships",
+      "sourceUrl": "https://ddl.ae/uploads/books/167.html",
+      "alt": [
+        "Exchanging stories along the way"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "proverbs-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What did the approaching army hide behind in the story of Zarqa al-Yamama?",
+      "a": "Trees",
+      "topic": "Knowledge and experience",
+      "sourceUrl": "https://islamport.com/l/adb/5494/586.htm",
+      "alt": [
+        "Tree branches"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "proverbs-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

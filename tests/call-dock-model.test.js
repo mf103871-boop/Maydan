@@ -68,7 +68,8 @@ test('a short rail still highlights a hidden speaker and never duplicates its id
 
 test('phone orientation and group size determine a bounded number of seats', () => {
   assert.equal(dockCapacity(760, 12), 4);
-  assert.equal(dockCapacity(320, 12), 2);
+  assert.equal(dockCapacity(320, 12), 1);
+  assert.equal(dockCapacity(340, 12), 2);
   assert.equal(dockCapacity(220, 12), 1);
   assert.equal(dockCapacity(760, 2), 2);
   assert.equal(dockCapacity(760, 0), 0);
@@ -112,6 +113,6 @@ test('menu-bar bounds clamp the displayed bubbles and restore their preferred po
   assert.deepEqual(clampFloatingDockPosition(preferred, menu), { x: 146, y: 402 });
   assert.deepEqual(preferred, { x: 146, y: 410 });
   assert.deepEqual(clampFloatingDockPosition(preferred, gameplay), preferred);
-  assert.equal(dockCapacity(310, 12), 2);
+  assert.equal(dockCapacity(310, 12), 1);
   assert.equal(dockCapacity(290, 12), 1);
 });

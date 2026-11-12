@@ -1,0 +1,18 @@
+{
+  "approvedConcept": "03 — شِلّة ميدان; Active only",
+  "reference": "outputs/maydan-character-icons/03-quiz-friends.png",
+  "referenceSha256": "84eb1a285ebd033b483a1611c76434aa974160b27a6507347cbd0fb42a5f6ea0",
+  "generatedSource": "maydan-quiz-friends-active-source.png",
+  "generatedSourceSha256": "f477fba2ac213789c4008b3f8f94f4cdc59bd63149649d8007273fb32748e052",
+  "generator": "Built-in image_gen; reference-preserving edit",
+  "dimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "master": "public/icons/icon-1024.png",
+  "masterSha256": "9899dd547c76c25f710f1c64779fe4a328f9b2826620abe2fc79247766ee7160",
+  "maskableInsetFraction": 0.16,
+  "preparation": "Lossless source retained; master downsampled to 1024px opaque sRGB PNG with Sharp. No corner mask baked.",
+  "scope": "Active release icon only. Sleepy/Asleep concepts remain future work; no automatic idle-state behavior was added.",
+  "prompt": "Use case: identity-preserve.\nAsset type: production app icon, one single square image, at least 1024 × 1024 pixels.\nEdit target: the attached approved Maydan concept-03 presentation sheet. Derive ONLY the LEFT ACTIVE icon as a standalone full-bleed square production asset. Preserve the identity, appearance, expression, palette and artistic style of the approved left tile: the same friendly young adult Arab woman on the left with shoulder-length wavy dark-plum hair, warm light olive skin and coral shirt, and the same friendly young adult Arab man on the right with short dark-plum curls, warm brown skin and lavender shirt. Exactly two faces, smiling energetically toward one another with open bright eyes. Keep the same single large ivory speech bubble with thick coral question mark between and above their heads.\nPreserve the bold correctly spelled connected Arabic word \"ميدان\" in dark plum across the ivory bottom region. Exact text only: \"ميدان\". Keep its correct Arabic letter shapes and dots; do not add letters, captions, numerals or Latin text. The Arabic word occupies the bottom 24% and has generous left/right and bottom breathing room for small icon legibility.\nComposition adjustment ONLY: transform the left Active tile into a true SQUARE full-bleed icon, extending the teal background into the upper square corners and the ivory bottom region into the lower square corners. No painted outer rounded corners, no external cream presentation margin, no frame, no tile shadow, no 03 label, no ACTIVE/SLEEPY/ASLEEP captions, no other tiles. The result is the actual square icon artwork, not a mockup. Background is opaque rich teal with the approved gentle lighting, ivory bottom region; art fills to every edge. Let the OS apply its own corner mask.\nKeep the heads and question cue comfortably within the central safe area; both faces must remain clearly distinct at 60px. Do not redesign their faces or turn them into generic symbols, do not introduce a third character or controller. Preserve the approved polished soft sculpted 2.5D animated-game rendering. No added details. Produce one single clean square image."
+}

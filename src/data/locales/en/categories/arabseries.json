@@ -1,0 +1,504 @@
+{
+  "id": "arabseries",
+  "name": "Arab Series",
+  "icon": "📺",
+  "style": "story",
+  "qs": [
+    {
+      "qid": "arabseries-200-911",
+      "p": 200,
+      "topic": "Al Hayba",
+      "q": "In Al Hayba season one, to which country does Alia want to return with her son?",
+      "a": "Canada",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2030474/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "arabseries-200-912",
+      "p": 200,
+      "topic": "Rashash",
+      "q": "To which neighboring country does the gang leader flee near the end of Rashash?",
+      "a": "Yemen",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2067733/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "arabseries-200-913",
+      "p": 200,
+      "topic": "AlRawabi School for Girls",
+      "q": "In AlRawabi School for Girls season one, which new student joins Mariam against the bullies?",
+      "a": "Noaf",
+      "alt": [
+        "Nouf"
+      ],
+      "sourceUrl": "https://www.netflix.com/title/81034661",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "arabseries-200-914",
+      "p": 200,
+      "topic": "Al Asouf",
+      "q": "In Al Asouf, which brother admits to being the abandoned baby's father?",
+      "a": "Mohsen",
+      "alt": [
+        "Muhsin"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2009970/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "arabseries-200-915",
+      "p": 200,
+      "topic": "Paranormal",
+      "q": "In Paranormal, whom does Refaat pursue through his dream maze, believing she is behind his tragedies?",
+      "a": "Shiraz",
+      "alt": [],
+      "sourceUrl": "https://www.netflix.com/title/80214886",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "arabseries-200-916",
+      "p": 200,
+      "topic": "Al Hayba",
+      "q": "In Al Hayba season one, which lawyer helps Alia attempt to escape?",
+      "a": "Naim",
+      "alt": [
+        "Naem"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2030474/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "arabseries-200-917",
+      "p": 200,
+      "topic": "Al Thaman",
+      "q": "In Al Thaman, which friend advises the heroine to conceal being a mother when applying for work?",
+      "a": "Tima",
+      "alt": [
+        "Teema"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2076120/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "arabseries-200-918",
+      "p": 200,
+      "topic": "The Bamboo Stalk",
+      "q": "In The Bamboo Stalk, which grandmother refuses to acknowledge her grandson arriving from abroad?",
+      "a": "Ghanima",
+      "sourceUrl": "https://elcinema.com/work/2042472/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Ghanimah"
+      ]
+    },
+    {
+      "qid": "arabseries-400-911",
+      "p": 400,
+      "topic": "Rashash",
+      "q": "In Rashash, what career dream does the officer help his brother pursue?",
+      "a": "Becoming a pilot",
+      "alt": [
+        "Learning to fly",
+        "Aviation"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2067733/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabseries-400-912",
+      "p": 400,
+      "topic": "AlRawabi School for Girls",
+      "q": "In AlRawabi School for Girls season two, which school position do students campaign for?",
+      "a": "Student council president",
+      "alt": [
+        "Head girl",
+        "Student president"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/AlRawabi_School_for_Girls",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabseries-400-913",
+      "p": 400,
+      "topic": "Al Asouf",
+      "q": "In Al Asouf, whom does Khaled love and marry?",
+      "a": "Juhair",
+      "alt": [
+        "Juhayr"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2009970/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabseries-400-914",
+      "p": 400,
+      "topic": "Paranormal",
+      "q": "In Paranormal, what is Refaat's medical specialty before investigating supernatural events?",
+      "a": "Hematology",
+      "alt": [
+        "Haematology"
+      ],
+      "sourceUrl": "https://www.netflix.com/title/80214886",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabseries-400-915",
+      "p": 400,
+      "topic": "Qabeel",
+      "q": "In Qabeel, who is revealed to be behind the killer's online identity?",
+      "a": "Adam",
+      "sourceUrl": "https://elcinema.com/work/2056050/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": []
+    },
+    {
+      "qid": "arabseries-400-917",
+      "p": 400,
+      "topic": "AlRawabi School for Girls",
+      "q": "In AlRawabi School for Girls season one, which bully is first targeted by a scandal during the open day?",
+      "a": "Ruqayya",
+      "sourceUrl": "https://www.netflix.com/title/81034661",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Ruqayyah",
+        "Roqayya"
+      ]
+    },
+    {
+      "qid": "arabseries-400-918",
+      "p": 400,
+      "topic": "Al Thaman",
+      "q": "In Al Thaman, which friend of the manager also falls in love with the heroine?",
+      "a": "Karam",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2076120/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabseries-400-921",
+      "p": 400,
+      "topic": "Rashash",
+      "q": "At the end of Rashash, what motivates the gang leader's partner to hand him over to the police?",
+      "a": "A financial reward",
+      "alt": [
+        "Reward money",
+        "Money"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2067733/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabseries-600-911",
+      "p": 600,
+      "topic": "Rashash",
+      "q": "In Rashash, which superior works with the officer pursuing the gang to expose the spy?",
+      "a": "Azzam",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2067733/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabseries-600-912",
+      "p": 600,
+      "topic": "Al Asouf",
+      "q": "In Al Asouf season one, which business does Khaled build before it is demolished because he does not own the land?",
+      "a": "A gas station",
+      "alt": [
+        "Petrol station",
+        "Fuel station"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2009970/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabseries-600-913",
+      "p": 600,
+      "topic": "The Bamboo Stalk",
+      "q": "In The Bamboo Stalk, which friend of the father welcomes his son back to Kuwait?",
+      "a": "Ghassan",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2042472/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabseries-600-914",
+      "p": 600,
+      "topic": "Paranormal",
+      "q": "In Paranormal, from which country does Maggie, whom Refaat knew as a student, come?",
+      "a": "Scotland",
+      "alt": [],
+      "sourceUrl": "https://www.netflix.com/title/80214886",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabseries-600-915",
+      "p": 600,
+      "topic": "Qabeel",
+      "q": "In Qabeel, to which governorate is Tarek transferred after the disciplinary investigation?",
+      "a": "Qena",
+      "alt": [
+        "Qina"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2056050/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabseries-600-916",
+      "p": 600,
+      "topic": "Al Hayba",
+      "q": "In Al Hayba season one, which young woman does Alia help after money and drugs are found with her?",
+      "a": "Hanadi",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2030474/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabseries-600-917",
+      "p": 600,
+      "topic": "AlRawabi School for Girls",
+      "q": "In AlRawabi School for Girls season two, which mysterious student befriends Nadine?",
+      "a": "Shams",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/AlRawabi_School_for_Girls",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabseries-600-918",
+      "p": 600,
+      "topic": "The Bamboo Stalk",
+      "q": "In The Bamboo Stalk, which aunt argues for accepting her nephew into the family?",
+      "a": "Hind",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2042472/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabseries-800-912",
+      "p": 800,
+      "topic": "Al Thaman",
+      "q": "In Al Thaman, who films Firas and Rola and uses the video to blackmail him?",
+      "a": "Salem",
+      "alt": [
+        "Salim"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2076120/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "arabseries-800-913",
+      "p": 800,
+      "topic": "Al Asouf",
+      "q": "In Al Asouf season one, what work does Khaled take after the crisis of his demolished business?",
+      "a": "Taxi driver",
+      "alt": [
+        "Cab driver"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2009970/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "arabseries-800-914",
+      "p": 800,
+      "topic": "Qabeel",
+      "q": "At the end of Qabeel, what does Sama burn to obstruct her partner's escape abroad?",
+      "a": "His passport",
+      "alt": [
+        "Passport"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2056050/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "Al Hayba",
+      "q": "In Al Hayba season one, which woman decides to leave the country after Jabal grows closer to Alia?",
+      "a": "Ghada",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2030474/episodes",
+      "qid": "arabseries-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Al Asouf",
+      "q": "In Al Asouf season one, which woman cares for the baby found in the street?",
+      "a": "Aziza",
+      "alt": [
+        "Azizah"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2009970/episodes",
+      "qid": "arabseries-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "The Bamboo Stalk",
+      "q": "In The Bamboo Stalk, what animal does Noor's small gift to Issa resemble?",
+      "a": "A turtle",
+      "alt": [
+        "Turtle",
+        "Tortoise"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2042472/episodes",
+      "qid": "arabseries-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Paranormal",
+      "q": "In Paranormal, in which desert does Refaat seek a rare flower to save his fiancée?",
+      "a": "The Libyan Desert",
+      "alt": [
+        "Libyan Desert"
+      ],
+      "sourceUrl": "https://www.netflix.com/title/80214886",
+      "qid": "arabseries-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "qid": "arabseries-800-921",
+      "p": 800,
+      "topic": "Al Hayba",
+      "q": "In Al Hayba season one, which cousin works with the family leader to trap Duraid?",
+      "a": "Shahin",
+      "alt": [
+        "Shaheen"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2030474/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "Al Hayba",
+      "q": "In Al Hayba season one, which lawyer makes a deal with Majdi to obtain money from Jabal?",
+      "a": "Najjar",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2030474/episodes",
+      "qid": "arabseries-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Al Thaman",
+      "q": "In Al Thaman, which grandfather of Sara's son initially refuses to help pay for the operation?",
+      "a": "Ibrahim",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2076120/episodes",
+      "qid": "arabseries-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Al Thaman",
+      "q": "In Al Thaman, who cannot pay for Sara's son's treatment because her bank account requires her husband's approval?",
+      "a": "Nadia",
+      "alt": [
+        "Nadya"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2076120/episodes",
+      "qid": "arabseries-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Al Asouf",
+      "q": "In Al Asouf season one, which Levantine neighbor's brother refuses to let her marry Hammoud?",
+      "a": "Saadiya",
+      "alt": [
+        "Sa'diyah"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2009970/episodes",
+      "qid": "arabseries-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "The Bamboo Stalk",
+      "q": "In The Bamboo Stalk, which son of Nouriya wants to marry Khawla?",
+      "a": "Owais",
+      "alt": [
+        "Uways"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2042472/episodes",
+      "qid": "arabseries-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "AlRawabi School for Girls",
+      "q": "In AlRawabi School for Girls season one, what is the school principal's name?",
+      "a": "Faten Qadi",
+      "alt": [
+        "Faten"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/AlRawabi_School_for_Girls",
+      "qid": "arabseries-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Paranormal",
+      "q": "In Paranormal, which colleague reads Refaat's past and future with tarot cards?",
+      "a": "Louis",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Paranormal_(TV_series)",
+      "qid": "arabseries-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Qabeel",
+      "q": "In Qabeel, against whom had Adam been gambling, according to Abdel Rahman?",
+      "a": "Khaled El-Masry",
+      "alt": [
+        "Khaled al-Masri"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2056050/episodes",
+      "qid": "arabseries-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    }
+  ]
+}

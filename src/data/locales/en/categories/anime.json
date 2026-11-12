@@ -1,0 +1,499 @@
+{
+  "id": "anime",
+  "name": "Anime",
+  "icon": "🍥",
+  "style": "story",
+  "qs": [
+    {
+      "qid": "anime-200-911",
+      "p": 200,
+      "topic": "Detective Conan",
+      "q": "In Detective Conan, which father of Ran is famous for solving cases while asleep?",
+      "a": "Kogoro Mouri",
+      "alt": [
+        "Kogoro Mori"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Case_Closed_characters",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "anime-200-912",
+      "p": 200,
+      "topic": "Yu-Gi-Oh!",
+      "q": "In Yu-Gi-Oh!, which ancient artifact does Yugi assemble, bringing a pharaoh's spirit into his life?",
+      "a": "Millennium Puzzle",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Yu-Gi-Oh!",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "anime-200-913",
+      "p": 200,
+      "topic": "Spirited Away",
+      "q": "In Spirited Away, which boy helps Chihiro and can transform into a dragon?",
+      "a": "Haku",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Spirited_Away",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "anime-200-914",
+      "p": 200,
+      "topic": "Castle in the Sky",
+      "q": "In Castle in the Sky, which mining-town boy takes in Sheeta?",
+      "a": "Pazu",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Castle_in_the_Sky",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "anime-200-915",
+      "p": 200,
+      "topic": "Doraemon",
+      "q": "What filled Japanese sweet does the robot in Doraemon love?",
+      "a": "Dorayaki",
+      "alt": [],
+      "sourceUrl": "https://www.tv-asahi.co.jp/doraemon/character/",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "anime-200-916",
+      "p": 200,
+      "topic": "Captain Tsubasa",
+      "q": "In Captain Tsubasa, which Brazilian coach mentors the hero?",
+      "a": "Roberto Hongo",
+      "alt": [
+        "Roberto"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Captain_Tsubasa",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "anime-200-917",
+      "p": 200,
+      "topic": "Doraemon",
+      "q": "What is the name of Doraemon's yellow robot sister?",
+      "a": "Dorami",
+      "alt": [],
+      "sourceUrl": "https://www.tv-asahi.co.jp/doraemon/character/",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "anime-200-918",
+      "p": 200,
+      "topic": "Pokémon",
+      "q": "In Pokémon, in which city does Ash face Gym Leader Brock early in his journey?",
+      "a": "Pewter City",
+      "alt": [
+        "Pewter"
+      ],
+      "sourceUrl": "https://www.pokemon.com/us/animation/seasons/1/episode-5-showdown-in-pewter-city",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "anime-400-911",
+      "p": 400,
+      "topic": "Detective Conan",
+      "q": "Who invents the young detective's gadgets in Detective Conan?",
+      "a": "Hiroshi Agasa",
+      "alt": [
+        "Professor Agasa",
+        "Dr. Agasa",
+        "Agasa"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Case_Closed_characters",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "anime-400-912",
+      "p": 400,
+      "topic": "Fullmetal Alchemist",
+      "q": "In Fullmetal Alchemist, which stone do the Elric brothers seek to restore their bodies?",
+      "a": "The Philosopher's Stone",
+      "alt": [
+        "Philosopher's Stone"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fullmetal_Alchemist",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "anime-400-913",
+      "p": 400,
+      "topic": "Yu-Gi-Oh!",
+      "q": "In Yu-Gi-Oh!, which rival of Yugi is associated with Blue-Eyes White Dragon?",
+      "a": "Seto Kaiba",
+      "alt": [
+        "Kaiba"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Yu-Gi-Oh!_characters",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "anime-400-914",
+      "p": 400,
+      "topic": "Spirited Away",
+      "q": "In Spirited Away, which witch runs the bathhouse and takes her workers' names?",
+      "a": "Yubaba",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Spirited_Away",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "anime-400-915",
+      "p": 400,
+      "topic": "Detective Conan",
+      "q": "What was Ai Haibara's real name before she shrank in Detective Conan?",
+      "a": "Shiho Miyano",
+      "alt": [
+        "Shiho"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Case_Closed_characters",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "anime-400-916",
+      "p": 400,
+      "topic": "Captain Tsubasa",
+      "q": "In Captain Tsubasa, which rival is nicknamed the Tiger and called Bassam in the Arabic dub?",
+      "a": "Kojiro Hyuga",
+      "alt": [
+        "Kojirō Hyūga",
+        "Hyuga"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Captain_Tsubasa",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "anime-400-917",
+      "p": 400,
+      "topic": "Fullmetal Alchemist",
+      "q": "In Fullmetal Alchemist, which childhood friend repairs Edward's mechanical limbs?",
+      "a": "Winry Rockbell",
+      "alt": [
+        "Winry"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fullmetal_Alchemist",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "anime-400-918",
+      "p": 400,
+      "topic": "Castle in the Sky",
+      "q": "In Castle in the Sky, which female air-pirate captain helps the children?",
+      "a": "Dola",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Castle_in_the_Sky",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "anime-600-911",
+      "p": 600,
+      "topic": "Yu-Gi-Oh!",
+      "q": "In Yu-Gi-Oh!, which Millennium Item does Pegasus wear in his eye socket?",
+      "a": "Millennium Eye",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Yu-Gi-Oh!_characters",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "anime-600-912",
+      "p": 600,
+      "topic": "Spirited Away",
+      "q": "In Spirited Away, which silent creature offers gold to the bathhouse workers?",
+      "a": "No-Face",
+      "alt": [
+        "Kaonashi"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Spirited_Away",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "anime-600-913",
+      "p": 600,
+      "topic": "Doraemon",
+      "q": "Which future descendant sends the robot to improve his ancestor's life in Doraemon?",
+      "a": "Sewashi",
+      "alt": [],
+      "sourceUrl": "https://www.tv-asahi.co.jp/doraemon/character/",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "anime-600-914",
+      "p": 600,
+      "topic": "Detective Conan",
+      "q": "What is the code name of the drug that shrinks the hero in Detective Conan?",
+      "a": "APTX 4869",
+      "alt": [
+        "APTX4869",
+        "Apoptoxin 4869"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Case_Closed_characters",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "anime-600-915",
+      "p": 600,
+      "topic": "Captain Tsubasa",
+      "q": "In Captain Tsubasa, which prodigy's heart condition limits how long he can play?",
+      "a": "Jun Misugi",
+      "alt": [
+        "Misugi"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Captain_Tsubasa",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "anime-600-916",
+      "p": 600,
+      "topic": "Fullmetal Alchemist",
+      "q": "What does Edward permanently sacrifice to recover his brother at the end of Fullmetal Alchemist: Brotherhood?",
+      "a": "His ability to use alchemy",
+      "alt": [
+        "Alchemy",
+        "His Gate of Truth"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fullmetal_Alchemist",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "anime-600-917",
+      "p": 600,
+      "topic": "Yu-Gi-Oh!",
+      "q": "In Yu-Gi-Oh!, what is the real name of the pharaoh's spirit within Yugi?",
+      "a": "Atem",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Yu-Gi-Oh!_characters",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "anime-600-918",
+      "p": 600,
+      "topic": "Spirited Away",
+      "q": "In Spirited Away, of which river is the dragon-boy actually the spirit?",
+      "a": "The Kohaku River",
+      "alt": [
+        "Kohaku River",
+        "Kohaku"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Spirited_Away",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "Doraemon",
+      "q": "In Doraemon, which sister of Gian wants to become a manga artist?",
+      "a": "Jaiko",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Doraemon_characters",
+      "qid": "anime-800-911",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Doraemon",
+      "q": "What is Nobita's mother's name in Doraemon?",
+      "a": "Tamako Nobi",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Doraemon_characters",
+      "qid": "anime-800-912",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Fullmetal Alchemist",
+      "q": "In Fullmetal Alchemist, who reconstructs Marcoh's research from memory after the library burns down?",
+      "a": "Sheska",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Fullmetal_Alchemist_characters",
+      "qid": "anime-800-913",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Fullmetal Alchemist",
+      "q": "In Fullmetal Alchemist, which officer extorts the town of Youswell through taxes?",
+      "a": "Yoki",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Fullmetal_Alchemist_characters",
+      "qid": "anime-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Spirited Away",
+      "q": "In Spirited Away, who operates the bathhouse boiler?",
+      "a": "Kamaji",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Spirited_Away",
+      "qid": "anime-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Spirited Away",
+      "q": "In Spirited Away, what is the bathhouse owner's twin sister's name?",
+      "a": "Zeniba",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Spirited_Away",
+      "qid": "anime-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Castle in the Sky",
+      "q": "In Castle in the Sky, which agent wants to use the city to dominate the world?",
+      "a": "Muska",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Castle_in_the_Sky",
+      "qid": "anime-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Castle in the Sky",
+      "q": "In Castle in the Sky, which elderly man explains the crystal's secret in the mine?",
+      "a": "Uncle Pom",
+      "alt": [
+        "Pom"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Castle_in_the_Sky",
+      "qid": "anime-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Doraemon",
+      "q": "In Doraemon, what is Gian's family's dog called?",
+      "a": "Muku",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Doraemon_characters",
+      "qid": "anime-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Doraemon",
+      "q": "In Doraemon, which university-age relative of Suneo is skilled with remote-controlled toys?",
+      "a": "Sunekichi Honekawa",
+      "alt": [
+        "Sunekichi"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Doraemon_characters",
+      "qid": "anime-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Fullmetal Alchemist",
+      "q": "In Fullmetal Alchemist: Brotherhood, whose soul prevents Pride from taking over Edward's body?",
+      "a": "Solf J. Kimblee",
+      "alt": [
+        "Kimblee"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Fullmetal_Alchemist_characters",
+      "qid": "anime-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Fullmetal Alchemist",
+      "q": "In Fullmetal Alchemist, what number identifies Barry, the Fifth Laboratory guard?",
+      "a": "66",
+      "alt": [
+        "Sixty-six"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Fullmetal_Alchemist_characters",
+      "qid": "anime-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Spirited Away",
+      "q": "In Spirited Away, what is the name of the baby transformed into a mouse?",
+      "a": "Boh",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Spirited_Away",
+      "qid": "anime-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Spirited Away",
+      "q": "In Spirited Away, what protective gift does Chihiro receive from the kindly witch?",
+      "a": "A hair tie",
+      "alt": [
+        "Hairband",
+        "A hair ribbon"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Spirited_Away",
+      "qid": "anime-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Castle in the Sky",
+      "q": "In Castle in the Sky, at which fortress does the army imprison the children?",
+      "a": "Tedis Fortress",
+      "alt": [
+        "Titus Fort",
+        "Tedis Fort"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Castle_in_the_Sky",
+      "qid": "anime-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Castle in the Sky",
+      "q": "In Castle in the Sky, in what profession is the boy who rescues Sheeta training?",
+      "a": "Engineering",
+      "alt": [
+        "Mechanical engineering",
+        "Engineer"
+      ],
+      "sourceUrl": "https://gkids.com/films/castle-in-the-sky/",
+      "qid": "anime-1000-921",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,506 @@
+{
+  "id": "brands",
+  "name": "Brands",
+  "icon": "🏷️",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Which fashion brand did Amancio Ortega open in A Coruña in 1975?",
+      "a": "Zara",
+      "qid": "brands-200-911",
+      "topic": "Clothing",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.zara.com/integration/pressapi/microsite/news/?countryiso=WW&detailid=68148f8efcb89e786c382b8e&languageiso=pt",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which Swiss food group lists KitKat and Smarties among its brands?",
+      "a": "Nestlé",
+      "qid": "brands-200-912",
+      "topic": "Companies and products",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.nestle.com/brands/chocolate-confectionery",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Nestle"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Which Japanese company launched PlayStation in Japan in 1994?",
+      "a": "Sony",
+      "qid": "brands-200-913",
+      "topic": "Technology",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.sony.com/en/SonyInfo/CorporateInfo/History/SonyHistory/2-09.html",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which restaurant chain introduced the Whopper in 1957?",
+      "a": "Burger King",
+      "qid": "brands-200-914",
+      "topic": "Restaurants",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://news.bk.com/blog-posts/65-fun-facts-about-the-whopper-r",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which instant-coffee brand began in 1938 with a drink prepared by adding water?",
+      "a": "Nescafé",
+      "qid": "brands-200-915",
+      "topic": "Drinks",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.nescafe.com/gb/coffee-culture/knowledge/about-us",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Nescafe"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "A tennis player nicknamed the Crocodile made it his shirt logo. What is the brand?",
+      "a": "Lacoste",
+      "qid": "brands-200-916",
+      "topic": "Clothing",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://corporate.lacoste.com/our-history/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which watchmaker produced the Speedmaster worn on Apollo Moon missions?",
+      "a": "Omega",
+      "qid": "brands-200-917",
+      "topic": "Luxury houses",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://press.omegawatches.com/omega-celebrates-the-50th-anniversary-of-apollo-17-14303/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which group owns Dove, Sunsilk, and Vaseline?",
+      "a": "Unilever",
+      "qid": "brands-200-918",
+      "topic": "Companies and products",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.unilever.com/our-company/at-a-glance/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which sportswear brand founded by Rudolf Dassler is named after a large wild cat?",
+      "a": "Puma",
+      "qid": "brands-400-911",
+      "topic": "Sports",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://about.puma.com/en/puma/puma-timeline",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which Italian fashion house began as a Florence luggage shop in 1921 and uses two interlocking Gs?",
+      "a": "Gucci",
+      "qid": "brands-400-912",
+      "topic": "Luxury houses",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.gucci.com/int/en/nst/history-of-gucci",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which sportswear brand did Kevin Plank found in 1996?",
+      "a": "Under Armour",
+      "qid": "brands-400-913",
+      "topic": "Sports",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://about.underarmour.com/en/our-company/history.html",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which toy company publishes official Monopoly editions?",
+      "a": "Hasbro",
+      "qid": "brands-400-914",
+      "topic": "Toys and games",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://newsroom.hasbro.com/node/15011",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which graphics company did Jensen Huang and two partners establish in 1993?",
+      "a": "Nvidia",
+      "qid": "brands-400-915",
+      "topic": "Technology",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.nvidia.com/en-gb/about-nvidia/corporate-timeline/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which burger chain did Dave Thomas found in 1969 and name after his daughter?",
+      "a": "Wendy's",
+      "qid": "brands-400-916",
+      "topic": "Restaurants",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.wendys.com/wendys-story",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Wendys"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Which energy-drink brand sold its first can in Austria in 1987?",
+      "a": "Red Bull",
+      "qid": "brands-400-917",
+      "topic": "Drinks",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://jobs.redbull.com/int-en/locations/red-bull-global-headquarters?lang=en&office=Vienna",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which jeans brand is known for the 501, rooted in an 1873 patent for riveted pants?",
+      "a": "Levi's",
+      "qid": "brands-400-918",
+      "topic": "Clothing",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.levistrauss.com/2021/05/20/celebrating-the-levis-501-jean/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Levis",
+        "Levi Strauss"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Which footwear company did Robert Greenberg establish in California in 1992?",
+      "a": "Skechers",
+      "qid": "brands-600-911",
+      "topic": "Sports",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://about.skechers.com/executive-team",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which luxury house created the rectangular Tank watch in 1917?",
+      "a": "Cartier",
+      "qid": "brands-600-912",
+      "topic": "Luxury houses",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.cartier.com/en-us/tank.html",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which toy-figure brand did Hans Beck introduce at the 1974 toy fair?",
+      "a": "Playmobil",
+      "qid": "brands-600-913",
+      "topic": "Toys and games",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.horst-brandstaetter-group.com/en/why",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Spencer Silver and Art Fry developed Post-it Notes at which company?",
+      "a": "3M",
+      "qid": "brands-600-914",
+      "topic": "Companies and products",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://multimedia.3m.com/mws/media/171240O/3m-century-of-innovation-book.pdf",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which ice-cream brand began in a renovated Burlington gas station in 1978?",
+      "a": "Ben & Jerry's",
+      "qid": "brands-600-915",
+      "topic": "Restaurants",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.benjerry.com/about-us",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Ben and Jerry's"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Which mineral-water brand comes from the Cachat spring in the French Alps?",
+      "a": "Evian",
+      "qid": "brands-600-916",
+      "topic": "Drinks",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.evian.com/fr/notre-eau/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which Japanese clothing brand opened its first store in Hiroshima in 1984?",
+      "a": "Uniqlo",
+      "qid": "brands-600-917",
+      "topic": "Clothing",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.fastretailing.com/eng/ir/library/pdf/ar2024_en.pdf",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which brand began as a wallpaper cleaner before becoming children's modeling dough?",
+      "a": "Play-Doh",
+      "qid": "brands-600-918",
+      "topic": "Toys and games",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://newsroom.hasbro.com/node/34691",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which computer company took its name from the last four letters of Pegasus?",
+      "a": "Asus",
+      "qid": "brands-800-911",
+      "topic": "Technology",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.asus.com/in/About_ASUS/Origin-of-the-Name-ASUS/",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which sportswear brand's name abbreviates the Latin phrase 'a sound mind in a sound body'?",
+      "a": "ASICS",
+      "qid": "brands-800-912",
+      "topic": "Sports",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://corp.asics.com/en",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which watchmaker introduced the Nautilus collection in 1976?",
+      "a": "Patek Philippe",
+      "qid": "brands-800-913",
+      "topic": "Luxury houses",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.patek.com/en/collection/nautilus",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which company was founded by a candlemaker and a soapmaker in 1837 and is abbreviated P&G?",
+      "a": "Procter & Gamble",
+      "qid": "brands-800-914",
+      "topic": "Companies and products",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://us.pg.com/blogs/pg-misspelling-procter-and-gamble/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Procter and Gamble"
+      ]
+    },
+    {
+      "q": "Which game company began making hanafuda cards in Kyoto in 1889?",
+      "a": "Nintendo",
+      "topic": "Toys and games",
+      "verified": true,
+      "sourceUrl": "https://www.nintendo.co.jp/corporate/en/history/index.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "brands-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which clothing brand did climber Yvon Chouinard establish in 1973?",
+      "a": "Patagonia",
+      "topic": "Clothing",
+      "verified": true,
+      "sourceUrl": "https://www.patagonia.com/company-history/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "brands-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which footwear brand launched in 2002 with a boating shoe made from Croslite?",
+      "a": "Crocs",
+      "topic": "Sports",
+      "verified": true,
+      "sourceUrl": "https://www.crocs.com.sg/company/about-crocs.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "brands-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which Japanese retailer's full name means 'no-brand quality goods'?",
+      "a": "Muji",
+      "topic": "Companies and products",
+      "verified": true,
+      "sourceUrl": "https://www.muji.com/sg/about",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "brands-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "What three English words form the Japanese brand abbreviation JVC?",
+      "a": "Japan Victor Company",
+      "topic": "Technology",
+      "verified": true,
+      "sourceUrl": "https://www.jvc.com/jp/brand/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "brands-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Timberland founder bought a share of the Abington Shoe Company in 1952?",
+      "a": "Nathan Swartz",
+      "topic": "Sports",
+      "verified": true,
+      "sourceUrl": "https://www.timberland.com/en-us/about-us/our-story?ew=0",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "brands-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Finnish engineer founded the 1865 pulp mill that became Nokia?",
+      "a": "Fredrik Idestam",
+      "topic": "Technology",
+      "verified": true,
+      "sourceUrl": "https://www.nokia.com/sites/default/files/2021-03/Nokia_Annual_Report_2020_English.pdf",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "brands-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which luggage brand began in Paul Morszeck's Cologne workshop in 1898?",
+      "a": "Rimowa",
+      "topic": "Luxury houses",
+      "verified": true,
+      "sourceUrl": "https://www.rimowa.com/us/en/heritage",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "brands-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Who worked with Theodor Tobler to create Toblerone in 1908?",
+      "a": "Emil Baumann",
+      "topic": "Sweets",
+      "verified": true,
+      "sourceUrl": "https://www.mondelezinternational.com/our-brands/toblerone/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "brands-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which ice-cream brand did Reuben and Rose Mattus launch with vanilla, chocolate, and coffee flavors?",
+      "a": "Häagen-Dazs",
+      "topic": "Sweets",
+      "verified": true,
+      "sourceUrl": "https://www.haagen-dazs.co.uk/our-story",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Haagen-Dazs"
+      ],
+      "p": 1000,
+      "qid": "brands-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Swiss writing-instrument brand takes its name from the Russian word for pencil?",
+      "a": "Caran d'Ache",
+      "topic": "Companies and products",
+      "verified": true,
+      "sourceUrl": "https://www.carandache.com/ca/en/notre-histoire",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Caran dAche"
+      ],
+      "p": 1000,
+      "qid": "brands-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What number on a Meisterstück pen nib represents Mont Blanc's height in meters?",
+      "a": "4810",
+      "topic": "Luxury houses",
+      "verified": true,
+      "sourceUrl": "https://www.youtube.com/watch?v=ZFbs3KvGTHI",
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "brands-1000-918",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "4,810"
+      ]
+    }
+  ]
+}

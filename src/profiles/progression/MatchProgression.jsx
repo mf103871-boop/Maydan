@@ -1,3 +1,4 @@
+import { tr } from '../../shared/i18n/core.js';
 import React, { useEffect, useState } from 'react';
 import { useAccount } from '../../shared/account/context.js';
 import { navigate } from '../../platform/router.js';
@@ -44,7 +45,7 @@ export function MatchProgression({ eventId, ownerId, notBefore, clockOffset = 0 
   if (!canRead || !load) return null;
   const current = record?.ownerId === ownerId && record.eventId === eventId ? record : null;
   if (!current?.result) return <p className="online-notice" role="status">
-    {current?.retry ? <button type="button" className="btn btn-ghost" onClick={() => { setRecord(null); setRetry(value => value + 1); }}>تحديث تقدّم المباراة</button> : 'نجهّز تقدّمك…'}
+    {current?.retry ? <button type="button" className="btn btn-ghost" onClick={() => { setRecord(null); setRetry(value => value + 1); }}>{tr("تحديث تقدّم المباراة")}</button> : tr("نجهّز تقدّمك…")}
   </p>;
   const reward = getProgressionFrame(current.result.nextReward?.itemId);
   return <><ProgressionStyles /><ProgressionMatchSummary xpEarned={current.result.awardedXp}

@@ -5,6 +5,7 @@ import { liveAccountSql } from './moderation/access.mjs';
 import { objectionableText } from './moderation/filter.mjs';
 import { requireSession } from './accounts/session.mjs';
 import { json } from './protocol.mjs';
+import { roomContentIdentity } from './content-locale.mjs';
 
 export const ONLINE_DIRECTORY_GAMES = Object.freeze(['badeeha', 'ersomha', 'fabraka', 'meenfina']);
 export const ONLINE_DIRECTORY_LEASE_MS = 90_000;
@@ -81,16 +82,16 @@ export async function updateOnlineDirectory(env, room, now = Date.now()) {
   // only in the lobby. Other engines can admit a seat for the next match.
   const joinable = members.length < capacity && (status === 'waiting' || room.game !== 'ersomha');
   await env.DB.prepare(`INSERT INTO online_public_rooms
-    (room_code,room_key,game,room_name,host_user_id,member_user_ids,players,capacity,minimum,status,joinable,created_at,updated_at,expires_at)
-    VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(room_code) DO UPDATE SET
+    (room_code,room_key,game,room_name,host_user_id,member_user_ids,players,capacity,minimum,status,joinable,created_at,updated_at,expires_at,content_locale,content_version)
+    VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(room_code) DO UPDATE SET
     room_key=excluded.room_key,game=excluded.game,room_name=excluded.room_name,host_user_id=excluded.host_user_id,
     member_user_ids=excluded.member_user_ids,players=excluded.players,capacity=excluded.capacity,
     minimum=excluded.minimum,status=excluded.status,joinable=excluded.joinable,created_at=excluded.created_at,
-    updated_at=excluded.updated_at,expires_at=excluded.expires_at`)
+    updated_at=excluded.updated_at,expires_at=excluded.expires_at,content_locale=excluded.content_locale,content_version=excluded.content_version`)
     .bind(room.code, roomKey(room), room.game, room.directory.name, host.accountUserId,
       JSON.stringify(liveAccounts), members.length,
       capacity, minimumOnlinePlayers(room.game, room.settings), status, joinable ? 1 : 0,
-      room.createdAt, now, Math.min(room.expiresAt, now + ONLINE_DIRECTORY_LEASE_MS)).run();
+      room.createdAt, now, Math.min(room.expiresAt, now + ONLINE_DIRECTORY_LEASE_MS), roomContentIdentity(room).contentLocale, roomContentIdentity(room).contentVersion).run();
 }
 
 const cursorOf = row => btoa(JSON.stringify([row.created_at, row.room_code])).replaceAll('+', '-').replaceAll('/', '_').replace(/=+$/, '');
@@ -119,7 +120,7 @@ export async function listOnlineDirectory(env, userId, { game, status = 'all', c
     ORDER BY r.created_at DESC,r.room_code DESC LIMIT ?`).bind(...values, count + 1).all();
   const page = results.slice(0, count);
   return { game, enabled: true, rooms: page.map(row => ({ code: row.room_code, game: row.game,
-    roomName: row.room_name, players: row.players, capacity: row.capacity, minimum: row.minimum,
+    contentLocale: row.content_locale || 'ar', contentVersion: row.content_version || 'legacy-ar', roomName: row.room_name, players: row.players, capacity: row.capacity, minimum: row.minimum,
     unit: getGameModeSupport(row.game).unit, status: row.status, full: row.players >= row.capacity,
     joinable: Boolean(row.joinable), createdAt: row.created_at })),
     nextCursor: results.length > count ? cursorOf(page.at(-1)) : null, serverNow: now };

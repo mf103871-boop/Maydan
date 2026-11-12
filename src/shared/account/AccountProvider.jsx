@@ -1,3 +1,4 @@
+import { tr } from '../i18n/core.js';
 import { isMafiaPreview } from '../lib/environment.js';
 // مزوّد الحساب: مصدر واحد لحالة الاشتراك والتجارب والجدار في الواجهة كلها.
 // الخادم هو مصدر الحقيقة؛ ما هنا نسخة مخزّنة تُحدَّث عند الإقلاع وعند العودة
@@ -287,7 +288,7 @@ export function AccountProvider({ children }) {
     if (!ownsAuth(owner)) return null;
     const name = (result.me && result.me.user && result.me.user.name) || '';
     sound?.emit?.('auth.signed-in', { id: `auth:${++acceptedAuthSound}`, guard: () => ownsAuth(owner) });
-    toast(name ? `أهلًا ${name}` : 'أهلًا بك');
+    toast(name ? tr("أهلًا {v0}", {v0: name}) : tr("أهلًا بك"));
     return result.me || null;
   }, [captureAuth, requireAuthOwner, ownedOptions, ownsAuth, applySession, applyMe, applyTrials, toast, sound]);
 
@@ -367,7 +368,7 @@ export function AccountProvider({ children }) {
             const price = typeof item?.price === 'string' ? item.price.trim() : '';
             return price ? { id: PRODUCTS[key], price, period: String(item.period || period) } : null;
           };
-          const next = { monthly: priced('monthly', 'شهريًا'), yearly: priced('yearly', 'سنويًا') };
+          const next = { monthly: priced('monthly', tr("شهريًا")), yearly: priced('yearly', tr("سنويًا")) };
           if (!next.monthly && !next.yearly) {
             const diagnostics = catalogDiagnostics(result?.diagnostics, list.length ? 'unexpected-products' : 'empty');
             if (diagnostics.outcome === 'success') diagnostics.outcome = 'unexpected-products';
@@ -543,14 +544,14 @@ export function AccountProvider({ children }) {
     finally {
       if (ownsAuth(owner)) {
         sound?.emit?.('auth.signed-out', { id: `auth:${++acceptedAuthSound}`, guard: () => ownsAuth(owner) && !sessionRef.current });
-        setError(null); toast('سجّلت الخروج');
+        setError(null); toast(tr("سجّلت الخروج"));
       }
       finishBusy(activity);
     }
   }, [options, clearLocalAuth, captureAuth, ownsAuth, startBusy, finishBusy, toast, sound]);
 
   const purchase = useCallback(async (plan = 'monthly') => {
-    if (android) { setError('NOT_ELIGIBLE'); toast('الشراء عبر Google Play غير متاح في هذه النسخة التجريبية.'); return null; }
+    if (android) { setError('NOT_ELIGIBLE'); toast(tr("الشراء عبر Google Play غير متاح في هذه النسخة التجريبية.")); return null; }
     if (purchaseInFlightRef.current) return null;
     setError(null);
     if (activationPending) { setError('ACTIVATION_PENDING'); return null; }
@@ -606,7 +607,7 @@ export function AccountProvider({ children }) {
         const next = await deliverOwnedTransaction(jws, owner);
         requireAuthOwner(owner);
         if (!isPremium(next)) throw new ClientError('ACTIVATION_PENDING');
-        toast('فُعِّل ميدان بلس');
+        toast(tr("فُعِّل ميدان بلس"));
         closePaywall();
         return next;
       }
@@ -623,7 +624,7 @@ export function AccountProvider({ children }) {
       const next = await waitForEntitlement(async () => { requireAuthOwner(owner); const next = await refresh(); requireAuthOwner(owner); return next; });
       requireAuthOwner(owner);
       setActivationPending(false);
-      toast(checkout.environment === 'sandbox' ? 'فُعّل اشتراك الاختبار — لم يُخصم مبلغ حقيقي' : 'فُعِّل ميدان بلس');
+      toast(checkout.environment === 'sandbox' ? tr("فُعّل اشتراك الاختبار — لم يُخصم مبلغ حقيقي") : tr("فُعِّل ميدان بلس"));
       closePaywall();
       return next;
     } catch (err) {
@@ -655,7 +656,7 @@ export function AccountProvider({ children }) {
       for (const jws of jwsList) next = await deliverOwnedTransaction(jws, owner);
       requireAuthOwner(owner);
       if (next) applyMe(next, owner.epoch);
-      toast(isPremium(next) ? 'استُعيد اشتراكك' : accountErrorText('RESTORE_EMPTY'));
+      toast(isPremium(next) ? tr("استُعيد اشتراكك") : accountErrorText('RESTORE_EMPTY'));
       return next;
     } catch (err) {
       if (!ownsAuth(owner)) return null;
@@ -671,7 +672,7 @@ export function AccountProvider({ children }) {
   }, [captureAuth, requireAuthOwner, ownsAuth, startBusy, finishBusy, deliverOwnedTransaction, native, applyMe, handleError, toast]);
 
   const manageSubscription = useCallback(async () => {
-    if (android) { setError('NOT_ELIGIBLE'); toast('إدارة Google Play غير متاحة في هذه النسخة التجريبية.'); return; }
+    if (android) { setError('NOT_ELIGIBLE'); toast(tr("إدارة Google Play غير متاحة في هذه النسخة التجريبية.")); return; }
     const owner = captureAuth();
     setError(null);
     try {
@@ -707,7 +708,7 @@ export function AccountProvider({ children }) {
       return failure === 'NOT_FOUND' ? 'REDEEM_INVALID' : failure;
     }
     closePaywall();
-    toast(`فُعِّل ${PLUS_NAME}`);
+    toast(tr("فُعِّل {v0}", {v0: PLUS_NAME}));
     return true;
   }, [captureAuth, ownsAuth, ownedOptions, applyMe, clearLocalAuth, closePaywall, toast]);
 
@@ -728,7 +729,7 @@ export function AccountProvider({ children }) {
       if (epoch === authEpochRef.current) {
         clearLocalAuth();
         clearedOwner = true;
-        toast('حُذف حسابك');
+        toast(tr("حُذف حسابك"));
       }
       return true;
     } catch (err) {
@@ -940,5 +941,5 @@ export function AccountProvider({ children }) {
   }), [ready, user, me, premium, promo, trials, platform, gameplayPolicy, products, productsStatus, productsError, productsDiagnostics, storeProbeStatus, storeProbeDiagnostics, restoreDiagnostics, offline, session, busy, error, paywall, billing, activationPending, loadSignInProviders, signInProvidersStatus, signInProvidersError,
     signIn, signOut, refresh, requestAuthenticated, ensureNativeSocialSession, markTrial, localTrials, openPaywall, closePaywall, restore, deleteAccount, purchase, manageSubscription, loadProducts, retryProducts, probeStore, redeem]);
 
-  return <AccountContext.Provider value={value}>{isMafiaPreview() && !['room','play'].includes(route.name) && <aside data-design-fixed="isolated-test-environment" role="status" style={{margin:'8px 12px',padding:'10px 14px',border:'1px solid #8c6daa',borderRadius:14,background:'#eee2f7',color:'#402451',fontSize:13,lineHeight:1.7,textAlign:'center'}}><strong>بيئة اختبار مافيا</strong><br/>حسابات وتجارب منفصلة عن ميدان الأساسية. استخدم حساب التجربة.</aside>}{children}</AccountContext.Provider>;
+  return <AccountContext.Provider value={value}>{isMafiaPreview() && !['room','play'].includes(route.name) && <aside data-design-fixed="isolated-test-environment" role="status" style={{margin:'8px 12px',padding:'10px 14px',border:'1px solid #8c6daa',borderRadius:14,background:'#eee2f7',color:'#402451',fontSize:13,lineHeight:1.7,textAlign:'center'}}><strong>{tr("بيئة اختبار مافيا")}</strong><br/>{tr("حسابات وتجارب منفصلة عن ميدان الأساسية. استخدم حساب التجربة.")}</aside>}{children}</AccountContext.Provider>;
 }

@@ -12,6 +12,24 @@ struct AppUpdatePolicy: Decodable {
     let minimumVersion: String?
     let appStoreId: String
     let message: String
+    let messageEn: String?
+
+    private enum CodingKeys: String, CodingKey {
+        case schemaVersion, enabled, minimumBuild, minimumVersion, appStoreId, message, messageEn
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        schemaVersion = try values.decode(Int.self, forKey: .schemaVersion)
+        enabled = try values.decode(Bool.self, forKey: .enabled)
+        minimumBuild = try values.decode(Int.self, forKey: .minimumBuild)
+        minimumVersion = try values.decodeIfPresent(String.self, forKey: .minimumVersion)
+        appStoreId = try values.decode(String.self, forKey: .appStoreId)
+        message = try values.decode(String.self, forKey: .message)
+        // Optional presentation copy must never invalidate an otherwise valid
+        // update decision. The coordinator validates text before displaying it.
+        messageEn = try? values.decodeIfPresent(String.self, forKey: .messageEn)
+    }
 
     static func required(data: Data, installedVersion: String, installedBuild: String) -> AppUpdatePolicy? {
         if case let .required(policy) = decision(data: data, installedVersion: installedVersion, installedBuild: installedBuild) { return policy }

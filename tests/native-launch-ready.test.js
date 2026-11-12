@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { reportSimulatorHomeReady } from '../src/platform/native-launch-ready.js';
+import { reportSimulatorHomeReady, startSimulatorLocaleProbe } from '../src/platform/native-launch-ready.js';
 
 const token = 'e7b0d07a-7fcb-4b58-86c7-32aff0457518';
 function fixture() {
@@ -187,4 +187,50 @@ test('the exact eight-game launch gate follows the current catalog across JS, na
   const missing = fixture(); missing.cards.pop();
   reportSimulatorHomeReady({ accountReady: true, gameCount: 8, host: missing.host });
   missing.tick(); missing.tick(); assert.deepEqual(missing.messages, [], 'seven mounted controls cannot pass the current catalog');
+});
+
+test('locale probe is opt-in, waits for persisted home ACK, and expires without inventing a result', () => {
+  for (const scenario of [undefined, '', 'set-fr', 'retain-EN', 'anything']) {
+    const f = fixture(); f.host.__maydanSimulatorLocaleScenario = scenario;
+    assert.equal(startSimulatorLocaleProbe(f.host), undefined);
+    assert.equal(f.timers.size + f.frames.size, 0);
+    assert.equal(f.host.__maydanSimulatorLocaleStarted, undefined);
+  }
+  const f = fixture(); f.host.__maydanSimulatorLocaleScenario = 'set-en';
+  startSimulatorLocaleProbe(f.host);
+  f.tick(); f.tick(); assert.deepEqual(f.messages, []);
+  f.advance(20000); f.tick(); f.tick();
+  assert.equal(f.timers.size + f.frames.size, 0);
+  assert.equal(f.host.__maydanSimulatorLocaleReady, undefined);
+  assert.deepEqual(f.messages, []);
+});
+
+test('locale probe cannot restart after Home remount, accept stale ACK, or survive its process token', () => {
+  const f = fixture(); f.host.__maydanSimulatorLocaleScenario = 'set-en';
+  f.host.__maydanSimulatorLaunchReady = '00000000-0000-4000-8000-000000000002';
+  startSimulatorLocaleProbe(f.host);
+  const scheduled = f.timers.size + f.frames.size;
+  assert.equal(startSimulatorLocaleProbe(f.host), undefined);
+  assert.equal(f.timers.size + f.frames.size, scheduled);
+  f.tick(); f.tick(); assert.deepEqual(f.messages, []);
+  f.host.__maydanSimulatorLaunchToken = '00000000-0000-4000-8000-000000000002';
+  f.advance(100); f.tick(); f.tick();
+  assert.equal(f.timers.size + f.frames.size, 0);
+  assert.deepEqual(f.messages, []);
+});
+
+test('locale native receipt is simulator-only, trusted, token-bound, and acknowledged only after persistence', () => {
+  const native = readFileSync(new URL('../ios/Maydan/GameViewController.swift', import.meta.url), 'utf8');
+  const method = native.slice(native.indexOf('    private func recordSimulatorLocaleReady('), native.indexOf('    /// CI injects only lease commands.'));
+  assert.match(method, /simulatorLaunchRecorded/);
+  assert.match(method, /payload\["token"\] as\? String == token, payload\["scenario"\] as\? String == scenario/);
+  assert.match(method, /"pid": ProcessInfo\.processInfo\.processIdentifier/);
+  assert.match(method, /"initialNativeLocale": simulatorInitialNativeLocale/);
+  assert.match(method, /"nativeLocale": NativeLocalization\.locale/);
+  assert.match(method, /options: \.atomic\)[\s\S]+simulatorLocaleRecorded = true[\s\S]+window\.__maydanSimulatorLocaleReady/);
+  assert.match(native, /#if targetEnvironment\(simulator\)\s+case "simulatorGameReady":[\s\S]+case "simulatorLocaleReady":[^#]+#endif/);
+  const bridge = native.slice(native.indexOf('    func userContentController('));
+  assert.match(bridge, /message\.webView === webView,[\s\S]+message\.frameInfo\.isMainFrame,[\s\S]+isTrustedGameURL\(pageURL\)/);
+  const probe = readFileSync(new URL('../src/platform/native-launch-ready.js', import.meta.url), 'utf8');
+  assert.doesNotMatch(probe, /localStorage\.setItem|sessionStorage\.setItem|setUiLocale\(/);
 });

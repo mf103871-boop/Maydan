@@ -3,6 +3,10 @@ name: iOS signed build and optional TestFlight upload
 on:
   workflow_dispatch:
     inputs:
+      source_commit:
+        description: 'Exact reviewed 40-character source commit; must equal the dispatched branch head'
+        required: true
+        type: string
       environment:
         description: 'production for the public game; mafia-preview for the isolated Mafia TestFlight'
         required: true
@@ -94,9 +98,20 @@ jobs:
       MAYDAN_GAMEPLAY_ACCESS_POLICY: ${{ inputs.gameplay_policy || 'free' }}
       IOS_RELEASE_PROFILE: ${{ inputs.release_profile || 'compatibility' }}
     steps:
+      - name: Verify immutable reviewed source before reading signing secrets
+        env:
+          EXPECTED_SOURCE_COMMIT: ${{ inputs.source_commit }}
+        run: |
+          [[ "$EXPECTED_SOURCE_COMMIT" =~ ^[a-f0-9]{40}$ ]]
+          test "$GITHUB_SHA" = "$EXPECTED_SOURCE_COMMIT"
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
+          ref: ${{ inputs.source_commit }}
           persist-credentials: false
+      - name: Verify checked-out source identity
+        env:
+          EXPECTED_SOURCE_COMMIT: ${{ inputs.source_commit }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_COMMIT"
       - name: Check explicit release inputs and required secrets
         env:
           IOS_DISTRIBUTION_P12_BASE64: ${{ secrets.IOS_DISTRIBUTION_P12_BASE64 }}

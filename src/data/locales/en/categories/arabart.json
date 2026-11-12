@@ -1,0 +1,532 @@
+{
+  "id": "arabart",
+  "name": "Arab Art",
+  "icon": "🖌️",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Which Lebanese author illustrated his own book The Prophet?",
+      "a": "Kahlil Gibran",
+      "qid": "arabart-200-911",
+      "topic": "Pioneering artists",
+      "sourceUrl": "https://www.barjeelartfoundation.org/wp-content/uploads/2017/08/Jordan-Catalogue-March8-LowRes-no-bleed.pdf",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Khalil Gibran",
+        "Gibran"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Which Palestinian artist painted Camel of Hardships, showing a man carrying Jerusalem on his back?",
+      "a": "Sliman Mansour",
+      "qid": "arabart-200-912",
+      "topic": "Pioneering artists",
+      "sourceUrl": "https://dafbeirut.org/collection/sliman-anis-mansour/jamal-al-mahamel-iii-camelcarrier-hardships",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Suleiman Mansour"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Which early Arabic script has angular letters and prominent horizontal strokes?",
+      "a": "Kufic",
+      "qid": "arabart-200-913",
+      "topic": "Arabic calligraphy",
+      "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Kufic script"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "What are the intertwined plant motifs common in Islamic art called?",
+      "a": "Arabesques",
+      "qid": "arabart-200-914",
+      "topic": "Architecture and ornament",
+      "sourceUrl": "https://www.metmuseum.org/essays/vegetal-patterns-in-islamic-art",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Arabesque"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "What traditional textile do Bedouin women weave on a ground loom?",
+      "a": "Al Sadu",
+      "qid": "arabart-200-915",
+      "topic": "Crafts and techniques",
+      "sourceUrl": "https://ich.unesco.org/en/RL/traditional-weaving-of-al-sadu-02158",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Sadu"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Which capital houses the waterfront Museum of Islamic Art designed by I. M. Pei?",
+      "a": "Doha",
+      "qid": "arabart-200-916",
+      "topic": "Museums and collections",
+      "sourceUrl": "https://mia.org.qa/en/about-us/",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Who painted Girls of Bahari, inspired by Alexandria?",
+      "a": "Mahmoud Said",
+      "qid": "arabart-200-917",
+      "topic": "Famous works",
+      "sourceUrl": "https://www.bibalex.gov.eg/Attachments/Publications/Files/2013032016331232778_VOICESFROMCOSMOPOLITANALEXANDRIA.pdf",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Mahmoud Saïd"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "What animal-skin writing material was used for manuscripts before paper became widespread?",
+      "a": "Parchment",
+      "qid": "arabart-200-918",
+      "topic": "Crafts and techniques",
+      "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which self-taught Algerian artist painted colorful women and birds under a one-word professional name?",
+      "a": "Baya",
+      "qid": "arabart-400-911",
+      "topic": "Pioneering artists",
+      "sourceUrl": "https://www.barjeelartfoundation.org/artist/algeria/baya/",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Baya Mahieddine",
+        "Fatma Haddad"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Which Sudanese artist associated with the Khartoum School painted The Last Sound?",
+      "a": "Ibrahim El-Salahi",
+      "qid": "arabart-400-912",
+      "topic": "Pioneering artists",
+      "sourceUrl": "https://www.barjeelartfoundation.org/artist/sudan/ibrahim-el-salahi/",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Ibrahim al-Salahi"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What diamond-shaped unit do Arabic calligraphers use to measure letter proportions?",
+      "a": "The dot",
+      "qid": "arabart-400-913",
+      "topic": "Arabic calligraphy",
+      "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Dot",
+        "Rhomboid dot"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What stalactite-like architectural decoration appears in Islamic palace ceilings and arches?",
+      "a": "Muqarnas",
+      "qid": "arabart-400-914",
+      "topic": "Architecture and ornament",
+      "sourceUrl": "https://www.alhambra-patronato.es/en/edificios-lugares/the-hall-of-the-muqarnas",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "What traditional art do women in Asir use to decorate interior walls?",
+      "a": "Al-Qatt Al-Asiri",
+      "qid": "arabart-400-915",
+      "topic": "Crafts and techniques",
+      "sourceUrl": "https://ich.unesco.org/en/RL/al-qatt-al-asiri-female-traditional-interior-wall-decoration-in-asir-saudi-arabia-01261",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Qatt Asiri"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Who designed the perforated dome of the Louvre Abu Dhabi?",
+      "a": "Jean Nouvel",
+      "qid": "arabart-400-916",
+      "topic": "Museums and collections",
+      "sourceUrl": "https://www.louvreabudhabi.ae/about-us/architecture",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which sculpture by the creator of Egypt's Renaissance depicts a peasant woman resisting a sandstorm?",
+      "a": "Khamsin",
+      "qid": "arabart-400-917",
+      "topic": "Famous works",
+      "sourceUrl": "https://mathaf.org.qa/en/encyclopedia/artists-biographies/mahmoud-mokhtar/",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "The Khamsin",
+        "Sandstorm"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What transparent paints are diluted with water and allow the white paper beneath to show through?",
+      "a": "Watercolors",
+      "qid": "arabart-400-918",
+      "topic": "Crafts and techniques",
+      "sourceUrl": "https://smarthistory.org/material/watercolor-paint/",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Watercolours",
+        "Watercolor",
+        "Watercolour"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Which Lebanese abstract artist, inspired by mathematics and architecture, created Composition in Yellow?",
+      "a": "Saloua Raouda Choucair",
+      "qid": "arabart-600-911",
+      "topic": "Pioneering artists",
+      "sourceUrl": "https://www.barjeelartfoundation.org/collection/composition-in-yellow-saloua-raouda-choucair/",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Salwa Rawda Shuqayr",
+        "Saloua Choucair"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Which Iraqi artist founded the One Dimension group?",
+      "a": "Shakir Hassan Al Said",
+      "qid": "arabart-600-912",
+      "topic": "Pioneering artists",
+      "sourceUrl": "https://www.barjeelartfoundation.org/artist/iraq/dia-azzawi/",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which calligraphic script developed in Al-Andalus and North Africa and was used in local Qurans?",
+      "a": "Maghribi script",
+      "qid": "arabart-600-913",
+      "topic": "Arabic calligraphy",
+      "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Maghribi"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Which Umayyad palace in Jordan is famous for frescoes in its reception hall and bathhouse?",
+      "a": "Quseir Amra",
+      "qid": "arabart-600-914",
+      "topic": "Architecture and ornament",
+      "sourceUrl": "https://whc.unesco.org/en/list/327/",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Qusayr Amra",
+        "Qasr Amra"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Which Tunisian town is known for UNESCO-listed women's skills in making decorated pottery?",
+      "a": "Sejnane",
+      "qid": "arabart-600-915",
+      "topic": "Crafts and techniques",
+      "sourceUrl": "https://www.unesco.org/archives/multimedia/document-4753",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Sejenane"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Which museum's interlocking architectural forms were inspired by desert rose crystals?",
+      "a": "National Museum of Qatar",
+      "qid": "arabart-600-916",
+      "topic": "Museums and collections",
+      "sourceUrl": "https://qm.org.qa/en/stories/all-stories/behind-the-scenes-the-making-of-nmoq/",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Qatar National Museum"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Who illustrated the Baghdad manuscript of Al-Hariri's Maqamat held by France's national library?",
+      "a": "Yahya al-Wasiti",
+      "qid": "arabart-600-917",
+      "topic": "Famous works",
+      "sourceUrl": "https://essentiels.bnf.fr/fr/image/360c5338-9868-4a62-aeb8-12cef666a1e0-dans-une-mosquee",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Yahya ibn Mahmud al-Wasiti",
+        "Al-Wasiti"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "What ceramic decoration technique uses metal compounds to produce an iridescent metallic sheen?",
+      "a": "Luster painting",
+      "qid": "arabart-600-918",
+      "topic": "Crafts and techniques",
+      "sourceUrl": "https://collections.agakhanmuseum.org/collection/artifact/lustre-painted-ewer-akm763",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Lustre painting",
+        "Lusterware",
+        "Lustreware"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "Which Moroccan artist painted Alea, held in the Barjeel collection?",
+      "a": "Ahmed Cherkaoui",
+      "qid": "arabart-800-911",
+      "topic": "Pioneering artists",
+      "sourceUrl": "https://www.barjeelartfoundation.org/collection/ahmed-cherkaoui-alea/",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which Lebanese poet and painter made accordion-folded artist's books called leporellos?",
+      "a": "Etel Adnan",
+      "qid": "arabart-800-912",
+      "topic": "Pioneering artists",
+      "sourceUrl": "https://www.barjeelartfoundation.org/artist/lebanon/etel-adnan/",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "What extremely small Arabic script was used for sayings within the waves of The Calligraphic Galleon?",
+      "a": "Ghubar script",
+      "qid": "arabart-800-913",
+      "topic": "Arabic calligraphy",
+      "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Ghubari",
+        "Ghubar",
+        "Dust script"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "What variety of angular Arabic script has letters embellished with foliage?",
+      "a": "Foliated Kufic",
+      "qid": "arabart-800-914",
+      "topic": "Arabic calligraphy",
+      "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Floriated Kufic"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "The decorated stone facade of which Jordanian desert palace was moved to Berlin?",
+      "a": "Qasr al-Mshatta",
+      "qid": "arabart-800-915",
+      "topic": "Architecture and ornament",
+      "sourceUrl": "https://www.smb.museum/en/exhibitions/detail/mshatta-in-focus/",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Mshatta Palace",
+        "Mshatta"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "What is the local name of the cushioned stand used by Emirati Talli weavers?",
+      "a": "Kajujah",
+      "qid": "arabart-800-916",
+      "topic": "Crafts and techniques",
+      "sourceUrl": "https://artsandculture.google.com/story/QQVxOxFtPMyAsw",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Kajouja",
+        "Kajuja"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "Which Irish library holds Ibn al-Bawwab's signed Quran?",
+      "a": "Chester Beatty",
+      "qid": "arabart-800-917",
+      "topic": "Museums and collections",
+      "sourceUrl": "https://islamicart.museumwnf.org/database_item.php?id=object%3BEPM%3Bir%3BMus21%3B5%3Ben",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Chester Beatty Library"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "Which famous Quran manuscript features gold lettering on indigo-dyed pages?",
+      "a": "The Blue Quran",
+      "qid": "arabart-800-918",
+      "topic": "Famous works",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/454662",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Blue Quran",
+        "Blue Qur'an"
+      ]
+    },
+    {
+      "topic": "Pioneering artists",
+      "q": "Which Iraqi artist painted Masks of the Abyss and founded the New Vision group?",
+      "a": "Dia Azzawi",
+      "sourceUrl": "https://www.barjeelartfoundation.org/artist/iraq/dia-azzawi/",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabart-1000-911",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Dia al-Azzawi"
+      ]
+    },
+    {
+      "topic": "Pioneering artists",
+      "q": "What was the birth name of the Algerian artist who painted Woman in a Pink Dress?",
+      "a": "Fatma Haddad",
+      "sourceUrl": "https://www.barjeelartfoundation.org/artist/algeria/baya/",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabart-1000-912",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Fatima Haddad"
+      ]
+    },
+    {
+      "topic": "Famous works",
+      "q": "Which Mokhtar sculpture was acquired in stone by the French government and entered the Centre Pompidou collection?",
+      "a": "Bride of the Nile",
+      "sourceUrl": "https://mathaf.org.qa/en/encyclopedia/artists-biographies/mahmoud-mokhtar/",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabart-1000-913",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "The Bride of the Nile"
+      ]
+    },
+    {
+      "topic": "Architecture and ornament",
+      "q": "Which Nasrid sultan built Granada's Palace of the Lions during his second reign?",
+      "a": "Muhammad V",
+      "sourceUrl": "https://www.alhambra-patronato.es/en/edificios-lugares/the-court-of-the-lions",
+      "alt": [
+        "Muhammad V al-Ghani Billah"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "arabart-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Crafts and techniques",
+      "q": "What is the Emirati name for the metallic gold or silver thread used in Talli weaving?",
+      "a": "Khous",
+      "sourceUrl": "https://artsandculture.google.com/story/QQVxOxFtPMyAsw",
+      "alt": [
+        "Khousa",
+        "Khusa"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "arabart-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Crafts and techniques",
+      "q": "What white material usually forms the base of traditional Asiri wall decoration?",
+      "a": "White gypsum",
+      "sourceUrl": "https://ich.unesco.org/en/RL/al-qatt-al-asiri-female-traditional-interior-wall-decoration-in-asir-saudi-arabia-01261",
+      "alt": [
+        "Gypsum",
+        "White plaster"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "arabart-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Museums and collections",
+      "q": "Which Paris wax museum briefly employed Mokhtar as artistic director after the First World War?",
+      "a": "Musée Grévin",
+      "sourceUrl": "https://mathaf.org.qa/en/encyclopedia/artists-biographies/mahmoud-mokhtar/",
+      "alt": [
+        "Musee Grevin",
+        "Grevin Museum"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "arabart-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Museums and collections",
+      "q": "Which Paris gallery hosted the first exhibition of the artist who painted Woman in a Pink Dress?",
+      "a": "Maeght Gallery",
+      "sourceUrl": "https://www.barjeelartfoundation.org/artist/algeria/baya/",
+      "alt": [
+        "Galerie Maeght"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "arabart-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

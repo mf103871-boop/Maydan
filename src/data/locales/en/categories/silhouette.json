@@ -1,0 +1,1098 @@
+{
+  "id": "silhouette",
+  "name": "Silhouettes",
+  "icon": "🌑",
+  "defaultType": "image",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Which animal does this silhouette show?",
+      "a": "Cat",
+      "qid": "silhouette-200-901",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [],
+      "topic": "Animals",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-200-901.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-901.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "Which tool does the silhouette show?",
+      "a": "Hammer",
+      "qid": "silhouette-200-902",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [],
+      "topic": "Tools",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-200-902.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-902.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What object can you see in the silhouette?",
+      "a": "Umbrella",
+      "qid": "silhouette-200-903",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [],
+      "topic": "Personal items",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-200-903.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-903.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What form of transport does the silhouette show?",
+      "a": "Helicopter",
+      "qid": "silhouette-200-904",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [],
+      "topic": "Transport",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-200-904.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-904.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "Which plant does this silhouette show?",
+      "a": "Cactus",
+      "qid": "silhouette-200-905",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [],
+      "topic": "Plants",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-200-905.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-905.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "Which animal does this silhouette show?",
+      "a": "Rabbit",
+      "qid": "silhouette-200-921",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [],
+      "topic": "Animals",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-400-901.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-901.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "Which tree does this silhouette show?",
+      "a": "Palm tree",
+      "qid": "silhouette-200-922",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Date palm"
+      ],
+      "topic": "Plants",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-400-905.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-905.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "Which fruit does the silhouette show?",
+      "a": "Pineapple",
+      "qid": "silhouette-200-923",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [],
+      "topic": "Food",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-600-906.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-906.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "Which tool does the silhouette show?",
+      "a": "Wrench",
+      "qid": "silhouette-400-902",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Spanner"
+      ],
+      "topic": "Tools",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-400-902.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-902.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What device does the silhouette show?",
+      "a": "Hair dryer",
+      "qid": "silhouette-400-903",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Blow dryer"
+      ],
+      "topic": "Personal items",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-400-903.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-903.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What form of transport does the silhouette show?",
+      "a": "Motorboat",
+      "qid": "silhouette-400-904",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Speedboat"
+      ],
+      "topic": "Transport",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-400-904.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-904.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What object does the silhouette show?",
+      "a": "Watering can",
+      "qid": "silhouette-400-908",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [],
+      "topic": "Furniture and home",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-400-908.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-908.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "Which fruit does the silhouette show?",
+      "a": "Pear",
+      "qid": "silhouette-400-921",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [],
+      "topic": "Food",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-200-906.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-906.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What type of musical instrument does the silhouette show?",
+      "a": "Electric guitar",
+      "qid": "silhouette-400-922",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Guitar"
+      ],
+      "topic": "Music",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-600-907.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-907.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What device does the silhouette show?",
+      "a": "Fan",
+      "qid": "silhouette-400-923",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Electric fan",
+        "Desk fan"
+      ],
+      "topic": "Furniture and home",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-600-908.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-908.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What small tool does the silhouette show?",
+      "a": "Sewing needle",
+      "qid": "silhouette-400-924",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Needle"
+      ],
+      "topic": "Personal items",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-800-903.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-903.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "Which animal does this silhouette show?",
+      "a": "Kangaroo",
+      "qid": "silhouette-600-901",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [],
+      "topic": "Animals",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-600-901.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-901.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What personal item does the silhouette show?",
+      "a": "Perfume bottle",
+      "qid": "silhouette-600-903",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Perfume atomizer"
+      ],
+      "topic": "Personal items",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-600-903.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-903.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What form of transport does the silhouette show?",
+      "a": "Submarine",
+      "qid": "silhouette-600-904",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [],
+      "topic": "Transport",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-600-904.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-904.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What type of locomotive does the silhouette show?",
+      "a": "Steam locomotive",
+      "qid": "silhouette-600-921",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Steam train"
+      ],
+      "topic": "Transport",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-1000-904.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-904.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "Which fruit does the silhouette show?",
+      "a": "Star fruit",
+      "qid": "silhouette-600-922",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Carambola",
+        "Starfruit"
+      ],
+      "topic": "Food",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-1000-906.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-906.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What musical instrument does the silhouette show?",
+      "a": "Saxophone",
+      "qid": "silhouette-600-923",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Sax"
+      ],
+      "topic": "Music",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-200-907.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-907.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What type of chair does the silhouette show?",
+      "a": "Rocking chair",
+      "qid": "silhouette-600-924",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [],
+      "topic": "Furniture and home",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-200-908.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-908.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "Which fruit is represented by the silhouette?",
+      "a": "Chili pepper",
+      "qid": "silhouette-600-925",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Chilli",
+        "Pepper"
+      ],
+      "topic": "Food",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-400-906.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-906.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "Which tool does the silhouette show?",
+      "a": "Hand drill",
+      "qid": "silhouette-800-902",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Crank drill"
+      ],
+      "topic": "Tools",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-800-902.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-902.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What type of airplane does the silhouette show?",
+      "a": "Biplane",
+      "qid": "silhouette-800-904",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [],
+      "topic": "Transport",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-800-904.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-904.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "Which plant does this leaf belong to?",
+      "a": "Monstera",
+      "qid": "silhouette-800-905",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Monstera deliciosa",
+        "Monstera leaf"
+      ],
+      "topic": "Plants",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-800-905.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-905.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "Which root used in cooking does the silhouette show?",
+      "a": "Ginger",
+      "qid": "silhouette-800-906",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [],
+      "topic": "Food",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-800-906.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-906.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What household object does the silhouette show?",
+      "a": "Oil lamp",
+      "qid": "silhouette-800-908",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Kerosene lamp"
+      ],
+      "topic": "Furniture and home",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-800-908.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-908.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What personal grooming tool does the silhouette show?",
+      "a": "Eyelash curler",
+      "qid": "silhouette-800-921",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [],
+      "topic": "Personal items",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-1000-903.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-903.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What musical instrument does the silhouette show?",
+      "a": "Cello",
+      "qid": "silhouette-800-922",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Violoncello"
+      ],
+      "topic": "Music",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-400-907.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-907.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "Which tool does the silhouette show?",
+      "a": "Corkscrew",
+      "qid": "silhouette-800-923",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [],
+      "topic": "Tools",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-600-902.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-902.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "Which animal does this silhouette show?",
+      "a": "Platypus",
+      "qid": "silhouette-1000-901",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Duck-billed platypus"
+      ],
+      "topic": "Animals",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-1000-901.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-901.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What old navigational instrument does the silhouette show?",
+      "a": "Sextant",
+      "qid": "silhouette-1000-902",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Marine sextant"
+      ],
+      "topic": "Tools",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-1000-902.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-902.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "Which tree does this leaf belong to?",
+      "a": "Ginkgo leaf",
+      "qid": "silhouette-1000-905",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Ginkgo",
+        "Gingko leaf"
+      ],
+      "topic": "Plants",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-1000-905.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-905.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What musical instrument does the silhouette show?",
+      "a": "Balalaika",
+      "qid": "silhouette-1000-907",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [],
+      "topic": "Music",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-1000-907.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-907.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What older household appliance does the silhouette show?",
+      "a": "Kerosene stove",
+      "qid": "silhouette-1000-908",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Paraffin stove",
+        "Pressure stove"
+      ],
+      "topic": "Furniture and home",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-1000-908.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-908.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "Which tree does this leaf belong to?",
+      "a": "Oak leaf",
+      "qid": "silhouette-1000-921",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Oak"
+      ],
+      "topic": "Plants",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-600-905.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-905.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "Which bird does this silhouette show?",
+      "a": "Heron",
+      "qid": "silhouette-1000-922",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [],
+      "topic": "Animals",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-800-901.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-901.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What musical instrument does the silhouette show?",
+      "a": "French horn",
+      "qid": "silhouette-1000-923",
+      "type": "image",
+      "effect": "silhouette",
+      "alt": [
+        "Horn"
+      ],
+      "topic": "Music",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-shape-images.json",
+      "media": {
+        "src": "silhouette-800-907.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-907.json"
+        }
+      }
+    }
+  ]
+}

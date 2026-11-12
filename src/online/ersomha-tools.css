@@ -93,3 +93,18 @@
   .ers-tools .ers-colour>span,.ers-tools-modal .ers-colour>span { forced-color-adjust:none; }
   .ers-tools [aria-pressed=true],.ers-tools-modal [aria-pressed=true],.ersomha .ers-tool-button[aria-pressed=true] { outline:2px solid Highlight; outline-offset:1px; }
 }
+/* Playful Studio tools keep each swatch's actual --ink value. */
+.ers-tools .ers-tool-row .btn,.ers-tools-modal .ers-tool-row .btn,.ersomha .ers-tool-button {
+  min-width:48px; min-height:48px; border-radius:16px; border-color:#d8cad9;
+  background:linear-gradient(160deg,#fffdf9,#f5eee8); color:#352139;
+  box-shadow:0 2px 0 #ded0d8,0 5px 12px #3521390a;
+  transition:transform 90ms ease,background-color 140ms ease,box-shadow 140ms ease;
+}
+.ers-tools .ers-tool-row .btn[aria-pressed=true],.ers-tools-modal .ers-tool-row .btn[aria-pressed=true],.ersomha .ers-tool-button[aria-pressed=true] {
+  color:#075f55; border-color:#08796d; background:#e2f3ed;
+  box-shadow:0 2px 0 #a5cabb,inset 0 0 0 1px #08796d33;
+}
+.ers-tools .ers-colour,.ers-tools-modal .ers-colour { min-width:48px; min-height:48px; border-radius:16px; }
+.ers-tools .ers-widths button,.ers-tools-modal .ers-widths button { min-width:48px; min-height:48px; background:#fffdf9; border-color:#d8cad9; color:#352139; }
+.ers-tools .ers-widths button[aria-pressed=true],.ers-tools-modal .ers-widths button[aria-pressed=true] { background:#eee3f5; color:#352139; border-color:#a68ab8; }
+.ers-tools .ers-tools-more { background:#e2f3ed; color:#075f55; border-color:#afd3c7; }

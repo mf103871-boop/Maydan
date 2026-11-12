@@ -37,6 +37,7 @@ final class RewardedIntegration {
         }
     }
     void resume() {}
+    void refreshLocalization() {}
     void stop() {}
     void destroy() {
         if (WebViewFeature.isFeatureSupported(WebViewFeature.WEB_MESSAGE_LISTENER)) {

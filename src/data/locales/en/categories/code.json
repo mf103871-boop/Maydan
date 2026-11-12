@@ -1,0 +1,853 @@
+{
+  "id": "code",
+  "name": "Crack the Code",
+  "icon": "🔣",
+  "defaultType": "code",
+  "qs": [
+    {
+      "q": "A · I · S · I · N · U · T",
+      "a": "Tunisia",
+      "topic": "Countries and cities",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Read the letters from right to left to reveal the English word.",
+      "dir": "ltr",
+      "p": 200,
+      "qid": "code-200-911-en-v1",
+      "difficultyTarget": 0.8,
+      "sourceId": "code-200-911",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "E · L · L · E · Z · A · G",
+      "a": "Gazelle",
+      "topic": "Animals",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Read the letters from right to left to reveal the English word.",
+      "dir": "ltr",
+      "p": 200,
+      "qid": "code-200-912-en-v1",
+      "difficultyTarget": 0.8,
+      "sourceId": "code-200-912",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "S · L · I · T · N · E · L",
+      "a": "Lentils",
+      "topic": "Food",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Read the letters from right to left to reveal the English word.",
+      "dir": "ltr",
+      "p": 200,
+      "qid": "code-200-913-en-v1",
+      "difficultyTarget": 0.8,
+      "sourceId": "code-200-913",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "S · R · O · S · S · I · C · S",
+      "a": "Scissors",
+      "topic": "Tools",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Read the letters from right to left to reveal the English word.",
+      "dir": "ltr",
+      "p": 200,
+      "qid": "code-200-914-en-v1",
+      "difficultyTarget": 0.8,
+      "sourceId": "code-200-914",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "R · O · B · R · A · H",
+      "a": "Harbor",
+      "topic": "Places",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "Harbour"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Read the letters from right to left to reveal the English word.",
+      "dir": "ltr",
+      "p": 200,
+      "qid": "code-200-915-en-v1",
+      "difficultyTarget": 0.8,
+      "sourceId": "code-200-915",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "L · L · A · F · R · E · T · A · W",
+      "a": "Waterfall",
+      "topic": "Nature",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Read the letters from right to left to reveal the English word.",
+      "dir": "ltr",
+      "p": 200,
+      "qid": "code-200-916-en-v1",
+      "difficultyTarget": 0.8,
+      "sourceId": "code-200-916",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "S · I · N · N · E · T",
+      "a": "Tennis",
+      "topic": "Sports",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Read the letters from right to left to reveal the English word.",
+      "dir": "ltr",
+      "p": 200,
+      "qid": "code-200-917-en-v1",
+      "difficultyTarget": 0.8,
+      "sourceId": "code-200-917",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "K · O · O · B · E · T · O · N",
+      "a": "Notebook",
+      "topic": "Everyday objects",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Read the letters from right to left to reveal the English word.",
+      "dir": "ltr",
+      "p": 200,
+      "qid": "code-200-918-en-v1",
+      "difficultyTarget": 0.8,
+      "sourceId": "code-200-918",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "O · Z · M · V · A · J · N · K",
+      "a": "Oman",
+      "topic": "Countries and cities",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reading left to right, keep the 1st, 3rd, 5th letters and so on; join the letters you keep.",
+      "dir": "ltr",
+      "p": 400,
+      "qid": "code-400-911-en-v1",
+      "difficultyTarget": 0.6,
+      "sourceId": "code-400-911",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "B · V · E · J · E · K",
+      "a": "Bee",
+      "topic": "Animals",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reading left to right, keep the 1st, 3rd, 5th letters and so on; join the letters you keep.",
+      "dir": "ltr",
+      "p": 400,
+      "qid": "code-400-912-en-v1",
+      "difficultyTarget": 0.6,
+      "sourceId": "code-400-912",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "K · J · U · K · N · Q · A · X · F · Z · A · V",
+      "a": "Kunafa",
+      "topic": "Food",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [
+        "Knafeh",
+        "Kanafeh"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reading left to right, keep the 1st, 3rd, 5th letters and so on; join the letters you keep.",
+      "dir": "ltr",
+      "p": 400,
+      "qid": "code-400-913-en-v1",
+      "difficultyTarget": 0.6,
+      "sourceId": "code-400-913",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "S · K · A · Q · W · X",
+      "a": "Saw",
+      "topic": "Tools",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reading left to right, keep the 1st, 3rd, 5th letters and so on; join the letters you keep.",
+      "dir": "ltr",
+      "p": 400,
+      "qid": "code-400-914-en-v1",
+      "difficultyTarget": 0.6,
+      "sourceId": "code-400-914",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "M · Q · U · X · S · Z · E · V · U · J · M · K",
+      "a": "Museum",
+      "topic": "Places",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reading left to right, keep the 1st, 3rd, 5th letters and so on; join the letters you keep.",
+      "dir": "ltr",
+      "p": 400,
+      "qid": "code-400-915-en-v1",
+      "difficultyTarget": 0.6,
+      "sourceId": "code-400-915",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "C · X · O · Z · R · V · A · J · L · K",
+      "a": "Coral",
+      "topic": "Nature",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reading left to right, keep the 1st, 3rd, 5th letters and so on; join the letters you keep.",
+      "dir": "ltr",
+      "p": 400,
+      "qid": "code-400-916-en-v1",
+      "difficultyTarget": 0.6,
+      "sourceId": "code-400-916",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "S · Z · W · V · I · J · M · K · M · Q · I · X · N · Z · G · V",
+      "a": "Swimming",
+      "topic": "Sports",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reading left to right, keep the 1st, 3rd, 5th letters and so on; join the letters you keep.",
+      "dir": "ltr",
+      "p": 400,
+      "qid": "code-400-917-en-v1",
+      "difficultyTarget": 0.6,
+      "sourceId": "code-400-917",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "L · V · A · J · M · K · P · Q",
+      "a": "Lamp",
+      "topic": "Everyday objects",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reading left to right, keep the 1st, 3rd, 5th letters and so on; join the letters you keep.",
+      "dir": "ltr",
+      "p": 400,
+      "qid": "code-400-918-en-v1",
+      "difficultyTarget": 0.6,
+      "sourceId": "code-400-918",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "A · N · U · D · S",
+      "a": "Sudan",
+      "topic": "Countries and cities",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reading left to right, swap each adjacent pair, leaving any final unpaired letter. Then reverse the result.",
+      "dir": "ltr",
+      "p": 600,
+      "qid": "code-600-921-en-v1",
+      "difficultyTarget": 0.4,
+      "sourceId": "code-600-921",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "E · L · R · R · U · I · S · Q",
+      "a": "Squirrel",
+      "topic": "Animals",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reading left to right, swap each adjacent pair, leaving any final unpaired letter. Then reverse the result.",
+      "dir": "ltr",
+      "p": 600,
+      "qid": "code-600-922-en-v1",
+      "difficultyTarget": 0.4,
+      "sourceId": "code-600-922",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "M · E · H · Y · T",
+      "a": "Thyme",
+      "topic": "Food",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reading left to right, swap each adjacent pair, leaving any final unpaired letter. Then reverse the result.",
+      "dir": "ltr",
+      "p": 600,
+      "qid": "code-600-923-en-v1",
+      "difficultyTarget": 0.4,
+      "sourceId": "code-600-923",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "S · S · P · A · O · M · C",
+      "a": "Compass",
+      "topic": "Tools",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reading left to right, swap each adjacent pair, leaving any final unpaired letter. Then reverse the result.",
+      "dir": "ltr",
+      "p": 600,
+      "qid": "code-600-924-en-v1",
+      "difficultyTarget": 0.4,
+      "sourceId": "code-600-924",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "R · Y · R · A · I · B · L",
+      "a": "Library",
+      "topic": "Places",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reading left to right, swap each adjacent pair, leaving any final unpaired letter. Then reverse the result.",
+      "dir": "ltr",
+      "p": 600,
+      "qid": "code-600-925-en-v1",
+      "difficultyTarget": 0.4,
+      "sourceId": "code-600-925",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "N · O · C · A · O · L · V",
+      "a": "Volcano",
+      "topic": "Nature",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reading left to right, swap each adjacent pair, leaving any final unpaired letter. Then reverse the result.",
+      "dir": "ltr",
+      "p": 600,
+      "qid": "code-600-926-en-v1",
+      "difficultyTarget": 0.4,
+      "sourceId": "code-600-926",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "N · G · W · I · R · O",
+      "a": "Rowing",
+      "topic": "Sports",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reading left to right, swap each adjacent pair, leaving any final unpaired letter. Then reverse the result.",
+      "dir": "ltr",
+      "p": 600,
+      "qid": "code-600-927-en-v1",
+      "difficultyTarget": 0.4,
+      "sourceId": "code-600-927",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "L · A · E · L · B · R · U · M",
+      "a": "Umbrella",
+      "topic": "Everyday objects",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reading left to right, swap each adjacent pair, leaving any final unpaired letter. Then reverse the result.",
+      "dir": "ltr",
+      "p": 600,
+      "qid": "code-600-928-en-v1",
+      "difficultyTarget": 0.4,
+      "sourceId": "code-600-928",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "L · G · N · S / A · E · E",
+      "a": "Senegal",
+      "topic": "Countries and cities",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Start with the left group. Alternate one letter from each group, retaining any final extra letter. Then reverse the result.",
+      "dir": "ltr",
+      "p": 800,
+      "qid": "code-800-921-en-v1",
+      "difficultyTarget": 0.25,
+      "sourceId": "code-800-921",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "E · T · U / L · R · T",
+      "a": "Turtle",
+      "topic": "Animals",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Start with the left group. Alternate one letter from each group, retaining any final extra letter. Then reverse the result.",
+      "dir": "ltr",
+      "p": 800,
+      "qid": "code-800-922-en-v1",
+      "difficultyTarget": 0.25,
+      "alt": [],
+      "sourceId": "code-800-922",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "S · C · I · I / U · S · B · H",
+      "a": "Hibiscus",
+      "topic": "Food",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Start with the left group. Alternate one letter from each group, retaining any final extra letter. Then reverse the result.",
+      "dir": "ltr",
+      "p": 800,
+      "qid": "code-800-923-en-v1",
+      "difficultyTarget": 0.25,
+      "sourceId": "code-800-923",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "L · C · E / I · N · P",
+      "a": "Pencil",
+      "topic": "Tools",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Start with the left group. Alternate one letter from each group, retaining any final extra letter. Then reverse the result.",
+      "dir": "ltr",
+      "p": 800,
+      "qid": "code-800-924-en-v1",
+      "difficultyTarget": 0.25,
+      "alt": [],
+      "sourceId": "code-800-924",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "Y · O · A · O · A / R · T · R · B · L",
+      "a": "Laboratory",
+      "topic": "Places",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Start with the left group. Alternate one letter from each group, retaining any final extra letter. Then reverse the result.",
+      "dir": "ltr",
+      "p": 800,
+      "qid": "code-800-925-en-v1",
+      "difficultyTarget": 0.25,
+      "alt": [],
+      "sourceId": "code-800-925",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "S · L · F · E · A / L · A · R · T · W",
+      "a": "Waterfalls",
+      "topic": "Nature",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Start with the left group. Alternate one letter from each group, retaining any final extra letter. Then reverse the result.",
+      "dir": "ltr",
+      "p": 800,
+      "qid": "code-800-926-en-v1",
+      "difficultyTarget": 0.25,
+      "alt": [],
+      "sourceId": "code-800-926",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "L · A · E · A / L · B · S · B",
+      "a": "Baseball",
+      "topic": "Sports",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Start with the left group. Alternate one letter from each group, retaining any final extra letter. Then reverse the result.",
+      "dir": "ltr",
+      "p": 800,
+      "qid": "code-800-927-en-v1",
+      "difficultyTarget": 0.25,
+      "alt": [],
+      "sourceId": "code-800-927",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "G · B / A",
+      "a": "Bag",
+      "topic": "Everyday objects",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Start with the left group. Alternate one letter from each group, retaining any final extra letter. Then reverse the result.",
+      "dir": "ltr",
+      "p": 800,
+      "qid": "code-800-928-en-v1",
+      "difficultyTarget": 0.25,
+      "alt": [],
+      "sourceId": "code-800-928",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "E · O · B · M · J · B · I · U",
+      "a": "Thailand",
+      "topic": "Countries and cities",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reverse the letters, then move each one back one place in the English alphabet; A wraps to Z.",
+      "dir": "ltr",
+      "p": 1000,
+      "qid": "code-1000-911-en-v1",
+      "difficultyTarget": 0.15,
+      "sourceId": "code-1000-911",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "S · F · E · O · B · N · B · M · B · T",
+      "a": "Salamander",
+      "topic": "Animals",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reverse the letters, then move each one back one place in the English alphabet; A wraps to Z.",
+      "dir": "ltr",
+      "p": 1000,
+      "qid": "code-1000-912-en-v1",
+      "difficultyTarget": 0.15,
+      "sourceId": "code-1000-912",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "O · P · S · G · G · B · T",
+      "a": "Saffron",
+      "topic": "Food",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reverse the letters, then move each one back one place in the English alphabet; A wraps to Z.",
+      "dir": "ltr",
+      "p": 1000,
+      "qid": "code-1000-913-en-v1",
+      "difficultyTarget": 0.15,
+      "sourceId": "code-1000-913",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "F · Q · P · D · T · F · M · F · U",
+      "a": "Telescope",
+      "topic": "Tools",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reverse the letters, then move each one back one place in the English alphabet; A wraps to Z.",
+      "dir": "ltr",
+      "p": 1000,
+      "qid": "code-1000-914-en-v1",
+      "difficultyTarget": 0.15,
+      "sourceId": "code-1000-914",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "F · T · V · P · I · F · S · B · X",
+      "a": "Warehouse",
+      "topic": "Places",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reverse the letters, then move each one back one place in the English alphabet; A wraps to Z.",
+      "dir": "ltr",
+      "p": 1000,
+      "qid": "code-1000-915-en-v1",
+      "difficultyTarget": 0.15,
+      "sourceId": "code-1000-915",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "S · F · C · N · B",
+      "a": "Amber",
+      "topic": "Nature",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reverse the letters, then move each one back one place in the English alphabet; A wraps to Z.",
+      "dir": "ltr",
+      "p": 1000,
+      "qid": "code-1000-916-en-v1",
+      "difficultyTarget": 0.15,
+      "sourceId": "code-1000-916",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "O · P · I · U · B · S · B · N",
+      "a": "Marathon",
+      "topic": "Sports",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reverse the letters, then move each one back one place in the English alphabet; A wraps to Z.",
+      "dir": "ltr",
+      "p": 1000,
+      "qid": "code-1000-921-en-v1",
+      "difficultyTarget": 0.15,
+      "alt": [],
+      "sourceId": "code-1000-921",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    },
+    {
+      "q": "O · P · J · T · J · W · F · M · F · U",
+      "a": "Television",
+      "topic": "Everyday objects",
+      "sourceUrl": "docs/bank/quality-2026-10-08/mechanics-proofs.json",
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "code",
+      "hint": "Reverse the letters, then move each one back one place in the English alphabet; A wraps to Z.",
+      "dir": "ltr",
+      "p": 1000,
+      "qid": "code-1000-922-en-v1",
+      "difficultyTarget": 0.15,
+      "alt": [],
+      "sourceId": "code-1000-922",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-wordplay",
+        "reason": "Re-encodes the translated answer with English letters under the displayed tier rule; this is a distinct playable cipher instance."
+      }
+    }
+  ]
+}

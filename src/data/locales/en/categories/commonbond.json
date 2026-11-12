@@ -1,0 +1,756 @@
+{
+  "id": "commonbond",
+  "name": "Common Ground",
+  "icon": "🔗",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Which animal group includes all three?",
+      "a": "Reptiles",
+      "qid": "commonbond-200-911",
+      "type": "common",
+      "items": [
+        "Crocodile",
+        "Snake",
+        "Turtle"
+      ],
+      "topic": "Animals",
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://animaldiversity.org/accounts/Reptilia/"
+    },
+    {
+      "p": 200,
+      "q": "What kind of file formats are these?",
+      "a": "Image formats",
+      "qid": "commonbond-200-912",
+      "type": "common",
+      "items": [
+        "PNG",
+        "JPEG",
+        "GIF"
+      ],
+      "topic": "Technology and computing",
+      "alt": [
+        "Image files"
+      ],
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types"
+    },
+    {
+      "p": 200,
+      "q": "What region, under its usual three-country definition, includes these countries?",
+      "a": "Scandinavia",
+      "qid": "commonbond-200-913",
+      "type": "common",
+      "items": [
+        "Norway",
+        "Sweden",
+        "Denmark"
+      ],
+      "topic": "Geography and places",
+      "alt": [
+        "Scandinavian countries"
+      ],
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Scandinavia"
+    },
+    {
+      "p": 200,
+      "q": "What type of planets are these?",
+      "a": "Rocky planets",
+      "qid": "commonbond-200-914",
+      "type": "common",
+      "items": [
+        "Mercury",
+        "Venus",
+        "Mars"
+      ],
+      "topic": "Space and science",
+      "alt": [
+        "Terrestrial planets",
+        "Inner planets"
+      ],
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+    },
+    {
+      "p": 200,
+      "q": "What grammatical function do these words share?",
+      "a": "Question words",
+      "qid": "commonbond-200-915",
+      "type": "common",
+      "items": [
+        "Where",
+        "When",
+        "How"
+      ],
+      "topic": "Words and language",
+      "alt": [
+        "Interrogatives",
+        "Interrogative words"
+      ],
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/اسم_استفهام"
+    },
+    {
+      "p": 200,
+      "q": "To which art do these styles belong?",
+      "a": "Arabic calligraphy",
+      "qid": "commonbond-200-916",
+      "type": "common",
+      "items": [
+        "Thuluth",
+        "Naskh",
+        "Ruq'ah"
+      ],
+      "topic": "Arts and literature",
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Arabic_calligraphy"
+    },
+    {
+      "p": 200,
+      "q": "What implement is used to hit the ball or shuttle in these sports?",
+      "a": "A racket",
+      "qid": "commonbond-200-917",
+      "type": "common",
+      "items": [
+        "Badminton",
+        "Squash",
+        "Padel"
+      ],
+      "topic": "Sports and games",
+      "alt": [
+        "Racket",
+        "Racquet"
+      ],
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Racket_sport"
+    },
+    {
+      "p": 200,
+      "q": "Which drink is the basis of all three?",
+      "a": "Coffee",
+      "qid": "commonbond-200-921",
+      "type": "common",
+      "items": [
+        "Espresso",
+        "Latte",
+        "Cappuccino"
+      ],
+      "topic": "Food and crops",
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_coffee_drinks"
+    },
+    {
+      "p": 400,
+      "q": "Which animal group includes these creatures?",
+      "a": "Marsupials",
+      "qid": "commonbond-400-911",
+      "type": "common",
+      "items": [
+        "Kangaroo",
+        "Koala",
+        "Opossum"
+      ],
+      "topic": "Animals",
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://animaldiversity.org/accounts/Metatheria/"
+    },
+    {
+      "p": 400,
+      "q": "What shared purpose do these formats serve?",
+      "a": "File archiving and compression",
+      "qid": "commonbond-400-912",
+      "type": "common",
+      "items": [
+        "ZIP",
+        "RAR",
+        "7z"
+      ],
+      "topic": "Technology and computing",
+      "alt": [
+        "Compressed archives",
+        "File compression"
+      ],
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://www.7-zip.org/"
+    },
+    {
+      "p": 400,
+      "q": "In which mountain range are all three peaks?",
+      "a": "The Alps",
+      "qid": "commonbond-400-913",
+      "type": "common",
+      "items": [
+        "Mont Blanc",
+        "Matterhorn",
+        "Jungfrau"
+      ],
+      "topic": "Geography and places",
+      "alt": [
+        "Alps"
+      ],
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Alps"
+    },
+    {
+      "p": 400,
+      "q": "In which part of the ear are these three bones?",
+      "a": "The middle ear",
+      "qid": "commonbond-400-914",
+      "type": "common",
+      "items": [
+        "Malleus",
+        "Incus",
+        "Stapes"
+      ],
+      "topic": "Space and science",
+      "alt": [
+        "Middle ear"
+      ],
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://www.nidcd.nih.gov/health/how-do-we-hear"
+    },
+    {
+      "p": 400,
+      "q": "Which Arabic grammatical group includes these transliterated verbs?",
+      "a": "Kana and its sisters",
+      "qid": "commonbond-400-915",
+      "type": "common",
+      "items": [
+        "Sara",
+        "Asbaha",
+        "Amsa"
+      ],
+      "topic": "Words and language",
+      "alt": [
+        "Defective verbs",
+        "Kana wa-akhawatuha"
+      ],
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/كان_وأخواتها"
+    },
+    {
+      "p": 400,
+      "q": "Which story features all three characters?",
+      "a": "The Wizard of Oz",
+      "qid": "commonbond-400-916",
+      "type": "common",
+      "items": [
+        "Dorothy",
+        "Scarecrow",
+        "Tin Man"
+      ],
+      "topic": "Arts and literature",
+      "alt": [
+        "The Wonderful Wizard of Oz"
+      ],
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Wonderful_Wizard_of_Oz"
+    },
+    {
+      "p": 400,
+      "q": "Which game uses these terms?",
+      "a": "Bowling",
+      "qid": "commonbond-400-917",
+      "type": "common",
+      "items": [
+        "Strike",
+        "Spare",
+        "Split"
+      ],
+      "topic": "Sports and games",
+      "alt": [
+        "Ten-pin bowling"
+      ],
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ten-pin_bowling"
+    },
+    {
+      "p": 400,
+      "q": "From which grain are these products made?",
+      "a": "Wheat",
+      "qid": "commonbond-400-918",
+      "type": "common",
+      "items": [
+        "Bulgur",
+        "Freekeh",
+        "Semolina"
+      ],
+      "topic": "Food and crops",
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Freekeh"
+    },
+    {
+      "p": 600,
+      "q": "Which animal class includes all three?",
+      "a": "Cephalopods",
+      "qid": "commonbond-600-911",
+      "type": "common",
+      "items": [
+        "Octopus",
+        "Squid",
+        "Nautilus"
+      ],
+      "topic": "Animals",
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://animaldiversity.org/accounts/Cephalopoda/"
+    },
+    {
+      "p": 600,
+      "q": "What kind of storage media are these?",
+      "a": "Optical discs",
+      "qid": "commonbond-600-912",
+      "type": "common",
+      "items": [
+        "CD",
+        "DVD",
+        "Blu-ray"
+      ],
+      "topic": "Technology and computing",
+      "alt": [
+        "Optical storage"
+      ],
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://www.sony.com/electronics/support/articles/00090460"
+    },
+    {
+      "q": "What astronomical classification do these bodies share?",
+      "a": "Dwarf planets",
+      "topic": "Space and science",
+      "sourceUrl": "https://science.nasa.gov/dwarf-planets/",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "common",
+      "items": [
+        "Ceres",
+        "Pluto",
+        "Eris"
+      ],
+      "p": 600,
+      "qid": "commonbond-600-914",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "Which Arabic morphological category includes these emphatic adjective forms?",
+      "a": "Intensive forms",
+      "qid": "commonbond-600-915",
+      "type": "common",
+      "items": [
+        "Ghafur",
+        "Sabur",
+        "Shakur"
+      ],
+      "topic": "Words and language",
+      "alt": [
+        "Intensive adjectives",
+        "Siyagh al-mubalaghah"
+      ],
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/صيغة_مبالغة"
+    },
+    {
+      "q": "With which art movement are these painters associated?",
+      "a": "Impressionism",
+      "topic": "Arts and literature",
+      "sourceUrl": "https://www.metmuseum.org/pt/essays/impressionism-art-and-modernity",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "common",
+      "items": [
+        "Claude Monet",
+        "Alfred Sisley",
+        "Camille Pissarro"
+      ],
+      "p": 600,
+      "qid": "commonbond-600-916",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "In which sport are these weapons used?",
+      "a": "Fencing",
+      "qid": "commonbond-600-917",
+      "type": "common",
+      "items": [
+        "Foil",
+        "Épée",
+        "Sabre"
+      ],
+      "topic": "Sports and games",
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fencing"
+    },
+    {
+      "p": 600,
+      "q": "Of which fruit are these varieties?",
+      "a": "Dates",
+      "qid": "commonbond-600-921",
+      "type": "common",
+      "items": [
+        "Medjool",
+        "Deglet Noor",
+        "Ajwa"
+      ],
+      "topic": "Food and crops",
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Date_palm"
+    },
+    {
+      "q": "To which country do all three islands belong?",
+      "a": "Indonesia",
+      "topic": "Geography and places",
+      "sourceUrl": "https://www.indonesia.travel/id/id/destination",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "common",
+      "items": [
+        "Sumatra",
+        "Java",
+        "Sulawesi"
+      ],
+      "p": 600,
+      "qid": "commonbond-600-922",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "Which animal phylum includes these creatures?",
+      "a": "Cnidarians",
+      "topic": "Animals",
+      "sourceUrl": "https://www.nhm.ac.uk/our-science/services/collections/zoology/cnidaria.html",
+      "alt": [
+        "Cnidaria"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "common",
+      "items": [
+        "Jellyfish",
+        "Sea anemone",
+        "Coral"
+      ],
+      "p": 800,
+      "qid": "commonbond-800-911",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "q": "What type of software structures do these names identify?",
+      "a": "File systems",
+      "qid": "commonbond-800-912",
+      "type": "common",
+      "items": [
+        "Ext4",
+        "XFS",
+        "Btrfs"
+      ],
+      "topic": "Technology and computing",
+      "alt": [
+        "Filesystems"
+      ],
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://docs.kernel.org/filesystems/index.html"
+    },
+    {
+      "p": 800,
+      "q": "To which chemical family do these elements belong?",
+      "a": "Halogens",
+      "qid": "commonbond-800-914",
+      "type": "common",
+      "items": [
+        "Fluorine",
+        "Chlorine",
+        "Bromine"
+      ],
+      "topic": "Space and science",
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://periodic-table.rsc.org/"
+    },
+    {
+      "q": "What Arabic morphological category contains these broken-plural patterns?",
+      "a": "Ultimate plural patterns",
+      "topic": "Words and language",
+      "sourceUrl": "https://uomustansiriyah.edu.iq/media/lectures/12/12_2021_08_14%2107_06_27_PM.pdf",
+      "alt": [
+        "Sighat muntaha al-jumu",
+        "Siyagh muntaha al-jumu"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "common",
+      "items": [
+        "Mafāʿil",
+        "Mafāʿīl",
+        "Fawāʿil"
+      ],
+      "p": 800,
+      "qid": "commonbond-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "q": "For which artistic movement are these artists known?",
+      "a": "Cubism",
+      "qid": "commonbond-800-916",
+      "type": "common",
+      "items": [
+        "Georges Braque",
+        "Pablo Picasso",
+        "Juan Gris"
+      ],
+      "topic": "Arts and literature",
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Cubism"
+    },
+    {
+      "q": "In which sport are these scoring terms used?",
+      "a": "Judo",
+      "topic": "Sports and games",
+      "sourceUrl": "https://www.ijf.org/news/show/new-rules-what-to-remember",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "common",
+      "items": [
+        "Ippon",
+        "Waza-ari",
+        "Yuko"
+      ],
+      "p": 800,
+      "qid": "commonbond-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which plant is the source of these three drinks?",
+      "a": "The tea plant",
+      "topic": "Food and crops",
+      "sourceUrl": "https://www.kew.org/plants/tea-plant",
+      "alt": [
+        "Camellia sinensis",
+        "Tea"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "common",
+      "items": [
+        "Oolong",
+        "White tea",
+        "Green tea"
+      ],
+      "p": 800,
+      "qid": "commonbond-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "q": "What collective name is used for these countries?",
+      "a": "The Baltic states",
+      "qid": "commonbond-800-921",
+      "type": "common",
+      "items": [
+        "Estonia",
+        "Latvia",
+        "Lithuania"
+      ],
+      "topic": "Geography and places",
+      "alt": [
+        "Baltic states"
+      ],
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Baltic_states"
+    },
+    {
+      "p": 1000,
+      "q": "Which mammal order includes these animals?",
+      "a": "Monotremes",
+      "qid": "commonbond-1000-911",
+      "type": "common",
+      "items": [
+        "Platypus",
+        "Short-beaked echidna",
+        "Long-beaked echidna"
+      ],
+      "topic": "Animals",
+      "alt": [
+        "Monotremata"
+      ],
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://animaldiversity.org/accounts/Monotremata/"
+    },
+    {
+      "q": "What type of software component do these names represent?",
+      "a": "JavaScript engines",
+      "topic": "Technology and computing",
+      "sourceUrl": "https://developer.mozilla.org/en-US/docs/Glossary/Engine/JavaScript",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "common",
+      "items": [
+        "V8",
+        "SpiderMonkey",
+        "JavaScriptCore"
+      ],
+      "p": 1000,
+      "qid": "commonbond-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "q": "Which archipelago includes these islands?",
+      "a": "The Mascarene Islands",
+      "qid": "commonbond-1000-913",
+      "type": "common",
+      "items": [
+        "Mauritius",
+        "Réunion",
+        "Rodrigues"
+      ],
+      "topic": "Geography and places",
+      "alt": [
+        "Mascarene Islands",
+        "Mascarenes"
+      ],
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mascarene_Islands"
+    },
+    {
+      "p": 1000,
+      "q": "Which planet do all three bodies orbit?",
+      "a": "Uranus",
+      "qid": "commonbond-1000-914",
+      "type": "common",
+      "items": [
+        "Titania",
+        "Oberon",
+        "Miranda"
+      ],
+      "topic": "Space and science",
+      "alt": [],
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://science.nasa.gov/uranus/moons/"
+    },
+    {
+      "p": 1000,
+      "q": "What Arabic verb class has weak first and last root letters, as in these examples?",
+      "a": "Separated doubly weak verbs",
+      "qid": "commonbond-1000-915",
+      "type": "common",
+      "items": [
+        "Waqa",
+        "Wafa",
+        "Wa'a"
+      ],
+      "topic": "Words and language",
+      "alt": [
+        "Lafif mafruq",
+        "Al-lafif al-mafruq"
+      ],
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/فعل_معتل"
+    },
+    {
+      "p": 1000,
+      "q": "From which country's literary traditions do these forms come?",
+      "a": "Japan",
+      "qid": "commonbond-1000-916",
+      "type": "common",
+      "items": [
+        "Kyoka",
+        "Tanka",
+        "Renga"
+      ],
+      "topic": "Arts and literature",
+      "alt": [
+        "Japanese poetry"
+      ],
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://www.loc.gov/item/2021666455/",
+      "verifiedAt": "2026-09-25"
+    },
+    {
+      "p": 1000,
+      "q": "From which country's traditions do these martial arts come?",
+      "a": "Korea",
+      "qid": "commonbond-1000-917",
+      "type": "common",
+      "items": [
+        "Tang Soo Do",
+        "Taekkyeon",
+        "Hapkido"
+      ],
+      "topic": "Sports and games",
+      "alt": [
+        "Korean martial arts"
+      ],
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://worldtangsoodo.com/about/",
+      "verifiedAt": "2026-09-25"
+    },
+    {
+      "p": 1000,
+      "q": "Of which crop are these varieties?",
+      "a": "Beans",
+      "qid": "commonbond-1000-918",
+      "type": "common",
+      "items": [
+        "Cannellini",
+        "Borlotti",
+        "Pinto"
+      ],
+      "topic": "Food and crops",
+      "alt": [
+        "Common beans",
+        "Dry beans"
+      ],
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Phaseolus_vulgaris"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import { tr } from '../../shared/i18n/core.js';
 import React from "../../design/react.js";
 const { useState, useEffect, useRef } = React;
 const hBeta = React.createElement;
@@ -31,19 +32,19 @@ export function OfflineMediaRowBeta({ offlineMedia, count, onDownload }) {
     hBeta(
       "div",
       { className: "m-offline-text" },
-      hBeta("b", null, "وسائط الفئات المختارة"),
+      hBeta("b", null, tr("وسائط الفئات المختارة")),
       hBeta(
         "small",
         null,
         state === "busy"
-          ? `يُحمَّل ${done} من ${total}…`
+          ? tr("يُحمَّل {v0} من {v1}…", {v0: done, v1: total})
           : state === "done"
-            ? "جاهزة للّعب دون إنترنت"
+            ? tr("جاهزة للّعب دون إنترنت")
             : state === "unsupported"
-              ? "التحميل المؤقت اكتمل؛ أعد فتح اللعبة لتفعيل الحفظ دون إنترنت"
+              ? tr("التحميل المؤقت اكتمل؛ أعد فتح اللعبة لتفعيل الحفظ دون إنترنت")
             : state === "error"
-              ? "تعذّر تحميل بعض الملفات؛ ستُجلب عند فتح السؤال"
-              : `${count} ملفًا · حمّلها الآن لتلعبوا دون إنترنت`,
+              ? tr("تعذّر تحميل بعض الملفات؛ ستُجلب عند فتح السؤال")
+              : tr("{v0} ملفًا · حمّلها الآن لتلعبوا دون إنترنت", {v0: count}),
       ),
     ),
     hBeta(
@@ -55,7 +56,7 @@ export function OfflineMediaRowBeta({ offlineMedia, count, onDownload }) {
         disabled: state === "busy" || state === "done",
         onClick: onDownload,
       },
-      state === "busy" ? "…" : state === "done" ? "✓ جاهزة" : "حمّل",
+      state === "busy" ? "…" : state === "done" ? tr("✓ جاهزة") : tr("حمّل"),
     ),
   );
 }

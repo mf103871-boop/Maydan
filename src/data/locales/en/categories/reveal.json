@@ -1,0 +1,994 @@
+{
+  "id": "reveal",
+  "name": "Who Is It?",
+  "icon": "🪟",
+  "defaultType": "image",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Who is the person being revealed?",
+      "a": "Adel Emam",
+      "qid": "reveal-200-901",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Adel Imam"
+      ],
+      "topic": "Arab stars",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-200-901.webp",
+        "type": "image",
+        "title": "Adel Imam 2009 cropped.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Adel_Imam_2009_cropped.jpg",
+        "author": "Adel Imam 2009.jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 200,
+      "q": "Who is the person being revealed?",
+      "a": "Jackie Chan",
+      "qid": "reveal-200-902",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [],
+      "topic": "World cinema",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-200-902.webp",
+        "type": "image",
+        "title": "Jackie Chan - 2025 Locarno Film Festival.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jackie_Chan_-_2025_Locarno_Film_Festival.jpg",
+        "author": "Segolene Liger",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 200,
+      "q": "Who is the athlete in the picture?",
+      "a": "Mohamed Salah",
+      "qid": "reveal-200-903",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Mo Salah",
+        "Mohammed Salah"
+      ],
+      "topic": "Arab athletes",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-200-903.webp",
+        "type": "image",
+        "title": "Mohamed Salah Argentina v Egypt 7 July 2026-163 (cropped).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mohamed_Salah_Argentina_v_Egypt_7_July_2026-163_(cropped).jpg",
+        "author": "Bryan Berlin",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 200,
+      "q": "Who is the scientist being revealed?",
+      "a": "Albert Einstein",
+      "qid": "reveal-200-905",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Einstein"
+      ],
+      "topic": "Science and innovation",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-200-905.webp",
+        "type": "image",
+        "title": "Albert Einstein Head.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Albert_Einstein_Head.jpg",
+        "author": "Photograph by  Orren Jack Turner , Princeton, N.J.  Modified with Photoshop by  PM_Poon  and later by  Dantadd .",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 200,
+      "q": "Who is the person in the picture?",
+      "a": "Nelson Mandela",
+      "qid": "reveal-200-906",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Mandela"
+      ],
+      "topic": "Leaders and public figures",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-200-906.webp",
+        "type": "image",
+        "title": "Nelson Mandela 1994.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nelson_Mandela_1994.jpg",
+        "author": "Kingkongphoto & www.celebrity-photos.com  from   Laurel",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 200,
+      "q": "Who is the person in the picture?",
+      "a": "Naguib Mahfouz",
+      "qid": "reveal-200-908",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Nagib Mahfouz"
+      ],
+      "topic": "Literature and art",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-200-908.webp",
+        "type": "image",
+        "title": "Naguib Mahfouz HR.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Naguib_Mahfouz_HR.jpg",
+        "author": "Unknown author Unknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 200,
+      "q": "Who is the athlete in the picture?",
+      "a": "Michael Jordan",
+      "qid": "reveal-200-921",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [],
+      "topic": "International athletes",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-600-904.webp",
+        "type": "image",
+        "title": "Michael Jordan in 2014.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michael_Jordan_in_2014.jpg",
+        "author": "DOD photo by D. Myles Cullen",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 200,
+      "q": "Who is the artist being revealed?",
+      "a": "Abdel Halim Hafez",
+      "qid": "reveal-200-922",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Abdul Halim Hafez"
+      ],
+      "topic": "Music and singing",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-600-907.webp",
+        "type": "image",
+        "title": "Abdel Halim Hafez.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abdel_Halim_Hafez.jpg",
+        "author": "Crimson2022 Alfred",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 400,
+      "q": "Who is the person being revealed?",
+      "a": "Omar Sharif",
+      "qid": "reveal-400-901",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [],
+      "topic": "Arab stars",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-400-901.webp",
+        "type": "image",
+        "title": "Omar Sharif 1963.JPG",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Omar_Sharif_1963.JPG",
+        "author": "Photographer-Gene Weber, Seattle",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 400,
+      "q": "Who is the person being revealed?",
+      "a": "Rowan Atkinson",
+      "qid": "reveal-400-902",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [],
+      "topic": "World cinema",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-400-902.webp",
+        "type": "image",
+        "title": "Rowan Atkinson, 2011.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rowan_Atkinson,_2011.jpg",
+        "author": "Eva Rinaldi",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 400,
+      "q": "Who is the athlete in the picture?",
+      "a": "Riyad Mahrez",
+      "qid": "reveal-400-903",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Mahrez"
+      ],
+      "topic": "Arab athletes",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-400-903.webp",
+        "type": "image",
+        "title": "Mahrez 2021.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mahrez_2021.jpg",
+        "author": "Jeanpierrekepseu",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Cropped to normalized bounds [0.17, 0.035, 0.66, 0.47]; resized and converted to WebP; subject appearance not altered."
+      }
+    },
+    {
+      "p": 400,
+      "q": "Who is the athlete in the picture?",
+      "a": "Diego Maradona",
+      "qid": "reveal-400-904",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Maradona"
+      ],
+      "topic": "International athletes",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-400-904.webp",
+        "type": "image",
+        "title": "Argentina celebrando copa (cropped).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Argentina_celebrando_copa_(cropped).jpg",
+        "author": "Unknown author Unknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Cropped to normalized bounds [0.12, 0.025, 0.61, 0.43]; resized and converted to WebP; subject appearance not altered."
+      }
+    },
+    {
+      "p": 400,
+      "q": "Who is the scientist being revealed?",
+      "a": "Stephen Hawking",
+      "qid": "reveal-400-905",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Hawking"
+      ],
+      "topic": "Science and innovation",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-400-905.webp",
+        "type": "image",
+        "title": "Stephen Hawking.StarChild.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stephen_Hawking.StarChild.jpg",
+        "author": "NASA",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Cropped to normalized bounds [0, 0, 0.67, 0.55]; resized and converted to WebP; subject appearance not altered."
+      }
+    },
+    {
+      "p": 400,
+      "q": "Who is the person in the picture?",
+      "a": "Barack Obama",
+      "qid": "reveal-400-906",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Obama"
+      ],
+      "topic": "Leaders and public figures",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-400-906.webp",
+        "type": "image",
+        "title": "President Barack Obama.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:President_Barack_Obama.jpg",
+        "author": "Official White House Photo by  Pete Souza",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Cropped to normalized bounds [0.18, 0, 0.81, 0.51]; resized and converted to WebP; subject appearance not altered."
+      }
+    },
+    {
+      "p": 400,
+      "q": "Who is the artist being revealed?",
+      "a": "Fairuz",
+      "qid": "reveal-400-907",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Fayrouz",
+        "Nouhad Haddad"
+      ],
+      "topic": "Music and singing",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-400-907.webp",
+        "type": "image",
+        "title": "Fairuz in btd concert 2001.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fairuz_in_btd_concert_2001.jpg",
+        "author": "Wissam Chidiak",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Cropped to normalized bounds [0.29, 0.02, 0.67, 0.41]; resized and converted to WebP; subject appearance not altered."
+      }
+    },
+    {
+      "p": 400,
+      "q": "Who is the poet being revealed?",
+      "a": "Mahmoud Darwish",
+      "qid": "reveal-400-908",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Darwish"
+      ],
+      "topic": "Literature and art",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-400-908.webp",
+        "type": "image",
+        "title": "MahmoudDarwish.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:MahmoudDarwish.jpg",
+        "author": "Amer Shomali",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Cropped to normalized bounds [0.42, 0.015, 1, 0.56]; resized and converted to WebP; subject appearance not altered."
+      }
+    },
+    {
+      "p": 600,
+      "q": "Who is the person being revealed?",
+      "a": "Keanu Reeves",
+      "qid": "reveal-600-902",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [],
+      "topic": "World cinema",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-600-902.webp",
+        "type": "image",
+        "title": "Keanu Reeves at TIFF 2025 02 (Cropped).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Keanu_Reeves_at_TIFF_2025_02_(Cropped).jpg",
+        "author": "Gabriel Hutchinson",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 600,
+      "q": "Who is the athlete in the picture?",
+      "a": "Achraf Hakimi",
+      "qid": "reveal-600-903",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Hakimi"
+      ],
+      "topic": "Arab athletes",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-600-903.webp",
+        "type": "image",
+        "title": "Achraf Hakimi Morocco v Norway 7 June 2026-16.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Achraf_Hakimi_Morocco_v_Norway_7_June_2026-16.jpg",
+        "author": "Bryan Berlin",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Cropped to normalized bounds [0.3, 0.035, 0.72, 0.5]; resized and converted to WebP; subject appearance not altered."
+      }
+    },
+    {
+      "p": 600,
+      "q": "Who is the scientist being revealed?",
+      "a": "Ahmed Zewail",
+      "qid": "reveal-600-905",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Zewail"
+      ],
+      "topic": "Science and innovation",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-600-905.webp",
+        "type": "image",
+        "title": "Ahmed Zewail HD2009 Othmer Gold Medal portrait.JPG",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ahmed_Zewail_HD2009_Othmer_Gold_Medal_portrait.JPG",
+        "author": "Douglas A. Lockard",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Cropped to normalized bounds [0.18, 0, 0.79, 0.6]; resized and converted to WebP; subject appearance not altered."
+      }
+    },
+    {
+      "p": 600,
+      "q": "Who is the person in the picture?",
+      "a": "Gamal Abdel Nasser",
+      "qid": "reveal-600-906",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Gamal Abdul Nasser",
+        "Nasser"
+      ],
+      "topic": "Leaders and public figures",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-600-906.webp",
+        "type": "image",
+        "title": "Nasser in 1969.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nasser_in_1969.jpg",
+        "author": "Not credited",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 600,
+      "q": "Which artist painted this self-portrait?",
+      "a": "Vincent van Gogh",
+      "qid": "reveal-600-908",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Van Gogh"
+      ],
+      "topic": "Literature and art",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-600-908.webp",
+        "type": "image",
+        "title": "Self-portrait - Vincent van Gogh.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Self-portrait_-_Vincent_van_Gogh.jpg",
+        "author": "Vincent van Gogh",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 600,
+      "q": "Who is the athlete in the picture?",
+      "a": "Pelé",
+      "qid": "reveal-600-921",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Pele"
+      ],
+      "topic": "International athletes",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-200-904.webp",
+        "type": "image",
+        "title": "Pele con brasil (cropped).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pele_con_brasil_(cropped).jpg",
+        "author": "Unknown author Unknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 600,
+      "q": "Who is the artist being revealed?",
+      "a": "Umm Kulthum",
+      "qid": "reveal-600-922",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Om Kalthoum",
+        "Umm Kalthum"
+      ],
+      "topic": "Music and singing",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-200-907.webp",
+        "type": "image",
+        "title": "Umm Kulthum as Fatimah.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Umm_Kulthum_as_Fatimah.jpg",
+        "author": "Production company",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 600,
+      "q": "Who is the person being revealed?",
+      "a": "Ahmed Helmy",
+      "qid": "reveal-600-923",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Ahmed Hilmi"
+      ],
+      "topic": "Arab stars",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-800-901.webp",
+        "type": "image",
+        "title": "Ahmed Helmy in Sawiris 2018.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ahmed_Helmy_in_Sawiris_2018.jpg",
+        "author": "ElFagr News",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "changes": "Cropped to normalized bounds [0.18, 0.015, 0.75, 0.52]; resized and converted to WebP; subject appearance not altered."
+      }
+    },
+    {
+      "p": 800,
+      "q": "Who is the person being revealed?",
+      "a": "Cate Blanchett",
+      "qid": "reveal-800-902",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [],
+      "topic": "World cinema",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-800-902.webp",
+        "type": "image",
+        "title": "Cate Blanchett Cannes 2018 2 (cropped).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cate_Blanchett_Cannes_2018_2_(cropped).jpg",
+        "author": "Joan Hernandez Mir",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 800,
+      "q": "Who is the female athlete in the picture?",
+      "a": "Ons Jabeur",
+      "qid": "reveal-800-903",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [],
+      "topic": "Arab athletes",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-800-903.webp",
+        "type": "image",
+        "title": "Ons Jabeur (2023 US Open) 02 (cropped).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ons_Jabeur_(2023_US_Open)_02_(cropped).jpg",
+        "author": "Hameltion",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Cropped to normalized bounds [0.3, 0.005, 0.8, 0.52]; resized and converted to WebP; subject appearance not altered."
+      }
+    },
+    {
+      "p": 800,
+      "q": "Who is the female athlete in the picture?",
+      "a": "Serena Williams",
+      "qid": "reveal-800-904",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [],
+      "topic": "International athletes",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-800-904.webp",
+        "type": "image",
+        "title": "Serena Williams at 2013 US Open.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Serena_Williams_at_2013_US_Open.jpg",
+        "author": "Edwin Martinez",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 800,
+      "q": "Who is the female scientist being revealed?",
+      "a": "Marie Curie",
+      "qid": "reveal-800-905",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Maria Sklodowska-Curie"
+      ],
+      "topic": "Science and innovation",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-800-905.webp",
+        "type": "image",
+        "title": "Mariecurie.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mariecurie.jpg",
+        "author": "Unknown author Unknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 800,
+      "q": "Who is the person in the picture?",
+      "a": "Martin Luther King Jr.",
+      "qid": "reveal-800-906",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Martin Luther King",
+        "MLK"
+      ],
+      "topic": "Leaders and public figures",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-800-906.webp",
+        "type": "image",
+        "title": "The Rev. Dr. Martin Luther King Jr. Color Portrait (high quality).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Rev._Dr._Martin_Luther_King_Jr._Color_Portrait_(high_quality).jpg",
+        "author": "Associated Press",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 800,
+      "q": "Which composer is depicted in this painting?",
+      "a": "Ludwig van Beethoven",
+      "qid": "reveal-800-907",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Beethoven"
+      ],
+      "topic": "Music and singing",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-800-907.webp",
+        "type": "image",
+        "title": "Joseph Karl Stieler's Beethoven mit dem Manuskript der Missa solemnis.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joseph_Karl_Stieler%27s_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg",
+        "author": "Joseph Karl Stieler",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Cropped to normalized bounds [0.22, 0, 0.85, 0.6]; resized and converted to WebP; subject appearance not altered."
+      }
+    },
+    {
+      "p": 800,
+      "q": "Who is the person in the picture?",
+      "a": "Pablo Picasso",
+      "qid": "reveal-800-908",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Picasso"
+      ],
+      "topic": "Literature and art",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-800-908.webp",
+        "type": "image",
+        "title": "Pablo picasso 1.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pablo_picasso_1.jpg",
+        "author": "Argentina . Revista   Vea y Lea",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 800,
+      "q": "Who is the person being revealed?",
+      "a": "Hend Sabri",
+      "qid": "reveal-800-921",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Hind Sabri"
+      ],
+      "topic": "Arab stars",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-600-901.webp",
+        "type": "image",
+        "title": "Couv-Tunivisions Juin 2011.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Couv-Tunivisions_Juin_2011.jpg",
+        "author": "Nizar Chaari",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Cropped to normalized bounds [0.29, 0.39, 0.7, 0.84]; resized and converted to WebP; subject appearance not altered."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "Who is the person being revealed?",
+      "a": "Nadine Labaki",
+      "qid": "reveal-1000-901",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [],
+      "topic": "Arab stars",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-1000-901.webp",
+        "type": "image",
+        "title": "Nadine Labaki by Matteo Chinellato (cropped).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nadine_Labaki_by_Matteo_Chinellato_(cropped).jpg",
+        "author": "Nadine Labaki",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "Which animation director is in the picture?",
+      "a": "Hayao Miyazaki",
+      "qid": "reveal-1000-902",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Miyazaki"
+      ],
+      "topic": "World cinema",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-1000-902.webp",
+        "type": "image",
+        "title": "HayaoMiyazakiCCJuly09.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:HayaoMiyazakiCCJuly09.jpg",
+        "author": "Natasha Baucas at  https://www.flickr.com/photos/sdnatasha/",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "changes": "Cropped to normalized bounds [0.18, 0, 0.9, 0.55]; resized and converted to WebP; subject appearance not altered."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "Who is the athlete in the picture?",
+      "a": "Mutaz Barshim",
+      "qid": "reveal-1000-903",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Mutaz Essa Barshim"
+      ],
+      "topic": "Arab athletes",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-1000-903.webp",
+        "type": "image",
+        "title": "Mutaz essa barshim.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mutaz_essa_barshim.jpg",
+        "author": "Doha Stadium Plus",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "changes": "Cropped to normalized bounds [0.2, 0.045, 0.8, 0.54]; resized and converted to WebP; subject appearance not altered."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "Which composer is depicted in this historical painting?",
+      "a": "Wolfgang Amadeus Mozart",
+      "qid": "reveal-1000-907",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Mozart"
+      ],
+      "topic": "Music and singing",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-1000-907.webp",
+        "type": "image",
+        "title": "Wolfgang-amadeus-mozart 1.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wolfgang-amadeus-mozart_1.jpg",
+        "author": "Barbara Krafft",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Cropped to normalized bounds [0.13, 0.03, 0.85, 0.64]; resized and converted to WebP; subject appearance not altered."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "Who is the person in the picture?",
+      "a": "Mark Twain",
+      "qid": "reveal-1000-908",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Samuel Clemens"
+      ],
+      "topic": "Literature and art",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-1000-908.webp",
+        "type": "image",
+        "title": "MarkTwain.LOC.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:MarkTwain.LOC.jpg",
+        "author": "Unknown author Unknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Cropped to normalized bounds [0.12, 0.1, 0.79, 0.68]; resized and converted to WebP; subject appearance not altered."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "Which pole-vault champion is in the picture?",
+      "a": "Sergey Bubka",
+      "qid": "reveal-1000-921",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Serhiy Bubka",
+        "Sergei Bubka"
+      ],
+      "topic": "International athletes",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-1000-904.webp",
+        "type": "image",
+        "title": "Sergei Bubka (2007) cropped.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sergei_Bubka_(2007)_cropped.jpg",
+        "author": "Zureks, cropped by  MachoCarioca",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "Who is the physicist in the picture?",
+      "a": "Richard Feynman",
+      "qid": "reveal-1000-922",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "Feynman"
+      ],
+      "topic": "Science and innovation",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-1000-905.webp",
+        "type": "image",
+        "title": "RichardFeynman-PaineMansionWoods1984 copyrightTamikoThiel bw.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:RichardFeynman-PaineMansionWoods1984_copyrightTamikoThiel_bw.jpg",
+        "author": "Copyright Tamiko Thiel 1984",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Cropped to normalized bounds [0.16, 0.06, 0.6, 0.48]; resized and converted to WebP; subject appearance not altered."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "Who is the civil rights activist in the picture?",
+      "a": "Rosa Parks",
+      "qid": "reveal-1000-923",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [],
+      "topic": "Leaders and public figures",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "reveal-1000-906.webp",
+        "type": "image",
+        "title": "Rosa Parks 1997.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rosa_Parks_1997.jpg",
+        "author": "John Mathew Smith & www.celebrity-photos.com  from Laurel  Maryland, USA",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    }
+  ]
+}

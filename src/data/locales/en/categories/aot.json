@@ -1,0 +1,515 @@
+{
+  "id": "aot",
+  "name": "Attack on Titan",
+  "icon": "🏯",
+  "style": "story",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Which soldier is discovered to be the Female Titan?",
+      "a": "Annie Leonhart",
+      "alt": [
+        "Annie"
+      ],
+      "topic": "Identity",
+      "verified": true,
+      "qid": "aot-200-911",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep41"
+    },
+    {
+      "p": 200,
+      "q": "Which companion of Eren reveals that he is the Armored Titan?",
+      "a": "Reiner Braun",
+      "alt": [
+        "Reiner"
+      ],
+      "topic": "Identity",
+      "verified": true,
+      "qid": "aot-200-912",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep31"
+    },
+    {
+      "p": 200,
+      "q": "Which heir of the Reiss family becomes queen within the Walls?",
+      "a": "Historia Reiss",
+      "alt": [
+        "Historia"
+      ],
+      "topic": "Relationships",
+      "verified": true,
+      "qid": "aot-200-913",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep47"
+    },
+    {
+      "p": 200,
+      "q": "Which commander leads the final cavalry charge to distract the Beast Titan?",
+      "a": "Erwin Smith",
+      "alt": [
+        "Erwin"
+      ],
+      "topic": "Battles",
+      "verified": true,
+      "qid": "aot-200-914",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Survey_Corps"
+    },
+    {
+      "p": 200,
+      "q": "What explosive weapons do the soldiers develop to pierce their enemy's armor at Shiganshina?",
+      "a": "Thunder Spears",
+      "alt": [],
+      "topic": "Objects and tools",
+      "verified": true,
+      "qid": "aot-200-915",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Survey_Corps"
+    },
+    {
+      "p": 200,
+      "q": "Which woman became the Smiling Titan that ate Eren's mother?",
+      "a": "Dina Fritz",
+      "alt": [
+        "Dina"
+      ],
+      "topic": "Relationships",
+      "verified": true,
+      "qid": "aot-200-917",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Eldian_Restorationists"
+    },
+    {
+      "p": 200,
+      "q": "What is the march of the Wall Titans to crush the world called?",
+      "a": "The Rumbling",
+      "alt": [
+        "Rumbling"
+      ],
+      "topic": "The ending",
+      "verified": true,
+      "qid": "aot-200-918",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep88"
+    },
+    {
+      "p": 200,
+      "q": "What does Grisha's key actually open inside the secret room?",
+      "a": "A desk drawer",
+      "alt": [
+        "The desk drawer"
+      ],
+      "topic": "Secrets",
+      "verified": true,
+      "qid": "aot-200-921",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep56"
+    },
+    {
+      "p": 400,
+      "q": "Which Colossal Titan holder's power does Armin inherit after the battle of Shiganshina?",
+      "a": "Bertholdt Hoover",
+      "alt": [
+        "Bertolt Hoover",
+        "Bertholdt"
+      ],
+      "topic": "Identity",
+      "verified": true,
+      "qid": "aot-400-911",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep55"
+    },
+    {
+      "p": 400,
+      "q": "Which son of Grisha and Dina reports his parents to the authorities?",
+      "a": "Zeke Yeager",
+      "alt": [
+        "Zeke Jaeger",
+        "Zeke"
+      ],
+      "topic": "Relationships",
+      "verified": true,
+      "qid": "aot-400-912",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Eldian_Restorationists"
+    },
+    {
+      "p": 400,
+      "q": "Which man raises Levi and reveals while dying that he is his uncle?",
+      "a": "Kenny Ackerman",
+      "alt": [
+        "Kenny"
+      ],
+      "topic": "Relationships",
+      "verified": true,
+      "qid": "aot-400-913",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Levi_Ackerman#In_Attack_on_Titan"
+    },
+    {
+      "p": 400,
+      "q": "Which Marleyan officer reveals to Grisha that he is the informant called the Owl?",
+      "a": "Eren Kruger",
+      "alt": [
+        "Kruger"
+      ],
+      "topic": "Identity",
+      "verified": true,
+      "qid": "aot-400-914",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Eldian_Restorationists"
+    },
+    {
+      "p": 400,
+      "q": "Under the Curse of Ymir, how many years can a person live after inheriting one of the Titan powers?",
+      "a": "Thirteen years",
+      "alt": [
+        "13",
+        "13 years"
+      ],
+      "topic": "Secrets",
+      "verified": true,
+      "qid": "aot-400-915",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep58"
+    },
+    {
+      "p": 400,
+      "q": "Which clergyman is tortured and killed to conceal the Walls' secrets?",
+      "a": "Pastor Nick",
+      "alt": [
+        "Nick"
+      ],
+      "topic": "Beginnings",
+      "verified": true,
+      "qid": "aot-400-916",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep38"
+    },
+    {
+      "p": 400,
+      "q": "In which part of Eren's Titan head does Mikasa find his human body at the end?",
+      "a": "The mouth",
+      "alt": [
+        "Mouth"
+      ],
+      "topic": "Battles",
+      "verified": true,
+      "qid": "aot-400-917",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep93"
+    },
+    {
+      "p": 400,
+      "q": "At which castle does Ymir transform to protect her companions from a nighttime Titan attack?",
+      "a": "Utgard Castle",
+      "alt": [
+        "Utgard"
+      ],
+      "topic": "The Walls",
+      "verified": true,
+      "qid": "aot-400-918",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep29"
+    },
+    {
+      "p": 600,
+      "q": "Which father of the queen becomes an enormous Titan after licking spilled serum?",
+      "a": "Rod Reiss",
+      "alt": [
+        "Rod"
+      ],
+      "topic": "Identity",
+      "verified": true,
+      "qid": "aot-600-911",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep44"
+    },
+    {
+      "p": 600,
+      "q": "What type of image in Grisha's books was made using technology unknown within the Walls?",
+      "a": "A photograph",
+      "alt": [
+        "Photograph"
+      ],
+      "topic": "Objects and tools",
+      "verified": true,
+      "qid": "aot-600-912",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep56"
+    },
+    {
+      "p": 600,
+      "q": "Which fortress shelters the people of Liberio near the final battle?",
+      "a": "Fort Salta",
+      "alt": [
+        "Salta"
+      ],
+      "topic": "The ending",
+      "verified": true,
+      "qid": "aot-600-913",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep90"
+    },
+    {
+      "p": 600,
+      "q": "Which fellow trainee do Krista and Ymir try to rescue during a snowstorm?",
+      "a": "Daz",
+      "alt": [],
+      "topic": "Battles",
+      "verified": true,
+      "qid": "aot-600-914",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep30"
+    },
+    {
+      "p": 600,
+      "q": "Who sacrifices his life to save Hange from Bertholdt's transformation explosion?",
+      "a": "Moblit Berner",
+      "alt": [
+        "Moblit"
+      ],
+      "topic": "Relationships",
+      "verified": true,
+      "qid": "aot-600-916",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Survey_Corps"
+    },
+    {
+      "p": 600,
+      "q": "Who pilots the aircraft carrying the alliance after Eren following Hange's sacrifice?",
+      "a": "Onyankopon",
+      "alt": [],
+      "topic": "The ending",
+      "verified": true,
+      "qid": "aot-600-917",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep89"
+    },
+    {
+      "p": 600,
+      "q": "To whom does Armin temporarily hand command as the Colossal Titan advances inside Shiganshina?",
+      "a": "Jean Kirstein",
+      "alt": [
+        "Jean"
+      ],
+      "topic": "Battles",
+      "verified": true,
+      "qid": "aot-600-918",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep53"
+    },
+    {
+      "p": 600,
+      "q": "What is Connie's village, where the residents disappear and a Titan is trapped atop his house, called?",
+      "a": "Ragako",
+      "alt": [],
+      "topic": "The Walls",
+      "verified": true,
+      "qid": "aot-600-921",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep27"
+    },
+    {
+      "p": 800,
+      "q": "What fish is named on the can whose label Ymir reads, arousing Reiner's suspicion?",
+      "a": "Herring",
+      "alt": [],
+      "topic": "Objects and tools",
+      "verified": true,
+      "qid": "aot-800-911",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep29"
+    },
+    {
+      "p": 800,
+      "q": "What is the name of Kenny's sister, Levi's mother?",
+      "a": "Kuchel Ackerman",
+      "alt": [
+        "Kuchel"
+      ],
+      "topic": "Relationships",
+      "verified": true,
+      "qid": "aot-800-912",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Levi_Ackerman"
+    },
+    {
+      "p": 800,
+      "q": "Which rare resource on Paradis powers the soldiers' equipment and Hizuru's experimental aircraft?",
+      "a": "Iceburst stone",
+      "alt": [],
+      "topic": "Objects and tools",
+      "verified": true,
+      "qid": "aot-800-913",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep69"
+    },
+    {
+      "topic": "Identity",
+      "q": "Which merchant does Kenny kill before Erwin is accused of the murder?",
+      "a": "Dimo Reeves",
+      "alt": [
+        "Dimo"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3",
+      "qid": "aot-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "The Walls",
+      "q": "Toward which district does Historia's father's Titan move after the cavern collapses?",
+      "a": "Orvud",
+      "alt": [
+        "Orvud District"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3",
+      "qid": "aot-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Relationships",
+      "q": "Which member of the Reiss family befriends Kenny after asking for his forgiveness?",
+      "a": "Uri Reiss",
+      "alt": [
+        "Uri"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3",
+      "qid": "aot-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Beginnings",
+      "q": "Which training commander meets Grisha outside the Walls before Grisha marries?",
+      "a": "Keith Shadis",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3",
+      "qid": "aot-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Battles",
+      "q": "How many Scout Regiment soldiers return alive from the mission to retake Shiganshina?",
+      "a": "Nine",
+      "alt": [
+        "9"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3",
+      "qid": "aot-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Secrets",
+      "q": "From which interrogator does Levi extract a confession that the reigning king is a fraud?",
+      "a": "Djel Sannes",
+      "alt": [
+        "Sannes"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3",
+      "qid": "aot-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Beginnings",
+      "q": "Which merchant's son tricks the police into admitting his father's murder before the people of Stohess?",
+      "a": "Flegel Reeves",
+      "alt": [
+        "Flegel"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3",
+      "qid": "aot-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Battles",
+      "q": "Which fellow officer of Hitch helps Levi's squad reach an Interior Police location?",
+      "a": "Marlowe Freudenberg",
+      "alt": [
+        "Marlowe"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3",
+      "qid": "aot-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Identity",
+      "q": "Which commander-in-chief reveals that the reported breach of Wall Rose was a trick to overthrow the government?",
+      "a": "Darius Zackly",
+      "alt": [
+        "Dhalis Zachary"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3",
+      "qid": "aot-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Relationships",
+      "q": "Which envoy from Hizuru recognizes Mikasa's ancestry from her tattoo?",
+      "a": "Kiyomi Azumabito",
+      "alt": [
+        "Kiyomi"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4",
+      "qid": "aot-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Relationships",
+      "q": "Which girl shelters Gabi and Falco at the Braus family's stables?",
+      "a": "Kaya",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4",
+      "qid": "aot-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Beginnings",
+      "q": "Which Marleyan chef loves Sasha and works at a restaurant on Paradis?",
+      "a": "Niccolo",
+      "alt": [
+        "Nicolo"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4",
+      "qid": "aot-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Secrets",
+      "q": "Which soldier's notebook changes Hange's view of the Titans?",
+      "a": "Ilse Langnar",
+      "alt": [
+        "Ilse"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
+      "qid": "aot-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    }
+  ]
+}

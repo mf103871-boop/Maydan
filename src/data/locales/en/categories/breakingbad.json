@@ -1,0 +1,508 @@
+{
+  "id": "breakingbad",
+  "name": "Breaking Bad",
+  "icon": "🧪",
+  "style": "story",
+  "qs": [
+    {
+      "qid": "breakingbad-200-911",
+      "p": 200,
+      "topic": "Jesse's world",
+      "q": "Which neighbor of Jesse becomes his girlfriend in season two?",
+      "a": "Jane Margolis",
+      "alt": [
+        "Jane"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_2",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "breakingbad-200-912",
+      "p": 200,
+      "topic": "Pursuit and investigation",
+      "q": "What does Hank begin collecting and classifying while recovering from his injury?",
+      "a": "Minerals",
+      "alt": [
+        "Mineral specimens"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_4",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "breakingbad-200-913",
+      "p": 200,
+      "topic": "Walter's transformation",
+      "q": "Which company did Walter cofound before regretting the sale of his share?",
+      "a": "Gray Matter",
+      "alt": [
+        "Gray Matter Technologies"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "breakingbad-200-914",
+      "p": 200,
+      "topic": "Jesse's world",
+      "q": "Which child is hospitalized, leading Jesse initially to suspect ricin poisoning?",
+      "a": "Brock",
+      "alt": [
+        "Brock Cantillo"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_4",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "breakingbad-200-915",
+      "p": 200,
+      "topic": "Business fronts",
+      "q": "Under what type of business does Gus hide his large laboratory?",
+      "a": "An industrial laundry",
+      "alt": [
+        "Laundry",
+        "Commercial laundry"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_3",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "breakingbad-200-917",
+      "p": 200,
+      "topic": "Schemes and confrontations",
+      "q": "What do the partners use to destroy data on the laptop held by police at the start of season five?",
+      "a": "A giant magnet",
+      "alt": [
+        "An electromagnet",
+        "A magnet"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Live_Free_or_Die_(Breaking_Bad)",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "breakingbad-200-918",
+      "p": 200,
+      "topic": "Allies and rivals",
+      "q": "Which laboratory assistant does Jesse kill to save Walter at the end of season three?",
+      "a": "Gale Boetticher",
+      "alt": [
+        "Gale"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_4",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "breakingbad-200-921",
+      "p": 200,
+      "topic": "Pursuit and investigation",
+      "q": "In which state does Walter hide in an isolated cabin near the end of the series?",
+      "a": "New Hampshire",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Granite_State_(Breaking_Bad)",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "breakingbad-400-911",
+      "p": 400,
+      "topic": "The White family",
+      "q": "Where does Skyler jump in front of guests to help get her children away from home?",
+      "a": "The swimming pool",
+      "alt": [
+        "Pool"
+      ],
+      "sourceUrl": "https://www.amc.com/blogs/follow-the-rise-and-fall-of-the-white-family-in-these-breaking-bad-episodes--1008871",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "breakingbad-400-912",
+      "p": 400,
+      "topic": "Crucial objects",
+      "q": "What animal does the boy collect in a jar before witnessing the train heist?",
+      "a": "A tarantula",
+      "alt": [
+        "Tarantula",
+        "Spider"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dead_Freight",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "breakingbad-400-913",
+      "p": 400,
+      "topic": "Walter's transformation",
+      "q": "What false explanation do Walter and Skyler give their family for their new wealth?",
+      "a": "Gambling winnings",
+      "alt": [
+        "Gambling"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_3",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "breakingbad-400-914",
+      "p": 400,
+      "topic": "The White family",
+      "q": "Which former boss of Skyler does she secretly try to help by paying his taxes?",
+      "a": "Ted Beneke",
+      "alt": [
+        "Ted"
+      ],
+      "sourceUrl": "https://www.amc.com/blogs/relive-sauls-most-heroic-save-the-day-schemes-on-breaking-bad--1008918",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "breakingbad-400-915",
+      "p": 400,
+      "topic": "Pursuit and investigation",
+      "q": "What false news draws Hank away from the trapped RV at the junkyard?",
+      "a": "Marie has been in an accident",
+      "alt": [
+        "His wife was injured in an accident"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_3",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "breakingbad-400-916",
+      "p": 400,
+      "topic": "Jesse's world",
+      "q": "Which friend of Jesse had a mother who owned the RV before he acquired it?",
+      "a": "Combo",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_3",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "breakingbad-400-917",
+      "p": 400,
+      "topic": "Allies and rivals",
+      "q": "Which secretary helps mislead Hank with a phone call?",
+      "a": "Francesca",
+      "alt": [
+        "Francesca Liddy"
+      ],
+      "sourceUrl": "https://www.amc.com/blogs/relive-sauls-early-meetings-with-walter-white-with-breaking-bad-full-episodes--1008872",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "breakingbad-400-918",
+      "p": 400,
+      "topic": "Crucial objects",
+      "q": "What missing object reveals to Walter that Krazy-8 plans to attack him in the basement?",
+      "a": "A piece of broken plate",
+      "alt": [
+        "A plate shard",
+        "A shard of the plate"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_1",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "breakingbad-600-911",
+      "p": 600,
+      "topic": "Jesse's world",
+      "q": "Where does Jesse meet Andrea?",
+      "a": "An addiction recovery group",
+      "alt": [
+        "A support group",
+        "Narcotics Anonymous"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_3",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "breakingbad-600-912",
+      "p": 600,
+      "topic": "Business fronts",
+      "q": "Which pest-control company uses tented houses as a cover for the operation?",
+      "a": "Vamonos Pest",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "breakingbad-600-913",
+      "p": 600,
+      "topic": "Schemes and confrontations",
+      "q": "What does Hank use to convince Walter that Jesse has found the buried money?",
+      "a": "A staged photograph of money",
+      "alt": [
+        "A fake photograph",
+        "A photo of a money barrel"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "breakingbad-600-914",
+      "p": 600,
+      "topic": "Allies and rivals",
+      "q": "Which Madrigal employee arranges the expansion of Walter's business into the Czech market?",
+      "a": "Lydia Rodarte-Quayle",
+      "alt": [
+        "Lydia"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "breakingbad-600-915",
+      "p": 600,
+      "topic": "Crucial objects",
+      "q": "On what piece of paper does Walter record the coordinates of his buried money?",
+      "a": "A lottery ticket",
+      "alt": [
+        "Lottery ticket"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Buried_(Breaking_Bad)",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "breakingbad-600-916",
+      "p": 600,
+      "topic": "Business fronts",
+      "q": "Which entertainment business does Saul propose for laundering money before Skyler rejects it?",
+      "a": "A laser tag venue",
+      "alt": [
+        "Laser tag",
+        "A laser tag arena"
+      ],
+      "sourceUrl": "https://www.amc.com/blogs/relive-sauls-early-meetings-with-walter-white-with-breaking-bad-full-episodes--1008872",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "Allies and rivals",
+      "q": "Which assistant does Gus kill in the laboratory with a box cutter in front of Walter and Jesse?",
+      "a": "Victor",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_4",
+      "qid": "breakingbad-600-918",
+      "p": 600,
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "qid": "breakingbad-600-921",
+      "p": 600,
+      "topic": "Pursuit and investigation",
+      "q": "Which poetry collection has an inscription that reveals Walter's secret to Hank?",
+      "a": "Leaves of Grass",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "breakingbad-800-911",
+      "p": 800,
+      "topic": "Walter's transformation",
+      "q": "What is the name of the high school where Walter works at the start of the series?",
+      "a": "J. P. Wynne",
+      "alt": [
+        "J. P. Wynne High School"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_2",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "breakingbad-800-912",
+      "p": 800,
+      "topic": "The White family",
+      "q": "What is the name of the fictitious aunt Saul claims left money to Skyler's former boss?",
+      "a": "Birgid",
+      "alt": [],
+      "sourceUrl": "https://www.amc.com/blogs/relive-sauls-most-heroic-save-the-day-schemes-on-breaking-bad--1008918",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "Business fronts",
+      "q": "Which car-wash owner is tricked over water contamination into selling to Skyler?",
+      "a": "Bogdan Wolynetz",
+      "alt": [
+        "Bogdan"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_4",
+      "qid": "breakingbad-800-913",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Allies and rivals",
+      "q": "Which assistant of Gus replaces the murdered worker at the start of season four?",
+      "a": "Tyrus Kitt",
+      "alt": [
+        "Tyrus"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_4",
+      "qid": "breakingbad-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Schemes and confrontations",
+      "q": "Which assistant of Saul impersonates an environmental inspector to pressure the car-wash owner into selling?",
+      "a": "Patrick Kuby",
+      "alt": [
+        "Kuby"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_4",
+      "qid": "breakingbad-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Crucial objects",
+      "q": "Inside which device in Jesse's home does Walter plant false poisoning evidence?",
+      "a": "A Roomba",
+      "alt": [
+        "Roomba",
+        "Robot vacuum"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
+      "qid": "breakingbad-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Jesse's world",
+      "q": "What is the name of Jane's father, an air traffic controller?",
+      "a": "Donald Margolis",
+      "alt": [
+        "Donald"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_2",
+      "qid": "breakingbad-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Pursuit and investigation",
+      "q": "What is the nickname of the DEA informant inside the cartel whom Hank meets in El Paso?",
+      "a": "Tortuga",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_2",
+      "qid": "breakingbad-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Walter's transformation",
+      "q": "What is the name of the principal at Walter's school?",
+      "a": "Carmen Molina",
+      "alt": [
+        "Carmen"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
+      "qid": "breakingbad-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Business fronts",
+      "q": "Which arrested manager of Gus's laundry is represented by lawyer Dan?",
+      "a": "Dennis Markowski",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
+      "qid": "breakingbad-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Pursuit and investigation",
+      "q": "Which former boss of Hank is removed because of his friendship with Gus?",
+      "a": "George Merkert",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
+      "qid": "breakingbad-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Allies and rivals",
+      "q": "Which lawyer represents nine of Gus's imprisoned men?",
+      "a": "Dan Wachsberger",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
+      "qid": "breakingbad-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Jesse's world",
+      "q": "Which relative of Badger tows the RV and helps store it?",
+      "a": "Clovis",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_2",
+      "qid": "breakingbad-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Crucial objects",
+      "q": "Which gun dealer sells Walter the machine gun in the final season?",
+      "a": "Lawson",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
+      "qid": "breakingbad-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Business fronts",
+      "q": "Which Madrigal executive dies before being questioned about his connection to Gus?",
+      "a": "Peter Schuler",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
+      "qid": "breakingbad-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Schemes and confrontations",
+      "q": "Who is Jack Welker's right-hand man in his gang?",
+      "a": "Kenny",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
+      "qid": "breakingbad-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    }
+  ]
+}

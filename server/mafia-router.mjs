@@ -61,7 +61,7 @@ export async function routeMafia(request,env,url,charge) {
   if(path==='/api/matchmaking/join'&&method==='POST') {
     requireMafiaEnabled(env); const body=await readJson(request);await credentials(body);
     if(body.capabilities?.mafia!==MAFIA_PROTOCOL)fail('UPDATE_REQUIRED',409);
-    if(body.game&&body.game!=='mafia'||body.mode&&!['all','classic','shadow'].includes(body.mode)||body.community&&body.community!=='ar'||body.voiceMode&&!['all','off','optional'].includes(body.voiceMode))fail('INVALID');
+    if(body.game&&body.game!=='mafia'||body.mode&&!['all','classic','shadow'].includes(body.mode)||body.community&&!['ar','en'].includes(body.community)||body.voiceMode&&!['all','off','optional'].includes(body.voiceMode))fail('INVALID');
     if(await first(env,'SELECT 1 FROM mafia_observer_memberships WHERE user_id=? AND expires_at>?',user.id,Date.now()))fail('MAFIA_ACTIVE_ELSEWHERE',409);
     // The room (not this eventually consistent directory) owns admission. A
     // previously committed idempotent join is returned even if its reply was lost.
@@ -71,7 +71,7 @@ export async function routeMafia(request,env,url,charge) {
       return roomFetch(env,held.room_code,'join',{...body,accountUserId:user.id});
     }
     requireMafiaNewMatches(env);
-    const {rooms}=await listMafiaDirectory(env,user.id,{mode:body.mode,voice:body.voiceMode,status:'waiting'},Date.now(),{joinable:true});
+    const {rooms}=await listMafiaDirectory(env,user.id,{mode:body.mode,voice:body.voiceMode,community:body.contentLocale||body.community||'ar',status:'waiting'},Date.now(),{joinable:true});
     for(const candidate of rooms.filter(room=>!room.full).slice(0,8)) {
       const response=await roomFetch(env,candidate.code,'join',{...body,accountUserId:user.id,matchmaking:true});
       if(response.ok)return response;

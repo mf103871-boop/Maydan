@@ -1,4 +1,5 @@
-import statements from '../src/data/games/meenfina/statements.json' with { type: 'json' };
+import { getGameContent } from '../src/data/game-content.js';
+import { requireContentCapability, recordContentCapability, roomContentIdentity, englishContentEnabled, requireNewContentEnabled } from './content-locale.mjs';
 import { createRoom, joinRoom, connected, leaveRoom, action, tick, snapshot, nextAlarm, member, roomCapacity, RoomError, fail } from './game-model.mjs';
 import { buildFabrakaDeck } from './fabraka-content.mjs';
 import { credentials, readJson, json, errorResponse, shuffled, createLimit, sha256 } from './protocol.mjs';
@@ -58,6 +59,7 @@ const LIGHT_COMMANDS = new Set(['drawing_batch', 'drawing_undo', 'drawing_redo',
 // Statements the room has already shown wait at the back of the queue, so a second
 // match in the same room does not repeat the first.
 export function meenfinaDeck(room) {
+  const statements = getGameContent('meenfina', room.contentLocale || 'ar', room.contentVersion);
   const seen = new Set(room.seenStatements || []);
   return [...shuffled(statements.filter((s) => !seen.has(s.id))), ...shuffled(statements.filter((s) => seen.has(s.id)))];
 }
@@ -473,8 +475,8 @@ export class Room {
       await assertErsomhaLease(this.env, lease, now);
       const seen = await ersomhaSeen(this.env, lease), prefix = `${candidate.ersomhaKey}:${candidate.matchId}:`;
       const prior = seen.filter(s => !s.exposure_id.startsWith(prefix));
-      const signature = JSON.stringify({ settings: candidate.settings, accounts: lease.accounts.map(a => a.hash).sort(), turns: candidate.rounds });
-      const pending = await this.ctx.storage.get('ersomha:plan'), pool = getErsomhaPool(candidate.settings);
+      const signature = JSON.stringify({ settings: candidate.settings, ...roomContentIdentity(candidate), accounts: lease.accounts.map(a => a.hash).sort(), turns: candidate.rounds });
+      const pending = await this.ctx.storage.get('ersomha:plan'), pool = getErsomhaPool({ ...candidate.settings, ...roomContentIdentity(candidate) });
       const used = new Set(), valid = pending?.key === candidate.ersomhaKey && pending.matchId === candidate.matchId && pending.signature === signature
         && pending.turns?.length === candidate.rounds && pending.turns.every(cards => cards.length === 3 && new Set(cards.map(c => c.category)).size === 3 && cards.every(card => {
           if (used.has(card.familyId) || !pool.some(c => c.id === card.id && c.conceptId === card.conceptId && c.familyId === card.familyId)) return false;
@@ -545,12 +547,14 @@ export class Room {
     const existing=this.observer(input.id);
     if(existing&&(existing.tokenHash!==input.tokenHash||existing.accountUserId!==input.accountUserId))fail('AUTH',401);
     if(endpoint==='mafia-observe-join'){
+      requireContentCapability(input.capabilities,this.room);
       requireMafiaEnabled(this.env);if(input.capabilities?.mafia!==MAFIA_PROTOCOL)fail('UPDATE_REQUIRED',409);if(this.room.phase==='closed')fail('NOT_FOUND',404);
       if(this.room.members.some(m=>m.id===input.id||!m.left&&m.accountUserId===input.accountUserId))fail('MAFIA_ACTIVE_ELSEWHERE',409);
       if(!existing&&Object.keys(this.room.observers||{}).length>=OBSERVER_CAP)fail('OBSERVER_FULL',409);
       const observer={...(existing||{id:input.id,tokenHash:input.tokenHash,accountUserId:input.accountUserId,joinedAt:now,matchAtJoin:this.room.matchId||0}),accountSessionId:input.accountSessionId,expiresAt:now+OBSERVER_LEASE};
       await claimObserver(this.env,this.room,observer,now);const candidate=structuredClone(this.room);candidate.observers||={};candidate.observers[observer.id]=observer;await this.commit(candidate);return json({code:this.room.code,id:observer.id,game:'mafia',scope:'observer'});
     }
+    if(endpoint==='mafia-observe-promote')requireContentCapability(input.capabilities,this.room);
     if(endpoint==='mafia-observe-promote'&&!existing){const seat=await credentials(input.seat||{}),saved=this.room.members.find(m=>!m.left&&m.id===seat.id&&m.tokenHash===seat.tokenHash&&m.accountUserId===input.accountUserId);if(saved)return json({code:this.room.code,id:saved.id,game:'mafia',scope:'player'});}
     if(!existing)fail('AUTH',401);
     if(endpoint==='mafia-observe-leave'||endpoint==='mafia-observe-block'){
@@ -573,6 +577,7 @@ export class Room {
     fail('NOT_FOUND',404);
   }
   async authenticateObserverSocket(ws,command,a,now){
+    requireContentCapability(command.capabilities,this.room);
     if(command.capabilities?.mafia!==MAFIA_PROTOCOL||(this.room.protocol||1)<2)fail('UPDATE_REQUIRED',409);if(now>a.authDeadline)fail('AUTH',401);
     const input=await credentials(command),observer=this.observer(input.id);if(!observer||observer.tokenHash!==input.tokenHash||observer.expiresAt<=now)fail('AUTH',401);
     // A fresh RoomClient obtains its live bearer only after this challenge.
@@ -587,6 +592,7 @@ export class Room {
   stateFor(id) {
     assertSupportedMafiaRuleset(this.room);
     const state = snapshot(this.room, id, Date.now());
+    state.capabilities.newEnglishContent = englishContentEnabled(this.env);
     const offer = this.room.phase === 'lobby' ? effectiveRoomOffer(this.env, this.room) : rewardedOffer(this.room.rewardedOffer);
     if (offer && this.room.hostId === id) state.rewardedOffer = offer.id;
     state.appearance = this.room.appearance || null;
@@ -911,17 +917,17 @@ export class Room {
     if(this.room&&(this.room.ranked?.key!==input.key||this.room.code!==input.code))fail('COLLISION',409);
     if(this.room&&this.room.phase!=='lobby')return json({ok:true,code:this.room.code});
     const now=Date.now();
-    const held=(await this.env.DB.prepare(`SELECT q.user_id,q.match_seat_id AS seat_id,q.token_hash,q.session_id FROM mafia_ranked_queue q JOIN mafia_match_leases l ON l.user_id=q.user_id JOIN sessions s ON s.id=q.session_id AND s.user_id=q.user_id WHERE q.match_key=? AND q.status='assigned' AND l.room_key=? AND l.expires_at>? AND s.expires_at>? AND (s.revoked_at IS NULL OR s.revoked_at>?) AND ${liveAccountSql('q.user_id')}`).bind(input.key,input.key,now,now,now).all()).results||[];
-    if(held.length!==8||new Set(held.map(s=>s.seat_id)).size!==8||!input.seats.every(s=>held.some(h=>h.user_id===s.user_id&&h.seat_id===s.seat_id&&h.token_hash===s.token_hash&&h.session_id===s.session_id)))fail('AUTH',401);
+    const held=(await this.env.DB.prepare(`SELECT q.user_id,q.match_seat_id AS seat_id,q.token_hash,q.session_id,q.content_locale FROM mafia_ranked_queue q JOIN mafia_match_leases l ON l.user_id=q.user_id JOIN sessions s ON s.id=q.session_id AND s.user_id=q.user_id WHERE q.match_key=? AND q.status='assigned' AND l.room_key=? AND l.expires_at>? AND s.expires_at>? AND (s.revoked_at IS NULL OR s.revoked_at>?) AND ${liveAccountSql('q.user_id')}`).bind(input.key,input.key,now,now,now).all()).results||[];
+    if(held.some(s=>(s.content_locale||'ar')!==(input.contentLocale||'ar'))||held.length!==8||new Set(held.map(s=>s.seat_id)).size!==8||!input.seats.every(s=>held.some(h=>h.user_id===s.user_id&&h.seat_id===s.seat_id&&h.token_hash===s.token_hash&&h.session_id===s.session_id)))fail('AUTH',401);
     let candidate=this.room?structuredClone(this.room):null;
     if(!candidate){
       const season=await this.env.DB.prepare("SELECT z.* FROM mafia_ranked_seasons z JOIN mafia_ranked_matches m ON m.season_id=z.id WHERE m.match_key=? AND m.room_code=? AND m.status IN ('creating','playing')").bind(input.key,input.code).first();
       if(!season||season.id!==input.seasonId)fail('MAFIA_RANKED_RESULT',503);
       const ratingPolicy=await resolveMafiaSeasonRatingPolicy(this.env,season);
       const ratingPolicySHA256=await sha256(canonicalMafiaRatingValue(ratingPolicy));
-      const settings={mode:'classic',capacity:8,visibility:'private',roomName:'المنافسة التجريبية',community:'ar',voiceMode:'off'};
+      const settings={mode:'classic',capacity:8,visibility:'private',roomName:'المنافسة التجريبية',community:input.contentLocale||'ar',voiceMode:'off'};
       for(let i=0;i<input.seats.length;i++){
-        const row=input.seats[i],seat={id:row.seat_id,tokenHash:row.token_hash,name:`المقعد ${i+1}`,avatar:0,game:'mafia',settings,capabilities:{mafia:2},accountUserId:row.user_id};
+        const row=input.seats[i],seat={id:row.seat_id,tokenHash:row.token_hash,name:`المقعد ${i+1}`,avatar:0,game:'mafia',settings,...roomContentIdentity(input),capabilities:{mafia:2,localizedContent:1},accountUserId:row.user_id};
         if(i===0){candidate=createRoom(input.code,seat,now);candidate.mafiaKey=input.key;candidate.ranked={key:input.key,seasonId:input.seasonId,ratingModel:ratingPolicy.model,ratingPolicySHA256,rewardPolicyVersion:1};candidate.roomTrialGate=null;candidate.roomTrialClaim=crypto.randomUUID();candidate.trialOwnerId=seat.id;candidate.trialStarted=false;}
         else joinRoom(candidate,seat,now);
         bindSeatAccount(candidate,seat.id,row.user_id);member(candidate,seat.id).canHost=true;
@@ -996,10 +1002,13 @@ export class Room {
             const owner = this.room.members.find((m) => m.id === input.id && !m.left);
             if (!owner || owner.tokenHash !== input.tokenHash) return json({ error: 'COLLISION' }, 409);
             if ((this.room.game || 'meenfina') !== (input.game || 'meenfina')) fail('GAME');
+            const requested = requireContentCapability(input.capabilities, input), existing = roomContentIdentity(this.room);
+            if (requested.contentLocale !== existing.contentLocale || requested.contentVersion !== existing.contentVersion) fail('CONTENT_LOCALE', 409);
             if ((this.room.rewardedOffer || ['ersomha','mafia'].includes(this.room.game)||this.room.directory?.visibility==='public') && owner.accountUserId !== input.accountUserId) fail('AUTH', 401);
             if ((effectiveRoomOffer(this.env, this.room)?.id || null) !== (offer?.id || null)) fail('REWARDED_UNAVAILABLE', 409);
             return json({ code: this.room.code, id: input.id, game: this.room.game || 'meenfina' });
           }
+          requireNewContentEnabled(this.env, input);
           const created = createRoom(code, input, Date.now());
           const directory=normalizeRoomDirectory(input,this.env);
           if(directory)created.directory=directory;
@@ -1219,6 +1228,7 @@ export class Room {
         if(this.room.game==='mafia'&&command.type==='auth'&&!a.id&&command.scope==='observer')return await this.authenticateObserverSocket(ws,command,a,now);
         if(a.scope==='observer'){if(!requestId)fail('INVALID');fail('OBSERVER_READ_ONLY',403);}
         if (command.type === 'auth' && !a.id) {
+          requireContentCapability(command.capabilities, this.room);
           if (this.room.game === 'badeeha' && command.capabilities?.badeeha !== BADEEHA_PROTOCOL) fail('UPDATE_REQUIRED', 409);
           if (this.room.game === 'ersomha' && command.capabilities?.ersomha !== ERSOMHA_PROTOCOL) fail('CONFIG', 409);
           if (this.room.game === 'mafia' && !supportsMafiaProtocol(command.capabilities?.mafia,this.room.protocol||1)) fail('UPDATE_REQUIRED', 409);
@@ -1247,6 +1257,7 @@ export class Room {
           ws.serializeAttachment({ id, seenAt: now, windowAt: now, count: 1, gameplayAccess: command.capabilities?.gameplayAccess, ...accountIdentity });
           const candidate = structuredClone(this.room);
           // Retire persisted billing-derived host flags after verified account auth.
+          recordContentCapability(candidate, id, command.capabilities);
           if(candidate.game==='mafia')member(candidate,id).canHost=true;
           connected(candidate, id, true, now);
           await this.commit(candidate);
@@ -1293,6 +1304,7 @@ export class Room {
           await this.drawingCommand(ws, a.id, command); return;
         }
         const candidate = structuredClone(this.room);
+        if (command.type === 'start' || command.type === 'content_locale') requireNewContentEnabled(this.env, command.type === 'start' ? candidate : command);
         if (command.type === 'start') requireGameplayCapability(this.env, command.gameplayCapability ?? a.gameplayAccess);
         const deck = command.type === 'start' && !['ersomha', 'badeeha','mafia'].includes(candidate.game) ? (candidate.game === 'fabraka' ? buildFabrakaDeck(candidate) : meenfinaDeck(candidate)) : [];
         if (command.type === 'start' && this.env.DB) {

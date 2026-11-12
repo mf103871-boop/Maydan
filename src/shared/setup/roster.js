@@ -1,3 +1,4 @@
+import { tr } from '../i18n/core.js';
 // دفتر اللاعبين: اسم + إيموجي من مجموعة ثابتة + لون تلقائي من لوحة. حتى 12 لاعبًا.
 export const ROSTER_LIMIT = 12;
 export const EMOJIS = ['😎', '🦁', '🐼', '🦊', '🐯', '🐸', '🦄', '🐙', '🦋', '🐨', '🐧', '🦉', '🐬', '🦖', '🍉', '🍕', '⚽', '🎸', '🚀', '🎯', '🌟', '🔥', '🧊', '🎲'];
@@ -41,7 +42,7 @@ export function makePlayer(roster, name, emoji) {
 export function addPlayer(roster, name, emoji) {
   const clean = cleanName(name);
   if (!clean) return { ok: false, message: 'اكتب اسم اللاعب' };
-  if (roster.length >= ROSTER_LIMIT) return { ok: false, message: `الحد الأقصى ${ROSTER_LIMIT} لاعبًا` };
+  if (roster.length >= ROSTER_LIMIT) return { ok: false, message: tr("الحد الأقصى {v0} لاعبًا", {v0: ROSTER_LIMIT}) };
   if (roster.some((p) => normalizeName(p.name) === normalizeName(clean))) return { ok: false, message: 'هذا الاسم موجود بالفعل' };
   return { ok: true, player: makePlayer(roster, clean, emoji) };
 }

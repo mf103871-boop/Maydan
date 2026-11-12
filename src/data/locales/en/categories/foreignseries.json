@@ -1,0 +1,502 @@
+{
+  "id": "foreignseries",
+  "name": "International Series",
+  "icon": "🎬",
+  "style": "story",
+  "qs": [
+    {
+      "qid": "foreignseries-200-911",
+      "p": 200,
+      "topic": "Friends",
+      "q": "In Friends, what scientific field does Ross specialize in?",
+      "a": "Paleontology",
+      "alt": [
+        "Palaeontology"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "foreignseries-200-912",
+      "p": 200,
+      "topic": "Money Heist",
+      "q": "Which painter's face is depicted on the gang's masks in Money Heist?",
+      "a": "Salvador Dalí",
+      "alt": [
+        "Salvador Dali",
+        "Dali"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "foreignseries-200-913",
+      "p": 200,
+      "topic": "The Walking Dead",
+      "q": "What was Rick Grimes's job before the outbreak in The Walking Dead?",
+      "a": "Sheriff's deputy",
+      "alt": [
+        "Deputy sheriff",
+        "Police officer"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_The_Walking_Dead_(TV_series)_characters",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "foreignseries-200-914",
+      "p": 200,
+      "topic": "Sherlock",
+      "q": "What is the detective's shared apartment address in Sherlock?",
+      "a": "221B Baker Street",
+      "alt": [
+        "221B"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sherlock_(TV_series)",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "foreignseries-200-915",
+      "p": 200,
+      "topic": "Game of Thrones",
+      "q": "In Game of Thrones, what does Arya name her slender sword?",
+      "a": "Needle",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Game_of_Thrones_characters",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "foreignseries-200-916",
+      "p": 200,
+      "topic": "Money Heist",
+      "q": "Which institution is targeted in the first heist in Money Heist?",
+      "a": "The Royal Mint of Spain",
+      "alt": [
+        "Royal Mint",
+        "Royal Mint of Spain"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "foreignseries-200-917",
+      "p": 200,
+      "topic": "Wednesday",
+      "q": "In Wednesday, what creature can her roommate Enid transform into?",
+      "a": "A werewolf",
+      "alt": [
+        "Werewolf"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/wednesday-character-cast-guide-season-1",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "foreignseries-200-918",
+      "p": 200,
+      "topic": "The Walking Dead",
+      "q": "What is Daryl Dixon's signature weapon in The Walking Dead?",
+      "a": "A crossbow",
+      "alt": [
+        "Crossbow"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_The_Walking_Dead_(TV_series)_characters",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "foreignseries-400-911",
+      "p": 400,
+      "topic": "Sherlock",
+      "q": "Which consulting criminal becomes the detective's main rival in Sherlock?",
+      "a": "Jim Moriarty",
+      "alt": [
+        "Moriarty"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sherlock_(TV_series)",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "foreignseries-400-912",
+      "p": 400,
+      "topic": "Prison Break",
+      "q": "In Prison Break, which prison doctor helps with the first escape plan?",
+      "a": "Sara Tancredi",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Prison_Break_season_1",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "foreignseries-400-913",
+      "p": 400,
+      "topic": "Game of Thrones",
+      "q": "In Game of Thrones, to which city does Arya travel to train with the Faceless Men?",
+      "a": "Braavos",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Game_of_Thrones_characters",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "foreignseries-400-914",
+      "p": 400,
+      "topic": "Stranger Things",
+      "q": "In Stranger Things season two, what nickname does Dustin give the creature he secretly raises?",
+      "a": "Dart",
+      "alt": [
+        "D'Artagnan"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things_season_2",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "foreignseries-400-915",
+      "p": 400,
+      "topic": "Wednesday",
+      "q": "What kind of monster does Tyler transform into in Wednesday season one?",
+      "a": "A Hyde",
+      "alt": [
+        "Hyde"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/is-wednesday-addams-a-witch-goody-addams",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "foreignseries-400-916",
+      "p": 400,
+      "topic": "The Walking Dead",
+      "q": "In The Walking Dead, what does Negan call his barbed-wire-wrapped bat?",
+      "a": "Lucille",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_The_Walking_Dead_(TV_series)_characters",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "foreignseries-400-917",
+      "p": 400,
+      "topic": "Sherlock",
+      "q": "What is the name of Sherlock's brother, who works for the British government?",
+      "a": "Mycroft Holmes",
+      "alt": [
+        "Mycroft"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sherlock_(TV_series)",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "foreignseries-400-918",
+      "p": 400,
+      "topic": "Stranger Things",
+      "q": "Which Kate Bush song helps Max escape Vecna in Stranger Things season four?",
+      "a": "Running Up That Hill",
+      "alt": [
+        "Running Up That Hill (A Deal with God)"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/this-is-the-stranger-things-song-everyone-is-talking-about",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "foreignseries-600-911",
+      "p": 600,
+      "topic": "Friends",
+      "q": "In Friends, which doctor does Joey play in the television series within the show?",
+      "a": "Drake Ramoray",
+      "alt": [
+        "Dr. Drake Ramoray"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Joey_Tribbiani",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "foreignseries-600-912",
+      "p": 600,
+      "topic": "Friends",
+      "q": "In Friends, what alias does Phoebe repeatedly use to impersonate someone else?",
+      "a": "Regina Phalange",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Phoebe_Buffay",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "foreignseries-600-913",
+      "p": 600,
+      "topic": "Prison Break",
+      "q": "In Prison Break, which famous identity is prisoner Charles Westmoreland revealed to have used?",
+      "a": "D. B. Cooper",
+      "alt": [
+        "DB Cooper"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Prison_Break_season_1",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "foreignseries-600-914",
+      "p": 600,
+      "topic": "Game of Thrones",
+      "q": "In Game of Thrones, what original name of Hodor is revealed through Bran's visions of the past?",
+      "a": "Wylis",
+      "alt": [
+        "Wyllis"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Game_of_Thrones_characters",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "foreignseries-600-915",
+      "p": 600,
+      "topic": "Money Heist",
+      "q": "In Money Heist, what is the real name of the mastermind directing the robberies from outside?",
+      "a": "Sergio Marquina",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "foreignseries-600-916",
+      "p": 600,
+      "topic": "Wednesday",
+      "q": "In Wednesday, which distant ancestor appears in the heroine's visions and helps her confront Crackstone?",
+      "a": "Goody Addams",
+      "alt": [
+        "Goody"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/is-wednesday-addams-a-witch-goody-addams",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "foreignseries-600-917",
+      "p": 600,
+      "topic": "The Walking Dead",
+      "q": "What is the name of King Ezekiel's tiger in The Walking Dead?",
+      "a": "Shiva",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_The_Walking_Dead_(TV_series)_characters",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "foreignseries-600-918",
+      "p": 600,
+      "topic": "Sherlock",
+      "q": "In Sherlock's The Final Problem, which sister was confined at Sherrinford?",
+      "a": "Eurus Holmes",
+      "alt": [
+        "Eurus"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Final_Problem_(Sherlock)",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "Friends",
+      "q": "In Friends, to which city is Chandler transferred for work before resigning?",
+      "a": "Tulsa",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
+      "qid": "foreignseries-800-911",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Prison Break",
+      "q": "In Prison Break, what is the real name of the prisoner nicknamed Haywire?",
+      "a": "Charles Patoshik",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Prison_Break_season_1",
+      "qid": "foreignseries-800-912",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Game of Thrones",
+      "q": "In Game of Thrones, which wealthy man hosts Daenerys and Viserys in Pentos and arranges her marriage?",
+      "a": "Illyrio Mopatis",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Game_of_Thrones_characters",
+      "qid": "foreignseries-800-913",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Stranger Things",
+      "q": "In Stranger Things season two, which girl teaches Eleven to strengthen her powers through anger?",
+      "a": "Kali",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things_season_2",
+      "qid": "foreignseries-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Money Heist",
+      "q": "In Money Heist, what is the name of Berlin's son, who steals the gold with Tatiana?",
+      "a": "Rafael",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
+      "qid": "foreignseries-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Wednesday",
+      "q": "In Wednesday, what is the name of the bee-loving student who befriends the heroine?",
+      "a": "Eugene",
+      "alt": [
+        "Eugene Ottinger"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/wednesday-character-cast-guide-season-1",
+      "qid": "foreignseries-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "The Walking Dead",
+      "q": "In The Walking Dead, which doctor saves Carl after his eye injury in Alexandria?",
+      "a": "Denise Cloyd",
+      "alt": [
+        "Denise"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_The_Walking_Dead_(TV_series)_characters",
+      "qid": "foreignseries-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Sherlock",
+      "q": "In Sherlock's The Final Problem, which childhood friend was associated with the name Redbeard?",
+      "a": "Victor Trevor",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Final_Problem_(Sherlock)",
+      "qid": "foreignseries-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Friends",
+      "q": "In Friends, what is the name of Chandler's novelist mother?",
+      "a": "Nora Tyler Bing",
+      "alt": [
+        "Nora Bing"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
+      "qid": "foreignseries-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Prison Break",
+      "q": "In Prison Break, which witness's hiding place does Abruzzi seek?",
+      "a": "Fibonacci",
+      "alt": [
+        "Otto Fibonacci"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Prison_Break_season_1",
+      "qid": "foreignseries-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Game of Thrones",
+      "q": "In Game of Thrones, which knight tries to kill Tyrion at Blackwater before Podrick intervenes?",
+      "a": "Mandon Moore",
+      "alt": [
+        "Ser Mandon Moore"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Game_of_Thrones_characters",
+      "qid": "foreignseries-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Stranger Things",
+      "q": "In Stranger Things season two, whom does Eleven refuse to kill after seeing a photograph of his daughters?",
+      "a": "Ray",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things_season_2",
+      "qid": "foreignseries-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Money Heist",
+      "q": "In Money Heist, what name does Alicia Sierra choose for her baby daughter?",
+      "a": "Victoria",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
+      "qid": "foreignseries-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Wednesday",
+      "q": "In Wednesday season one, what is the name of the therapist the heroine visits?",
+      "a": "Valerie Kinbott",
+      "alt": [
+        "Dr. Kinbott",
+        "Kinbott"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Wednesday_(TV_series)",
+      "qid": "foreignseries-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "The Walking Dead",
+      "q": "In The Walking Dead, which doctor remains alone at the CDC when Rick's group arrives?",
+      "a": "Edwin Jenner",
+      "alt": [
+        "Dr. Jenner"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_The_Walking_Dead_(TV_series)_characters",
+      "qid": "foreignseries-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Sherlock",
+      "q": "In Sherlock, which assistant of Magnussen does the detective pretend he wants to marry?",
+      "a": "Janine Hawkins",
+      "alt": [
+        "Janine"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Sherlock_characters",
+      "qid": "foreignseries-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    }
+  ]
+}

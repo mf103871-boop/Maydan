@@ -19,11 +19,12 @@ for (const [filename, side] of Object.entries({
 })) {
   await sharp(source).resize(side, side).removeAlpha().png({ compressionLevel: 9 }).toFile(path.join(directory, filename));
 }
-// Extra inset keeps the emblem intact under circular and other PWA masks.
+// Keep the faces and Arabic wordmark inside the maskable icon's central safe
+// circle. The approved two-character artwork needs more inset than the old mark.
 for (const side of [192, 512]) {
-  const inset = Math.round(side * 0.06);
+  const inset = Math.round(side * 0.16);
   await sharp(source).resize(side - 2 * inset, side - 2 * inset)
-    .extend({ top: inset, bottom: inset, left: inset, right: inset, background: '#9250BD' })
+    .extend({ top: inset, bottom: inset, left: inset, right: inset, background: '#FFF8F0' })
     .removeAlpha().png({ compressionLevel: 9 }).toFile(path.join(directory, `maskable-${side}.png`));
 }
 await copyFile(master, path.join(ROOT, 'ios/Maydan/Assets.xcassets/AppIcon.appiconset/icon-1024.png'));

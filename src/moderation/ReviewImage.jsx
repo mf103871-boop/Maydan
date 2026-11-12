@@ -1,8 +1,9 @@
+import { tr } from '../shared/i18n/core.js';
 import React, { useEffect, useState } from 'react';
 import { useAccount } from '../shared/account/context.js';
 import { reviewPreviewPath } from './client.js';
 
-export function ReviewImage({ path, label = 'الصورة المرسلة للمراجعة' }) {
+export function ReviewImage({ path, label = tr("الصورة المرسلة للمراجعة") }) {
   const account = useAccount();
   const userId = account.signedIn ? account.user?.id : null;
   const requestAuthenticated = account.requestAuthenticated;
@@ -26,5 +27,5 @@ export function ReviewImage({ path, label = 'الصورة المرسلة للم�
   }, [userId, validPath, requestAuthenticated, retry]);
   const shown = preview?.userId === userId && preview?.path === validPath ? preview : null;
   if (!userId || !validPath) return null;
-  return <div className="review-image">{shown?.url ? <img src={shown.url} alt={label} /> : shown?.error ? <div role="status"><p>تعذّر تحميل المعاينة.</p><button type="button" className="review-retry" onClick={() => setRetry(value => value + 1)}>إعادة المحاولة</button></div> : <p role="status">جارٍ تحميل معاينة خاصة…</p>}</div>;
+  return <div className="review-image">{shown?.url ? <img src={shown.url} alt={label} /> : shown?.error ? <div role="status"><p>{tr("تعذّر تحميل المعاينة.")}</p><button type="button" className="review-retry" onClick={() => setRetry(value => value + 1)}>{tr("إعادة المحاولة")}</button></div> : <p role="status">{tr("جارٍ تحميل معاينة خاصة…")}</p>}</div>;
 }

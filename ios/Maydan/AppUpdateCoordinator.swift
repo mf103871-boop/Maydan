@@ -174,6 +174,24 @@ final class AppUpdateCoordinator {
         resumePending()
     }
 
+    func refreshLocalization() {
+        guard let panel else { return }
+        panel.refreshLocalization()
+        panel.configure(message: requiredPolicy.map(localizedPolicyMessage) ?? NativeLocalization.text("نجهّز ميدان…"), required: requiredPolicy != nil)
+    }
+
+    private func localizedPolicyMessage(_ policy: AppUpdatePolicy) -> String {
+        guard NativeLocalization.isEnglish else { return policy.message }
+        if let english = policy.messageEn?.trimmingCharacters(in: .whitespacesAndNewlines),
+           !english.isEmpty, english.count <= 400,
+           english.range(of: "[\\u0600-\\u06ff]", options: .regularExpression) == nil,
+           !english.unicodeScalars.contains(where: { CharacterSet.controlCharacters.contains($0) && $0 != "\n" }) { return english }
+        // Older servers provide only Arabic copy. Preserve the policy decision
+        // while showing its equivalent action in the player's UI language.
+        if policy.message.range(of: "[\\u0600-\\u06ff]", options: .regularExpression) == nil { return policy.message }
+        return NativeLocalization.text("يتوفر تحديث مطلوب لميدان. حدّث التطبيق للمتابعة.")
+    }
+
     func setPrivateTurn(_ value: Bool) {
         guard privateTurn != value else { return }
         privateTurn = value
@@ -407,7 +425,7 @@ final class AppUpdateCoordinator {
     private func showChecking() {
         guard !initialLoadPermitted else { return }
         let view = makePanel()
-        view.configure(message: "نجهّز ميدان…", required: false)
+        view.configure(message: NativeLocalization.text("نجهّز ميدان…"), required: false)
         view.setChecking(true)
     }
 
@@ -418,7 +436,7 @@ final class AppUpdateCoordinator {
         simulatorFailOpenReason = nil
 #endif
         let view = makePanel()
-        view.configure(message: policy.message, required: true)
+        view.configure(message: localizedPolicyMessage(policy), required: true)
         view.setChecking(false)
         UIAccessibility.post(notification: .screenChanged, argument: view.heading)
     }
@@ -456,7 +474,7 @@ final class AppUpdateCoordinator {
         // Server content never controls a URL or a custom scheme.
         UIApplication.shared.open(AppUpdatePolicy.appStoreURL, options: [:]) { [weak self] opened in
             Task { @MainActor in
-                if !opened { self?.panel?.setHint("تعذّر فتح App Store. تأكد من الاتصال وحاول مجددًا.") }
+                if !opened { self?.panel?.setHint(NativeLocalization.text("تعذّر فتح App Store. تأكد من الاتصال وحاول مجددًا.")) }
             }
         }
     }
@@ -506,8 +524,8 @@ private final class AppUpdatePanel: UIView {
         super.init(frame: .zero)
         backgroundColor = UIColor(red: 1, green: 247 / 255, blue: 231 / 255, alpha: 1)
         accessibilityViewIsModal = true
-        semanticContentAttribute = .forceRightToLeft
-        heading.text = "ميدان"
+        semanticContentAttribute = NativeLocalization.isEnglish ? .forceLeftToRight : .forceRightToLeft
+        heading.text = NativeLocalization.text("ميدان")
         heading.font = .preferredFont(forTextStyle: .largeTitle)
         heading.accessibilityTraits = .header
         message.font = .preferredFont(forTextStyle: .title2)
@@ -519,26 +537,26 @@ private final class AppUpdatePanel: UIView {
             label.textColor = UIColor(red: 56 / 255, green: 35 / 255, blue: 76 / 255, alpha: 1)
         }
         var primary = UIButton.Configuration.filled()
-        primary.title = "تحديث من App Store"
+        primary.title = NativeLocalization.text("تحديث من App Store")
         primary.baseBackgroundColor = UIColor(red: 0, green: 123 / 255, blue: 133 / 255, alpha: 1)
         primary.cornerStyle = .large
         update.configuration = primary
         var secondary = UIButton.Configuration.bordered()
-        secondary.title = "إعادة التحقق"
+        secondary.title = NativeLocalization.text("إعادة التحقق")
         secondary.cornerStyle = .large
         retry.configuration = secondary
         update.isAccessibilityElement = true
         retry.isAccessibilityElement = true
-        update.accessibilityLabel = "تحديث ميدان من متجر التطبيقات"
-        retry.accessibilityLabel = "إعادة التحقق من التحديث"
+        update.accessibilityLabel = NativeLocalization.text("تحديث ميدان من متجر التطبيقات")
+        retry.accessibilityLabel = NativeLocalization.text("إعادة التحقق من التحديث")
         update.accessibilityTraits = .button
         retry.accessibilityTraits = .button
         update.titleLabel?.adjustsFontForContentSizeCategory = true
         retry.titleLabel?.adjustsFontForContentSizeCategory = true
         update.addTarget(self, action: #selector(updateTapped), for: .touchUpInside)
         retry.addTarget(self, action: #selector(retryTapped), for: .touchUpInside)
-        update.accessibilityHint = "يفتح صفحة ميدان في متجر التطبيقات"
-        retry.accessibilityHint = "يتحقق مجددًا من توفر التحديث المطلوب"
+        update.accessibilityHint = NativeLocalization.text("يفتح صفحة ميدان في متجر التطبيقات")
+        retry.accessibilityHint = NativeLocalization.text("يتحقق مجددًا من توفر التحديث المطلوب")
         let scroll = UIScrollView()
         let stack = UIStackView(arrangedSubviews: [heading, message, spinner, update, retry, hint])
         stack.axis = .vertical; stack.spacing = 22
@@ -562,10 +580,19 @@ private final class AppUpdatePanel: UIView {
 
     required init?(coder: NSCoder) { return nil }
     override func accessibilityPerformEscape() -> Bool { true }
+    func refreshLocalization() {
+        semanticContentAttribute = NativeLocalization.isEnglish ? .forceLeftToRight : .forceRightToLeft
+        update.configuration?.title = NativeLocalization.text("تحديث من App Store")
+        retry.configuration?.title = NativeLocalization.text("إعادة التحقق")
+        update.accessibilityLabel = NativeLocalization.text("تحديث ميدان من متجر التطبيقات")
+        retry.accessibilityLabel = NativeLocalization.text("إعادة التحقق من التحديث")
+        update.accessibilityHint = NativeLocalization.text("يفتح صفحة ميدان في متجر التطبيقات")
+        retry.accessibilityHint = NativeLocalization.text("يتحقق مجددًا من توفر التحديث المطلوب")
+    }
     func configure(message text: String, required: Bool) {
-        heading.text = required ? "تحديث ميدان مطلوب" : "ميدان"
+        heading.text = required ? NativeLocalization.text("تحديث ميدان مطلوب") : NativeLocalization.text("ميدان")
         message.text = text
-        hint.text = required ? "تبقى بياناتك ومحفوظاتك كما هي بعد التحديث." : ""
+        hint.text = required ? NativeLocalization.text("تبقى بياناتك ومحفوظاتك كما هي بعد التحديث.") : ""
         update.isHidden = !required
         retry.isHidden = !required
     }

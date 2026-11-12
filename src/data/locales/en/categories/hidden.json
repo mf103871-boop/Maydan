@@ -1,0 +1,2607 @@
+{
+  "id": "hidden",
+  "name": "Find the Hidden One",
+  "icon": "🦆",
+  "qs": [
+    {
+      "p": 200,
+      "q": "",
+      "a": "Row 2, column 3 from the left",
+      "qid": "hidden-200-921",
+      "type": "grid",
+      "topic": "Farm animals and birds",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🦃",
+          "🐖",
+          "🐑",
+          "🐖"
+        ],
+        [
+          "🐐",
+          "🐐",
+          "🦆",
+          "🐄"
+        ],
+        [
+          "🐔",
+          "🐄",
+          "🐄",
+          "🐓"
+        ],
+        [
+          "🐑",
+          "🐎",
+          "🐖",
+          "🐎"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "",
+      "a": "Row 3, column 2 from the left",
+      "qid": "hidden-200-922",
+      "type": "grid",
+      "topic": "Aquatic creatures",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🦀",
+          "🐠",
+          "🦩",
+          "🐢"
+        ],
+        [
+          "🐧",
+          "🐸",
+          "🐸",
+          "🐠"
+        ],
+        [
+          "🐠",
+          "🦆",
+          "🐟",
+          "🐟"
+        ],
+        [
+          "🪿",
+          "🐸",
+          "🦀",
+          "🐢"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "",
+      "a": "Row 3, column 3 from the left",
+      "qid": "hidden-200-923",
+      "type": "grid",
+      "topic": "Forest animals and birds",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🦝",
+          "🐻",
+          "🐻",
+          "🐿️"
+        ],
+        [
+          "🦊",
+          "🦊",
+          "🦝",
+          "🐇"
+        ],
+        [
+          "🦉",
+          "🐇",
+          "🦆",
+          "🦝"
+        ],
+        [
+          "🕊️",
+          "🐿️",
+          "🐿️",
+          "🐦"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "",
+      "a": "Row 2, column 2 from the left",
+      "qid": "hidden-200-924",
+      "type": "grid",
+      "topic": "Garden birds",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🌳",
+          "🌳",
+          "🌷",
+          "🍃"
+        ],
+        [
+          "🍃",
+          "🦆",
+          "🕊️",
+          "🌳"
+        ],
+        [
+          "🍂",
+          "🐔",
+          "🌼",
+          "🌷"
+        ],
+        [
+          "🍂",
+          "🌼",
+          "🍂",
+          "🪿"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "",
+      "a": "Row 1, column 3 from the left",
+      "qid": "hidden-200-925",
+      "type": "grid",
+      "topic": "Field birds",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🌱",
+          "🌾",
+          "🦆",
+          "🌽"
+        ],
+        [
+          "🌱",
+          "🌽",
+          "🕊️",
+          "🌻"
+        ],
+        [
+          "🌻",
+          "🌾",
+          "🐔",
+          "🌱"
+        ],
+        [
+          "🪿",
+          "🌾",
+          "🍀",
+          "🍀"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "",
+      "a": "Row 4, column 2 from the left",
+      "qid": "hidden-200-926",
+      "type": "grid",
+      "topic": "Lake birds",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🪷",
+          "🌿",
+          "🐸",
+          "🌿"
+        ],
+        [
+          "🐟",
+          "🦩",
+          "🐸",
+          "🐢"
+        ],
+        [
+          "🦢",
+          "🌿",
+          "🪷",
+          "🪿"
+        ],
+        [
+          "🐢",
+          "🦆",
+          "🐟",
+          "🪷"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "",
+      "a": "Row 4, column 4 from the left",
+      "qid": "hidden-200-927",
+      "type": "grid",
+      "topic": "Mixed birds",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🦎",
+          "🐊",
+          "🐍",
+          "🦢"
+        ],
+        [
+          "🦕",
+          "🐊",
+          "🦎",
+          "🦖"
+        ],
+        [
+          "🐊",
+          "🦕",
+          "🐍",
+          "🪿"
+        ],
+        [
+          "🦤",
+          "🦖",
+          "🦖",
+          "🦆"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "",
+      "a": "Row 1, column 1 from the left",
+      "qid": "hidden-200-928",
+      "type": "grid",
+      "topic": "Birds among mammals",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🦆",
+          "🐦",
+          "🦃",
+          "🦦"
+        ],
+        [
+          "🦫",
+          "🦥",
+          "🦫",
+          "🐗"
+        ],
+        [
+          "🐗",
+          "🦅",
+          "🦔",
+          "🦔"
+        ],
+        [
+          "🦫",
+          "🦔",
+          "🦦",
+          "🦥"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "",
+      "a": "Row 4, column 3 from the left",
+      "qid": "hidden-400-921",
+      "type": "grid",
+      "topic": "Farm animals and birds",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🐑",
+          "🐎",
+          "🐖",
+          "🦃",
+          "🐦"
+        ],
+        [
+          "🐄",
+          "🐑",
+          "🐖",
+          "🐄",
+          "🐓"
+        ],
+        [
+          "🪿",
+          "🐓",
+          "🐎",
+          "🐑",
+          "🐐"
+        ],
+        [
+          "🐖",
+          "🐥",
+          "🦆",
+          "🐎",
+          "🦃"
+        ],
+        [
+          "🐐",
+          "🐦",
+          "🐐",
+          "🪿",
+          "🐔"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "",
+      "a": "Row 4, column 4 from the left",
+      "qid": "hidden-400-922",
+      "type": "grid",
+      "topic": "Aquatic creatures",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🐸",
+          "🐟",
+          "🐦",
+          "🐸",
+          "🪿"
+        ],
+        [
+          "🦩",
+          "🐠",
+          "🦢",
+          "🐧",
+          "🦀"
+        ],
+        [
+          "🐦",
+          "🐟",
+          "🐟",
+          "🪿",
+          "🐢"
+        ],
+        [
+          "🐢",
+          "🦢",
+          "🦀",
+          "🦆",
+          "🐢"
+        ],
+        [
+          "🦀",
+          "🦩",
+          "🐸",
+          "🐠",
+          "🐧"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "",
+      "a": "Row 3, column 3 from the left",
+      "qid": "hidden-400-923",
+      "type": "grid",
+      "topic": "Forest animals and birds",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🦊",
+          "🐇",
+          "🐦",
+          "🦝",
+          "🐇"
+        ],
+        [
+          "🦅",
+          "🦊",
+          "🦜",
+          "🕊️",
+          "🦉"
+        ],
+        [
+          "🦚",
+          "🦊",
+          "🦆",
+          "🐻",
+          "🐻"
+        ],
+        [
+          "🦜",
+          "🐿️",
+          "🦉",
+          "🐿️",
+          "🦅"
+        ],
+        [
+          "🐿️",
+          "🕊️",
+          "🦝",
+          "🐻",
+          "🐇"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "",
+      "a": "Row 2, column 4 from the left",
+      "qid": "hidden-400-924",
+      "type": "grid",
+      "topic": "Garden birds",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🍂",
+          "🌷",
+          "🍃",
+          "🪿",
+          "🌷"
+        ],
+        [
+          "🐦",
+          "🌼",
+          "🌷",
+          "🦆",
+          "🐤"
+        ],
+        [
+          "🍂",
+          "🌼",
+          "🪿",
+          "🌼",
+          "🍂"
+        ],
+        [
+          "🕊️",
+          "🕊️",
+          "🌳",
+          "🐔",
+          "🌳"
+        ],
+        [
+          "🐔",
+          "🍃",
+          "🐦",
+          "🐤",
+          "🍃"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "",
+      "a": "Row 5, column 3 from the left",
+      "qid": "hidden-400-925",
+      "type": "grid",
+      "topic": "Field birds",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🍀",
+          "🐓",
+          "🌽",
+          "🌱",
+          "🌾"
+        ],
+        [
+          "🌾",
+          "🦃",
+          "🌽",
+          "🌱",
+          "🦃"
+        ],
+        [
+          "🍀",
+          "🌽",
+          "🍀",
+          "🐦",
+          "🕊️"
+        ],
+        [
+          "🌻",
+          "🪿",
+          "🐔",
+          "🌻",
+          "🌻"
+        ],
+        [
+          "🌾",
+          "🐔",
+          "🦆",
+          "🕊️",
+          "🐓"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "",
+      "a": "Row 5, column 5 from the left",
+      "qid": "hidden-400-926",
+      "type": "grid",
+      "topic": "Lake birds",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🌿",
+          "🌿",
+          "🪿",
+          "🦩",
+          "🐟"
+        ],
+        [
+          "🐟",
+          "🐧",
+          "🪿",
+          "🐢",
+          "🐸"
+        ],
+        [
+          "🦢",
+          "🐧",
+          "🪷",
+          "🦢",
+          "🐢"
+        ],
+        [
+          "🐦",
+          "🐟",
+          "🪷",
+          "🌿",
+          "🐦"
+        ],
+        [
+          "🐸",
+          "🐸",
+          "🐢",
+          "🦩",
+          "🦆"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "",
+      "a": "Row 2, column 1 from the left",
+      "qid": "hidden-400-927",
+      "type": "grid",
+      "topic": "Mixed birds",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🦤",
+          "🐍",
+          "🦢",
+          "🐊",
+          "🦎"
+        ],
+        [
+          "🦆",
+          "🐊",
+          "🦕",
+          "🐓",
+          "🐓"
+        ],
+        [
+          "🦢",
+          "🦃",
+          "🦎",
+          "🐊",
+          "🦎"
+        ],
+        [
+          "🦖",
+          "🦖",
+          "🐍",
+          "🦕",
+          "🐦"
+        ],
+        [
+          "🐍",
+          "🦃",
+          "🪿",
+          "🦕",
+          "🪿"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "",
+      "a": "Row 1, column 5 from the left",
+      "qid": "hidden-400-928",
+      "type": "grid",
+      "topic": "Birds among mammals",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🐦",
+          "🪿",
+          "🐦",
+          "🦔",
+          "🦆"
+        ],
+        [
+          "🐗",
+          "🦥",
+          "🦫",
+          "🦤",
+          "🦉"
+        ],
+        [
+          "🐗",
+          "🦦",
+          "🦥",
+          "🦅",
+          "🐗"
+        ],
+        [
+          "🦔",
+          "🦥",
+          "🦫",
+          "🦃",
+          "🦤"
+        ],
+        [
+          "🦦",
+          "🦃",
+          "🦔",
+          "🦦",
+          "🪿"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "",
+      "a": "Row 5, column 4 from the left",
+      "qid": "hidden-600-921",
+      "type": "grid",
+      "topic": "Farm animals and birds",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🐎",
+          "🐎",
+          "🦃",
+          "🦃",
+          "🐦",
+          "🐑"
+        ],
+        [
+          "🐦",
+          "🐄",
+          "🐥",
+          "🐔",
+          "🪿",
+          "🐥"
+        ],
+        [
+          "🐄",
+          "🐔",
+          "🪿",
+          "🐑",
+          "🐥",
+          "🦃"
+        ],
+        [
+          "🐐",
+          "🐖",
+          "🐐",
+          "🐔",
+          "🐓",
+          "🐑"
+        ],
+        [
+          "🐓",
+          "🐓",
+          "🐦",
+          "🦆",
+          "🪿",
+          "🐐"
+        ],
+        [
+          "🐖",
+          "🐦",
+          "🐥",
+          "🦃",
+          "🐔",
+          "🪿"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "",
+      "a": "Row 3, column 2 from the left",
+      "qid": "hidden-600-922",
+      "type": "grid",
+      "topic": "Aquatic creatures",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🪿",
+          "🐦",
+          "🐧",
+          "🦀",
+          "🦢",
+          "🐟"
+        ],
+        [
+          "🪿",
+          "🦩",
+          "🐧",
+          "🪿",
+          "🐦",
+          "🦀"
+        ],
+        [
+          "🐢",
+          "🦆",
+          "🦢",
+          "🦩",
+          "🐦",
+          "🐟"
+        ],
+        [
+          "🐸",
+          "🐠",
+          "🦩",
+          "🦩",
+          "🐦",
+          "🐧"
+        ],
+        [
+          "🐢",
+          "🦢",
+          "🪿",
+          "🐸",
+          "🐦",
+          "🦢"
+        ],
+        [
+          "🦢",
+          "🐠",
+          "🐧",
+          "🐢",
+          "🦀",
+          "🦩"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "",
+      "a": "Row 2, column 4 from the left",
+      "qid": "hidden-600-923",
+      "type": "grid",
+      "topic": "Forest animals and birds",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🐦",
+          "🐻",
+          "🕊️",
+          "🦊",
+          "🦅",
+          "🐦"
+        ],
+        [
+          "🐿️",
+          "🐇",
+          "🦜",
+          "🦆",
+          "🐻",
+          "🐇"
+        ],
+        [
+          "🦉",
+          "🦉",
+          "🕊️",
+          "🦜",
+          "🦝",
+          "🕊️"
+        ],
+        [
+          "🐿️",
+          "🦉",
+          "🦅",
+          "🦚",
+          "🐻",
+          "🦊"
+        ],
+        [
+          "🐇",
+          "🦅",
+          "🐦",
+          "🦜",
+          "🦜",
+          "🦚"
+        ],
+        [
+          "🦅",
+          "🦉",
+          "🦚",
+          "🦚",
+          "🦝",
+          "🐦"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "",
+      "a": "Row 5, column 2 from the left",
+      "qid": "hidden-600-924",
+      "type": "grid",
+      "topic": "Garden birds",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🌷",
+          "🪿",
+          "🐦",
+          "🕊️",
+          "🪿",
+          "🕊️"
+        ],
+        [
+          "🌷",
+          "🐔",
+          "🪿",
+          "🐔",
+          "🐦",
+          "🐤"
+        ],
+        [
+          "🍃",
+          "🐔",
+          "🐦",
+          "🐦",
+          "🌷",
+          "🐤"
+        ],
+        [
+          "🌼",
+          "🍃",
+          "🕊️",
+          "🕊️",
+          "🌼",
+          "🪿"
+        ],
+        [
+          "🌳",
+          "🦆",
+          "🌳",
+          "🍂",
+          "🐔",
+          "🕊️"
+        ],
+        [
+          "🐤",
+          "🐤",
+          "🍂",
+          "🐦",
+          "🌼",
+          "🐤"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "",
+      "a": "Row 4, column 6 from the left",
+      "qid": "hidden-600-925",
+      "type": "grid",
+      "topic": "Field birds",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🪿",
+          "🌽",
+          "🐓",
+          "🐔",
+          "🐓",
+          "🌾"
+        ],
+        [
+          "🌽",
+          "🐔",
+          "🌱",
+          "🌻",
+          "🦃",
+          "🕊️"
+        ],
+        [
+          "🌻",
+          "🐓",
+          "🪿",
+          "🍀",
+          "🌽",
+          "🦃"
+        ],
+        [
+          "🍀",
+          "🐦",
+          "🌾",
+          "🌱",
+          "🕊️",
+          "🦆"
+        ],
+        [
+          "🦃",
+          "🐓",
+          "🌻",
+          "🐦",
+          "🪿",
+          "🐦"
+        ],
+        [
+          "🐔",
+          "🪿",
+          "🦃",
+          "🕊️",
+          "🐔",
+          "🐦"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "",
+      "a": "Row 2, column 1 from the left",
+      "qid": "hidden-600-926",
+      "type": "grid",
+      "topic": "Lake birds",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🐢",
+          "🐢",
+          "🐧",
+          "🐟",
+          "🐦",
+          "🐦"
+        ],
+        [
+          "🦆",
+          "🐧",
+          "🐸",
+          "🦢",
+          "🐟",
+          "🐧"
+        ],
+        [
+          "🐦",
+          "🪷",
+          "🐦",
+          "🐟",
+          "🦩",
+          "🌿"
+        ],
+        [
+          "🦩",
+          "🐧",
+          "🦢",
+          "🐧",
+          "🪷",
+          "🦢"
+        ],
+        [
+          "🪿",
+          "🦩",
+          "🦢",
+          "🐸",
+          "🪿",
+          "🌿"
+        ],
+        [
+          "🪿",
+          "🐦",
+          "🐸",
+          "🦩",
+          "🦩",
+          "🪿"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "",
+      "a": "Row 1, column 6 from the left",
+      "qid": "hidden-600-927",
+      "type": "grid",
+      "topic": "Mixed birds",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🐊",
+          "🐓",
+          "🦤",
+          "🦢",
+          "🐍",
+          "🦆"
+        ],
+        [
+          "🐍",
+          "🪿",
+          "🐍",
+          "🐦",
+          "🦖",
+          "🦕"
+        ],
+        [
+          "🦤",
+          "🦤",
+          "🦎",
+          "🦃",
+          "🐦",
+          "🐓"
+        ],
+        [
+          "🦎",
+          "🦃",
+          "🪿",
+          "🦃",
+          "🦖",
+          "🦤"
+        ],
+        [
+          "🐦",
+          "🦢",
+          "🐊",
+          "🦕",
+          "🦎",
+          "🦃"
+        ],
+        [
+          "🦢",
+          "🪿",
+          "🐓",
+          "🐓",
+          "🪿",
+          "🐦"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "",
+      "a": "Row 6, column 1 from the left",
+      "qid": "hidden-600-928",
+      "type": "grid",
+      "topic": "Birds among mammals",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🦉",
+          "🦤",
+          "🦥",
+          "🐗",
+          "🐗",
+          "🐦"
+        ],
+        [
+          "🦔",
+          "🦅",
+          "🦥",
+          "🦃",
+          "🦉",
+          "🦫"
+        ],
+        [
+          "🦃",
+          "🦤",
+          "🦤",
+          "🦃",
+          "🪿",
+          "🐦"
+        ],
+        [
+          "🪿",
+          "🪿",
+          "🦤",
+          "🦉",
+          "🐦",
+          "🦦"
+        ],
+        [
+          "🪿",
+          "🦦",
+          "🦥",
+          "🦃",
+          "🦅",
+          "🦅"
+        ],
+        [
+          "🦆",
+          "🐗",
+          "🦅",
+          "🦉",
+          "🦔",
+          "🦫"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "",
+      "a": "Row 3, column 4 from the left",
+      "qid": "hidden-800-921",
+      "type": "grid",
+      "topic": "Farm animals and birds",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🦃",
+          "🐔",
+          "🐦",
+          "🐔",
+          "🦃",
+          "🐦",
+          "🐄"
+        ],
+        [
+          "🪿",
+          "🪿",
+          "🪿",
+          "🐔",
+          "🐥",
+          "🐐",
+          "🐦"
+        ],
+        [
+          "🐦",
+          "🐔",
+          "🐎",
+          "🦆",
+          "🐥",
+          "🦃",
+          "🪿"
+        ],
+        [
+          "🐔",
+          "🪿",
+          "🐓",
+          "🐓",
+          "🪿",
+          "🐦",
+          "🐖"
+        ],
+        [
+          "🐔",
+          "🪿",
+          "🐔",
+          "🐥",
+          "🐓",
+          "🐥",
+          "🦃"
+        ],
+        [
+          "🐥",
+          "🐓",
+          "🐓",
+          "🦃",
+          "🐦",
+          "🐥",
+          "🦃"
+        ],
+        [
+          "🐦",
+          "🐥",
+          "🐓",
+          "🐑",
+          "🪿",
+          "🦃",
+          "🐓"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "",
+      "a": "Row 3, column 5 from the left",
+      "qid": "hidden-800-922",
+      "type": "grid",
+      "topic": "Aquatic creatures",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🐦",
+          "🐦",
+          "🦢",
+          "🪿",
+          "🦢",
+          "🐧",
+          "🦩"
+        ],
+        [
+          "🪿",
+          "🐧",
+          "🦢",
+          "🐦",
+          "🦢",
+          "🦩",
+          "🪿"
+        ],
+        [
+          "🦩",
+          "🐦",
+          "🐦",
+          "🦢",
+          "🦆",
+          "🦩",
+          "🦢"
+        ],
+        [
+          "🐟",
+          "🦩",
+          "🐧",
+          "🦢",
+          "🐧",
+          "🪿",
+          "🐧"
+        ],
+        [
+          "🦢",
+          "🪿",
+          "🐦",
+          "🪿",
+          "🐧",
+          "🐧",
+          "🦀"
+        ],
+        [
+          "🐦",
+          "🪿",
+          "🐢",
+          "🦢",
+          "🦩",
+          "🐦",
+          "🪿"
+        ],
+        [
+          "🐸",
+          "🦩",
+          "🦩",
+          "🐧",
+          "🪿",
+          "🐦",
+          "🐠"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "",
+      "a": "Row 5, column 3 from the left",
+      "qid": "hidden-800-923",
+      "type": "grid",
+      "topic": "Forest animals and birds",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🦅",
+          "🐦",
+          "🦅",
+          "🦚",
+          "🦊",
+          "🐦",
+          "🦜"
+        ],
+        [
+          "🦉",
+          "🦉",
+          "🦉",
+          "🕊️",
+          "🕊️",
+          "🐻",
+          "🦅"
+        ],
+        [
+          "🦅",
+          "🦚",
+          "🕊️",
+          "🦚",
+          "🕊️",
+          "🦚",
+          "🐦"
+        ],
+        [
+          "🐦",
+          "🦅",
+          "🐿️",
+          "🦜",
+          "🐇",
+          "🦜",
+          "🐦"
+        ],
+        [
+          "🕊️",
+          "🐦",
+          "🦆",
+          "🦚",
+          "🦚",
+          "🦜",
+          "🦝"
+        ],
+        [
+          "🐦",
+          "🦅",
+          "🦅",
+          "🕊️",
+          "🦉",
+          "🕊️",
+          "🦉"
+        ],
+        [
+          "🦜",
+          "🦅",
+          "🦜",
+          "🦜",
+          "🦚",
+          "🦉",
+          "🦉"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "",
+      "a": "Row 6, column 6 from the left",
+      "qid": "hidden-800-924",
+      "type": "grid",
+      "topic": "Garden birds",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🐤",
+          "🕊️",
+          "🐔",
+          "🌳",
+          "🐦",
+          "🕊️",
+          "🐤"
+        ],
+        [
+          "🐔",
+          "🪿",
+          "🪿",
+          "🍃",
+          "🐤",
+          "🐦",
+          "🕊️"
+        ],
+        [
+          "🕊️",
+          "🐤",
+          "🕊️",
+          "🐦",
+          "🐦",
+          "🌷",
+          "🐤"
+        ],
+        [
+          "🪿",
+          "🐔",
+          "🐦",
+          "🐤",
+          "🐦",
+          "🍂",
+          "🐔"
+        ],
+        [
+          "🐔",
+          "🐦",
+          "🐤",
+          "🪿",
+          "🪿",
+          "🕊️",
+          "🪿"
+        ],
+        [
+          "🐦",
+          "🕊️",
+          "🕊️",
+          "🐔",
+          "🐤",
+          "🦆",
+          "🐤"
+        ],
+        [
+          "🐔",
+          "🪿",
+          "🐔",
+          "🐔",
+          "🌼",
+          "🪿",
+          "🐦"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "",
+      "a": "Row 3, column 1 from the left",
+      "qid": "hidden-800-925",
+      "type": "grid",
+      "topic": "Field birds",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🪿",
+          "🕊️",
+          "🌱",
+          "🐦",
+          "🪿",
+          "🐓",
+          "🪿"
+        ],
+        [
+          "🐦",
+          "🦃",
+          "🦃",
+          "🪿",
+          "🐓",
+          "🐦",
+          "🐔"
+        ],
+        [
+          "🦆",
+          "🕊️",
+          "🐔",
+          "🐔",
+          "🪿",
+          "🐔",
+          "🦃"
+        ],
+        [
+          "🐔",
+          "🐔",
+          "🐦",
+          "🦃",
+          "🕊️",
+          "🐦",
+          "🐓"
+        ],
+        [
+          "🦃",
+          "🕊️",
+          "🐦",
+          "🐦",
+          "🌽",
+          "🐓",
+          "🪿"
+        ],
+        [
+          "🕊️",
+          "🐓",
+          "🌻",
+          "🐓",
+          "🦃",
+          "🍀",
+          "🕊️"
+        ],
+        [
+          "🌾",
+          "🐔",
+          "🐓",
+          "🪿",
+          "🦃",
+          "🕊️",
+          "🐓"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "",
+      "a": "Row 2, column 7 from the left",
+      "qid": "hidden-800-926",
+      "type": "grid",
+      "topic": "Lake birds",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🪿",
+          "🐸",
+          "🦢",
+          "🐧",
+          "🐦",
+          "🪿",
+          "🐧"
+        ],
+        [
+          "🪿",
+          "🐦",
+          "🪿",
+          "🐧",
+          "🦩",
+          "🐦",
+          "🦆"
+        ],
+        [
+          "🌿",
+          "🐦",
+          "🦩",
+          "🪿",
+          "🐦",
+          "🐟",
+          "🐢"
+        ],
+        [
+          "🦢",
+          "🐧",
+          "🦩",
+          "🦩",
+          "🐧",
+          "🦩",
+          "🐦"
+        ],
+        [
+          "🦢",
+          "🐦",
+          "🦢",
+          "🐧",
+          "🪿",
+          "🪷",
+          "🦩"
+        ],
+        [
+          "🐧",
+          "🪿",
+          "🪿",
+          "🦢",
+          "🦢",
+          "🐦",
+          "🐧"
+        ],
+        [
+          "🐧",
+          "🦩",
+          "🦩",
+          "🦢",
+          "🐦",
+          "🪿",
+          "🦢"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "",
+      "a": "Row 7, column 4 from the left",
+      "qid": "hidden-800-927",
+      "type": "grid",
+      "topic": "Mixed birds",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🪿",
+          "🦤",
+          "🪿",
+          "🦢",
+          "🦢",
+          "🐦",
+          "🦢"
+        ],
+        [
+          "🐓",
+          "🦃",
+          "🦤",
+          "🦢",
+          "🪿",
+          "🦖",
+          "🐓"
+        ],
+        [
+          "🦢",
+          "🦃",
+          "🦢",
+          "🐦",
+          "🐍",
+          "🐓",
+          "🦤"
+        ],
+        [
+          "🐦",
+          "🐓",
+          "🦤",
+          "🦃",
+          "🐓",
+          "🦕",
+          "🐦"
+        ],
+        [
+          "🦃",
+          "🦤",
+          "🪿",
+          "🦤",
+          "🐦",
+          "🪿",
+          "🦃"
+        ],
+        [
+          "🐓",
+          "🐦",
+          "🐓",
+          "🪿",
+          "🦃",
+          "🪿",
+          "🦎"
+        ],
+        [
+          "🐦",
+          "🦤",
+          "🦢",
+          "🦆",
+          "🦃",
+          "🐓",
+          "🐊"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "",
+      "a": "Row 5, column 7 from the left",
+      "qid": "hidden-800-928",
+      "type": "grid",
+      "topic": "Birds among mammals",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🦤",
+          "🦉",
+          "🦫",
+          "🦉",
+          "🦅",
+          "🦔",
+          "🦤"
+        ],
+        [
+          "🦅",
+          "🦃",
+          "🦃",
+          "🐦",
+          "🐦",
+          "🪿",
+          "🦉"
+        ],
+        [
+          "🦅",
+          "🪿",
+          "🦦",
+          "🪿",
+          "🦃",
+          "🦤",
+          "🦃"
+        ],
+        [
+          "🦉",
+          "🦃",
+          "🦥",
+          "🐦",
+          "🦃",
+          "🪿",
+          "🦤"
+        ],
+        [
+          "🦉",
+          "🪿",
+          "🦉",
+          "🐦",
+          "🦤",
+          "🪿",
+          "🦆"
+        ],
+        [
+          "🐦",
+          "🦤",
+          "🪿",
+          "🦅",
+          "🐗",
+          "🦅",
+          "🐦"
+        ],
+        [
+          "🦅",
+          "🦅",
+          "🦉",
+          "🐦",
+          "🪿",
+          "🦤",
+          "🦃"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 1000,
+      "q": "",
+      "a": "Row 2, column 6 from the left",
+      "qid": "hidden-1000-921",
+      "type": "grid",
+      "topic": "Farm animals and birds",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🪿",
+          "🐔",
+          "🐓",
+          "🐔",
+          "🪿",
+          "🦃",
+          "🦃",
+          "🐥"
+        ],
+        [
+          "🐓",
+          "🐦",
+          "🐔",
+          "🪿",
+          "🦃",
+          "🦆",
+          "🦃",
+          "🐔"
+        ],
+        [
+          "🐥",
+          "🦃",
+          "🐦",
+          "🐓",
+          "🐔",
+          "🐦",
+          "🐓",
+          "🐥"
+        ],
+        [
+          "🐥",
+          "🐔",
+          "🦃",
+          "🪿",
+          "🦃",
+          "🪿",
+          "🦃",
+          "🐓"
+        ],
+        [
+          "🐥",
+          "🪿",
+          "🐓",
+          "🐥",
+          "🐥",
+          "🪿",
+          "🐓",
+          "🐔"
+        ],
+        [
+          "🐓",
+          "🐓",
+          "🐦",
+          "🪿",
+          "🐔",
+          "🐦",
+          "🦃",
+          "🐦"
+        ],
+        [
+          "🐥",
+          "🦃",
+          "🐔",
+          "🐥",
+          "🐥",
+          "🐓",
+          "🐦",
+          "🐔"
+        ],
+        [
+          "🐦",
+          "🪿",
+          "🐦",
+          "🪿",
+          "🐥",
+          "🐔",
+          "🐦",
+          "🐦"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 1000,
+      "q": "",
+      "a": "Row 6, column 3 from the left",
+      "qid": "hidden-1000-922",
+      "type": "grid",
+      "topic": "Aquatic creatures",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🪿",
+          "🪿",
+          "🐦",
+          "🦩",
+          "🦢",
+          "🦢",
+          "🐧",
+          "🦩"
+        ],
+        [
+          "🐦",
+          "🦩",
+          "🪿",
+          "🪿",
+          "🦢",
+          "🪿",
+          "🐧",
+          "🦢"
+        ],
+        [
+          "🦩",
+          "🐦",
+          "🦢",
+          "🪿",
+          "🦩",
+          "🪿",
+          "🐦",
+          "🐦"
+        ],
+        [
+          "🐦",
+          "🐧",
+          "🦢",
+          "🦩",
+          "🐧",
+          "🐦",
+          "🪿",
+          "🦢"
+        ],
+        [
+          "🦩",
+          "🪿",
+          "🐧",
+          "🐧",
+          "🦢",
+          "🦩",
+          "🪿",
+          "🪿"
+        ],
+        [
+          "🐧",
+          "🐦",
+          "🦆",
+          "🦢",
+          "🐦",
+          "🦩",
+          "🦢",
+          "🐧"
+        ],
+        [
+          "🦢",
+          "🦩",
+          "🐦",
+          "🐧",
+          "🐧",
+          "🦢",
+          "🪿",
+          "🦢"
+        ],
+        [
+          "🐦",
+          "🦩",
+          "🪿",
+          "🐧",
+          "🐦",
+          "🐧",
+          "🐧",
+          "🦩"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 1000,
+      "q": "",
+      "a": "Row 5, column 6 from the left",
+      "qid": "hidden-1000-923",
+      "type": "grid",
+      "topic": "Forest animals and birds",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🦉",
+          "🦅",
+          "🦚",
+          "🕊️",
+          "🦚",
+          "🦚",
+          "🦜",
+          "🦉"
+        ],
+        [
+          "🦉",
+          "🐦",
+          "🕊️",
+          "🦉",
+          "🦅",
+          "🦚",
+          "🦜",
+          "🦜"
+        ],
+        [
+          "🦅",
+          "🦉",
+          "🦉",
+          "🐦",
+          "🦜",
+          "🦚",
+          "🦜",
+          "🦅"
+        ],
+        [
+          "🦅",
+          "🦉",
+          "🐦",
+          "🐦",
+          "🕊️",
+          "🕊️",
+          "🦚",
+          "🦜"
+        ],
+        [
+          "🦜",
+          "🐦",
+          "🦅",
+          "🦅",
+          "🕊️",
+          "🦆",
+          "🕊️",
+          "🦚"
+        ],
+        [
+          "🕊️",
+          "🦜",
+          "🦅",
+          "🐦",
+          "🦜",
+          "🦉",
+          "🕊️",
+          "🦅"
+        ],
+        [
+          "🦉",
+          "🐦",
+          "🦅",
+          "🕊️",
+          "🐦",
+          "🦚",
+          "🦚",
+          "🐦"
+        ],
+        [
+          "🦉",
+          "🦜",
+          "🐦",
+          "🕊️",
+          "🦜",
+          "🦚",
+          "🐦",
+          "🦚"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 1000,
+      "q": "",
+      "a": "Row 4, column 2 from the left",
+      "qid": "hidden-1000-924",
+      "type": "grid",
+      "topic": "Garden birds",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🐦",
+          "🐔",
+          "🕊️",
+          "🐦",
+          "🐔",
+          "🐤",
+          "🐔",
+          "🐤"
+        ],
+        [
+          "🐤",
+          "🪿",
+          "🪿",
+          "🐔",
+          "🐦",
+          "🐔",
+          "🕊️",
+          "🐤"
+        ],
+        [
+          "🐦",
+          "🕊️",
+          "🐤",
+          "🕊️",
+          "🪿",
+          "🕊️",
+          "🪿",
+          "🐤"
+        ],
+        [
+          "🐦",
+          "🦆",
+          "🪿",
+          "🐦",
+          "🐦",
+          "🐔",
+          "🕊️",
+          "🪿"
+        ],
+        [
+          "🕊️",
+          "🐦",
+          "🕊️",
+          "🕊️",
+          "🐔",
+          "🐦",
+          "🐦",
+          "🐦"
+        ],
+        [
+          "🪿",
+          "🪿",
+          "🐔",
+          "🐔",
+          "🪿",
+          "🐤",
+          "🪿",
+          "🐔"
+        ],
+        [
+          "🕊️",
+          "🕊️",
+          "🐤",
+          "🕊️",
+          "🐤",
+          "🪿",
+          "🐦",
+          "🪿"
+        ],
+        [
+          "🐤",
+          "🐔",
+          "🐤",
+          "🐔",
+          "🐤",
+          "🐤",
+          "🐔",
+          "🪿"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 1000,
+      "q": "",
+      "a": "Row 1, column 8 from the left",
+      "qid": "hidden-1000-925",
+      "type": "grid",
+      "topic": "Field birds",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🐦",
+          "🕊️",
+          "🐔",
+          "🦃",
+          "🪿",
+          "🦃",
+          "🪿",
+          "🦆"
+        ],
+        [
+          "🕊️",
+          "🐦",
+          "🪿",
+          "🐓",
+          "🪿",
+          "🪿",
+          "🕊️",
+          "🦃"
+        ],
+        [
+          "🐦",
+          "🐓",
+          "🐓",
+          "🐔",
+          "🦃",
+          "🐓",
+          "🐔",
+          "🐦"
+        ],
+        [
+          "🐦",
+          "🐔",
+          "🐓",
+          "🦃",
+          "🐦",
+          "🦃",
+          "🐔",
+          "🐦"
+        ],
+        [
+          "🪿",
+          "🕊️",
+          "🐔",
+          "🐓",
+          "🪿",
+          "🐔",
+          "🐔",
+          "🐦"
+        ],
+        [
+          "🪿",
+          "🕊️",
+          "🕊️",
+          "🪿",
+          "🐔",
+          "🐦",
+          "🦃",
+          "🐔"
+        ],
+        [
+          "🐓",
+          "🕊️",
+          "🦃",
+          "🐦",
+          "🦃",
+          "🪿",
+          "🪿",
+          "🕊️"
+        ],
+        [
+          "🐓",
+          "🐓",
+          "🦃",
+          "🕊️",
+          "🐓",
+          "🦃",
+          "🕊️",
+          "🐦"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 1000,
+      "q": "",
+      "a": "Row 5, column 1 from the left",
+      "qid": "hidden-1000-926",
+      "type": "grid",
+      "topic": "Lake birds",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🦢",
+          "🐦",
+          "🦩",
+          "🪿",
+          "🦢",
+          "🐧",
+          "🐧",
+          "🐦"
+        ],
+        [
+          "🦢",
+          "🦢",
+          "🐧",
+          "🪿",
+          "🪿",
+          "🪿",
+          "🐧",
+          "🦢"
+        ],
+        [
+          "🪿",
+          "🐦",
+          "🐧",
+          "🐧",
+          "🪿",
+          "🦩",
+          "🐦",
+          "🦩"
+        ],
+        [
+          "🦢",
+          "🦩",
+          "🐧",
+          "🪿",
+          "🐦",
+          "🪿",
+          "🦩",
+          "🪿"
+        ],
+        [
+          "🦆",
+          "🐦",
+          "🦢",
+          "🦩",
+          "🪿",
+          "🐦",
+          "🪿",
+          "🦢"
+        ],
+        [
+          "🐦",
+          "🐦",
+          "🦢",
+          "🐧",
+          "🦢",
+          "🦢",
+          "🦩",
+          "🦩"
+        ],
+        [
+          "🦩",
+          "🐧",
+          "🐦",
+          "🐦",
+          "🦩",
+          "🐧",
+          "🦩",
+          "🦩"
+        ],
+        [
+          "🦢",
+          "🐧",
+          "🐦",
+          "🐦",
+          "🪿",
+          "🪿",
+          "🦢",
+          "🐧"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 1000,
+      "q": "",
+      "a": "Row 8, column 5 from the left",
+      "qid": "hidden-1000-927",
+      "type": "grid",
+      "topic": "Mixed birds",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🐦",
+          "🦢",
+          "🐓",
+          "🐦",
+          "🦢",
+          "🦤",
+          "🪿",
+          "🦤"
+        ],
+        [
+          "🦃",
+          "🪿",
+          "🦃",
+          "🐓",
+          "🦢",
+          "🦤",
+          "🦃",
+          "🐓"
+        ],
+        [
+          "🦃",
+          "🦢",
+          "🪿",
+          "🦤",
+          "🪿",
+          "🦤",
+          "🦃",
+          "🦤"
+        ],
+        [
+          "🐓",
+          "🐦",
+          "🦃",
+          "🪿",
+          "🐦",
+          "🦃",
+          "🐦",
+          "🪿"
+        ],
+        [
+          "🪿",
+          "🐓",
+          "🦤",
+          "🐓",
+          "🐓",
+          "🦢",
+          "🐦",
+          "🐓"
+        ],
+        [
+          "🐦",
+          "🦤",
+          "🦃",
+          "🐓",
+          "🐦",
+          "🦃",
+          "🪿",
+          "🦤"
+        ],
+        [
+          "🦤",
+          "🪿",
+          "🦢",
+          "🦤",
+          "🦢",
+          "🪿",
+          "🦢",
+          "🐦"
+        ],
+        [
+          "🐦",
+          "🦃",
+          "🦢",
+          "🐓",
+          "🦆",
+          "🐦",
+          "🦃",
+          "🦢"
+        ]
+      ],
+      "alt": []
+    },
+    {
+      "p": 1000,
+      "q": "",
+      "a": "Row 1, column 1 from the left",
+      "qid": "hidden-1000-928",
+      "type": "grid",
+      "topic": "Birds among mammals",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/hidden-boards-proof.json",
+      "target": "🦆",
+      "grid": [
+        [
+          "🦆",
+          "🐦",
+          "🪿",
+          "🦅",
+          "🦤",
+          "🐦",
+          "🦃",
+          "🐦"
+        ],
+        [
+          "🦃",
+          "🪿",
+          "🐦",
+          "🦤",
+          "🪿",
+          "🦃",
+          "🦤",
+          "🦅"
+        ],
+        [
+          "🦤",
+          "🦉",
+          "🦅",
+          "🦤",
+          "🦤",
+          "🦤",
+          "🦅",
+          "🦉"
+        ],
+        [
+          "🦃",
+          "🦅",
+          "🦤",
+          "🦃",
+          "🪿",
+          "🐦",
+          "🪿",
+          "🦅"
+        ],
+        [
+          "🦉",
+          "🐦",
+          "🦃",
+          "🦃",
+          "🦉",
+          "🦃",
+          "🦉",
+          "🐦"
+        ],
+        [
+          "🦅",
+          "🦅",
+          "🦉",
+          "🦉",
+          "🪿",
+          "🦤",
+          "🐦",
+          "🦅"
+        ],
+        [
+          "🦉",
+          "🪿",
+          "🦉",
+          "🪿",
+          "🪿",
+          "🦉",
+          "🐦",
+          "🐦"
+        ],
+        [
+          "🦤",
+          "🪿",
+          "🦃",
+          "🦉",
+          "🦅",
+          "🦤",
+          "🦅",
+          "🦃"
+        ]
+      ],
+      "alt": []
+    }
+  ]
+}

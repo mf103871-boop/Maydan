@@ -1,3 +1,4 @@
+import { tr } from '../../shared/i18n/core.js';
 import React, { useRef, useState } from 'react';
 import { Button, Modal } from '../../shared/ui/components.jsx';
 import { usePlusResource, plusError } from '../../plus/usePlusAccount.js';
@@ -65,15 +66,15 @@ export function AccountProgressionProfile({ profile, profiles, owner, title, fea
         body: { selection: { frameId }, revision: wardrobe.data.revision },
       });
       if (result.preferred?.frameId !== frameId || (result.effective?.frameId || null) !== frameId) {
-        setNotice({ error: true, text: 'تعذّر تجهيز هذا الإطار بحقوق حسابك الحالية.' });
+        setNotice({ error: true, text: tr("تعذّر تجهيز هذا الإطار بحقوق حسابك الحالية.") });
         return;
       }
       setPreviousFrame(undo ? undefined : equippedId);
       await Promise.allSettled([wardrobe.reload(), profiles.loadProfile(), wardrobe.account.refresh()]);
-      setNotice({ text: undo ? 'عاد الإطار السابق.' : 'تجهّز الإطار في بروفايلك.' });
+      setNotice({ text: undo ? tr("عاد الإطار السابق.") : tr("تجهّز الإطار في بروفايلك.") });
     } catch (error) {
       if (error.code === 'STALE_ACCOUNT') return;
-      setNotice({ error: true, text: error.code === 'NOT_EARNED' ? 'هذا الإطار غير مملوك بعد.' : plusError(error) });
+      setNotice({ error: true, text: error.code === 'NOT_EARNED' ? tr("هذا الإطار غير مملوك بعد.") : plusError(error) });
       if (error.code === 'CONFLICT') await wardrobe.reload();
     } finally {
       savingRef.current = false;
@@ -90,29 +91,29 @@ export function AccountProgressionProfile({ profile, profiles, owner, title, fea
       onCatalog={() => openWardrobe()} onReward={openWardrobe} onCustomize={onCustomize}
       onAchievement={badge => setDialog({ kind: 'achievement', item: badge })}
       onMastery={track => setDialog({ kind: 'mastery', item: track })} />
-    {owner && dialog?.kind === 'wardrobe' && <Modal title="خزانة المقتنيات" placement="bottom" onClose={close}>
+    {owner && dialog?.kind === 'wardrobe' && <Modal title={tr("خزانة المقتنيات")} placement="bottom" onClose={close}>
       {notice && <p role={notice.error ? 'alert' : 'status'}>{notice.text}</p>}
-      {wardrobe.error && <p role="alert">تعذّر تحديث حقوق الإطار. <Button variant="ghost" onClick={wardrobe.reload}>إعادة التحميل</Button></p>}
+      {wardrobe.error && <p role="alert">{tr("تعذّر تحديث حقوق الإطار. ")}<Button variant="ghost" onClick={wardrobe.reload}>{tr("إعادة التحميل")}</Button></p>}
       <div hidden={Boolean(selected)}><ProgressionCatalog items={items} portrait={unframedPortrait} onSelect={item => setChosen(item.id)} /></div>
       {selected && <div className="stack pc-wardrobe-preview">
         <ProgressionPortrait className="pc-catalog-art" name={profile.name} portrait={unframedPortrait} frameId={selected.id} />
         <strong>{selected.label}</strong>
-        <p>المستوى {progressionNumber(selected.level)} · مكافأة دائمة من اللعب</p>
-        <p>{selected.state === 'locked' ? (selected.level === 1 ? 'مقفل حتى أول جلسة مؤهلة' : 'مقفل حتى الوصول إلى المستوى ' + progressionNumber(selected.level)) : selected.state === 'equipped' ? 'مجهّز الآن' : 'مملوك'}</p>
-        {selected.grantedAt && <time dateTime={new Date(selected.grantedAt).toISOString()}>تاريخ الحصول {new Date(selected.grantedAt).toLocaleDateString('ar-JO')}</time>}
-        {selected.state === 'owned' && <Button variant="accent" disabled={!wardrobe.data || saving} loading={saving} onClick={() => apply(selected.id)}>تجهيز الإطار</Button>}
-        <Button variant="ghost" disabled={saving} onClick={() => setChosen(null)}>العودة إلى المقتنيات</Button>
+        <p>{tr("المستوى ")}{progressionNumber(selected.level)}{tr(" · مكافأة دائمة من اللعب")}</p>
+        <p>{selected.state === 'locked' ? (selected.level === 1 ? tr("مقفل حتى أول جلسة مؤهلة") : tr("مقفل حتى الوصول إلى المستوى ") + progressionNumber(selected.level)) : selected.state === 'equipped' ? tr("مجهّز الآن") : tr("مملوك")}</p>
+        {selected.grantedAt && <time dateTime={new Date(selected.grantedAt).toISOString()}>{tr("تاريخ الحصول ")}{new Date(selected.grantedAt).toLocaleDateString('ar-JO')}</time>}
+        {selected.state === 'owned' && <Button variant="accent" disabled={!wardrobe.data || saving} loading={saving} onClick={() => apply(selected.id)}>{tr("تجهيز الإطار")}</Button>}
+        <Button variant="ghost" disabled={saving} onClick={() => setChosen(null)}>{tr("العودة إلى المقتنيات")}</Button>
       </div>}
-      {previousFrame !== undefined && previousFrame !== equippedId && <Button disabled={!wardrobe.data || saving} variant="ghost" onClick={() => apply(previousFrame, true)}>إعادة الإطار السابق</Button>}
+      {previousFrame !== undefined && previousFrame !== equippedId && <Button disabled={!wardrobe.data || saving} variant="ghost" onClick={() => apply(previousFrame, true)}>{tr("إعادة الإطار السابق")}</Button>}
     </Modal>}
     {dialog?.kind === 'achievement' && <Modal title={dialog.item.label} onClose={close} placement="bottom">
       <p>{dialog.item.description}</p>
-      <p>إنجاز مكتسب</p>
-      {owner && <Button onClick={() => { close(); onCustomize?.(); }}>ترتيب الشارات واختيار اللقب</Button>}
+      <p>{tr("إنجاز مكتسب")}</p>
+      {owner && <Button onClick={() => { close(); onCustomize?.(); }}>{tr("ترتيب الشارات واختيار اللقب")}</Button>}
     </Modal>}
-    {owner && dialog?.kind === 'mastery' && <Modal title="مسار الإتقان" onClose={close} placement="bottom">
-      <p>الإتقان {progressionNumber(dialog.item.grade)} من {progressionNumber(dialog.item.maxGrade)}.</p>
-      <p>{progressionNumber(dialog.item.completed)} مباراة مؤهلة في هذا المسار.</p>
+    {owner && dialog?.kind === 'mastery' && <Modal title={tr("مسار الإتقان")} onClose={close} placement="bottom">
+      <p>{tr("الإتقان ")}{progressionNumber(dialog.item.grade)}{tr(" من ")}{progressionNumber(dialog.item.maxGrade)}.</p>
+      <p>{progressionNumber(dialog.item.completed)}{tr(" مباراة مؤهلة في هذا المسار.")}</p>
     </Modal>}
   </>;
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Maydan (Preview)</string>
+    <string name="offline_preview">Local Android preview · Play on one device</string>
+    <string name="offline_navigation">This link is unavailable in the local preview.</string>
+    <string name="webview_update">Update Android System WebView, then reopen Maydan.</string>
+</resources>

@@ -1,0 +1,558 @@
+{
+  "id": "ramadan",
+  "name": "Ramadan",
+  "icon": "🌙",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "Customs and traditions",
+      "q": "What is the Gulf tradition of a late-night social meal during Ramadan called?",
+      "a": "Ghabga",
+      "alt": [
+        "Ghabgah",
+        "Ghabqa"
+      ],
+      "sourceUrl": "https://visitqatar.com/intl-en/about-qatar/traditions/ramadan",
+      "verified": true,
+      "qid": "ramadan-200-911",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "topic": "The iftar table",
+      "q": "Which Gulf dish combines pounded wheat and meat and is especially popular during Ramadan?",
+      "a": "Harees",
+      "alt": [
+        "Haris"
+      ],
+      "sourceUrl": "https://visitqatar.com/intl-en/about-qatar/traditions/ramadan",
+      "verified": true,
+      "qid": "ramadan-200-912",
+      "difficultyTarget": 0.8,
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 200,
+      "topic": "Sweets and drinks",
+      "q": "Which sour brown Ramadan drink is made by soaking the pulp of a pod-like fruit?",
+      "a": "Tamarind",
+      "sourceUrl": "https://gate.ahram.org.eg/News/5483552.aspx",
+      "verified": true,
+      "qid": "ramadan-200-913",
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Tamarind juice"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "What is the Arabic name for the daily timetable of fasting hours throughout Ramadan?",
+      "a": "Imsakiyah",
+      "alt": [
+        "Imsakiya"
+      ],
+      "topic": "Customs and traditions",
+      "verified": true,
+      "qid": "ramadan-200-916",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://cairo.gov.eg/ar/more/seasonal-events/ramadan/"
+    },
+    {
+      "p": 200,
+      "topic": "Texts and meanings",
+      "q": "Which Quranic surah mentions Ramadan by name?",
+      "a": "Al-Baqarah",
+      "alt": [
+        "Surah Al-Baqarah"
+      ],
+      "sourceUrl": "https://quran.com/al-baqarah/185",
+      "verified": true,
+      "qid": "ramadan-200-917",
+      "difficultyTarget": 0.8,
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 200,
+      "topic": "The iftar table",
+      "q": "Which Moroccan dish shares its name with an earthenware pot with a conical lid?",
+      "a": "Tagine",
+      "alt": [
+        "Tajine"
+      ],
+      "sourceUrl": "https://www.visitmorocco.com/sites/default/files/atoms/files/maroc-ang.pdf",
+      "verified": true,
+      "qid": "ramadan-200-918",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "q": "Which fried Gulf sweets are coated in syrup and served during Ramadan nights?",
+      "a": "Luqaimat",
+      "alt": [
+        "Luqaymat",
+        "Luqmat al-Qadi"
+      ],
+      "topic": "Sweets and drinks",
+      "verified": true,
+      "qid": "ramadan-200-921",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://visitqatar.com/intl-en/about-qatar/traditions/ramadan",
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 200,
+      "topic": "The Islamic calendar",
+      "q": "In which direction does the young crescent moon appear after sunset?",
+      "a": "West",
+      "sourceUrl": "https://aa.usno.navy.mil/faq/crescent",
+      "verified": true,
+      "qid": "ramadan-200-922",
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Western sky"
+      ],
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 400,
+      "topic": "Ramadan vocabulary",
+      "q": "What Arabic word names the pre-dawn time from which the name of Ramadan's late-night meal derives?",
+      "a": "Sahar",
+      "sourceUrl": "https://saudipedia.com/شهر-رمضان",
+      "verified": true,
+      "qid": "ramadan-400-911",
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Al-Sahar"
+      ]
+    },
+    {
+      "p": 400,
+      "topic": "Mosques and cities",
+      "q": "What is the historic great mosque in Damascus built by the Umayyads called?",
+      "a": "Umayyad Mosque",
+      "alt": [
+        "Great Mosque of Damascus"
+      ],
+      "sourceUrl": "https://whc.unesco.org/en/list/20/",
+      "verified": true,
+      "qid": "ramadan-400-912",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "Ramadan vocabulary",
+      "q": "What does the name Ramadan refer to in its Arabic etymology?",
+      "a": "Intense heat",
+      "alt": [
+        "Scorching heat"
+      ],
+      "sourceUrl": "https://saudipedia.com/شهر-رمضان",
+      "verified": true,
+      "qid": "ramadan-400-913",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "The iftar table",
+      "q": "Which thin, porous Yemeni bread is soaked in yogurt?",
+      "a": "Lahoh",
+      "alt": [
+        "Lahouh"
+      ],
+      "sourceUrl": "https://reefyemen.net/%D8%A7%D9%84%D9%84%D8%AD%D9%88%D8%AD-%D8%A3%D9%8A%D9%82%D9%88%D9%86%D8%A9-%D8%A7%D9%84%D9%85%D8%A7%D8%A6%D8%AF%D8%A9-%D8%A7%D9%84%D8%B1%D9%85%D8%B6%D8%A7%D9%86%D9%8A%D8%A9-%D9%81",
+      "verified": true,
+      "qid": "ramadan-400-914",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "Which Ramadan dish consists of thin bread soaked in meat or vegetable broth?",
+      "a": "Thareed",
+      "topic": "The iftar table",
+      "sourceUrl": "https://visitqatar.com/intl-en/about-qatar/traditions/ramadan",
+      "alt": [
+        "Tharid"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 400,
+      "qid": "ramadan-400-918",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "topic": "The Islamic calendar",
+      "q": "Why does Ramadan move through the Gregorian calendar rather than stay in one fixed month?",
+      "a": "The lunar year is shorter",
+      "alt": [
+        "Lunar years are shorter",
+        "The Islamic calendar is lunar"
+      ],
+      "sourceUrl": [
+        "https://aa.usno.navy.mil/downloads/c15_usb_online.pdf",
+        "https://aa.usno.navy.mil/faq/calendars"
+      ],
+      "verified": true,
+      "qid": "ramadan-400-921",
+      "difficultyTarget": 0.6,
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 400,
+      "topic": "Customs and traditions",
+      "q": "What is Qatar's children's celebration in the middle of Ramadan called?",
+      "a": "Garangao",
+      "sourceUrl": "https://visitqatar.com/intl-en/about-qatar/traditions/ramadan",
+      "verified": true,
+      "qid": "ramadan-400-922",
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Garangau",
+        "Garangao Night"
+      ],
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 400,
+      "topic": "Sweets and drinks",
+      "q": "Which Moroccan sweet is traditionally served with soup at iftar?",
+      "a": "Chebakia",
+      "sourceUrl": "https://www.visitmorocco.com/en/travel-info/food-drinks",
+      "verified": true,
+      "qid": "ramadan-400-923",
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Shebakia"
+      ],
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 600,
+      "topic": "Mosques and cities",
+      "q": "Which Egyptian industrial city is named after a day of Ramadan?",
+      "a": "10th of Ramadan City",
+      "sourceUrl": "https://www.newcities.gov.eg/know_cities/Tenth_Ramadan/default.aspx",
+      "verified": true,
+      "qid": "ramadan-600-912",
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Tenth of Ramadan City"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "What is the Baghdad Ramadan tradition in which children go around collecting sweets called?",
+      "a": "Majina",
+      "alt": [
+        "Ma Jina"
+      ],
+      "topic": "Customs and traditions",
+      "verified": true,
+      "qid": "ramadan-600-913",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://ina.iq/ar/art/205796--.html"
+    },
+    {
+      "p": 600,
+      "topic": "Ramadan vocabulary",
+      "q": "Give a valid Arabic plural of the word Ramadan, using Latin letters.",
+      "a": "Ramadanat",
+      "alt": [
+        "Ramadanun",
+        "Armida",
+        "Armidaa",
+        "Armadā'",
+        "Ramadin"
+      ],
+      "sourceUrl": "https://www.arabicacademy.gov.eg/ar/محرك-البحث/رَمَضَانُ?exact_search=true",
+      "verified": true,
+      "qid": "ramadan-600-914",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "What lunar phase occurs when the Moon and Sun have the same ecliptic longitude, before the crescent appears?",
+      "a": "New moon",
+      "alt": [
+        "Conjunction",
+        "Lunar conjunction"
+      ],
+      "topic": "The Islamic calendar",
+      "verified": true,
+      "qid": "ramadan-600-917",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://aa.usno.navy.mil/faq/crescent"
+    },
+    {
+      "q": "What round Turkish bread, often topped with sesame seeds, is especially associated with Ramadan?",
+      "a": "Ramazan pidesi",
+      "topic": "The iftar table",
+      "sourceUrl": "https://goturkiye.com/halaltourism/ramadan-and-ramadan-feasts",
+      "alt": [
+        "Ramadan pide",
+        "Pide"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 600,
+      "qid": "ramadan-600-918",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "topic": "Events in Ramadan",
+      "q": "In which battle did the Mamluks defeat the Mongols during Ramadan?",
+      "a": "Ain Jalut",
+      "sourceUrl": "https://ramadan.dar-alifta.org/event",
+      "verified": true,
+      "qid": "ramadan-600-921",
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Ayn Jalut"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "What Qatari tradition before Ramadan involves neighbors exchanging dishes of food?",
+      "a": "Al Naflah",
+      "alt": [
+        "Naflah",
+        "Al Nafla"
+      ],
+      "topic": "Customs and traditions",
+      "verified": true,
+      "qid": "ramadan-600-922",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://visitqatar.com/intl-en/about-qatar/traditions/ramadan",
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 600,
+      "topic": "Folk arts",
+      "q": "What type of traditional Turkish Ramadan performance projects puppet silhouettes onto a screen?",
+      "a": "Shadow theater",
+      "alt": [
+        "Shadow puppetry",
+        "Shadow theatre"
+      ],
+      "sourceUrl": "https://goturkiye.com/halaltourism/ramadan-and-ramadan-feasts",
+      "verified": true,
+      "qid": "ramadan-600-923",
+      "difficultyTarget": 0.4,
+      "verifiedAt": "2026-10-08"
+    },
+    {
+      "p": 800,
+      "topic": "Customs and traditions",
+      "q": "What is Oman's children's celebration in the middle of Ramadan called?",
+      "a": "Qaranqasho",
+      "alt": [
+        "Qarankasho",
+        "Garangashoo"
+      ],
+      "sourceUrl": "https://www.omaninfo.om/images/library/file/Book736319.pdf",
+      "verified": true,
+      "qid": "ramadan-800-911",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "Sweets and drinks",
+      "q": "What is the Nubian name for the sour brown tamarind drink popular during Ramadan?",
+      "a": "Aradeeb",
+      "sourceUrl": "https://raseef22.net/article/1092704-الكشك-الأبريه-السوبيا-القصب-العرديب-عصائر-رمضانية-بعدد-الأقاليم-المصرية",
+      "verified": true,
+      "qid": "ramadan-800-912",
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Ardeeb",
+        "Ardib"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "What ground-okra ingredient gives Sudanese stews their sticky texture?",
+      "a": "Waika",
+      "alt": [
+        "Weika",
+        "Weka"
+      ],
+      "topic": "The iftar table",
+      "verified": true,
+      "qid": "ramadan-800-913",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://qna.org.qa/ar-QA/news/news-details?date=4%2F05%2F2022&id=0013-عيد-الفطر-في-السودان-حرص-على-بياض-الثياب-ونقاء-السريرة"
+    },
+    {
+      "p": 800,
+      "topic": "Customs and traditions",
+      "q": "What black, gold-decorated head covering do girls wear at Qatar's mid-Ramadan celebration?",
+      "a": "Bukhnaq",
+      "alt": [
+        "Bukhnag",
+        "Al Bukhnaq"
+      ],
+      "sourceUrl": "https://qna.org.qa/ar-QA/News-Area/Special-News/2023-3/27/0033-الشعوب-العربية-تستقبل-شهر-الصيام-بالعبادات-والزينات-والتهاني--تقرير",
+      "verified": true,
+      "qid": "ramadan-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "Events in Ramadan",
+      "q": "Which Central Asian country joined Azerbaijan, Iran, and Türkiye in UNESCO's inscription of iftar traditions?",
+      "a": "Uzbekistan",
+      "sourceUrl": "https://ich.unesco.org/en/RL/iftar-eftari-iftar-iftor-and-its-socio-cultural-traditions-01984",
+      "verified": true,
+      "qid": "ramadan-800-916",
+      "difficultyTarget": 0.25,
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "What astronomical term means the angular distance between the centers of the Moon and Sun?",
+      "a": "Elongation",
+      "alt": [
+        "Lunar elongation",
+        "Angular elongation"
+      ],
+      "topic": "The Islamic calendar",
+      "verified": true,
+      "qid": "ramadan-800-917",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://aa.usno.navy.mil/faq/crescent"
+    },
+    {
+      "p": 800,
+      "q": "What wooden tool traditionally pounds wheat and meat when making harees in Al-Ahsa?",
+      "a": "Midhrabah",
+      "alt": [
+        "Midhraba",
+        "Madraba"
+      ],
+      "topic": "The iftar table",
+      "verified": true,
+      "qid": "ramadan-800-918",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://saudipedia.com/الهريس"
+    },
+    {
+      "p": 800,
+      "q": "Which honey-coated sweet from Kairouan is sold during Ramadan in Tunisia?",
+      "a": "Makroudh",
+      "alt": [
+        "Makroud",
+        "Makrout"
+      ],
+      "topic": "Sweets and drinks",
+      "verified": true,
+      "qid": "ramadan-800-921",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.discovertunisia.com/decouvrir/autour-de-kairouan"
+    },
+    {
+      "p": 1000,
+      "q": "Which fried sweet is especially associated with Béja, Tunisia, during Ramadan?",
+      "a": "Mkharek",
+      "alt": [
+        "Mkhariq",
+        "Mukhariq"
+      ],
+      "topic": "Sweets and drinks",
+      "verified": true,
+      "qid": "ramadan-1000-911",
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://ar.tunisienumerique.com/%D9%85%D9%86-%D8%A7%D9%84%D9%85%D8%AE%D8%A7%D8%B1%D9%82-%D9%88%D8%A7%D9%84%D8%B2%D9%84%D8%A7%D8%A8%D9%8A%D8%A9-%D8%A5%D9%84%D9%89-%D9%85%D8%AE%D8%A7%D8%B1%D9%82-%D8%A8%D9%82%D9%84%D8%A7%D9%88/"
+    },
+    {
+      "p": 1000,
+      "q": "Which Egyptian Ramadan lantern design was named after a legislative chamber?",
+      "a": "Parliament",
+      "topic": "Customs and traditions",
+      "verified": true,
+      "qid": "ramadan-1000-912",
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://www.cairo.gov.eg/ar/culture/cultural-variety/ramadan-lantern/",
+      "alt": [
+        "Al-Barlaman",
+        "Barlaman"
+      ]
+    },
+    {
+      "q": "What are the illuminated inscriptions displayed at Turkish mosques during Ramadan called?",
+      "a": "Mahya",
+      "topic": "Folk arts",
+      "sourceUrl": "https://goturkiye.com/halaltourism/ramadan-and-ramadan-feasts",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "ramadan-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Turkish Ramadan dessert uses rice-starch sheets, milk, rose water, and nuts?",
+      "a": "Güllaç",
+      "topic": "Sweets and drinks",
+      "sourceUrl": "https://goturkiye.com/halaltourism/ramadan-and-ramadan-feasts",
+      "alt": [
+        "Gullac"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-10-08",
+      "p": 1000,
+      "qid": "ramadan-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What is the Javanese tradition of bathing in springs in preparation for Ramadan called?",
+      "a": "Padusan",
+      "topic": "Customs and traditions",
+      "sourceUrl": "https://www.indonesia.travel/nl/en/muslim-friendly-travel/events/padusan",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "ramadan-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which traditional porridge is distributed by Malaysian community initiatives during Ramadan?",
+      "a": "Bubur lambuk",
+      "topic": "The iftar table",
+      "sourceUrl": "https://www.matic.gov.my/en/imedia/news/santai-matic-berlambuk-4-0",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "ramadan-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Who is Karagöz's companion in Turkish shadow-puppet performances associated with Ramadan nights?",
+      "a": "Hacivat",
+      "topic": "Folk arts",
+      "sourceUrl": "https://goturkiye.com/halaltourism/ramadan-and-ramadan-feasts",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-10-08",
+      "p": 1000,
+      "qid": "ramadan-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What is the approximately 29.53-day cycle from one new moon to the next called?",
+      "a": "Synodic month",
+      "topic": "The Islamic calendar",
+      "sourceUrl": "https://eclipse.gsfc.nasa.gov/SEsaros/SEperiodicity.html",
+      "alt": [
+        "Lunar synodic month"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "ramadan-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

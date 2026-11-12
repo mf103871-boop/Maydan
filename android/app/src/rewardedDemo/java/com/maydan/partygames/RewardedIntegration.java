@@ -63,7 +63,7 @@ final class RewardedIntegration {
         this.webView = webView;
         consent = UserMessagingPlatform.getConsentInformation(activity);
         privacy = new Button(activity);
-        privacy.setText(R.string.ad_privacy_options);
+        privacy.setText(NativeLocalization.text(activity, R.string.ad_privacy_options));
         privacy.setVisibility(View.GONE);
         privacy.setOnClickListener(view -> showPrivacy(null, null));
         root.addView(privacy);
@@ -78,6 +78,10 @@ final class RewardedIntegration {
         consent.requestConsentInfoUpdate(activity, new ConsentRequestParameters.Builder().build(),
             () -> UserMessagingPlatform.loadAndShowConsentFormIfRequired(activity, error -> consentReady()),
             error -> consentReady());
+    }
+
+    void refreshLocalization() {
+        privacy.setText(NativeLocalization.text(activity, R.string.ad_privacy_options));
     }
 
     private void consentReady() {

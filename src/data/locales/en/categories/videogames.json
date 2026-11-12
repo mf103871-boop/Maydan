@@ -1,0 +1,503 @@
+{
+  "id": "videogames",
+  "name": "Video Games",
+  "icon": "🎮",
+  "qs": [
+    {
+      "p": 200,
+      "q": "In The Legend of Zelda, which hero bears the Triforce of Courage?",
+      "a": "Link",
+      "qid": "videogames-200-911",
+      "topic": "Characters",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://zelda.nintendo.com/about/",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "q": "What is the name of the bounty hunter controlled by the player in Metroid?",
+      "a": "Samus Aran",
+      "qid": "videogames-200-912",
+      "topic": "Characters",
+      "verified": true,
+      "alt": [
+        "Samus"
+      ],
+      "sourceUrl": "https://www.nintendo.com/us/store/products/metroid-dread-switch/",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "q": "In Minecraft, what item can you throw to teleport to where it lands?",
+      "a": "An Ender Pearl",
+      "qid": "videogames-200-913",
+      "topic": "Items and resources",
+      "verified": true,
+      "alt": [
+        "Ender Pearl"
+      ],
+      "sourceUrl": "https://www.minecraft.net/en-us/article/ender-pearl",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "q": "In League of Legends, which central structure must be destroyed to win?",
+      "a": "The Nexus",
+      "qid": "videogames-200-914",
+      "topic": "Winning rules",
+      "verified": true,
+      "alt": [
+        "Nexus"
+      ],
+      "sourceUrl": "https://www.leagueoflegends.com/en-sg/how-to-play/",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "q": "In Super Mario Odyssey, which hat-like companion lets Mario capture enemies?",
+      "a": "Cappy",
+      "qid": "videogames-200-915",
+      "topic": "Abilities and transformations",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://supermario.nintendo.com/mario-cappy/",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "q": "In Pokémon: Let's Go, in which region does the trainer's journey begin?",
+      "a": "Kanto",
+      "qid": "videogames-200-916",
+      "topic": "Places and worlds",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://pokemonletsgo.pokemon.com/en-us/kanto-region/",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "q": "In Minecraft, what material forms the frame of a Nether portal?",
+      "a": "Obsidian",
+      "qid": "videogames-200-917",
+      "topic": "Items and resources",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://www.minecraft.net/en-us/article/dragon-s-breath",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "q": "In Among Us, which crewmate role can enter vents like an impostor?",
+      "a": "Engineer",
+      "qid": "videogames-200-918",
+      "topic": "Movement mechanics",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://www.innersloth.com/new-roles-cosmicubes-out-now-emergency-meeting-33/",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 400,
+      "q": "Which Final Fantasy VII protagonist carries the huge Buster Sword?",
+      "a": "Cloud Strife",
+      "qid": "videogames-400-911",
+      "topic": "Characters",
+      "verified": true,
+      "alt": [
+        "Cloud"
+      ],
+      "sourceUrl": "https://na.store.square-enix-games.com/final-fantasy-vii-bring-arts-action-figure---cloud-strife-digital-plus-edition",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "q": "In Animal Crossing: New Horizons, whom do you speak to about repaying and expanding your home?",
+      "a": "Tom Nook",
+      "qid": "videogames-400-912",
+      "topic": "Characters",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://play.nintendo.com/news-tips/tips-tricks/animal-crossing-new-horizons-discover-tips/",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "q": "In Fortnite Zero Build, what additional protection layer regenerates automatically?",
+      "a": "Overshield",
+      "qid": "videogames-400-913",
+      "topic": "Abilities and transformations",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://www.fortnite.com/news/fortnite-zero-build-take-the-offensive-in-this-no-build-battle-royale",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "q": "In Hollow Knight, what ruined underground kingdom does the hero explore?",
+      "a": "Hallownest",
+      "qid": "videogames-400-914",
+      "topic": "Places and worlds",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://www.teamcherry.com.au/blog/hollow-knight-then-and-now",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "q": "In Portal, which organization owns the testing laboratories?",
+      "a": "Aperture Science",
+      "qid": "videogames-400-915",
+      "topic": "Places and worlds",
+      "verified": true,
+      "alt": [
+        "Aperture"
+      ],
+      "sourceUrl": "https://store.steampowered.com/app/400/Portal?l=english",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "q": "In Mario Kart 8 Deluxe, which spiked item pursues the racer in first place?",
+      "a": "Spiny Shell",
+      "qid": "videogames-400-916",
+      "topic": "Items and resources",
+      "verified": true,
+      "alt": [
+        "Blue Shell"
+      ],
+      "sourceUrl": "https://www.nintendo.com/jp/ichikara/aabpa/index_en.html",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "q": "In League of Legends, which monster grants a buff that strengthens nearby allied minions when defeated?",
+      "a": "Baron Nashor",
+      "qid": "videogames-400-917",
+      "topic": "Enemies and dangers",
+      "verified": true,
+      "alt": [
+        "Baron"
+      ],
+      "sourceUrl": "https://www.leagueoflegends.com/en-sg/how-to-play/",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "q": "In Portal 2, which artificial intelligence resumes testing the heroine after guiding her in the first game?",
+      "a": "GLaDOS",
+      "qid": "videogames-400-918",
+      "topic": "Enemies and dangers",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://store.steampowered.com/app/620/Portal_2/",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 600,
+      "q": "In Minecraft, what material repairs elytra when used at an anvil?",
+      "a": "Phantom membrane",
+      "qid": "videogames-600-911",
+      "topic": "Items and resources",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://www.minecraft.net/en-us/article/taking-inventory--phantom-membrane",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "In Minecraft, what ingredient turns a splash potion into a lingering potion?",
+      "a": "Dragon's Breath",
+      "qid": "videogames-600-912",
+      "topic": "Items and resources",
+      "verified": true,
+      "alt": [
+        "Dragon Breath"
+      ],
+      "sourceUrl": "https://www.minecraft.net/en-us/article/dragon-s-breath",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "In The Legend of Zelda: Majora's Mask, what world is threatened by the falling Moon?",
+      "a": "Termina",
+      "qid": "videogames-600-913",
+      "topic": "Places and worlds",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://www.nintendo.com/en-gb/Games/Nintendo-64/The-Legend-of-Zelda-Majora-s-Mask-269525.html",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "What is the island group where Cuphead's adventure takes place called?",
+      "a": "The Inkwell Isles",
+      "qid": "videogames-600-914",
+      "topic": "Places and worlds",
+      "verified": true,
+      "alt": [
+        "Inkwell Isles"
+      ],
+      "sourceUrl": "https://studiomdhr.com/about-us/",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "In Tetris Effect: Connected, what feature temporarily stops time and falling blocks?",
+      "a": "Zone",
+      "qid": "videogames-600-915",
+      "topic": "Puzzles and challenges",
+      "verified": true,
+      "alt": [
+        "The Zone"
+      ],
+      "sourceUrl": "https://tetris.com/news/tetris-effect-connected-is-now-available-on-ps5-and-playstation-vr2",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "In Sonic games, what is Tails's real name?",
+      "a": "Miles Prower",
+      "qid": "videogames-600-916",
+      "topic": "Characters",
+      "verified": true,
+      "alt": [],
+      "sourceUrl": "https://asia.sega.com/SonicSuperStars/en/character/",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "Which fairy accompanies and guides the hero in The Legend of Zelda: Ocarina of Time?",
+      "a": "Navi",
+      "topic": "Characters",
+      "verified": true,
+      "sourceUrl": "https://www.nintendo.com/jp/character/zelda/en/history/index.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 600,
+      "qid": "videogames-600-917",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "Which fungus causes the fictional infection in The Last of Us?",
+      "a": "Cordyceps",
+      "topic": "Enemies and dangers",
+      "verified": true,
+      "sourceUrl": "https://www.playstation.com/es-es/the-last-of-us/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 600,
+      "qid": "videogames-600-918",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "What are the names of the dwarf blacksmith brothers who help Kratos in God of War (2018)?",
+      "a": "Brok and Sindri",
+      "topic": "Characters",
+      "verified": true,
+      "sourceUrl": "https://blog.playstation.com/?p=368052",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Sindri and Brok"
+      ],
+      "p": 800,
+      "qid": "videogames-800-911",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "What underwater city is the setting of the first BioShock?",
+      "a": "Rapture",
+      "topic": "Places and worlds",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Rapture_%28BioShock%29",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "videogames-800-912",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "What building houses the Federal Bureau of Control in Control?",
+      "a": "The Oldest House",
+      "topic": "Places and worlds",
+      "verified": true,
+      "sourceUrl": "https://control.fandom.com/wiki/Welcome_to_the_Oldest_House",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Oldest House"
+      ],
+      "p": 800,
+      "qid": "videogames-800-913",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "What is the time-slowing aiming ability in Red Dead Redemption's story mode called?",
+      "a": "Dead Eye",
+      "topic": "Abilities and transformations",
+      "verified": true,
+      "sourceUrl": "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/manuals/en_us/RDRD_UN_PS3_Manual_M01.pdf",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "videogames-800-914",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "What is the abbreviation for Fallout's Vault-Tec assisted targeting system?",
+      "a": "VATS",
+      "topic": "Puzzles and challenges",
+      "verified": true,
+      "sourceUrl": "https://fallout.bethesda.net/en-US/news/what-makes-fallout-4-vr-s-p-e-c-i-a-l",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "V.A.T.S."
+      ],
+      "p": 800,
+      "qid": "videogames-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which Dark Souls knight seeks his own sun and is associated with praising the sun?",
+      "a": "Solaire of Astora",
+      "topic": "Characters",
+      "verified": true,
+      "sourceUrl": "https://www.pcgamer.com/why-we-praise-the-sun-the-story-of-dark-souls-most-famous-gesture/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Solaire"
+      ],
+      "p": 800,
+      "qid": "videogames-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "What resource does Hollow Knight's hero gain by striking enemies and use for healing and spells?",
+      "a": "Soul",
+      "topic": "Items and resources",
+      "verified": true,
+      "sourceUrl": "https://hollowknight.wiki/w/Soul",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "videogames-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "What device does Aloy wear near her ear to analyze machines and reveal weaknesses in Horizon?",
+      "a": "Focus",
+      "topic": "Items and resources",
+      "verified": true,
+      "sourceUrl": "https://horizon.fandom.com/wiki/Focus",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "The Focus"
+      ],
+      "p": 800,
+      "qid": "videogames-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "In which city is Martinaise, the district investigated in Disco Elysium?",
+      "a": "Revachol",
+      "topic": "Places and worlds",
+      "verified": true,
+      "sourceUrl": "https://discoelysium.com/devblog/2019/09/24/disco-elysium-is-a-colossal-game",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "videogames-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What is the designation of the planet in Subnautica and Below Zero?",
+      "a": "4546B",
+      "topic": "Places and worlds",
+      "verified": true,
+      "sourceUrl": "https://unknownworlds.com/en/news/below-zero-lost-ship-update",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "videogames-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "How many minutes does a normal time loop last in Outer Wilds?",
+      "a": "22 minutes",
+      "topic": "Puzzles and challenges",
+      "verified": true,
+      "sourceUrl": "https://blog.playstation.com/archive/2019/10/08/explore-a-solar-system-that-resets-every-22-minutes-in-the-outer-wilds-out-this-month",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "22",
+        "Twenty-two minutes"
+      ],
+      "p": 1000,
+      "qid": "videogames-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Sekiro skill counters thrust attacks by stepping on the enemy's weapon?",
+      "a": "Mikiri Counter",
+      "topic": "Abilities and transformations",
+      "verified": true,
+      "sourceUrl": "https://sekiro-shadows-die-twice.fandom.com/wiki/Mikiri_Counter",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "videogames-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which item prevents the hero from becoming a rabbit in A Link to the Past's Dark World?",
+      "a": "Moon Pearl",
+      "topic": "Items and resources",
+      "verified": true,
+      "sourceUrl": "https://www.zeldadungeon.net/wiki/Moon_Pearl",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "videogames-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What late-game system in Hades adds conditions that make escape attempts harder?",
+      "a": "Pact of Punishment",
+      "topic": "Puzzles and challenges",
+      "verified": true,
+      "sourceUrl": "https://www.supergiantgames.com/blog/hades-faq/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "videogames-1000-918",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "In Stardew Valley 1.6, which repair enables access to the spring festival held in the desert?",
+      "a": "Repairing the bus",
+      "topic": "Movement mechanics",
+      "verified": true,
+      "sourceUrl": "https://www.stardewvalley.net/stardew-valley-1-6-update-full-changelog/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Bus repair",
+        "Restoring the bus"
+      ],
+      "p": 1000,
+      "qid": "videogames-1000-921",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "In Hades, which resource unlocks new rows of Mirror of Night abilities?",
+      "a": "Chthonic Keys",
+      "topic": "Items and resources",
+      "verified": true,
+      "sourceUrl": "https://www.supergiantgames.com/blog/hades-the-blood-price-update-patch-notes-pt-1/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Keys"
+      ],
+      "p": 1000,
+      "qid": "videogames-1000-922",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

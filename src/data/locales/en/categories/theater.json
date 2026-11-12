@@ -1,0 +1,504 @@
+{
+  "id": "theater",
+  "name": "Theater",
+  "icon": "🎭",
+  "qs": [
+    {
+      "p": 200,
+      "q": "In which Egyptian play do Ramadan El-Sukkari's children try to stop him leaving the family?",
+      "a": "El Eyal Kebret",
+      "qid": "theater-200-911",
+      "topic": "Arab theater",
+      "sourceUrl": "https://www.aljadeed.tv/episodes/666/%D8%A7%D9%84%D8%B9%D9%8A%D8%A7%D9%84-%D9%83%D8%A8%D8%B1%D8%AA-%D8%A7%D9%84%D8%AC%D8%B2%D8%A1-%D8%A7%D9%84%D8%A3%D9%88%D9%84",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "The Kids Have Grown Up",
+        "Al Eyal Kebret"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Which Shakespearean hero is tempted by three witches' prophecy that he will become king of Scotland?",
+      "a": "Macbeth",
+      "qid": "theater-200-912",
+      "topic": "Shakespearean characters",
+      "sourceUrl": "https://www.rsc.org.uk/macbeth/the-plot",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which London theater associated with Shakespeare was reconstructed near its original site?",
+      "a": "The Globe",
+      "qid": "theater-200-913",
+      "topic": "Theaters and awards",
+      "sourceUrl": "https://www.shakespearesglobe.com/discover/shakespeares-world/",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Globe Theatre",
+        "Shakespeare's Globe"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "What is New York City's famous theater district called?",
+      "a": "Broadway",
+      "qid": "theater-200-914",
+      "topic": "Theaters and awards",
+      "sourceUrl": "https://www.broadway.org/broadway-theatres",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "What are puppets controlled from above by strings attached to their limbs called?",
+      "a": "Marionettes",
+      "qid": "theater-200-915",
+      "topic": "Puppetry and traditional theater",
+      "sourceUrl": "https://www.getty.edu/vow/AATFullDisplay?find=bima&logic=AND&note=&subjectid=300211126",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "String puppets",
+        "Marionette"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "An actor adds unscripted words and actions. What is this called?",
+      "a": "Improvisation",
+      "qid": "theater-200-916",
+      "topic": "Stage terminology",
+      "sourceUrl": "https://theatrecrafts.com/pages/home/topics/stage-management/glossary/",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Improv",
+        "Ad-libbing"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Which musical is built around songs by the Swedish group ABBA?",
+      "a": "Mamma Mia!",
+      "qid": "theater-200-917",
+      "topic": "Musicals",
+      "sourceUrl": "https://www.mtishows.com/mamma-mia",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which French playwright wrote Tartuffe?",
+      "a": "Molière",
+      "qid": "theater-200-918",
+      "topic": "World theater classics",
+      "sourceUrl": "https://www.comedie-francaise.fr/2014-2015/tartuffe",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Moliere",
+        "Jean-Baptiste Poquelin"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "What is the name of the peaceful man called to testify in Shahed Ma Shafsh Haga?",
+      "a": "Sarhan Abdel Basir",
+      "qid": "theater-400-911",
+      "topic": "Arab theater",
+      "sourceUrl": "https://www.watchit.com/watch/ar/plays/Shahed-Ma-Shafsh-Haga/plays-20",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Sarhan",
+        "Sarhan Abd al-Basir"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Which character plants suspicion and jealousy in Othello's mind?",
+      "a": "Iago",
+      "qid": "theater-400-912",
+      "topic": "Shakespearean characters",
+      "sourceUrl": "https://www.rsc.org.uk/othello/key-moments",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "What is the name of Miranda's magician father, who rules the island in The Tempest?",
+      "a": "Prospero",
+      "qid": "theater-400-913",
+      "topic": "Shakespearean characters",
+      "sourceUrl": "https://www.rsc.org.uk/the-tempest/the-plot",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "A character addresses the audience directly, breaking which imaginary barrier?",
+      "a": "The fourth wall",
+      "qid": "theater-400-914",
+      "topic": "Stage terminology",
+      "sourceUrl": "https://theatrecrafts.com/pages/home/topics/stage-management/glossary/",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Fourth wall"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "In which Samuel Beckett play do Vladimir and Estragon wait for someone who never arrives?",
+      "a": "Waiting for Godot",
+      "qid": "theater-400-915",
+      "topic": "World theater classics",
+      "sourceUrl": "https://livingarchive.royalcourttheatre.com/plays/waiting-for-godot/",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "In which musical does Higgins teach flower seller Eliza Doolittle to speak like an aristocrat?",
+      "a": "My Fair Lady",
+      "qid": "theater-400-916",
+      "topic": "Musicals",
+      "sourceUrl": "https://www.mtishows.com/my-fair-lady-0",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "What is the Turkish shadow-puppet tradition whose lead character exchanges jokes with Hacivat?",
+      "a": "Karagöz",
+      "qid": "theater-400-917",
+      "topic": "Puppetry and traditional theater",
+      "sourceUrl": "https://ich.unesco.org/en/RL/karagz-00180",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Karagoz"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Which American theater awards were named in honor of Antoinette Perry?",
+      "a": "Tony Awards",
+      "qid": "theater-400-918",
+      "topic": "Theaters and awards",
+      "sourceUrl": "https://www.tonyawards.com/history/our-history/",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "The Tonys",
+        "Tonys"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Which Syrian playwright wrote The Adventure of the Head of Mamluk Jaber?",
+      "a": "Saadallah Wannous",
+      "qid": "theater-600-911",
+      "topic": "Arab theater",
+      "sourceUrl": "https://daraladab.net/book.php?id=448",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Saad Allah Wannous"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Which daughter of King Lear refuses to flatter him with exaggerated praise?",
+      "a": "Cordelia",
+      "qid": "theater-600-912",
+      "topic": "Shakespearean characters",
+      "sourceUrl": "https://www.rsc.org.uk/king-lear/the-plot",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which moneylender demands a pound of Antonio's flesh as security in The Merchant of Venice?",
+      "a": "Shylock",
+      "qid": "theater-600-913",
+      "topic": "Shakespearean characters",
+      "sourceUrl": "https://www.rsc.org.uk/the-merchant-of-venice/about-the-play/key-moments",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "What arch frames the stage opening and separates it from the auditorium in a traditional theater?",
+      "a": "Proscenium arch",
+      "qid": "theater-600-914",
+      "topic": "Stage terminology",
+      "sourceUrl": "https://kvl.cch.kcl.ac.uk/THEATRON/glossary/p.html",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Proscenium"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "What is a character's remark to the audience that other characters supposedly cannot hear called?",
+      "a": "An aside",
+      "qid": "theater-600-915",
+      "topic": "Stage terminology",
+      "sourceUrl": "https://theatrecrafts.com/pages/home/topics/stage-management/glossary/",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Aside"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Which traditional Japanese theater form is known for vivid makeup and men also playing female roles?",
+      "a": "Kabuki",
+      "qid": "theater-600-916",
+      "topic": "Puppetry and traditional theater",
+      "sourceUrl": "https://ich.unesco.org/en/RL/kabuki-theatre-00163?RL=00163",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which Norwegian playwright wrote A Doll's House?",
+      "a": "Henrik Ibsen",
+      "qid": "theater-600-917",
+      "topic": "World theater classics",
+      "sourceUrl": "https://www.n-t.gr/en/events/repertory25-26/doll",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Ibsen"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Which inspector pursues Jean Valjean in the musical Les Misérables?",
+      "a": "Javert",
+      "qid": "theater-600-918",
+      "topic": "Musicals",
+      "sourceUrl": "https://www.mtishows.com/les-miserables",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "What is the name of Ali Janah al-Tabrizi's servant in Alfred Farag's play?",
+      "a": "Quffa",
+      "qid": "theater-800-911",
+      "topic": "Arab theater",
+      "sourceUrl": [
+        "https://elcinema.com/work/1854869/",
+        "https://www.emaratalyoum.com/local-section/2008-04-28-1.187647"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Quffah"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "What is the name of Messina's comical constable in Much Ado About Nothing?",
+      "a": "Dogberry",
+      "qid": "theater-800-912",
+      "topic": "Shakespearean characters",
+      "sourceUrl": "https://www.rsc.org.uk/shakespeare-learning-zone/much-ado-about-nothing/character/whos-who",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which weaver has his head transformed into a donkey's head by Puck in A Midsummer Night's Dream?",
+      "a": "Bottom",
+      "qid": "theater-800-913",
+      "topic": "Shakespearean characters",
+      "sourceUrl": "https://www.rsc.org.uk/shakespeare-learning-zone/a-midsummer-nights-dream/staging/productions",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Nick Bottom"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "Which Japanese puppet-theater tradition often uses three visible puppeteers to operate one puppet?",
+      "a": "Bunraku",
+      "qid": "theater-800-914",
+      "topic": "Puppetry and traditional theater",
+      "sourceUrl": "https://www2.ntj.jac.go.jp/unesco/bunraku/en/introduction/index.html",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "What single lamp is left lit on an empty stage after theater staff leave at night?",
+      "a": "Ghost light",
+      "qid": "theater-800-915",
+      "topic": "Stage terminology",
+      "sourceUrl": "https://theatrecrafts.com/pages/home/topics/stage-management/glossary/",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "What annotated script contains the stage manager's lighting cues, sound cues, and production notes?",
+      "a": "Prompt book",
+      "qid": "theater-800-916",
+      "topic": "Stage terminology",
+      "sourceUrl": "https://theatrecrafts.com/pages/home/topics/stage-management/the-prompt-book/",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Promptbook"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "Which theater in Vicenza was designed by Andrea Palladio with inspiration from ancient Roman theaters?",
+      "a": "Teatro Olimpico",
+      "qid": "theater-800-917",
+      "topic": "Theaters and awards",
+      "sourceUrl": "https://www.teatrolimpicovicenza.it/il-teatro/presentazione",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Olympic Theatre"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "What is the name of Stella's sister, who arrives at the beginning of A Streetcar Named Desire?",
+      "a": "Blanche DuBois",
+      "qid": "theater-800-918",
+      "topic": "World theater classics",
+      "sourceUrl": [
+        "https://almeida.co.uk/whats-on/a-streetcar-named-desire/",
+        "https://www.ntathome.com/videos/a-streetcar-named-desire-full-play"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Blanche"
+      ]
+    },
+    {
+      "topic": "Shakespearean characters",
+      "q": "Which son of Gloucester disguises himself as the beggar Poor Tom in King Lear?",
+      "a": "Edgar",
+      "sourceUrl": "https://www.rsc.org.uk/king-lear/the-plot",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "theater-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Shakespearean characters",
+      "q": "What is the name of Caliban's mother, the witch who ruled the island before the magician in The Tempest?",
+      "a": "Sycorax",
+      "sourceUrl": "https://www.rsc.org.uk/the-tempest/the-plot",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "theater-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Stage terminology",
+      "q": "What large backdrop curves around the rear of a stage and is often used to suggest the sky?",
+      "a": "Cyclorama",
+      "sourceUrl": "https://theatrecrafts.com/pages/home/topics/stage-management/glossary/",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "theater-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Stage terminology",
+      "q": "What lighting transition lowers one scene's lights while simultaneously raising those of the next?",
+      "a": "Crossfade",
+      "sourceUrl": "https://theatrecrafts.com/pages/home/topics/stage-management/glossary/",
+      "alt": [
+        "Cross-fade"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "theater-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Puppetry and traditional theater",
+      "q": "What title is used for the principal performer operating traditional Turkish shadow puppets?",
+      "a": "Hayali",
+      "sourceUrl": "https://ich.unesco.org/en/RL/karagz-00180",
+      "alt": [
+        "Hayalî"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "theater-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Puppetry and traditional theater",
+      "q": "What is the title of the narrator who voices all characters in traditional Japanese puppet theater?",
+      "a": "Tayu",
+      "sourceUrl": "https://www2.ntj.jac.go.jp/unesco/bunraku/en/introduction/index.html",
+      "alt": [
+        "Tayū"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "theater-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Theaters and awards",
+      "q": "Who designed the wooden perspective scenery depicting the streets of Thebes in Vicenza's Palladian theater?",
+      "a": "Vincenzo Scamozzi",
+      "sourceUrl": "https://www.teatrolimpicovicenza.it/il-teatro/presentazione",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "theater-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "World theater classics",
+      "q": "Which Greek tragedy inaugurated the Vicenza theater designed by Palladio?",
+      "a": "Oedipus Rex",
+      "sourceUrl": "https://www.teatrolimpicovicenza.it/il-teatro/presentazione",
+      "alt": [
+        "Oedipus the King"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "theater-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import { tr, getUiLocale } from '../../shared/i18n/core.js';
 import { arabicNormalize } from '../../shared/lib/arabicNormalize.js';
 
 // A ten-percent presentation adjustment is not a measured ten-percent increase
@@ -19,7 +20,7 @@ export function questionAssistance(question) {
   const supportsShape = !question.type || ['plain', 'code', 'common', 'complete', 'emoji', 'hints', 'image', 'audio', 'video'].includes(question.type);
   const words = String(question.a || '').trim().split(/\s+/u).filter(Boolean).length;
   const shape = supportsShape && words > 0
-    ? (words === 1 ? 'الإجابة الأساسية كلمة واحدة' : words === 2 ? 'الإجابة الأساسية كلمتان' : `الإجابة الأساسية ${words.toLocaleString('ar')} كلمات`)
+    ? (words === 1 ? tr('الإجابة الأساسية كلمة واحدة') : words === 2 ? tr('الإجابة الأساسية كلمتان') : tr("الإجابة الأساسية {v0} كلمات", {v0: words.toLocaleString(getUiLocale())}))
     : '';
   return { context, shape, amount: HIGH_TIER_ASSISTANCE };
 }

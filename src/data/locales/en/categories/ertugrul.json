@@ -1,0 +1,512 @@
+{
+  "id": "ertugrul",
+  "name": "Resurrection: Ertuğrul",
+  "icon": "🏹",
+  "style": "story",
+  "qs": [
+    {
+      "qid": "ertugrul-200-911",
+      "p": 200,
+      "topic": "Palace and power",
+      "q": "Which Seljuk sultan rewards Ertuğrul with leadership of the tribes after he foils Vasilius's ambush?",
+      "a": "Alaeddin Keykubat",
+      "alt": [
+        "Alaeddin",
+        "Kayqubad"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_3",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "ertugrul-200-912",
+      "p": 200,
+      "topic": "The Mongols",
+      "q": "Which warrior's wife dies from burns after the Mongol attack at the start of season two?",
+      "a": "Aykız",
+      "alt": [
+        "Aykiz"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_2",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "ertugrul-200-913",
+      "p": 200,
+      "topic": "Tribes and allies",
+      "q": "Which tribe shelters the survivors of the Mongol attack at the start of season two?",
+      "a": "Dodurga",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_2",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "ertugrul-200-914",
+      "p": 200,
+      "topic": "Marriages and identities",
+      "q": "What name does Commander Ares take after converting to Islam?",
+      "a": "Ahmet",
+      "alt": [
+        "Ahmet Alp",
+        "Ahmed"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_4",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "ertugrul-200-915",
+      "p": 200,
+      "topic": "Ertuğrul's family",
+      "q": "Which son of Ertuğrul is born on the day his mother dies in season four?",
+      "a": "Osman",
+      "alt": [
+        "Osman Bey"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_4",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "ertugrul-200-916",
+      "p": 200,
+      "topic": "Warrior companions",
+      "q": "Which tribal physician treats the wounded and becomes one of Ertuğrul's key advisers?",
+      "a": "Artuk",
+      "alt": [
+        "Artuk Bey"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "ertugrul-200-917",
+      "p": 200,
+      "topic": "Tribes and allies",
+      "q": "What is the name of Candar's tribe, whose merchants compete with the newcomers in season three?",
+      "a": "Çavdar",
+      "alt": [
+        "Cavdar"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_3",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "ertugrul-200-918",
+      "p": 200,
+      "topic": "Loyalty and betrayal",
+      "q": "Which brother of Ural befriends and supports Ertuğrul?",
+      "a": "Aliyar",
+      "alt": [
+        "Aliyar Bey"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_3",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "ertugrul-400-911",
+      "p": 400,
+      "topic": "Towns and fortresses",
+      "q": "To which town does Ertuğrul's tribe move at the end of season four?",
+      "a": "Söğüt",
+      "alt": [
+        "Sogut"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_4",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "ertugrul-400-912",
+      "p": 400,
+      "topic": "Palace and power",
+      "q": "Which traitor in the emir of Aleppo's palace works for the Knights Templar?",
+      "a": "Nasir",
+      "alt": [
+        "Nasser"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_1",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "ertugrul-400-913",
+      "p": 400,
+      "topic": "Towns and fortresses",
+      "q": "Which market does Ertuğrul seize from Simon in season three?",
+      "a": "Hanlı Pazar",
+      "alt": [
+        "Hanli Pazar",
+        "Hanli Bazaar"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_3",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "ertugrul-400-914",
+      "p": 400,
+      "topic": "Marriages and identities",
+      "q": "Which daughter of Candar marries Ertuğrul's axe-wielding companion?",
+      "a": "Aslıhan",
+      "alt": [
+        "Aslihan"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "ertugrul-400-915",
+      "p": 400,
+      "topic": "Ertuğrul's family",
+      "q": "Which brother of Ertuğrul returns after being presumed lost while secretly operating among the Mongols?",
+      "a": "Sungurtekin",
+      "alt": [
+        "Sungur Tekin"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_2",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "ertugrul-400-916",
+      "p": 400,
+      "topic": "Warrior companions",
+      "q": "Which companion of Ertuğrul is killed in the season-three ambush that wounds Dündar?",
+      "a": "Doğan",
+      "alt": [
+        "Dogan",
+        "Dogan Alp"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_3",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "ertugrul-400-917",
+      "p": 400,
+      "topic": "The Mongols",
+      "q": "Which leader secretly serves the Mongols under the name Albasti?",
+      "a": "Beybolat",
+      "alt": [
+        "Beybolat Bey"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_5",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "ertugrul-400-918",
+      "p": 400,
+      "topic": "Tribes and allies",
+      "q": "Which maternal uncle of Ertuğrul leads the tribe that shelters them after the Mongol attack?",
+      "a": "Korkut",
+      "alt": [
+        "Korkut Bey"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_2",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "ertugrul-600-911",
+      "p": 600,
+      "topic": "Palace and power",
+      "q": "Which sultan succeeds his father and works with Ertuğrul to defeat the plotting emir in season four?",
+      "a": "Gıyaseddin",
+      "alt": [
+        "Giyaseddin",
+        "Giyaseddin Keyhusrev"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_4",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "ertugrul-600-912",
+      "p": 600,
+      "topic": "Towns and fortresses",
+      "q": "Which fortress does Ertuğrul capture after his struggle with Ares in season four?",
+      "a": "Karacahisar",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_4",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "ertugrul-600-913",
+      "p": 600,
+      "topic": "Loyalty and betrayal",
+      "q": "As what humble worker does Dragos disguise himself in the town during season five?",
+      "a": "A church bell-ringer",
+      "alt": [
+        "Bell-ringer",
+        "Church bell ringer"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_5",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "ertugrul-600-914",
+      "p": 600,
+      "topic": "Marriages and identities",
+      "q": "Whom does Ertuğrul marry at the end of the series after she supports him against her traitorous brother?",
+      "a": "İlbilge",
+      "alt": [
+        "Ilbilge"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_5",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "ertugrul-600-915",
+      "p": 600,
+      "topic": "Ertuğrul's family",
+      "q": "Which son of Ertuğrul is kidnapped before the assault on Ares's fortress in season four?",
+      "a": "Gündüz",
+      "alt": [
+        "Gunduz",
+        "Gunduz Alp"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_4",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "ertugrul-600-916",
+      "p": 600,
+      "topic": "Warrior companions",
+      "q": "Which warrior does Ertuğrul send to spy inside the Mongol camp in season two?",
+      "a": "Abdurrahman",
+      "alt": [
+        "Abdurrahman Alp"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_2",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "ertugrul-600-917",
+      "p": 600,
+      "topic": "The Mongols",
+      "q": "Which Mongol commander's sister enters the tribe as Almila and attempts to kill Ertuğrul's baby?",
+      "a": "Alangoya",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_4",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "ertugrul-600-918",
+      "p": 600,
+      "topic": "Marriages and identities",
+      "q": "What is the wife's name of Ertuğrul's companion killed in the season-three ambush with Dündar?",
+      "a": "Banu Çiçek",
+      "alt": [
+        "Banu Cicek"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "ertugrul-800-911",
+      "p": 800,
+      "topic": "Palace and power",
+      "q": "Which wife of the sultan saves the plotting emir after Ares testifies against him?",
+      "a": "Mahperi",
+      "alt": [
+        "Mahperi Hatun"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_4",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "ertugrul-800-912",
+      "p": 800,
+      "topic": "Tribes and allies",
+      "q": "In season five, which Mongol state is ruled by Ertuğrul's ally Berke Khan?",
+      "a": "The Golden Horde",
+      "alt": [
+        "Golden Horde"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_5",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "ertugrul-800-913",
+      "p": 800,
+      "topic": "Towns and fortresses",
+      "q": "To which city does Gündoğdu's group head when the tribe splits at the end of season two?",
+      "a": "Ahlat",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_2",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "ertugrul-800-914",
+      "p": 800,
+      "topic": "Loyalty and betrayal",
+      "q": "Which Mongol warrior converts to Islam and becomes a spy for Ertuğrul?",
+      "a": "Mergen",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "Marriages and identities",
+      "q": "Which second wife of Ertuğrul's uncle has her conspiracy exposed in season two?",
+      "a": "Aytolun",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_2",
+      "qid": "ertugrul-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Warrior companions",
+      "q": "Which maternal cousin of Ertuğrul changes from rival to ally in season two?",
+      "a": "Tuğtekin",
+      "alt": [
+        "Tugtekin"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_2",
+      "qid": "ertugrul-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Loyalty and betrayal",
+      "q": "Which warrior secretly serves Noyan and accuses Ertuğrul of killing his commander in season two?",
+      "a": "Kocabaş",
+      "alt": [
+        "Kocabas"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
+      "qid": "ertugrul-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Palace and power",
+      "q": "Which father of Goncagül schemes to gain leadership of the tribes in season two?",
+      "a": "Gümüştekin",
+      "alt": [
+        "Gumustekin"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
+      "qid": "ertugrul-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Ertuğrul's family",
+      "q": "Which father of Selcan and Gökçe appears in his daughter's visions demanding revenge?",
+      "a": "Alptekin",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
+      "qid": "ertugrul-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Towns and fortresses",
+      "q": "To which city does the tribe migrate to fulfill its leader's wish at the end of season one?",
+      "a": "Erzurum",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_1",
+      "qid": "ertugrul-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Ertuğrul's family",
+      "q": "Who is the father of Halime and Prince Yiğit in the series?",
+      "a": "Prince Numan",
+      "alt": [
+        "Şehzade Numan",
+        "Numan"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
+      "qid": "ertugrul-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Marriages and identities",
+      "q": "By what name was Ömer known before becoming Ertuğrul's spy inside the Templar fortress?",
+      "a": "Claudius",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
+      "qid": "ertugrul-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Tribes and allies",
+      "q": "Which lord of the Templar fortress is stabbed with a poisoned dagger by his niece?",
+      "a": "Petruccio Manzini",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
+      "qid": "ertugrul-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "The Mongols",
+      "q": "Which Mongol spy confronts Ertuğrul after Albasti's death in season five?",
+      "a": "Arikbuka",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_5",
+      "qid": "ertugrul-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Loyalty and betrayal",
+      "q": "Which spy of Hulagu works against Berke Khan in season five?",
+      "a": "Qiyat",
+      "alt": [
+        "Kiyat"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_5",
+      "qid": "ertugrul-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Towns and fortresses",
+      "q": "Which fortress does Dragos take over after killing Yannis in season five?",
+      "a": "Lefke",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_5",
+      "qid": "ertugrul-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    }
+  ]
+}

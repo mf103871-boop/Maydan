@@ -17,6 +17,7 @@ import { CANDIDATE_EFFECTS } from '../src/shared/fx/audio-candidate-catalog.js';
 import { audioCatalogPackagingPlugin } from './audio/catalog-packaging.mjs';
 import { designRuntimePackagingPlugin } from './design-runtime-packaging.mjs';
 import { bankPackagingPlugin } from './lib/bank-packaging.mjs';
+import { localePackagingPlugin } from './lib/locale-packaging.mjs';
 import { presentationCssPlugin } from './presentation-css.mjs';
 import { ticketPolicyEnabled } from '../src/shared/account/gameplay-policy.mjs';
 
@@ -112,7 +113,7 @@ export function esbuildOptions({ minify = true, version = '0.0.0', media = {}, a
     // New files are JSX; the migrated trivia game is plain React.createElement
     // in .js and parses fine under the jsx loader too.
     loader: { '.js': 'jsx', '.css': 'text', '.json': 'json', '.webp': art, '.png': art, '.woff2': art },
-    plugins: [presentationCssPlugin({ assets, minify }), ...(minify ? [minifiedCssTextPlugin(), audioCatalogPackagingPlugin(), designRuntimePackagingPlugin(), bankPackagingPlugin()] : [])],
+    plugins: [presentationCssPlugin({ assets, minify }), ...(assets === 'files' ? [localePackagingPlugin()] : []), ...(minify ? [minifiedCssTextPlugin(), audioCatalogPackagingPlugin(), designRuntimePackagingPlugin(), bankPackagingPlugin()] : [])],
     ...(assets === 'files' ? { assetNames: `${BRAND_ASSET_DIR}/[name]-[hash]` } : {}),
     define: {
       'process.env.NODE_ENV': JSON.stringify(minify ? 'production' : 'development'),
@@ -236,8 +237,11 @@ export async function buildOnce({ minify = true, includeStudio = true, version: 
   }
   const js = result.outputFiles.find((f) => f.path.endsWith('.js')).text;
   const art = result.outputFiles.filter((f) => !f.path.endsWith('.js'));
-  const brandAssets = art.map((f) => `./${path.relative(outdir, f.path).split(path.sep).join('/')}`).sort();
-  if (!brandAssets.every((url) => url.startsWith(`./${BRAND_ASSET_DIR}/`))) throw new Error(`Unexpected bundle output: ${brandAssets.join(', ')}`);
+  const packagedAssets = art.map((f) => `./${path.relative(outdir, f.path).split(path.sep).join('/')}`).sort();
+  if (!packagedAssets.every((url) => url.startsWith(`./${BRAND_ASSET_DIR}/`))) throw new Error(`Unexpected bundle output: ${packagedAssets.join(', ')}`);
+  // Optional language packs are fetched on first use. They do not delay Arabic
+  // startup or service-worker installation by precaching every English game.
+  const brandAssets = packagedAssets.filter(url => !/\/locale-en-[^/]+\.json$/.test(url));
   const html = await renderHtml(js, { version, assets: brandAssets });
   // An explicit destination is owned by its caller. Leave its other files
   // alone. The standard build retains its clean dist replacement.

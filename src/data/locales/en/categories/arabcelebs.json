@@ -1,0 +1,490 @@
+{
+  "id": "arabcelebs",
+  "name": "Arab Personalities",
+  "icon": "🌟",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Which Tunisian tennis player became the first Arab to reach a Wimbledon singles final?",
+      "a": "Ons Jabeur",
+      "topic": "Athletes",
+      "verified": true,
+      "sourceUrl": "https://www.wimbledon.com/amp/en_GB/news/articles/2023-07-08/jabeur_passes_tough_test_from_andreescu.html",
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-911",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which Qatari athlete shared Tokyo high-jump gold with Tamberi?",
+      "a": "Mutaz Barshim",
+      "alt": [
+        "Mutaz Essa Barshim"
+      ],
+      "topic": "Athletes",
+      "verified": true,
+      "sourceUrl": "https://worldathletics.org/news/feature/barshim-tamberi-friendship-tokyo-olympics-gold",
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-912"
+    },
+    {
+      "p": 200,
+      "q": "Who became the first Emirati astronaut to travel to the International Space Station?",
+      "a": "Hazza Al Mansouri",
+      "topic": "Science and space",
+      "verified": true,
+      "sourceUrl": "https://www.mbrsc.ae/hazzaa-almansoori/",
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-913",
+      "alt": [
+        "Hazzaa Al-Mansoori"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Which researcher became the first Saudi woman in space?",
+      "a": "Rayyanah Barnawi",
+      "topic": "Science and space",
+      "verified": true,
+      "sourceUrl": "https://www.axiomspace.com/astronaut/rayyanah-barnawi",
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-914",
+      "alt": [
+        "Rayana Barnawi"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Which Palestinian poet wrote the collection Mural?",
+      "a": "Mahmoud Darwish",
+      "topic": "Writers",
+      "verified": true,
+      "sourceUrl": "https://www.bibliotheque.nat.tn/BNT/detailstatic.aspx?RSC_BASE=SYRACUSE&RSC_DOCID=5713209&TITLE=&_lg=ar-TN",
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-915",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which Lebanese presenter hosted the cinema program Scoop?",
+      "a": "Raya Abirached",
+      "topic": "Media and journalism",
+      "verified": true,
+      "sourceUrl": "https://www.unhcr.org/uk/news/news-releases/raya-abirached-appointed-unhcr-goodwill-ambassador-mena-region",
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-916",
+      "alt": [
+        "Raya Abi Rached"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Which Egyptian actor played Yuri in Doctor Zhivago?",
+      "a": "Omar Sharif",
+      "topic": "Cinema and theater",
+      "verified": true,
+      "sourceUrl": "https://goldenglobes.com/articles/1966-drama-doctor-zhivago/",
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-917",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which Jordanian entrepreneur co-founded the shipping company Aramex?",
+      "a": "Fadi Ghandour",
+      "topic": "Business and entrepreneurship",
+      "verified": true,
+      "sourceUrl": "https://www.aramex.com/content/uploads/109/200/38482/Fadi-Ghandour-profile-in-English.pdf",
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-918",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which taekwondo athlete won Jordan's first official Olympic medal, a gold?",
+      "a": "Ahmad Abu Ghaush",
+      "topic": "Athletes",
+      "verified": true,
+      "sourceUrl": "https://www.anocolympic.org/noc-highlights/jordan-wins-first-ever-olympic-medal/",
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-911",
+      "alt": [
+        "Ahmed Abu Ghosh"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Which karate athlete became the first Egyptian woman to win Olympic gold?",
+      "a": "Feryal Abdelaziz",
+      "alt": [
+        "Feryal Ashraf"
+      ],
+      "topic": "Athletes",
+      "verified": true,
+      "sourceUrl": "https://www.olympedia.org/results/18000275",
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-912"
+    },
+    {
+      "p": 400,
+      "q": "Which Egyptian scientist helped select Apollo Moon-landing sites?",
+      "a": "Farouk El-Baz",
+      "topic": "Science and space",
+      "verified": true,
+      "sourceUrl": "https://siarchives.si.edu/collections/siris_arc_217570",
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-913",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which Saudi biotechnology scientist became a UNESCO ambassador for science and innovation?",
+      "a": "Hayat Sindi",
+      "topic": "Science and space",
+      "verified": true,
+      "sourceUrl": "https://www.unesco.org/en/articles/hayat-sindi-calls-inclusive-sti-investment-and-gender-responsive-financing-ffd4-seville",
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-914",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which Algerian novelist wrote Memory in the Flesh?",
+      "a": "Ahlam Mosteghanemi",
+      "topic": "Writers",
+      "verified": true,
+      "sourceUrl": "https://www.neelwafurat.com/itempage.aspx?id=lbb223144-199427&search=books",
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-915",
+      "alt": [
+        "Ahlam Mostaghanmi"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Which Egyptian presenter hosts the variety program Ma'akum?",
+      "a": "Mona El-Shazly",
+      "topic": "Media and journalism",
+      "verified": true,
+      "sourceUrl": "https://www.watchit.com/watch/en/shows/Maakom/shows-37",
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-916",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which Tunisian actress became a World Food Programme ambassador in 2010?",
+      "a": "Hend Sabri",
+      "topic": "Cinema and theater",
+      "verified": true,
+      "sourceUrl": "https://www.wfp.org/news/arab-film-star-hend-sabry-marks-ten-years-wfp-goodwill-ambassador",
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-917",
+      "alt": [
+        "Hind Sabri"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Which Kuwaiti entrepreneur founded Sakhr to support computing in Arabic?",
+      "a": "Mohammed Al-Sharekh",
+      "topic": "Business and entrepreneurship",
+      "verified": true,
+      "sourceUrl": "https://kingfaisalprize.org/mohamed-bin-abdulrahman-al-sharekh/",
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-918",
+      "alt": [
+        "Mohamed Al Sharekh"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Which Tunisian runner won 10,000 m silver at Tokyo 1964?",
+      "a": "Mohammed Gammoudi",
+      "alt": [
+        "Mohamed Gammoudi"
+      ],
+      "topic": "Athletes",
+      "verified": true,
+      "sourceUrl": "https://www.olympedia.org/athletes/76964",
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-911"
+    },
+    {
+      "p": 600,
+      "q": "Which Algerian runner won 1,500 m gold at Barcelona 1992?",
+      "a": "Hassiba Boulmerka",
+      "topic": "Athletes",
+      "verified": true,
+      "sourceUrl": "https://worldathletics.org/news/news/boulmerka-bubka-crooks-and-zelezny-elected-io",
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-912",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which Jordanian biologist founded We Love Reading?",
+      "a": "Rana Dajani",
+      "topic": "Science and space",
+      "verified": true,
+      "sourceUrl": "https://welovereading.org/about/story/",
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-913",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which Egyptian scientist at Georgia Tech studied using gold nanoparticles against cancer?",
+      "a": "Mostafa El-Sayed",
+      "topic": "Science and space",
+      "verified": true,
+      "sourceUrl": "https://chemistry.gatech.edu/people/mostafa-el-sayed",
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-914",
+      "alt": [
+        "Mustafa El Sayed"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Which Palestinian writer wrote Men in the Sun?",
+      "a": "Ghassan Kanafani",
+      "topic": "Writers",
+      "verified": true,
+      "sourceUrl": "https://www.rienner.com/title/Men_in_the_Sun_and_Other_Palestinian_Stories",
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-915",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which actress founded an Egyptian magazine bearing her stage name in 1925?",
+      "a": "Fatima al-Yusuf",
+      "alt": [
+        "Rose al-Yusuf",
+        "Fatma el-Youssef"
+      ],
+      "topic": "Media and journalism",
+      "verified": true,
+      "sourceUrl": "https://www.library.dartmouth.edu/digital/digital-collections/rose-el-youssef",
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-916"
+    },
+    {
+      "p": 600,
+      "q": "Which Lebanese filmmaker directed Capernaum, a Cannes Jury Prize winner?",
+      "a": "Nadine Labaki",
+      "topic": "Cinema and theater",
+      "verified": true,
+      "sourceUrl": "https://www.festival-cannes.com/en/2024/meeting-nadine-labaki-member-of-the-jury-for-feature-films/",
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-917",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which Saudi entrepreneur joined Careem as its third co-founder?",
+      "a": "Abdulla Elyas",
+      "alt": [
+        "Abdullah Ilyas"
+      ],
+      "topic": "Business and entrepreneurship",
+      "verified": true,
+      "sourceUrl": "https://www.careem.com/ar-KW/about-us/",
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-918"
+    },
+    {
+      "p": 800,
+      "q": "Which Tunisian won silver in the 58 kg taekwondo event at the Tokyo Olympics?",
+      "a": "Mohamed Khalil Jendoubi",
+      "alt": [
+        "Khalil Jendoubi"
+      ],
+      "topic": "Athletes",
+      "verified": true,
+      "sourceUrl": "https://results.worldtaekwondo.org/competitions/tokyo-2020-og/medalists",
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-911"
+    },
+    {
+      "p": 800,
+      "q": "Which Tunisian swimmer won the London Olympic 10 km marathon gold?",
+      "a": "Oussama Mellouli",
+      "topic": "Athletes",
+      "verified": true,
+      "sourceUrl": "https://www.worldaquatics.com/athletes/1000445/ous-mellouli/medals",
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-912",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which Algerian doctor directed the US National Institutes of Health from 2002 to 2008?",
+      "a": "Elias Zerhouni",
+      "topic": "Science and space",
+      "verified": true,
+      "sourceUrl": "https://www.nih.gov/about-nih/nih-almanac/elias-zerhouni-md",
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-913",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which Moroccan scientist invented the graphite anode used in lithium-ion batteries?",
+      "a": "Rachid Yazami",
+      "alt": [],
+      "topic": "Science and space",
+      "verified": true,
+      "sourceUrl": "https://www.nae.edu/105813/Rachid-Yazami",
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-914"
+    },
+    {
+      "topic": "Writers",
+      "q": "Who wrote Cities of Salt?",
+      "a": "Abdul Rahman Munif",
+      "sourceUrl": "https://www.penguinrandomhouse.ca/books/118591/cities-of-salt-by-abdelrahman-munif/9780394755267",
+      "verified": true,
+      "p": 800,
+      "qid": "arabcelebs-800-915",
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Abd al-Rahman Munif"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "Which Egyptian writer wrote the Sanduq al-Dunya column in Al-Ahram?",
+      "a": "Ahmed Bahgat",
+      "topic": "Media and journalism",
+      "verified": true,
+      "sourceUrl": "https://gate.ahram.org.eg/daily/WriterArticles/08/2002/70.aspx",
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-916",
+      "alt": [
+        "Ahmad Bahjat"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "Which Palestinian filmmaker brought Mohammad and Saleh Bakri together in Wajib?",
+      "a": "Annemarie Jacir",
+      "alt": [
+        "Anne-Marie Jacir"
+      ],
+      "topic": "Cinema and theater",
+      "verified": true,
+      "sourceUrl": "https://www.bam.org/film/2026/of-father-and-sons-wajib",
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-917"
+    },
+    {
+      "p": 800,
+      "q": "Which Emirati publisher founded Kalimat, specializing in Arabic children's books?",
+      "a": "Bodour Al Qasimi",
+      "alt": [
+        "Bodour bint Sultan Al Qasimi"
+      ],
+      "topic": "Business and entrepreneurship",
+      "verified": true,
+      "sourceUrl": "https://www.zayedaward.ae/en/previous-editions/winners/kalimat-group-uae",
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-918"
+    },
+    {
+      "topic": "Athletes",
+      "q": "Which Moroccan runner retained his World Championship marathon title in Helsinki after winning in Paris?",
+      "a": "Jaouad Gharib",
+      "sourceUrl": "https://worldathletics.org/news/news/el-guerrouj-phones-to-say-well-done-to-the-as",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabcelebs-1000-911",
+      "difficultyTarget": 0.15,
+      "alt": []
+    },
+    {
+      "topic": "Athletes",
+      "q": "Which Moroccan broke the 10,000 m world record in Brussels after winning bronze in Atlanta?",
+      "a": "Salah Hissou",
+      "sourceUrl": "https://worldathletics.org/news/news/salah-hissou-10000-m-world-record-holder-in-t-1",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "arabcelebs-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Science and space",
+      "q": "Which Lebanese scientist initiated NASA's AIRS project to study the atmosphere?",
+      "a": "Moustafa Chahine",
+      "sourceUrl": "https://airs.jpl.nasa.gov/news/92/in-memoriam-the-passing-of-airs-project-founder-dr-moustafa-t-chahine/",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabcelebs-1000-913",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Mustafa Chahine"
+      ]
+    },
+    {
+      "topic": "Science and space",
+      "q": "Which Lebanon-born scientist led the Jet Propulsion Laboratory during the Spirit, Opportunity, and Curiosity missions?",
+      "a": "Charles Elachi",
+      "sourceUrl": "https://www.jpl.nasa.gov/who-we-are/faces-of-leadership-the-directors-of-jpl/dr-charles-elachi-1947/",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "arabcelebs-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "q": "Which Palestinian novelist wrote Wild Thorns?",
+      "a": "Sahar Khalifeh",
+      "topic": "Writers",
+      "verified": true,
+      "sourceUrl": "https://ci.nii.ac.jp/ncid/BA51544870",
+      "difficultyTarget": 0.15,
+      "qid": "arabcelebs-1000-915",
+      "alt": [
+        "Sahar Khalifa"
+      ]
+    },
+    {
+      "topic": "Media and journalism",
+      "q": "Which Egyptian journalist founded Akher Saa after leaving Rose al-Yusuf?",
+      "a": "Mohamed El-Tabii",
+      "sourceUrl": "https://arabi.ahram.org.eg/News/46769.aspx",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabcelebs-1000-916",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Muhammad al-Tabi'i"
+      ]
+    },
+    {
+      "topic": "Cinema and theater",
+      "q": "Which Syrian filmmaker directed Everyday Life in a Syrian Village?",
+      "a": "Omar Amiralay",
+      "sourceUrl": "https://www.arsenal-berlin.de/en/cinema/film-screening/mahere-2180/",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabcelebs-1000-917",
+      "difficultyTarget": 0.15,
+      "alt": []
+    },
+    {
+      "topic": "Business and entrepreneurship",
+      "q": "Which Jordanian entrepreneur founded Maktoob with Hussam Khoury?",
+      "a": "Samih Toukan",
+      "sourceUrl": "https://www.meed.com/interview-samih-toukan-chief-executive-officer-jabbar/",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabcelebs-1000-918",
+      "difficultyTarget": 0.15,
+      "alt": []
+    }
+  ]
+}

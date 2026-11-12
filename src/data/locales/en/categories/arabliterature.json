@@ -1,0 +1,527 @@
+{
+  "icon": "✒️",
+  "id": "arabliterature",
+  "name": "Arabic Literature",
+  "qs": [
+    {
+      "qid": "arabliterature-200-911",
+      "p": 200,
+      "q": "Which poet's title 'prisoner of two prisons' refers to blindness and staying at home?",
+      "a": "Abu al-Ala al-Ma'arri",
+      "topic": "Classical poetry",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/contributors/47539208/",
+      "alt": [
+        "Al-Maarri"
+      ]
+    },
+    {
+      "qid": "arabliterature-200-912",
+      "p": 200,
+      "q": "What discipline did al-Khalil establish to study poetic meters?",
+      "a": "Prosody",
+      "topic": "Terms and criticism",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/books/50259706/",
+      "alt": [
+        "Arabic prosody",
+        "Arud"
+      ]
+    },
+    {
+      "qid": "arabliterature-200-913",
+      "p": 200,
+      "q": "What is the title of the autobiography written by the author of The Call of the Curlew?",
+      "a": "The Days",
+      "topic": "Novels and stories",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/contributors/59624258/",
+      "alt": [
+        "Al-Ayyam"
+      ]
+    },
+    {
+      "topic": "Prose and heritage books",
+      "q": "Which philosopher tells stories to the king in Kalila wa Dimna?",
+      "a": "Bidpai",
+      "sourceUrl": "https://ar.wikisource.org/wiki/كليلة_ودمنة/باب_الأسد_والثور_وهو_أول_الكتاب",
+      "verified": true,
+      "p": 200,
+      "qid": "arabliterature-200-914",
+      "difficultyTarget": 0.8,
+      "alt": [
+        "Baydaba",
+        "Pilpay"
+      ]
+    },
+    {
+      "qid": "arabliterature-200-915",
+      "p": 200,
+      "q": "Who wrote the Arabic play The People of the Cave, published in 1933?",
+      "a": "Tawfiq al-Hakim",
+      "topic": "Theater and drama",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/contributors/80628197/",
+      "alt": [
+        "Tawfik al-Hakim"
+      ]
+    },
+    {
+      "topic": "Tales and characters",
+      "q": "What is the name of Scheherazade's sister, who asks her to tell a story before dawn?",
+      "a": "Dunyazad",
+      "sourceUrl": "https://ar.wikisource.org/wiki/ألف_ليلة_وليلة/الجزء_الأول",
+      "alt": [
+        "Dunyazade",
+        "Dinazad"
+      ],
+      "verified": true,
+      "p": 200,
+      "qid": "arabliterature-200-916",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "arabliterature-200-917",
+      "p": 200,
+      "q": "Which novel begins the Cairo Trilogy by the author of The Harafish?",
+      "a": "Palace Walk",
+      "topic": "Novels and stories",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/books/29179502/",
+      "alt": [
+        "Bayn al-Qasrayn"
+      ]
+    },
+    {
+      "qid": "arabliterature-200-918",
+      "p": 200,
+      "q": "Under what title were the Prince of Poets' poems collected?",
+      "a": "Al-Shawqiyyat",
+      "topic": "Modern poetry",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/books/70706142/",
+      "alt": [
+        "Shawqiyyat"
+      ]
+    },
+    {
+      "qid": "arabliterature-400-911",
+      "p": 400,
+      "q": "In which work did the author of Luzumiyyat imagine Ibn al-Qarih's journey through the afterlife?",
+      "a": "The Epistle of Forgiveness",
+      "topic": "Prose and heritage books",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/books/95904020/",
+      "alt": [
+        "Risalat al-Ghufran"
+      ]
+    },
+    {
+      "qid": "arabliterature-400-912",
+      "p": 400,
+      "q": "Arabic poems may be named nuniyya or mimiyya. What is the name of the rhyme consonant that determines this?",
+      "a": "Rawi",
+      "topic": "Terms and criticism",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/books/50259706/2.1/",
+      "alt": [
+        "Rhyme letter"
+      ]
+    },
+    {
+      "qid": "arabliterature-400-913",
+      "p": 400,
+      "q": "In which Lebanese town was the author of The Broken Wings born?",
+      "a": "Bsharri",
+      "topic": "Writers and their lives",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/contributors/85274958/",
+      "alt": [
+        "Bcharre"
+      ]
+    },
+    {
+      "qid": "arabliterature-400-914",
+      "p": 400,
+      "q": "Which association of émigré writers elected Gibran its leader in New York?",
+      "a": "The Pen League",
+      "topic": "Modern poetry",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/contributors/85274958/",
+      "alt": [
+        "Al-Rabita al-Qalamiyya"
+      ]
+    },
+    {
+      "qid": "arabliterature-400-915",
+      "p": 400,
+      "q": "What animals are the two brothers who give Ibn al-Muqaffa's book its title?",
+      "a": "Jackals",
+      "topic": "Tales and characters",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://ar.wikisource.org/wiki/كليلة_ودمنة/باب_الأسد_والثور_وهو_أول_الكتاب",
+      "alt": [
+        "Jackal"
+      ]
+    },
+    {
+      "qid": "arabliterature-400-916",
+      "p": 400,
+      "q": "What kind of theater did al-Hakim develop around a conflict of ideas in the reader's mind?",
+      "a": "Theater of the mind",
+      "topic": "Theater and drama",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/contributors/80628197/",
+      "alt": [
+        "Intellectual theater",
+        "Al-masrah al-dhihni"
+      ]
+    },
+    {
+      "qid": "arabliterature-400-917",
+      "p": 400,
+      "q": "What enormous mythical bird did Sinbad encounter on his second voyage?",
+      "a": "Roc",
+      "topic": "Tales and characters",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://ar.wikisource.org/wiki/ألف_ليلة_وليلة/السندباد_البحري",
+      "alt": [
+        "Rukh"
+      ]
+    },
+    {
+      "qid": "arabliterature-400-918",
+      "p": 400,
+      "q": "What is the name of the released prisoner seeking revenge in The Thief and the Dogs?",
+      "a": "Said Mahran",
+      "topic": "Novels and stories",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/books/85802403/",
+      "alt": [
+        "Sa'id Mahran"
+      ]
+    },
+    {
+      "qid": "arabliterature-600-911",
+      "p": 600,
+      "q": "Who wrote the Arabic prosody manual Mizan al-Dhahab fi Sina'at Shi'r al-'Arab?",
+      "a": "Ahmad al-Hashimi",
+      "topic": "Prose and heritage books",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/books/50259706/",
+      "alt": [
+        "Ahmed al-Hashimi"
+      ]
+    },
+    {
+      "qid": "arabliterature-600-912",
+      "p": 600,
+      "q": "A poet replaces a real cause with an imaginative, pleasing explanation. What Arabic rhetorical device is this?",
+      "a": "Husn al-ta'lil",
+      "topic": "Terms and criticism",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/books/85925824/3.1/",
+      "alt": [
+        "Imaginative causation"
+      ]
+    },
+    {
+      "qid": "arabliterature-600-913",
+      "p": 600,
+      "q": "In which newspaper did the articles later collected as Hadith Isa ibn Hisham first appear?",
+      "a": "Misbah al-Sharq",
+      "topic": "Prose and heritage books",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/contributors/19203514/",
+      "alt": []
+    },
+    {
+      "qid": "arabliterature-600-914",
+      "p": 600,
+      "q": "What is the teknonym of the woman whose deserted dwelling Zuhayr asks about at the start of his Mu'allaqa?",
+      "a": "Umm Awfa",
+      "topic": "Tales and characters",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_زهير_بن_أبي_سلمى",
+      "alt": [
+        "Um Awfa"
+      ]
+    },
+    {
+      "qid": "arabliterature-600-915",
+      "p": 600,
+      "q": "In his Mu'allaqa, what does Imru' al-Qays compare the night to as it lowers its curtains?",
+      "a": "Sea waves",
+      "topic": "Classical poetry",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_امرئ_القيس",
+      "alt": [
+        "The waves of the sea"
+      ]
+    },
+    {
+      "qid": "arabliterature-600-916",
+      "p": 600,
+      "q": "What item of clothing did Sinbad use to tie himself to the giant bird's leg?",
+      "a": "His turban",
+      "topic": "Tales and characters",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://ar.wikisource.org/wiki/ألف_ليلة_وليلة/السندباد_البحري",
+      "alt": [
+        "Turban"
+      ]
+    },
+    {
+      "qid": "arabliterature-600-917",
+      "p": 600,
+      "q": "In which al-Hakim play does a judge make the protagonist choose between force and the law?",
+      "a": "The Sultan's Dilemma",
+      "topic": "Theater and drama",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/books/24806246/",
+      "alt": [
+        "Al-Sultan al-Ha'ir"
+      ]
+    },
+    {
+      "qid": "arabliterature-600-918",
+      "p": 600,
+      "q": "Which girl does Kamal fall in love with in Palace of Desire?",
+      "a": "Aida",
+      "topic": "Novels and stories",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/books/85847308/",
+      "alt": [
+        "Ayda"
+      ]
+    },
+    {
+      "qid": "arabliterature-800-911",
+      "p": 800,
+      "q": "What vast literary work by al-Ma'arri exceeded one hundred parts?",
+      "a": "Al-Ayk wal-Ghusun",
+      "topic": "Prose and heritage books",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/contributors/47539208/",
+      "alt": [
+        "The Thicket and the Branches"
+      ]
+    },
+    {
+      "qid": "arabliterature-800-912",
+      "p": 800,
+      "q": "In Arabic prosody, what alteration makes the second consonant of mutafa'ilun vowelless?",
+      "a": "Idmar",
+      "topic": "Terms and criticism",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/50259706/1.1/",
+      "alt": [
+        "Idmar zihaf"
+      ]
+    },
+    {
+      "qid": "arabliterature-800-913",
+      "p": 800,
+      "q": "What metrical alteration changes fā'ilun to fa'ilun by deleting the second, vowelless letter?",
+      "a": "Khabn",
+      "topic": "Terms and criticism",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/50259706/1.1/",
+      "alt": []
+    },
+    {
+      "qid": "arabliterature-800-914",
+      "p": 800,
+      "q": "Under what original title did al-Muwaylihi publish the articles later collected as Hadith Isa ibn Hisham?",
+      "a": "Fatra min al-Zaman",
+      "topic": "Prose and heritage books",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/contributors/19203514/",
+      "alt": [
+        "A Period of Time"
+      ]
+    },
+    {
+      "topic": "Classical poetry",
+      "q": "Which place does Imru' al-Qays name when recalling a day with the maidens in his Mu'allaqa?",
+      "a": "Darat Juljul",
+      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_امرئ_القيس",
+      "verified": true,
+      "p": 800,
+      "qid": "arabliterature-800-915",
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Dara Juljul"
+      ]
+    },
+    {
+      "qid": "arabliterature-800-916",
+      "p": 800,
+      "q": "What mouse freed the ring-dove and her companions from the net?",
+      "a": "Zirak",
+      "topic": "Tales and characters",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://ar.wikisource.org/wiki/كليلة_ودمنة/باب_الحمامة_المطوقة",
+      "alt": [
+        "Zayrak"
+      ]
+    },
+    {
+      "qid": "arabliterature-800-917",
+      "p": 800,
+      "q": "Which shepherd owns the dog Qitmir in al-Hakim's play about the sleepers?",
+      "a": "Yamlikha",
+      "topic": "Theater and drama",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/18292682/",
+      "alt": [
+        "Yamlikh"
+      ]
+    },
+    {
+      "qid": "arabliterature-800-918",
+      "p": 800,
+      "q": "Which pious character contrasts with the corruption in Mahfouz's Midaq Alley?",
+      "a": "Radwan al-Hussaini",
+      "topic": "Novels and stories",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/62575295/",
+      "alt": [
+        "Ridwan al-Husayni"
+      ]
+    },
+    {
+      "topic": "Writers and their lives",
+      "q": "In which town in Asyut Governorate was Hafiz Ibrahim born?",
+      "a": "Dayrut",
+      "sourceUrl": "https://www.safahat.org/contributors/71640270/",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabliterature-1000-911",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Dairut"
+      ]
+    },
+    {
+      "topic": "Terms and criticism",
+      "q": "In Arabic rhyme, what is an alif separated from the rhyme consonant by one vowelled consonant called?",
+      "a": "Alif al-ta'sis",
+      "sourceUrl": "https://www.safahat.org/books/50259706/2.1/",
+      "alt": [
+        "Foundation alif"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "arabliterature-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Tales and characters",
+      "q": "What is the name of the bull whom slanderers turn against the lion in Ibn al-Muqaffa's book?",
+      "a": "Shatraba",
+      "sourceUrl": "https://ar.wikisource.org/wiki/كليلة_ودمنة/باب_الأسد_والثور_وهو_أول_الكتاب",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabliterature-1000-913",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Shanzaba"
+      ]
+    },
+    {
+      "topic": "Tales and characters",
+      "q": "Which king hears the tales of Kalila wa Dimna?",
+      "a": "Dabshalim",
+      "sourceUrl": "https://ar.wikisource.org/wiki/كليلة_ودمنة/باب_الأسد_والثور_وهو_أول_الكتاب",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabliterature-1000-914",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Dabchelim"
+      ]
+    },
+    {
+      "topic": "Theater and drama",
+      "q": "Which minister loves Princess Prisca in al-Hakim's The People of the Cave?",
+      "a": "Mishlinya",
+      "sourceUrl": "https://www.safahat.org/books/18292682/1/",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabliterature-1000-915",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Mishlinia"
+      ]
+    },
+    {
+      "topic": "Novels and stories",
+      "q": "Which character creates disabilities for beggars in Midaq Alley?",
+      "a": "Zaita",
+      "sourceUrl": "https://www.safahat.org/books/62575295/",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabliterature-1000-916",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Zeita"
+      ]
+    },
+    {
+      "topic": "Writers and their lives",
+      "q": "At which institution did Hafiz Ibrahim head the literary department?",
+      "a": "Egyptian National Library",
+      "sourceUrl": "https://www.safahat.org/contributors/71640270/",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabliterature-1000-917",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Dar al-Kutub al-Misriyya"
+      ]
+    },
+    {
+      "qid": "arabliterature-1000-918",
+      "p": 1000,
+      "q": "To which mountain did Imru' al-Qays imagine the night's stars tied by tight ropes?",
+      "a": "Yadhbul",
+      "topic": "Classical poetry",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://ar.wikisource.org/wiki/معلقة_امرئ_القيس",
+      "alt": [
+        "Yathbul"
+      ]
+    }
+  ]
+}

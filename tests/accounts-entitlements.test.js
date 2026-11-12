@@ -239,6 +239,10 @@ test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec'
     // The additive Lamma protocol preserves every existing row and v1 column.
     // Only these exact additions and concurrency indexes are approved here.
     ["ALTER TABLE social_messages ADD COLUMN kind TEXT NOT NULL DEFAULT 'text';",
+      // 0031: pinned additive language identity; existing rows remain Arabic.
+      "ALTER TABLE mafia_ranked_queue ADD COLUMN content_locale TEXT NOT NULL DEFAULT 'ar' CHECK(content_locale IN ('ar','en'));",
+      "ALTER TABLE online_public_rooms ADD COLUMN content_locale TEXT NOT NULL DEFAULT 'ar' CHECK(content_locale IN ('ar','en'));",
+      "ALTER TABLE online_public_rooms ADD COLUMN content_version TEXT NOT NULL DEFAULT 'legacy-ar';",
       'ALTER TABLE social_messages ADD COLUMN attachment_id TEXT;',
       'ALTER TABLE social_messages ADD COLUMN room_invite_id TEXT;',
       // 0013: nullable creation identity; deletion clears the creator link only.

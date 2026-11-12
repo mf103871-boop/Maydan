@@ -41,12 +41,12 @@ export function selectDockParticipants(participants, capacity = 4, promotedId = 
   return { visible, hidden, hiddenSpeakingCount: hidden.filter(person => person.speaking).length, promotedId: promoted?.id || null };
 }
 
-// Three permanent 44px controls, padding/gaps, plus room for a promoted name.
+// Three permanent 48px controls, padding/gaps, plus room for a promoted name.
 export function dockCapacity(availableHeight, participantCount) {
   const height = Math.max(0, Number(availableHeight) || 0);
   const total = Math.max(0, Math.floor(participantCount) || 0);
   let capacity = Math.min(4, total);
-  while (capacity > 1 && 148 + capacity * 46 + (total > capacity ? 46 : 0) + 12 > height) capacity--;
+  while (capacity > 1 && 160 + capacity * 50 + (total > capacity ? 50 : 0) + 20 > height) capacity--;
   return capacity;
 }
 

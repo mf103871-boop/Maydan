@@ -38,7 +38,7 @@ async function waitForProfileGeometry(page, timeout = 5000) {
         !['finished', 'idle'].includes(animation.playState) &&
         animation.effect?.getTiming().iterations !== Infinity)) return false;
     }
-    return parseFloat(getComputedStyle(profile).width) >= 72 && profile.offsetWidth >= 72 && profile.getBoundingClientRect().width >= 72;
+    return parseFloat(getComputedStyle(profile).width) >= 48 && profile.offsetWidth >= 48 && profile.getBoundingClientRect().width >= 48;
   }, undefined, { timeout });
 }
 
@@ -59,7 +59,9 @@ async function waitForHomeRowsGeometry(page, timeout = 5000) {
       return { x: box.x, y: box.y, width: box.width, height: box.height };
     };
     const list = rect(listNode), rows = rowNodes.map(rect);
-    if (!rows.every(row => Math.abs(row.width - list.width) < 2 && row.height >= 44 && row.height < 150 && Math.abs(row.x - list.x) < 2)) return false;
+    const gap = parseFloat(getComputedStyle(listNode).columnGap) || 0;
+    if (!rows.every(row => row.height >= 48 && row.width >= 140 && row.x >= list.x - 1 && row.x + row.width <= list.x + list.width + 1 && (Math.abs(row.width - list.width) < 2 || Math.abs(row.width * 2 + gap - list.width) < 2))) return false;
+    if (rows.some((a, i) => rows.slice(i + 1).some(b => a.x < b.x + b.width - 1 && a.x + a.width > b.x + 1 && a.y < b.y + b.height - 1 && a.y + a.height > b.y + 1))) return false;
     return { list, rows };
   }, undefined, { timeout });
   try { return await handle.jsonValue(); } finally { await handle.dispose(); }
@@ -80,19 +82,19 @@ test('Chromium/WebKit: geometry accepts a static header, waits for finite animat
         const entrance = header.animate([{ transform: 'translateY(14px) scale(.98)' }, { transform: 'none' }], { duration: 1000, fill: 'both' });
         entrance.pause(); entrance.currentTime = 0; window.finishEntrance = () => entrance.finish();
       });
-      assert.equal(await page.locator('.home-profile').evaluate(node => node.offsetWidth), 72);
-      assert.ok((await page.locator('.home-profile').boundingBox()).width < 72, 'the controlled ancestor scales its 72px layout before settling');
+      assert.equal(await page.locator('.home-profile').evaluate(node => node.offsetWidth), 48);
+      assert.ok((await page.locator('.home-profile').boundingBox()).width < 48, 'the controlled ancestor scales its 48px layout before settling');
       let settled = false;
       const waiting = waitForProfileGeometry(page).then(() => { settled = true; });
       await page.waitForTimeout(40);
       assert.equal(settled, false, 'a visible but still transformed profile is not ready');
       await page.evaluate(() => window.finishEntrance()); await waiting;
-      assert.ok((await page.locator('.home-profile').boundingBox()).width >= 72);
-      await page.locator('.home-profile').evaluate(node => { node.style.width = '71px'; node.style.flexBasis = '71px'; });
+      assert.ok((await page.locator('.home-profile').boundingBox()).width >= 48);
+      await page.locator('.home-profile').evaluate(node => { node.style.width = '47px'; node.style.minWidth = '47px'; node.style.flexBasis = '47px'; });
       await assert.rejects(waitForProfileGeometry(page, 150), /Timeout/, 'waiting must not hide a persistent layout defect');
       await page.locator('.home-screen').evaluate(node => node.insertAdjacentHTML('beforeend', '<div class="games-grid home-game-list"><button class="game-card home-game-row">لعبة تجريبية</button><button class="game-card home-game-row">لعبة أخرى</button></div>'));
       await waitForHomeRowsGeometry(page);
-      await page.locator('.home-game-row').first().evaluate(node => { node.style.width = '71px'; });
+      await page.locator('.home-game-row').first().evaluate(node => { node.style.width = '47px'; });
       await assert.rejects(waitForHomeRowsGeometry(page, 150), /Timeout/, 'atomic measurement must still reject a persistent narrow row');
       await page.locator('.home-game-row').first().evaluate(node => { node.style.width = ''; });
       await waitForHomeRowsGeometry(page);
@@ -100,15 +102,15 @@ test('Chromium/WebKit: geometry accepts a static header, waits for finite animat
   }
 });
 
-test('Chromium/WebKit: compact Home, every mode, family setup/resume, reload and roster access', { timeout: 90000 }, async () => {
+test('Chromium/WebKit: Playful Studio Home, every mode, family setup/resume, reload and roster access', { timeout: 90000 }, async () => {
   const entry = `import React,{useState}from'react';import{createRoot}from'react-dom/client';
     import{PlatformContext}from'./src/platform/context.js';import{AccountContext,NULL_ACCOUNT}from'./src/shared/account/context.js';import{ProfileContext}from'./src/profiles/ProfileProvider.jsx';
     import{Home}from'./src/platform/screens/Home.jsx';import{GameDetails}from'./src/platform/screens/GameDetails.jsx';import{Play}from'./src/platform/screens/Play.jsx';import{Settings}from'./src/platform/screens/Settings.jsx';import{Players}from'./src/platform/screens/Players.jsx';
     import{useRoute,navigate}from'./src/platform/router.js';import{BrandFonts}from'./src/shared/brand/art.jsx';
-    import tokens from'./src/shared/theme/tokens.css';import ui from'./src/shared/ui/ui.css';import brand from'./src/shared/brand/brand.css';import platformCSS from'./src/platform/platform.css';import setupCSS from'./src/shared/setup/setup.css';
+    import tokens from'./src/shared/theme/tokens.css';import ui from'./src/shared/ui/ui.css';import brand from'./src/shared/brand/brand.css';import platformCSS from'./src/platform/platform.css';import setupCSS from'./src/shared/setup/setup.css';import studioCSS from'./src/platform/playful-studio.css';
     const noop=()=>{},sound={play:noop,emit:noop,volume:.5,music:{volume:.3,scene:noop,releaseScene:noop,play:noop}},account={...NULL_ACCOUNT,signedIn:false};window.go=navigate;
     function App(){const route=useRoute(),[roster,setRoster]=useState(${JSON.stringify(roster)}),[settings,setSettings]=useState({soundOn:false,musicOn:false,hapticsOn:false,reducedMotion:true});const platform={roster,setRoster,settings,setSettings,version:'local-ui',sound,haptics:{vibrate:noop},confetti:{fire:noop,burst:noop},toast:noop};
-      return <AccountContext.Provider value={account}><PlatformContext.Provider value={platform}><ProfileContext.Provider value={{mine:null,beginSession:async()=>null,completeSession:async()=>null}}><BrandFonts/><style>{tokens+ui+brand+platformCSS+setupCSS}</style><main>{route.name==='home'?<Home/>:route.name==='game'?<GameDetails id={route.params.id} mode={route.params.mode}/>:route.name==='play'?<Play id={route.params.id}/>:route.name==='settings'?<Settings/>:route.name==='players'?<Players/>:<output data-testid="destination">{route.name+':'+(route.params.id||'')}</output>}</main></ProfileContext.Provider></PlatformContext.Provider></AccountContext.Provider>;}
+      return <AccountContext.Provider value={account}><PlatformContext.Provider value={platform}><ProfileContext.Provider value={{mine:null,beginSession:async()=>null,completeSession:async()=>null}}><BrandFonts/><style>{tokens+ui+brand+platformCSS+setupCSS+studioCSS}</style><main>{route.name==='home'?<Home/>:route.name==='game'?<GameDetails id={route.params.id} mode={route.params.mode}/>:route.name==='play'?<Play id={route.params.id}/>:route.name==='settings'?<Settings/>:route.name==='players'?<Players/>:<output data-testid="destination">{route.name+':'+(route.params.id||'')}</output>}</main></ProfileContext.Provider></PlatformContext.Provider></AccountContext.Provider>;}
     createRoot(document.getElementById('root')).render(<App/>);`;
   const built = await build({ stdin: { contents: entry, loader: 'jsx', resolveDir: process.cwd() }, bundle: true, write: false, format: 'iife', jsx: 'automatic', loader: { '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl', '.mp3': 'dataurl' }, logLevel: 'silent', define: { __MAYDAN_AUDIO_PREVIEW__: 'false' } });
   const header = await readFile(path.resolve('public/art/home/home-header-v1.webp'));
@@ -155,9 +157,9 @@ test('Chromium/WebKit: compact Home, every mode, family setup/resume, reload and
           // Check every row and its list in the same settled DOM snapshot.
           const geometry = await waitForHomeRowsGeometry(page);
           assert.equal(geometry.rows.length, 8);
-          assert.ok(geometry.rows.every(row => Math.abs(row.width - geometry.list.width) < 2 && row.height >= 44 && row.height < 150 && Math.abs(row.x - geometry.list.x) < 2), `${name}:${width} horizontal rows ${JSON.stringify(geometry)}`);
+          assert.ok(geometry.rows.every(row => row.width >= 140 && row.height >= 48), `${name}:${width} usable game cards ${JSON.stringify(geometry)}`);
           await waitForProfileGeometry(page);
-          assert.ok((await page.getByRole('button', { name: 'بروفايلي', exact: true }).boundingBox()).width >= 72);
+          assert.ok((await page.getByRole('button', { name: 'بروفايلي', exact: true }).boundingBox()).width >= 48);
           await page.screenshot({ path: path.join(proof, `${name}-home-${width}.png`), fullPage: true });
         }
         await page.setViewportSize({ width: 390, height: 844 });

@@ -1,15 +1,15 @@
 export const MENU_ITEMS = Object.freeze([
-  { id: 'games', label: 'الألعاب', path: '/', icon: 'games' },
+  { id: 'games', label: 'العب', path: '/', icon: 'games' },
   { id: 'friends', label: 'الأصدقاء', path: '/friends', icon: 'friends' },
   { id: 'store', label: 'المتجر', path: '/store', icon: 'store' },
-  { id: 'settings', label: 'الإعدادات', path: '/settings', icon: 'settings' },
+  { id: 'profile', label: 'أنا', path: '/profile', icon: 'profile' },
 ]);
 
 export function menuSection(route, previous = 'games') {
   if (route.name === 'friends' || route.name === 'friend-group') return 'friends';
   if (route.name === 'store') return 'store';
-  if (['settings', 'moderation', 'about', 'terms', 'privacy'].includes(route.name)) return 'settings';
-  if (route.name === 'profile') return previous;
+  if (['settings', 'moderation', 'about', 'terms', 'privacy'].includes(route.name)) return 'profile';
+  if (route.name === 'profile') return route.params?.id ? previous : 'profile';
   return 'games';
 }
 

@@ -1,0 +1,932 @@
+{
+  "id": "sound",
+  "name": "Guess the Sound",
+  "icon": "🔊",
+  "defaultType": "audio",
+  "qs": [
+    {
+      "p": 200,
+      "q": "What musical instrument can you hear?",
+      "a": "Guitar",
+      "qid": "sound-200-901",
+      "type": "audio",
+      "topic": "Musical instruments",
+      "alt": [
+        "Acoustic guitar"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://audionautix.com/free-music/acoustic",
+      "media": {
+        "src": "sound-200-901.mp3",
+        "type": "audio",
+        "title": "Acoustic Guitar #1 (trimmed and normalized excerpt)",
+        "sourceUrl": "https://audionautix.com/free-music/acoustic",
+        "author": "Jason Shaw / Audionautix.com",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 200,
+      "q": "What household device makes this sound?",
+      "a": "Doorbell",
+      "qid": "sound-200-902",
+      "type": "audio",
+      "topic": "Home and kitchen",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Doorbell-classic-dingdong.ogg",
+      "media": {
+        "src": "sound-200-902.mp3",
+        "type": "audio",
+        "title": "Doorbell-classic-dingdong (trimmed and normalized excerpt)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Doorbell-classic-dingdong.ogg",
+        "author": "Dub",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 200,
+      "q": "What household object makes this sound?",
+      "a": "Clock",
+      "qid": "sound-200-903",
+      "type": "audio",
+      "topic": "Home and kitchen",
+      "alt": [
+        "Wall clock",
+        "Ticking clock"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clock_ticking.ogg",
+      "media": {
+        "src": "sound-200-903.mp3",
+        "type": "audio",
+        "title": "Title Clock, ticking Artist natalie Original mp3 data Length:0:18 minutes (357.19 KB) Format:MP3 Stereo 44kHz 160Kbps (… (trimmed and normalized excerpt)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clock_ticking.ogg",
+        "author": "natalie",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 200,
+      "q": "What warning device can you hear?",
+      "a": "Car horn",
+      "qid": "sound-200-904",
+      "type": "audio",
+      "topic": "Vehicles and signals",
+      "alt": [
+        "Horn"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Car_Horn.wav",
+      "media": {
+        "src": "sound-200-904.mp3",
+        "type": "audio",
+        "title": "The sound made by a car horn. (trimmed and normalized excerpt)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Car_Horn.wav",
+        "author": "15HPanska_Ruttner_Jan",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 200,
+      "q": "What natural phenomenon can you hear?",
+      "a": "Thunder",
+      "qid": "sound-200-905",
+      "type": "audio",
+      "topic": "Nature",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thunder_01.ogg",
+      "media": {
+        "src": "sound-200-905.mp3",
+        "type": "audio",
+        "title": "Thunder (trimmed and normalized excerpt)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thunder_01.ogg",
+        "author": "Amuzujoe",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 200,
+      "q": "Which animal makes this sound?",
+      "a": "Dog",
+      "qid": "sound-200-906",
+      "type": "audio",
+      "topic": "Animals",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dog_barking.webm",
+      "media": {
+        "src": "sound-200-906.mp3",
+        "type": "audio",
+        "title": "A dog barking. (trimmed and normalized excerpt)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dog_barking.webm",
+        "author": "User:Dr. Nono YesMaybe",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 200,
+      "q": "Which bird makes this sound?",
+      "a": "Rooster",
+      "qid": "sound-200-907",
+      "type": "audio",
+      "topic": "Birds and insects",
+      "alt": [
+        "Cockerel"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rooster_crowing.ogg",
+      "media": {
+        "src": "sound-200-907.mp3",
+        "type": "audio",
+        "title": "A rooster crowing (trimmed and normalized excerpt)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rooster_crowing.ogg",
+        "author": "Filo gèn'",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 200,
+      "q": "Which animal makes this sound?",
+      "a": "Cat",
+      "qid": "sound-200-908",
+      "type": "audio",
+      "topic": "Animals",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Meow_of_a_pleading_cat.oga",
+      "media": {
+        "src": "sound-200-908.mp3",
+        "type": "audio",
+        "title": "Cat asking to get out. (trimmed and normalized excerpt)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Meow_of_a_pleading_cat.oga",
+        "author": "Heismark",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 400,
+      "q": "What percussion instrument can you hear?",
+      "a": "Drum",
+      "qid": "sound-400-901",
+      "type": "audio",
+      "topic": "Musical instruments",
+      "alt": [
+        "Snare drum"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Snare_drum_muffled.ogg",
+      "media": {
+        "src": "sound-400-901.mp3",
+        "type": "audio",
+        "title": "Snare drum muffled (trimmed and normalized excerpt)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Snare_drum_muffled.ogg",
+        "author": "Clngre",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 400,
+      "q": "What is making this sound in nature?",
+      "a": "Ocean waves",
+      "qid": "sound-400-902",
+      "type": "audio",
+      "topic": "Nature",
+      "alt": [
+        "Sea waves",
+        "Waves"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://freesound.org/people/SamsterBirdies/sounds/578524/",
+      "media": {
+        "src": "sound-400-902-r2.mp3",
+        "type": "audio",
+        "title": "Calm ocean waves (trimmed and level-adjusted excerpt)",
+        "sourceUrl": "https://freesound.org/people/SamsterBirdies/sounds/578524/",
+        "author": "SamsterBirdies",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, downmixed to mono, short edge fades, level adjusted and encoded as128kbps MP3; no speed or pitch change."
+      }
+    },
+    {
+      "p": 400,
+      "q": "Which animal makes this sound?",
+      "a": "Horse",
+      "qid": "sound-400-903",
+      "type": "audio",
+      "topic": "Animals",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wiehern.ogg",
+      "media": {
+        "src": "sound-400-903.mp3",
+        "type": "audio",
+        "title": "A sounding recording of a neighing horse. (trimmed and normalized excerpt)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wiehern.ogg",
+        "author": "Hü.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 400,
+      "q": "Which insect makes this sound?",
+      "a": "Cricket",
+      "qid": "sound-400-904",
+      "type": "audio",
+      "topic": "Birds and insects",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cricket_Gryllus_bimaculatus_Chirps.oga",
+      "media": {
+        "src": "sound-400-904.mp3",
+        "type": "audio",
+        "title": "Chirps of the cricket Gryllus bimaculatus in Kfar Saba, Israel (trimmed and normalized excerpt)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cricket_Gryllus_bimaculatus_Chirps.oga",
+        "author": "Rickjpelleg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 400,
+      "q": "What human action can you hear?",
+      "a": "Sneezing",
+      "qid": "sound-400-905",
+      "type": "audio",
+      "topic": "Body and movement",
+      "alt": [
+        "Sneeze"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://freesound.org/people/sofiuzc/sounds/563313/",
+      "media": {
+        "src": "sound-400-905-r3.mp3",
+        "type": "audio",
+        "title": "sneeze.wav (complete level-adjusted recording)",
+        "sourceUrl": "https://freesound.org/people/sofiuzc/sounds/563313/",
+        "author": "sofiuzc",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Complete3-second creator preview retained; downmixed to mono, level adjusted and encoded as128kbps MP3. No trimming, compression, pitch/speed change or composite."
+      }
+    },
+    {
+      "p": 400,
+      "q": "Which vehicle makes this sound?",
+      "a": "Motorcycle",
+      "qid": "sound-400-906",
+      "type": "audio",
+      "topic": "Vehicles and signals",
+      "alt": [
+        "Motorbike"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jawa250_motorbike_exhaust_sound.ogg",
+      "media": {
+        "src": "sound-400-906.mp3",
+        "type": "audio",
+        "title": "Jawa 250 motorbike exhaust sound (trimmed and normalized excerpt)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jawa250_motorbike_exhaust_sound.ogg",
+        "author": "Віктор Ходєєв /Viktor Khodyeyev",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 400,
+      "q": "What household device makes this sound?",
+      "a": "Vacuum cleaner",
+      "qid": "sound-400-907",
+      "type": "audio",
+      "topic": "Home and kitchen",
+      "alt": [
+        "Vacuum"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Het_aanstaan_van_een_stofzuiger_-_SoundCloud_-_Beeld_en_Geluid.ogg",
+      "media": {
+        "src": "sound-400-907.mp3",
+        "type": "audio",
+        "title": "Aanstaan van een stofzuiger, onbelast (trimmed and normalized excerpt)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Het_aanstaan_van_een_stofzuiger_-_SoundCloud_-_Beeld_en_Geluid.ogg",
+        "author": "Beeld en Geluid",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 400,
+      "q": "What computer accessory makes this sound?",
+      "a": "Keyboard",
+      "qid": "sound-400-908",
+      "type": "audio",
+      "topic": "Devices and tools",
+      "alt": [
+        "Computer keyboard"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://freesound.org/people/Anton/sounds/137/",
+      "media": {
+        "src": "sound-400-908.mp3",
+        "type": "audio",
+        "title": "keyboard-typing.wav (trimmed and normalized excerpt)",
+        "sourceUrl": "https://freesound.org/people/Anton/sounds/137/",
+        "author": "Anton",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 600,
+      "q": "What string instrument can you hear?",
+      "a": "Qanun",
+      "qid": "sound-600-901",
+      "type": "audio",
+      "topic": "Musical instruments",
+      "alt": [
+        "Kanun"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:ArabicQanunSample.ogg",
+      "media": {
+        "src": "sound-600-901.mp3",
+        "type": "audio",
+        "title": "ArabicQanunSample (trimmed and normalized excerpt)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:ArabicQanunSample.ogg",
+        "author": "Ariel Qassis",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 600,
+      "q": "What weather phenomenon can you hear?",
+      "a": "Wind",
+      "qid": "sound-600-902",
+      "type": "audio",
+      "topic": "Nature",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Howling_wind.ogg",
+      "media": {
+        "src": "sound-600-902.mp3",
+        "type": "audio",
+        "title": "The wind is howling in a building (trimmed and normalized excerpt)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Howling_wind.ogg",
+        "author": "Tvabutzku1234",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 600,
+      "q": "Which bird makes this call?",
+      "a": "Cuckoo",
+      "qid": "sound-600-903",
+      "type": "audio",
+      "topic": "Birds and insects",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://freesound.org/people/Benboncan/sounds/72699/",
+      "media": {
+        "src": "sound-600-903.mp3",
+        "type": "audio",
+        "title": "Cuckoo.wav (trimmed and normalized excerpt)",
+        "sourceUrl": "https://freesound.org/people/Benboncan/sounds/72699/",
+        "author": "Benboncan",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 600,
+      "q": "What device makes this click?",
+      "a": "Camera",
+      "qid": "sound-600-904",
+      "type": "audio",
+      "topic": "Devices and tools",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Canon_T50_shutter_noise.ogg",
+      "media": {
+        "src": "sound-600-904.mp3",
+        "type": "audio",
+        "title": "Bruit du déclencheur d'un reflex Canon T50 (trimmed and normalized excerpt)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Canon_T50_shutter_noise.ogg",
+        "author": "FrancoisC / F. Collard",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 600,
+      "q": "What maritime warning device can you hear?",
+      "a": "Foghorn",
+      "qid": "sound-600-905",
+      "type": "audio",
+      "topic": "Vehicles and signals",
+      "alt": [
+        "Fog horn"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fog_signal_Bremerhaven.ogg",
+      "media": {
+        "src": "sound-600-905.mp3",
+        "type": "audio",
+        "title": "Fog signal Bremerhaven (trimmed and normalized excerpt)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fog_signal_Bremerhaven.ogg",
+        "author": "Tvabutzku1234",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 600,
+      "q": "Which animal makes this sound?",
+      "a": "Donkey",
+      "qid": "sound-600-906",
+      "type": "audio",
+      "topic": "Animals",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://freesound.org/people/felix.blume/sounds/157763/",
+      "media": {
+        "src": "sound-600-906.mp3",
+        "type": "audio",
+        "title": "A donkey is braying in his enclosure, in south of France (Minvervois, my homeland). Balthazar (my donkey) is braying wh… (trimmed and normalized excerpt)",
+        "sourceUrl": "https://freesound.org/people/felix.blume/sounds/157763/",
+        "author": "Felix Blume",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 600,
+      "q": "What human action can you hear?",
+      "a": "Whistling",
+      "qid": "sound-600-907",
+      "type": "audio",
+      "topic": "Body and movement",
+      "alt": [
+        "Whistle"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://freesound.org/people/georgisound/sounds/369296/",
+      "media": {
+        "src": "sound-600-907.mp3",
+        "type": "audio",
+        "title": "Whistling_Tunes.wav (trimmed and normalized excerpt)",
+        "sourceUrl": "https://freesound.org/people/georgisound/sounds/369296/",
+        "author": "georgisound",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 600,
+      "q": "What tool makes this sound?",
+      "a": "Scissors",
+      "qid": "sound-600-908",
+      "type": "audio",
+      "topic": "Devices and tools",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://freesound.org/people/Jagadamba/sounds/257032/",
+      "media": {
+        "src": "sound-600-908.mp3",
+        "type": "audio",
+        "title": "Sound of scissors cutting paper (trimmed and normalized excerpt)",
+        "sourceUrl": "https://freesound.org/people/Jagadamba/sounds/257032/",
+        "author": "Jagadamba",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 800,
+      "q": "What material is the person walking on?",
+      "a": "Gravel",
+      "qid": "sound-800-901",
+      "type": "audio",
+      "topic": "Body and movement",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://freesound.org/people/Joozz/sounds/531952/",
+      "media": {
+        "src": "sound-800-901.mp3",
+        "type": "audio",
+        "title": "Footsteps on gravel (trimmed and normalized excerpt)",
+        "sourceUrl": "https://freesound.org/people/Joozz/sounds/531952/",
+        "author": "Joozz",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 800,
+      "q": "Which bird makes this sound?",
+      "a": "Woodpecker",
+      "qid": "sound-800-902",
+      "type": "audio",
+      "topic": "Birds and insects",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://freesound.org/people/Benboncan/sounds/66955/",
+      "media": {
+        "src": "sound-800-902.mp3",
+        "type": "audio",
+        "title": "Woodpeckers Pecking 4.wav (trimmed and normalized excerpt)",
+        "sourceUrl": "https://freesound.org/people/Benboncan/sounds/66955/",
+        "author": "Benboncan",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 800,
+      "q": "Which vehicle makes this sound?",
+      "a": "Tractor",
+      "qid": "sound-800-903",
+      "type": "audio",
+      "topic": "Vehicles and signals",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://freesound.org/people/Erdie/sounds/34372/",
+      "media": {
+        "src": "sound-800-903.mp3",
+        "type": "audio",
+        "title": "Deutz-Tractor-Engine-1972.wav (trimmed and normalized excerpt)",
+        "sourceUrl": "https://freesound.org/people/Erdie/sounds/34372/",
+        "author": "Erdie",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 800,
+      "q": "What cooking process can you hear?",
+      "a": "Frying",
+      "qid": "sound-800-904",
+      "type": "audio",
+      "topic": "Home and kitchen",
+      "alt": [
+        "Frying food"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://freesound.org/people/BenjaminNelan/sounds/353124/",
+      "media": {
+        "src": "sound-800-904.mp3",
+        "type": "audio",
+        "title": "Frying Pan Sizzle (trimmed and normalized excerpt)",
+        "sourceUrl": "https://freesound.org/people/BenjaminNelan/sounds/353124/",
+        "author": "BenjaminNelan",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 800,
+      "q": "Which animal makes this call?",
+      "a": "Elk",
+      "qid": "sound-800-905",
+      "type": "audio",
+      "topic": "Animals",
+      "alt": [
+        "Wapiti"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://freesound.org/people/Hyperionn/sounds/250188/",
+      "media": {
+        "src": "sound-800-905.mp3",
+        "type": "audio",
+        "title": "Elk 3.wav (trimmed and normalized excerpt)",
+        "sourceUrl": "https://freesound.org/people/Hyperionn/sounds/250188/",
+        "author": "Hyperionn",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 800,
+      "q": "What string instrument can you hear?",
+      "a": "Cello",
+      "qid": "sound-800-906",
+      "type": "audio",
+      "topic": "Musical instruments",
+      "alt": [
+        "Violoncello"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://freesound.org/people/juskiddink/sounds/68373/",
+      "media": {
+        "src": "sound-800-906.mp3",
+        "type": "audio",
+        "title": "Cello open string bowed.wav (trimmed and normalized excerpt)",
+        "sourceUrl": "https://freesound.org/people/juskiddink/sounds/68373/",
+        "author": "juskiddink",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 800,
+      "q": "What type of precipitation can you hear?",
+      "a": "Hail",
+      "qid": "sound-800-907",
+      "type": "audio",
+      "topic": "Nature",
+      "alt": [
+        "Hailstones"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://freesound.org/people/joly1/sounds/81452/",
+      "media": {
+        "src": "sound-800-907.mp3",
+        "type": "audio",
+        "title": "HAIL .wav (trimmed and normalized excerpt)",
+        "sourceUrl": "https://freesound.org/people/joly1/sounds/81452/",
+        "author": "joly1",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 800,
+      "q": "Which sport produces these sounds?",
+      "a": "Bowling",
+      "qid": "sound-800-908",
+      "type": "audio",
+      "topic": "Sports and games",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://freesound.org/people/Rehanjo/sounds/593593/",
+      "media": {
+        "src": "sound-800-908-r2.mp3",
+        "type": "audio",
+        "title": "Bowling.wav (trimmed and level-adjusted excerpt)",
+        "sourceUrl": "https://freesound.org/people/Rehanjo/sounds/593593/",
+        "author": "Rehanjo",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, downmixed to mono, short edge fades, level adjusted and encoded as128kbps MP3; no speed or pitch change. Transient dynamic compression applied."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What type of monkey makes this call?",
+      "a": "Howler monkey",
+      "qid": "sound-1000-901",
+      "type": "audio",
+      "topic": "Animals",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Howler_monkey.ogg",
+      "media": {
+        "src": "sound-1000-901.mp3",
+        "type": "audio",
+        "title": "Howler monkey, taken from video recorded near Yesal camp, Petén, Guatemala. (trimmed and normalized excerpt)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Howler_monkey.ogg",
+        "author": "David O'Hara",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "Which bird makes this sound?",
+      "a": "Stork",
+      "qid": "sound-1000-902",
+      "type": "audio",
+      "topic": "Birds and insects",
+      "alt": [
+        "White stork"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://freesound.org/people/dobroide/sounds/153500/",
+      "media": {
+        "src": "sound-1000-902.mp3",
+        "type": "audio",
+        "title": "20120429_stork_05.wav (trimmed and normalized excerpt)",
+        "sourceUrl": "https://freesound.org/people/dobroide/sounds/153500/",
+        "author": "dobroide",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What musical instrument can you hear?",
+      "a": "Kalimba",
+      "qid": "sound-1000-903",
+      "type": "audio",
+      "topic": "Musical instruments",
+      "alt": [
+        "Thumb piano"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://freesound.org/people/iluppai/sounds/100474/",
+      "media": {
+        "src": "sound-1000-903.mp3",
+        "type": "audio",
+        "title": "Kalimba african (trimmed and normalized excerpt)",
+        "sourceUrl": "https://freesound.org/people/iluppai/sounds/100474/",
+        "author": "iluppai",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What musical instrument can you hear?",
+      "a": "Theremin",
+      "qid": "sound-1000-904",
+      "type": "audio",
+      "topic": "Musical instruments",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://freesound.org/people/kirkoid/sounds/40816/",
+      "media": {
+        "src": "sound-1000-904.mp3",
+        "type": "audio",
+        "title": "Theremin 1.mp3 (trimmed and normalized excerpt)",
+        "sourceUrl": "https://freesound.org/people/kirkoid/sounds/40816/",
+        "author": "kirkoid",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What device makes this sound?",
+      "a": "Film projector",
+      "qid": "sound-1000-905",
+      "type": "audio",
+      "topic": "Devices and tools",
+      "alt": [
+        "Movie projector"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://freesound.org/people/Dr.%20Macak/sounds/253758/",
+      "media": {
+        "src": "sound-1000-905.mp3",
+        "type": "audio",
+        "title": "Cinema-Projector.wav (trimmed and normalized excerpt)",
+        "sourceUrl": "https://freesound.org/people/Dr.%20Macak/sounds/253758/",
+        "author": "Dr. Macak",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What natural phenomenon can you hear?",
+      "a": "Geyser",
+      "qid": "sound-1000-906",
+      "type": "audio",
+      "topic": "Nature",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://freesound.org/people/YleArkisto/sounds/263878/",
+      "media": {
+        "src": "sound-1000-906.mp3",
+        "type": "audio",
+        "title": "Islanti, geysir purkautuu, turistit / Iceland, geyser erupting twice, tourists reacting, talking (trimmed and normalized excerpt)",
+        "sourceUrl": "https://freesound.org/people/YleArkisto/sounds/263878/",
+        "author": "YleArkisto",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What communication device makes this sound?",
+      "a": "Modem",
+      "qid": "sound-1000-907",
+      "type": "audio",
+      "topic": "Devices and tools",
+      "alt": [
+        "Dial-up modem"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://freesound.org/people/BoilingSand/sounds/49608/",
+      "media": {
+        "src": "sound-1000-907.mp3",
+        "type": "audio",
+        "title": "dialup login dec 2001 24 bit.wav (trimmed and normalized excerpt)",
+        "sourceUrl": "https://freesound.org/people/BoilingSand/sounds/49608/",
+        "author": "BoilingSand",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "Which sport produces these sounds?",
+      "a": "Ice skating",
+      "qid": "sound-1000-908",
+      "type": "audio",
+      "topic": "Sports and games",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://freesound.org/people/splodge123/sounds/249833/",
+      "media": {
+        "src": "sound-1000-908.mp3",
+        "type": "audio",
+        "title": "skate fx.mp3 (trimmed and normalized excerpt)",
+        "sourceUrl": "https://freesound.org/people/splodge123/sounds/249833/",
+        "author": "splodge123",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    }
+  ]
+}

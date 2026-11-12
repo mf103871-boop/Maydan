@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { tr } from '../shared/i18n/core.js';
 import { useAccount } from '../shared/account/context.js';
 import { resolveAccountServer } from '../shared/account/api.js';
 
@@ -50,11 +51,11 @@ export function usePlusResource(path, enabled = true) {
 }
 
 export function plusError(error) {
-  if (error?.code === 'MAFIA_SOCIAL_LOCKED') return 'يمكنك تغيير مظهرك بعد انتهاء مباراة مافيا.';
-  if (error?.code === 'CONFLICT') return 'تغيّرت الإعدادات على جهاز آخر. أعد التحميل ثم حاول مجددًا.';
-  if (error?.code === 'PLUS_REQUIRED') return 'هذه اللمسة تحتاج ميدان بلس. كل الألعاب مجانية.';
-  if (error?.code === 'LIMIT' || error?.code === 'PRESET_LIMIT') return 'وصلت إلى عشر جلسات. احذف جلسة قديمة لإضافة غيرها.';
-  if (error?.code === 'AUTH_REQUIRED' || error?.code === 'AUTH_EXPIRED') return 'سجّل الدخول إلى حسابك أولًا.';
+  if (error?.code === 'MAFIA_SOCIAL_LOCKED') return tr('يمكنك تغيير مظهرك بعد انتهاء مباراة مافيا.');
+  if (error?.code === 'CONFLICT') return tr('تغيّرت الإعدادات على جهاز آخر. أعد التحميل ثم حاول مجددًا.');
+  if (error?.code === 'PLUS_REQUIRED') return tr('هذه اللمسة تحتاج ميدان بلس.');
+  if (error?.code === 'LIMIT' || error?.code === 'PRESET_LIMIT') return tr('وصلت إلى عشر جلسات. احذف جلسة قديمة لإضافة غيرها.');
+  if (error?.code === 'AUTH_REQUIRED' || error?.code === 'AUTH_EXPIRED') return tr('سجّل الدخول إلى حسابك أولًا.');
   if (error?.code === 'STALE_ACCOUNT') return '';
-  return 'تعذّر حفظ التعديل. تحقق من الاتصال وحاول مجددًا.';
+  return tr('تعذّر حفظ التعديل. تحقق من الاتصال وحاول مجددًا.');
 }

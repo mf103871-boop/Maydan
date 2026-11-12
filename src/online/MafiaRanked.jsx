@@ -1,11 +1,15 @@
+import { PresentationStyles } from '../shared/ui/PresentationStyles.jsx';
+import { uiDirection, uiDateLocale } from './format.js';
+import { arabicNumber } from './format.js';
+import { tr } from '../shared/i18n/core.js';
 import React,{useEffect,useRef,useState} from 'react';
 import {Modal,Button} from '../shared/ui/components.jsx';
 import {useAccount} from '../shared/account/context.js';
-import {resolveServerUrl,arabicNumber} from './shared.js';
+import {resolveServerUrl,ROOM_CAPABILITIES} from './shared.js';
 import config from '../../online.config.json';
-import {newCredentials,readSaved,save} from './client.js';
+import {newCredentials,readSaved,save,requireEnglishServer} from './client.js';
 import {socialInterruption} from '../social/interruption.js';
-import css from './mafia.css';
+import css from './mafia.css?sheet';
 
 const SERVER=resolveServerUrl(typeof __MAYDAN_ROOMS_URL__!=='undefined'&&__MAYDAN_ROOMS_URL__||config.serverUrl,typeof location==='undefined'?'':location.origin);
 const labels={MAFIA_RANKED_ELIGIBILITY:'يلزم فهم القواعد وإكمال عشر مباريات عامة مؤهلة.',MAFIA_RANKED_COOLDOWN:'انتظر انتهاء مهلة الانسحاب قبل العودة.',MAFIA_RANKED_CLOSED:'الموسم مغلق حاليًا.',MAFIA_ACTIVE_ELSEWHERE:'لديك نشاط مافيا على هذا الحساب. أكمله أولًا.',MAFIA_RANKED_CALL_ACTIVE:'أنه المكالمة الاجتماعية قبل دخول الطابور.',MAFIA_RANKED_UNDERSTANDING:'راجع إجاباتك وحاول مجددًا.',MAFIA_DRAINING:'الطابور لا يستقبل مباريات جديدة حاليًا.',NETWORK:'تعذر الاتصال. يمكنك إعادة المحاولة.'};
@@ -13,7 +17,7 @@ const ar=arabicNumber;
 const authorizationOf=account=>{const headers=account.authHeaders?.()||{};return headers.Authorization||headers.authorization||'';};
 const hasQueueEvidence=result=>result?.available===true&&Object.hasOwn(result,'queue')&&(result.queue===null||result.queue&&['queued','assigned'].includes(result.queue.status));
 
-export function MafiaRanked({onClose,onJoined}){
+export function MafiaRanked({onClose,onJoined,contentLocale='ar'}){
   const account=useAccount(),owner=account.ready&&account.signedIn?account.user?.id:null;
   const authorization=owner?authorizationOf(account):'';
   const identity=useRef({owner:null,authorization:'',epoch:0});
@@ -30,6 +34,7 @@ export function MafiaRanked({onClose,onJoined}){
     if(signal?.aborted)controller.abort();
     signal?.addEventListener('abort',abort,{once:true});pending.current.add(controller);
     try{
+      if(path==='/queue/join'&&body?.contentLocale==='en')await requireEnglishServer(SERVER,{signal:controller.signal});
       const response=await fetch(`${SERVER}/api/mafia/ranked${path}`,{method:body===undefined?'GET':'POST',headers:{authorization,...(body===undefined?{}:{'content-type':'application/json'})},...(body===undefined?{}:{body:JSON.stringify(body)}),credentials:'omit',cache:'no-store',signal:controller.signal});
       let result;try{result=await response.json();}catch{throw new Error('NETWORK');}
       if(!response.ok)throw new Error(result.error||'NETWORK');return result;
@@ -120,7 +125,7 @@ export function MafiaRanked({onClose,onJoined}){
     // Suppress cached communication before the server can commit its lease.
     if(!privacy.current)privacy.current=socialInterruption.lockCommunication(privacyOwner.current);
     admission.current={...admission.current,owner,uncertain:true};
-    const result=await mutate('/queue/join',session);if(result?.queue?.status==='assigned')enterRoom(result);
+    const result=await mutate('/queue/join',{...session,contentLocale,capabilities:ROOM_CAPABILITIES});if(result?.queue?.status==='assigned')enterRoom(result);
     if(!result&&current()){const recovered=await mutate('/queue/status',session,{preserveError:true});if(recovered?.queue?.status==='assigned')enterRoom(recovered);}
   }
   async function close(){
@@ -141,23 +146,23 @@ export function MafiaRanked({onClose,onJoined}){
     if(!current()||admission.current.uncertain)return;
     privacy.current?.();privacy.current=null;onClose();
   }
-  const qs=[['متى تكشف بطاقة دورك للآخرين؟',['في بداية المباراة','لا تكشف البطاقة؛ الادعاء والنقاش جزء من اللعب','بعد أول تصويت']],['هل إقصاؤك طبيعيًا يعني انسحابك؟',['لا؛ تابع دون تسريب للأحياء','نعم دائمًا','يعطيك حق إرسال تلميحات']],['هل الاشتراك يغيّر قوة الأدوار؟',['نعم','يزيد رصيد المهارة','لا؛ القدرات متساوية في النمط نفسه']]];
-  return <Modal className="mafia-noir mafia-guide-dialog mafia-ranked-panel" title="المنافسة التجريبية" onClose={close}><style>{css}</style><div className="mafia-guide stack" dir="rtl">
-    <p className="mafia-notice">معاينة تجريبية غير معايرة. ثمانية مقاعد بأسماء مؤقتة وقواعد أساسية ثابتة ونص فقط. تتوقف المحادثات والمكالمات الاجتماعية أثناء الطابور والمباراة.</p>
-    {error&&<p role="alert">{labels[error]||'تعذر إتمام الطلب. حدّث الحالة وحاول مجددًا.'}</p>}
-    {uncertain&&<p role="status">لم نتأكد من حالة حجزك بعد. أبقينا خصوصية التواصل حتى نتحقق.</p>}
-    {!data?<p role="status">نحمّل الموسم والتقدم…</p>:!data.available?<p>المنافسة غير متاحة في هذه البيئة.</p>:<>
-      <header className="mafia-ranked-season"><span aria-hidden="true">✧</span><div><strong>{data.season?'موسم المنافسة التجريبي':'لا موسم مفتوح'} · {data.season?.status==='open'?'مفتوح':data.season?.status==='closing'?'يصفّي المباريات':'مغلق'}</strong><small>التصنيف الفردي · ٨ مقاعد</small></div></header>
-      {data.canManageSeasons&&data.season&&data.season.status!=='closed'&&<Button disabled={busy||data.season.endsAt>Date.now()} onClick={async()=>{const result=await mutate('/season/close',{seasonId:data.season.id});if(result)try{apply(await request(''));}catch(e){if(current())setError(e.message);}}}>إغلاق الموسم وتثبيت ترتيب ومكافآت المؤهلين</Button>}
-      <section className="mafia-ranked-card" aria-label="مستواك في المنافسة"><h3>{data.rating.band}</h3><p>{ar(data.rating.rating)} نقطة · {ar(data.rating.games)} مباراة{data.rating.provisional?` · باقي ${ar(data.rating.placementRemaining)} لتحديد المرتبة`:''}</p></section>
-      <section className="mafia-ranked-card" aria-label="شروط المنافسة"><h3>الجاهزية للطابور</h3><p>تقدم الأهلية: {ar(Math.min(data.eligibility.publicMatches,10))} من ١٠ مباريات عامة مؤهلة</p><progress value={Math.min(data.eligibility.publicMatches,10)} max={10} aria-label="المباريات العامة المؤهلة"/><p>فهم القواعد: <strong>{data.eligibility.understands?'مكتمل':'مطلوب'}</strong></p></section>
-      {data.matchmaking?.skillBased&&<p className="mafia-muted">نبحث عن لاعبين بمستوى متقارب، ويتسع نطاق البحث تدريجيًا أثناء انتظارك. نحتاج ثمانية لاعبين متوافقين؛ لا يوجد موعد مضمون لبدء المباراة.</p>}
-      {!data.eligibility.understands&&!data.queue&&!uncertain&&<fieldset disabled={busy}><legend>فحص فهم بديل عن إكمال الدرس</legend>{qs.map(([question,options],i)=><label className="stack" key={question}>{question}<select value={answers[i]} onChange={e=>setAnswers(old=>old.map((v,j)=>i===j?Number(e.target.value):v))}><option value={-1}>اختر إجابتك</option>{options.map((option,j)=><option key={option} value={j}>{option}</option>)}</select></label>)}<Button disabled={answers.includes(-1)||busy} onClick={()=>mutate('/understanding',{answers})}>تأكيد الفهم</Button></fieldset>}
-      {data.eligibility.cooldownUntil>Date.now()&&<p>مهلة العودة بعد الانسحاب تنتهي عند {new Date(data.eligibility.cooldownUntil).toLocaleTimeString('ar')}.</p>}
-      {uncertain?<Button disabled={busy} onClick={close}>التحقق وإلغاء الانتظار</Button>:data.queue?<><section className="mafia-ranked-card"><h3>مقاعد المباراة</h3><div className="mafia-ranked-seats" aria-hidden="true">{Array.from({length:8},(_,i)=><span key={i} className={data.queue.status==='assigned'||i<Number(data.waiting)?'filled':undefined}>{ar(i+1)}</span>)}</div><p role="status">{data.queue.status==='assigned'?'اكتملت المقاعد؛ ندخلك إلى المباراة.':`أنت في الطابور · ${ar(data.waiting)} من ٨ متاحين. ينتهي الحجز إذا غادر جهازك ولم يعد خلال دقيقتين.`}</p><Button disabled={busy} onClick={close}>{data.queue.status==='assigned'?'متابعة المباراة على هذا الجهاز':'إلغاء الانتظار وإغلاق'}</Button></section></>:<Button variant="primary" disabled={busy||!data.eligibility.eligible||data.season?.status!=='open'} onClick={join}>دخول طابور فردي</Button>}
-      {!data.queue&&!uncertain&&<Button disabled={busy} onClick={async()=>{setBusy(true);setError('');try{const result=await request('/leaderboard');if(current())setBoard({scope,rows:result.rows});}catch(e){if(current())setError(e.message);}finally{if(current())setBusy(false);}}}>الترتيب التجريبي بأسماء مؤقتة</Button>}
-      {board?.scope===scope&&!data.queue&&<section className="mafia-ranked-card"><h3>لوحة الترتيب</h3><ol className="mafia-ranked-board">{board.rows.length?board.rows.map(row=><li key={row.alias}><strong>{row.own?'أنت':`مشارك ${row.alias}`}</strong><span>{row.band} · {ar(row.rating)} · {ar(row.games)} مباراة</span></li>):<li>لا مشاركين أكملوا التحديد بعد.</li>}</ol></section>}
-      <p className="mafia-muted">أول عشر مباريات تحدد المرتبة. الإقصاء الطبيعي يحتفظ بالنتيجة؛ الانسحاب المستحق يخفض التصنيف ويمنع العودة ١٥ دقيقة. الإلغاء التقني بلا تصنيف. مكافأة إغلاق الموسم تجميلية بعد عشر مباريات، ولا تتكرر بإعادة الإغلاق. الأرقام والرتب الحالية تجريبية وقد تتغير بين المواسم.</p>
+  const qs=[[tr("متى تكشف بطاقة دورك للآخرين؟"),[tr("في بداية المباراة"),tr("لا تكشف البطاقة؛ الادعاء والنقاش جزء من اللعب"),tr("بعد أول تصويت")]],[tr("هل إقصاؤك طبيعيًا يعني انسحابك؟"),[tr("لا؛ تابع دون تسريب للأحياء"),tr("نعم دائمًا"),tr("يعطيك حق إرسال تلميحات")]],[tr("هل الاشتراك يغيّر قوة الأدوار؟"),[tr("نعم"),tr("يزيد رصيد المهارة"),tr("لا؛ القدرات متساوية في النمط نفسه")]]];
+  return <Modal className="mafia-noir mafia-guide-dialog mafia-ranked-panel" title={tr("المنافسة التجريبية")} onClose={close}><PresentationStyles sheet={css}/><div className="mafia-guide stack" dir={uiDirection()}>
+    <p className="mafia-notice">{tr("معاينة تجريبية غير معايرة. ثمانية مقاعد بأسماء مؤقتة وقواعد أساسية ثابتة ونص فقط. تتوقف المحادثات والمكالمات الاجتماعية أثناء الطابور والمباراة.")}</p>
+    {error&&<p role="alert">{tr(labels[error])||tr("تعذر إتمام الطلب. حدّث الحالة وحاول مجددًا.")}</p>}
+    {uncertain&&<p role="status">{tr("لم نتأكد من حالة حجزك بعد. أبقينا خصوصية التواصل حتى نتحقق.")}</p>}
+    {!data?<p role="status">{tr("نحمّل الموسم والتقدم…")}</p>:!data.available?<p>{tr("المنافسة غير متاحة في هذه البيئة.")}</p>:<>
+      <header className="mafia-ranked-season"><span aria-hidden="true">✧</span><div><strong>{data.season?tr("موسم المنافسة التجريبي"):tr("لا موسم مفتوح")} · {data.season?.status==='open'?tr("مفتوح"):data.season?.status==='closing'?tr("يصفّي المباريات"):tr("مغلق")}</strong><small>{tr("التصنيف الفردي · ٨ مقاعد")}</small></div></header>
+      {data.canManageSeasons&&data.season&&data.season.status!=='closed'&&<Button disabled={busy||data.season.endsAt>Date.now()} onClick={async()=>{const result=await mutate('/season/close',{seasonId:data.season.id});if(result)try{apply(await request(''));}catch(e){if(current())setError(e.message);}}}>{tr("إغلاق الموسم وتثبيت ترتيب ومكافآت المؤهلين")}</Button>}
+      <section className="mafia-ranked-card" aria-label={tr("مستواك في المنافسة")}><h3>{data.rating.band}</h3><p>{ar(data.rating.rating)}{tr(" نقطة · ")}{ar(data.rating.games)}{tr(" مباراة")}{data.rating.provisional?tr(" · باقي {v0} لتحديد المرتبة", {v0: ar(data.rating.placementRemaining)}):''}</p></section>
+      <section className="mafia-ranked-card" aria-label={tr("شروط المنافسة")}><h3>{tr("الجاهزية للطابور")}</h3><p>{tr("تقدم الأهلية: ")}{ar(Math.min(data.eligibility.publicMatches,10))}{tr(" من ١٠ مباريات عامة مؤهلة")}</p><progress value={Math.min(data.eligibility.publicMatches,10)} max={10} aria-label={tr("المباريات العامة المؤهلة")}/><p>{tr("فهم القواعد: ")}<strong>{data.eligibility.understands?tr("مكتمل"):tr("مطلوب")}</strong></p></section>
+      {data.matchmaking?.skillBased&&<p className="mafia-muted">{tr("نبحث عن لاعبين بمستوى متقارب، ويتسع نطاق البحث تدريجيًا أثناء انتظارك. نحتاج ثمانية لاعبين متوافقين؛ لا يوجد موعد مضمون لبدء المباراة.")}</p>}
+      {!data.eligibility.understands&&!data.queue&&!uncertain&&<fieldset disabled={busy}><legend>{tr("فحص فهم بديل عن إكمال الدرس")}</legend>{qs.map(([question,options],i)=><label className="stack" key={question}>{question}<select value={answers[i]} onChange={e=>setAnswers(old=>old.map((v,j)=>i===j?Number(e.target.value):v))}><option value={-1}>{tr("اختر إجابتك")}</option>{options.map((option,j)=><option key={option} value={j}>{option}</option>)}</select></label>)}<Button disabled={answers.includes(-1)||busy} onClick={()=>mutate('/understanding',{answers})}>{tr("تأكيد الفهم")}</Button></fieldset>}
+      {data.eligibility.cooldownUntil>Date.now()&&<p>{tr("مهلة العودة بعد الانسحاب تنتهي عند ")}{new Date(data.eligibility.cooldownUntil).toLocaleTimeString(uiDateLocale())}.</p>}
+      {uncertain?<Button disabled={busy} onClick={close}>{tr("التحقق وإلغاء الانتظار")}</Button>:data.queue?<><section className="mafia-ranked-card"><h3>{tr("مقاعد المباراة")}</h3><div className="mafia-ranked-seats" aria-hidden="true">{Array.from({length:8},(_,i)=><span key={i} className={data.queue.status==='assigned'||i<Number(data.waiting)?'filled':undefined}>{ar(i+1)}</span>)}</div><p role="status">{data.queue.status==='assigned'?tr("اكتملت المقاعد؛ ندخلك إلى المباراة."):tr("أنت في الطابور · {v0} من ٨ متاحين. ينتهي الحجز إذا غادر جهازك ولم يعد خلال دقيقتين.", {v0: ar(data.waiting)})}</p><Button disabled={busy} onClick={close}>{data.queue.status==='assigned'?tr("متابعة المباراة على هذا الجهاز"):tr("إلغاء الانتظار وإغلاق")}</Button></section></>:<Button variant="primary" disabled={busy||!data.eligibility.eligible||data.season?.status!=='open'} onClick={join}>{tr("دخول طابور فردي")}</Button>}
+      {!data.queue&&!uncertain&&<Button disabled={busy} onClick={async()=>{setBusy(true);setError('');try{const result=await request('/leaderboard');if(current())setBoard({scope,rows:result.rows});}catch(e){if(current())setError(e.message);}finally{if(current())setBusy(false);}}}>{tr("الترتيب التجريبي بأسماء مؤقتة")}</Button>}
+      {board?.scope===scope&&!data.queue&&<section className="mafia-ranked-card"><h3>{tr("لوحة الترتيب")}</h3><ol className="mafia-ranked-board">{board.rows.length?board.rows.map(row=><li key={row.alias}><strong>{row.own?tr("أنت"):tr("مشارك {v0}", {v0: row.alias})}</strong><span>{row.band} · {ar(row.rating)} · {ar(row.games)}{tr(" مباراة")}</span></li>):<li>{tr("لا مشاركين أكملوا التحديد بعد.")}</li>}</ol></section>}
+      <p className="mafia-muted">{tr("أول عشر مباريات تحدد المرتبة. الإقصاء الطبيعي يحتفظ بالنتيجة؛ الانسحاب المستحق يخفض التصنيف ويمنع العودة ١٥ دقيقة. الإلغاء التقني بلا تصنيف. مكافأة إغلاق الموسم تجميلية بعد عشر مباريات، ولا تتكرر بإعادة الإغلاق. الأرقام والرتب الحالية تجريبية وقد تتغير بين المواسم.")}</p>
     </>}
   </div></Modal>;
 }

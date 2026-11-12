@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { createAudioEvents } from '../src/shared/fx/audio-events.js';
 import { createLocalMatchAudio } from '../src/shared/fx/match-audio.js';
+import { tr, getUiLocale } from '../src/shared/i18n/core.js';
 
 // Execute the current caller itself, including its deferred visual callback.
 // The real completion controller and event bus own audio; browser UI/storage
@@ -20,6 +21,7 @@ for (const early of [true, false]) test(`Badeeha ${early ? 'early exit stays sil
   const teams = [{ id: 'a', name: 'أ', score: 4, correct: 2, steals: 0 }, { id: 'b', name: 'ب', score: 1, correct: 1, steals: 0 }];
   let confetti = 0, screen = '', record;
   const context = {
+    tr, getUiLocale,
     api: { matchOver(value) { completions.push(value); completion.complete(value.completed); }, confetti: { fire() { confetti++; } } },
     teams, used: { q1: true, q2: true }, totalQuestions: 2, roundSize: 2, mode: 'teams', results: [],
     setTeams() {}, betaCloneTeams: value => structuredClone(value), setResults() {},

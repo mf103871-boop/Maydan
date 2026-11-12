@@ -1,0 +1,594 @@
+{
+  "id": "emoji",
+  "name": "Emoji Puzzles",
+  "icon": "😀",
+  "defaultType": "emoji",
+  "qs": [
+    {
+      "p": 200,
+      "q": "🤝 ➕ 💪",
+      "a": "Unity is strength",
+      "qid": "emoji-200-904",
+      "type": "emoji",
+      "topic": "Proverbs",
+      "hint": "A short saying about cooperation",
+      "alt": [
+        "Strength in unity"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 200,
+      "q": "🦁 ➕ 👑",
+      "a": "The Lion King",
+      "qid": "emoji-200-905",
+      "type": "emoji",
+      "topic": "Works and stories",
+      "hint": "An animated film title",
+      "alt": [
+        "Lion King"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 200,
+      "q": "🦶 ➕ ⚽ ➕ 🥅",
+      "a": "Football",
+      "qid": "emoji-200-906",
+      "type": "emoji",
+      "topic": "Sports",
+      "hint": "A sport",
+      "alt": [
+        "Soccer"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 200,
+      "q": "🦁 ➕ 🌊",
+      "a": "Sea lion",
+      "qid": "emoji-200-921",
+      "type": "emoji",
+      "topic": "Animals",
+      "hint": "A marine animal; combine the symbols' meanings",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 200,
+      "q": "🍞 ➕ 🧄",
+      "a": "Garlic bread",
+      "qid": "emoji-200-922",
+      "type": "emoji",
+      "topic": "Food",
+      "hint": "A food; combine the two symbols",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 200,
+      "q": "🕋 ➕ 🏙️",
+      "a": "Mecca",
+      "qid": "emoji-200-923",
+      "type": "emoji",
+      "topic": "Landmarks and places",
+      "hint": "The city containing this landmark",
+      "alt": [
+        "Makkah"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 200,
+      "q": "🚶 ➕ 💤",
+      "a": "Sleepwalking",
+      "qid": "emoji-200-924",
+      "type": "emoji",
+      "topic": "Expressions",
+      "hint": "The name of a phenomenon",
+      "alt": [
+        "Walking in your sleep"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 200,
+      "q": "👁️ ➕ 🪡",
+      "a": "The eye of a needle",
+      "qid": "emoji-200-925",
+      "type": "emoji",
+      "topic": "Objects",
+      "hint": "A part of this sewing tool",
+      "alt": [
+        "Needle's eye",
+        "Eye of the needle"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 400,
+      "q": "🐴 ➕ 🌊",
+      "a": "Seahorse",
+      "qid": "emoji-400-901",
+      "type": "emoji",
+      "topic": "Animals",
+      "hint": "A marine animal; combine the symbols' meanings",
+      "alt": [
+        "Sea horse"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 400,
+      "q": "🍎 ➕ 🍌 ➕ 🥝 ➡️ 🥣",
+      "a": "Fruit salad",
+      "qid": "emoji-400-902",
+      "type": "emoji",
+      "topic": "Food",
+      "hint": "A dish",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 400,
+      "q": "☕ ➕ 🌅",
+      "a": "Morning coffee",
+      "qid": "emoji-400-903",
+      "type": "emoji",
+      "topic": "Expressions",
+      "hint": "A two-word phrase",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 400,
+      "q": "🤐 ➕ 🥇",
+      "a": "Silence is golden",
+      "qid": "emoji-400-904",
+      "type": "emoji",
+      "topic": "Proverbs",
+      "hint": "A proverb; the second symbol represents a precious metal",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 400,
+      "q": "🐠 ➕ 🔎",
+      "a": "Finding Nemo",
+      "qid": "emoji-400-905",
+      "type": "emoji",
+      "topic": "Works and stories",
+      "hint": "An animated film title",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 400,
+      "q": "⏰ ➕ 🔊 ➕ 😴 ➡️ 😳",
+      "a": "Alarm clock",
+      "qid": "emoji-400-908",
+      "type": "emoji",
+      "topic": "Objects",
+      "hint": "A device",
+      "alt": [
+        "Alarm"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 400,
+      "q": "🏊 ➕ 🚴 ➕ 🏃",
+      "a": "Triathlon",
+      "qid": "emoji-400-921",
+      "type": "emoji",
+      "topic": "Sports",
+      "hint": "A race combining these three disciplines",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 400,
+      "q": "👑 ➕ 🕌 ➕ 🤍",
+      "a": "Taj Mahal",
+      "qid": "emoji-400-922",
+      "type": "emoji",
+      "topic": "Landmarks and places",
+      "hint": "An Asian mausoleum; the first symbol represents part of its name",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 600,
+      "q": "🍇 ➕ 🍃 ➕ 🍚",
+      "a": "Stuffed grape leaves",
+      "qid": "emoji-600-902",
+      "type": "emoji",
+      "topic": "Food",
+      "hint": "A dish; the first symbol identifies the plant, and the last shows the filling",
+      "alt": [
+        "Dolma",
+        "Warak enab",
+        "Yaprak"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 600,
+      "q": "🐦 ✋ ➡️ 🌳 🐦 ×2",
+      "a": "A bird in the hand is worth two in the bush",
+      "qid": "emoji-600-904-en-v1",
+      "type": "emoji",
+      "topic": "Proverbs",
+      "hint": "A proverb comparing a certainty with a possibility",
+      "alt": [
+        "Bird in the hand"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json",
+      "sourceId": "emoji-600-904",
+      "adaptation": {
+        "sourceLocale": "ar",
+        "kind": "english-proverb",
+        "reason": "Adapts the Arabic ten-birds proverb to the conventional English two-in-the-bush proverb and changes the emoji count."
+      }
+    },
+    {
+      "p": 600,
+      "q": "🏹 ➕ 🎯",
+      "a": "Archery",
+      "qid": "emoji-600-906",
+      "type": "emoji",
+      "topic": "Sports",
+      "hint": "A sport using the weapon shown",
+      "alt": [
+        "Bow and arrow shooting"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 600,
+      "q": "🌊 ➕ 🚣 ➕ 🏘️",
+      "a": "Venice",
+      "qid": "emoji-600-907",
+      "type": "emoji",
+      "topic": "Landmarks and places",
+      "hint": "A European city",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 600,
+      "q": "🦷 ➕ 🧵",
+      "a": "Dental floss",
+      "qid": "emoji-600-908",
+      "type": "emoji",
+      "topic": "Objects",
+      "hint": "A dental-care item",
+      "alt": [
+        "Floss"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 600,
+      "q": "⚔️ ➕ 🕊️ ➕ 📖",
+      "a": "War and Peace",
+      "qid": "emoji-600-921",
+      "type": "emoji",
+      "topic": "Works and stories",
+      "hint": "A novel title",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 600,
+      "q": "🎭 ➕ 🐺 ➕ 🐑",
+      "a": "A wolf in sheep's clothing",
+      "qid": "emoji-600-922",
+      "type": "emoji",
+      "topic": "Expressions",
+      "hint": "An expression for disguising harmful intentions",
+      "alt": [
+        "Wolf in sheep's clothing"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 600,
+      "q": "🦊 ➕ 🪽 ➕ 🍉",
+      "a": "Flying fox",
+      "qid": "emoji-600-923",
+      "type": "emoji",
+      "topic": "Animals",
+      "hint": "A mammal; the last symbol shows its food",
+      "alt": [
+        "Fruit bat"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://animaldiversity.org/accounts/Pteropodidae/"
+    },
+    {
+      "p": 800,
+      "q": "🦆👄 ➕ 🦫 ➕ 🥚",
+      "a": "Platypus",
+      "qid": "emoji-800-901",
+      "type": "emoji",
+      "topic": "Animals",
+      "hint": "A mammal; the first symbol suggests its bill and the second its tail",
+      "alt": [
+        "Duck-billed platypus"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 800,
+      "q": "🤏 ➕ 🍩 ➕ 🧑‍⚖️",
+      "a": "Luqmat al-Qadi",
+      "qid": "emoji-800-902",
+      "type": "emoji",
+      "topic": "Food",
+      "hint": "An Arab sweet whose name literally combines a small bite and a judge",
+      "alt": [
+        "Luqaimat",
+        "Judge's morsel"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 800,
+      "q": "🔥 👤 🔥",
+      "a": "Between two fires",
+      "qid": "emoji-800-903",
+      "type": "emoji",
+      "topic": "Expressions",
+      "hint": "An expression for facing threats from both sides",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 800,
+      "q": "🧑 🕳️ ➡️ 🧑⬇️",
+      "a": "Whoever digs a pit falls into it",
+      "qid": "emoji-800-904",
+      "type": "emoji",
+      "topic": "Proverbs",
+      "hint": "An Arab proverb about harm backfiring on its maker",
+      "alt": [
+        "He who digs a pit for others falls in it"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 800,
+      "q": "🐀 ➕ 👨‍🍳 ➕ 🍲",
+      "a": "Ratatouille",
+      "qid": "emoji-800-905",
+      "type": "emoji",
+      "topic": "Works and stories",
+      "hint": "An animated film title",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 800,
+      "q": "⚫ ➕ ⚪ ➕ ▦",
+      "a": "Go",
+      "qid": "emoji-800-906",
+      "type": "emoji",
+      "topic": "Sports",
+      "hint": "An Asian board game played with two colors of stones",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 800,
+      "q": "🌉 ➕ 😮‍💨 ➕ 🇮🇹",
+      "a": "Bridge of Sighs",
+      "qid": "emoji-800-921",
+      "type": "emoji",
+      "topic": "Landmarks and places",
+      "hint": "A landmark in Venice; combine the first two symbols",
+      "alt": [
+        "The Bridge of Sighs"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.italia.it/en/veneto/venice/bridge-of-sighs"
+    },
+    {
+      "p": 800,
+      "q": "🧊 ➕ 💥 ➕ 🚢",
+      "a": "Icebreaker",
+      "qid": "emoji-800-922",
+      "type": "emoji",
+      "topic": "Objects",
+      "hint": "A ship named for what it breaks",
+      "alt": [
+        "Ice-breaking ship"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 1000,
+      "q": "🌙 ➕ ⭐ ➕ 🖌️",
+      "a": "The Starry Night",
+      "qid": "emoji-1000-902",
+      "type": "emoji",
+      "topic": "Arts",
+      "hint": "A painting title; combine the time of day and the sky",
+      "alt": [
+        "Starry Night"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 1000,
+      "q": "🤫 ➕ 🐑 ➕ 🐑",
+      "a": "The Silence of the Lambs",
+      "qid": "emoji-1000-903",
+      "type": "emoji",
+      "topic": "Works and stories",
+      "hint": "A film title",
+      "alt": [
+        "Silence of the Lambs"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 1000,
+      "q": "🔙 ➕ 👞 ➕ 👞",
+      "a": "Returned with Hunayn's slippers",
+      "qid": "emoji-1000-904",
+      "type": "emoji",
+      "topic": "Proverbs",
+      "hint": "An Arab proverb for a fruitless trip; the shoes refer to its traditional story",
+      "alt": [
+        "Came back empty-handed",
+        "Returned empty-handed"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 1000,
+      "q": "🤏 ➕ 🌫️ ➕ 👀",
+      "a": "Throw dust in someone's eyes",
+      "qid": "emoji-1000-905",
+      "type": "emoji",
+      "topic": "Expressions",
+      "hint": "An expression for misleading someone",
+      "alt": [
+        "Throwing dust in the eyes",
+        "Dust in the eyes"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 1000,
+      "q": "🚪 ➕ 🔵 ➕ 🐂 ➕ 🐉",
+      "a": "Ishtar Gate",
+      "qid": "emoji-1000-906",
+      "type": "emoji",
+      "topic": "Landmarks and places",
+      "hint": "An ancient landmark identified by its blue color and animal decoration",
+      "alt": [
+        "The Ishtar Gate"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 1000,
+      "q": "🦁 ➕ 🐜 ➕ 🕳️",
+      "a": "Antlion",
+      "qid": "emoji-1000-907",
+      "type": "emoji",
+      "topic": "Animals",
+      "hint": "An insect; the last symbol shows the shape of its trap",
+      "alt": [
+        "Ant lion"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "docs/bank/quality-2026-10-08/emoji-proofs.json"
+    },
+    {
+      "p": 1000,
+      "q": "🏊 ➕ ⚔️ ➕ 🐎 ➕ 🏃 ➕ 🎯",
+      "a": "Modern pentathlon",
+      "qid": "emoji-1000-921",
+      "type": "emoji",
+      "topic": "Sports",
+      "hint": "The Olympic event as contested through Paris 2024, when it included horse riding",
+      "alt": [
+        "Pentathlon"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://www.uipmworld.org/news/uipm-2025-pentathlon-world-championships-all-you-need-know"
+    },
+    {
+      "p": 1000,
+      "q": "⛪ ➕ 🔎 ➕ ☠️ ➕ 🌹",
+      "a": "The Name of the Rose",
+      "qid": "emoji-1000-922",
+      "type": "emoji",
+      "topic": "Works and stories",
+      "hint": "A mystery novel set in a monastery; the flower is part of the title",
+      "alt": [
+        "Name of the Rose"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://www.penguinrandomhouse.com/books/44869/the-name-of-the-rose-by-umberto-eco-translated-by-william-weaver-introduction-by-david-lodge/9780307264893/"
+    }
+  ]
+}

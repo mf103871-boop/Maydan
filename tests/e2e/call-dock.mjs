@@ -26,7 +26,7 @@ async function api(url, method, body) {
   }
   if (url.endsWith('/read')) return { readSeq: body?.seq || 0 };
   if (url === '/api/social/calls') return { calls: [call] };
-  if (url === '/api/social/calls/voice-1') return { call };
+  if (url === '/api/social/calls/' + call.id) return { call };
   if (url === '/api/social/preferences') return { preferences: { messages: true, calls: true, previews: false, sound: false, mutedConversations: [] } };
   if (url === '/api/social/capabilities') return { capabilities: { voiceMessages: true, liveCalls: true, pushNotifications: true } };
   if (url === '/api/social/live-ticket') return { error: 'SOCIAL_UNAVAILABLE' };
@@ -44,18 +44,18 @@ import{SocialHost}from'./src/social/SocialHost.jsx';import{CallViewport}from'./s
 import{Play}from'./src/platform/screens/Play.jsx';import{socialInterruption}from'./src/social/interruption.js';
 import{BrandFonts}from'./src/shared/brand/art.jsx';import{Modal,Button}from'./src/shared/ui/components.jsx';
 import css from'./src/shared/ui/ui.css';import tokens from'./src/shared/theme/tokens.css';import brand from'./src/shared/brand/brand.css';
-import platformCss from'./src/platform/platform.css';import setupCss from'./src/shared/setup/setup.css';import onlineCss from'./src/online/online.css';
+import platformCss from'./src/platform/platform.css';import setupCss from'./src/shared/setup/setup.css';import onlineCss from'./src/online/online.css';import playfulCss from'./src/platform/playful-studio.css';
 const members=${JSON.stringify(members)};
 const nativeLog=[];window.nativeLog=nativeLog;
 let snapshot={userId:'me',callId:'voice-1',scope:'group',conversationId:'group-1',state:'connected',muted:false,participants:members.map(user=>({id:user.id,userId:user.id,name:user.name,local:user.id==='me',muted:false,speaking:false}))};
 const sendSnapshot=patch=>{snapshot={...snapshot,...patch};window.maydanNative.event('socialCall',snapshot)};
-window.MaydanNative={postMessage(raw){const message=JSON.parse(raw);nativeLog.push({type:message.type,muted:message.muted,speaker:message.speaker});queueMicrotask(()=>{if(message.type==='socialCallMute')sendSnapshot({muted:message.muted});if(message.type==='socialCallSpeaker')sendSnapshot({speaker:message.speaker});window.maydanNative.resolve(message.id,{ok:true,result:{authorized:true,status:'granted'}})})}};
+window.MaydanNative={postMessage(raw){const message=JSON.parse(raw);nativeLog.push({type:message.type,muted:message.muted,speaker:message.speaker});queueMicrotask(()=>{if(message.type==='socialCallEnd'&&message.callId===snapshot.callId)sendSnapshot({state:'ended'});if(message.type==='socialCallMute')sendSnapshot({muted:message.muted});if(message.type==='socialCallSpeaker')sendSnapshot({speaker:message.speaker});window.maydanNative.resolve(message.id,{ok:true,result:{authorized:true,status:'granted'}})})}};
 const request=async(url,options={})=>{const response=await fetch(url,{method:options.method||'GET',headers:{'content-type':'application/json'},body:options.body===undefined?undefined:JSON.stringify(options.body)});const data=await response.json();if(data.error)throw Object.assign(new Error(data.error),{code:data.error});return data};
-const sound={play(){},setDucking(){},music:{play(){},sting(){}}};
+const sound={play(){},setDucking(){},music:{play(){},sting(){},scene(){},releaseScene(){}}};
 const roster=[{id:'a',name:'أحمد',color:'#178879',emoji:'🦊'},{id:'b',name:'عمر',color:'#dc7849',emoji:'🐻'},{id:'c',name:'ليان',color:'#7768b6',emoji:'🐱'}];
 const platform={sound,toast(){},settings:{soundOn:false,reducedMotion:true},setSettings(){},haptics:{vibrate(){}},confetti:{fire(){}},roster,setRoster(){},storage:{get(){},set(){}}};
-function Observer(){const lamma=useLamma(),ui=useSocialUI();window.fixture={...window.fixture,patchMedia:sendSnapshot,getMedia:()=>lamma.media,getCall:()=>lamma.activeCall,openFriends:ui.show,closeFriends:ui.close,openChat:()=>ui.openChat('person-1'),openGroup:()=>ui.openGroup('group-1'),private:()=>{window.releasePrivate?.();window.releasePrivate=socialInterruption.private('fixture-private')},releasePrivate:()=>{window.releasePrivate?.();window.releasePrivate=null}};return null}
-function App(){const[owner,setOwner]=useState('me'),[game,setGame]=useState('fabraka'),[modal,setModal]=useState(false);window.fixture={...window.fixture,setOwner,setGame:id=>{location.hash='#/play/'+id;socialInterruption.setContext({local:false});socialInterruption.resume();setGame(id)},openModal:()=>setModal(true)};window.interruption=socialInterruption;const account={...NULL_ACCOUNT,ready:true,signedIn:!!owner,user:owner?{id:owner,name:'عمر'}:null,requestAuthenticated:request,ensureNativeSocialSession:async()=>({userId:owner,deviceId:'fixture-device',call:snapshot})};return <AccountContext.Provider value={account}><PlatformContext.Provider value={platform}><BrandFonts/><style>{tokens}</style><style>{css}</style><style>{brand}</style><style>{platformCss}</style><style>{setupCss}</style><style>{onlineCss}</style><SocialProvider><LammaProvider><SocialUIProvider><ProfileProvider><Observer/><CallViewport><Play key={game} id={game}/></CallViewport><SocialHost/>{modal&&<Modal title="فوق أدوات المكالمة" onClose={()=>setModal(false)} footer={<Button onClick={()=>setModal(false)}>إغلاق الاختبار</Button>}><p>الحوار العام يبقى أعلى شريط الصوت.</p></Modal>}</ProfileProvider></SocialUIProvider></LammaProvider></SocialProvider></PlatformContext.Provider></AccountContext.Provider>};createRoot(document.getElementById('root')).render(<App/>);`, loader: 'jsx', resolveDir: process.cwd() }, bundle: true, write: false, format: 'iife', jsx: 'automatic', loader: { '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl', '.svg': 'dataurl' }, logLevel: 'silent' });
+function Observer(){const lamma=useLamma(),ui=useSocialUI(),account=React.useContext(AccountContext);window.fixture={...window.fixture,patchMedia:sendSnapshot,getMedia:()=>lamma.media,getCall:()=>lamma.activeCall,getCallList:()=>lamma.calls,getOwner:()=>account.user?.id||null,refreshCalls:()=>lamma.refreshGroups({quiet:true}),openFriends:ui.show,closeFriends:ui.close,openChat:()=>ui.openChat('person-1'),openGroup:()=>ui.openGroup('group-1'),private:()=>{window.releasePrivate?.();window.releasePrivate=socialInterruption.private('fixture-private')},releasePrivate:()=>{window.releasePrivate?.();window.releasePrivate=null}};return null}
+function App(){const[owner,setOwner]=useState('me'),[game,setGame]=useState('fabraka'),[modal,setModal]=useState(false);window.fixture={...window.fixture,setOwner,setGame:id=>{location.hash='#/play/'+id;socialInterruption.setContext({local:false});socialInterruption.resume();setGame(id)},openModal:()=>setModal(true)};window.interruption=socialInterruption;const account={...NULL_ACCOUNT,ready:true,signedIn:!!owner,user:owner?{id:owner,name:'عمر'}:null,requestAuthenticated:request,ensureNativeSocialSession:async()=>({userId:owner,deviceId:'fixture-device',call:snapshot})};return <AccountContext.Provider value={account}><PlatformContext.Provider value={platform}><BrandFonts/><style>{tokens}</style><style>{css}</style><style>{brand}</style><style>{platformCss}</style><style>{setupCss}</style><style>{onlineCss}</style><style>{playfulCss}</style><SocialProvider><LammaProvider><SocialUIProvider><ProfileProvider><Observer/><CallViewport><Play key={game} id={game}/></CallViewport><SocialHost/>{modal&&<Modal title="فوق أدوات المكالمة" onClose={()=>setModal(false)} footer={<Button onClick={()=>setModal(false)}>إغلاق الاختبار</Button>}><p>الحوار العام يبقى أعلى شريط الصوت.</p></Modal>}</ProfileProvider></SocialUIProvider></LammaProvider></SocialProvider></PlatformContext.Provider></AccountContext.Provider>};createRoot(document.getElementById('root')).render(<App/>);`, loader: 'jsx', resolveDir: process.cwd() }, bundle: true, write: false, format: 'iife', jsx: 'automatic', loader: { '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl', '.svg': 'dataurl' }, logLevel: 'silent' });
 const html = `<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><div id="root"></div><script>${bundle.outputFiles[0].text}</script></html>`;
 const publicRoot = path.resolve('public');
 const server = http.createServer(async (req, res) => {
@@ -99,10 +99,10 @@ async function geometry(page, label) {
   assert.equal(await page.getByTestId('call-dock').evaluate(el => getComputedStyle(el).pointerEvents), 'none', `${label}: transparent parent does not intercept the game`);
   const launcher = await page.locator('.lamma-launcher').boundingBox(); assert.ok(launcher, `${label}: friends remain reachable`);
   assert.ok(launcher.x >= -1 && launcher.x + launcher.width <= (await page.evaluate(() => innerWidth)) + 1, `${label}: friends launcher stays inside the screen`);
-  assert.ok(launcher.width >= 44 && launcher.height >= 44, `${label}: friends launcher has a 44px target`);
+  assert.ok(launcher.width >= 48 && launcher.height >= 48, `${label}: friends launcher has a 48px target`);
   const launcherAvatars = await page.locator('.lamma-launcher-faces > .player-avatar').evaluateAll(elements => elements.filter(el => getComputedStyle(el).display !== 'none' && getComputedStyle(el).visibility !== 'hidden' && el.getBoundingClientRect().width > 0).map(el => el.getBoundingClientRect().toJSON()));
   assert.equal(launcherAvatars.length, 1, `${label}: compact launcher paints exactly one avatar despite inline avatar styles`);
-  const launcherChildOverflow = await page.locator('.lamma-launcher *').evaluateAll(elements => elements.filter(el => { const style = getComputedStyle(el), rect = el.getBoundingClientRect(); return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 0 && rect.height > 0 && (rect.left < innerWidth - 56 - 1 || rect.right > innerWidth + 1 || rect.top < -1 || rect.bottom > innerHeight + 1); }).map(el => ({ className: el.getAttribute('class'), rect: el.getBoundingClientRect().toJSON() })));
+  const launcherChildOverflow = await page.locator('.lamma-launcher *').evaluateAll(elements => elements.filter(el => { const style = getComputedStyle(el), rect = el.getBoundingClientRect(), owner = el.closest('.lamma-launcher').getBoundingClientRect(); return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 0 && rect.height > 0 && (rect.left < Math.max(0,owner.left) - 1 || rect.right > Math.min(innerWidth,owner.right) + 1 || rect.top < -1 || rect.bottom > innerHeight + 1); }).map(el => ({ className: el.getAttribute('class'), rect: el.getBoundingClientRect().toJSON() })));
   assert.deepEqual(launcherChildOverflow, [], `${label}: painted launcher children stay inside the viewport`);
 }
 async function clickThroughGap(page) {
@@ -119,7 +119,10 @@ async function dragDock(page, locator, dx, dy) {
 }
 async function screenshot(page, name) { await page.evaluate(() => document.fonts.ready); await page.screenshot({ path: path.join(out, name + '.png') }); }
 async function startFabraka(page) {
-  const quick = page.getByRole('button', { name: 'سريع · 30', exact: true }); if (await quick.count()) await quick.click();
+  await page.locator('[data-design-screen="setup.fabraka"]').waitFor();
+  const pacing=page.locator('.fab-pacing');
+  if(await pacing.count() && !await pacing.evaluate(el=>el.open))await pacing.locator('summary').click();
+  await page.locator('[data-design-id="setting-write-time"]').getByRole('button',{name:/30/}).click();
   await page.getByRole('button', { name: /ابدأ اللعب · 3 لاعبين/ }).click();
   await page.getByRole('button', { name: 'ابدأ الجولة', exact: true }).click();
   await page.getByRole('button', { name: 'فهمنا السؤال، نبدأ الكتابة', exact: true }).click();
@@ -184,7 +187,7 @@ async function menuBarBounds(page) {
 }
 async function exerciseGame(page, id, label) {
   if (id === 'badeeha') {
-    await page.getByRole('button', { name: /ابدأ لعبة جديدة/ }).click();
+    await page.locator('[data-design-screen="badeeha.setup"]').waitFor();
     await page.getByRole('group', { name: 'تصفية الفئات', exact: true }).getByRole('button', { name: 'معلومات', exact: true }).click();
     for (let i = 0; i < 6; i++) await page.locator('.m-category-main').nth(i).click();
     await page.getByRole('button', { name: /^ابدأ \d+ سؤالًا/ }).click(); await page.locator('.m-board-grid').waitFor();
@@ -196,9 +199,11 @@ async function exerciseGame(page, id, label) {
     if (id === 'beep') await page.getByRole('button', { name: /^جاهز —/ }).click();
     if (id === 'mamnoo') await page.getByRole('button', { name: /^ابدأ \d+ ثانية$/ }).click();
     if (id === 'jabeen') {
+      const portraitChoice=page.getByRole('button', { name:'متابعة بهذا الاتجاه', exact:true });
+      if(await portraitChoice.count())await portraitChoice.click();
       await page.getByRole('button', { name: 'ابدأ الجولة', exact: true }).click(); await page.locator('.jabeen-stage').waitFor();
-      if (await page.getByRole('button', { name: 'تخطي هذا التنبيه', exact: true }).count()) {
-        await geometry(page, `${label}-rotate`); await page.getByRole('button', { name: 'تخطي هذا التنبيه', exact: true }).click();
+      if (await page.locator('[data-design-id="rotate"]').count()) {
+        await geometry(page, `${label}-rotate`); await page.locator('[data-design-id="rotate"] [data-design-id="continue"]').click();
       }
     }
     if (id === 'meenfina') { await page.getByRole('button', { name: 'اعرض العبارة', exact: true }).click(); await page.locator('.meen-count').waitFor(); }
@@ -207,6 +212,7 @@ async function exerciseGame(page, id, label) {
 }
 async function run(browser, name) {
   reads.length = 0;
+  call.id = 'voice-1';
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, locale: 'ar', isMobile: true, hasTouch: true, reducedMotion: 'reduce' });
   const page = await context.newPage(), errors = []; page.on('pageerror', error => errors.push(error.message));
   page.setDefaultTimeout(8000);
@@ -230,7 +236,7 @@ async function run(browser, name) {
     const avatars = page.getByTestId('call-dock-participant').locator('.player-avatar');
     assert.ok((await avatars.first().boundingBox()).width >= 36, 'participant photo is at least36px');
     const buttonBoxes = await page.getByTestId('call-dock').locator('button').evaluateAll(elements => elements.map(el => ({ text: el.getAttribute('aria-label'), width: el.getBoundingClientRect().width, height: el.getBoundingClientRect().height })));
-    assert.ok(buttonBoxes.every(box => box.width >= 44 && box.height >= 44), `rail targets at least44px ${JSON.stringify(buttonBoxes)}`);
+    assert.ok(buttonBoxes.every(box => box.width >= 48 && box.height >= 48), `rail targets at least48px ${JSON.stringify(buttonBoxes)}`);
     await geometry(page, 'initial390'); await screenshot(page, `${name}-12-participants`);
     const style = await page.getByTestId('call-dock-participant').first().evaluate(el => { const button=getComputedStyle(el), parent=getComputedStyle(el.closest('.call-dock')), avatar=getComputedStyle(el.querySelector('.player-avatar')); return { radius: button.borderRadius, background: button.backgroundColor, parentBackground: parent.backgroundColor, parentShadow: parent.boxShadow, avatarRadius: avatar.borderRadius, pointer: button.pointerEvents }; });
     assert.equal(style.radius, '50%', 'participant controls are true circles'); assert.equal(style.avatarRadius, '50%', 'profile photos are circular');
@@ -289,8 +295,10 @@ async function run(browser, name) {
     await page.getByTestId('call-dock-participant').first().click(); await page.getByTestId('call-dock-resume').click(); await page.waitForFunction(() => !window.fixture.getMedia().error);
     assert.equal(await page.locator('.call-controls-dialog').getByRole('button', { name: 'إنهاء المكالمة', exact: true }).count(), 1, 'end remains accessible in expanded controls');
     await page.locator('.call-controls-dialog').getByTestId('call-dock-end').click(); await page.getByTestId('call-dock').waitFor({ state: 'detached' });
-    await patch(page, { state: 'connected', error: '', muted: false }); await page.getByTestId('call-dock').waitFor();
-    const reset = await page.getByTestId('call-dock').boundingBox(); assert.ok(reset.x >= 330 && reset.y < 20, 'new call resets to the default physical right/top position');
+    call.id = 'voice-2';
+    await page.evaluate(()=>window.fixture.refreshCalls());
+    await patch(page, { callId:call.id, state: 'connected', error: '', muted: false }); await page.getByTestId('call-dock').waitFor();
+    const reset = await page.getByTestId('call-dock').boundingBox(); assert.ok(reset.x + reset.width >= 380 && reset.x + reset.width <= 382 && reset.y >= 80 && reset.y < 100, `new call resets below the header on the physical right: ${JSON.stringify(reset)}`);
     assert.equal(await page.getByTestId('call-dock').getAttribute('data-collapsed'), 'false', 'new call resets collapse');
     assert.ok(await page.evaluate(() => nativeLog.some(event => event.type === 'socialCallEnd')), 'end control reaches existing media action');
     await page.evaluate(() => window.fixture.private()); await settle(page);
@@ -343,9 +351,23 @@ async function run(browser, name) {
     assert.equal(await page.locator('[data-user-id="person-10"]').count(), 0, 'logout removes participant details');
     await page.evaluate(() => window.fixture.setOwner('other-account')); await settle(page);
     assert.equal(await page.getByTestId('call-dock').count(), 0, 'a different account cannot inherit the previous native call');
-    await page.evaluate(() => window.fixture.setOwner('me')); await page.getByTestId('call-dock').waitFor(); await settle(page);
+    await page.evaluate(() => window.fixture.setOwner('me')); await settle(page);
+    assert.equal(await page.getByTestId('call-dock').count(),0,'returning to an account must not revive the call ended by logout');
+    call.id='voice-3';
+    // Account effects can invalidate the previous owner's in-flight refresh.
+    // Wait for the committed owner and the new server call in its published list;
+    // only this explicit account-transition wait may retry the expected fence.
+    await page.waitForFunction(async id => {
+      if (window.fixture.getOwner() !== 'me') return false;
+      try { await window.fixture.refreshCalls(); }
+      catch (error) { if (error?.code === 'STALE') return false; throw error; }
+      return window.fixture.getCallList().some(item => item.id === id);
+    }, call.id, { polling: 100, timeout: 10000 });
+    assert.equal(await page.getByTestId('call-dock').count(),0,'a new list entry alone cannot revive the ended native call');
+    await patch(page,{userId:'me',callId:call.id,state:'connected',error:'',muted:false});
+    await page.getByTestId('call-dock').waitFor(); await settle(page);
     const relogin = await page.getByTestId('call-dock').boundingBox();
-    assert.ok(relogin.x >= 330 && relogin.y < 20, 'switching accounts resets the floating position');
+    assert.ok(relogin.x + relogin.width >= 380 && relogin.x + relogin.width <= 382 && relogin.y >= 80 && relogin.y < 100, 'a new call after switching accounts resets below the header');
     assert.equal(await page.getByTestId('call-dock').getAttribute('data-collapsed'), 'false', 'switching accounts resets collapse');
     assert.deepEqual(errors, []); console.log(`PASS ${name}:2/12participants,circular/translucent/click-through,speaking/muted/reconnecting,2Dgrip+avatar+keyboarddrag,keyboardpositionrestore,6game setup+active fullwidth,real timer andlogout`);
     await fs.writeFile(path.join(out, `${name}-summary.json`), JSON.stringify({ browser: name, passed: true, completedAt: new Date().toISOString(), viewportSizes: [[375,667],[390,844],[844,390]], actualGames: ['badeeha','beep','mamnoo','jabeen','fabraka','meenfina'], gameScreens: ['setup','active'], participantCounts: [2,12], freeTwoAxisMovement: true, circleButtons: true, translucentBubbles: true, pointerGapPassthrough: true, gameWidthUnchanged: true, keyboardRestoresPreferredPosition: true, physicalKeyboard: false, liveSFU: false, accountCleanup: true }, null, 2));

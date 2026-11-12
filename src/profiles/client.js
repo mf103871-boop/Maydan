@@ -1,4 +1,5 @@
 import { profileAssetUrl } from './identity.js';
+import { tr } from '../shared/i18n/core.js';
 export const emptyProfiles = () => ({ mine: null, profiles: {}, loading: {}, errors: {}, saving: false });
 export const PROFILE_ERRORS = {
   AUTH_REQUIRED: 'سجّل الدخول لفتح الملفات الشخصية.', AUTH_EXPIRED: 'انتهت الجلسة، سجّل الدخول من جديد.',
@@ -21,19 +22,19 @@ export class ProfilesClient {
     this.getSnapshot = () => this.state;
   }
   update(patch) { this.state = { ...this.state, ...patch }; for (const listener of this.listeners) listener(); }
-  assertCurrent(epoch) { if (epoch !== this.epoch) throw Object.assign(new Error(PROFILE_ERRORS.STALE), { code: 'STALE' }); }
+  assertCurrent(epoch) { if (epoch !== this.epoch) throw Object.assign(new Error(tr(PROFILE_ERRORS.STALE)), { code: 'STALE' }); }
   start(userId) {
     this.epoch++; this.userId = userId; this.reading.clear(); this.sessions.clear(); this.update(emptyProfiles());
     if (userId) this.loadProfile().catch(() => {});
   }
   async call(path, options) {
     const epoch = this.epoch;
-    if (!this.userId) throw Object.assign(new Error(PROFILE_ERRORS.AUTH_REQUIRED), { code: 'AUTH_REQUIRED' });
+    if (!this.userId) throw Object.assign(new Error(tr(PROFILE_ERRORS.AUTH_REQUIRED)), { code: 'AUTH_REQUIRED' });
     try {
       const result = await this.request(`/api/profiles${path}`, options); this.assertCurrent(epoch); return result;
     } catch (error) {
       this.assertCurrent(epoch);
-      throw Object.assign(new Error(PROFILE_ERRORS[error.code] || PROFILE_ERRORS.NETWORK), { code: error.code || 'NETWORK' });
+      throw Object.assign(new Error(tr(PROFILE_ERRORS[error.code] || PROFILE_ERRORS.NETWORK)), { code: error.code || 'NETWORK' });
     }
   }
   normalize(profile) {
@@ -69,7 +70,7 @@ export class ProfilesClient {
     this.reading.set(key, task); return task;
   }
   async mutate(path, method, body) {
-    if (this.state.saving) throw Object.assign(new Error(PROFILE_ERRORS.BUSY), { code: 'BUSY' });
+    if (this.state.saving) throw Object.assign(new Error(tr(PROFILE_ERRORS.BUSY)), { code: 'BUSY' });
     const epoch = this.epoch; this.update({ saving: true });
     try {
       const result = await this.call(path, { method, ...(body === undefined ? {} : { body }) }); this.assertCurrent(epoch);

@@ -68,12 +68,21 @@ test('group conversations identify each sender with their profile and keep direc
   const props = { friend: { id: 'g', name: 'الشلة' }, conversation: { group: { id: 'g' }, members, messages }, account, social: {}, notify() {} };
   const html = render.conversation(props);
   assert.match(html, /aria-label="رسالة من أحمد"/); assert.match(html, /aria-label="رسالة من ليلى"/);
-  assert.equal((html.match(/class="social-message-sender"/g) || []).length, 3);
-  assert.match(html, /<bdi>أنت<\/bdi>/);
+  assert.equal((html.match(/class="social-message-sender"/g) || []).length, 2);
+  assert.match(html, /aria-label="رسالتك"/);
   assert.equal(render.messageSender(messages[1], props.conversation, account).name, 'ليلى');
   assert.equal(render.messageSender({ senderId: 'former' }, props.conversation, account).name, 'عضو اللّمة');
   const direct = render.conversation({ ...props, friend, conversation: { messages } });
   assert.doesNotMatch(direct, /social-message-sender/);
+});
+
+test('consecutive group messages compact only the same remote sender within three minutes', () => {
+  const a = { ...message, senderId: 'peer', seq: 1 };
+  const messages = [a, { ...a, seq: 2, createdAt: now + 1000 }, { ...a, seq: 3, createdAt: now + 190000 }, { ...a, seq: 4, senderId: 'other', createdAt: now + 191000 }];
+  const html = render.conversation({ friend: { id: 'g', name: 'Group' }, conversation: { group: { id: 'g' }, members: [friend, { id: 'other', name: 'Sam' }], messages }, account, social: {}, notify() {} });
+  assert.equal((html.match(/class="social-message-sender"/g) || []).length, 3);
+  assert.equal((html.match(/is-continuation/g) || []).length, 1);
+  assert.equal((html.match(/aria-label="رسالة من أحمد"/g) || []).length, 3);
 });
 
 test('deleted messages hide prior text and action controls; user text is escaped', () => {

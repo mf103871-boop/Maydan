@@ -125,6 +125,13 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     }()
     private var simulatorLaunchRecorded = false
     private var simulatorLaunchObserved = false
+    private let simulatorLocaleScenario: String? = {
+        let value = ProcessInfo.processInfo.environment["MAYDAN_SIMULATOR_LOCALE"] ?? ""
+        return ["set-ar", "retain-ar", "set-en", "retain-en"].contains(value) ? value : nil
+    }()
+    private let simulatorInitialNativeLocale = NativeLocalization.locale
+    private var simulatorLocaleBridgeMessages = 0
+    private var simulatorLocaleRecorded = false
 #endif
     private lazy var appUpdate = AppUpdateCoordinator(host: self, canPresent: { [weak self] in
         guard let self, self.presentedViewController == nil else { return false }
@@ -173,6 +180,12 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
             configuration.userContentController.addUserScript(WKUserScript(
                 source: "window.__maydanSimulatorLaunchToken = (\(payload)).token;",
                 injectionTime: .atDocumentStart, forMainFrameOnly: true))
+            if let scenario = simulatorLocaleScenario {
+                let value = Self.json(["scenario": scenario])
+                configuration.userContentController.addUserScript(WKUserScript(
+                    source: "window.__maydanSimulatorLocaleScenario = (\(value)).scenario;",
+                    injectionTime: .atDocumentStart, forMainFrameOnly: true))
+            }
         }
         if simulatorAudioFixture {
             configuration.userContentController.addUserScript(WKUserScript(
@@ -494,7 +507,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         let spinner = UIActivityIndicatorView(style: .medium)
         spinner.startAnimating()
         let label = UILabel()
-        label.text = "جاري تجهيز اللعبة والمحفوظات…"
+        label.text = NativeLocalization.text("جاري تجهيز اللعبة والمحفوظات…")
         label.textColor = .darkGray
         label.font = .preferredFont(forTextStyle: .body)
         label.adjustsFontForContentSizeCategory = true
@@ -525,11 +538,11 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     private func showMigrationRecovery() {
         hideMigrationProgress()
         guard presentedViewController == nil else { return }
-        let alert = UIAlertController(title: "تعذر نقل المحفوظات القديمة",
-            message: "محفوظاتك القديمة لم تُحذف. أعد المحاولة، وحرّر مساحة إن كانت ممتلئة. المتابعة الآن تفتح اللعبة دون إكمال النقل؛ وقد تتقدم إعداداتك وحفظك الجديد على القديم عند المحاولة لاحقًا.",
+        let alert = UIAlertController(title: NativeLocalization.text("تعذر نقل المحفوظات القديمة"),
+            message: NativeLocalization.text("محفوظاتك القديمة لم تُحذف. أعد المحاولة، وحرّر مساحة إن كانت ممتلئة. المتابعة الآن تفتح اللعبة دون إكمال النقل؛ وقد تتقدم إعداداتك وحفظك الجديد على القديم عند المحاولة لاحقًا."),
             preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "إعادة المحاولة", style: .default) { [weak self] _ in self?.loadBundledGame() })
-        alert.addAction(UIAlertAction(title: "المتابعة الآن", style: .cancel) { [weak self] _ in
+        alert.addAction(UIAlertAction(title: NativeLocalization.text("إعادة المحاولة"), style: .default) { [weak self] _ in self?.loadBundledGame() })
+        alert.addAction(UIAlertAction(title: NativeLocalization.text("المتابعة الآن"), style: .cancel) { [weak self] _ in
             guard let self else { return }
             self.didChooseMigrationContinue = true
             self.webView.load(URLRequest(url: AppSchemeHandler.entryURL))
@@ -540,7 +553,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     private func showBundledGameMissingMessage() {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "تعذر العثور على ملفات اللعبة داخل التطبيق."
+        label.text = NativeLocalization.text("تعذر العثور على ملفات اللعبة داخل التطبيق.")
         label.textColor = .white
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -681,6 +694,35 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
             let diagnostic = "Maydan launch readiness: accepted pid=\(ProcessInfo.processInfo.processIdentifier) uptime=\(ProcessInfo.processInfo.systemUptime)\n"
             FileHandle.standardError.write(Data(diagnostic.utf8))
         } catch { print("Maydan launch readiness: receipt-write-failed") }
+    }
+
+    private func recordSimulatorLocaleReady(_ payload: [String: Any], pageURL: URL) {
+        guard !simulatorLocaleRecorded, simulatorLaunchRecorded,
+              let token = simulatorLaunchToken, let scenario = simulatorLocaleScenario,
+              payload["token"] as? String == token, payload["scenario"] as? String == scenario,
+              !isCollectingMigration, !isCommittingMigration, migration?.isDone == true,
+              pageURL.path == AppSchemeHandler.entryURL.path,
+              let rendered = payload["rendered"] as? [String: Any],
+              let games = rendered["games"] as? [[String: String]], games.count == 8,
+              let navigation = rendered["navigation"] as? [String], navigation.count == 4,
+              let measured = try? JSONSerialization.data(withJSONObject: rendered), measured.count <= 8192 else { return }
+        let receipt: [String: Any] = ["token": token, "pid": ProcessInfo.processInfo.processIdentifier,
+            "scenario": scenario, "rendered": rendered, "nativeLocale": NativeLocalization.locale,
+            "initialNativeLocale": simulatorInitialNativeLocale,
+            "nativeBridgeMessages": simulatorLocaleBridgeMessages,
+            "nativeDirection": webView.semanticContentAttribute == .forceLeftToRight ? "ltr"
+                : webView.semanticContentAttribute == .forceRightToLeft ? "rtl" : "unspecified",
+            "nativeRetryText": NativeLocalization.text("إعادة المحاولة"),
+            "gameReady": simulatorLaunchRecorded, "migrationComplete": true]
+        do {
+            let directory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+                .appendingPathComponent("MaydanLaunchSmoke", isDirectory: true)
+            try JSONSerialization.data(withJSONObject: receipt, options: [.sortedKeys])
+                .write(to: directory.appendingPathComponent("locale.json"), options: .atomic)
+            simulatorLocaleRecorded = true
+            let acknowledgement = Self.json(["token": token])
+            webView.evaluateJavaScript("window.__maydanSimulatorLocaleReady = (\(acknowledgement)).token;", completionHandler: nil)
+        } catch { print("Maydan locale smoke: receipt-write-failed") }
     }
 
     /// CI injects only lease commands. Orientation and WK viewport values below
@@ -922,9 +964,20 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         }
 
         switch type {
+        case "setLocale":
+            guard let locale = payload["locale"] as? String,
+                  NativeLocalization.setLocale(locale) else { return }
+#if targetEnvironment(simulator)
+            simulatorLocaleBridgeMessages += 1
+#endif
+            webView.semanticContentAttribute = locale == "en" ? .forceLeftToRight : .forceRightToLeft
+            appUpdate.refreshLocalization()
+            SocialCoordinator.shared.refreshLocalization()
 #if targetEnvironment(simulator)
         case "simulatorGameReady":
             recordSimulatorLaunchReady(payload, pageURL: pageURL)
+        case "simulatorLocaleReady":
+            recordSimulatorLocaleReady(payload, pageURL: pageURL)
 #endif
 #if MAYDAN_REWARDED_PREVIEW || MAYDAN_REWARDED_ADS
         case "rewardedStatus", "rewardedShow", "rewardedPrivacyOptions", "rewardedReport":

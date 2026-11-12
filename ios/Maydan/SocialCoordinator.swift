@@ -63,16 +63,25 @@ final class SocialCoordinator: NSObject {
         var voiceSessionId: String = ""
     }
 
-    func bootstrap() {
-        guard !bootstrapped else { return }
-        bootstrapped = true
-        let config = CXProviderConfiguration(localizedName: "ميدان")
+    func refreshLocalization() {
+        guard bootstrapped else { return }
+        provider.configuration = localizedProviderConfiguration()
+    }
+
+    private func localizedProviderConfiguration() -> CXProviderConfiguration {
+        let config = CXProviderConfiguration(localizedName: NativeLocalization.text("ميدان"))
         config.supportsVideo = false
         config.maximumCallsPerCallGroup = 1
         config.maximumCallGroups = 1
         config.supportedHandleTypes = [.generic]
         config.includesCallsInRecents = false
-        provider = CXProvider(configuration: config)
+        return config
+    }
+
+    func bootstrap() {
+        guard !bootstrapped else { return }
+        bootstrapped = true
+        provider = CXProvider(configuration: localizedProviderConfiguration())
         provider.setDelegate(self, queue: .main)
         AudioManager.shared.audioSession.isAutomaticConfigurationEnabled = false
         try? AudioManager.shared.setEngineAvailability(.none)
@@ -286,7 +295,7 @@ final class SocialCoordinator: NSObject {
             } else {
                 call = NativeCall(id: id, conversationId: conversationId,
                                   scope: payload["scope"] as? String == "group" ? "group" : "direct",
-                                  name: String((payload["callerName"] as? String ?? "مكالمة ميدان").prefix(80)),
+                                  name: String((payload["callerName"] as? String ?? NativeLocalization.text("مكالمة ميدان")).prefix(80)),
                                   incoming: false, userId: userId, connection: (url, token))
                 muted = privateTurn || (payload["muted"] as? Bool ?? false)
                 state = "connecting"
@@ -409,7 +418,7 @@ final class SocialCoordinator: NSObject {
             state = "connecting"; emitCall()
             await old?.disconnect()
         } else {
-            call = NativeCall(id: id, conversationId: code, scope: "mafia", name: "مافيا ميدان", incoming: false,
+            call = NativeCall(id: id, conversationId: code, scope: "mafia", name: NativeLocalization.text("مافيا ميدان"), incoming: false,
                               userId: userId, connection: connection, mediaEpoch: mediaEpoch, canPublish: mayPublish, quiet: quiet, voiceSessionId: voiceSessionId)
         }
         guard !signingOut, session.credential?.userId == userId, attempt == callGeneration, call?.mediaEpoch == mediaEpoch else { throw SocialNativeError.failed("CALL_CANCELLED") }
@@ -428,7 +437,7 @@ final class SocialCoordinator: NSObject {
             // recovers into a quiet night instead of an audible channel.
             try await connectRoom()
         } else {
-            let action = CXStartCallAction(call: id, handle: CXHandle(type: .generic, value: "مافيا ميدان"))
+            let action = CXStartCallAction(call: id, handle: CXHandle(type: .generic, value: NativeLocalization.text("مافيا ميدان")))
             action.isVideo = false
             do { try await transaction(action) }
             catch {
@@ -1003,8 +1012,8 @@ extension SocialCoordinator: PKPushRegistryDelegate {
             let parsedId = (data["callId"] as? String).flatMap(UUID.init(uuidString:))
             let id = parsedId ?? UUID()
             let update = CXCallUpdate()
-            update.localizedCallerName = "مكالمة ميدان"
-            update.remoteHandle = CXHandle(type: .generic, value: "ميدان")
+            update.localizedCallerName = NativeLocalization.text("مكالمة ميدان")
+            update.remoteHandle = CXHandle(type: .generic, value: NativeLocalization.text("ميدان"))
             update.hasVideo = false
             update.supportsHolding = false
             update.supportsGrouping = false
@@ -1026,7 +1035,7 @@ extension SocialCoordinator: PKPushRegistryDelegate {
                     }
                     self.voice.cancel(state: "interrupted")
                     self.call = NativeCall(id: id, conversationId: conversationId,
-                        scope: data["scope"] as? String == "group" ? "group" : "direct", name: "مكالمة ميدان",
+                        scope: data["scope"] as? String == "group" ? "group" : "direct", name: NativeLocalization.text("مكالمة ميدان"),
                         incoming: true, userId: auth.userId, connection: nil)
                     self.state = "ringing"
                     self.muted = self.privateTurn

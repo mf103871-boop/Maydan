@@ -84,7 +84,7 @@ export async function startUIReview({ port = 4178, apiPort = 8789, build = true,
         // Keep the licensed TestFlight-only candidate packaging guard intact.
         // UI review uses the existing normal sound bus and its shipped effects.
         process.env.MAYDAN_PRIVATE_AUDIO_PREVIEW = '0';
-        try { await buildOnce({ minify: false, includeStudio: false }); revision++; buildError = null; console.log(`[ui-review] local build ${revision}`); }
+        try { await buildOnce({ minify: false, includeStudio: false, outdir:assetRoot }); revision++; buildError = null; console.log(`[ui-review] local build ${revision}`); }
         catch (error) { buildError = error.message; console.error('[ui-review] build:', error.message); }
       }
     })().finally(() => { building = null; });

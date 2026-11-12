@@ -1,3 +1,6 @@
+import { uiDirection } from './format.js';
+import { arabicNumber as number } from './format.js';
+import { tr } from '../shared/i18n/core.js';
 // بَديهة أونلاين: جوال لكل فريق. المضيف يقدّم ويكشف ويحكم كما في اللعبة على جهاز واحد،
 // والفريق صاحب الدور يختار السؤال ويستعمل وسائله من جواله. كل جوال يحمل بنك الأسئلة،
 // فالغرفة تنقل معرّفات الأسئلة فقط ويعرضها كل جوال من نسخته بالمكوّن نفسه (QuestionVisual).
@@ -7,16 +10,18 @@ import { usePlatform } from '../platform/context.js';
 import { useAccount } from '../shared/account/context.js';
 import { vignette } from '../shared/fx/index.js';
 import { useDeadlineAudio } from '../shared/fx/useDeadlineAudio.js';
-import { CATS } from '../data/categories/index.js';
+import { getCategories } from '../data/game-content.js';
+import { normalizeContentIdentity } from '../shared/content-locale.mjs';
 import MaydanLogicBeta, { pointsAfterHints } from '../games/badeeha/logic.js';
 import { QuestionVisual } from '../games/badeeha/QuestionVisual.js';
 import { TOOLS, TEAM_STYLE, MAYDAN_TIER_LABELS, TYPE_PROMPT, answerText } from '../games/badeeha/constants.js';
 import { questionAssistance } from '../games/badeeha/assistance.js';
 import { rememberBadeehaQuestions } from '../games/badeeha/persistence.js';
+import { badeehaContentStorage } from './badeeha-storage.js';
 import { mulberry32 } from '../shared/lib/rng.js';
 import BADEEHA_CSS from '../games/badeeha/styles.css?sheet';
 import { PresentationStyles } from '../shared/ui/PresentationStyles.jsx';
-import { BADEEHA_TIMERS, arabicNumber as number } from './shared.js';
+import { BADEEHA_TIMERS} from './shared.js';
 
 const { MODES, ROUND_SIZES, questionId } = MaydanLogicBeta;
 // أنماط بَديهة مكتوبة لصفحة كاملة (.m-root)؛ داخل الغرفة تأخذ مكانها في البطاقة فقط.
@@ -46,12 +51,18 @@ const EMBED_CSS = `.m-root.m-embedded{min-height:0;padding:0;background:transpar
 
 // كل جوال يبحث عن السؤال بمعرّفه في بنكه؛ المعرّف نفسه الذي يبني به المضيف اللوحة.
 // يُبنى الفهرس عند أول غرفة بَديهة لا عند فتح التطبيق.
-let questionIndex = null;
-const questionById = (qid) => (questionIndex ||= new Map(CATS.flatMap((category) => category.qs.map((question, index) => {
-  const id = questionId(category.id, question, index);
-  return [id, { ...question, qid: id }];
-})))).get(qid) || null;
-const CATEGORY = new Map(CATS.map((category) => [category.id, category]));
+const indexes = new Map();
+function contentFor(value = {}) {
+  const identity = normalizeContentIdentity(value), key = `${identity.contentLocale}:${identity.contentVersion}`;
+  if (!indexes.has(key)) {
+    const CATS = getCategories(identity.contentLocale, identity.contentVersion);
+    const index = new Map(CATS.flatMap(category => category.qs.map((question, ordinal) => {
+      const qid = questionId(category.id, question, ordinal); return [qid, { ...question, qid }];
+    })));
+    indexes.set(key, { CATS, CATEGORY: new Map(CATS.map(category => [category.id, category])), questionById: qid => index.get(qid) || null });
+  }
+  return indexes.get(key);
+}
 // ترتيب عناصر «رتّب» قبل الكشف ثابت لكل سؤال، فيرى الجميع الترتيب نفسه.
 function mixedOrder(question) {
   if (!Array.isArray(question?.items)) return [];
@@ -65,7 +76,9 @@ function mixedOrder(question) {
 export const DEFAULT_BADEEHA_OPTIONS = Object.freeze({ mode: 'standard', roundSize: 30, timer: 60, categories: [] });
 export function normalizeBadeehaOptions(value) {
   const input = value && typeof value === 'object' ? value : {};
+  const { CATEGORY } = contentFor(input);
   return {
+    ...normalizeContentIdentity(input),
     mode: Object.hasOwn(MODES, input.mode) ? input.mode : DEFAULT_BADEEHA_OPTIONS.mode,
     roundSize: ROUND_SIZES.includes(input.roundSize) ? input.roundSize : DEFAULT_BADEEHA_OPTIONS.roundSize,
     timer: BADEEHA_TIMERS.includes(input.timer) ? input.timer : DEFAULT_BADEEHA_OPTIONS.timer,
@@ -75,6 +88,7 @@ export function normalizeBadeehaOptions(value) {
 // الجولة تُبنى على جوال المضيف بالدالة نفسها التي تبني بها بَديهة جولتها، مع أولوية ما لم يُلعب
 // في سجله. لا يصل الغرفة إلا معرّف كل سؤال ونقاطه.
 export function buildBadeehaRoom(options, history = {}) {
+  const { CATS } = contentFor(options);
   const { mode, roundSize, timer, categories } = normalizeBadeehaOptions(options);
   const deck = MaydanLogicBeta.buildDeck(CATS, categories, history || {}, MODES[mode].tiers, roundSize);
   return { mode, roundSize, timer, categories, deck: Object.fromEntries(Object.entries(deck).map(([id, questions]) => [id, questions.map((q) => ({ qid: q.qid, p: q.p }))])) };
@@ -89,6 +103,7 @@ function Segment({ label, options, value, onChange, disabled, designId }) {
 }
 
 export function BadeehaSettings({ value, onChange, disabled }) {
+  const { CATS } = contentFor(value);
   const account = useAccount();
   const options = normalizeBadeehaOptions(value);
   const set = (patch) => onChange({ ...options, ...patch });
@@ -108,42 +123,44 @@ export function BadeehaSettings({ value, onChange, disabled }) {
     }
   };
   return <div data-design-screen="online.badeeha.setup" className="stack"><style>{EMBED_CSS}</style>
-    <Segment designId="mode-choice" label="مستوى الأسئلة" disabled={disabled} value={options.mode} onChange={(mode) => set({ mode })} options={Object.values(MODES).map((mode) => [mode.id, `${mode.icon} ${mode.label}`])} />
-    <Segment designId="round-size" label="عدد الأسئلة" disabled={disabled} value={options.roundSize} onChange={(roundSize) => set({ roundSize })} options={ROUND_SIZES.map((size) => [size, `${number(size)} سؤالًا`])} />
-    <Segment designId="timer-length" label="وقت كل سؤال" disabled={disabled} value={options.timer} onChange={(timer) => set({ timer })} options={BADEEHA_TIMERS.map((seconds) => [seconds, `${number(seconds)} ثانية`])} />
-    <div className="row-between"><span className="online-field-label">الفئات ({number(options.categories.length)} من ٦)</span><Button data-design-id="random-categories" size="sm" variant="ghost" disabled={disabled} onClick={random}>ست فئات عشوائية</Button></div>
-    <div className="badeeha-picker" role="group" aria-label="اختر ست فئات">
+    <Segment designId="mode-choice" label={tr("مستوى الأسئلة")} disabled={disabled} value={options.mode} onChange={(mode) => set({ mode })} options={Object.values(MODES).map((mode) => [mode.id, `${mode.icon} ${tr(mode.label)}`])} />
+    <Segment designId="round-size" label={tr("عدد الأسئلة")} disabled={disabled} value={options.roundSize} onChange={(roundSize) => set({ roundSize })} options={ROUND_SIZES.map((size) => [size, tr("{v0} سؤالًا", {v0: number(size)})])} />
+    <Segment designId="timer-length" label={tr("وقت كل سؤال")} disabled={disabled} value={options.timer} onChange={(timer) => set({ timer })} options={BADEEHA_TIMERS.map((seconds) => [seconds, tr("{v0} ثانية", {v0: number(seconds)})])} />
+    <div className="row-between"><span className="online-field-label">{tr("الفئات (")}{number(options.categories.length)}{tr(" من ٦)")}</span><Button data-design-id="random-categories" size="sm" variant="ghost" disabled={disabled} onClick={random}>{tr("ست فئات عشوائية")}</Button></div>
+    <div className="badeeha-picker" role="group" aria-label={tr("اختر ست فئات")}>
       {CATS.map((category) => { const locked = account.lockedPack(category.id); return <button data-design-id="category-choice" key={category.id} type="button" className={locked ? 'is-locked' : ''} aria-pressed={options.categories.includes(category.id)} disabled={disabled}
         onClick={() => toggle(category.id)}><span aria-hidden="true">{locked ? '🔒' : category.icon}</span><span>{category.name}</span></button>; })}
     </div>
     {ready && !ready.ok && <p className="online-notice error" role="alert">{ready.message}</p>}
-    <p className="online-footnote">جوال لكل فريق (من فريقين إلى أربعة). المضيف فريق أيضًا، ويكشف الإجابة ويحكم كما في بَديهة على جهاز واحد.</p>
+    <p className="online-footnote">{tr("جوال لكل فريق (من فريقين إلى أربعة). المضيف فريق أيضًا، ويكشف الإجابة ويحكم كما في بَديهة على جهاز واحد.")}</p>
   </div>;
 }
 
 // غرفة الانتظار: إعدادات المضيف، وتنبيه لجوال نسخته أقدم من أسئلة الجولة.
 export function BadeehaLobbyInfo({ state }) {
+  const { CATEGORY, questionById } = contentFor(state);
   const { mode, roundSize, timer, categories, deck } = state.settings;
   const missing = Object.values(deck).flat().filter((cell) => !questionById(cell.qid)).length;
-  return <Card className="stack"><h2>بَديهة · {MODES[mode]?.icon} {MODES[mode]?.label}</h2>
-    <p>{number(roundSize)} سؤالًا، و{number(timer)} ثانية لكل سؤال.</p>
-    <p className="online-footnote">الفئات: {categories.map((id) => CATEGORY.get(id)?.name || 'فئة جديدة').join('، ')}</p>
-    {missing > 0 && <p className="online-notice" role="status">جوالك لا يحمل {number(missing)} من أسئلة هذه الجولة. حدّث ميدان قبل البداية لترى كل الأسئلة.</p>}
+  return <Card className="stack"><h2>{tr("بَديهة · ")}{MODES[mode]?.icon} {tr(MODES[mode]?.label)}</h2>
+    <p>{number(roundSize)}{tr(" سؤالًا، و")}{number(timer)}{tr(" ثانية لكل سؤال.")}</p>
+    <p className="online-footnote">{tr("الفئات: ")}{categories.map((id) => CATEGORY.get(id)?.name || tr("فئة جديدة")).join('، ')}</p>
+    {missing > 0 && <p className="online-notice" role="status">{tr("جوالك لا يحمل ")}{number(missing)}{tr(" من أسئلة هذه الجولة. حدّث ميدان قبل البداية لترى كل الأسئلة.")}</p>}
     <BadeehaRules /></Card>;
 }
 
 export function BadeehaRules() {
-  return <Card className="stack"><h3>كيف تُلعب أونلاين؟</h3>
-    <p className="online-footnote">الفريق صاحب الدور يختار السؤال من اللوحة ويستعمل وسائله (دبل، جوابين، وقت زيادة) من جواله. يجيب بصوته، ثم يكشف المضيف الإجابة ويحكم: صح للفريق، أو سرقة لفريق آخر، أو ولا أحد.</p></Card>;
+  return <Card className="stack"><h3>{tr("كيف تُلعب أونلاين؟")}</h3>
+    <p className="online-footnote">{tr("الفريق صاحب الدور يختار السؤال من اللوحة ويستعمل وسائله (دبل، جوابين، وقت زيادة) من جواله. يجيب بصوته، ثم يكشف المضيف الإجابة ويحكم: صح للفريق، أو سرقة لفريق آخر، أو ولا أحد.")}</p></Card>;
 }
 
 export function BadeehaMatch({ state, me, isHost, disabled, act, clockOffset, spectating = false }) {
+  const { CATS, CATEGORY, questionById } = contentFor(state);
   const platform = usePlatform();
   const [now, setNow] = useState(Date.now());
   const [confirmEnd, setConfirmEnd] = useState(false);
   // A late spectator must not inherit questions played before they joined.
   const seenQuestionId = state.phase === 'reveal' ? state.current?.qid : null;
-  useEffect(() => { if (!state._designPreview && seenQuestionId) rememberBadeehaQuestions(CATS, [seenQuestionId]); }, [seenQuestionId, state._designPreview]);
+  useEffect(() => { if (!state._designPreview && seenQuestionId) rememberBadeehaQuestions(CATS, [seenQuestionId], { storage: badeehaContentStorage({contentLocale:state.contentLocale,contentVersion:state.contentVersion}) }); }, [seenQuestionId, state._designPreview, state.contentLocale, state.contentVersion, CATS]);
   useEffect(() => {
     if (state._designPreview || state.phase !== 'question' || !state.deadlineAt) return undefined;
     setNow(Date.now());
@@ -163,7 +180,7 @@ export function BadeehaMatch({ state, me, isHost, disabled, act, clockOffset, sp
 
   const teams = state.teams.map((team, index) => {
     const seat = state.members.find((m) => m.id === team.id);
-    return { ...team, name: seat?.name || 'فريق', emoji: seat?.emoji, left: seat?.left, connected: seat?.connected, color: TEAM_STYLE[index % TEAM_STYLE.length].solid };
+    return { ...team, name: seat?.name || tr("فريق"), emoji: seat?.emoji, left: seat?.left, connected: seat?.connected, color: TEAM_STYLE[index % TEAM_STYLE.length].solid };
   });
   const turn = teams.find((team) => team.id === state.turnId);
   const mine = teams.find((team) => team.id === me?.id);
@@ -175,76 +192,76 @@ export function BadeehaMatch({ state, me, isHost, disabled, act, clockOffset, sp
   const soundOn = platform?.settings ? platform.settings.soundOn !== false : true;
   const verdictTeam = state.verdict?.teamId ? teams.find((team) => team.id === state.verdict.teamId) : null;
   const sorted = [...teams].sort((a, b) => b.score - a.score);
-  const scoreboard = <Scoreboard data-design-id="scoreboard" entries={teams.map((team) => ({ id: team.id, name: team.left ? `${team.name} (غادر)` : team.name, emoji: team.emoji, score: team.score, color: team.color }))} />;
+  const scoreboard = <Scoreboard data-design-id="scoreboard" entries={teams.map((team) => ({ id: team.id, name: team.left ? tr("{v0} (غادر)", {v0: team.name}) : team.name, emoji: team.emoji, score: team.score, color: team.color }))} />;
 
   if (state.phase === 'over') return <section data-design-screen="online.badeeha.over" className="stack online-badeeha">
-    {state.reason === 'players_left' && <p className="online-notice">انتهت المباراة لأن الفرق المتبقية أقل من اثنين.</p>}
-    {state.reason === 'ended' && <p className="online-notice">أنهى المضيف المباراة قبل آخر سؤال.</p>}
+    {state.reason === 'players_left' && <p className="online-notice">{tr("انتهت المباراة لأن الفرق المتبقية أقل من اثنين.")}</p>}
+    {state.reason === 'ended' && <p className="online-notice">{tr("أنهى المضيف المباراة قبل آخر سؤال.")}</p>}
     <Podium data-design-id="podium" entries={sorted.map((team) => ({ id: team.id, name: team.name, emoji: team.emoji, score: team.score, color: team.color }))} />
-    <Card className="stack">{sorted.map((team) => <div className="row-between" key={team.id}><b>{team.name}</b><span>{number(team.score)} نقطة، {number(team.correct)} صح، {number(team.steals)} سرقة</span></div>)}</Card>
-    <p className="online-footnote">إعادة اللعب هنا تستخدم الأسئلة نفسها. لأسئلة جديدة، اخرجوا وأنشئوا غرفة جديدة من بَديهة.</p>
-    {isHost ? <Button data-design-id="restart" full size="lg" variant="primary" disabled={disabled} onClick={() => act('restart')}>العودة للانتظار وإعادة نفس الأسئلة</Button> : <p className="online-footnote">بانتظار المضيف لبدء مباراة جديدة.</p>}
+    <Card className="stack">{sorted.map((team) => <div className="row-between" key={team.id}><b>{team.name}</b><span>{number(team.score)}{tr(" نقطة، ")}{number(team.correct)}{tr(" صح، ")}{number(team.steals)}{tr(" سرقة")}</span></div>)}</Card>
+    <p className="online-footnote">{tr("إعادة اللعب هنا تستخدم الأسئلة نفسها. لأسئلة جديدة، اخرجوا وأنشئوا غرفة جديدة من بَديهة.")}</p>
+    {isHost ? <Button data-design-id="restart" full size="lg" variant="primary" disabled={disabled} onClick={() => act('restart')}>{tr("العودة للانتظار وإعادة نفس الأسئلة")}</Button> : <p className="online-footnote">{tr("بانتظار المضيف لبدء مباراة جديدة.")}</p>}
   </section>;
 
   return <section data-design-screen={`online.badeeha.${state.phase}`} className="stack online-badeeha">
-    <div className="m-root m-embedded" dir="rtl"><PresentationStyles sheet={BADEEHA_CSS}/><style>{EMBED_CSS}</style><div className="stack">
+    <div className="m-root m-embedded" dir={uiDirection()}><PresentationStyles sheet={BADEEHA_CSS}/><style>{EMBED_CSS}</style><div className="stack">
       <div className="row-between">
-        <span data-design-id="turn" className="badeeha-turn" style={{ '--team': turn?.color }}><i aria-hidden="true" />{turn ? (myTurn ? 'دور فريقك' : `الدور: ${turn.name}`) : '—'}</span>
-        <span data-design-id="round" className="online-footnote">{mode.icon} {mode.label} · السؤال {number(Math.min(state.round, state.rounds))} من {number(state.rounds)}</span>
+        <span data-design-id="turn" className="badeeha-turn" style={{ '--team': turn?.color }}><i aria-hidden="true" />{turn ? (myTurn ? tr("دور فريقك") : tr("الدور: {v0}", {v0: turn.name})) : '—'}</span>
+        <span data-design-id="round" className="online-footnote">{mode.icon} {tr(mode.label)}{tr(" · السؤال ")}{number(Math.min(state.round, state.rounds))}{tr(" من ")}{number(state.rounds)}</span>
       </div>
       {state.verdict && state.phase === 'board' && <p className={`badeeha-verdict ${verdictTeam ? 'is-good' : 'is-none'}`} role="status">
-        {verdictTeam ? `${state.verdict.steal ? '⚡ سرقة! ' : '✓ '}${verdictTeam.name} +${number(state.verdict.points)}` : 'ولا أحد هالمرة.'}</p>}
+        {verdictTeam ? `${state.verdict.steal ? tr("⚡ سرقة! ") : '✓ '}${verdictTeam.name} +${number(state.verdict.points)}` : tr("ولا أحد هالمرة.")}</p>}
 
       {state.phase === 'board' && <>
-        <p className="online-footnote">{myTurn ? 'اختر سؤالًا من اللوحة.' : isHost ? `${turn?.name || 'الفريق'} يختار، وتقدر تفتح السؤال عنه.` : `بانتظار ${turn?.name || 'الفريق'} ليختار سؤالًا.`}</p>
+        <p className="online-footnote">{myTurn ? tr("اختر سؤالًا من اللوحة.") : isHost ? tr("{v0} يختار، وتقدر تفتح السؤال عنه.", {v0: turn?.name || tr("الفريق")}) : tr("بانتظار {v0} ليختار سؤالًا.", {v0: turn?.name || tr("الفريق")})}</p>
         <div data-design-id="board" className="m-board-grid">
           {state.settings.categories.map((categoryId, categoryIndex) => {
             const category = CATEGORY.get(categoryId);
             return <article key={categoryId} className="m-board-category" style={{ '--i': categoryIndex }}>
-              <h2><span aria-hidden="true">{category?.icon || '❔'}</span> {category?.name || 'فئة غير متاحة في نسختك'}</h2>
+              <h2><span aria-hidden="true">{category?.icon || '❔'}</span> {category?.name || tr("فئة غير متاحة في نسختك")}</h2>
               <div className="m-question-buttons">{(state.settings.deck[categoryId] || []).map((cell, index) => {
                 const done = state.used.includes(cell.qid);
                 return <button key={cell.qid} data-design-id="tier" type="button" className={`m-tier m-tier-${cell.p} ${done ? 'done' : ''}`} style={{ '--n': index }}
                   data-sound="none" disabled={done || disabled || spectating || !(isHost || myTurn)} onClick={() => act('open', { categoryId, index })}
-                  aria-label={`${category?.name || ''}، سؤال ${cell.p} نقطة${done ? '، مستخدم' : ''}`}>
-                  <b dir="ltr">{cell.p}</b><small>{done ? 'تم' : MAYDAN_TIER_LABELS[cell.p]}</small></button>;
+                  aria-label={tr("{v0}، سؤال {v1} نقطة{v2}", {v0: category?.name || '', v1: cell.p, v2: done ? tr("، مستخدم") : ''})}>
+                  <b dir="ltr">{cell.p}</b><small>{done ? tr("تم") : tr(MAYDAN_TIER_LABELS[cell.p])}</small></button>;
               })}</div>
             </article>;
           })}
         </div>
         {isHost && <div className="row-between">
-          <Button data-design-id="undo" data-sound="none" size="sm" variant="ghost" disabled={disabled || !state.canUndo} onClick={() => act('undo')}>↶ تراجع عن آخر حكم</Button>
-          <Button data-design-id="finish" size="sm" variant="ghost" disabled={disabled} onClick={() => setConfirmEnd(true)}>إنهاء المباراة</Button>
+          <Button data-design-id="undo" data-sound="none" size="sm" variant="ghost" disabled={disabled || !state.canUndo} onClick={() => act('undo')}>{tr("↶ تراجع عن آخر حكم")}</Button>
+          <Button data-design-id="finish" size="sm" variant="ghost" disabled={disabled} onClick={() => setConfirmEnd(true)}>{tr("إنهاء المباراة")}</Button>
         </div>}
       </>}
 
       {['question', 'reveal'].includes(state.phase) && state.current && <Card data-design-id="question" className="stack">
-        <div className="row-between"><div data-design-id="category" className="badeeha-cell"><b>{CATEGORY.get(state.current.categoryId)?.name}</b><span>{number(pointsNow)} نقطة{state.effect.double ? ' (دبل)' : ''}</span></div>
-          {seconds !== null && <span data-design-id="timer" className={`online-timer ${seconds <= 5 ? 'urgent' : ''}`} role="timer" aria-label={`متبقي ${seconds} ثانية`}><b><bdi>{number(seconds)}</bdi></b> ث</span>}</div>
-        {(state.effect.double || state.effect.two) && <div className="badeeha-effects">{state.effect.double && <span>✨ دبل النقاط</span>}{state.effect.two && <span>✌️ جوابان</span>}</div>}
-        {question && TYPE_PROMPT[question.type] && <p data-design-id="prompt" className="m-prompt">{TYPE_PROMPT[question.type]}</p>}
-        {state.phase === 'question' && assistance && (assistance.context || assistance.shape) && <aside data-design-id="assistance" className="m-question-assistance" aria-label="مساعدة خفيفة بلا خصم نقاط">
+        <div className="row-between"><div data-design-id="category" className="badeeha-cell"><b>{CATEGORY.get(state.current.categoryId)?.name}</b><span>{number(pointsNow)}{tr(" نقطة")}{state.effect.double ? tr(" (دبل)") : ''}</span></div>
+          {seconds !== null && <span data-design-id="timer" className={`online-timer ${seconds <= 5 ? 'urgent' : ''}`} role="timer" aria-label={tr("متبقي {v0} ثانية", {v0: seconds})}><b><bdi>{number(seconds)}</bdi></b>{tr(" ث")}</span>}</div>
+        {(state.effect.double || state.effect.two) && <div className="badeeha-effects">{state.effect.double && <span>{tr("✨ دبل النقاط")}</span>}{state.effect.two && <span>{tr("✌️ جوابان")}</span>}</div>}
+        {question && TYPE_PROMPT[question.type] && <p data-design-id="prompt" className="m-prompt">{tr(TYPE_PROMPT[question.type])}</p>}
+        {state.phase === 'question' && assistance && (assistance.context || assistance.shape) && <aside data-design-id="assistance" className="m-question-assistance" aria-label={tr("مساعدة خفيفة بلا خصم نقاط")}>
           {assistance.context && <span>{assistance.context}</span>}{assistance.shape && <small>{assistance.shape}</small>}
         </aside>}
         {question ? QuestionVisual({ question, packId: state.current.categoryId, revealed: state.phase === 'reveal', hintsUsed: state.hintsUsed, mixedItems: mixedOrder(question),
           onHint: state.phase === 'question' && (isHost || myTurn) && !disabled ? () => act('hint') : null,
           soundOn, volume: platform?.settings?.soundVolume, sound: platform?.sound, onSfx: (name) => platform?.sound?.play(name) })
-          : <p className="online-notice">هذا السؤال غير موجود في نسخة جوالك. حدّث ميدان؛ المضيف يكمل الجولة.</p>}
-        {state.phase === 'question' && seconds === 0 && <p className="online-footnote" role="status">انتهى الوقت.</p>}
-        {state.phase === 'reveal' && question && <p data-design-id="answer" className="badeeha-answer" role="status">الإجابة: {answerText(question)}</p>}
-        {state.phase === 'reveal' && question?.alt?.length > 0 && <p className="online-footnote">تُقبل أيضًا: {question.alt.join('، ')}</p>}
-        {state.phase === 'question' && myTurn && <div data-design-id="tools" className="badeeha-tools" role="group" aria-label="وسائل فريقك">{TOOLS.map((tool) => <button data-design-id="tool" data-sound="none" key={tool.id} type="button" disabled={disabled || !mine.tools[tool.id] || seconds === 0}
-          onClick={() => act('tool', { tool: tool.id })} title={tool.hint}>{tool.icon} {tool.label}<small>{mine.tools[tool.id] ? tool.hint : 'استُعملت'}</small></button>)}</div>}
-        {state.phase === 'question' && (isHost ? <Button data-design-id="reveal" data-sound="none" full variant="primary" size="lg" disabled={disabled} onClick={() => act('reveal')}>اكشف الإجابة</Button>
-          : <p className="online-footnote">{myTurn ? 'جاوبوا بصوتكم، والمضيف يكشف الإجابة.' : 'المضيف يكشف الإجابة ويحكم.'}</p>)}
-        {state.phase === 'reveal' && (isHost ? <div data-design-id="judge" className="badeeha-judge" role="group" aria-label="من جاوب صح؟">
+          : <p className="online-notice">{tr("هذا السؤال غير موجود في نسخة جوالك. حدّث ميدان؛ المضيف يكمل الجولة.")}</p>}
+        {state.phase === 'question' && seconds === 0 && <p className="online-footnote" role="status">{tr("انتهى الوقت.")}</p>}
+        {state.phase === 'reveal' && question && <p data-design-id="answer" className="badeeha-answer" role="status">{tr("الإجابة: ")}{answerText(question)}</p>}
+        {state.phase === 'reveal' && question?.alt?.length > 0 && <p className="online-footnote">{tr("تُقبل أيضًا: ")}{question.alt.join('، ')}</p>}
+        {state.phase === 'question' && myTurn && <div data-design-id="tools" className="badeeha-tools" role="group" aria-label={tr("وسائل فريقك")}>{TOOLS.map((tool) => <button data-design-id="tool" data-sound="none" key={tool.id} type="button" disabled={disabled || !mine.tools[tool.id] || seconds === 0}
+          onClick={() => act('tool', { tool: tool.id })} title={tr(tool.hint)}>{tool.icon} {tr(tool.label)}<small>{mine.tools[tool.id] ? tr(tool.hint) : tr("استُعملت")}</small></button>)}</div>}
+        {state.phase === 'question' && (isHost ? <Button data-design-id="reveal" data-sound="none" full variant="primary" size="lg" disabled={disabled} onClick={() => act('reveal')}>{tr("اكشف الإجابة")}</Button>
+          : <p className="online-footnote">{myTurn ? tr("جاوبوا بصوتكم، والمضيف يكشف الإجابة.") : tr("المضيف يكشف الإجابة ويحكم.")}</p>)}
+        {state.phase === 'reveal' && (isHost ? <div data-design-id="judge" className="badeeha-judge" role="group" aria-label={tr("من جاوب صح؟")}>
           {teams.filter((team) => !team.left).map((team) => <Button data-design-id="judge-team" data-sound="none" key={team.id} full variant={team.id === state.turnId ? 'primary' : 'secondary'} disabled={disabled} onClick={() => act('judge', { teamId: team.id })}>
-            {team.id === state.turnId ? '✓' : '⚡ سرقة:'} {team.name} +{number(team.id === state.turnId && state.effect.double ? pointsNow * 2 : pointsNow)}</Button>)}
-          <Button data-design-id="judge-nobody" data-sound="none" full variant="ghost" disabled={disabled} onClick={() => act('judge', { teamId: null })}>ولا أحد</Button>
-        </div> : <p className="online-footnote">المضيف يحكم الآن.</p>)}
+            {team.id === state.turnId ? '✓' : tr("⚡ سرقة:")} {team.name} +{number(team.id === state.turnId && state.effect.double ? pointsNow * 2 : pointsNow)}</Button>)}
+          <Button data-design-id="judge-nobody" data-sound="none" full variant="ghost" disabled={disabled} onClick={() => act('judge', { teamId: null })}>{tr("ولا أحد")}</Button>
+        </div> : <p className="online-footnote">{tr("المضيف يحكم الآن.")}</p>)}
       </Card>}
     </div></div>
-    <Card className="stack"><h2>النقاط</h2>{scoreboard}</Card>
-    {confirmEnd && <ConfirmModal title="إنهاء المباراة؟" message="تنتهي المباراة الآن بالنقاط الحالية." confirmLabel="إنهاء" cancelLabel="نكمل" onConfirm={async () => { setConfirmEnd(false); await act('end'); }} onCancel={() => setConfirmEnd(false)} />}
+    <Card className="stack"><h2>{tr("النقاط")}</h2>{scoreboard}</Card>
+    {confirmEnd && <ConfirmModal title={tr("إنهاء المباراة؟")} message={tr("تنتهي المباراة الآن بالنقاط الحالية.")} confirmLabel={tr("إنهاء")} cancelLabel={tr("نكمل")} onConfirm={async () => { setConfirmEnd(false); await act('end'); }} onCancel={() => setConfirmEnd(false)} />}
   </section>;
 }

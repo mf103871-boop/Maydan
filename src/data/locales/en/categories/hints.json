@@ -1,0 +1,727 @@
+{
+  "id": "hints",
+  "name": "Three Clues",
+  "icon": "💡",
+  "defaultType": "hints",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "Countries",
+      "type": "hints",
+      "q": "Which island country is this?",
+      "a": "Japan",
+      "hints": [
+        "Its islands include Honshu",
+        "It is famous for cherry blossoms",
+        "Its capital is Tokyo"
+      ],
+      "alt": [],
+      "qid": "hints-200-911",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Japan"
+    },
+    {
+      "p": 200,
+      "topic": "Animals",
+      "type": "hints",
+      "q": "Which aquatic mammal is this?",
+      "a": "Dolphin",
+      "hints": [
+        "I breathe air despite living in water",
+        "I use echolocation",
+        "I am a toothed cetacean often seen leaping above waves"
+      ],
+      "alt": [],
+      "qid": "hints-200-912",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dolphin"
+    },
+    {
+      "p": 200,
+      "topic": "Landmarks",
+      "type": "hints",
+      "q": "Which ancient city has buildings carved into rock?",
+      "a": "Petra",
+      "hints": [
+        "The Nabataeans made me their capital",
+        "Visitors reach my Treasury through the Siq",
+        "I am Jordan's rose-colored rock-cut city"
+      ],
+      "alt": [],
+      "qid": "hints-200-913",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://whc.unesco.org/en/list/326/"
+    },
+    {
+      "p": 200,
+      "topic": "Food",
+      "type": "hints",
+      "q": "Which popular food is served in balls or patties?",
+      "a": "Falafel",
+      "hints": [
+        "Herbs and legumes are mixed to make me",
+        "I use chickpeas or fava beans, depending on the country",
+        "I am usually fried as small balls or patties"
+      ],
+      "alt": [
+        "Ta'amiya",
+        "Tamiya"
+      ],
+      "qid": "hints-200-914",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Falafel"
+    },
+    {
+      "p": 200,
+      "topic": "Tools",
+      "type": "hints",
+      "q": "Which small tool helps travelers find their way?",
+      "a": "Compass",
+      "hints": [
+        "I do not need a satellite signal",
+        "My magnetic needle moves freely",
+        "My needle points toward magnetic north"
+      ],
+      "alt": [],
+      "qid": "hints-200-915",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Compass"
+    },
+    {
+      "p": 200,
+      "topic": "Space",
+      "type": "hints",
+      "q": "Which non-rocky planet is this?",
+      "a": "Saturn",
+      "hints": [
+        "I am a gas giant",
+        "I am the sixth planet from the Sun",
+        "I am famous for broad rings of ice and rock"
+      ],
+      "alt": [],
+      "qid": "hints-200-916",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://science.nasa.gov/saturn/facts/"
+    },
+    {
+      "p": 200,
+      "topic": "Sports",
+      "type": "hints",
+      "q": "Which team ball sport is this?",
+      "a": "Basketball",
+      "hints": [
+        "Each team has five players on the court",
+        "Players must dribble while moving with the ball",
+        "Points are scored through a raised hoop with a net"
+      ],
+      "alt": [],
+      "qid": "hints-200-917",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Basketball"
+    },
+    {
+      "p": 200,
+      "topic": "Plants",
+      "type": "hints",
+      "q": "Which fruit-bearing tree is this?",
+      "a": "Olive tree",
+      "hints": [
+        "My fruit is eaten after curing",
+        "My leaves are narrow and silvery green",
+        "My fruit is pressed for a widely used cooking oil"
+      ],
+      "alt": [
+        "Olive"
+      ],
+      "qid": "hints-200-918",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Olive"
+    },
+    {
+      "p": 400,
+      "topic": "Countries",
+      "type": "hints",
+      "q": "Which coastal African country is this?",
+      "a": "Morocco",
+      "hints": [
+        "I border the Atlantic and Mediterranean",
+        "My cities include Marrakesh and Fez",
+        "My capital is Rabat"
+      ],
+      "alt": [],
+      "qid": "hints-400-911",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Morocco"
+    },
+    {
+      "p": 400,
+      "topic": "Animals",
+      "type": "hints",
+      "q": "Which sea creature has no skeleton?",
+      "a": "Octopus",
+      "hints": [
+        "I have three hearts",
+        "I can release ink when threatened",
+        "I have eight arms with suckers"
+      ],
+      "alt": [],
+      "qid": "hints-400-912",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Octopus"
+    },
+    {
+      "p": 400,
+      "topic": "Landmarks",
+      "type": "hints",
+      "q": "Which group of ancient burial monuments is this?",
+      "a": "The Pyramids of Giza",
+      "hints": [
+        "They stand near an Arab capital",
+        "They include royal tombs built in ancient Egypt",
+        "Khufu, Khafre, and Menkaure had tombs here"
+      ],
+      "alt": [
+        "Giza Pyramids",
+        "The pyramids"
+      ],
+      "qid": "hints-400-913",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://whc.unesco.org/en/list/86/"
+    },
+    {
+      "p": 400,
+      "topic": "Food",
+      "type": "hints",
+      "q": "Which grain-based dish is this?",
+      "a": "Sushi",
+      "hints": [
+        "It may contain vegetables or cooked or raw fish",
+        "Vinegared rice is its foundation",
+        "Japanese maki rolls are one of its forms"
+      ],
+      "alt": [],
+      "qid": "hints-400-914",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sushi"
+    },
+    {
+      "p": 400,
+      "topic": "Tools",
+      "type": "hints",
+      "q": "Which measuring instrument has an electronic version?",
+      "a": "Thermometer",
+      "hints": [
+        "I may contain liquid or an electronic sensor",
+        "My readings are expressed in degrees",
+        "I measure how hot a body or the air is"
+      ],
+      "alt": [],
+      "qid": "hints-400-915",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Thermometer"
+    },
+    {
+      "p": 400,
+      "topic": "Space",
+      "type": "hints",
+      "q": "Which rocky planet has moons?",
+      "a": "Mars",
+      "hints": [
+        "The enormous Olympus Mons stands on my surface",
+        "My moons are Phobos and Deimos",
+        "I am known as the Red Planet"
+      ],
+      "alt": [],
+      "qid": "hints-400-916",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://science.nasa.gov/mars/facts/"
+    },
+    {
+      "p": 400,
+      "topic": "Sports",
+      "type": "hints",
+      "q": "Which board game involves moving pieces?",
+      "a": "Chess",
+      "hints": [
+        "My board has sixty-four squares",
+        "Each player begins with a king and queen",
+        "A game commonly ends in checkmate"
+      ],
+      "alt": [],
+      "qid": "hints-400-917",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chess"
+    },
+    {
+      "p": 400,
+      "topic": "Plants",
+      "type": "hints",
+      "q": "Which plant's stems are used in construction?",
+      "a": "Bamboo",
+      "hints": [
+        "I belong to the grass family",
+        "My stems have distinct nodes",
+        "Pandas eat large quantities of me"
+      ],
+      "alt": [],
+      "qid": "hints-400-918",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Bamboo"
+    },
+    {
+      "p": 600,
+      "topic": "Countries",
+      "type": "hints",
+      "q": "Which European island country is this?",
+      "a": "Iceland",
+      "hints": [
+        "I have both glaciers and volcanoes",
+        "I am famous for hot springs",
+        "My capital is Reykjavík"
+      ],
+      "qid": "hints-600-911",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Iceland",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "topic": "Animals",
+      "type": "hints",
+      "q": "Which mostly tree-dwelling reptile is this?",
+      "a": "Chameleon",
+      "hints": [
+        "My eyes can move relatively independently",
+        "I catch insects with a long, fast tongue",
+        "I am known for changing my skin color"
+      ],
+      "alt": [],
+      "qid": "hints-600-912",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chameleon"
+    },
+    {
+      "p": 600,
+      "topic": "Landmarks",
+      "type": "hints",
+      "q": "Which historic monument commemorates a person?",
+      "a": "Taj Mahal",
+      "hints": [
+        "I was built in Agra",
+        "Shah Jahan commissioned me for Mumtaz Mahal",
+        "I am an Indian landmark made of white marble"
+      ],
+      "alt": [],
+      "qid": "hints-600-913",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://whc.unesco.org/en/list/252/"
+    },
+    {
+      "p": 600,
+      "topic": "Food",
+      "type": "hints",
+      "q": "Which food is stored for winter use?",
+      "a": "Kishk",
+      "hints": [
+        "Grain and dairy products are used to make me",
+        "I am dried and later used in soups and hot dishes",
+        "In my Levantine form, bulgur is fermented with yogurt"
+      ],
+      "alt": [
+        "Kashk"
+      ],
+      "qid": "hints-600-914",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kashk"
+    },
+    {
+      "p": 600,
+      "topic": "Tools",
+      "type": "hints",
+      "q": "Which measuring instrument is useful for observing weather?",
+      "a": "Barometer",
+      "hints": [
+        "I may use mercury or a flexible metal capsule",
+        "Changes in my reading help track the weather",
+        "I measure atmospheric pressure"
+      ],
+      "alt": [],
+      "qid": "hints-600-915",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Barometer"
+    },
+    {
+      "p": 600,
+      "topic": "Space",
+      "type": "hints",
+      "q": "Which rocky planet has no moons?",
+      "a": "Venus",
+      "hints": [
+        "I rotate in the opposite direction to most planets",
+        "My surface is hotter than Mercury's",
+        "I shine near sunrise or sunset and am called the Morning Star"
+      ],
+      "alt": [],
+      "qid": "hints-600-916",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://science.nasa.gov/venus/facts/"
+    },
+    {
+      "p": 600,
+      "topic": "Sports",
+      "type": "hints",
+      "q": "Which racket sport can be played as singles?",
+      "a": "Badminton",
+      "hints": [
+        "It can be played as singles or doubles",
+        "A net divides the playing area",
+        "Players hit a feathered or synthetic-skirted shuttle"
+      ],
+      "alt": [],
+      "qid": "hints-600-917",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Badminton"
+    },
+    {
+      "p": 600,
+      "topic": "Plants",
+      "type": "hints",
+      "q": "Which plant provides flower parts used in cooking?",
+      "a": "Saffron",
+      "hints": [
+        "I am harvested by hand from purple flowers",
+        "The part used is a thin red stigma",
+        "I give rice and other food a golden-yellow color"
+      ],
+      "alt": [],
+      "qid": "hints-600-918",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Saffron"
+    },
+    {
+      "p": 800,
+      "topic": "Countries",
+      "type": "hints",
+      "q": "Which landlocked Asian kingdom is this?",
+      "a": "Bhutan",
+      "hints": [
+        "I lie in the Himalayas between India and China",
+        "I am known for Gross National Happiness",
+        "My people call me the Land of the Thunder Dragon"
+      ],
+      "alt": [],
+      "qid": "hints-800-911",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://bhutan.travel/about"
+    },
+    {
+      "p": 800,
+      "topic": "Animals",
+      "type": "hints",
+      "q": "Which aquatic amphibian is this?",
+      "a": "Axolotl",
+      "hints": [
+        "My native habitat is near Mexico City",
+        "I can regenerate lost limbs",
+        "My feathery external gills remain visible in adulthood"
+      ],
+      "alt": [
+        "Mexican axolotl"
+      ],
+      "qid": "hints-800-912",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://animaldiversity.org/accounts/Ambystoma_mexicanum/"
+    },
+    {
+      "p": 800,
+      "topic": "Landmarks",
+      "type": "hints",
+      "q": "Which European landmark began construction in the nineteenth century?",
+      "a": "Sagrada Família",
+      "hints": [
+        "A Spanish architect is closely associated with my design",
+        "Construction began in Barcelona in 1882",
+        "Gaudí designed me, and my name means Holy Family"
+      ],
+      "alt": [
+        "Sagrada Familia"
+      ],
+      "qid": "hints-800-913",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://sagradafamilia.org/en/history-of-the-temple"
+    },
+    {
+      "p": 800,
+      "topic": "Food",
+      "type": "hints",
+      "q": "Which plant-based sauce is this?",
+      "a": "Pesto",
+      "hints": [
+        "My name is associated with Genoa",
+        "The familiar recipe uses basil, pine nuts, and olive oil",
+        "I am green and often served with pasta"
+      ],
+      "alt": [],
+      "qid": "hints-800-914",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pesto"
+    },
+    {
+      "p": 800,
+      "topic": "Tools",
+      "type": "hints",
+      "q": "Which old instrument was used for calculation and observation?",
+      "a": "Astrolabe",
+      "hints": [
+        "My circular components solve problems involving the sky",
+        "Some versions have a star-representing network",
+        "I measure a celestial body's altitude and can help determine time"
+      ],
+      "alt": [],
+      "qid": "hints-800-915",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://shop.rmg.co.uk/collections/shop-by-theme/products/astrolabe-on-stand"
+    },
+    {
+      "p": 800,
+      "topic": "Space",
+      "type": "hints",
+      "q": "Which moon has an atmosphere?",
+      "a": "Titan",
+      "hints": [
+        "I have a thick atmosphere",
+        "My surface has lakes and seas of liquid methane and ethane",
+        "I am Saturn's largest moon"
+      ],
+      "alt": [],
+      "qid": "hints-800-916",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://science.nasa.gov/saturn/moons/titan/facts/"
+    },
+    {
+      "p": 800,
+      "topic": "Sports",
+      "type": "hints",
+      "q": "Which winter team sport is this?",
+      "a": "Curling",
+      "hints": [
+        "Two teams compete on ice",
+        "Players sweep to influence a stone's movement",
+        "A handled stone is slid toward concentric target rings"
+      ],
+      "alt": [],
+      "qid": "hints-800-917",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Curling"
+    },
+    {
+      "p": 800,
+      "topic": "Plants",
+      "type": "hints",
+      "q": "Which tree grows in seasonally dry regions?",
+      "a": "Baobab",
+      "hints": [
+        "My thick trunk stores water",
+        "My bare branches resemble upside-down roots",
+        "Madagascar is famous for some of my enormous species"
+      ],
+      "alt": [],
+      "qid": "hints-800-918",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Adansonia"
+    },
+    {
+      "q": "Which landlocked African country is this?",
+      "a": "Botswana",
+      "topic": "Countries",
+      "sourceUrl": "https://www.botswanatourism.co.bw/glance",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "hints",
+      "hints": [
+        "I am landlocked in the continent's south",
+        "I contain the Okavango Delta",
+        "My capital is Gaborone"
+      ],
+      "source": [
+        "https://www.botswanatourism.co.bw/glance",
+        "https://www.botswanatourism.co.bw/explore/okavango-delta"
+      ],
+      "p": 1000,
+      "qid": "hints-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which African forest mammal is this?",
+      "a": "Okapi",
+      "topic": "Animals",
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/okapi",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "hints",
+      "hints": [
+        "In the wild I live in the Democratic Republic of the Congo",
+        "I am a living relative of the giraffe",
+        "My body is brown but my legs are striped black and white"
+      ],
+      "p": 1000,
+      "qid": "hints-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Asian temple changed religious use?",
+      "a": "Angkor Wat",
+      "topic": "Landmarks",
+      "sourceUrl": "https://apsaraauthority.gov.kh/2021/06/14/angkor-wat/",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "hints",
+      "hints": [
+        "I am a monument of the Khmer Empire",
+        "I began as a temple to Vishnu and later became a Buddhist site",
+        "I stand in Cambodia and am surrounded by moats"
+      ],
+      "p": 1000,
+      "qid": "hints-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which fermented seasoning is this?",
+      "a": "Miso",
+      "topic": "Food",
+      "sourceUrl": "https://www.maff.go.jp/e/policies/market/dento_syoku/bunrui/syouyu-miso.html",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "hints",
+      "hints": [
+        "I am a salty fermented seasoning",
+        "My varieties differ in color and aging time",
+        "Soybeans, koji, and salt are used to make me"
+      ],
+      "p": 1000,
+      "qid": "hints-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which instrument was used in maritime navigation?",
+      "a": "Sextant",
+      "topic": "Tools",
+      "sourceUrl": "https://timeandnavigation.si.edu/multimedia-asset/sextant",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "hints",
+      "hints": [
+        "I help navigators use the stars",
+        "I measure a celestial body's altitude above the horizon",
+        "My name comes from an arc of sixty degrees"
+      ],
+      "source": [
+        "https://timeandnavigation.si.edu/multimedia-asset/sextant",
+        "https://timeandnavigation.si.edu/navigating-at-sea/challenges/navigate-the-sea-activity"
+      ],
+      "p": 1000,
+      "qid": "hints-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which icy moon has been studied by space missions?",
+      "a": "Enceladus",
+      "topic": "Space",
+      "sourceUrl": "https://science.nasa.gov/mission/cassini/science/enceladus/",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "hints",
+      "hints": [
+        "Cassini observed me near Saturn",
+        "I hide a salty ocean beneath an icy crust",
+        "Jets erupt from my south polar region"
+      ],
+      "p": 1000,
+      "qid": "hints-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which ball game has regional forms?",
+      "a": "Jai alai",
+      "topic": "Sports",
+      "sourceUrl": "https://museotik.euskadi.eus/titulo-souvenir-turistico/objeto-cesta-punta/museotik-ca-324997/webmus00-contenedor/es/",
+      "alt": [
+        "Cesta punta"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "hints",
+      "hints": [
+        "I am a form of Basque pelota",
+        "I use a basket-like implement",
+        "My matches take place on fronton courts"
+      ],
+      "p": 1000,
+      "qid": "hints-1000-917",
+      "difficultyTarget": 0.15,
+      "source": [
+        "https://museotik.euskadi.eus/titulo-souvenir-turistico/objeto-cesta-punta/museotik-ca-324997/webmus00-contenedor/es/",
+        "https://www.euskadi.eus/gobierno-vasco/-/es/instalaciones-deportivas/fronton-galarreta-jai-alai/"
+      ]
+    },
+    {
+      "q": "Which tree survives from an ancient plant lineage?",
+      "a": "Ginkgo",
+      "topic": "Plants",
+      "sourceUrl": "https://www.kew.org/plants/ginkgo-tree",
+      "alt": [
+        "Ginkgo biloba",
+        "Maidenhair tree"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "hints",
+      "hints": [
+        "No other living species belongs to my family",
+        "Evidence points to surviving wild populations in China",
+        "My leaves are fan-shaped and often divided into two lobes"
+      ],
+      "p": 1000,
+      "qid": "hints-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

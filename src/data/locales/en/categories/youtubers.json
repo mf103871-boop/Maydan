@@ -1,0 +1,485 @@
+{
+  "id": "youtubers",
+  "name": "Creators",
+  "icon": "📱",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Which Emirati interviewer launched ABtalks?",
+      "a": "Anas Bukhash",
+      "alt": [],
+      "topic": "Arab creators",
+      "verified": true,
+      "sourceUrl": "https://www.abtalks.ae/",
+      "difficultyTarget": 0.8,
+      "qid": "youtubers-200-911"
+    },
+    {
+      "p": 200,
+      "q": "Which German science-animation channel has a name meaning 'in a nutshell'?",
+      "a": "Kurzgesagt",
+      "alt": [
+        "Kurzgesagt – In a Nutshell"
+      ],
+      "topic": "Science and education",
+      "verified": true,
+      "sourceUrl": "https://www.linkedin.com/company/in-a-nutshell-kurzgesagt-gmbh/",
+      "difficultyTarget": 0.8,
+      "qid": "youtubers-200-912"
+    },
+    {
+      "p": 200,
+      "q": "What is the real name of the gadget reviewer Mrwhosetheboss?",
+      "a": "Arun Maini",
+      "alt": [],
+      "topic": "Technology",
+      "verified": true,
+      "sourceUrl": "https://www.guinnessworldrecords.com/news/2024/9/tech-youtuber-mrwhosetheboss-builds-worlds-largest-scaled-up-iphone-to-break-record",
+      "difficultyTarget": 0.8,
+      "qid": "youtubers-200-913"
+    },
+    {
+      "p": 200,
+      "q": "Which YouTuber was formerly known as The Diamond Minecart?",
+      "a": "DanTDM",
+      "alt": [
+        "Daniel Middleton"
+      ],
+      "topic": "Gaming",
+      "verified": true,
+      "sourceUrl": "https://play.google.com/store/books/details?id=FRcZDAAAQBAJ",
+      "difficultyTarget": 0.8,
+      "qid": "youtubers-200-914"
+    },
+    {
+      "p": 200,
+      "q": "Which YouTube award is associated with ten million subscribers, subject to eligibility?",
+      "a": "Diamond Play Button",
+      "alt": [
+        "Diamond Creator Award"
+      ],
+      "topic": "Platforms and tools",
+      "verified": true,
+      "sourceUrl": "https://support.google.com/youtube/answer/7682560?hl=en",
+      "difficultyTarget": 0.8,
+      "qid": "youtubers-200-915"
+    },
+    {
+      "p": 200,
+      "q": "Which chocolate brand did Jimmy Donaldson launch?",
+      "a": "Feastables",
+      "alt": [],
+      "topic": "Projects and programs",
+      "verified": true,
+      "sourceUrl": "https://www.prnewswire.com/news-releases/mrbeast-launches-better-for-you-snacking-brand-feastables-301471133.html",
+      "difficultyTarget": 0.8,
+      "qid": "youtubers-200-916"
+    },
+    {
+      "p": 200,
+      "q": "Which football analyst co-hosted Tahaddi al-Ma'lumat with Abdullah Al-Ghafri?",
+      "a": "Mohammad Adnan",
+      "alt": [
+        "Mohammed Adnan"
+      ],
+      "topic": "Arab creators",
+      "verified": true,
+      "sourceUrl": "https://etbilarabi.com/ميكس/محمد-عدنان-وعبدالله-الغافري-ينفذان-تحدي-المعلومات-أمام-et-بالعربي?sort_by=created",
+      "difficultyTarget": 0.8,
+      "qid": "youtubers-200-917"
+    },
+    {
+      "p": 200,
+      "q": "What was the title of YouTube's first video, showing a young man in front of elephants?",
+      "a": "Me at the zoo",
+      "alt": [],
+      "topic": "Platforms and tools",
+      "verified": true,
+      "sourceUrl": "https://blog.youtube/news-and-events/va-museum-youtube-first-video/",
+      "difficultyTarget": 0.8,
+      "qid": "youtubers-200-918"
+    },
+    {
+      "q": "Who created Vsauce and presents its main channel?",
+      "a": "Michael Stevens",
+      "topic": "Science and education",
+      "verified": true,
+      "sourceUrl": "https://www.vsauce.com/about/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 400,
+      "qid": "youtubers-400-911",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "q": "Which foundation received donations from the creators' campaign to plant twenty million trees?",
+      "a": "Arbor Day Foundation",
+      "alt": [],
+      "topic": "Challenges and initiatives",
+      "verified": true,
+      "sourceUrl": "https://teamtrees.org/?q=RM1380",
+      "difficultyTarget": 0.6,
+      "qid": "youtubers-400-912"
+    },
+    {
+      "p": 400,
+      "q": "Who created Binging with Babish, recreating dishes from films and TV?",
+      "a": "Andrew Rea",
+      "alt": [],
+      "topic": "Cooking and skills",
+      "verified": true,
+      "sourceUrl": "https://www.eater.com/press-room/962747/andrew-rea-babish-in-the-booth-with-babish-podcast",
+      "difficultyTarget": 0.6,
+      "qid": "youtubers-400-913"
+    },
+    {
+      "p": 400,
+      "q": "Which engineering-kit company did Mark Rober found?",
+      "a": "CrunchLabs",
+      "alt": [
+        "Crunch Labs"
+      ],
+      "topic": "Projects and programs",
+      "verified": true,
+      "sourceUrl": "https://www.crunchlabs.com/pages/affiliates",
+      "difficultyTarget": 0.6,
+      "qid": "youtubers-400-914"
+    },
+    {
+      "p": 400,
+      "q": "Which Saudi interviewer hosts the Finjan podcast?",
+      "a": "Abdulrahman Abu Malih",
+      "alt": [
+        "Abdulrahman Abumalih"
+      ],
+      "topic": "Arab creators",
+      "verified": true,
+      "sourceUrl": "https://company.thmanyah.com/in-media/تفاعلكم-السعودي-عبد-الرحمن-أبو-مالح-يح",
+      "difficultyTarget": 0.6,
+      "qid": "youtubers-400-915"
+    },
+    {
+      "p": 400,
+      "q": "What is Grant Sanderson's animated mathematics channel called?",
+      "a": "3Blue1Brown",
+      "alt": [
+        "Three Blue One Brown"
+      ],
+      "topic": "Science and education",
+      "verified": true,
+      "sourceUrl": "https://www.3blue1brown.com/about/",
+      "difficultyTarget": 0.6,
+      "qid": "youtubers-400-916"
+    },
+    {
+      "p": 400,
+      "q": "What is Zack Nelson's gadget-testing and repair channel called?",
+      "a": "JerryRigEverything",
+      "alt": [
+        "Jerry Rig Everything"
+      ],
+      "topic": "Technology",
+      "verified": true,
+      "sourceUrl": "https://jerryrigeverything.com/about/",
+      "difficultyTarget": 0.6,
+      "qid": "youtubers-400-917"
+    },
+    {
+      "p": 400,
+      "q": "Which British creator group includes KSI, Miniminter, and five other friends?",
+      "a": "Sidemen",
+      "alt": [],
+      "topic": "Gaming",
+      "verified": true,
+      "sourceUrl": "https://www.sidemen.com/",
+      "difficultyTarget": 0.6,
+      "qid": "youtubers-400-918"
+    },
+    {
+      "p": 600,
+      "q": "Who founded the science channel Veritasium?",
+      "a": "Derek Muller",
+      "alt": [],
+      "topic": "Science and education",
+      "verified": true,
+      "sourceUrl": "https://www.veritasium.com/about",
+      "difficultyTarget": 0.4,
+      "qid": "youtubers-600-911"
+    },
+    {
+      "p": 600,
+      "q": "Which organization uses the Interceptor for river cleanup as part of TeamSeas?",
+      "a": "The Ocean Cleanup",
+      "alt": [],
+      "topic": "Challenges and initiatives",
+      "verified": true,
+      "sourceUrl": "https://theoceancleanup.com/teamseas/",
+      "difficultyTarget": 0.4,
+      "qid": "youtubers-600-912"
+    },
+    {
+      "p": 600,
+      "q": "What is John Plant's channel about making tools and buildings from natural materials called?",
+      "a": "Primitive Technology",
+      "alt": [],
+      "topic": "Cooking and skills",
+      "verified": true,
+      "sourceUrl": "https://www.penguinrandomhouse.com/books/600727/primitive-technology-by-john-plant/",
+      "difficultyTarget": 0.4,
+      "qid": "youtubers-600-913"
+    },
+    {
+      "p": 600,
+      "q": "At which online-payments company did YouTube's founders work before creating the platform?",
+      "a": "PayPal",
+      "alt": [],
+      "topic": "Platforms and tools",
+      "verified": true,
+      "sourceUrl": "https://youtube.googleblog.com/2005/11/",
+      "difficultyTarget": 0.4,
+      "qid": "youtubers-600-914"
+    },
+    {
+      "p": 600,
+      "q": "What daily YouTube show is hosted by Rhett and Link?",
+      "a": "Good Mythical Morning",
+      "alt": [],
+      "topic": "Projects and programs",
+      "verified": true,
+      "sourceUrl": "https://mythical.com/pages/about-us",
+      "difficultyTarget": 0.4,
+      "qid": "youtubers-600-915"
+    },
+    {
+      "p": 600,
+      "q": "What is the real name of Egyptian programming teacher Elzero?",
+      "a": "Osama Mohamed",
+      "alt": [
+        "Osama Mohammed"
+      ],
+      "topic": "Arab creators",
+      "verified": true,
+      "sourceUrl": "https://elzero.org/author/elzero/",
+      "difficultyTarget": 0.4,
+      "qid": "youtubers-600-916"
+    },
+    {
+      "p": 600,
+      "q": "Which YouTube chemistry channel features Professor Martyn Poliakoff of the University of Nottingham?",
+      "a": "Periodic Videos",
+      "alt": [
+        "The Periodic Table of Videos"
+      ],
+      "topic": "Science and education",
+      "verified": true,
+      "sourceUrl": "https://www.periodicvideos.com/about.htm",
+      "difficultyTarget": 0.4,
+      "qid": "youtubers-600-917"
+    },
+    {
+      "p": 600,
+      "q": "Which YouTube co-founder appeared in the platform's first video?",
+      "a": "Jawed Karim",
+      "alt": [],
+      "topic": "Platforms and tools",
+      "verified": true,
+      "sourceUrl": "https://blog.youtube/news-and-events/va-museum-youtube-first-video/",
+      "difficultyTarget": 0.4,
+      "qid": "youtubers-600-918"
+    },
+    {
+      "p": 800,
+      "q": "What is the real name of the gaming creator Jacksepticeye?",
+      "a": "Seán McLoughlin",
+      "alt": [
+        "Sean McLoughlin"
+      ],
+      "topic": "Gaming",
+      "verified": true,
+      "sourceUrl": "https://causes.tiltify.com/case-studies/thankmas-youtube-fundraiser-with-jacksepticeye/",
+      "difficultyTarget": 0.25,
+      "qid": "youtubers-800-911"
+    },
+    {
+      "p": 800,
+      "q": "Which Mars rover did Mark Rober work on before becoming famous for experiment videos?",
+      "a": "Curiosity",
+      "alt": [],
+      "topic": "Challenges and initiatives",
+      "verified": true,
+      "sourceUrl": "https://www.crunchlabs.com/",
+      "difficultyTarget": 0.25,
+      "qid": "youtubers-800-912"
+    },
+    {
+      "p": 800,
+      "q": "What is the title of Babish's 2017 book of recipes from films?",
+      "a": "Eat What You Watch",
+      "alt": [],
+      "topic": "Cooking and skills",
+      "verified": true,
+      "sourceUrl": "https://books.apple.com/gb/book/eat-what-you-watch/id1291868806",
+      "difficultyTarget": 0.25,
+      "qid": "youtubers-800-913"
+    },
+    {
+      "p": 800,
+      "q": "What open-source animation library did Grant Sanderson create for mathematics videos?",
+      "a": "Manim",
+      "alt": [],
+      "topic": "Projects and programs",
+      "verified": true,
+      "sourceUrl": "https://docs.manim.community/en/stable/",
+      "difficultyTarget": 0.25,
+      "qid": "youtubers-800-914"
+    },
+    {
+      "q": "Which engineer presents Smarter Every Day?",
+      "a": "Destin Sandlin",
+      "topic": "Science and education",
+      "verified": true,
+      "sourceUrl": "https://www.uah.edu/images/administrative/communications/magazine/uah_magazine-summer-2014.pdf",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "youtubers-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Who created MinutePhysics and its hand-drawn physics explanations?",
+      "a": "Henry Reich",
+      "topic": "Science and education",
+      "verified": true,
+      "sourceUrl": "https://www.minuteearth.com/about",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "youtubers-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "q": "Which sport has Marques Brownlee played competitively alongside his video career?",
+      "a": "Ultimate frisbee",
+      "alt": [
+        "Ultimate"
+      ],
+      "topic": "Technology",
+      "verified": true,
+      "sourceUrl": "https://usaultimate.org/team-usa/world-games-players/marques-brownlee/",
+      "difficultyTarget": 0.25,
+      "qid": "youtubers-800-917"
+    },
+    {
+      "q": "What is the full name of Chef John from Food Wishes?",
+      "a": "John Mitzewich",
+      "topic": "Cooking and skills",
+      "verified": true,
+      "sourceUrl": "https://blog.youtube/creator-and-artist-stories/q-with-chef-john-of-food-wishes/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "youtubers-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which visual journalist produces Numberphile?",
+      "a": "Brady Haran",
+      "topic": "Science and education",
+      "verified": true,
+      "sourceUrl": "https://www.numberphile.com/about",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "youtubers-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Who hosts the Lebanese podcast Sarde After Dinner?",
+      "a": "Médéa Azouri and Mouin Jaber",
+      "topic": "Arab creators",
+      "verified": true,
+      "sourceUrl": "https://www.aub.edu.lb/seniors/Documents/UfS-program-2022-Fall.pdf",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Medea Azouri and Mouin Jaber"
+      ],
+      "p": 1000,
+      "qid": "youtubers-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What is the full name of Sorted Food's founding chef nicknamed Ebbers?",
+      "a": "Ben Ebbrell",
+      "topic": "Cooking and skills",
+      "verified": true,
+      "sourceUrl": "https://www.sortedfood.com/the-team",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "youtubers-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What is the real name of the Minecraft creator CaptainSparklez?",
+      "a": "Jordan Maron",
+      "topic": "Gaming",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/CaptainSparklez",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "youtubers-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which comedy team includes Tom Scott, Gary Brannan, and Chris Joel?",
+      "a": "The Technical Difficulties",
+      "topic": "Projects and programs",
+      "verified": true,
+      "sourceUrl": "https://www.techdif.co.uk/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "youtubers-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Who created Stand-up Maths and wrote Humble Pi?",
+      "a": "Matt Parker",
+      "topic": "Science and education",
+      "verified": true,
+      "sourceUrl": "https://www.youtube.com/watch?v=sseSi0k3Ecg",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "youtubers-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which YouTube co-founder worked as a designer before the platform launched?",
+      "a": "Chad Hurley",
+      "topic": "Platforms and tools",
+      "verified": true,
+      "sourceUrl": "https://chadhurley.com/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "youtubers-1000-918",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What YouTube system automatically matches uploaded material and lets rights holders block, monetize, or track it?",
+      "a": "Content ID",
+      "topic": "Platforms and tools",
+      "verified": true,
+      "sourceUrl": "https://support.google.com/youtube/answer/2797370?hl=en",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "youtubers-1000-921",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

@@ -37,6 +37,19 @@ export function newCredentials() {
   const hex = (length) => Array.from(crypto.getRandomValues(new Uint8Array(length)), (b) => b.toString(16).padStart(2, '0')).join('');
   return { id: hex(16), token: hex(32) };
 }
+export async function getContentCapabilities(server, { fetchImpl = fetch, signal } = {}) {
+  if (!validateServerUrl(server)) throw new ClientError('CONFIG');
+  try {
+    const response = await fetchImpl(`${server}/api/content/capabilities`, { signal, credentials:'omit', cache:'no-store' });
+    if (!response.ok) return {};
+    const value = await response.json();
+    return value?.localizedContent === 1 && value.contentVersions?.en === 'new-en' ? value : {};
+  } catch (error) { if (signal?.aborted) throw error; return {}; }
+}
+export async function requireEnglishServer(server, options = {}) {
+  const capabilities = await getContentCapabilities(server, options);
+  if (capabilities.localizedContent !== 1) throw new ClientError('CONTENT_UNAVAILABLE');
+}
 // الوسيط الرابع يقبل دالة fetch (كما كان) أو { headers, fetchImpl }: الترويسات
 // تحمل Bearer الحساب لإنشاء الغرف والدخول إليها دون تغيير المستدعين القدامى.
 export async function post(server, path, data, options = fetch) {
@@ -47,6 +60,7 @@ export async function post(server, path, data, options = fetch) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 15_000);
   try {
+    if (data?.contentLocale === 'en') await requireEnglishServer(server, {fetchImpl,signal:controller.signal});
     const response = await fetchImpl(`${server}${path}`, { method: 'POST', headers: { 'content-type': 'application/json', ...(extraHeaders || {}) },
       body: JSON.stringify(data), signal: controller.signal, credentials: 'omit', cache: 'no-store' });
     let result;
@@ -199,6 +213,7 @@ export class RoomClient {
   react(emoji) { return this.command('react', { emoji }); }
   reactCosmetic(reactionId) { return this.command('react', { reactionId, accountAuthorization: this.getAccountAuthorization() }); }
   command(type, fields = {}) {
+    if (type === 'content_locale' && fields.contentLocale === 'en' && (this.state?.capabilities?.localizedContent !== 1 || this.state.capabilities.newEnglishContent === false)) return Promise.reject(new ClientError('CONTENT_UNAVAILABLE'));
     if(this.session?.scope==='observer')return Promise.reject(new ClientError('WAITING'));
     if (this.connectionStatus !== 'connected' || this.ws?.readyState !== 1 || !this.state) return Promise.reject(new ClientError('DISCONNECTED'));
     if (this.pending.size >= MAX_PENDING_COMMANDS || (this.ws.bufferedAmount || 0) > MAX_BUFFERED_BYTES) {
@@ -239,7 +254,7 @@ export class RoomClient {
 // Public directory is always read from the server; an empty list is not an offline room.
 export function getPublicRooms(server, filters = 'all', options = {}) {
   const value = typeof filters === 'string' ? {mode:filters} : filters;
-  const query = new URLSearchParams({game:'mafia',mode:['classic','shadow'].includes(value.mode)?value.mode:'all',voice:['optional','off'].includes(value.voice)?value.voice:'all',status:['waiting','playing','finished'].includes(value.status)?value.status:'all'});
+  const query = new URLSearchParams({game:'mafia',community:value.community==='en'?'en':'ar',mode:['classic','shadow'].includes(value.mode)?value.mode:'all',voice:['optional','off'].includes(value.voice)?value.voice:'all',status:['waiting','playing','finished'].includes(value.status)?value.status:'all'});
   if(value.cursor) query.set('cursor',value.cursor);
   return getRoomResource(server,`/api/rooms/public?${query}`,options);
 }

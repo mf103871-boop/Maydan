@@ -1,0 +1,522 @@
+{
+  "id": "squidgame",
+  "name": "Squid Game",
+  "icon": "🦑",
+  "style": "story",
+  "qs": [
+    {
+      "qid": "squidgame-200-911",
+      "p": 200,
+      "topic": "Childhood games",
+      "q": "What Korean candy must the players cut a shape out of without breaking it?",
+      "a": "Dalgona",
+      "alt": [],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "squidgame-200-912",
+      "p": 200,
+      "topic": "Gi-hun's journey",
+      "q": "What color does Gi-hun dye his hair after his first victory?",
+      "a": "Red",
+      "alt": [],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-1-ending-explainer",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "squidgame-200-913",
+      "p": 200,
+      "topic": "Allies and opponents",
+      "q": "What is the name of the purple-haired rapper competing in season two?",
+      "a": "Thanos",
+      "alt": [],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-cast",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "squidgame-200-914",
+      "p": 200,
+      "topic": "The organizers' secrets",
+      "q": "Which elderly man is revealed to be one of the competition's creators?",
+      "a": "Oh Il-nam",
+      "alt": [
+        "Il-nam"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-1-ending-explainer",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "squidgame-200-915",
+      "p": 200,
+      "topic": "Critical decisions",
+      "q": "What does Gi-hun lead against the guards at the end of season two?",
+      "a": "An armed rebellion",
+      "alt": [
+        "A rebellion",
+        "An uprising"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "squidgame-200-916",
+      "p": 200,
+      "topic": "Survival rules",
+      "q": "What must be pressed first for a player's fall to count in a round of the tower final?",
+      "a": "The start button",
+      "alt": [
+        "The round-start button",
+        "A button"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "squidgame-200-917",
+      "p": 200,
+      "topic": "Family outside the island",
+      "q": "What did Myung-gi promote that caused financial losses for his followers?",
+      "a": "Cryptocurrency",
+      "alt": [
+        "Crypto",
+        "Digital currencies"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-cast",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "squidgame-200-918",
+      "p": 200,
+      "topic": "Final-season events",
+      "q": "In which game do the characters cross a narrow bridge between two giant dolls?",
+      "a": "Jump Rope",
+      "alt": [
+        "Skipping rope"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "squidgame-400-911",
+      "p": 400,
+      "topic": "Childhood games",
+      "q": "Which game does the recruiter play with Gi-hun in the subway station?",
+      "a": "Ddakji",
+      "alt": [
+        "Ttakji"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-cast",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "squidgame-400-912",
+      "p": 400,
+      "topic": "Gi-hun's journey",
+      "q": "Where does Gi-hun hide a tracking device in his mouth before returning to the competition?",
+      "a": "Inside a tooth",
+      "alt": [
+        "In a molar",
+        "A dental implant"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "squidgame-400-913",
+      "p": 400,
+      "topic": "Allies and opponents",
+      "q": "Which friend of Gi-hun is killed in front of him after the rebellion fails?",
+      "a": "Jung-bae",
+      "alt": [],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "squidgame-400-914",
+      "p": 400,
+      "topic": "The organizers' secrets",
+      "q": "How are the Front Man and the detective who infiltrates the island related?",
+      "a": "They are brothers",
+      "alt": [
+        "Brothers"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-1-ending-explainer",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "squidgame-400-915",
+      "p": 400,
+      "topic": "Critical decisions",
+      "q": "What do the rebels expect Dae-ho to bring back from the dormitory?",
+      "a": "Ammunition",
+      "alt": [
+        "Ammo",
+        "Magazines"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "squidgame-400-916",
+      "p": 400,
+      "topic": "Survival rules",
+      "q": "In Hide and Seek, which team receives knives instead of door-opening tools?",
+      "a": "The red team",
+      "alt": [
+        "Red",
+        "The seekers"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "squidgame-400-917",
+      "p": 400,
+      "topic": "Family outside the island",
+      "q": "With whom does Gi-hun leave Sae-byeok's brother at the end of season one?",
+      "a": "Sang-woo's mother",
+      "alt": [
+        "His childhood friend's mother"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-1-ending-explainer",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "squidgame-400-918",
+      "p": 400,
+      "topic": "Final-season events",
+      "q": "Which game is taking place when Jun-hee gives birth to her daughter?",
+      "a": "Hide and Seek",
+      "alt": [],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "squidgame-600-911",
+      "p": 600,
+      "topic": "Childhood games",
+      "q": "In which game does a rotating platform stop before players must enter rooms in groups?",
+      "a": "Mingle",
+      "alt": [],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "squidgame-600-912",
+      "p": 600,
+      "topic": "Gi-hun's journey",
+      "q": "What unexpected birthday gift does Gi-hun give his daughter, mistakenly thinking it is suitable?",
+      "a": "A gun-shaped lighter",
+      "alt": [
+        "A lighter shaped like a gun"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-1-ending-explainer",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "squidgame-600-913",
+      "p": 600,
+      "topic": "Allies and opponents",
+      "q": "What is the name of the North Korean defector guard searching for her daughter?",
+      "a": "No-eul",
+      "alt": [],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-cast",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "squidgame-600-914",
+      "p": 600,
+      "topic": "The organizers' secrets",
+      "q": "What alias does the Front Man use while playing alongside Gi-hun?",
+      "a": "Oh Young-il",
+      "alt": [
+        "Young-il"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "squidgame-600-915",
+      "p": 600,
+      "topic": "Critical decisions",
+      "q": "What work does Gyeong-seok return to after being rescued and his daughter recovering?",
+      "a": "Portrait drawing",
+      "alt": [
+        "Portrait artist",
+        "Drawing portraits"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "squidgame-600-916",
+      "p": 600,
+      "topic": "Survival rules",
+      "q": "In season three's Hide and Seek, what does the blue team receive to open doors?",
+      "a": "Keys",
+      "alt": [],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "squidgame-600-917",
+      "p": 600,
+      "topic": "Family outside the island",
+      "q": "To whom does the Front Man deliver the baby and prize after the games end?",
+      "a": "Detective Jun-ho",
+      "alt": [
+        "Hwang Jun-ho",
+        "Jun-ho"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "squidgame-600-918",
+      "p": 600,
+      "topic": "Final-season events",
+      "q": "What are the shapes of the elevated final platforms, starting with the first?",
+      "a": "Square, triangle, circle",
+      "alt": [
+        "Square then triangle then circle"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "squidgame-800-911",
+      "p": 800,
+      "topic": "Childhood games",
+      "q": "In season two's pentathlon, which game involves kicking a light object to keep it airborne?",
+      "a": "Jegi-chagi",
+      "alt": [
+        "Jegichagi"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "squidgame-800-912",
+      "p": 800,
+      "topic": "Gi-hun's journey",
+      "q": "Which city does the Front Man visit to deliver Gi-hun's belongings to his daughter?",
+      "a": "Los Angeles",
+      "alt": [
+        "LA"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "squidgame-800-913",
+      "p": 800,
+      "topic": "Allies and opponents",
+      "q": "Which boat captain sabotages the detective's search for the island on behalf of the organizers?",
+      "a": "Captain Park",
+      "alt": [
+        "Park"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "squidgame-800-914",
+      "p": 800,
+      "topic": "The organizers' secrets",
+      "q": "Where were drawings of season one's games hidden in plain sight?",
+      "a": "The dormitory walls",
+      "alt": [
+        "Bedroom walls",
+        "On the dorm walls"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/videos/squid-game-easter-eggs",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "squidgame-800-915",
+      "p": 800,
+      "topic": "Critical decisions",
+      "q": "In the pentathlon, which hand does the Front Man deliberately use despite favoring the other?",
+      "a": "His right hand",
+      "alt": [
+        "Right"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/videos/squid-game-easter-eggs",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "squidgame-800-916",
+      "p": 800,
+      "topic": "Survival rules",
+      "q": "In the pentathlon, what is the stone-throwing challenge that involves knocking over an upright stone called?",
+      "a": "Biseokchigi",
+      "alt": [
+        "Biseok chigi"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "squidgame-800-917",
+      "p": 800,
+      "topic": "Family outside the island",
+      "q": "What is the name of the young daughter of the father rescued by the guard in the final season?",
+      "a": "Na-yeon",
+      "alt": [
+        "Nayeon"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "squidgame-800-918",
+      "p": 800,
+      "topic": "Final-season events",
+      "q": "In season three, what does the guard burn while escaping to destroy the organization's records?",
+      "a": "The records room",
+      "alt": [
+        "The archives",
+        "The files"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "Childhood games",
+      "q": "What is the name of the male doll turning the rope with Young-hee in season three?",
+      "a": "Chul-su",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "alt": [
+        "Cheol-su"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "squidgame-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Gi-hun's journey",
+      "q": "According to the Front Man's account of his wife, which organ needed a transplant?",
+      "a": "The liver",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
+      "verified": true,
+      "p": 1000,
+      "qid": "squidgame-1000-912",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Liver"
+      ]
+    },
+    {
+      "topic": "Allies and opponents",
+      "q": "Which player survives the marbles round because she has no partner?",
+      "a": "Han Mi-nyeo",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "alt": [
+        "Mi-nyeo"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "squidgame-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "The organizers' secrets",
+      "q": "With which weapon does Jun-ho wound the boat captain after discovering his betrayal?",
+      "a": "A harpoon",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
+      "alt": [
+        "Harpoon",
+        "A fishing spear"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "squidgame-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Critical decisions",
+      "q": "To which country does the guard travel to search for her daughter at the end of the series?",
+      "a": "China",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
+      "verified": true,
+      "p": 1000,
+      "qid": "squidgame-1000-915",
+      "difficultyTarget": 0.15,
+      "alt": []
+    },
+    {
+      "topic": "Survival rules",
+      "q": "What does Gi-hun choose after winning the coin toss before the final confrontation in season one?",
+      "a": "Attack",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "verified": true,
+      "p": 1000,
+      "qid": "squidgame-1000-916",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Offense",
+        "Attacking"
+      ]
+    },
+    {
+      "topic": "Family outside the island",
+      "q": "What is the name of Gi-hun's daughter, who moves to the United States?",
+      "a": "Ga-yeong",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "alt": [
+        "Gayeong"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "squidgame-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Final-season events",
+      "q": "What tears while the two men hang from the tower's edge, causing the baby's father to fall?",
+      "a": "The jacket",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
+      "alt": [
+        "A jacket"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "squidgame-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

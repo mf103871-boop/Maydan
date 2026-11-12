@@ -1,0 +1,513 @@
+{
+  "id": "arabmovies",
+  "name": "Arab Cinema",
+  "icon": "🎟️",
+  "style": "story",
+  "qs": [
+    {
+      "qid": "arabmovies-200-911",
+      "p": 200,
+      "topic": "El Nazer",
+      "q": "In El Nazer, which friend takes Salah to meet El Lembi?",
+      "a": "Atef",
+      "alt": [
+        "Atif"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1001525/content",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "arabmovies-200-912",
+      "p": 200,
+      "topic": "Terrorism and Kebab",
+      "q": "In Terrorism and Kebab, what school-related request brings Ahmed to the government building?",
+      "a": "Transferring his children to another school",
+      "alt": [
+        "Moving his children to a closer school"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010305/content",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "arabmovies-200-913",
+      "p": 200,
+      "topic": "El Gezira",
+      "q": "In El Gezira, which woman does the hero love from the Nagayha family?",
+      "a": "Karima",
+      "alt": [
+        "Kareema"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1001585/content",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "arabmovies-200-914",
+      "p": 200,
+      "topic": "The Blue Elephant",
+      "q": "In The Blue Elephant, which accused old friend does the doctor meet?",
+      "a": "Sherif El-Kordy",
+      "alt": [
+        "Sherif",
+        "Sherif Maher El-Kordy"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2019662/content",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "arabmovies-200-915",
+      "p": 200,
+      "topic": "Capernaum",
+      "q": "In Capernaum, what is the name of the baby Zain cares for after his mother disappears?",
+      "a": "Yonas",
+      "alt": [
+        "Younes"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Capernaum_(film)",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "arabmovies-200-916",
+      "p": 200,
+      "topic": "Omar",
+      "q": "In Omar, what is the name of the woman the protagonist loves?",
+      "a": "Nadia",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Omar_(2013_film)",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "arabmovies-200-917",
+      "p": 200,
+      "topic": "El Nazer",
+      "q": "In El Nazer, which deputy administrator exploits Salah's naïveté?",
+      "a": "Sayed Dahi",
+      "alt": [
+        "Sayed"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1001525/content",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "arabmovies-200-918",
+      "p": 200,
+      "topic": "Wadjda",
+      "q": "In Wadjda, which friend does the heroine want to race?",
+      "a": "Abdullah",
+      "alt": [
+        "Abd Allah"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Wadjda",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "arabmovies-400-911",
+      "p": 400,
+      "topic": "Bittersweet",
+      "q": "What is the hero's profession in Bittersweet, explaining why he carries a camera?",
+      "a": "Photographer",
+      "alt": [
+        "Photography"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1313173/content",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabmovies-400-912",
+      "p": 400,
+      "topic": "Terrorism and Kebab",
+      "q": "At the end of Terrorism and Kebab, how does Ahmed leave without being identified by the security forces?",
+      "a": "He blends in with the hostages",
+      "alt": [
+        "He leaves with the hostages"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010305/content",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabmovies-400-913",
+      "p": 400,
+      "topic": "El Gezira",
+      "q": "In the first El Gezira film, whom does the hero marry to please his father?",
+      "a": "Fayqa",
+      "sourceUrl": "https://elcinema.com/work/1001585/content",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Faiqa"
+      ]
+    },
+    {
+      "qid": "arabmovies-400-914",
+      "p": 400,
+      "topic": "The Blue Elephant",
+      "q": "In the first Blue Elephant film, what is the name of the entity speaking through the patient?",
+      "a": "Nael",
+      "sourceUrl": "https://elcinema.com/work/2019662/content",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Nail"
+      ]
+    },
+    {
+      "qid": "arabmovies-400-915",
+      "p": 400,
+      "topic": "Capernaum",
+      "q": "In Capernaum, which sister does Zain try to protect from early marriage?",
+      "a": "Sahar",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Capernaum_(film)",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabmovies-400-916",
+      "p": 400,
+      "topic": "El Nazer",
+      "q": "In El Nazer, what subject does Hussein teach while encouraging Salah to reclaim responsibility?",
+      "a": "Science",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1001525/content",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabmovies-400-917",
+      "p": 400,
+      "topic": "The Blue Elephant",
+      "q": "In The Blue Elephant, which sister of the patient has a romantic history with the doctor?",
+      "a": "Lobna",
+      "alt": [
+        "Lubna",
+        "Lobna El-Kordy"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2019662/content",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabmovies-400-918",
+      "p": 400,
+      "topic": "Omar",
+      "q": "In Omar, which friend marries the hero's beloved after deceiving him?",
+      "a": "Amjad",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Omar_(2013_film)",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabmovies-600-911",
+      "p": 600,
+      "topic": "Bittersweet",
+      "q": "In Bittersweet, what does Masry leave his friend Said to help him start a new job?",
+      "a": "His camera",
+      "alt": [
+        "A camera"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1313173/content",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabmovies-600-912",
+      "p": 600,
+      "topic": "Terrorism and Kebab",
+      "q": "In Terrorism and Kebab, what is the job of Shalaby, who joins the protesters?",
+      "a": "Shoeshiner",
+      "alt": [
+        "Shoe shiner"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010305/content",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabmovies-600-913",
+      "p": 600,
+      "topic": "El Gezira",
+      "q": "In El Gezira, what form of transport does the hero stop while searching for his beloved?",
+      "a": "A train",
+      "alt": [
+        "Train"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1001585/content",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabmovies-600-914",
+      "p": 600,
+      "topic": "Capernaum",
+      "q": "In Capernaum, from which country is Rahil, the mother who shelters Zain?",
+      "a": "Ethiopia",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Capernaum_(film)",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabmovies-600-915",
+      "p": 600,
+      "topic": "Wadjda",
+      "q": "In Wadjda, which school competition does the heroine enter to win money for her bicycle?",
+      "a": "Quran recitation",
+      "alt": [
+        "A Quran competition",
+        "Quran memorization"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Wadjda",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabmovies-600-916",
+      "p": 600,
+      "topic": "El Gezira",
+      "q": "In El Gezira, which honest officer refuses to make a deal with the hero near the end?",
+      "a": "Tarek",
+      "alt": [
+        "Tariq"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1001585/content",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabmovies-600-917",
+      "p": 600,
+      "topic": "Capernaum",
+      "q": "At the end of Capernaum, for which document does Zain smile while being photographed?",
+      "a": "An identity card",
+      "alt": [
+        "ID card"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Capernaum_(film)",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabmovies-600-918",
+      "p": 600,
+      "topic": "Omar",
+      "q": "In Omar, which interrogator poses as a prisoner to draw out the hero's confession?",
+      "a": "Rami",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Omar_(2013_film)",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabmovies-800-911",
+      "p": 800,
+      "topic": "El Nazer",
+      "q": "In El Nazer, which girls' school competes against Ashour's school in the contest?",
+      "a": "Al Ikhlas",
+      "alt": [
+        "Al Ikhlas School"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1001525/content",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "arabmovies-800-912",
+      "p": 800,
+      "topic": "The Blue Elephant",
+      "q": "In The Blue Elephant, what does the doctor find hidden in his friend's toilet cistern?",
+      "a": "A shirt",
+      "alt": [
+        "Shirt",
+        "The enchanted shirt"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2019662/content",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "El Nazer",
+      "q": "In El Nazer, which English teacher accompanies Wafaa to visit Salah?",
+      "a": "Inshirah",
+      "alt": [
+        "Miss Inshirah"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1001525/content",
+      "qid": "arabmovies-800-913",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Terrorism and Kebab",
+      "q": "In Terrorism and Kebab, which conscript is exploited by a general to serve his household and children?",
+      "a": "Hilal",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1010305/content",
+      "qid": "arabmovies-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "El Gezira",
+      "q": "In El Gezira, which officer facilitates Mansour's trade in exchange for information about outlaws?",
+      "a": "Roshdy",
+      "alt": [
+        "Rushdi"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1001585/content",
+      "qid": "arabmovies-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "The Blue Elephant",
+      "q": "In the first Blue Elephant film, which woman tattoos Basma?",
+      "a": "Deega",
+      "alt": [
+        "Dija",
+        "Khadija"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2019662/",
+      "qid": "arabmovies-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Capernaum",
+      "q": "In Capernaum, which document forger demands the child in exchange for helping Zain travel?",
+      "a": "Aspro",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Capernaum_(film)",
+      "qid": "arabmovies-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Wadjda",
+      "q": "In Wadjda, which principal prevents the heroine from keeping the prize money?",
+      "a": "Hussa",
+      "alt": [
+        "Hessa"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Wadjda",
+      "qid": "arabmovies-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "qid": "arabmovies-1000-911",
+      "p": 1000,
+      "topic": "Bittersweet",
+      "q": "In Bittersweet, on which street does Masry look for his childhood apartment?",
+      "a": "Bustan al-Mahamiz",
+      "alt": [
+        "Bostan El Mahamiz"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1313173/content",
+      "verified": true,
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "arabmovies-1000-912",
+      "p": 1000,
+      "topic": "Terrorism and Kebab",
+      "q": "In Terrorism and Kebab, which vegetable does the clerk prepare instead of completing citizens' paperwork?",
+      "a": "Peas",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1010305/content",
+      "verified": true,
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "El Nazer",
+      "q": "In El Nazer, which secretary abducts the students to prevent them from attending the competition?",
+      "a": "Rasmi",
+      "sourceUrl": "https://elcinema.com/work/1001525/content",
+      "qid": "arabmovies-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "alt": [
+        "Rasmy"
+      ]
+    },
+    {
+      "topic": "Terrorism and Kebab",
+      "q": "In Terrorism and Kebab, where does Ahmed work in the mornings before his evening cafeteria job?",
+      "a": "The water company",
+      "alt": [
+        "Water company"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010305/content",
+      "qid": "arabmovies-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "El Gezira",
+      "q": "In El Gezira, what is the name of Ali al-Hefny's younger brother, who was born unable to speak?",
+      "a": "Fadl",
+      "alt": [
+        "Fadel"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1001585/content",
+      "qid": "arabmovies-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "The Blue Elephant",
+      "q": "In the first Blue Elephant film, what is the name of the daughter of Yehia's former beloved?",
+      "a": "Hania",
+      "sourceUrl": "https://elcinema.com/work/2019662/",
+      "qid": "arabmovies-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "alt": [
+        "Hanya"
+      ]
+    },
+    {
+      "topic": "Capernaum",
+      "q": "In Capernaum, to which prison is Zain sent after stabbing his sister's husband?",
+      "a": "Roumieh",
+      "alt": [
+        "Roumieh Prison"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Capernaum_(film)",
+      "qid": "arabmovies-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Wadjda",
+      "q": "In Wadjda, what is the name of the driver who takes the heroine's mother to work?",
+      "a": "Iqbal",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Wadjda",
+      "qid": "arabmovies-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    }
+  ]
+}

@@ -342,13 +342,13 @@ final class StoreManager {
         guard let period = product.subscription?.subscriptionPeriod else { return "" }
         switch period.unit {
         case .day:
-            return period.value == 1 ? "يوميًا" : "كل \(period.value) أيام"
+            return NativeLocalization.choose(period.value == 1 ? "يوميًا" : "كل \(period.value) أيام", period.value == 1 ? "Daily" : "Every \(period.value) days")
         case .week:
-            return period.value == 1 ? "أسبوعيًا" : "كل \(period.value) أسابيع"
+            return NativeLocalization.choose(period.value == 1 ? "أسبوعيًا" : "كل \(period.value) أسابيع", period.value == 1 ? "Weekly" : "Every \(period.value) weeks")
         case .month:
-            return period.value == 1 ? "شهريًا" : "كل \(period.value) أشهر"
+            return NativeLocalization.choose(period.value == 1 ? "شهريًا" : "كل \(period.value) أشهر", period.value == 1 ? "Monthly" : "Every \(period.value) months")
         case .year:
-            return period.value == 1 ? "سنويًا" : "كل \(period.value) سنوات"
+            return NativeLocalization.choose(period.value == 1 ? "سنويًا" : "كل \(period.value) سنوات", period.value == 1 ? "Yearly" : "Every \(period.value) years")
         @unknown default:
             return ""
         }

@@ -1,0 +1,522 @@
+{
+  "id": "premier",
+  "name": "Premier League",
+  "icon": "🦁",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Which club won the surprise Premier League title in 2015–16?",
+      "a": "Leicester City",
+      "qid": "premier-200-911",
+      "topic": "Champions",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.premierleague.com/en/news/2748139",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Leicester"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Which French striker topped the 2003–04 Premier League scoring chart with 30 goals?",
+      "a": "Thierry Henry",
+      "qid": "premier-200-912",
+      "topic": "Goalscorers",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.premierleague.com/en/news/59016",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which coach ended Liverpool's league-title wait in 2020?",
+      "a": "Jürgen Klopp",
+      "qid": "premier-200-913",
+      "topic": "Managers",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.premierleague.com/en/news/1751648",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Jurgen Klopp"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Who scored City's late goal against Southampton to reach 100 points in 2018?",
+      "a": "Gabriel Jesus",
+      "qid": "premier-200-915",
+      "topic": "Decisive moments",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.premierleague.com/en/news/690534",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which club reached 100 Premier League points in 2017–18?",
+      "a": "Manchester City",
+      "qid": "premier-200-916",
+      "topic": "Champions",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.premierleague.com/en/news/686479",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Man City"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Which stadium did Arsenal leave for the Emirates in 2006?",
+      "a": "Highbury",
+      "qid": "premier-200-917",
+      "topic": "Stadiums",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.arsenal.com/feature/where-are-arsenal-located-in-london-a78bI0A8K1JA",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 200,
+      "q": "Which Liverpool striker scored 31 league goals in 2013–14?",
+      "a": "Luis Suárez",
+      "qid": "premier-200-918",
+      "topic": "Goalscorers",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.premierleague.com/en/news/693673",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Luis Suarez"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Which Liverpool goalkeeper scored a header against West Bromwich Albion in 2021?",
+      "a": "Alisson Becker",
+      "qid": "premier-200-921",
+      "topic": "Goalkeeping",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.premierleague.com/ar/news/2145933",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Alisson"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Which French manager coached Arsenal from 1996 to 2018?",
+      "a": "Arsène Wenger",
+      "qid": "premier-400-911",
+      "topic": "Managers",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.premierleague.com/en/news/2738718",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Arsene Wenger"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Which Manchester United goalkeeper led the Premier League clean-sheet chart in 2017–18?",
+      "a": "David de Gea",
+      "qid": "premier-400-912",
+      "topic": "Goalkeeping",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.premierleague.com/en/news/686479",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Who equalized for City in the 92nd minute before the title-winning goal against QPR in 2012?",
+      "a": "Edin Džeko",
+      "qid": "premier-400-913",
+      "topic": "Decisive moments",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.premierleague.com/en/news/693667",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Edin Dzeko"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "How many teams did the Premier League shrink to starting in 1995–96?",
+      "a": "20",
+      "qid": "premier-400-914",
+      "topic": "Competition format",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.premierleague.com/en/news/60236",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Twenty"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Who scored the first Premier League goal, playing for Sheffield United?",
+      "a": "Brian Deane",
+      "qid": "premier-400-915",
+      "topic": "Early years",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.premierleague.com/en/news/58731",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Which club broke Manchester United's hold on the Premier League title in 1995?",
+      "a": "Blackburn Rovers",
+      "qid": "premier-400-916",
+      "topic": "Champions",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.premierleague.com/en/news/60236",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Blackburn"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "How many points did Liverpool earn in their title-winning 2019–20 season?",
+      "a": "99",
+      "qid": "premier-400-917",
+      "topic": "Champions",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.premierleague.com/en/news/1751648",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Ninety-nine"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Which Portuguese coach gave Chelsea their first Premier League title in 2005?",
+      "a": "José Mourinho",
+      "qid": "premier-400-918",
+      "topic": "Managers",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.premierleague.com/ar/news/59017",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Jose Mourinho"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Who scored a Southampton hat-trick against Aston Villa in 2 minutes 56 seconds in 2015?",
+      "a": "Sadio Mané",
+      "qid": "premier-600-911",
+      "topic": "Goalscorers",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.premierleague.com/en/stats/records",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Sadio Mane"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Who scored Chelsea's two goals against Bolton to clinch the 2005 title?",
+      "a": "Frank Lampard",
+      "qid": "premier-600-913",
+      "topic": "Decisive moments",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.premierleague.com/ar/news/59017",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Arsenal went unbeaten in the 2003–04 league season. How many matches did they draw?",
+      "a": "12",
+      "qid": "premier-600-914",
+      "topic": "Competition format",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.premierleague.com/en/news/59016",
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "https://www.premierleague.com/en/news/693629",
+      "alt": [
+        "Twelve"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Who won the Golden Boot in the first Premier League season?",
+      "a": "Teddy Sheringham",
+      "qid": "premier-600-915",
+      "topic": "Early years",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.premierleague.com/en/news/58731",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which stadium did Tottenham say goodbye to with a match against United in May 2017?",
+      "a": "White Hart Lane",
+      "qid": "premier-600-916",
+      "topic": "Stadiums",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.premierleague.com/en/news/394288/spurs-say-goodbye-to-white-hart-lane",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which Sunderland striker won the 1999–2000 Golden Boot with 30 goals?",
+      "a": "Kevin Phillips",
+      "qid": "premier-600-917",
+      "topic": "Goalscorers",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.premierleague.com/es/news/59011",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Who managed Blackburn to the 1995 Premier League title?",
+      "a": "Kenny Dalglish",
+      "qid": "premier-600-918",
+      "topic": "Managers",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.premierleague.com/en/news/60236",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Which Chelsea goalkeeper kept 24 league clean sheets in 2004–05?",
+      "a": "Petr Čech",
+      "qid": "premier-600-921",
+      "topic": "Goalkeeping",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.premierleague.com/ar/news/59017",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Petr Cech"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "Who captained Blackburn during their 1994–95 title-winning season?",
+      "a": "Tim Sherwood",
+      "qid": "premier-800-911",
+      "topic": "Champions",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.premierleague.com/en/news/2081325",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which West Ham goalkeeper frustrated Manchester United on the final day of 1994–95?",
+      "a": "Luděk Mikloško",
+      "qid": "premier-800-912",
+      "topic": "Goalkeeping",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.premierleague.com/en/news/60236",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Ludek Miklosko"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "Who partnered Shearer in Blackburn's SAS attack in 1994–95?",
+      "a": "Chris Sutton",
+      "qid": "premier-800-913",
+      "topic": "Decisive moments",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.premierleague.com/en/news/60236",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "Which team finished third in the first Premier League season?",
+      "a": "Norwich City",
+      "qid": "premier-800-914",
+      "topic": "Champions",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.premierleague.com/en/news/58731",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Norwich"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "Who scored the first Premier League hat-trick, for Leeds against Tottenham?",
+      "a": "Eric Cantona",
+      "qid": "premier-800-915",
+      "topic": "Early years",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.premierleague.com/en/news/58731",
+      "verifiedAt": "2026-09-18",
+      "alt": []
+    },
+    {
+      "p": 800,
+      "q": "How many goals were scored in total in Portsmouth versus Reading in 2007?",
+      "a": "11",
+      "qid": "premier-800-916",
+      "topic": "Stadiums",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.premierleague.com/en/stats/records",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Eleven"
+      ]
+    },
+    {
+      "q": "Which goalkeeper played 310 consecutive Premier League matches between 2004 and 2012?",
+      "a": "Brad Friedel",
+      "topic": "Goalkeeping",
+      "verified": true,
+      "sourceUrl": "https://www.premierleague.com/en/news/354374",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "premier-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which Arsenal player appeared against Brentford in September 2022 aged 15 years and 181 days?",
+      "a": "Ethan Nwaneri",
+      "topic": "Early years",
+      "verified": true,
+      "sourceUrl": "https://www.premierleague.com/en/stats/records",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "premier-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Who scored the Premier League's 10,000th goal, for Tottenham against Fulham in 2001?",
+      "a": "Les Ferdinand",
+      "topic": "Goalscorers",
+      "verified": true,
+      "sourceUrl": "https://www.premierleague.com/en/stats/records",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "premier-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Who scored the Premier League's 15,000th goal, for Fulham against Chelsea in 2006?",
+      "a": "Moritz Volz",
+      "topic": "Goalscorers",
+      "verified": true,
+      "sourceUrl": "https://www.premierleague.com/en/stats/records",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "premier-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which goalkeeper appeared in the Premier League aged 43 in May 1995?",
+      "a": "John Burridge",
+      "topic": "Goalkeeping",
+      "verified": true,
+      "sourceUrl": "https://www.premierleague.com/en/stats/records",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "premier-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Who managed the team that finished third in the first Premier League season?",
+      "a": "Mike Walker",
+      "topic": "Managers",
+      "verified": true,
+      "sourceUrl": "https://www.canaries.co.uk/club/history",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "premier-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which striker played for eight Premier League clubs, including Everton, Wigan, and Charlton, between 1997 and 2011?",
+      "a": "Marcus Bent",
+      "topic": "Player careers",
+      "verified": true,
+      "sourceUrl": "https://www.premierleague.com/en/stats/records",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "premier-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which Arsenal player recorded four assists in one Premier League match in February 1999?",
+      "a": "Dennis Bergkamp",
+      "topic": "Assists",
+      "verified": true,
+      "sourceUrl": "https://www.premierleague.com/en/stats/records",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "premier-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which stadium hosted Oldham Athletic's Premier League home games?",
+      "a": "Boundary Park",
+      "topic": "Stadiums",
+      "verified": true,
+      "sourceUrl": "https://www.premierleague.com/ar/news/789159",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "premier-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which club earned 49 points but was still relegated in 1992–93?",
+      "a": "Crystal Palace",
+      "topic": "Competition format",
+      "verified": true,
+      "sourceUrl": "https://www.premierleague.com/en/stats/records",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "premier-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

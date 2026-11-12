@@ -1,0 +1,570 @@
+{
+  "id": "completeproverb",
+  "name": "Complete an Arab Proverb",
+  "icon": "🧵",
+  "defaultType": "complete",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Complete: You may have a brother whom your mother ___.",
+      "a": "did not give birth to",
+      "qid": "completeproverb-200-912",
+      "type": "complete",
+      "topic": "Relationships",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://islamport.com/l/adb/5497/143.htm",
+      "alt": [
+        "did not bear",
+        "never bore"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Complete: The people of Mecca know its ___ best.",
+      "a": "mountain paths",
+      "qid": "completeproverb-200-913",
+      "type": "complete",
+      "topic": "Experience",
+      "alt": [
+        "paths",
+        "passes"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.islamicbook.ws/adab/zhr-alakm-fi-alamthal-w-alhkm-001.html"
+    },
+    {
+      "p": 200,
+      "q": "Complete this saying about exhausted patience: The flood has reached the ___.",
+      "a": "hilltops",
+      "qid": "completeproverb-200-915",
+      "type": "complete",
+      "topic": "Patience",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://islamport.com/l/adb/5494/447.htm",
+      "alt": [
+        "high ground",
+        "heights",
+        "zuba"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Complete this saying about returning empty-handed: He returned with the slippers of ___.",
+      "a": "Hunayn",
+      "qid": "completeproverb-200-916",
+      "type": "complete",
+      "topic": "Consequences",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://islamport.com/l/adb/5494/1605.htm",
+      "alt": [
+        "Hunain"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Complete: The sword has preceded the ___.",
+      "a": "reproach",
+      "qid": "completeproverb-200-917",
+      "type": "complete",
+      "topic": "Consequences",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://islamport.com/l/adb/5494/1807.htm",
+      "alt": [
+        "blame",
+        "rebuke"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Complete: A shot may hit its mark even from someone who is not an ___.",
+      "a": "archer",
+      "qid": "completeproverb-200-918",
+      "type": "complete",
+      "topic": "Luck",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://islamport.com/l/adb/5497/19.htm",
+      "alt": [
+        "expert archer"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "Complete: Stretch your legs only as far as your ___ allows.",
+      "a": "blanket",
+      "qid": "completeproverb-200-921",
+      "type": "complete",
+      "topic": "Prudence",
+      "alt": [
+        "cover"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/books/75241938/17/"
+    },
+    {
+      "p": 200,
+      "q": "Complete: The neighborhood's own piper does not ___.",
+      "a": "delight its people",
+      "qid": "completeproverb-200-922",
+      "type": "complete",
+      "topic": "Relationships",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.safahat.org/books/37938293/6/",
+      "alt": [
+        "entertain",
+        "please his neighbors"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Complete: With Juhaynah lies the ___ news.",
+      "a": "certain",
+      "qid": "completeproverb-400-912",
+      "type": "complete",
+      "topic": "Experience",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://islamport.com/l/adb/5494/2452.htm",
+      "alt": [
+        "reliable",
+        "definitive"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Complete: Give the bow to its ___.",
+      "a": "maker",
+      "qid": "completeproverb-400-913",
+      "type": "complete",
+      "topic": "Experience",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://islamport.com/l/adb/5494/2514.htm",
+      "alt": [
+        "craftsman"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Complete this saying about a missed opportunity: In summer you wasted the ___.",
+      "a": "milk",
+      "qid": "completeproverb-400-914",
+      "type": "complete",
+      "topic": "Prudence",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://islamport.com/l/adb/5494/2801.htm",
+      "alt": []
+    },
+    {
+      "p": 400,
+      "q": "Complete this saying about repaying good with harm: The reward of ___.",
+      "a": "Sinimmar",
+      "qid": "completeproverb-400-916",
+      "type": "complete",
+      "topic": "Consequences",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://islamport.com/l/adb/5494/845.htm",
+      "alt": [
+        "Sinnimar"
+      ]
+    },
+    {
+      "q": "Complete: Too much reproach breeds ___.",
+      "a": "hatred",
+      "topic": "Relationships",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/22/",
+      "p": 400,
+      "qid": "completeproverb-400-918",
+      "difficultyTarget": 0.6,
+      "alt": [
+        "resentment",
+        "ill will"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "Complete: The door that brings you wind, close it and ___.",
+      "a": "rest",
+      "qid": "completeproverb-400-921",
+      "type": "complete",
+      "topic": "Prudence",
+      "alt": [
+        "be at ease"
+      ],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/books/75241938/2/"
+    },
+    {
+      "p": 400,
+      "q": "Complete this saying about a perfect match: Shann has found ___.",
+      "a": "Tabaqah",
+      "qid": "completeproverb-400-922",
+      "type": "complete",
+      "topic": "Relationships",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://islamport.com/l/adb/5494/4439.htm",
+      "alt": [
+        "Tabaqa"
+      ]
+    },
+    {
+      "q": "Complete: Tomorrow is near to the one who ___.",
+      "a": "waits for it",
+      "topic": "Patience",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/1/",
+      "p": 400,
+      "qid": "completeproverb-400-923",
+      "difficultyTarget": 0.6,
+      "alt": [
+        "awaits it"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Complete this saying about broken promises: The promises of ___.",
+      "a": "Urqub",
+      "qid": "completeproverb-600-911",
+      "type": "complete",
+      "topic": "Relationships",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://islamport.com/l/adb/5494/4161.htm",
+      "alt": [
+        "Arqoub"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Complete: Hearing of Al-Mu'aydi is better than ___.",
+      "a": "seeing him",
+      "qid": "completeproverb-600-912",
+      "type": "complete",
+      "topic": "Experience",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://islamport.com/l/adb/5494/668.htm",
+      "alt": [
+        "meeting him"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Complete this saying about two faults together: Bad dates and a bad ___.",
+      "a": "measure",
+      "qid": "completeproverb-600-913",
+      "type": "complete",
+      "topic": "Prudence",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/books/92480704/1/",
+      "alt": [
+        "measurement"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "Complete this saying about self-inflicted trouble: Your hands tied it, and your mouth ___.",
+      "a": "blew into it",
+      "qid": "completeproverb-600-914",
+      "type": "complete",
+      "topic": "Consequences",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://islamport.com/l/adb/5497/293.htm",
+      "alt": [
+        "inflated it"
+      ]
+    },
+    {
+      "q": "Complete: I hear the mill's clatter, but see no ___.",
+      "a": "flour",
+      "topic": "Speech",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/1/",
+      "p": 600,
+      "qid": "completeproverb-600-916",
+      "difficultyTarget": 0.4,
+      "alt": [
+        "grinding"
+      ]
+    },
+    {
+      "q": "Complete this call to take part: Cast your bucket among the ___.",
+      "a": "buckets",
+      "topic": "Effort",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/1/",
+      "p": 600,
+      "qid": "completeproverb-600-917",
+      "difficultyTarget": 0.4,
+      "alt": []
+    },
+    {
+      "q": "Complete: Like seeking relief from scorching sand in the ___.",
+      "a": "fire",
+      "topic": "Consequences",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/22/",
+      "p": 600,
+      "qid": "completeproverb-600-918",
+      "difficultyTarget": 0.4,
+      "alt": []
+    },
+    {
+      "p": 600,
+      "q": "Complete: Juhayzah cut short the speech of every ___.",
+      "a": "orator",
+      "qid": "completeproverb-600-921",
+      "type": "complete",
+      "topic": "Speech",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://islamport.com/l/adb/5494/2910.htm",
+      "alt": [
+        "speaker"
+      ]
+    },
+    {
+      "q": "Complete: The exhausted rider neither covers ground nor preserves his ___.",
+      "a": "mount",
+      "topic": "Effort",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/1/",
+      "p": 800,
+      "qid": "completeproverb-800-911",
+      "difficultyTarget": 0.25,
+      "alt": [
+        "riding animal"
+      ]
+    },
+    {
+      "q": "Complete: The tear has grown too wide for the ___.",
+      "a": "mender",
+      "topic": "Prudence",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/1/",
+      "p": 800,
+      "qid": "completeproverb-800-912",
+      "difficultyTarget": 0.25,
+      "alt": [
+        "patcher"
+      ]
+    },
+    {
+      "q": "Complete this saying about preparation: Before shooting, the arrow is ___.",
+      "a": "fletched",
+      "topic": "Prudence",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/21/",
+      "p": 800,
+      "qid": "completeproverb-800-913",
+      "difficultyTarget": 0.25,
+      "alt": [
+        "feathered"
+      ]
+    },
+    {
+      "q": "Complete this saying about a trusted witness: The truth is what ___ says.",
+      "a": "Hudham",
+      "topic": "Speech",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/21/",
+      "p": 800,
+      "qid": "completeproverb-800-914",
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Hutham"
+      ]
+    },
+    {
+      "q": "Complete this saying about a matter attracting no dispute: Over it, not even two ___ butt heads.",
+      "a": "goats",
+      "topic": "Consequences",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/23/",
+      "p": 800,
+      "qid": "completeproverb-800-915",
+      "difficultyTarget": 0.25,
+      "alt": []
+    },
+    {
+      "q": "Complete this warning about hurtful jokes: Joking breeds ___.",
+      "a": "grudges",
+      "topic": "Relationships",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/24/",
+      "p": 800,
+      "qid": "completeproverb-800-916",
+      "difficultyTarget": 0.25,
+      "alt": [
+        "resentment",
+        "ill will"
+      ]
+    },
+    {
+      "q": "Complete this saying about a passing trouble: A summer cloud soon ___.",
+      "a": "clears",
+      "topic": "Patience",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/12/",
+      "p": 800,
+      "qid": "completeproverb-800-917",
+      "difficultyTarget": 0.25,
+      "alt": [
+        "disperses",
+        "passes"
+      ]
+    },
+    {
+      "q": "Complete: Not everything white is fat, and not everything black is a ___.",
+      "a": "date",
+      "topic": "Experience",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/24/",
+      "p": 800,
+      "qid": "completeproverb-800-918",
+      "difficultyTarget": 0.25,
+      "alt": []
+    },
+    {
+      "q": "Complete this saying about benefiting from one's own spending: Your ghee was poured into your own ___.",
+      "a": "waterskin",
+      "topic": "Prudence",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/12/",
+      "p": 1000,
+      "qid": "completeproverb-1000-911",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "leather container",
+        "hide"
+      ]
+    },
+    {
+      "q": "Complete this saying about finding the same faults everywhere: In every valley are the sons of ___.",
+      "a": "Saad",
+      "topic": "Experience",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/2/",
+      "p": 1000,
+      "qid": "completeproverb-1000-912",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Sa'd"
+      ]
+    },
+    {
+      "q": "Complete this saying about forgiving when powerful: Having power dispels ___.",
+      "a": "resentment",
+      "topic": "Relationships",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/1/",
+      "p": 1000,
+      "qid": "completeproverb-1000-913",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "anger",
+        "the urge for revenge"
+      ]
+    },
+    {
+      "q": "Complete: Reminding someone of your favor destroys the ___.",
+      "a": "good deed",
+      "topic": "Relationships",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/24/",
+      "p": 1000,
+      "qid": "completeproverb-1000-914",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "favor",
+        "kindness"
+      ]
+    },
+    {
+      "q": "Complete this saying about matching force with force: Iron is split by ___.",
+      "a": "iron",
+      "topic": "Prudence",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/1/",
+      "p": 1000,
+      "qid": "completeproverb-1000-915",
+      "difficultyTarget": 0.15,
+      "alt": []
+    },
+    {
+      "q": "Complete this praise of the best pasture: There is pasture, but none like ___.",
+      "a": "saadan",
+      "topic": "Experience",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/24/",
+      "p": 1000,
+      "qid": "completeproverb-1000-916",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Sa'dan"
+      ]
+    },
+    {
+      "q": "Complete this rebuke to a meddler: This is not your nest, so ___.",
+      "a": "move on",
+      "topic": "Consequences",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/23/",
+      "p": 1000,
+      "qid": "completeproverb-1000-917",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "go away",
+        "leave"
+      ]
+    },
+    {
+      "q": "Complete this saying about succeeding gently: What big bites achieve may be reached through ___.",
+      "a": "small bites",
+      "topic": "Effort",
+      "type": "complete",
+      "verified": true,
+      "sourceUrl": "https://www.safahat.org/books/92480704/21/",
+      "p": 1000,
+      "qid": "completeproverb-1000-918",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "nibbling"
+      ]
+    }
+  ]
+}

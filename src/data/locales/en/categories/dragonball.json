@@ -1,0 +1,513 @@
+{
+  "id": "dragonball",
+  "name": "Dragon Ball",
+  "icon": "🐲",
+  "style": "story",
+  "qs": [
+    {
+      "p": 200,
+      "q": "What fighter results when Goku and Vegeta fuse using earrings?",
+      "a": "Vegito",
+      "alt": [
+        "Vegetto"
+      ],
+      "topic": "Transformations",
+      "verified": true,
+      "qid": "dragonball-200-911",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_9#ep269"
+    },
+    {
+      "p": 200,
+      "q": "Which young Namekian becomes Earth's guardian and restores its dragon before the Cell Games?",
+      "a": "Dende",
+      "alt": [],
+      "topic": "Wishes",
+      "verified": true,
+      "qid": "dragonball-200-912",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_6#ep173"
+    },
+    {
+      "p": 200,
+      "q": "What long road does Goku follow in the afterlife to reach his trainer?",
+      "a": "Snake Way",
+      "alt": [
+        "Serpent Road"
+      ],
+      "topic": "Training",
+      "verified": true,
+      "qid": "dragonball-200-913",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_1#ep6"
+    },
+    {
+      "p": 200,
+      "q": "What original name does Goku's brother use when arriving from space?",
+      "a": "Kakarot",
+      "alt": [
+        "Kakarotto"
+      ],
+      "topic": "Family",
+      "verified": true,
+      "qid": "dragonball-200-914",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_1#ep2"
+    },
+    {
+      "p": 200,
+      "q": "Which attack using Earth's inhabitants' energy does Goku use to defeat Kid Buu?",
+      "a": "Spirit Bomb",
+      "alt": [
+        "Genki Dama"
+      ],
+      "topic": "Abilities",
+      "verified": true,
+      "qid": "dragonball-200-915",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_9#ep286"
+    },
+    {
+      "p": 200,
+      "q": "Who finally persuades Earth's people to raise their hands and give Goku energy against Kid Buu?",
+      "a": "Mr. Satan",
+      "alt": [
+        "Hercule",
+        "Mister Satan"
+      ],
+      "topic": "Battles",
+      "verified": true,
+      "qid": "dragonball-200-916",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_9#ep285"
+    },
+    {
+      "p": 200,
+      "q": "Where do Goku and Gohan train for Cell in a place where time passes differently?",
+      "a": "The Hyperbolic Time Chamber",
+      "alt": [
+        "Room of Spirit and Time",
+        "Hyperbolic Time Chamber"
+      ],
+      "topic": "Training",
+      "verified": true,
+      "qid": "dragonball-200-917",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_6#ep167"
+    },
+    {
+      "p": 200,
+      "q": "What device do Frieza's soldiers wear over one eye to measure fighting power?",
+      "a": "A scouter",
+      "alt": [
+        "Scouter"
+      ],
+      "topic": "Objects and tools",
+      "verified": true,
+      "qid": "dragonball-200-918",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_1#ep1"
+    },
+    {
+      "p": 400,
+      "q": "With which Namekian warrior does Piccolo fuse before fighting Frieza?",
+      "a": "Nail",
+      "alt": [],
+      "topic": "Transformations",
+      "verified": true,
+      "qid": "dragonball-400-911",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_3#ep81"
+    },
+    {
+      "p": 400,
+      "q": "Which transformation does Gohan first reach after Cell destroys the peaceful android's head?",
+      "a": "Super Saiyan 2",
+      "alt": [
+        "Super Saiyan Two"
+      ],
+      "topic": "Transformations",
+      "verified": true,
+      "qid": "dragonball-400-912",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_6#ep184"
+    },
+    {
+      "p": 400,
+      "q": "Who sacrifices himself by exploding while clinging to Nappa's back to try to save his friend?",
+      "a": "Chiaotzu",
+      "alt": [
+        "Chaozu"
+      ],
+      "topic": "Battles",
+      "verified": true,
+      "qid": "dragonball-400-913",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.dragon-ball-official.com/news/01_4424.html"
+    },
+    {
+      "p": 400,
+      "q": "Which Namekian dragon restores Earth after Kid Buu destroys it?",
+      "a": "Porunga",
+      "alt": [
+        "Polunga"
+      ],
+      "topic": "Wishes",
+      "verified": true,
+      "qid": "dragonball-400-914",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_9#ep283"
+    },
+    {
+      "p": 400,
+      "q": "To which planet does Goku teleport Cell when he is about to self-destruct?",
+      "a": "King Kai's planet",
+      "alt": [
+        "Kai's planet"
+      ],
+      "topic": "Worlds",
+      "verified": true,
+      "qid": "dragonball-400-916",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_6#ep188"
+    },
+    {
+      "p": 400,
+      "q": "In which household appliance was King Piccolo sealed before Pilaf freed him?",
+      "a": "A rice cooker",
+      "alt": [
+        "Rice cooker"
+      ],
+      "topic": "Objects and tools",
+      "verified": true,
+      "qid": "dragonball-400-917",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.dragon-ball-official.com/news/01_4410.html"
+    },
+    {
+      "topic": "Battles",
+      "q": "Who cuts off Vegeta's tail during his first battle on Earth?",
+      "a": "Yajirobe",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters",
+      "qid": "dragonball-400-918",
+      "p": 400,
+      "difficultyTarget": 0.6,
+      "verified": true
+    },
+    {
+      "topic": "Family",
+      "q": "What is the name of Krillin and Android 18's daughter?",
+      "a": "Marron",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters",
+      "qid": "dragonball-400-921",
+      "p": 400,
+      "difficultyTarget": 0.6,
+      "verified": true
+    },
+    {
+      "p": 600,
+      "q": "Which dragon does King Piccolo kill after regaining his youth?",
+      "a": "Shenron",
+      "alt": [
+        "Shenlong"
+      ],
+      "topic": "Wishes",
+      "verified": true,
+      "qid": "dragonball-600-911",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.dragon-ball-official.com/news/01_4410.html"
+    },
+    {
+      "p": 600,
+      "q": "Into what food does Super Buu turn Chi-Chi after she slaps him?",
+      "a": "An egg",
+      "alt": [
+        "Egg"
+      ],
+      "topic": "Transformations",
+      "verified": true,
+      "qid": "dragonball-600-912",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_9#ep257"
+    },
+    {
+      "p": 600,
+      "q": "Which former master of Roshi successfully seals King Piccolo?",
+      "a": "Mutaito",
+      "alt": [],
+      "topic": "Training",
+      "verified": true,
+      "qid": "dragonball-600-913",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.dragon-ball-official.com/news/01_4410.html"
+    },
+    {
+      "p": 600,
+      "q": "Who succeeds the Namekian Grand Elder after the move to Earth?",
+      "a": "Moori",
+      "alt": [
+        "Muri"
+      ],
+      "topic": "Wishes",
+      "verified": true,
+      "qid": "dragonball-600-914",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.dragon-ball-official.com/news/01_4332.html"
+    },
+    {
+      "p": 600,
+      "q": "Which android asks for his head to be taken to Gohan before Cell destroys it?",
+      "a": "Android 16",
+      "alt": [
+        "16"
+      ],
+      "topic": "Battles",
+      "verified": true,
+      "qid": "dragonball-600-915",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_6#ep184"
+    },
+    {
+      "p": 600,
+      "q": "What energy-ring attack does the young fused fighter use to trap Super Buu?",
+      "a": "Galactic Donut",
+      "alt": [
+        "Galactic Doughnut"
+      ],
+      "topic": "Abilities",
+      "verified": true,
+      "qid": "dragonball-600-916",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_9#ep258"
+    },
+    {
+      "p": 600,
+      "q": "Which servant of King Piccolo attacks Tien before Goku arrives?",
+      "a": "Drum",
+      "alt": [],
+      "topic": "Battles",
+      "verified": true,
+      "qid": "dragonball-600-917",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.dragon-ball-official.com/news/01_4410.html"
+    },
+    {
+      "topic": "Abilities",
+      "q": "Who turns Piccolo and Krillin to stone with his spit?",
+      "a": "Dabura",
+      "alt": [
+        "Dabra"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters",
+      "qid": "dragonball-600-918",
+      "p": 600,
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "p": 800,
+      "q": "Which attack does Tao Pai Pai fire from his arm cannon at Tien?",
+      "a": "Super Dodonpa",
+      "alt": [
+        "Super Dodon Ray"
+      ],
+      "topic": "Abilities",
+      "verified": true,
+      "qid": "dragonball-800-911",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://en.dragon-ball-official.com/news/01_4437.html"
+    },
+    {
+      "p": 800,
+      "q": "Which weapon does Tao Pai Pai reveal, causing his disqualification from the twenty-third tournament?",
+      "a": "A hidden blade",
+      "alt": [
+        "Hidden blade",
+        "A concealed knife"
+      ],
+      "topic": "Objects and tools",
+      "verified": true,
+      "qid": "dragonball-800-912",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://en.dragon-ball-official.com/news/01_4437.html"
+    },
+    {
+      "p": 800,
+      "q": "Which animal does Goku throw in front of Ginyu, causing him to switch into its body by mistake?",
+      "a": "A frog",
+      "alt": [
+        "Frog"
+      ],
+      "topic": "Transformations",
+      "verified": true,
+      "qid": "dragonball-800-913",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://en.dragon-ball-official.com/news/01_4315.html"
+    },
+    {
+      "topic": "Training",
+      "q": "Which attendant of the Supreme Kai rescues Gohan and takes him for training?",
+      "a": "Kibito",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters",
+      "qid": "dragonball-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Family",
+      "q": "What is the name of Bulma's father, the founder of Capsule Corporation?",
+      "a": "Dr. Brief",
+      "alt": [
+        "Dr. Briefs",
+        "Brief"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters",
+      "qid": "dragonball-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Family",
+      "q": "What is the name of Bora's son, who lives at the foot of Korin Tower?",
+      "a": "Upa",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters",
+      "qid": "dragonball-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Wishes",
+      "q": "Which sister of Roshi locates things using a magic crystal ball?",
+      "a": "Fortuneteller Baba",
+      "alt": [
+        "Uranai Baba",
+        "Baba"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters",
+      "qid": "dragonball-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Battles",
+      "q": "Which student of West Kai rivals Goku in the Other World Tournament?",
+      "a": "Pikkon",
+      "alt": [
+        "Paikuhan"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters",
+      "qid": "dragonball-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Battles",
+      "q": "What is the name of Babidi's light-eating monster?",
+      "a": "Yakon",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters",
+      "qid": "dragonball-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Abilities",
+      "q": "Which fighter working for Baba attacks the evil within his opponents' hearts?",
+      "a": "Devilman",
+      "alt": [
+        "Akkuman"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters",
+      "qid": "dragonball-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Training",
+      "q": "Which people teach Goku the Fusion Dance in the afterlife?",
+      "a": "The Metamorans",
+      "alt": [
+        "Metamorans"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters",
+      "qid": "dragonball-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Worlds",
+      "q": "What is the Saiyan homeworld in Universe Six?",
+      "a": "Sadala",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters",
+      "qid": "dragonball-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Battles",
+      "q": "Which of Baba's fighters is defeated jointly by Puar and Bora's son?",
+      "a": "Dracula Man",
+      "alt": [
+        "Fangs the Vampire",
+        "Fangs"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters",
+      "qid": "dragonball-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Transformations",
+      "q": "How long does Potara fusion normally last for people who are not Supreme Kais?",
+      "a": "One hour",
+      "alt": [
+        "An hour",
+        "60 minutes"
+      ],
+      "sourceUrl": "https://en.dragon-ball-official.com/news/01_2255.html",
+      "qid": "dragonball-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Transformations",
+      "q": "How long can Oolong maintain a transformation before needing to rest?",
+      "a": "Five minutes",
+      "alt": [
+        "5 minutes"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters",
+      "qid": "dragonball-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "p": 1000,
+      "q": "What is the name of the small dog adopted by Majin Buu and his champion friend?",
+      "a": "Bee",
+      "alt": [],
+      "topic": "Family",
+      "verified": true,
+      "qid": "dragonball-1000-921",
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_9#ep254"
+    }
+  ]
+}

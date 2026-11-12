@@ -1,4 +1,5 @@
-// نصوص أخطاء الحساب والشراء بالعربية، مفاتيحها أكواد الخادم/الجسر.
+import { tr } from '../i18n/core.js';
+// Stable server/native error codes with localized presentation.
 export const ACCOUNT_ERRORS = {
   AUTH_REQUIRED: 'سجّل الدخول أولًا.',
   AUTH_EXPIRED: 'انتهت جلستك، سجّل الدخول من جديد.',
@@ -31,4 +32,4 @@ export const ACCOUNT_ERRORS = {
   // لا خادم مضبوط في هذه النسخة: الحساب والاشتراك معطّلان والتجارب محلية.
   OFFLINE: 'الحساب والاشتراك غير متاحين في هذه النسخة.',
 };
-export const accountErrorText = (code) => ACCOUNT_ERRORS[code] || ACCOUNT_ERRORS.NETWORK;
+export const accountErrorText = (code) => tr(ACCOUNT_ERRORS[code] || ACCOUNT_ERRORS.NETWORK);

@@ -1,3 +1,4 @@
+import { tr } from '../i18n/core.js';
 // رمز الهدية: نموذج يُستعمل داخل الجدار (بدل الخطط) وداخل ورقة من بطاقة الحساب.
 import React, { useEffect, useRef, useState } from 'react';
 import { Sheet, Button } from '../ui/components.jsx';
@@ -34,16 +35,16 @@ function RedeemFormOwner({ onDone, onCancel }) {
     else setError(accountErrorText(typeof result === 'string' ? result : 'REDEEM_INVALID'));
   };
   const note = account.signedIn
-    ? `أدخل الرمز الذي حصلت عليه لتفعيل ${PLUS_NAME} على حسابك، فيعمل على كل أجهزتك.`
-    : `سجّل الدخول أولًا لتفعيل رمز الهدية على حسابك واستخدامه على كل أجهزتك.`;
+    ? tr("أدخل الرمز الذي حصلت عليه لتفعيل {v0} على حسابك، فيعمل على كل أجهزتك.", {v0: tr(PLUS_NAME)})
+    : tr("سجّل الدخول أولًا لتفعيل رمز الهدية على حسابك واستخدامه على كل أجهزتك.", {});
   return (
-    <form className="account-redeem" onSubmit={submit} aria-label="تفعيل رمز الهدية">
+    <form className="account-redeem" onSubmit={submit} aria-label={tr("تفعيل رمز الهدية")}>
       <p className="card-muted">{note}</p>
       <input className="input" dir="ltr" inputMode="text" autoComplete="off" autoCapitalize="characters" spellCheck={false} maxLength={64}
-        value={code} onChange={(event) => { setCode(event.target.value); setError(''); }} placeholder="• • • • • • •" aria-label="رمز الهدية" autoFocus />
+        value={code} onChange={(event) => { setCode(event.target.value); setError(''); }} placeholder="• • • • • • •" aria-label={tr("رمز الهدية")} autoFocus />
       {error && <p className="online-notice error" role="alert">{error}</p>}
-      <Button variant="primary" size="lg" full loading={busy} disabled={!code.trim() || !account.signedIn} onClick={submit}>تفعيل</Button>
-      {onCancel && <Button variant="ghost" full onClick={onCancel}>رجوع</Button>}
+      <Button variant="primary" size="lg" full loading={busy} disabled={!code.trim() || !account.signedIn} onClick={submit}>{tr("تفعيل")}</Button>
+      {onCancel && <Button variant="ghost" full onClick={onCancel}>{tr("رجوع")}</Button>}
     </form>
   );
 }
@@ -51,7 +52,7 @@ function RedeemFormOwner({ onDone, onCancel }) {
 export function RedeemSheet({ open, onClose }) {
   if (!open) return null;
   return (
-    <Sheet data-design-screen="account.redeem" open={open} onClose={onClose} title="رمز الهدية">
+    <Sheet data-design-screen="account.redeem" open={open} onClose={onClose} title={tr("رمز الهدية")}>
       <RedeemForm onDone={onClose} />
     </Sheet>
   );

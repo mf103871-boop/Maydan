@@ -1,0 +1,485 @@
+{
+  "id": "books",
+  "name": "Books",
+  "icon": "📕",
+  "qs": [
+    {
+      "qid": "books-200-911",
+      "p": 200,
+      "q": "Which French novelist wrote Les Misérables?",
+      "a": "Victor Hugo",
+      "topic": "French novels",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/135",
+      "alt": []
+    },
+    {
+      "qid": "books-200-912",
+      "p": 200,
+      "q": "Athos, Porthos, and Aramis befriend which young man in The Three Musketeers?",
+      "a": "D'Artagnan",
+      "topic": "French novels",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.gutenberg.org/files/1257/1257-h/1257-h.htm",
+      "alt": [
+        "Dartagnan"
+      ]
+    },
+    {
+      "qid": "books-200-913",
+      "p": 200,
+      "q": "Who wrote the Russian epic War and Peace?",
+      "a": "Leo Tolstoy",
+      "topic": "Russian novels",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/2600",
+      "alt": [
+        "Lev Tolstoy"
+      ]
+    },
+    {
+      "qid": "books-200-914",
+      "p": 200,
+      "q": "Who wrote the white-whale novel Moby-Dick?",
+      "a": "Herman Melville",
+      "topic": "World novels",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/2701",
+      "alt": []
+    },
+    {
+      "qid": "books-200-915",
+      "p": 200,
+      "q": "Who wrote The Picture of Dorian Gray?",
+      "a": "Oscar Wilde",
+      "topic": "Fantasy and science fiction",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/174",
+      "alt": []
+    },
+    {
+      "qid": "books-200-916",
+      "p": 200,
+      "q": "On which London street is the apartment Watson visits at the opening of A Scandal in Bohemia?",
+      "a": "Baker Street",
+      "topic": "Detective fiction",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.gutenberg.org/files/1661/1661-h/1661-h.htm",
+      "alt": []
+    },
+    {
+      "qid": "books-200-917",
+      "p": 200,
+      "q": "Which British writer wrote The Time Machine?",
+      "a": "H. G. Wells",
+      "topic": "Fantasy and science fiction",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/35",
+      "alt": [
+        "Herbert George Wells"
+      ]
+    },
+    {
+      "qid": "books-200-918",
+      "p": 200,
+      "q": "In which European country are the mountains where Heidi and her grandfather live?",
+      "a": "Switzerland",
+      "topic": "Children’s stories",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.gutenberg.org/cache/epub/1448/pg1448-images.html",
+      "alt": []
+    },
+    {
+      "qid": "books-400-911",
+      "p": 400,
+      "q": "Who wrote Pride and Prejudice?",
+      "a": "Jane Austen",
+      "topic": "English novels",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/1342",
+      "alt": []
+    },
+    {
+      "qid": "books-400-912",
+      "p": 400,
+      "q": "Which Brontë sister wrote Jane Eyre?",
+      "a": "Charlotte Brontë",
+      "topic": "English novels",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/1260",
+      "alt": [
+        "Charlotte Bronte"
+      ]
+    },
+    {
+      "qid": "books-400-913",
+      "p": 400,
+      "q": "Who wrote Crime and Punishment?",
+      "a": "Fyodor Dostoevsky",
+      "topic": "Russian novels",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/2554",
+      "alt": [
+        "Dostoyevsky"
+      ]
+    },
+    {
+      "qid": "books-400-914",
+      "p": 400,
+      "q": "Which French novelist wrote Madame Bovary?",
+      "a": "Gustave Flaubert",
+      "topic": "French novels",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/2413",
+      "alt": []
+    },
+    {
+      "qid": "books-400-915",
+      "p": 400,
+      "q": "Which author created the book series about a boy with a lightning-shaped scar?",
+      "a": "J. K. Rowling",
+      "topic": "Fantasy and science fiction",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.jkrowling.com/about/",
+      "alt": [
+        "JK Rowling",
+        "Joanne Rowling"
+      ]
+    },
+    {
+      "qid": "books-400-916",
+      "p": 400,
+      "q": "Who wrote Frankenstein?",
+      "a": "Mary Shelley",
+      "topic": "Fantasy and science fiction",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/84",
+      "alt": []
+    },
+    {
+      "qid": "books-400-917",
+      "p": 400,
+      "q": "Who wrote the Arabic novel Sarah?",
+      "a": "Abbas Mahmoud al-Aqqad",
+      "topic": "Arabic books",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/books/96468508/",
+      "alt": [
+        "Abbas al-Aqqad"
+      ]
+    },
+    {
+      "qid": "books-400-918",
+      "p": 400,
+      "q": "Who wrote The Call of the Curlew?",
+      "a": "Taha Hussein",
+      "topic": "Arabic books",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.safahat.org/contributors/59624258/",
+      "alt": [
+        "Taha Husayn"
+      ]
+    },
+    {
+      "qid": "books-600-911",
+      "p": 600,
+      "q": "Which Brontë sister wrote Wuthering Heights?",
+      "a": "Emily Brontë",
+      "topic": "English novels",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/768",
+      "alt": [
+        "Emily Bronte"
+      ]
+    },
+    {
+      "qid": "books-600-912",
+      "p": 600,
+      "q": "Who commands the submarine Nautilus in Twenty Thousand Leagues Under the Seas?",
+      "a": "Captain Nemo",
+      "topic": "Adventure",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.gutenberg.org/files/164/164-h/164-h.htm",
+      "alt": [
+        "Nemo"
+      ]
+    },
+    {
+      "qid": "books-600-913",
+      "p": 600,
+      "q": "What is the one-legged pirate's name in Treasure Island?",
+      "a": "Long John Silver",
+      "topic": "Adventure",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.gutenberg.org/files/120/120-h/120-h.htm",
+      "alt": []
+    },
+    {
+      "qid": "books-600-914",
+      "p": 600,
+      "q": "The narrator of Moby-Dick opens with 'Call me...' Which name follows?",
+      "a": "Ishmael",
+      "topic": "World novels",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.gutenberg.org/files/2701/2701-h/2701-h.htm",
+      "alt": []
+    },
+    {
+      "qid": "books-600-915",
+      "p": 600,
+      "q": "Which girl dreams of leaving the neighborhood in Midaq Alley?",
+      "a": "Hamida",
+      "topic": "Arabic books",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.safahat.org/books/62575295/",
+      "alt": []
+    },
+    {
+      "qid": "books-600-916",
+      "p": 600,
+      "q": "Who wakes up transformed into a strange creature at the beginning of Kafka's The Metamorphosis?",
+      "a": "Gregor Samsa",
+      "topic": "World novels",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.gutenberg.org/files/5200/5200-h/5200-h.htm",
+      "alt": []
+    },
+    {
+      "qid": "books-600-917",
+      "p": 600,
+      "q": "Which Russian novelist wrote Dead Souls?",
+      "a": "Nikolai Gogol",
+      "topic": "Russian novels",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/1081",
+      "alt": [
+        "Gogol"
+      ]
+    },
+    {
+      "qid": "books-600-918",
+      "p": 600,
+      "q": "Which Irish novelist wrote Dracula?",
+      "a": "Bram Stoker",
+      "topic": "English novels",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/345",
+      "alt": []
+    },
+    {
+      "qid": "books-800-911",
+      "p": 800,
+      "q": "What is the name of Molly's husband, who wanders through Dublin in Ulysses?",
+      "a": "Leopold Bloom",
+      "topic": "English novels",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.gutenberg.org/files/4300/4300-h/4300-h.htm",
+      "alt": []
+    },
+    {
+      "qid": "books-800-912",
+      "p": 800,
+      "q": "Who wrote the detective novel The Moonstone?",
+      "a": "Wilkie Collins",
+      "topic": "Detective fiction",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/155",
+      "alt": []
+    },
+    {
+      "qid": "books-800-913",
+      "p": 800,
+      "q": "What is the original name of the sailor who returns as the Count of Monte Cristo?",
+      "a": "Edmond Dantès",
+      "topic": "French novels",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.gutenberg.org/files/1184/1184-h/1184-h.htm",
+      "alt": [
+        "Edmond Dantes"
+      ]
+    },
+    {
+      "qid": "books-800-914",
+      "p": 800,
+      "q": "In The Hound of the Baskervilles, what substance makes the hound appear luminous at night?",
+      "a": "Phosphorus",
+      "topic": "Detective fiction",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.gutenberg.org/files/3070/3070-h/3070-h.htm",
+      "alt": []
+    },
+    {
+      "qid": "books-800-915",
+      "p": 800,
+      "q": "Which protagonist of Midnight's Children has the power of telepathy?",
+      "a": "Saleem Sinai",
+      "topic": "World novels",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://thebookerprizes.com/the-booker-library/books/midnights-children",
+      "alt": []
+    },
+    {
+      "qid": "books-800-916",
+      "p": 800,
+      "q": "Who wrote the contemplative novel Siddhartha?",
+      "a": "Hermann Hesse",
+      "topic": "World novels",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.gutenberg.org/ebooks/2500",
+      "alt": []
+    },
+    {
+      "qid": "books-800-917",
+      "p": 800,
+      "q": "Which protagonist of Dead Souls tries to buy the names of deceased serfs?",
+      "a": "Chichikov",
+      "topic": "Russian novels",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.gutenberg.org/files/1081/1081-h/1081-h.htm",
+      "alt": [
+        "Pavel Ivanovich Chichikov"
+      ]
+    },
+    {
+      "qid": "books-800-918",
+      "p": 800,
+      "q": "Who wrote the narrative work Hadith Isa ibn Hisham?",
+      "a": "Muhammad al-Muwaylihi",
+      "topic": "Arabic books",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/contributors/19203514/",
+      "alt": [
+        "Mohamed al-Muwaylihi"
+      ]
+    },
+    {
+      "topic": "French novels",
+      "q": "Which fellow prisoner teaches the hero of The Count of Monte Cristo and tells him about the treasure?",
+      "a": "Abbé Faria",
+      "sourceUrl": "https://www.gutenberg.org/files/1184/1184-h/1184-h.htm",
+      "alt": [
+        "Abbe Faria",
+        "Father Faria"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "books-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Detective fiction",
+      "q": "Which woman seeks Holmes's help after her sister dies in The Speckled Band?",
+      "a": "Helen Stoner",
+      "sourceUrl": "https://www.gutenberg.org/files/1661/1661-h/1661-h.htm",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "books-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "English novels",
+      "q": "What is the name of Mina's friend who becomes a vampire in Dracula?",
+      "a": "Lucy Westenra",
+      "sourceUrl": "https://www.gutenberg.org/files/345/345-h/345-h.htm",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "books-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Fantasy and science fiction",
+      "q": "What is the jackal who serves Shere Khan called in The Jungle Book?",
+      "a": "Tabaqui",
+      "sourceUrl": "https://www.gutenberg.org/files/236/236-h/236-h.htm",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "books-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "World novels",
+      "q": "What ship does Ahab command in Moby-Dick?",
+      "a": "Pequod",
+      "sourceUrl": "https://www.gutenberg.org/files/2701/2701-h/2701-h.htm",
+      "alt": [],
+      "verified": true,
+      "p": 1000,
+      "qid": "books-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Children’s stories",
+      "q": "Where do the swindlers persuade Collodi's puppet to bury his coins so they will supposedly grow?",
+      "a": "The Field of Miracles",
+      "sourceUrl": "https://www.gutenberg.org/files/500/500-h/500-h.htm",
+      "alt": [
+        "Field of Miracles"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "books-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Adventure",
+      "q": "What name did the pirate give his parrot after an earlier pirate in Treasure Island?",
+      "a": "Captain Flint",
+      "sourceUrl": "https://www.gutenberg.org/files/120/120-h/120-h.htm",
+      "alt": [
+        "Flint"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "books-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Arabic books",
+      "q": "Which man robs wealthy people's graves in Midaq Alley?",
+      "a": "Al-Bushi",
+      "sourceUrl": "https://www.safahat.org/books/62575295/",
+      "verified": true,
+      "p": 1000,
+      "qid": "books-1000-918",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Bushi"
+      ]
+    }
+  ]
+}

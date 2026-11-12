@@ -1,0 +1,504 @@
+{
+  "id": "jujutsu",
+  "name": "Jujutsu Kaisen",
+  "icon": "👁️",
+  "style": "story",
+  "qs": [
+    {
+      "qid": "jujutsu-200-911",
+      "p": 200,
+      "q": "What is Panda, the talking student at Tokyo Jujutsu High, actually?",
+      "a": "A cursed corpse",
+      "alt": [
+        "Cursed corpse",
+        "Mutated cursed corpse"
+      ],
+      "topic": "Tokyo Jujutsu High",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/shibuyajihen.php",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "jujutsu-200-912",
+      "p": 200,
+      "q": "What is Gojo's inherited technique for manipulating space called?",
+      "a": "Limitless",
+      "alt": [],
+      "topic": "Abilities",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category6.php",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "jujutsu-200-913",
+      "p": 200,
+      "q": "Which inherited technique does Megumi use to summon shadow creatures?",
+      "a": "Ten Shadows Technique",
+      "alt": [
+        "Ten Shadows"
+      ],
+      "topic": "Abilities",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "jujutsu-200-914",
+      "p": 200,
+      "q": "Which childhood friend of Yuta becomes a cursed spirit bound to him?",
+      "a": "Rika Orimoto",
+      "alt": [
+        "Rika"
+      ],
+      "topic": "Curses",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen-movie.jp/character/",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "jujutsu-200-915",
+      "p": 200,
+      "q": "Which older sister of Megumi is struck by a mysterious curse?",
+      "a": "Tsumiki Fushiguro",
+      "alt": [
+        "Tsumiki"
+      ],
+      "topic": "Families",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category5.php",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "jujutsu-200-916",
+      "p": 200,
+      "q": "Which principal created Panda?",
+      "a": "Masamichi Yaga",
+      "alt": [
+        "Yaga"
+      ],
+      "topic": "Tokyo Jujutsu High",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/shibuyajihen.php",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "jujutsu-200-917",
+      "p": 200,
+      "q": "What is the real name of the student who remotely controls Mechamaru?",
+      "a": "Kokichi Muta",
+      "alt": [
+        "Muta"
+      ],
+      "topic": "Kyoto Jujutsu High",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category2.php",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "jujutsu-200-918",
+      "p": 200,
+      "q": "Which girl are Gojo and Geto assigned to protect before her merger with Tengen?",
+      "a": "Riko Amanai",
+      "alt": [
+        "Riko"
+      ],
+      "topic": "Sorcerers' past",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category6.php",
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "jujutsu-400-911",
+      "p": 400,
+      "q": "Which school doctor heals others using a reverse cursed technique?",
+      "a": "Shoko Ieiri",
+      "alt": [
+        "Shoko"
+      ],
+      "topic": "Tokyo Jujutsu High",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/shibuyajihen.php",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "jujutsu-400-912",
+      "p": 400,
+      "q": "Which eldest Death Painting brother considers Yuji his brother?",
+      "a": "Choso",
+      "alt": [],
+      "topic": "Families",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "jujutsu-400-913",
+      "p": 400,
+      "q": "By what nickname is Toji known when hired to assassinate the Star Plasma Vessel?",
+      "a": "Sorcerer Killer",
+      "alt": [
+        "The Sorcerer Killer"
+      ],
+      "topic": "Sorcerers' past",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category6.php",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "jujutsu-400-914",
+      "p": 400,
+      "q": "Which attack of Nobara transfers damage through a body fragment and a straw doll?",
+      "a": "Resonance",
+      "alt": [],
+      "topic": "Abilities",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Nobara_Kugisaki#Powers_and_abilities",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "jujutsu-400-915",
+      "p": 400,
+      "q": "Who uses a body-swapping technique and orchestrates the Culling Game while occupying Geto's body?",
+      "a": "Kenjaku",
+      "alt": [],
+      "topic": "The Culling Game",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "jujutsu-400-916",
+      "p": 400,
+      "q": "Which teacher supervises the Kyoto students and is deliberately annoyed by Gojo?",
+      "a": "Utahime Iori",
+      "alt": [
+        "Utahime"
+      ],
+      "topic": "Kyoto Jujutsu High",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category2.php",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "jujutsu-400-917",
+      "p": 400,
+      "q": "Which friend who left Nobara's village does Nobara hope to meet again?",
+      "a": "Saori",
+      "alt": [],
+      "topic": "Tokyo Jujutsu High",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Nobara_Kugisaki#In_Jujutsu_Kaisen",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "jujutsu-400-918",
+      "p": 400,
+      "q": "Which pop idol is Todo devoted to?",
+      "a": "Takada-chan",
+      "alt": [
+        "Takada"
+      ],
+      "topic": "Kyoto Jujutsu High",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category2.php",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "jujutsu-600-911",
+      "p": 600,
+      "q": "Who cares for Riko after her parents die during her childhood?",
+      "a": "Misato Kuroi",
+      "alt": [
+        "Kuroi"
+      ],
+      "topic": "Sorcerers' past",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category6.php",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "jujutsu-600-912",
+      "p": 600,
+      "q": "What device does Nanako Hasaba use for her cursed technique?",
+      "a": "A smartphone",
+      "alt": [
+        "Smartphone",
+        "Mobile phone"
+      ],
+      "topic": "Tools",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category4.php",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "jujutsu-600-913",
+      "p": 600,
+      "q": "Who is the twenty-sixth head of the Zenin clan?",
+      "a": "Naobito Zenin",
+      "alt": [
+        "Naobito"
+      ],
+      "topic": "Families",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category3.php",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "jujutsu-600-914",
+      "p": 600,
+      "q": "Which intermediary offers Toji the job of assassinating the Star Plasma Vessel?",
+      "a": "Shiu Kong",
+      "alt": [
+        "Kong Shiu"
+      ],
+      "topic": "Sorcerers' past",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category6.php",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "jujutsu-600-915",
+      "p": 600,
+      "q": "What is the shikigami that connects each participant to the Culling Game's rules called?",
+      "a": "Kogane",
+      "alt": [],
+      "topic": "The Culling Game",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "jujutsu-600-916",
+      "p": 600,
+      "q": "Which Culling Game player turns parts of his body into bombs?",
+      "a": "Iori Hazenoki",
+      "alt": [
+        "Hazenoki"
+      ],
+      "topic": "Abilities",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "jujutsu-600-917",
+      "p": 600,
+      "q": "Which Kyoto student is Akari Nitta's younger brother?",
+      "a": "Arata Nitta",
+      "alt": [
+        "Arata"
+      ],
+      "topic": "Kyoto Jujutsu High",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category2.php",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "jujutsu-600-918",
+      "p": 600,
+      "q": "What is the special-grade cockroach curse in Sendai Colony called?",
+      "a": "Kurourushi",
+      "alt": [],
+      "topic": "The Culling Game",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "jujutsu-800-911",
+      "p": 800,
+      "q": "Which constellation inspires the arrangement of stars in Kirara's technique?",
+      "a": "The Southern Cross",
+      "alt": [
+        "Southern Cross",
+        "Crux"
+      ],
+      "topic": "Abilities",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "jujutsu-800-912",
+      "p": 800,
+      "q": "Which former commander of a Fujiwara assassination squad manipulates the sky?",
+      "a": "Takako Uro",
+      "alt": [
+        "Uro"
+      ],
+      "topic": "Sorcerers' past",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "The Culling Game",
+      "q": "Which Sendai fighter fires Granite Blast from his hair?",
+      "a": "Ryu Ishigori",
+      "alt": [
+        "Ishigori"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-800-913",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Tokyo Jujutsu High",
+      "q": "Which protégé of Nanami covers his face to summon four auspicious beasts?",
+      "a": "Takuma Ino",
+      "alt": [
+        "Ino"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Abilities",
+      "q": "Which sorcerer controls crows and shares their sight?",
+      "a": "Mei Mei",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Beginnings",
+      "q": "Which former classmate of Yuji asks Nobara about him after moving to Tokyo?",
+      "a": "Yuko Ozawa",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Kyoto Jujutsu High",
+      "q": "What musical instrument does the Kyoto principal use to project cursed energy?",
+      "a": "An electric guitar",
+      "alt": [
+        "Guitar",
+        "Electric guitar"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Sorcerers' past",
+      "q": "Who trains Yuta in Africa after the events of Jujutsu Kaisen 0?",
+      "a": "Miguel",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "The Culling Game",
+      "q": "Who turns receipts into actual objects during the Culling Game?",
+      "a": "Reggie Star",
+      "alt": [
+        "Reggie"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "The Culling Game",
+      "q": "Which manga artist fights Hakari with a pen-shaped spear?",
+      "a": "Charles Bernard",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Families",
+      "q": "What is the name of Yuji's mother whose body was taken over by the body-swapping sorcerer?",
+      "a": "Kaori Itadori",
+      "alt": [
+        "Kaori"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Beginnings",
+      "q": "What is the name of Junpei's mother, killed after a Sukuna finger is placed in her home?",
+      "a": "Nagi Yoshino",
+      "alt": [
+        "Nagi"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Tokyo Jujutsu High",
+      "q": "What is the name of the cursed corpse made using soul information from Kusakabe's nephew?",
+      "a": "Takeru",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Sorcerers' past",
+      "q": "Which elderly woman summons Toji into her grandson's body in Shibuya?",
+      "a": "Ogami",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Abilities",
+      "q": "Which curse user has a technique that weakens powerful attacks directed at him?",
+      "a": "Jiro Awasaka",
+      "alt": [
+        "Awasaka"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Tools",
+      "q": "What tool does the African fighter use to disrupt Gojo's technique in Jujutsu Kaisen 0?",
+      "a": "Black Rope",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    }
+  ]
+}

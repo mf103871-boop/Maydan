@@ -6,7 +6,7 @@
 .ers-board.is-panning { cursor:grab; }
 .ers-board.is-panning:active { cursor:grabbing; }
 .ers-camera-controls { display:none; }
-.ers-camera-hint { position:absolute; bottom:8px; left:50%; transform:translateX(-50%); max-width:calc(100% - 16px); padding:5px 10px; border:1px solid #a9c9c0; border-radius:20px; background:#f1fff8e8; color:#386f65; font-size:.72rem; text-align:center; pointer-events:none; }
+.ers-camera-hint { position:absolute; bottom:8px; left:50%; transform:translateX(-50%); max-width:calc(100% - 16px); padding:5px 10px; border:1px solid #a9c9c0; border-radius:20px; background:#f1fff8e8; color:#386f65; font-size:.875rem; text-align:center; pointer-events:none; }
 .ers-tools-more { display:none; }
 .ers-focus-toggle,.ers-rotate-toggle { min-width:44px; min-height:44px; padding:6px; flex:none; }
 .ers-focus-toggle .ers-focus-label { display:none; }
@@ -27,7 +27,7 @@ body:has(.ersomha.is-drawing-focus) { overflow:hidden; }
 .ersomha.is-drawing-focus .ers-match-header { grid-column:1; min-height:44px; gap:6px; margin:0; }
 html[data-call-dock-active] .ersomha.is-drawing-focus .ers-match-header { padding-right:56px; }
 .ersomha.is-drawing-focus .ers-match-header h1 { font-size:clamp(1rem,3.5vw,1.3rem); line-height:1.2; margin:1px 0!important; }
-.ersomha.is-drawing-focus .ers-eyebrow { font-size:.61rem; line-height:1.2; }
+.ersomha.is-drawing-focus .ers-eyebrow { font-size:.875rem; line-height:1.2; }
 .ersomha.is-drawing-focus .ers-turn { display:none; }
 .ersomha.is-drawing-focus .ers-focus-toggle,.ersomha.is-drawing-focus .ers-rotate-toggle { width:44px; padding:0; }
 .ersomha.is-drawing-focus .ers-word-banner,.ersomha.is-drawing-focus .ers-play-aside { display:none!important; }
@@ -51,7 +51,7 @@ html[data-call-dock-active] .ersomha.is-drawing-focus .ers-match-header { paddin
 .ersomha.is-drawing-focus .ers-colours { grid-column:auto; grid-row:auto; display:grid; grid-template-columns:repeat(6,minmax(44px,1fr)); }
 .ersomha.is-drawing-focus .ers-widths { grid-column:auto; grid-row:auto; display:flex; gap:4px; }
 .ersomha.is-drawing-focus .ers-widths button { min-width:44px; min-height:44px; }
-.ersomha.is-drawing-focus .ers-canvas-note { margin:0; padding:4px; font-size:.72rem; line-height:1.3; }
+.ersomha.is-drawing-focus .ers-canvas-note { margin:0; padding:4px; font-size:.875rem; line-height:1.3; }
 .ersomha.is-drawing-focus .ers-pause { position:absolute; bottom:max(8px,env(safe-area-inset-bottom)); left:8px; right:8px; margin:0; pointer-events:none; }
 
 @media(orientation:landscape) {
@@ -77,4 +77,68 @@ html[data-call-dock-active] .ersomha.is-drawing-focus .ers-match-header { paddin
   .ersomha.is-drawing-focus .ers-camera-controls { grid-column:1/-1; grid-row:3; display:grid; grid-template-columns:repeat(2,44px); gap:4px; }
   .ersomha.is-drawing-focus .ers-camera-controls .btn { width:44px; min-width:44px; min-height:44px; padding:0; }
   .ersomha.is-drawing-focus .ers-tools-more { grid-column:2; grid-row:1; align-self:end; display:flex; width:44px; min-width:44px; height:44px; min-height:44px; padding:0; }
+}
+/* Playful Studio: calm paper, clear tools, and 48px touch targets.
+   Camera coordinates, paper geometry, private words, and ink colors stay owned
+   by the drawing component. */
+.ersomha {
+  --ers-ink:var(--text,#352139);
+  --ers-teal:var(--primary,#08796d);
+  --ers-purple:#76518d;
+  color:var(--ers-ink);
+}
+.ersomha:not(.is-drawing-focus) .ers-match-header {
+  padding:12px; border:1px solid var(--stroke); border-radius:20px;
+  background:var(--surface,#fffdf9); box-shadow:var(--shadow-row);
+}
+.ersomha .ers-match-header h1 { color:var(--ers-ink); font-weight:800; }
+.ersomha :is(.ers-eyebrow,.ers-turn,.ers-small,.ers-canvas-note) { color:var(--muted,#705f70); }
+.ersomha .ers-word-banner { background:#eee3f5; border-color:#d9cbe0; border-radius:18px; }
+.ersomha .ers-word-banner.is-known { background:#e2f3ed; border-color:#afd3c7; }
+.ersomha .ers-timer,.ersomha.is-drawing .ers-timer {
+  width:56px; height:56px; min-width:56px; min-height:56px;
+  background:conic-gradient(#08796d var(--ers-timer-angle),#dcece5 0);
+}
+.ersomha .ers-timer>span { background:#fffdf9; color:#352139; }
+.ersomha .ers-timer small { line-height:1; }
+.ersomha .ers-timer.is-urgent { background:conic-gradient(#b43a45 var(--ers-timer-angle),#ffe7de 0); }
+.ersomha .ers-board-wrap { border-color:#d8cad9; border-radius:20px; box-shadow:0 3px 0 #e5d9df,0 8px 20px #3521390a; }
+.ersomha .ers-board-status { background:#fffdf9eb; backdrop-filter:none; }
+.ersomha .ers-guess { background:#fffdf9; border-color:#d8cad9; border-radius:20px; box-shadow:var(--shadow-row); }
+.ersomha .ers-guess input { min-height:48px; color:#352139; }
+.ersomha .ers-guess .btn { min-height:48px; }
+.ersomha .ers-guesses { background:#fffdf9; border-color:#e2d5df; border-radius:20px; }
+.ersomha .ers-players li { background:#fffdf9; border-color:#e2d5df; border-radius:16px; }
+.ersomha .ers-players li.is-drawer { background:#eee3f5; border-color:#c8add8; }
+.ersomha .ers-players li.has-guessed { background:#e2f3ed; border-color:#afd3c7; }
+.ersomha .ers-word-choices>button { border-radius:20px; min-height:76px; padding:12px; }
+.ersomha .ers-word-choices>button strong { font-size:20px; }
+.ersomha :is(.ers-focus-toggle,.ers-rotate-toggle,.ers-header-report,.ers-report),
+.ersomha .ers-play-aside>summary { min-width:48px; min-height:48px; }
+.ersomha.is-drawing-focus { background:var(--bg,#fff8f0); }
+.ersomha.is-drawing-focus .ers-match-header { min-height:56px; }
+.ersomha.is-drawing-focus :is(.ers-focus-toggle,.ers-rotate-toggle) { width:48px; min-width:48px; min-height:48px; }
+.ersomha.is-drawing-focus .ers-eyebrow { font-size:14px; line-height:1.3; }
+.ersomha.is-drawing-focus .ers-tools .btn,
+.ersomha.is-drawing-focus .ers-widths button,
+.ersomha.is-drawing-focus .ers-colour { min-width:48px; min-height:48px; }
+.ersomha.is-drawing-focus .ers-colours { grid-template-columns:repeat(6,minmax(48px,1fr)); }
+.ersomha .ers-camera-hint { color:#352139; background:#fffdf9ed; border-color:#bfd6cc; }
+.ersomha .ers-pause { color:#352139; background:#fff0d4; border-color:#dbbd79; box-shadow:var(--shadow-row); }
+@media(orientation:landscape) {
+  .ersomha.is-drawing-focus .ers-canvas-panel { grid-template-columns:104px minmax(0,1fr); }
+  .ersomha.is-drawing-focus .ers-tools { width:104px; grid-template-columns:48px 48px; grid-template-rows:96px 96px 48px; gap:4px; }
+  .ersomha.is-drawing-focus .ers-tool-row,
+  .ersomha.is-drawing-focus .ers-colours,
+  .ersomha.is-drawing-focus .ers-camera-controls { grid-template-columns:repeat(2,48px); }
+  .ersomha.is-drawing-focus .ers-tool-row .btn,
+  .ersomha.is-drawing-focus .ers-camera-controls .btn,
+  .ersomha.is-drawing-focus .ers-tools-more { width:48px; min-width:48px; height:48px; min-height:48px; }
+}
+/* The landscape toolbar keeps the same 48px touch geometry as portrait. */
+@media (orientation: landscape) and (max-height: 600px) {
+  .ersomha.is-drawing:not(.is-drawing-focus) .ers-tools { grid-template-columns: 240px 144px; gap: 4px; }
+  .ersomha.is-drawing:not(.is-drawing-focus) .ers-tool-row { grid-template-columns: repeat(5,48px); }
+  .ersomha.is-drawing:not(.is-drawing-focus) .ers-tool-row .btn,
+  .ersomha.is-drawing:not(.is-drawing-focus) .ers-widths button { width:48px; min-width:48px; min-height:48px; }
 }

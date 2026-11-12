@@ -1,0 +1,506 @@
+{
+  "id": "arabmusic",
+  "name": "Arabic Music",
+  "icon": "🎵",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "Egyptian songs",
+      "q": "Which singer recorded Sidi Wisalak?",
+      "a": "Angham",
+      "sourceUrl": "https://music.apple.com/us/song/770937661",
+      "qid": "arabmusic-200-911",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "alt": []
+    },
+    {
+      "p": 200,
+      "topic": "Egyptian songs",
+      "q": "Which Egyptian shaabi singer recorded Ya Helw El-Malamih?",
+      "a": "Ahmed Adaweya",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/accordion.php",
+      "qid": "arabmusic-200-912",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "alt": [
+        "Ahmad Adawiya"
+      ]
+    },
+    {
+      "p": 200,
+      "topic": "Maghreb music",
+      "q": "Which singer released the album Youm Wara Youm?",
+      "a": "Samira Said",
+      "sourceUrl": "https://music.apple.com/us/album/youm-wara-youm/771786474",
+      "qid": "arabmusic-200-913",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "alt": []
+    },
+    {
+      "p": 200,
+      "topic": "Levantine songs",
+      "q": "Which Palestinian singer won Arab Idol in 2013?",
+      "a": "Mohammed Assaf",
+      "sourceUrl": "https://www.unrwa.org/newsroom/press-releases/unrwa-commissioner-general-welcomes-singer-mohammad-assaf-unrwa-headquarters",
+      "qid": "arabmusic-200-914",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "alt": [
+        "Mohammad Assaf"
+      ]
+    },
+    {
+      "p": 200,
+      "topic": "Musical collaborations",
+      "q": "Which singer joined the performer of Nour El Ain on Al-Qahira?",
+      "a": "Mohamed Mounir",
+      "sourceUrl": "https://amrdiab.net/biography/",
+      "qid": "arabmusic-200-915",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "alt": [
+        "Muhammad Mounir"
+      ]
+    },
+    {
+      "p": 200,
+      "topic": "Maghreb music",
+      "q": "Which Algerian musical genre made the performer of Didi famous?",
+      "a": "Raï",
+      "sourceUrl": "https://universalmusic.fr/artistes/20000129953",
+      "alt": [
+        "Rai"
+      ],
+      "qid": "arabmusic-200-916",
+      "difficultyTarget": 0.8,
+      "verified": true
+    },
+    {
+      "p": 200,
+      "topic": "Vocal and instrumental forms",
+      "q": "What is a solo instrumental improvisation exploring a maqam called?",
+      "a": "Taqsim",
+      "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
+      "alt": [
+        "Taksim"
+      ],
+      "qid": "arabmusic-200-917",
+      "difficultyTarget": 0.8,
+      "verified": true
+    },
+    {
+      "p": 200,
+      "topic": "Instruments and performers",
+      "q": "What does a musician use to pluck an oud's strings instead of a bow?",
+      "a": "Plectrum",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/oud.php",
+      "alt": [
+        "Risha",
+        "Pick"
+      ],
+      "qid": "arabmusic-200-918",
+      "difficultyTarget": 0.8,
+      "verified": true
+    },
+    {
+      "p": 400,
+      "topic": "Maghreb music",
+      "q": "Which Algerian artist released the album Raoui?",
+      "a": "Souad Massi",
+      "sourceUrl": "https://souad-massi.com/en/biography/",
+      "qid": "arabmusic-400-911",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "alt": []
+    },
+    {
+      "p": 400,
+      "topic": "Maghreb music",
+      "q": "Which Algerian singer recorded the Amazigh song A Vava Inouva?",
+      "a": "Idir",
+      "sourceUrl": "https://universalmusic.fr/artistes/20000129953",
+      "alt": [],
+      "qid": "arabmusic-400-912",
+      "difficultyTarget": 0.6,
+      "verified": true
+    },
+    {
+      "p": 400,
+      "topic": "Composition",
+      "q": "Who composed Sa'alouni El-Nas for Fairuz?",
+      "a": "Ziad Rahbani",
+      "sourceUrl": "https://oe1.orf.at/programm/20251005/809921/Ziad-Rahbani-Nicht-nur-der-Sohn",
+      "qid": "arabmusic-400-913",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "alt": []
+    },
+    {
+      "p": 400,
+      "topic": "Composition",
+      "q": "Who composed Ana Fi Intizarak for Umm Kulthum?",
+      "a": "Zakariyya Ahmad",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/qanun.php",
+      "qid": "arabmusic-400-914",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "alt": [
+        "Zakaria Ahmed"
+      ]
+    },
+    {
+      "p": 400,
+      "topic": "Levantine songs",
+      "q": "Which singer made the famous recording of Ya Toyour composed by al-Qasabji?",
+      "a": "Asmahan",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "alt": [],
+      "qid": "arabmusic-400-915",
+      "difficultyTarget": 0.6,
+      "verified": true
+    },
+    {
+      "p": 400,
+      "topic": "Maqams and rhythms",
+      "q": "What common four-beat Arabic rhythm is heard in Daret El-Ayyam?",
+      "a": "Maqsum",
+      "sourceUrl": "https://www.maqamworld.com/en/iqaa/maqsum.php",
+      "alt": [
+        "Maksum"
+      ],
+      "qid": "arabmusic-400-916",
+      "difficultyTarget": 0.6,
+      "verified": true
+    },
+    {
+      "p": 400,
+      "topic": "Instruments and performers",
+      "q": "What small brass cymbals are attached to a performer's fingers to mark rhythm?",
+      "a": "Sagat",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/sagat.php",
+      "alt": [
+        "Finger cymbals",
+        "Zills"
+      ],
+      "qid": "arabmusic-400-917",
+      "difficultyTarget": 0.6,
+      "verified": true
+    },
+    {
+      "p": 400,
+      "topic": "Vocal and instrumental forms",
+      "q": "What short vocal form alternates verses with a recurring refrain?",
+      "a": "Taqtuqa",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "alt": [
+        "Taqtouqa"
+      ],
+      "qid": "arabmusic-400-918",
+      "difficultyTarget": 0.6,
+      "verified": true
+    },
+    {
+      "p": 600,
+      "topic": "Maghreb music",
+      "q": "Which Algerian singer recorded the original Ya Rayah?",
+      "a": "Dahmane El Harrachi",
+      "sourceUrl": "https://www.imarabe.org/fr/agenda/spectacles/hommage-el-hadj-m-hamed-el-anka-et-dahmane-el-harrachi",
+      "alt": [],
+      "qid": "arabmusic-600-911",
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "p": 600,
+      "topic": "Maghreb music",
+      "q": "Which Moroccan band is the subject of the music documentary Al-Hal?",
+      "a": "Nass El Ghiwane",
+      "sourceUrl": "https://www.film-foundation.org/trances-kj",
+      "qid": "arabmusic-600-912",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "alt": []
+    },
+    {
+      "p": 600,
+      "topic": "Composition",
+      "q": "Who composed Hayrana Leih for Leila Mourad?",
+      "a": "Dawood Hosni",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "alt": [
+        "Daoud Hosni"
+      ],
+      "qid": "arabmusic-600-913",
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "p": 600,
+      "topic": "Composition",
+      "q": "Who wrote the words to Sa'alouni El-Nas for Fairuz?",
+      "a": "Mansour Rahbani",
+      "sourceUrl": "https://dokanbach.com/product/saalouny-elnas-%D8%B3%D8%A7%D9%84%D9%88%D9%86%D9%8A-%D8%A7%D9%84%D9%86%D8%A7%D8%B3/",
+      "qid": "arabmusic-600-914",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "alt": []
+    },
+    {
+      "p": 600,
+      "topic": "Maqams and rhythms",
+      "q": "In which maqam did al-Qasabji compose his instrumental Zikrayati?",
+      "a": "Nahawand",
+      "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
+      "alt": [
+        "Nahawend"
+      ],
+      "qid": "arabmusic-600-915",
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "p": 600,
+      "topic": "Instruments and performers",
+      "q": "Which Syrian violinist was known as the Prince of the Violin?",
+      "a": "Sami al-Shawwa",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/violin.php",
+      "qid": "arabmusic-600-916",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "alt": [
+        "Sami Shawa"
+      ]
+    },
+    {
+      "p": 600,
+      "topic": "Vocal and instrumental forms",
+      "q": "What seven-verse mawwal is also called sab'awi?",
+      "a": "Baghdadi mawwal",
+      "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
+      "alt": [
+        "Mawwal Baghdadi"
+      ],
+      "qid": "arabmusic-600-917",
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "p": 600,
+      "topic": "Vocal and instrumental forms",
+      "q": "What short repeating instrumental introduction presents a maqam before the singing begins?",
+      "a": "Dulab",
+      "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
+      "alt": [
+        "Doulab"
+      ],
+      "qid": "arabmusic-600-918",
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "p": 800,
+      "topic": "Composition",
+      "q": "Who composed the muwashshah Mala al-Kasat?",
+      "a": "Muhammad Uthman",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "qid": "arabmusic-800-911",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "alt": [
+        "Mohamed Osman"
+      ]
+    },
+    {
+      "p": 800,
+      "topic": "Composition",
+      "q": "Who composed the Sama'i Hijazkar Kurd that uses the jurjina rhythm in its fourth section?",
+      "a": "Ruhi al-Khammash",
+      "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
+      "qid": "arabmusic-800-912",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "alt": [
+        "Rouhi al-Khammash"
+      ]
+    },
+    {
+      "p": 800,
+      "topic": "Instruments and performers",
+      "q": "Which Egyptian nay player was a member of the Diamond Ensemble and a noted teacher of the instrument?",
+      "a": "Mahmoud Effat",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/nay.php",
+      "qid": "arabmusic-800-913",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "alt": [
+        "Mahmud Iffat"
+      ]
+    },
+    {
+      "p": 800,
+      "topic": "Instruments and performers",
+      "q": "Which pioneering Egyptian organist played alongside Hany Mehanna in Qari'at al-Finjan?",
+      "a": "Magdi al-Husseini",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/org.php",
+      "qid": "arabmusic-800-914",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "alt": [
+        "Magdy El-Hosseiny"
+      ]
+    },
+    {
+      "p": 800,
+      "topic": "Vocal and instrumental forms",
+      "q": "What fast instrumental form of Ottoman origin includes al-Sunbati's Farahfaza?",
+      "a": "Longa",
+      "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
+      "alt": [],
+      "qid": "arabmusic-800-915",
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "p": 800,
+      "topic": "Musical collaborations",
+      "q": "Which Greek singer joined the performer of Nour El Ain for Bahebak Aktar?",
+      "a": "Angela Dimitriou",
+      "sourceUrl": "https://amrdiab.net/biography/",
+      "alt": [],
+      "qid": "arabmusic-800-916",
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Egyptian songs",
+      "q": "What was the title of Amr Diab's first album?",
+      "a": "Ya Tareeq",
+      "sourceUrl": "https://amrdiab.net/biography/",
+      "verified": true,
+      "p": 800,
+      "qid": "arabmusic-800-917",
+      "difficultyTarget": 0.25,
+      "alt": [
+        "Ya Tariq"
+      ]
+    },
+    {
+      "p": 800,
+      "topic": "Maqams and rhythms",
+      "q": "What ten-beat rhythm underlies the first three sections of a sama'i?",
+      "a": "Sama'i thaqil",
+      "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
+      "alt": [
+        "Samai thaqil"
+      ],
+      "qid": "arabmusic-800-918",
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "Composition",
+      "q": "Who composed the Sama'i Kurd known for its long instrumental introduction?",
+      "a": "Abdo Dagher",
+      "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabmusic-1000-911",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Abdu Dagher"
+      ]
+    },
+    {
+      "topic": "Composition",
+      "q": "Which Egyptian oud player composed a Sama'i Rast recorded by the Tunisian Radio Ensemble?",
+      "a": "Georges Michel",
+      "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabmusic-1000-912",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "George Michel"
+      ]
+    },
+    {
+      "topic": "Instruments and performers",
+      "q": "Which Diamond Ensemble percussionist exchanges solos with the organ in Qari'at al-Finjan?",
+      "a": "Hassan Anwar",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/riqq.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabmusic-1000-913",
+      "difficultyTarget": 0.15,
+      "alt": []
+    },
+    {
+      "topic": "Instruments and performers",
+      "q": "Which violinist led Sabah's ensemble in a Kuwait recording of Marhabtein?",
+      "a": "Aboud Abdel Aal",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/buzuq.php",
+      "alt": [
+        "Abboud Abdul Al"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "arabmusic-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Vocal and instrumental forms",
+      "q": "What short instrumental form in triple meter includes al-Shawwa's Bayati piece?",
+      "a": "Darij",
+      "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
+      "alt": [
+        "Darej"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "arabmusic-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "Vocal and instrumental forms",
+      "q": "What is a suite that introduces a maqam, continues through several forms, and usually ends with lighter songs called?",
+      "a": "Wasla",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabmusic-1000-916",
+      "difficultyTarget": 0.15,
+      "alt": [
+        "Waslah"
+      ]
+    },
+    {
+      "p": 1000,
+      "topic": "Maghreb music",
+      "q": "What joint album paired the singer of Didi with musician Safy Boutella?",
+      "a": "Kutché",
+      "sourceUrl": "https://universalmusic.fr/artistes/20000129953",
+      "alt": [
+        "Kutche"
+      ],
+      "qid": "arabmusic-1000-917",
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "Maghreb music",
+      "q": "Which album by the Algerian singer of Raoui sets texts by al-Mutanabbi and al-Shabbi, among others?",
+      "a": "El Mutakallimun",
+      "sourceUrl": "https://souad-massi.com/en/biography/",
+      "alt": [
+        "Al-Mutakallimun",
+        "Masters of the Word"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "arabmusic-1000-918",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

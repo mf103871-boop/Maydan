@@ -1,0 +1,982 @@
+{
+  "id": "placefinder",
+  "name": "Landmark Finder",
+  "icon": "📍",
+  "defaultType": "image",
+  "qs": [
+    {
+      "p": 200,
+      "q": "What is the name of the tower in the picture?",
+      "a": "Eiffel Tower",
+      "qid": "placefinder-200-901",
+      "type": "image",
+      "effect": "none",
+      "alt": [],
+      "topic": "Western Europe",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-200-901.webp",
+        "type": "image",
+        "title": "Tour Eiffel Wikimedia Commons.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons.jpg",
+        "author": "Benh LIEU SONG",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 200,
+      "q": "What is the name of this tower?",
+      "a": "Leaning Tower of Pisa",
+      "qid": "placefinder-200-902",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Tower of Pisa"
+      ],
+      "topic": "Southern Europe",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-200-902.webp",
+        "type": "image",
+        "title": "Campanile Dôme - Pise (IT52) - 2022-08-31 - 20.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Campanile_D%C3%B4me_-_Pise_(IT52)_-_2022-08-31_-_20.jpg",
+        "author": "Chabe01",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 200,
+      "q": "What is the name of this skyscraper?",
+      "a": "Burj Khalifa",
+      "qid": "placefinder-200-903",
+      "type": "image",
+      "effect": "none",
+      "alt": [],
+      "topic": "Arab world",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-200-903.webp",
+        "type": "image",
+        "title": "Dubai skyline 2015 (crop).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dubai_skyline_2015_(crop).jpg",
+        "author": "Tim.Reckmann",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 200,
+      "q": "What is this group of pyramids called?",
+      "a": "Pyramids of Giza",
+      "qid": "placefinder-200-904",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Giza pyramids"
+      ],
+      "topic": "Arab world",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-200-904.webp",
+        "type": "image",
+        "title": "All Gizah Pyramids.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:All_Gizah_Pyramids.jpg",
+        "author": "Ricardo Liberato",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 200,
+      "q": "What is this landmark stretching over the hills called?",
+      "a": "Great Wall of China",
+      "qid": "placefinder-200-905",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Great Wall"
+      ],
+      "topic": "East Asia",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-200-905.webp",
+        "type": "image",
+        "title": "The Great Wall of China at Jinshanling-edit.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Great_Wall_of_China_at_Jinshanling-edit.jpg",
+        "author": "Severin.stalder",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 200,
+      "q": "What is the name of this landmark?",
+      "a": "Taj Mahal",
+      "qid": "placefinder-200-906",
+      "type": "image",
+      "effect": "none",
+      "alt": [],
+      "topic": "South and Southeast Asia",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-200-906.webp",
+        "type": "image",
+        "title": "Taj Mahal, Agra, India edit3.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Taj_Mahal,_Agra,_India_edit3.jpg",
+        "author": "Taj_Mahal,_Agra,_India_edit2.jpg :  Yann ; edited by  King of Hearts  \n derivative work:  Jbarta  (  talk  )",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 200,
+      "q": "What is this statue called?",
+      "a": "Statue of Liberty",
+      "qid": "placefinder-200-907",
+      "type": "image",
+      "effect": "none",
+      "alt": [],
+      "topic": "The Americas",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-200-907.webp",
+        "type": "image",
+        "title": "Statue of Liberty and a sightseeing boat, Liberty Island, New York.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Statue_of_Liberty_and_a_sightseeing_boat,_Liberty_Island,_New_York.jpg",
+        "author": "Christian David",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 200,
+      "q": "What is the name of the building in the picture?",
+      "a": "Sydney Opera House",
+      "qid": "placefinder-200-908",
+      "type": "image",
+      "effect": "none",
+      "alt": [],
+      "topic": "Oceania",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-200-908.webp",
+        "type": "image",
+        "title": "00 1375 Sydney Opera House (Australia).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:00_1375_Sydney_Opera_House_(Australia).jpg",
+        "author": "W. Bulach",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 400,
+      "q": "What is this ancient amphitheater called?",
+      "a": "Colosseum",
+      "qid": "placefinder-400-901",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Flavian Amphitheatre"
+      ],
+      "topic": "Southern Europe",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-400-901.webp",
+        "type": "image",
+        "title": "Colosseum in Rome, Italy - April 2007.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Colosseum_in_Rome,_Italy_-_April_2007.jpg",
+        "author": "Diliff",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 400,
+      "q": "Which ancient city contains this facade?",
+      "a": "Petra",
+      "qid": "placefinder-400-902",
+      "type": "image",
+      "effect": "none",
+      "alt": [],
+      "topic": "Arab world",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-400-902.webp",
+        "type": "image",
+        "title": "Petra Treasury.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Petra_Treasury.jpg",
+        "author": "David Bjorgen",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 400,
+      "q": "What is the name of the bridge in the picture?",
+      "a": "Tower Bridge",
+      "qid": "placefinder-400-903",
+      "type": "image",
+      "effect": "none",
+      "alt": [],
+      "topic": "Western Europe",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-400-903.webp",
+        "type": "image",
+        "title": "London - London Tower Bridge - 140806 171049.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:London_-_London_Tower_Bridge_-_140806_171049.jpg",
+        "author": "Barcex",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 400,
+      "q": "What is this suspension bridge called?",
+      "a": "Golden Gate Bridge",
+      "qid": "placefinder-400-904",
+      "type": "image",
+      "effect": "none",
+      "alt": [],
+      "topic": "The Americas",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-400-904.webp",
+        "type": "image",
+        "title": "Golden gate2.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Golden_gate2.jpg",
+        "author": "Aslak Raanes  from Trondheim, Norway",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 400,
+      "q": "What is this statue called?",
+      "a": "Christ the Redeemer",
+      "qid": "placefinder-400-905",
+      "type": "image",
+      "effect": "none",
+      "alt": [],
+      "topic": "The Americas",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-400-905.webp",
+        "type": "image",
+        "title": "Christ the Redeemer - Cristo Redentor.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Christ_the_Redeemer_-_Cristo_Redentor.jpg",
+        "author": "Arne Müseler",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review.",
+        "licenseJurisdiction": "DE"
+      }
+    },
+    {
+      "p": 400,
+      "q": "Which museum's courtyard is shown?",
+      "a": "Louvre Museum",
+      "qid": "placefinder-400-906",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Louvre"
+      ],
+      "topic": "Western Europe",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-400-906.webp",
+        "type": "image",
+        "title": "Cour Napoléon at night - Louvre.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cour_Napol%C3%A9on_at_night_-_Louvre.jpg",
+        "author": "Benh LIEU SONG",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 400,
+      "q": "What is the name of the mountain in the picture?",
+      "a": "Mount Fuji",
+      "qid": "placefinder-400-907",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Fuji",
+        "Fujisan"
+      ],
+      "topic": "East Asia",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-400-907.webp",
+        "type": "image",
+        "title": "Kodaki fuji frm shojinko refurb.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kodaki_fuji_frm_shojinko_refurb.jpg",
+        "author": "名古屋太郎, (edited by  Hannes_24 )",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 400,
+      "q": "What is the name of this temple?",
+      "a": "Abu Simbel",
+      "qid": "placefinder-400-908",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Abu Simbel temples"
+      ],
+      "topic": "Arab world",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-400-908.webp",
+        "type": "image",
+        "title": "Großer Tempel (Abu Simbel) 31.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gro%C3%9Fer_Tempel_(Abu_Simbel)_31.jpg",
+        "author": "Olaf Tausch",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 600,
+      "q": "What is the name of this ancient city?",
+      "a": "Machu Picchu",
+      "qid": "placefinder-600-901",
+      "type": "image",
+      "effect": "none",
+      "alt": [],
+      "topic": "The Americas",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-600-901.webp",
+        "type": "image",
+        "title": "Machu Picchu, 2023 (012).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Machu_Picchu,_2023_(012).jpg",
+        "author": "Draceane",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 600,
+      "q": "Which archaeological site contains this pyramid?",
+      "a": "Chichen Itza",
+      "qid": "placefinder-600-902",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Chichén Itzá"
+      ],
+      "topic": "The Americas",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-600-902.webp",
+        "type": "image",
+        "title": "Chichen Itza 3.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chichen_Itza_3.jpg",
+        "author": "Daniel Schwen",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 600,
+      "q": "What is this stone monument called?",
+      "a": "Stonehenge",
+      "qid": "placefinder-600-903",
+      "type": "image",
+      "effect": "none",
+      "alt": [],
+      "topic": "Western Europe",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-600-903.webp",
+        "type": "image",
+        "title": "Stonehenge, Salisbury retouched.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stonehenge,_Salisbury_retouched.jpg",
+        "author": "Operarius",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 600,
+      "q": "What is this gate called?",
+      "a": "Brandenburg Gate",
+      "qid": "placefinder-600-904",
+      "type": "image",
+      "effect": "none",
+      "alt": [],
+      "topic": "Central and Northern Europe",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-600-904.webp",
+        "type": "image",
+        "title": "Brandenburger Tor morgens.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brandenburger_Tor_morgens.jpg",
+        "author": "Thomas Wolf  ,   www.foto-tw.de",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 600,
+      "q": "What is the name of the church in the picture?",
+      "a": "Sagrada Familia",
+      "qid": "placefinder-600-905",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Sagrada Família"
+      ],
+      "topic": "Southern Europe",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-600-905.webp",
+        "type": "image",
+        "title": "Σαγράδα Φαμίλια 2941.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%CE%A3%CE%B1%CE%B3%CF%81%CE%AC%CE%B4%CE%B1_%CE%A6%CE%B1%CE%BC%CE%AF%CE%BB%CE%B9%CE%B1_2941.jpg",
+        "author": "C messier",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 600,
+      "q": "What is the name of this temple?",
+      "a": "Angkor Wat",
+      "qid": "placefinder-600-906",
+      "type": "image",
+      "effect": "none",
+      "alt": [],
+      "topic": "South and Southeast Asia",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-600-906.webp",
+        "type": "image",
+        "title": "Angkor Wat W-Seite.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Angkor_Wat_W-Seite.jpg",
+        "author": "Manfred Werner  ( talk    ·    contribs )",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 600,
+      "q": "What is the name of this imperial complex?",
+      "a": "Temple of Heaven",
+      "qid": "placefinder-600-907",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Tiantan"
+      ],
+      "topic": "East Asia",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-600-907.webp",
+        "type": "image",
+        "title": "Temple of Heaven 20160323 01.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Temple_of_Heaven_20160323_01.jpg",
+        "author": "Shujianyang",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 600,
+      "q": "What is this mosque called?",
+      "a": "Hassan II Mosque",
+      "qid": "placefinder-600-908",
+      "type": "image",
+      "effect": "none",
+      "alt": [],
+      "topic": "Arab world",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-600-908.webp",
+        "type": "image",
+        "title": "Sunshine on mosque Hassan II in Casablanca, Morocco - Flickr - Milamber's portfolio.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sunshine_on_mosque_Hassan_II_in_Casablanca,_Morocco_-_Flickr_-_Milamber%27s_portfolio.jpg",
+        "author": "Milamber's portfolio",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 800,
+      "q": "What is the name of this castle?",
+      "a": "Neuschwanstein Castle",
+      "qid": "placefinder-800-901",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Neuschwanstein"
+      ],
+      "topic": "Central and Northern Europe",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-800-901.webp",
+        "type": "image",
+        "title": "Schloss Neuschwanstein 2013.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Schloss_Neuschwanstein_2013.jpg",
+        "author": "Thomas Wolf  ,   www.foto-tw.de",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review.",
+        "licenseJurisdiction": "DE"
+      }
+    },
+    {
+      "p": 800,
+      "q": "Which palace contains this courtyard?",
+      "a": "Alhambra",
+      "qid": "placefinder-800-902",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Alhambra Palace"
+      ],
+      "topic": "Southern Europe",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-800-902.webp",
+        "type": "image",
+        "title": "Court of the lions .jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Court_of_the_lions_.jpg",
+        "author": "ZAINEB HACHAMI",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Cropped to normalized bounds [0.15, 0.25, 1, 0.8]; resized and converted to WebP; architectural content not altered."
+      }
+    },
+    {
+      "p": 800,
+      "q": "What is the name of this temple?",
+      "a": "Borobudur",
+      "qid": "placefinder-800-903",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Borobudur Temple"
+      ],
+      "topic": "South and Southeast Asia",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-800-903.webp",
+        "type": "image",
+        "title": "Borobudur-Nothwest-view.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Borobudur-Nothwest-view.jpg",
+        "author": "Gunawan Kartapranata",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 800,
+      "q": "What is this gate called?",
+      "a": "Itsukushima torii",
+      "qid": "placefinder-800-904",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Itsukushima Gate",
+        "Miyajima torii"
+      ],
+      "topic": "East Asia",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-800-904.webp",
+        "type": "image",
+        "title": "Itsukushima Gate.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Itsukushima_Gate.jpg",
+        "author": "JordyMeow",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 800,
+      "q": "Which archaeological site contains these tombs?",
+      "a": "Hegra",
+      "qid": "placefinder-800-905",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Al-Hijr",
+        "Mada'in Salih",
+        "Madain Saleh"
+      ],
+      "topic": "Arab world",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-800-905.webp",
+        "type": "image",
+        "title": "Qasr al Farid.JPG",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Qasr_al_Farid.JPG",
+        "author": "Richard.hargas",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 800,
+      "q": "What is the name of this archaeological site?",
+      "a": "Great Zimbabwe",
+      "qid": "placefinder-800-906",
+      "type": "image",
+      "effect": "none",
+      "alt": [],
+      "topic": "Sub-Saharan Africa",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-800-906.webp",
+        "type": "image",
+        "title": "Conical tower – Great Zimbabwe.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Conical_tower_%E2%80%93_Great_Zimbabwe.jpg",
+        "author": "Fanny Schertzer",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "changes": "Cropped to normalized bounds [0, 0.38, 1, 0.93]; resized and converted to WebP; architectural content not altered."
+      }
+    },
+    {
+      "p": 800,
+      "q": "What are these stone statues called?",
+      "a": "Moai",
+      "qid": "placefinder-800-907",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Moai statues"
+      ],
+      "topic": "Oceania",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-800-907.webp",
+        "type": "image",
+        "title": "Easter Island 5.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Easter_Island_5.jpg",
+        "author": "kallerna",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 800,
+      "q": "What is this rock formation called?",
+      "a": "Uluru",
+      "qid": "placefinder-800-908",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Ayers Rock"
+      ],
+      "topic": "Oceania",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-800-908.webp",
+        "type": "image",
+        "title": "Sunset at Uluru on July 30, 2005.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sunset_at_Uluru_on_July_30,_2005.jpg",
+        "author": "Thomas Schoch",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What is this Indian rock-cut temple called?",
+      "a": "Kailasa Temple",
+      "qid": "placefinder-1000-901",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Kailash Temple",
+        "Kailasa at Ellora"
+      ],
+      "topic": "South and Southeast Asia",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-1000-901.webp",
+        "type": "image",
+        "title": "Ellora Cave 16 si0308.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ellora_Cave_16_si0308.jpg",
+        "author": "G41rn8",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What is the name of this temple complex?",
+      "a": "Prambanan",
+      "qid": "placefinder-1000-902",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Prambanan Temple"
+      ],
+      "topic": "South and Southeast Asia",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-1000-902.webp",
+        "type": "image",
+        "title": "Prambanan Complex 1.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Prambanan_Complex_1.jpg",
+        "author": "Gunawan Kartapranata",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What is the name of this castle?",
+      "a": "Himeji Castle",
+      "qid": "placefinder-1000-903",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Himeji"
+      ],
+      "topic": "East Asia",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-1000-903.webp",
+        "type": "image",
+        "title": "Himeji Castle, Hyōgo Prefecture; August 2018 (04).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Himeji_Castle,_Hy%C5%8Dgo_Prefecture;_August_2018_(04).jpg",
+        "author": "_steffen",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What is this statue carved into a cliff called?",
+      "a": "Leshan Giant Buddha",
+      "qid": "placefinder-1000-904",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Leshan Buddha"
+      ],
+      "topic": "East Asia",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-1000-904.webp",
+        "type": "image",
+        "title": "Leshan Giant Buddha (1).jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leshan_Giant_Buddha_(1).jpg",
+        "author": "xiquinhosilva",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What is this archaeological site in Micronesia called?",
+      "a": "Nan Madol",
+      "qid": "placefinder-1000-905",
+      "type": "image",
+      "effect": "none",
+      "alt": [],
+      "topic": "Oceania",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-1000-905.webp",
+        "type": "image",
+        "title": "Nan madol.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nan_madol.jpg",
+        "author": "NOAA",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What is this mosque called?",
+      "a": "Great Mosque of Djenné",
+      "qid": "placefinder-1000-906",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Great Mosque of Djenne",
+        "Djenne Mosque"
+      ],
+      "topic": "Sub-Saharan Africa",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-1000-906.webp",
+        "type": "image",
+        "title": "Great Mosque of Djenné 1.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great_Mosque_of_Djenn%C3%A9_1.jpg",
+        "author": "Andy Gilham",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "Which archaeological site contains this temple?",
+      "a": "Tikal",
+      "qid": "placefinder-1000-907",
+      "type": "image",
+      "effect": "none",
+      "alt": [],
+      "topic": "The Americas",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-1000-907.webp",
+        "type": "image",
+        "title": "Tikal 3.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tikal_3.jpg",
+        "author": "Mundo Maya",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What is this ancient aqueduct called?",
+      "a": "Aqueduct of Segovia",
+      "qid": "placefinder-1000-908",
+      "type": "image",
+      "effect": "none",
+      "alt": [
+        "Segovia Aqueduct"
+      ],
+      "topic": "Southern Europe",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-identity-images.json",
+      "media": {
+        "src": "placefinder-1000-908.webp",
+        "type": "image",
+        "title": "Aqueduct of Segovia 08.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aqueduct_of_Segovia_08.jpg",
+        "author": "Bernard Gagnon",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "changes": "Converted to WebP and resized for the game; any crop is recorded in the editorial review."
+      }
+    }
+  ]
+}

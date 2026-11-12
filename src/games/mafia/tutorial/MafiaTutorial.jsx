@@ -1,3 +1,4 @@
+import { tr, getUiLocale, localeDirection } from '../../../shared/i18n/core.js';
 import React, { useEffect, useRef, useState } from 'react';
 import { MafiaLobby, MafiaMatchView, MafiaRules, MafiaPrivacy, useMafiaPrivacy } from '../../../online/Mafia.jsx';
 import { Button, Modal } from '../../../shared/ui/components.jsx';
@@ -10,14 +11,18 @@ import { useTutorialProgress } from './useTutorialProgress.js';
 import css from './tutorial.css';
 import shellCss from '../../../online/online-mafia.css';
 import { usePlatform } from '../../../platform/context.js';
+import { useI18n } from '../../../shared/i18n/react.jsx';
+import { localizeTutorialView } from './localize.js';
 
 const goRooms = () => navigate('/online/mafia',{replace:true});
 let acceptedTrainingSound = 0;
 export function TutorialSession({ owner, progress, update, mark, isCurrentOwner=()=>true, designPreview=false,
-  factory=createMafiaTutorial,humanId=TUTORIAL_HUMAN_ID,title='أول ليلة في الميدان',disclosure='تدريب محلي · ٧ شخصيات تدريب · بلا لاعبين حقيقيين',finishTarget='/online/mafia',finishLabel='ادخل الغرف',privateCover=false }) {
+  factory=createMafiaTutorial,humanId=TUTORIAL_HUMAN_ID,title=tr("أول ليلة في الميدان"),disclosure=tr("تدريب محلي · ٧ شخصيات تدريب · بلا لاعبين حقيقيين"),finishTarget='/online/mafia',finishLabel=tr("ادخل الغرف"),privateCover=false }) {
   const platform = usePlatform();
+  const { locale } = useI18n();
   const [engine] = useState(()=>factory({progress}));
-  const [view,setView] = useState(()=>engine.getState());
+  const [rawView,setView] = useState(()=>engine.getState());
+  const view = localizeTutorialView(rawView,humanId,locale,title);
   const [voiceJoined,setVoiceJoined] = useState(false), [muted,setMuted] = useState(true);
   const [exitTarget,setExitTarget] = useState(null), [saveFailed,setSaveFailed] = useState(false);
   const [minimized,setMinimized] = useState(false);
@@ -73,26 +78,26 @@ export function TutorialSession({ owner, progress, update, mark, isCurrentOwner=
     onMute:value=>{setMuted(value);guide(value?'voice-muted':'voice-unmuted');}};
   const coach=view.coach || {};
   const finishExit=(target,skip=false)=>{if(!live.current||!latest.current.isCurrentOwner(owner))return;if(designPreview){setExitTarget(null);return;}if(skip&&!latest.current.mark('skipped',owner))return;setExitGuard(null);navigate(target||'/online/mafia',{replace:true});};
-  return <section ref={frame} data-design-screen="mafia.tutorial" className="mafia-noir mafia-room-shell mafia-tutorial-screen" dir="rtl" aria-label={covered?'التدريب محجوب':`${title} — تدريب محلي`}>
+  return <section ref={frame} data-design-screen="mafia.tutorial" className="mafia-noir mafia-room-shell mafia-tutorial-screen" dir={localeDirection(getUiLocale())} aria-label={covered?tr("التدريب محجوب"):tr("{v0} — تدريب محلي", {v0: title})}>
     <style>{shellCss}{css}</style>
     {covered?<MafiaPrivacy/>:<>
-    <header className="mafia-tutorial-top"><span className="mafia-training-badge">تدريب</span><div><strong>{title}</strong><small data-design-id="tutorial-disclosure" data-design-required="true">{disclosure}</small></div><Button data-design-id="tutorial-exit" data-design-required="true" onClick={()=>setExitTarget(finishTarget)}>لاحقًا</Button></header>
+    <header className="mafia-tutorial-top"><span className="mafia-training-badge">{tr("تدريب")}</span><div><strong>{title}</strong><small data-design-id="tutorial-disclosure" data-design-required="true">{disclosure}</small></div><Button data-design-id="tutorial-exit" data-design-required="true" onClick={()=>setExitTarget(finishTarget)}>{tr("لاحقًا")}</Button></header>
     <aside data-design-id="tutorial-coach" data-design-required="true" className={`mafia-tutorial-coach ${minimized?'is-minimized':''}`} aria-live="polite" data-lesson-step={coach.stepId}>
-      <div className="mafia-tutorial-coach-title"><h2>{coach.title || 'تعلّم من قرارك'}</h2><Button data-design-id="tutorial-help-toggle" aria-expanded={!minimized} aria-label={minimized?'إظهار الشرح':'تصغير الشرح'} onClick={()=>setMinimized(value=>!value)}>{minimized?'الشرح':'−'}</Button></div>
+      <div className="mafia-tutorial-coach-title"><h2>{coach.title || tr("تعلّم من قرارك")}</h2><Button data-design-id="tutorial-help-toggle" aria-expanded={!minimized} aria-label={minimized?tr("إظهار الشرح"):tr("تصغير الشرح")} onClick={()=>setMinimized(value=>!value)}>{minimized?tr("الشرح"):'−'}</Button></div>
       {!minimized&&<><p>{coach.text}</p>{view.feedback && <div className="mafia-tutorial-feedback" role="status"><b>{view.feedback.title}</b><p>{view.feedback.text}</p></div>}
         <div className="mafia-tutorial-coach-actions">
-          {view.feedback?.canRetry && <Button data-design-id="tutorial-retry" onClick={()=>engine.retryCheckpoint()}>أعد نقطة القرار</Button>}
+          {view.feedback?.canRetry && <Button data-design-id="tutorial-retry" onClick={()=>engine.retryCheckpoint()}>{tr("أعد نقطة القرار")}</Button>}
           {!view.feedback?.canRetry && coach.choices?.map(choice=><Button data-design-id="tutorial-answer" key={choice.id} onClick={()=>guide('quiz-answer',choice.id)}>{choice.label}</Button>)}
-          {!view.feedback?.canRetry && coach.event && <Button data-design-id="tutorial-continue" disabled={coach.canContinue===false} onClick={()=>guide(coach.event)}>{coach.buttonLabel || 'تابع'}</Button>}
+          {!view.feedback?.canRetry && coach.event && <Button data-design-id="tutorial-continue" disabled={coach.canContinue===false} onClick={()=>guide(coach.event)}>{coach.buttonLabel || tr("تابع")}</Button>}
           {coach.stepId==='encyclopedia'&&<MafiaRules onGuide={guide}/>}
           {view.status==='completed'&&<Button data-design-id="tutorial-finish" onClick={()=>finishExit(finishTarget)}>{finishLabel}</Button>}
-        </div>{view.clock.paused && <small>وقت التدريب متوقف حتى تنهي الشرح أو الحركة المطلوبة.</small>}</>}
+        </div>{view.clock.paused && <small>{tr("وقت التدريب متوقف حتى تنهي الشرح أو الحركة المطلوبة.")}</small>}</>}
     </aside>
-    {saveFailed&&<p className="mafia-tutorial-storage-warning" role="status">تعذّر الحفظ على هذا الجهاز. يمكنك متابعة الدرس؛ قد لا يعود تقدمك بعد إغلاقه.</p>}
+    {saveFailed&&<p className="mafia-tutorial-storage-warning" role="status">{tr("تعذّر الحفظ على هذا الجهاز. يمكنك متابعة الدرس؛ قد لا يعود تقدمك بعد إغلاقه.")}</p>}
     <div className="mafia-tutorial-stage" data-training-target={coach.target} key={`${owner}:${view.checkpointRevision}`}>
       {state.phase==='lobby'?<MafiaLobby state={state} me={me} isHost act={act} voice={voice} accountId={owner} tutorial={{onGuide:guide}}/>:<MafiaMatchView state={state} me={me} isHost act={act} disabled={view.status==='completed'} accountId={owner} voice={voice} sound={designPreview?undefined:platform?.sound} clock={view.clock} tutorial={{onGuide:guide}}/>}
     </div>
-    {exitTarget&&<Modal className="mafia-noir mafia-paper-dialog mafia-tutorial-exit" placement="bottom" data-design-screen="mafia.tutorial" title="تكمل التدريب لاحقًا؟" onClose={()=>setExitTarget(null)} footer={<><Button data-design-id="tutorial-save-exit" full onClick={()=>finishExit(exitTarget,true)}>احفظ واخرج</Button><Button data-design-id="tutorial-stay" full variant="ghost" onClick={()=>setExitTarget(null)}>أكمل التدريب</Button></>}><p>تبقى نقطة قرارك على هذا الجهاز، وتقدر تستكملها من دليل مافيا. لا تُحسب نتيجة هذا الدرس ضمن لعبك.</p></Modal>}
+    {exitTarget&&<Modal className="mafia-noir mafia-paper-dialog mafia-tutorial-exit" placement="bottom" data-design-screen="mafia.tutorial" title={tr("تكمل التدريب لاحقًا؟")} onClose={()=>setExitTarget(null)} footer={<><Button data-design-id="tutorial-save-exit" full onClick={()=>finishExit(exitTarget,true)}>{tr("احفظ واخرج")}</Button><Button data-design-id="tutorial-stay" full variant="ghost" onClick={()=>setExitTarget(null)}>{tr("أكمل التدريب")}</Button></>}><p>{tr("تبقى نقطة قرارك على هذا الجهاز، وتقدر تستكملها من دليل مافيا. لا تُحسب نتيجة هذا الدرس ضمن لعبك.")}</p></Modal>}
     </>}
   </section>;
 }
@@ -102,11 +107,11 @@ export function MafiaTutorial() {
   const lamma=useLamma();
   const [choice,setChoice]=useState({owner:null,mode:null});
   useEffect(()=>{if(context.owner&&context.record&&choice.owner!==context.owner)setChoice({owner:context.owner,mode:context.record.progress&&context.record.status!=='completed'?'prompt':'new'});},[context.owner,context.record,choice.owner]);
-  if(!context.owner||!context.record)return <div role="status">نجهّز التدريب…</div>;
-  if(lamma?.activeCall?.scope==='mafia')return <div className="stack"><p>أكمل مجلسك الحالي أولًا. التدريب لا يقطع مكالمة مافيا القائمة.</p><Button onClick={goRooms}>إلى المجلس</Button></div>;
+  if(!context.owner||!context.record)return <div role="status">{tr("نجهّز التدريب…")}</div>;
+  if(lamma?.activeCall?.scope==='mafia')return <div className="stack"><p>{tr("أكمل مجلسك الحالي أولًا. التدريب لا يقطع مكالمة مافيا القائمة.")}</p><Button onClick={goRooms}>{tr("إلى المجلس")}</Button></div>;
   const selected=choice.owner===context.owner?choice.mode:null;
-  if(!selected)return <div role="status">نجهّز التدريب…</div>;
-  if(selected==='prompt')return <section data-design-screen="mafia.tutorial" className="mafia-noir mafia-tutorial-resume" dir="rtl"><style>{css}</style><h1>أول ليلة في الميدان</h1><p data-design-id="tutorial-disclosure" data-design-required="true">تدريب محلي مع ٧ شخصيات تدريب، دون لاعبين حقيقيين.</p><p>عندك تدريب محفوظ على هذا الجهاز.</p><Button data-design-id="tutorial-resume" onClick={()=>setChoice({owner:context.owner,mode:'resume'})}>استكمل من آخر قرار</Button><Button data-design-id="tutorial-restart" onClick={()=>setChoice({owner:context.owner,mode:'new'})}>ابدأ من جديد</Button><Button data-design-id="tutorial-exit" data-design-required="true" onClick={()=>{context.mark('skipped');goRooms();}}>لاحقًا</Button></section>;
+  if(!selected)return <div role="status">{tr("نجهّز التدريب…")}</div>;
+  if(selected==='prompt')return <section data-design-screen="mafia.tutorial" className="mafia-noir mafia-tutorial-resume" dir={localeDirection(getUiLocale())}><style>{css}</style><h1>{tr("أول ليلة في الميدان")}</h1><p data-design-id="tutorial-disclosure" data-design-required="true">{tr("تدريب محلي مع ٧ شخصيات تدريب، دون لاعبين حقيقيين.")}</p><p>{tr("عندك تدريب محفوظ على هذا الجهاز.")}</p><Button data-design-id="tutorial-resume" onClick={()=>setChoice({owner:context.owner,mode:'resume'})}>{tr("استكمل من آخر قرار")}</Button><Button data-design-id="tutorial-restart" onClick={()=>setChoice({owner:context.owner,mode:'new'})}>{tr("ابدأ من جديد")}</Button><Button data-design-id="tutorial-exit" data-design-required="true" onClick={()=>{context.mark('skipped');goRooms();}}>{tr("لاحقًا")}</Button></section>;
   return <TutorialSession key={context.owner} owner={context.owner} progress={selected==='new'?null:context.record.progress} update={context.update} mark={context.mark} isCurrentOwner={context.isCurrentOwner}/>;
 }
 

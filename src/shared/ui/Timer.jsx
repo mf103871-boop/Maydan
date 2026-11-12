@@ -1,3 +1,4 @@
+import { tr } from '../i18n/core.js';
 // حلقة المؤقت: ذهبية ثم حمراء، تنبض في آخر 5 ثوانٍ، وتظليل أحمر ثابت على الشاشة (fx.vignette)
 // في آخر 3 ثوانٍ. بصرية فقط: الأصوات والاهتزاز من useTimerCues في اللعبة.
 import React, { useEffect } from 'react';
@@ -15,12 +16,12 @@ export function ResumeCountdown({ resuming }) {
   if (resuming === null || resuming === undefined) return null;
   return (
     <div className="timer-resume" role="status" aria-live="assertive">
-      <div className="center"><div key={resuming}>{resuming > 0 ? resuming : 'انطلق'}</div><small>عدنا! يستأنف المؤقت الآن</small></div>
+      <div className="center"><div key={resuming}>{resuming > 0 ? resuming : tr("انطلق")}</div><small>{tr("عدنا! يستأنف المؤقت الآن")}</small></div>
     </div>
   );
 }
 
-export function Timer({ timer, size = 140, label = 'ثانية', accent = '#F5B82E', ...rest }) {
+export function Timer({ timer, size = 140, label = tr("ثانية"), accent = '#F5B82E', ...rest }) {
   const { left, total, running, paused, resuming } = timer;
   const fraction = total > 0 ? left / total : 0;
   const danger = left <= 5 && left > 0 && running;
@@ -35,7 +36,7 @@ export function Timer({ timer, size = 140, label = 'ثانية', accent = '#F5B8
       <ProgressRing value={left} max={total} size={size} color={color}>
         <div className="center">
           <div className="timer-num" dir="ltr" key={danger ? left : 'n'}>{left}</div>
-          <div className="timer-sub">{paused ? 'متوقف' : label}</div>
+          <div className="timer-sub">{paused ? tr("متوقف") : label}</div>
         </div>
       </ProgressRing>
       <ResumeCountdown resuming={resuming} />

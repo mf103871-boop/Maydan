@@ -4,6 +4,7 @@ import { createNoRepeat } from '../../shared/lib/noRepeat.js';
 import { shuffle } from '../../shared/lib/shuffle.js';
 import { arabicNormalize, arabicNormalizeLoose } from '../../shared/lib/arabicNormalize.js';
 import { mulberry32 } from '../../shared/lib/rng.js';
+import { normalizeContentIdentity } from '../../shared/content-locale.mjs';
 
 export const ROUNDS = [3, 5, 7];
 export const MODES = ['classic', 'mixed', 'pictures', 'friends'];
@@ -21,6 +22,7 @@ const validId = (id) => typeof id === 'string' && /^[\w-]{1,100}$/.test(id) && !
 export function normalizeOptions(raw) {
   const r = raw && typeof raw === 'object' ? raw : {};
   return {
+    ...(r.contentLocale !== undefined || r.contentVersion !== undefined ? normalizeContentIdentity(r) : {}),
     rounds: ROUNDS.includes(r.rounds) ? r.rounds : 3,
     mode: MODES.includes(r.mode) ? r.mode : 'classic',
     style: r.style === 'all' ? 'all' : 'curious',
@@ -68,10 +70,10 @@ export function buildDeck({ questions, pictures = [], personal = [], options, se
   return out;
 }
 
-export function validateLie(text) {
+export function validateLie(text, locale = 'ar') {
   const clean = String(text ?? '').trim().replace(/\s+/g, ' ');
-  if (!clean || !arabicNormalizeLoose(clean)) return { ok: false, message: 'اكتب إجابة قصيرة أولًا' };
-  if (clean.length > 60) return { ok: false, message: 'الإجابة حتى 60 حرفًا' };
+  if (!clean || !arabicNormalizeLoose(clean)) return { ok: false, message: locale === 'en' ? 'Write a short answer first' : 'اكتب إجابة قصيرة أولًا' };
+  if (clean.length > 60) return { ok: false, message: locale === 'en' ? 'Use no more than 60 characters' : 'الإجابة حتى 60 حرفًا' };
   return { ok: true, text: clean };
 }
 
@@ -110,8 +112,54 @@ function writtenNumber(value) {
 
 // Numeric signs and decimals must survive normalization; written Arabic numbers
 // also merge when they are WRONG answers, not just when listed as truth aliases.
-export function numericValue(text) {
+const EN_UNITS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+const EN_TENS = { twenty: 20, thirty: 30, forty: 40, fifty: 50, sixty: 60, seventy: 70, eighty: 80, ninety: 90 };
+function englishWrittenNumber(text) {
+  const words = text.toLowerCase().trim().replace(/-/g, ' ').replace(/\s+/g, ' ').split(' ');
+  function parse(parts) {
+    if (!parts.length) return null;
+    for (const [word, scale] of [['million', 1000000], ['thousand', 1000]]) {
+      const at = parts.indexOf(word);
+      if (at !== -1) {
+        if (at === 0 || parts.lastIndexOf(word) !== at) return null;
+        const left = parse(parts.slice(0, at));
+        const tail = parts.slice(at + 1);
+        if (tail[0] === 'and') { if (tail.length === 1) return null; tail.shift(); }
+        const right = tail.length ? parse(tail) : 0;
+        return left !== null && left > 0 && left < 1000 && right !== null && right < scale ? left * scale + right : null;
+      }
+    }
+    if (parts[1] === 'hundred') {
+      const hundreds = EN_UNITS.indexOf(parts[0]);
+      const tail = parts.slice(2);
+      if (tail[0] === 'and') { if (tail.length === 1) return null; tail.shift(); }
+      const rest = tail.length ? parse(tail) : 0;
+      return hundreds > 0 && hundreds < 10 && rest !== null && rest < 100 ? hundreds * 100 + rest : null;
+    }
+    if (parts.length === 1) {
+      const unit = EN_UNITS.indexOf(parts[0]);
+      return unit >= 0 ? unit : (EN_TENS[parts[0]] ?? null);
+    }
+    if (parts.length === 2 && EN_TENS[parts[0]]) {
+      const unit = EN_UNITS.indexOf(parts[1]);
+      return unit > 0 && unit < 10 ? EN_TENS[parts[0]] + unit : null;
+    }
+    return null;
+  }
+  return parse(words);
+}
+
+export function numericValue(text, locale = 'ar') {
   const s = String(text).trim().replace(/[٠-٩]/g, (d) => String(d.charCodeAt(0) - 0x660)).replace(/[۰-۹]/g, (d) => String(d.charCodeAt(0) - 0x6f0)).replace(/٫/g, '.').replace(/٬/g, '');
+  if (locale === 'en') {
+    const sign = /^(?:minus|negative)\s+/i.test(s) ? -1 : 1;
+    const rest = s.replace(/^(?:minus|negative|plus|positive)\s+/i, '');
+    if (rest !== s && /^[+-]/.test(rest)) return null;
+    const digits = /^[+-]?\d{1,3}(?:,\d{3})+(?:\.\d+)?$/.test(rest) ? rest.replace(/,/g, '') : rest;
+    if (/^[+-]?\d+(?:\.\d+)?$/.test(digits)) { const n = Number(digits); return Number.isFinite(n) ? n * sign : null; }
+    const n = englishWrittenNumber(rest);
+    return n === null ? null : n * sign;
+  }
   // The written sign is stripped first so «ناقص ٥» is a number just like «ناقص خمسة».
   const sign = /^(سالب|ناقص)\s+/.test(s) ? -1 : 1;
   const rest = s.replace(/^(سالب|ناقص)\s+/, '');
@@ -122,19 +170,19 @@ export function numericValue(text) {
   const n = writtenNumber(rest);
   return n === null ? null : n * sign;
 }
-export function sameAnswer(a, b) {
-  const x = numericValue(a), y = numericValue(b);
+export function sameAnswer(a, b, locale = 'ar') {
+  const x = numericValue(a, locale), y = numericValue(b, locale);
   // Numbers only DECIDE when both sides are numbers; otherwise «78%» and «٧٨٪»
   // still have to meet «78» through the normalised text comparison below.
   if (x !== null && y !== null) return x === y;
   const n = arabicNormalizeLoose(a);
   return Boolean(n) && n === arabicNormalizeLoose(b);
 }
-export function matchesTruth(text, question) { return [question.answer, ...(question.aliases || [])].some((answer) => sameAnswer(text, answer)); }
+export function matchesTruth(text, question) { return [question.answer, ...(question.aliases || [])].some((answer) => sameAnswer(text, answer, question.contentLocale)); }
 export function duoQuestion(question) {
   const decoys = [];
   for (const text of question.decoys || []) {
-    if (typeof text !== 'string' || !text.trim() || matchesTruth(text, question) || decoys.some((value) => sameAnswer(value, text))) continue;
+    if (typeof text !== 'string' || !text.trim() || matchesTruth(text, question) || decoys.some((value) => sameAnswer(value, text, question.contentLocale))) continue;
     decoys.push(text);
   }
   return decoys.length >= 2;
@@ -188,14 +236,14 @@ function makeOptions(state, lies) {
   for (const lie of lies) {
     if (!lie.text) continue;
     if (matchesTruth(lie.text, state.question)) { truth.owners.push(lie.playerId); continue; }
-    let group = groups.slice(1).find((o) => sameAnswer(o.text, lie.text));
+    let group = groups.slice(1).find((o) => sameAnswer(o.text, lie.text, state.question.contentLocale));
     if (!group) { group = { id: `lie-${lie.playerId}`, text: lie.text, owners: [], earners: [] }; groups.push(group); }
     group.owners.push(lie.playerId);
     if (!lie.assisted) group.earners.push(lie.playerId);
   }
   for (const text of state.question.decoys || []) {
     if (groups.length >= 4) break;
-    if (matchesTruth(text, state.question) || groups.some((o) => sameAnswer(o.text, text))) continue;
+    if (matchesTruth(text, state.question) || groups.some((o) => sameAnswer(o.text, text, state.question.contentLocale))) continue;
     groups.push({ id: `house-${groups.length}`, text, owners: [], earners: [] });
   }
   return { options: shuffle(groups, mulberry32(state.seed + state.round * 997)), truthWriters: truth.owners };
@@ -282,11 +330,11 @@ export function reduce(state, action) {
     case 'ALIASES': return state.phase === 'host' && privateAction() ? { ...state, aliasesDraft: String(action.text ?? '').slice(0, 180) } : state;
     case 'SUBMIT_TRUTH': {
       if (state.phase !== 'host' || !privateAction()) return state;
-      const check = validateLie(state.draft);
+      const check = validateLie(state.draft, state.settings.contentLocale);
       if (!check.ok) return state;
       const aliases = state.aliasesDraft.split(/[؛;\n]/).map((s) => s.trim()).filter((s) => validateLie(s).ok).slice(0, 3);
       return { ...state, phase: 'question', ready: false, draft: '', aliasesDraft: '',
-        question: { ...state.question, answer: check.text, aliases, explanation: `هذه إجابة ${actor.name} عن نفسه في هذه الجولة.` } };
+        question: { ...state.question, answer: check.text, aliases, explanation: state.settings.contentLocale === 'en' ? `This is ${actor.name}'s own answer for this round.` : `هذه إجابة ${actor.name} عن نفسه في هذه الجولة.` } };
     }
     case 'SKIP_PROMPT': {
       if (state.phase !== 'host' || !privateAction()) return state;
@@ -306,7 +354,7 @@ export function reduce(state, action) {
     }
     case 'SUBMIT_LIE': {
       if (state.phase !== 'write' || !privateAction()) return state;
-      const check = validateLie(state.draft);
+      const check = validateLie(state.draft, state.settings.contentLocale);
       return check.ok ? submitLie(state, check.text) : state;
     }
     case 'SKIP_WRITE': return state.phase === 'write' && privateAction() ? submitLie(state, '') : state;
@@ -317,7 +365,7 @@ export function reduce(state, action) {
     }
     case 'TIMEOUT':
       if (state.remaining !== 0) return state;
-      if (state.phase === 'write' && privateAction() && state.settings.writeSeconds) return submitLie(state, validateLie(state.draft).ok ? validateLie(state.draft).text : '');
+      if (state.phase === 'write' && privateAction() && state.settings.writeSeconds) return submitLie(state, validateLie(state.draft, state.settings.contentLocale).ok ? validateLie(state.draft, state.settings.contentLocale).text : '');
       return state.phase === 'discussion' ? { ...state, phase: 'vote', ready: false, voter: 0 } : state;
     case 'START_VOTE': return state.phase === 'discussion' ? { ...state, phase: 'vote', ready: false, voter: 0 } : state;
     case 'VOTE': {

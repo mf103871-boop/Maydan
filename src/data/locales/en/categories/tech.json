@@ -1,0 +1,483 @@
+{
+  "id": "tech",
+  "name": "Technology",
+  "icon": "💻",
+  "qs": [
+    {
+      "p": 200,
+      "q": "What technology connects a computer to a router through network cables?",
+      "a": "Ethernet",
+      "qid": "tech-200-911",
+      "topic": "Internet and networking",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.cisco.com/site/us/en/learn/topics/networking/what-is-ethernet.html"
+    },
+    {
+      "p": 200,
+      "q": "A power cut erases unsaved data from running programs. Which main memory held it?",
+      "a": "Random-access memory",
+      "qid": "tech-200-912",
+      "topic": "Storage and memory",
+      "verified": true,
+      "alt": [
+        "RAM"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.kingston.com/en/memory/kingston-glossary"
+    },
+    {
+      "p": 200,
+      "q": "What unit of data consists of eight bits?",
+      "a": "Byte",
+      "qid": "tech-200-913",
+      "topic": "Technology history",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.ibm.com/think/topics/qubit"
+    },
+    {
+      "p": 200,
+      "q": "Which programming language did James Gosling design under the original name Oak?",
+      "a": "Java",
+      "qid": "tech-200-914",
+      "topic": "Computers and software",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://docs.oracle.com/javase/specs/jls/se6/html/j.preface.html"
+    },
+    {
+      "p": 200,
+      "q": "Which British scientist invented the Web while working at CERN?",
+      "a": "Tim Berners-Lee",
+      "qid": "tech-200-915",
+      "topic": "Internet and networking",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://home.cern/science/computing/the-birth-of-the-web/"
+    },
+    {
+      "p": 200,
+      "q": "Which American company develops the Snapdragon processor family?",
+      "a": "Qualcomm",
+      "qid": "tech-200-916",
+      "topic": "Phones and devices",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.qualcomm.com/snapdragon/what-is-snapdragon"
+    },
+    {
+      "p": 200,
+      "q": "What is the English abbreviation for read-only memory?",
+      "a": "ROM",
+      "qid": "tech-200-917",
+      "topic": "Storage and memory",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.kingston.com/en/memory/kingston-glossary"
+    },
+    {
+      "p": 200,
+      "q": "Which major database company did Larry Ellison co-found?",
+      "a": "Oracle",
+      "qid": "tech-200-918",
+      "topic": "Technology companies",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.oracle.com/us/corporate/profit/p27anniv-timeline-151918.pdf"
+    },
+    {
+      "p": 400,
+      "q": "Which programming language did Dennis Ritchie create?",
+      "a": "C",
+      "qid": "tech-400-911",
+      "topic": "Technology history",
+      "verified": true,
+      "alt": [
+        "C language"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.bell-labs.com/usr/dmr/www/chist.pdf"
+    },
+    {
+      "p": 400,
+      "q": "Which company develops the AI assistant Claude?",
+      "a": "Anthropic",
+      "qid": "tech-400-912",
+      "topic": "AI and robotics",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.anthropic.com/claude"
+    },
+    {
+      "p": 400,
+      "q": "Which operating system began at Bell Labs in 1969 and influenced many later systems?",
+      "a": "Unix",
+      "qid": "tech-400-913",
+      "topic": "Computers and software",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.nokia.com/bell-labs/about/dennis-m-ritchie/hist.html"
+    },
+    {
+      "p": 400,
+      "q": "Which protocol sends email messages between servers?",
+      "a": "SMTP",
+      "qid": "tech-400-914",
+      "topic": "Internet and networking",
+      "verified": true,
+      "alt": [
+        "Simple Mail Transfer Protocol"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.rfc-editor.org/info/rfc5321/"
+    },
+    {
+      "p": 400,
+      "q": "What toughened glass does Corning make to protect phone screens?",
+      "a": "Gorilla Glass",
+      "qid": "tech-400-915",
+      "topic": "Phones and devices",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.corning.com/gorillaglass/worldwide/en.html"
+    },
+    {
+      "p": 400,
+      "q": "Which file system is normally used for modern Windows installation drives?",
+      "a": "NTFS",
+      "qid": "tech-400-916",
+      "topic": "Storage and memory",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows-server/storage/file-server/ntfs-overview"
+    },
+    {
+      "p": 400,
+      "q": "A vulnerability is exploited before a fix is available. What is this type of vulnerability called?",
+      "a": "Zero-day vulnerability",
+      "qid": "tech-400-917",
+      "topic": "Technical terms",
+      "verified": true,
+      "alt": [
+        "Zero day"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.ibm.com/think/topics/zero-day"
+    },
+    {
+      "p": 400,
+      "q": "Which Honda humanoid robot became famous for walking and climbing stairs?",
+      "a": "ASIMO",
+      "qid": "tech-400-918",
+      "topic": "AI and robotics",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://global.honda/en/ASIMO/about/"
+    },
+    {
+      "p": 600,
+      "q": "In which California city did the circular Apple Park headquarters open in 2017?",
+      "a": "Cupertino",
+      "qid": "tech-600-911",
+      "topic": "Technology companies",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.apple.com/newsroom/2017/02/apple-park-opens-to-employees-in-april/"
+    },
+    {
+      "p": 600,
+      "q": "Which Danish king inspired the name Bluetooth?",
+      "a": "Harald Bluetooth",
+      "qid": "tech-600-912",
+      "topic": "Technology history",
+      "verified": true,
+      "alt": [
+        "Harald Blåtand"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.bluetooth.com/about-us/bluetooth-origin/"
+    },
+    {
+      "p": 600,
+      "q": "What type of insect was found inside the Mark II computer and taped into its fault log?",
+      "a": "Moth",
+      "qid": "tech-600-913",
+      "topic": "Computers and software",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://americanhistory.si.edu/collections/object/nmah_334663"
+    },
+    {
+      "p": 600,
+      "q": "Which engineer led the Apollo flight-software team?",
+      "a": "Margaret Hamilton",
+      "qid": "tech-600-914",
+      "topic": "Technology history",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://science.nasa.gov/people/margaret-hamilton/"
+    },
+    {
+      "p": 600,
+      "q": "Which country was assigned the .tv Internet domain?",
+      "a": "Tuvalu",
+      "qid": "tech-600-915",
+      "topic": "Internet and networking",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.iana.org/domains/root/db/tv"
+    },
+    {
+      "p": 600,
+      "q": "What did the Korean company name LG originally stand for?",
+      "a": "Lucky-Goldstar",
+      "qid": "tech-600-916",
+      "topic": "Technology companies",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.lg.com/global/about-lg/company-history/"
+    },
+    {
+      "p": 600,
+      "q": "Which American scientist coined the term artificial intelligence?",
+      "a": "John McCarthy",
+      "qid": "tech-600-917",
+      "topic": "AI and robotics",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://news.stanford.edu/stories/2011/10/stanfords-john-mccarthy-seminal-figure-artificial-intelligence-dies-84"
+    },
+    {
+      "p": 600,
+      "q": "Which browser did NCSA release in 1993, helping popularize browsing with images?",
+      "a": "Mosaic",
+      "qid": "tech-600-918",
+      "topic": "Technical terms",
+      "verified": true,
+      "alt": [
+        "NCSA Mosaic"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.ncsa.illinois.edu/research/project-highlights/ncsa-mosaic/"
+    },
+    {
+      "p": 800,
+      "q": "What abbreviation describes the Wireless Application Protocol used to browse on older mobile phones?",
+      "a": "WAP",
+      "qid": "tech-800-911",
+      "topic": "Phones and devices",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://wapforum.org/what/technical.htm"
+    },
+    {
+      "p": 800,
+      "q": "Which company made the computer used as CERN's first Web server?",
+      "a": "NeXT",
+      "qid": "tech-800-912",
+      "topic": "Phones and devices",
+      "verified": true,
+      "alt": [],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://cds.cern.ch/record/1997535"
+    },
+    {
+      "q": "Which source-control system did Linus Torvalds start in 2005 after free BitKeeper access ended?",
+      "a": "Git",
+      "topic": "Computers and software",
+      "verified": true,
+      "sourceUrl": "https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "tech-800-913",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "What does PNG stand for?",
+      "a": "Portable Network Graphics",
+      "topic": "Technical terms",
+      "verified": true,
+      "sourceUrl": "https://www.w3.org/TR/png/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "tech-800-914",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Who developed the A-0 system for UNIVAC in 1952?",
+      "a": "Grace Hopper",
+      "topic": "Technology history",
+      "verified": true,
+      "sourceUrl": "https://www.computerhistory.org/timeline/software-languages/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "tech-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Who chose @ to separate the user and computer names in email addresses?",
+      "a": "Ray Tomlinson",
+      "topic": "Internet and networking",
+      "verified": true,
+      "sourceUrl": "https://www.internethalloffame.org/2012/07/30/meet-man-who-put-your-e-mail/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "tech-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "What is the name of the penguin mascot for the Linux kernel?",
+      "a": "Tux",
+      "topic": "Computers and software",
+      "verified": true,
+      "sourceUrl": "https://www.kernel.org/faq.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "tech-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Which Japanese company introduced the QR code in 1994?",
+      "a": "Denso Wave",
+      "topic": "Technology companies",
+      "verified": true,
+      "sourceUrl": "https://www.qrcode.com/en/history/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 800,
+      "qid": "tech-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "Who developed the CP/M operating system for microcomputers?",
+      "a": "Gary Kildall",
+      "topic": "Technology history",
+      "verified": true,
+      "sourceUrl": "https://www.computerhistory.org/timeline/software-languages/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "tech-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ARPANET's first connection failed before its intended word was complete in 1969. Which two letters arrived?",
+      "a": "LO",
+      "topic": "Internet and networking",
+      "verified": true,
+      "sourceUrl": "https://www.lk.cs.ucla.edu/internet_first_words.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "tech-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Whose name supplies the R in RSA encryption?",
+      "a": "Ronald Rivest",
+      "topic": "Information security",
+      "verified": true,
+      "sourceUrl": "https://news.mit.edu/2011/rivest-unlocks-cryptographys-past-looks-toward-future",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Ron Rivest"
+      ],
+      "p": 1000,
+      "qid": "tech-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Who created the ELIZA conversation program in the 1960s?",
+      "a": "Joseph Weizenbaum",
+      "topic": "AI and robotics",
+      "verified": true,
+      "sourceUrl": "https://www.computerhistory.org/timeline/1966/",
+      "verifiedAt": "2026-09-25",
+      "alt": [],
+      "p": 1000,
+      "qid": "tech-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What abbreviation describes memory that uses additional codes to detect and correct data errors?",
+      "a": "ECC",
+      "topic": "Storage and memory",
+      "verified": true,
+      "sourceUrl": "https://research.ibm.com/publications/synergy-rethinking-secure-memory-design-for-error-correcting-memories",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Error-correcting code"
+      ],
+      "p": 1000,
+      "qid": "tech-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "Which British computer company developed the first ARM processor?",
+      "a": "Acorn",
+      "topic": "Technology companies",
+      "verified": true,
+      "sourceUrl": "https://developer.arm.com/community/arm-community-blogs/b/architectures-and-processors-blog/posts/a-brief-history-of-arm-part-1",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Acorn Computers"
+      ],
+      "p": 1000,
+      "qid": "tech-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "What is the seven-pass interlacing method used in PNG images called?",
+      "a": "Adam7",
+      "topic": "Technical terms",
+      "verified": true,
+      "sourceUrl": "https://www.w3.org/TR/png/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Adam 7"
+      ],
+      "p": 1000,
+      "qid": "tech-1000-918",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "In C++, an object closes its file automatically when its lifetime ends. What resource-management principle does this illustrate?",
+      "a": "RAII",
+      "topic": "Computers and software",
+      "verified": true,
+      "sourceUrl": "https://stroustrup.com/bs_faq2.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Resource Acquisition Is Initialization"
+      ],
+      "p": 1000,
+      "qid": "tech-1000-921",
+      "difficultyTarget": 0.15
+    }
+  ]
+}

@@ -1,0 +1,1089 @@
+{
+  "id": "blur",
+  "name": "Blurred",
+  "icon": "🌫️",
+  "defaultType": "image",
+  "qs": [
+    {
+      "p": 200,
+      "q": "Which animal can you recognize in the picture?",
+      "a": "Elephant",
+      "qid": "blur-200-901",
+      "type": "image",
+      "effect": "blur",
+      "alt": [
+        "African elephant"
+      ],
+      "topic": "Animals",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-200-901.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-901.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What food is shown in the picture?",
+      "a": "Pizza",
+      "qid": "blur-200-902",
+      "type": "image",
+      "effect": "blur",
+      "alt": [],
+      "topic": "Food",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-200-902.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-902.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What object is shown in the picture?",
+      "a": "Teapot",
+      "qid": "blur-200-903",
+      "type": "image",
+      "effect": "blur",
+      "alt": [
+        "Tea kettle",
+        "Kettle"
+      ],
+      "topic": "Home",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-200-903.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-903.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What musical instrument is shown in the picture?",
+      "a": "Piano",
+      "qid": "blur-200-904",
+      "type": "image",
+      "effect": "blur",
+      "alt": [
+        "Grand piano"
+      ],
+      "topic": "Music",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-200-904.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-904.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What form of transport is shown in the picture?",
+      "a": "Airplane",
+      "qid": "blur-200-905",
+      "type": "image",
+      "effect": "blur",
+      "alt": [
+        "Plane",
+        "Aeroplane",
+        "Passenger plane"
+      ],
+      "topic": "Transport",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-200-905.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-905.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "Which sport does the picture show?",
+      "a": "Swimming",
+      "qid": "blur-200-907",
+      "type": "image",
+      "effect": "blur",
+      "alt": [
+        "Freestyle swimming"
+      ],
+      "topic": "Sports",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-200-907.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-907.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What natural phenomenon or formation is shown?",
+      "a": "Waterfall",
+      "qid": "blur-200-908",
+      "type": "image",
+      "effect": "blur",
+      "alt": [],
+      "topic": "Nature",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-200-908.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-908.json"
+        }
+      }
+    },
+    {
+      "p": 200,
+      "q": "What landmark is shown in the picture?",
+      "a": "Eiffel Tower",
+      "qid": "blur-200-921",
+      "type": "image",
+      "effect": "blur",
+      "alt": [],
+      "topic": "Landmarks and structures",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-eiffel-close.webp",
+        "type": "image",
+        "title": "Paris Eiffel Tower from below 2014-10-05 bis.jpg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paris_Eiffel_Tower_from_below_2014-10-05_bis.jpg",
+        "author": "최광모",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "changes": "Cropped from the daylight photograph to normalized bounds [0,0.24,1,0.74], focusing the recognizable first/second decks and lower tower arch; top and ground outside crop; converted to WebP."
+      }
+    },
+    {
+      "p": 400,
+      "q": "Which animal can you recognize in the picture?",
+      "a": "Penguin",
+      "qid": "blur-400-901",
+      "type": "image",
+      "effect": "blur",
+      "alt": [
+        "Emperor penguin"
+      ],
+      "topic": "Animals",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-400-901.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-901.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What food is shown in the picture?",
+      "a": "Croissant",
+      "qid": "blur-400-902",
+      "type": "image",
+      "effect": "blur",
+      "alt": [],
+      "topic": "Food",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-400-902.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-902.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What object is shown in the picture?",
+      "a": "Umbrella",
+      "qid": "blur-400-903",
+      "type": "image",
+      "effect": "blur",
+      "alt": [],
+      "topic": "Home",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-400-903.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-903.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What form of transport is shown in the picture?",
+      "a": "Sailboat",
+      "qid": "blur-400-905",
+      "type": "image",
+      "effect": "blur",
+      "alt": [
+        "Sailing boat",
+        "Sailing yacht"
+      ],
+      "topic": "Transport",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-400-905.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-905.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "Which sport does the picture show?",
+      "a": "Boxing",
+      "qid": "blur-400-907",
+      "type": "image",
+      "effect": "blur",
+      "alt": [],
+      "topic": "Sports",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-400-907.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-907.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What natural phenomenon or formation is shown?",
+      "a": "Volcano",
+      "qid": "blur-400-908",
+      "type": "image",
+      "effect": "blur",
+      "alt": [
+        "Erupting volcano"
+      ],
+      "topic": "Nature",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-400-908.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-908.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What musical instrument is shown in the picture?",
+      "a": "Trumpet",
+      "qid": "blur-400-921",
+      "type": "image",
+      "effect": "blur",
+      "alt": [],
+      "topic": "Music",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-400-904.webp",
+        "type": "image",
+        "title": "Illustrated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/blur-400-904.json"
+        }
+      }
+    },
+    {
+      "p": 400,
+      "q": "What structure is shown in the picture?",
+      "a": "Lighthouse",
+      "qid": "blur-400-922",
+      "type": "image",
+      "effect": "blur",
+      "alt": [],
+      "topic": "Landmarks and structures",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-600-906.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-906.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "Which animal can you recognize in the picture?",
+      "a": "Sloth",
+      "qid": "blur-600-901",
+      "type": "image",
+      "effect": "blur",
+      "alt": [],
+      "topic": "Animals",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-600-901.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-901.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What musical instrument is shown in the picture?",
+      "a": "Oud",
+      "qid": "blur-600-904",
+      "type": "image",
+      "effect": "blur",
+      "alt": [
+        "Arabic oud"
+      ],
+      "topic": "Music",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-600-904.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-904.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What form of transport is shown in the picture?",
+      "a": "Tram",
+      "qid": "blur-600-905",
+      "type": "image",
+      "effect": "blur",
+      "alt": [
+        "Streetcar"
+      ],
+      "topic": "Transport",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-600-905.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-905.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "Which sport does the picture show?",
+      "a": "Archery",
+      "qid": "blur-600-907",
+      "type": "image",
+      "effect": "blur",
+      "alt": [],
+      "topic": "Sports",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-600-907.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-907.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What object is shown in the picture?",
+      "a": "Charcoal iron",
+      "qid": "blur-600-921",
+      "type": "image",
+      "effect": "blur",
+      "alt": [
+        "Coal iron"
+      ],
+      "topic": "Home",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-1000-903.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-903.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What structure is shown in the picture?",
+      "a": "Windmill",
+      "qid": "blur-600-922",
+      "type": "image",
+      "effect": "blur",
+      "alt": [],
+      "topic": "Landmarks and structures",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-400-906.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-906.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What food is shown in the picture?",
+      "a": "Sushi",
+      "qid": "blur-600-923",
+      "type": "image",
+      "effect": "blur",
+      "alt": [
+        "Sushi rolls"
+      ],
+      "topic": "Food",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-800-902.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-902.json"
+        }
+      }
+    },
+    {
+      "p": 600,
+      "q": "What organism is shown in the picture?",
+      "a": "Coral",
+      "qid": "blur-600-924",
+      "type": "image",
+      "effect": "blur",
+      "alt": [
+        "Coral reef"
+      ],
+      "topic": "Nature",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-800-908.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-908.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "Which animal can you recognize in the picture?",
+      "a": "Armadillo",
+      "qid": "blur-800-901",
+      "type": "image",
+      "effect": "blur",
+      "alt": [],
+      "topic": "Animals",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-800-901.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-901.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What musical instrument is shown in the picture?",
+      "a": "Banjo",
+      "qid": "blur-800-904",
+      "type": "image",
+      "effect": "blur",
+      "alt": [],
+      "topic": "Music",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-800-904.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-904.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What form of transport is shown in the picture?",
+      "a": "Snowmobile",
+      "qid": "blur-800-905",
+      "type": "image",
+      "effect": "blur",
+      "alt": [],
+      "topic": "Transport",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-800-905.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-905.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What food is shown in the picture?",
+      "a": "Dragon fruit",
+      "qid": "blur-800-921",
+      "type": "image",
+      "effect": "blur",
+      "alt": [
+        "Pitaya",
+        "Pitahaya"
+      ],
+      "topic": "Food",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-1000-902.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-902.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What structure is shown in the picture?",
+      "a": "Water tower",
+      "qid": "blur-800-922",
+      "type": "image",
+      "effect": "blur",
+      "alt": [],
+      "topic": "Landmarks and structures",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-1000-906.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-906.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "Which sport is the player practicing?",
+      "a": "Water polo",
+      "qid": "blur-800-923",
+      "type": "image",
+      "effect": "blur",
+      "alt": [],
+      "topic": "Sports",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-water-polo.webp",
+        "type": "image",
+        "title": "Illustrated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-10-08",
+          "record": "docs/bank/quality-2026-10-08/art-records/blur-1000-907.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What object is shown in the picture?",
+      "a": "Sewing machine",
+      "qid": "blur-800-924",
+      "type": "image",
+      "effect": "blur",
+      "alt": [],
+      "topic": "Home",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-600-903.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-903.json"
+        }
+      }
+    },
+    {
+      "p": 800,
+      "q": "What natural phenomenon or formation is shown?",
+      "a": "Aurora",
+      "qid": "blur-800-925",
+      "type": "image",
+      "effect": "blur",
+      "alt": [
+        "Northern lights",
+        "Aurora borealis"
+      ],
+      "topic": "Nature",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-600-908.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-908.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What musical instrument is shown in the picture?",
+      "a": "Bagpipes",
+      "qid": "blur-1000-904",
+      "type": "image",
+      "effect": "blur",
+      "alt": [],
+      "topic": "Music",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-1000-904.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-904.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What form of transport is shown in the picture?",
+      "a": "Funicular",
+      "qid": "blur-1000-905",
+      "type": "image",
+      "effect": "blur",
+      "alt": [
+        "Funicular railway"
+      ],
+      "topic": "Transport",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-1000-905.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-905.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What are the rock formations in the picture called?",
+      "a": "Stalactites",
+      "qid": "blur-1000-908",
+      "type": "image",
+      "effect": "blur",
+      "alt": [
+        "Limestone stalactites"
+      ],
+      "topic": "Nature",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-1000-908.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-908.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "Which animal can you recognize in the picture?",
+      "a": "Tapir",
+      "qid": "blur-1000-921",
+      "type": "image",
+      "effect": "blur",
+      "alt": [
+        "Malayan tapir"
+      ],
+      "topic": "Animals",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "quality-tapir.webp",
+        "type": "image",
+        "title": "Malayan Tapir.JPG",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Malayan_Tapir.JPG",
+        "author": "Bluemoose",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Resized and converted to WebP; photographic content unchanged"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What food is shown in the picture?",
+      "a": "Pretzel",
+      "qid": "blur-1000-922",
+      "type": "image",
+      "effect": "blur",
+      "alt": [],
+      "topic": "Food",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-600-902.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-23",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-902.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What object is shown in the picture?",
+      "a": "French press",
+      "qid": "blur-1000-923",
+      "type": "image",
+      "effect": "blur",
+      "alt": [
+        "Coffee press",
+        "Cafetière"
+      ],
+      "topic": "Home",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-800-903.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-903.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "What structure is shown in the picture?",
+      "a": "Observatory",
+      "qid": "blur-1000-924",
+      "type": "image",
+      "effect": "blur",
+      "alt": [
+        "Astronomical observatory"
+      ],
+      "topic": "Landmarks and structures",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-800-906.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-906.json"
+        }
+      }
+    },
+    {
+      "p": 1000,
+      "q": "Which sport does the picture show?",
+      "a": "Curling",
+      "qid": "blur-1000-925",
+      "type": "image",
+      "effect": "blur",
+      "alt": [],
+      "topic": "Sports",
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "sourceUrl": "docs/bank/quality-2026-10-08/review-root-images.json",
+      "media": {
+        "src": "blur-800-907.webp",
+        "type": "image",
+        "title": "Generated visual puzzle",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "AI-generated illustration",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation (built-in)",
+          "createdAt": "2026-09-25",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-907.json"
+        }
+      }
+    }
+  ]
+}
