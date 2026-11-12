@@ -30,6 +30,7 @@ const platformNodes = [
   node('online-friend', 'قالب صديق متصل', 'button', {repeat:true,editableText:false,editableIcon:false}),
   node('ui-language', 'لغة الواجهة', 'input', {editableText:false,editableIcon:false}),
   node('profile-settings', 'إعدادات الحساب والتطبيق', 'button', {editableText:false,editableIcon:false}),
+  node('creator-analytics', 'لوحة الصانع المحمية', 'button', {required:true,editableText:false,editableIcon:false}),
   node('achievements-toggle', 'عرض الإنجازات كلها أو اختصارها', 'button', {editableText:false,editableIcon:false}),
   node('online-mode', 'اختيار اللعب أونلاين', 'button', { required: true, editableText: false, editableIcon: false }),
   node('local-mode', 'اختيار اللعب مع العائلة', 'button', { required: true, editableText: false, editableIcon: false }),

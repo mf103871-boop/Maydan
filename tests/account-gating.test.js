@@ -211,14 +211,13 @@ test('ارسمها تعرض استضافة الغرف والانضمام الم�
   assert.doesNotMatch(stripStyle(markup), /disabled/);
 });
 
-test('v2 legal and game instructions describe one full-match host ticket without the old Badeeha carve-out', () => {
+test('versioned terms disclose game-entry ticket rules while v2 instructions describe one complete host match', () => {
   const account = { ...fakeAccount(), gameplayPolicy: 'game-entry-ticket-v2' };
   const terms = stripStyle(ui.terms(account));
-  assert.match(terms, /أول مباراة كاملة لكل حساب في كل لعبة مجانية/);
-  assert.match(terms, /بما فيها جميع حزم بديهة/);
-  assert.match(terms, /قبل اختيار طريقة اللعب/);
-  assert.match(terms, /تُستخدم عند بدء المباراة الفعلي فقط/);
-  assert.match(terms, /انضمام الضيوف إلى غرفة المضيف مجاني/);
+  assert.match(terms, /تسري قواعد التذاكر والمضيف والضيف والتجربة كما توضحها واجهة الدخول/);
+  assert.match(terms, /فتح البطاقة والرجوع لا يستهلك تذكرة/);
+  assert.match(terms, /مشاهدة الإعلان بمكافأة اختيارية/);
+  assert.doesNotMatch(terms, /الاستمرار في الاستخدام بعده يعني الموافقة/);
   assert.doesNotMatch(terms, /عشر حزم|كل الألعاب والحزم والمباريات وإنشاء الغرف والانضمام إليها مجانية/);
   for (const game of ['badeeha', 'beep', 'ersomha', 'mafia']) {
     const { markup } = ui.detailsTree(game, account);
@@ -227,10 +226,9 @@ test('v2 legal and game instructions describe one full-match host ticket without
   }
 });
 
-test('v1 and explicitly free legal and instructions retain their original access descriptions', () => {
+test('the terms identity stays the same across access policies while v1 and free instructions remain accurate', () => {
   const v1 = { ...fakeAccount(), gameplayPolicy: 'trial-ticket-v1' };
-  assert.match(stripStyle(ui.terms(v1)), /عشر حزم بديهة الأساسية/);
+  assert.equal(stripStyle(ui.terms(v1)),stripStyle(ui.terms(fakeAccount())));
   assert.match(ui.detailsTree('badeeha', v1).markup, /عشر حزم أساسية مجانية دائمًا/);
-  assert.match(stripStyle(ui.terms(fakeAccount())), /كل الألعاب والحزم والمباريات وإنشاء الغرف والانضمام إليها مجانية/);
   assert.match(ui.detailsTree('badeeha', fakeAccount()).markup, /كل الفئات مجانية/);
 });

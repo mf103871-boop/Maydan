@@ -8,7 +8,7 @@ export const MENU_ITEMS = Object.freeze([
 export function menuSection(route, previous = 'games') {
   if (route.name === 'friends' || route.name === 'friend-group') return 'friends';
   if (route.name === 'store') return 'store';
-  if (['settings', 'moderation', 'about', 'terms', 'privacy'].includes(route.name)) return 'profile';
+  if (['settings', 'creator', 'moderation', 'about', 'terms', 'privacy'].includes(route.name)) return 'profile';
   if (route.name === 'profile') return route.params?.id ? previous : 'profile';
   return 'games';
 }

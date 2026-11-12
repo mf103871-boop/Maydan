@@ -29,6 +29,10 @@ import { GameEntry } from './screens/GameEntry.jsx';
 import { Play } from './screens/Play.jsx';
 import { Players } from './screens/Players.jsx';
 import { Settings } from './screens/Settings.jsx';
+import { CreatorDashboard } from '../creator/CreatorDashboard.jsx';
+import { CreatorPresence } from '../creator/CreatorPresence.jsx';
+import { TermsBoundary } from '../shared/legal/TermsBoundary.jsx';
+import { startSimulatorTermsProbe } from './native-terms-probe.js';
 import { Store } from './screens/Store.jsx';
 import { BottomNavigation, MenuScrollRestoration } from './BottomNavigation.jsx';
 import { About } from './screens/About.jsx';
@@ -86,6 +90,7 @@ function ScreenHost({ route }) {
   else if (route.name === 'friends' || route.name === 'friend-group') screen = <div key="friends" data-social-page-slot />;
   else if (route.name === 'profile') screen = <ProfileScreen key={`profile-${route.params.id || 'me'}`} profileId={route.params.id || null} />;
   else if (route.name === 'settings') screen = <Settings key="settings" />;
+  else if (route.name === 'creator') screen = <CreatorDashboard key="creator" />;
   else if (route.name === 'store') screen = <Store key="store" />;
   else if (route.name === 'moderation') screen = <ModerationScreen key="moderation" />;
   else if (route.name === 'about') screen = <About key="about" />;
@@ -175,6 +180,7 @@ function Shell() {
   // Only the first mount waits for its dictionary. Later language changes keep
   // the live match, drafts and dialog instances mounted throughout the request.
   const usable = booted && languageBooted;
+  useEffect(() => usable ? startSimulatorTermsProbe() : undefined,[usable]);
   useEffect(() => installNativeBackBridge(), []);
   useEffect(() => {
     const game = (route.name === 'game' || route.name === 'play' || route.name === 'game-entry') ? getGame(route.params.id) : null;
@@ -225,7 +231,7 @@ function Shell() {
       <Splash visible={!booted} onDone={finishSplash} reducedMotion={settings.reducedMotion} />
       {/* حدّ خطأ حول الشاشات: خطأ تصيير واحد كان يُفرغ الصفحة بلا رجعة. */}
       {booted && !languageBooted && <main className="screen stack center" aria-busy={localeStatus.loading} lang="en" dir="ltr"><h1>Maydan</h1><p role={localeStatus.error ? 'alert' : 'status'}>{localeStatus.error ? 'Could not load English. Please try again.' : 'Loading English…'}</p>{localeStatus.error && <><button type="button" className="btn btn-primary" onClick={() => setUiLocale('en')}>Try again</button><button type="button" className="btn" lang="ar" onClick={() => setSettings({uiLocale:'ar'})}>المتابعة بالعربية</button></>}</main>}
-      {usable && <ErrorBoundary
+      {usable && <TermsBoundary route={route}><CreatorPresence route={route} /><ErrorBoundary
         resetKey={route.path}
         title={tr("تعطّلت هذه الشاشة")}
         message={tr("حدث خطأ غير متوقع. يمكنك العودة إلى الرئيسية، أو مسح البيانات المحفوظة إن تكرّر الخطأ عند كل فتح.")}
@@ -234,11 +240,11 @@ function Shell() {
         onClear={resetKeepingAccount}
       >
         <CallViewport><ScreenHost route={route} /></CallViewport>
-      </ErrorBoundary>}
-      {usable && <MenuScrollRestoration route={route} />}
-      {usable && <BottomNavigation route={route} />}
-      {usable && <PaywallHost />}
-      {usable && <ErrorBoundary title={tr("تعذّر فتح اللّمة")} message={tr("أعد فتح ميدان لتتصل بأصحابك.")} onHome={() => navigate('/')}><SocialHost /></ErrorBoundary>}
+      </ErrorBoundary>
+      <MenuScrollRestoration route={route} />
+      <BottomNavigation route={route} />
+      <PaywallHost />
+      <ErrorBoundary title={tr("تعذّر فتح اللّمة")} message={tr("أعد فتح ميدان لتتصل بأصحابك.")} onHome={() => navigate('/')}><SocialHost /></ErrorBoundary></TermsBoundary>}
       <style>{brandCss}</style>
       <style>{onlineCss}</style>
       <PresentationStyles sheet={accountCss} />

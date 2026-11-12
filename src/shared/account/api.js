@@ -4,6 +4,7 @@
 import config from '../../../online.config.json';
 import { resolveServerUrl } from '../../online/shared.js';
 import { ClientError } from '../../online/client.js';
+import { getGuestTermsReceipt } from '../legal/acceptance.js';
 
 export { ClientError };
 
@@ -54,6 +55,8 @@ export async function request(path, { method = 'GET', body, token, timeout = DEF
     // Fetch owns multipart boundaries. Audio bytes need not become base64 JSON.
     if (body !== undefined && !multipart) headers['content-type'] = 'application/json';
     if (token) headers.authorization = `Bearer ${token}`;
+    const termsReceipt = getGuestTermsReceipt(base);
+    if (termsReceipt && !token && method !== 'GET') headers['x-maydan-terms'] = termsReceipt;
     if (gameplayCapability === 2) headers['x-maydan-gameplay-capability'] = '2';
     response = await doFetch(`${base}${path}`, {
       method,

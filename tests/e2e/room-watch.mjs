@@ -11,6 +11,7 @@ import { startLocalServer } from '../../server/local.mjs';
 import { esbuildOptions, renderHtml, readPkg, mediaVersions } from '../../scripts/lib.mjs';
 import { RoomClient, newCredentials } from '../../src/online/client.js';
 import { ROOM_CAPABILITIES } from '../../src/online/shared.js';
+import { acceptTermsIfShown } from '../helpers/terms-consent.mjs';
 
 let web, app, browser, webOrigin, html;
 const clients = [];
@@ -21,7 +22,7 @@ before(async () => {
   });
   await new Promise((resolve) => web.listen(0, '127.0.0.1', resolve));
   webOrigin = `http://127.0.0.1:${web.address().port}`;
-  app = await startLocalServer({ port: 0, origins: webOrigin, vars: {} });
+  app = await startLocalServer({ port: 0, origins: webOrigin, vars: {SESSION_SECRET:'room-watch-guest-terms-fixture'} });
   process.env.MAYDAN_ROOMS_URL = app.url;
   const pkg = await readPkg();
   const result = await build(esbuildOptions({ minify: false, version: pkg.version, media: await mediaVersions() }));
@@ -65,6 +66,7 @@ test('a late phone watches the running match and joins the next one', { timeout:
     if (button) button.click();
     return !document.querySelector('.splash') && document.querySelector('[data-design-screen]');
   }, null, { timeout: 20_000 });
+  await acceptTermsIfShown(page);
   await page.locator('[data-design-id="name-input"]').fill('سارة');
   // Start only now: a voting round lasts thirty seconds, and the watcher's view of it
   // must not depend on how long the page took to open.

@@ -20,6 +20,7 @@ import { RoomClient, newCredentials } from '../../src/online/client.js';
 import { environmentStorageKey } from '../../src/shared/lib/environment.js';
 import { MAFIA_PHASES, MAFIA_ROLES } from '../../src/online/mafia-shared.js';
 import { LIVEKIT_MODULE } from '../../src/social/media-version.js';
+import { acceptTermsIfShown } from '../helpers/terms-consent.mjs';
 
 let web, app, browser, webOrigin, html, livekit, restoreFetch;
 const clients = [];
@@ -107,6 +108,7 @@ test('one browser player plays a whole public Mafia match through the real UI', 
     if (button) button.click();
     return !document.querySelector('.splash') && document.querySelector('[data-design-screen]');
   }, null, { timeout: 30_000 });
+  await acceptTermsIfShown(page);
 
   // A new account sees rooms first; the optional tutorial remains in help.
   await page.waitForFunction(()=>document.querySelector('[data-room-code]'));
@@ -295,7 +297,9 @@ for (const uiLocale of ['ar', 'en']) test(`real host lobby controls remain hit-t
   }
   try {
     await page.goto(`${webOrigin}/#/room/${code}`);
-    await page.waitForFunction(() => { document.querySelector('.splash .startup-download-actions button:last-child:not(:disabled)')?.click(); return !document.querySelector('.splash') && document.querySelector('[data-design-screen="online.mafia.lobby"]'); }, null, { timeout: 30000 });
+    await page.waitForFunction(() => { document.querySelector('.splash .startup-download-actions button:last-child:not(:disabled)')?.click(); return !document.querySelector('.splash') && document.querySelector('[data-design-screen]'); }, null, { timeout: 30000 });
+    await acceptTermsIfShown(page);
+    await page.locator('[data-design-screen="online.mafia.lobby"]').waitFor();
     await page.waitForFunction(locale => document.documentElement.lang === locale, uiLocale);
     assert.equal(await page.locator('.mafia-lobby-language select').inputValue(), uiLocale);
     assert.equal(await page.locator('.mafia-lobby-language select').getAttribute('aria-label'), uiLocale === 'en' ? 'Match language' : 'لغة المباراة');
@@ -316,7 +320,9 @@ for (const uiLocale of ['ar', 'en']) test(`real host lobby controls remain hit-t
       await initialize(guestContext, people.at(-1));
       const guest = await guestContext.newPage(); guest.on('pageerror', error => errors.push(error.message));
       await guest.goto(`${webOrigin}/#/room/${code}`);
-      await guest.waitForFunction(() => { document.querySelector('.splash .startup-download-actions button:last-child:not(:disabled)')?.click(); return !document.querySelector('.splash') && document.querySelector('[data-design-screen="online.mafia.lobby"]'); }, null, { timeout: 30000 });
+      await guest.waitForFunction(() => { document.querySelector('.splash .startup-download-actions button:last-child:not(:disabled)')?.click(); return !document.querySelector('.splash') && document.querySelector('[data-design-screen]'); }, null, { timeout: 30000 });
+      await acceptTermsIfShown(guest);
+      await guest.locator('[data-design-screen="online.mafia.lobby"]').waitFor();
       assert.equal(await guest.locator('.mafia-lobby-language select').count(), 0);
       assert.equal(await guest.locator('.mafia-lobby-language strong').getAttribute('lang'), uiLocale);
       assert.equal(await guest.locator('.mafia-lobby-language strong').innerText(), uiLocale === 'en' ? 'English' : 'العربية');

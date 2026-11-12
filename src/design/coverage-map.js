@@ -305,6 +305,7 @@ const conditionalNodeReasons = {
     "home": "MissingGame renders the home action only for an unknown game link."
   },
   "settings": {
+    "creator-analytics":"Displayed only after the authenticated account response grants the server creator capability; layout customization cannot grant analytics access or hide this owner's management action.",
     "plus-transition-open":"The active subscriber's existing transition notice links to the Store; ordinary guest and unsubscribed settings fixtures do not mount that notice.",
     "pricing-link":"The pricing link is visible in help for a web billing account; the standard account fixture models an iPhone.",
     "share-reports":"The help section offers report sharing only when this device has saved reports to share."

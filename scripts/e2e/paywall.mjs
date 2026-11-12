@@ -16,6 +16,7 @@ import { build as esbuildBuild } from 'esbuild';
 import { esbuildOptions, renderHtml, readPkg, mediaVersions } from '../lib.mjs';
 import { startLocalServer } from '../../server/local.mjs';
 import { environmentStorageKey } from '../../src/shared/lib/environment.js';
+import { acceptTermsIfShown } from '../../tests/helpers/terms-consent.mjs';
 import { createRequire } from 'node:module';
 import fs from 'node:fs'; import path from 'node:path'; import http from 'node:http'; import os from 'node:os'; import { createHash } from 'node:crypto';
 const require = createRequire(import.meta.url);
@@ -67,6 +68,7 @@ const go = async (h, ms = 900) => {
   await page.evaluate((x) => { location.hash = x; }, h);
   await page.waitForFunction((target) => location.hash === target, h);
   if (ms) await page.waitForTimeout(ms);
+  await acceptTermsIfShown(page,{required:false});
 };
 const tap = async (t) => { const ok = await page.evaluate((x) => { const el = [...document.querySelectorAll('button')].find((b) => !b.disabled && b.offsetParent !== null && (b.textContent || '').includes(x)); if (!el) return false; el.click(); return true; }, t); await page.waitForTimeout(400); return ok; };
 const lockedCounts = async () => {
@@ -95,7 +97,7 @@ const enter = () => page.waitForFunction(() => {
   if (button) button.click();
   return !splash && !!document.querySelector('[data-design-screen]');
 }, null, { timeout: 15_000, polling: 200 });
-const reload = async () => { await clearAccount('me'); await page.reload({ waitUntil: 'load' }); await enter(); await page.waitForTimeout(300); };
+const reload = async () => { await clearAccount('me'); await page.reload({ waitUntil: 'load' }); await enter(); await acceptTermsIfShown(page,{required:false}); await page.waitForTimeout(300); };
 const gameplayNote = async () => {
   const facts = page.locator('.instruction-facts');
   await facts.waitFor();
@@ -105,6 +107,7 @@ const gameplayNote = async () => {
 
 await page.goto(`http://localhost:${WEB_PORT}/#/`, { waitUntil: 'load' }); await page.waitForTimeout(700);
 await enter(); await page.waitForTimeout(300);
+await acceptTermsIfShown(page);
 
 // ١) كل الفئات مجانية؛ عرض بلس من المتجر يخص التخصيص فقط.
 let c = await lockedCounts(); check('anon all 78 packs free', c.locked === 0 && c.total === 78, JSON.stringify(c));

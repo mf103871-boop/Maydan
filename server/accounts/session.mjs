@@ -8,6 +8,8 @@ import { meResponse } from './entitlements.mjs';
 import { paddleEnvironmentOf } from './billing-environment.mjs';
 import { ensurePlayerProfile } from '../profiles/db.mjs';
 import { suspensionOf } from '../moderation/access.mjs';
+import { getCreatorCapabilities } from '../creator/access.mjs';
+import { legalStatus } from '../legal/terms.mjs';
 
 export const SESSION_TTL = 180 * 24 * 60 * 60 * 1000; // 180 يومًا
 export const ROTATE_AFTER = 24 * 60 * 60 * 1000;      // تدوير منزلق بعد يوم من آخر استعمال
@@ -54,7 +56,7 @@ export async function readSession(env, request, options = {}) {
   const secretHash = await sha256(parsed.secret);
   // A suspended member still owns their account and subscription. OAuth can
   // issue a fresh restricted session, but cannot restore social/game access.
-  const managementPaths = new Set(['/api/me','/api/account','/api/auth/signout','/api/apple/transactions','/api/paddle/portal']);
+  const managementPaths = new Set(['/api/me','/api/account','/api/auth/signout','/api/apple/transactions','/api/paddle/portal','/api/legal/status','/api/legal/accept']);
   const path = new URL(request.url).pathname;
   const checkAccess = principal => {
     if (principal.suspension && !managementPaths.has(path)) failure('ACCOUNT_SUSPENDED');
@@ -118,6 +120,8 @@ export async function me(env, user, now = Date.now()) {
   // Read only: never create a Paddle customer or classify a legacy mapping here.
   const customerId = /^ctm_[a-z0-9]{26}$/.test(customer?.customer_id || '') ? customer.customer_id : null;
   return { ...meResponse({ user, subscriptions, trials, now, env }),
+    creator: await getCreatorCapabilities(env,user.id),
+    ...(String(env.TERMS_ENFORCEMENT_ENABLED)==='1' ? {legal:await legalStatus(env,user.id)} : {}),
     moderation: { suspended: !!suspension, ...(suspension || {}) },
     paddle: { environment: paddleEnvironmentOf(env), customerId } };
 }

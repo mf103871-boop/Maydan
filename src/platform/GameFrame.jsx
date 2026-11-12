@@ -73,7 +73,7 @@ export function GameFrame({ game, inGame, exitMessage, beforeExit, children, onE
   };
 
   return (
-    <div data-design-screen="shell.game-frame" className="game-frame" style={{ '--game-accent': game.accent }}>
+    <div data-design-screen="shell.game-frame" data-creator-game={game.id} data-creator-phase={inGame ? 'playing' : 'setup'} className="game-frame" style={{ '--game-accent': game.accent }}>
       <div data-design-id="header" className="game-bar">
         <IconButton data-design-id="home" data-design-required="true" label={tr("العودة إلى المنصة")} onClick={() => requestExit('/')}><IconHome /></IconButton>
         <span data-design-id="title" className="title">{game.name}</span>

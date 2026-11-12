@@ -22,12 +22,15 @@ export function premiumOf(subscriptions = [], now = Date.now(), env = {}) {
   if (paid) best = paid;
   if (!best) return { active: false, until: 0, source: null, status: null, willRenew: false };
   const until = Number(best.until) || 0;
+  const creatorLifetime = subscriptions.some(row => row.source === 'promo' && row.product === 'plus.creator.lifetime'
+    && row.status === 'active' && Number(row.until) >= 253402300799000);
   return {
     active: until > now,
     until,
     source: best.source || null,
     status: best.status || null,
     willRenew: !!(best.will_renew ?? best.willRenew),
+    ...(creatorLifetime ? { creatorLifetime: true } : {}),
   };
 }
 

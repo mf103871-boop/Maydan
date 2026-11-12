@@ -425,7 +425,7 @@ test('الافتتاحية تملأ الشاشة وتنتظر جاهزية ال�
   const app = read('src/platform/PlatformApp.jsx');
   assert.match(app, /reducedMotion=\{settings\.reducedMotion\}/);
   assert.match(app, /const usable = booted && languageBooted/);
-  assert.match(app, /usable && <ErrorBoundary/);
+  assert.match(app, /usable && <TermsBoundary[\s\S]*?<ErrorBoundary/);
   assert.match(app, /setSettings\(\{ splashSeen: true \}\)/);
 });
 

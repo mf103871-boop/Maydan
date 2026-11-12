@@ -75,6 +75,7 @@ export function Settings() {
         <nav className="settings-index" aria-label={tr("مجموعات الإعدادات")}>
           {sections.map(({ key, label, icon }) => <button key={key} type="button" data-settings-section={key} data-design-id={key === 'account' ? 'settings-account' : 'settings-section-jump'} data-design-required={key === 'account' ? 'true' : undefined} onClick={() => navigate('/settings?section=' + key)}>{icon}<span>{tr(label)}</span><IconBack className="settings-row-arrow" /></button>)}
         </nav>
+        {account.ready && account.me?.creator?.enabled === true && <Button data-design-id="creator-analytics" variant="secondary" icon={<IconInfo />} onClick={() => navigate('/creator')}>{locale === 'en' ? 'Creator dashboard · live activity' : 'لوحة الصانع · النشاط المباشر'}</Button>}
         <div className="settings-account-status"><IconUsers /><span><b>{tr("حالة الحساب")}</b><small>{!account.ready ? tr("جارٍ التحقق من حالة الحساب…") : account.signedIn ? account.me?.moderation?.suspended ? tr("حسابك معلّق.") : tr("أنت مسجّل الدخول إلى ميدان.") : tr("أنت تلعب كضيف.")}</small></span></div>
         <Button data-design-id="manage-roster" variant="secondary" icon={<IconUsers />} onClick={() => navigate('/players')}>{tr("دفتر اللاعبين · اللعب مع العائلة")}</Button>
         <Button data-design-id="home" className="settings-return" variant="accent" full onClick={() => navigate('/')}>{tr("العودة إلى ميدان")}</Button>

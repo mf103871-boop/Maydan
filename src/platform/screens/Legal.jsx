@@ -5,10 +5,11 @@ import React from 'react';
 import { Screen, TopBar, IconButton, Card } from '../../shared/ui/components.jsx';
 import { IconBack } from '../../shared/ui/icons.jsx';
 import { back, getDirection } from '../router.js';
-import { PLUS_NAME, SUPPORT_EMAIL, LEGAL_UPDATED, PUBLIC_SITE_ORIGIN } from '../../shared/account/config.js';
+import { SUPPORT_EMAIL, LEGAL_UPDATED } from '../../shared/account/config.js';
 import styles from './help-rebuild.css';
-import { useAccount } from '../../shared/account/context.js';
-import { entryPolicyEnabled } from '../../shared/account/gameplay-policy.mjs';
+import { useI18n } from '../../shared/i18n/react.jsx';
+import { TermsDocument } from '../../shared/legal/TermsDocument.jsx';
+import { OPERATIONAL_PRIVACY } from '../../shared/legal/privacy-operations.js';
 
 const Section = ({ title, children }) => (
   <Card className="stack legal-section">
@@ -24,48 +25,22 @@ function Contact() {
 }
 
 export function Terms() {
-  const account = useAccount();
-  return (
-    <Screen data-design-screen="legal" dir={getDirection()} className="stack legal" aria-label={tr("شروط الاستخدام")}>
-      <style>{styles}</style>
-      <TopBar data-design-id="topbar" title={tr("شروط الاستخدام")} eyebrow={tr("ميدان")} start={<IconButton data-design-id="back" label={tr("رجوع")} onClick={back}><IconBack /></IconButton>} />
-      <p className="muted" style={{ fontSize: 13 }}>{tr("آخر تحديث: ")}{LEGAL_UPDATED}</p>
-      <Section title={tr("الخدمة")}>
-        <p className="card-muted">{tr("ميدان منصة ألعاب جماعية عربية. باستخدامك التطبيق أو الموقع توافق على هذه الشروط. الألعاب مخصصة للتسلية بين الأصدقاء والعائلة، ولا تُقدَّم أي ضمانات بخصوص دقة محتوى الأسئلة.")}</p>
-      </Section>
-      <Section title={tr("الحساب")}>
-        <p className="card-muted">{tr("تسجيل الدخول يتم عبر حساب Apple أو Google، وهو مطلوب للعب «ارسمها» و«مافيا ميدان» وحفظ بيانات اللعب عبر الأجهزة. يمكنك استخدام ألعاب الجهاز الواحد دون حساب. أنت مسؤول عن الحفاظ على وصولك إلى حسابك. يمكنك حذف حسابك في أي وقت من الإعدادات، فتُحذف بياناته من خوادمنا نهائيًا.")}</p>
-      </Section>
-      <Section title={tr("اشتراك {v0}", {v0: PLUS_NAME})}>
-        <p className="card-muted">{PLUS_NAME}{tr(" اشتراك اختياري يخصّص مظهر بروفايلك ويتيح لك اختيار إطارات حيّة لصورتك الشخصية. تُعرض أشكال البروفايل والإطارات المتاحة في متجر ميدان. ")}{account.gameplayPolicy ? tr("يتيح بلس بدء المباريات دون تذكرة إعلان أثناء الاستحقاق؛ لا يمنح قوة أو أدوارًا أو أولوية اتصال.") : tr("كل الألعاب والحزم والغرف مجانية، ولا يمنح بلس قوة أو أدوارًا أو أولوية اتصال.")}{tr(" تُعرض الخطط المتاحة وأسعارها ومدة كل منها قبل الشراء.")}</p>
-        <p className="card-muted">{tr("يحصل المشتركون الحاليون على هذه المزايا طوال استحقاقهم دون شراء جديد. إلغاء التجديد لا يسحب المزايا قبل نهاية الاستحقاق. عند انتهائه يعود المظهر إلى الخيارات المتاحة لحسابك بدون اشتراك، وتبقى اختياراتك المفضّلة ومقتنياتك الدائمة وقوالبك السابقة محفوظة. تبقى الملصقات المرسلة سابقًا ظاهرة للمشاركين.")}</p>
-        <p className="card-muted">{tr("يتجدد الاشتراك تلقائيًا ما لم يُلغَ وفق الموعد والشروط المعروضة لدى مزوّد الدفع. يُدار الاشتراك ويُلغى من حساب App Store عند الشراء داخل تطبيق iOS، أو من بوابة إدارة الاشتراك عند الشراء عبر الموقع. إلغاء التجديد يبقي الوصول حتى نهاية الفترة المدفوعة، ما لم تُسترد الدفعة أو يُسحب الاستحقاق.")}</p>
-        <p className="card-muted">{tr("يعمل الاشتراك على كل أجهزتك متى سجّلت الدخول بالحساب نفسه. المشتريات عبر App Store تخضع لشروط Apple، وطلبات الاسترداد تُقدَّم إلى Apple مباشرة.")}</p>
-        <p className="card-muted">{tr("توضح ")}<a data-design-id="refunds-link" href={`${PUBLIC_SITE_ORIGIN}/refunds/`}>{tr("سياسة الاسترداد")}</a>{tr(" إجراءات طلب استرداد مشتريات الموقع والتطبيق، والفرق بين الاسترداد وإلغاء التجديد.")}</p>
-      </Section>
-      <Section title={tr("المحتوى المجاني")}>
-        <p className="card-muted">{entryPolicyEnabled(account.gameplayPolicy) ? tr("أول مباراة كاملة لكل حساب في كل لعبة مجانية. بعدها يحتاج المضيف إلى تذكرة لمباراة كاملة أو بلس، بما فيها جميع حزم بديهة. تظهر خيارات الدخول من بطاقة اللعبة قبل اختيار طريقة اللعب؛ انضمام الضيوف إلى غرفة المضيف مجاني. تشمل التذكرة جميع جولات المباراة، وتُستخدم عند بدء المباراة الفعلي فقط. فتح البطاقة أو تغيير النمط أو إنشاء غرفة انتظار لا يستهلك تذكرة. مشاهدة الإعلان اختيارية؛ يمكنك الرجوع أو الانضمام مجانًا إلى غرفة مضيف آخر. عدم توفر إعلان أو عدم إكماله لا يمنح تذكرة.") : account.gameplayPolicy ? tr("أول مباراة لكل لعبة وعشر حزم بديهة الأساسية والانضمام إلى غرف الآخرين مجانية. لبدء مباراة أخرى يختار المضيف إعلانًا مكافأً يمنحه تذكرة لمباراة كاملة، أو يستخدم بلس. إنشاء غرفة الانتظار لا يستهلك تذكرة. يمكنك رفض الإعلان والعودة للمحتوى المجاني؛ عدم توفر إعلان لا يمنح تذكرة.") : tr("كل الألعاب والحزم والمباريات وإنشاء الغرف والانضمام إليها مجانية.")}{tr(" الحساب والإنترنت مطلوبان لبعض الألعاب، وحدود السعة ومكافحة الإساءة متساوية للجميع. الصور والأغلفة والثيمات والإنجازات الأساسية تبقى مجانية.")}</p>
-        <p className="card-muted">{tr("التواصل في «لَمّة ميدان» مجاني: الأصدقاء والمحادثات والتسجيلات الصوتية والشِلَل والمكالمات لا تتطلب اشتراك ميدان بلس. قد يفرض مزوّد الإنترنت رسوم بيانات بحسب باقتك.")}</p>
-      </Section>
-      <Section title={tr("الاستخدام المقبول")}>
-        <p className="card-muted">{tr("لا تستخدم المنصة لإساءة معاملة الآخرين أو لمحاولة الالتفاف على القفل أو التلاعب بالغرف. قد نوقف الحساب الذي يخالف ذلك.")}</p>
-        <p className="card-muted">{tr("التواصل متاح بين الأصدقاء بعد قبول الطلب، وفي الشِلَل الخاصة بعد قبول الدعوة. يُمنع التهديد والتحرش والكراهية والمحتوى غير القانوني أو الإباحي في النصوص والتسجيلات والصور والمكالمات. يمكنك حظر الحساب أو الإبلاغ عن رسالة نصية أو صوتية أو صورة؛ تصل البلاغات إلى إدارة ميدان لمراجعتها.")}</p>
-        <p className="card-muted">{tr("تسري قواعد المحتوى على الأسماء والنبذات والصور والرسائل أيضًا. تُفحص النصوص للحد من بعض الألفاظ والمحتويات المخالفة، وتخضع الصور الشخصية والأغلفة لمراجعة بشرية قبل نشرها. قد نرفض الصورة أو نزيل محتوى مخالفًا أو نعلّق الحساب بعد المراجعة. تبقى إدارة الحساب والاشتراك وحذف الحساب متاحة أثناء التعليق؛ يمكنك الاعتراض عبر وسيلة التواصل أدناه.")}</p>
-      </Section>
-      <Section title={tr("التغييرات")}>
-        <p className="card-muted">{tr("قد نحدّث هذه الشروط؛ التاريخ أعلاه يبيّن آخر تحديث، والاستمرار في الاستخدام بعده يعني الموافقة.")}</p>
-        <Contact />
-      </Section>
-    </Screen>
-  );
+  const { locale } = useI18n();
+  return <Screen data-design-screen="legal" dir={getDirection()} className="stack legal" aria-label={locale==='en'?'Terms of use':'شروط الاستخدام'}>
+    <style>{styles}</style>
+    <TopBar title={locale==='en'?'Terms of use':'شروط الاستخدام'} start={<IconButton label={tr("رجوع")} onClick={back}><IconBack /></IconButton>} />
+    <TermsDocument locale={locale} />
+  </Screen>;
 }
 
 export function Privacy() {
+  const {locale}=useI18n();
   return (
     <Screen data-design-screen="legal" dir={getDirection()} className="stack legal" aria-label={tr("سياسة الخصوصية")}>
       <style>{styles}</style>
       <TopBar data-design-id="topbar" title={tr("سياسة الخصوصية")} eyebrow={tr("ميدان")} start={<IconButton data-design-id="back" label={tr("رجوع")} onClick={back}><IconBack /></IconButton>} />
       <p className="muted" style={{ fontSize: 13 }}>{tr("آخر تحديث: ")}{LEGAL_UPDATED}</p>
+      <Section title={locale==='en'?'Operator, acceptance and operational activity':'المشغّل والموافقة ورصد التشغيل'}>{OPERATIONAL_PRIVACY[locale==='en'?'en':'ar'].map(text=><p className="card-muted" key={text}>{text}</p>)}</Section>
       <Section title={tr("ما نجمعه")}>
         <p className="card-muted"><b>{tr("ألعاب الجهاز الواحد بلا حساب:")}</b>{tr(" تُحفظ أسماء اللاعبين والنتائج والإعدادات على جهازك. عند استخدام الغرف عبر الإنترنت تُرسل بيانات الجلسة الموضحة أدناه إلى الخادم حتى لو لم تسجّل الدخول.")}</p>
         <p className="card-muted"><b>{tr("مع حساب:")}</b>{tr(" عند الدخول بحساب Apple أو Google نحفظ معرّف الحساب لدى المزوّد، والاسم والبريد الإلكتروني إن شاركتهما، ومعرّفًا داخليًا لحسابك. نحفظ أيضًا حالة اشتراكك (المنتج، تاريخ الانتهاء، هل يتجدد) وسجلات التجارب والتذاكر وبدء المباريات المرتبطة بحسابك للتحقق من أهليتك ومنع احتساب المحاولة أو التذكرة مرتين، مع الاحتفاظ بالسجلات القديمة للتوافق.")}</p>
