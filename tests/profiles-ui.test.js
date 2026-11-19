@@ -83,7 +83,7 @@ test('earned arrays govern rewards; inflated statistics do not unlock title or f
   const editor = render.editor({ profile: unearned, profiles, onClose: noop, onSaved: noop });
   assert.match(editor, /<option[^>]*value="legend"[^>]*disabled/);
   assert.match(editor, /aria-label="اسم في الميدان، لم تُفتح بعد"[^>]*disabled/);
-  assert.match(editor, /شاراتك البارزة · <bdi dir="ltr">[٠0] \/ [٣3]/);
+  assert.match(editor.replace(/<[^>]*>/g, ''), /شاراتك البارزة · [٠0] \/ [٣3]/);
 });
 
 test('statistics distinguish hosted sessions, online wins and games without inventing old totals', () => {

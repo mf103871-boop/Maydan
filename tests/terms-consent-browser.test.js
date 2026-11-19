@@ -15,7 +15,7 @@ function App(){const[locale,setLocale]=useState(new URL(location.href).searchPar
 window.fixture.locale=setLocale;window.fixture.document=()=>setDoc(true);window.fixture.consent=()=>setDoc(false);
 return doc?<TermsDocument locale={locale}/>:<TermsConsent locale={locale} onBack={()=>window.fixture.backs++} onReadPrivacy={()=>window.fixture.privacy++} onReadTerms={()=>window.fixture.reads++}
 onAccept={async value=>{window.fixture.accepts.push(value);if(window.fixture.fail)throw Error('fixture rejection');await new Promise(resolve=>{window.fixture.resolve=resolve});}}/>}
-createRoot(document.getElementById('root')).render(<App/>);`, loader: 'jsx', resolveDir: process.cwd() }, bundle:true, write:false, format:'iife', jsx:'automatic', loader:{'.css':'text'}, logLevel:'silent' });
+createRoot(document.getElementById('root')).render(<App/>);`, loader: 'jsx', resolveDir: process.cwd() }, bundle:true, write:false, format:'iife', jsx:'automatic', loader:{'.css':'text','.webp':'dataurl'}, logLevel:'silent' });
 
 for(const [name,engine] of [['chromium',chromium],['webkit',webkit]])for(const locale of ['ar','en'])test(`${name}: ${locale} explicit terms consent, no-scroll requirement, reset, failure and readable narrow document`,{timeout:60000},async()=>{
  const result=await fixture(),browser=await engine.launch({headless:true}),page=await browser.newPage({viewport:{width:320,height:640}}),errors=[];

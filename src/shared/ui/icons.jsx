@@ -27,3 +27,12 @@ export const IconRotate = I(<><path d="M21 12a9 9 0 1 1-3-6.7" /><path d="M21 3v
 export const IconUndo = I(<><path d="M9 14 4 9l5-5" /><path d="M4 9h11a5 5 0 0 1 0 10h-3" /></>);
 export const IconStar = I(<><path d="m12 2 3 7 7 .6-5.3 4.6L18.5 21 12 17.3 5.5 21l1.8-6.8L2 9.6 9 9z" /></>);
 export const IconBook = I(<><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5z" /><path d="M4 19.5V4.5" /></>);
+export const IconGlobe = I(<><circle cx="12" cy="12" r="10"/><path d="M2 12h20m-10-10c-6 4-6 16 0 20 6-4 6-16 0-20Z"/></>);
+export const IconLock = I(<><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4"/></>);
+export const IconCopy = I(<><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></>);
+export const IconExit = I(<><path d="M10 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h5M13 8l4 4-4 4M8 12h13"/></>);
+export const IconTag = I(<><path d="M20 3h-7L3 13l8 8L21 11V4a1 1 0 0 0-1-1Z"/><circle cx="17" cy="7" r="1"/></>);
+export const IconFlask = I(<><path d="M7 14h10l3 5a1.3 1.3 0 0 1-1.2 2H5.2A1.3 1.3 0 0 1 4 19Z" fill="#b9ecdc" stroke="none"/><path d="M9 3h6M10 3v6l-6 10a1.3 1.3 0 0 0 1.2 2h13.6A1.3 1.3 0 0 0 20 19L14 9V3M7 14h10M10 17h.01M14 18h.01"/></>);
+export const IconPause = I(<><path d="M8 5v14M16 5v14" strokeWidth="4"/></>);
+export const IconCloudAlert = I(<><path d="M6 17H5a4 4 0 0 1-1-7.9A7 7 0 0 1 17.4 7a5 5 0 0 1 3.4 8.7M11 13l-5 8h12l-5-8a1.2 1.2 0 0 0-2 0Z"/><path d="M12 16v1.5M12 19h.01"/></>);
+export const IconMaximize = I(<><path d="M9 3H3v6M15 3h6v6M21 15v6h-6M9 21H3v-6"/></>);

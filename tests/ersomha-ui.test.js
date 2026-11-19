@@ -58,12 +58,12 @@ test('drawing tools, hints, hidden correct guesses and result scores are accessi
   assert.match(result, /حل مكشوف/); assert.match(result, /\+١٥٠/); assert.match(result, /الدور التالي يبدأ تلقائيًا/);
 });
 
-test('the focused drawing workspace keeps its exit and tools reachable only for the ready drawer', () => {
+test('normal portrait preserves explicit focus controls and exposes tools only to the ready drawer', () => {
   const state = fixture({ myWord: 'PRIVATE_DRAW_WORD' });
   const ready = html(state, 0);
-  assert.match(ready, /data-ersomha-drawing-focus="true"/);
+  assert.doesNotMatch(ready, /data-ersomha-drawing-focus="true"/);
   for (const id of ['focus-toggle', 'drawing-tools', 'tools-more']) assert.match(ready, new RegExp(`data-design-id="${id}" data-design-required="true"`));
-  assert.match(ready, /aria-label="العودة للغرفة"/);
+  assert.match(ready, /aria-label="عرض الرسم أفقيًا"/);
   assert.match(ready, /contentEditable="false"/i);
   assert.match(ready, /inputMode="none"/i);
   for (const hidden of [html(state), html(state, 0, { drawerReady: false }), html({ ...state, phase: 'result' }, 0)]) assert.doesNotMatch(hidden, /data-ersomha-drawing-focus="true"/);

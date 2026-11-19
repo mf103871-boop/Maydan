@@ -1,8 +1,7 @@
-import { tr, getUiLocale, localeDirection } from '../../shared/i18n/core.js';
-import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
+import { tr, getUiLocale, localeDirection, numberForLocale } from '../../shared/i18n/core.js';
+import { GameArtwork, TrophyArtwork } from '../../shared/brand/art.jsx';
 import { useGameMusicScene } from '../../shared/fx/useGameMusicScene.js';
 import { useCandidateDeadlineWarning } from '../../shared/fx/useDeadlineAudio.js';
-import { Podium } from '../../shared/ui/components.jsx';
 // طبقات التأثير المشتركة (ختم/وميض/تظليل) تعيش في document.body لا في شجرة الشاشة،
 // و wait() تصفّر كل مهلة بصرية تحت «تقليل الحركة».
 import { flashScreen, stampScreen, vignette, wait, burstConfetti, confetti as confettiFx } from '../../shared/fx/index.js';
@@ -26,7 +25,6 @@ import { BADEEHA_KEYS as MAYDAN_BETA_KEYS } from "./keys.js";
 import { readBadeehaState, RETIRED_GAME_NOTICE } from "./persistence.js";
 import { BADEEHA_REWARDED_PACKS, LOCAL_REWARDED_OFFER, REWARDED_PREVIEW, rewardedStorageKey, rewardEvent } from "../../shared/account/rewarded.js";
 import { questionAssistance } from "./assistance.js";
-import { CategoryCover } from "./Cover.jsx";
 import { questionMedia, deckMedia } from "../../shared/media/resolve.js";
 import {
   preloadMedia,
@@ -39,8 +37,11 @@ import { betaTeam, betaCloneTeams } from "./teams.js";
 import { saveBadeehaKey, removeBadeehaKey, betaNativeMessage } from "./device.js";
 import { getCtx, SFX, SOUND_RECIPES, closeSoundContext } from "./sounds.js";
 import { MaydanModal } from "./Modal.js";
-import { ScorePoints, OfflineMediaRowBeta } from "./parts.js";
+import { OfflineMediaRowBeta } from "./parts.js";
 import { QuestionVisual } from "./QuestionVisual.js";
+import STUDIO_LOCAL_CSS from './studio-local.css?sheet';
+import { StudioHeading, StudioTeamScores, StudioTeamPortrait, StudioCategoryArt, StudioModeArt, StudioToolArt, StudioPodium, IconStar, IconSettings, IconUsers, IconBack } from './StudioLocal.jsx';
+import { IconVolume, IconVolumeOff } from '../../shared/ui/icons.jsx';
 
 const { useState, useEffect, useLayoutEffect, useRef, useMemo, useCallback } = React;
 
@@ -48,7 +49,7 @@ var hBeta = React.createElement;
 
 
 
-function MaydanBeta({ api, entry = 'home' } = {}) {
+function MaydanBeta({ api, matchLanguage, entry = 'home' } = {}) {
   const requestedLocale = api?.contentLocale, requestedVersion = api?.contentVersion;
   const reportContentSetup = api?.setContentSetupActive;
   const identity = useMemo(() => normalizeContentIdentity({contentLocale:requestedLocale,contentVersion:requestedVersion}), [requestedLocale, requestedVersion]);
@@ -159,7 +160,9 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
   useCandidateDeadlineWarning(api?.sound, current ? JSON.stringify(['badeeha', current.categoryId, current.index, currentQuestion?.qid]) : null, timeLeft,
     !isDesignPreview && effectiveSoundOn && screen === 'question' && !!current && !revealed && !paused);
   pausedRef.current = paused;
+  const historyOrigin = useRef(landingScreen);
   function setScreen(next, dir) {
+    if (next === "history") historyOrigin.current = screen;
     (setNavDir(dir || "forward"), setScreenState(next));
   }
   // صنف بصري مؤقّت: يُضبط ثم يُزال بعد مهلة تمرّ من wait (صفر تحت تقليل الحركة)
@@ -523,6 +526,8 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
                 ? (revealed ? toast(tr("احسم نتيجة السؤال أولًا")) : cancelQuestion(), !0)
                 : screen === "board"
                   ? (setConfirmEnd(!0), !0)
+                  : screen === "history"
+                    ? (setScreen(historyOrigin.current, "back"), !0)
                   : screen !== landingScreen
                     ? (setScreen(landingScreen, "back"), !0)
                     : !1),
@@ -1076,85 +1081,16 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
         "aria-label": soundOn ? tr("كتم الصوت") : tr("تشغيل الصوت"),
         "aria-pressed": !soundOn,
       },
-      hBeta("span", { "aria-hidden": "true" }, soundOn ? "🔊" : "🔇"),
+      hBeta(soundOn ? IconVolume : IconVolumeOff),
     );
   }
   function Header({ title, back }) {
-    return hBeta(
-      "header",
-      { "data-design-id": "header", className: "m-header" },
-      hBeta(
-        "div",
-        null,
-        hBeta("div", { className: "m-kicker" }, tr("بَديهة · لعبة جماعية")),
-        hBeta("h1", { "data-design-id": "title", className: "m-title" }, title),
-      ),
-      hBeta(
-        "div",
-        { className: "m-header-actions" },
-        SoundButton(),
-        back &&
-          hBeta(
-            "button",
-            {
-              type: "button",
-              className: "m-secondary m-small",
-              "data-design-id": "back",
-              onClick: () => {
-                (playSfx("click"), back());
-              },
-            },
-            tr("رجوع"),
-          ),
-      ),
-    );
+    return hBeta(StudioHeading, { title, leading: SoundButton(), trailing: back && hBeta(
+      "button", { type: "button", className: "m-secondary m-small", "data-design-id": "back", onClick: () => { playSfx("click"); back(); } },
+      hBeta(IconBack), tr("رجوع")) });
   }
-  function TeamScoreCards({ detailed = !1 }) {
-    const stableTeams = teams.map((team, index) => ({ ...team, originalIndex: index })),
-      rankById = new Map(
-        stableTeams
-          .slice()
-          .sort((left, right) => right.score - left.score)
-          .map((team, rank) => [team.id, rank]),
-      );
-    return hBeta(
-      "div",
-      { className: "m-team-scores" },
-      stableTeams.map((team) => {
-        const rank = rankById.get(team.id);
-        return hBeta(
-          "div",
-          {
-            key: team.id,
-            "data-design-id": "score-cards", className: `m-score-card ${turn === team.originalIndex && screen === "board" ? "is-turn" : ""} ${bumpId === team.id ? "is-bumped" : ""} ${undoFx ? "is-undone" : ""}`,
-            style: { "--team-color": TEAM_STYLE[team.originalIndex].solid, "--n": team.originalIndex },
-          },
-          hBeta(
-            "span",
-            { className: "m-rank", "aria-hidden": "true" },
-            ["🥇", "🥈", "🥉", "4️⃣"][rank],
-          ),
-          hBeta(
-            "div",
-            { className: "m-score-main" },
-            hBeta("strong", { className: "m-team-name" }, team.name),
-            detailed
-              ? hBeta("small", null, tr("إجابات {v0} · سرقات {v1}", {v0: team.correct, v1: team.steals}))
-              : turn === team.originalIndex &&
-                  screen === "board" &&
-                  hBeta("small", { className: "m-now-label" }, tr("الدور الآن")),
-          ),
-          hBeta(ScorePoints, { value: team.score, from: prevScoresRef.current.get(team.id) }),
-          deltaFx &&
-            deltaFx.id === team.id &&
-            hBeta(
-              "span",
-              { key: deltaFx.key, className: `m-delta ${deltaFx.value < 0 ? "is-neg" : ""}`, "aria-hidden": "true", dir: "ltr" },
-              `${deltaFx.value > 0 ? "+" : ""}${deltaFx.value}`,
-            ),
-        );
-      }),
-    );
+  function TeamScoreCards({ detailed = false }) {
+    return hBeta(StudioTeamScores, { teams, turn, bumpId, undoFx, deltaFx, previous: prevScoresRef.current, detailed });
   }
   // الإجابة «معروضة» فقط حين كُشفت ولم يخفها المضيف؛ الوسائط والتلميحات تتبع الحالة نفسها.
   const answerShown = revealed && !answerHidden;
@@ -1208,7 +1144,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
         hBeta("span", null, HAS_MEDIA ? tr("الوسائط تُحفظ في الجهاز") : tr("تعمل دون إنترنت")),
       ),
       SavedMatchCard(),
-      retiredActive && hBeta("p", { className: "m-muted m-center", role: "status" }, RETIRED_GAME_NOTICE),
+      retiredActive && hBeta("p", { className: "m-muted m-center", role: "status" }, tr(RETIRED_GAME_NOTICE)),
       hBeta(
         "div",
         { "data-design-id": "actions", className: "m-home-actions" },
@@ -1277,12 +1213,9 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
         ? api.navigate("/game/badeeha?mode=local", scope ? { replace: true } : undefined) : setScreen("home", "back") }),
       scope && hBeta("p", { className: "m-kicker" }, tr("تحدّي اللمّة التجريبي · الحزم الست مختارة")),
       landingScreen === "setup" && SavedMatchCard(),
-      landingScreen === "setup" && retiredActive && hBeta("p", { className: "m-muted m-center", role: "status" }, RETIRED_GAME_NOTICE),
-      landingScreen === "setup" && hBeta("div", { className: "m-two" },
-        hBeta("button", { "data-design-id": "history", type: "button", className: "m-secondary m-small", onClick: () => setScreen("history") }, tr("النتائج السابقة")),
-        hBeta("button", { "data-design-id": "rules", type: "button", className: "m-secondary m-small", onClick: () => setShowRules(!0) }, tr("طريقة اللعب"))),
+      landingScreen === "setup" && retiredActive && hBeta("p", { className: "m-muted m-center", role: "status" }, tr(RETIRED_GAME_NOTICE)),
       hBeta("nav", { className: "m-setup-guide", "aria-label": tr("أقسام تجهيز بديهة") },
-        [["teams", tr("١ · الفرق والإعدادات")], ["categories", tr("٢ · الحزم ({v0}/6)", {v0: selectedCategories.length})]].map(([id, label]) =>
+        [["teams", tr("الفرق والإعدادات")], ["categories", tr("الحزم ({v0}/6)", {v0: selectedCategories.length})]].map(([id, label]) =>
           hBeta("button", { key: id, type: "button", className: "m-secondary", "data-design-id": "setup-jump",
             onClick: event => {
               const target = event.currentTarget.closest(".m-setup-flow")?.querySelector(`[data-setup-section="${id}"]`);
@@ -1294,7 +1227,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
       hBeta(
         "div",
         { className: "m-panel m-setup-panel", "data-setup-section": "teams", tabIndex: -1 },
-        hBeta("h2", { className: "m-section-title" }, tr("الفرق")),
+        hBeta("h2", { className: "m-section-title bl-team-count-label" }, tr("عدد الفرق")),
         hBeta(
           "div",
           { className: "m-segment", role: "group", "aria-label": tr("عدد الفرق") },
@@ -1308,7 +1241,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
                 onClick: () => setTeamCount(count),
                 "aria-pressed": teams.length === count,
               },
-              tr("{v0} فرق", {v0: count}),
+              count.toLocaleString(getUiLocale()),
             ),
           ),
         ),
@@ -1323,7 +1256,8 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
                 className: "m-team-input",
                 style: { "--team-color": TEAM_STYLE[index].solid },
               },
-              hBeta("span", null, tr("الفريق {v0}", {v0: index + 1})),
+              hBeta(StudioTeamPortrait, { index, size: 96 }),
+              hBeta("span", { className: "sr-only" }, tr("الفريق {v0}", {v0: index + 1})),
               hBeta("input", {
                 "data-design-id": "team-name",
                 value: team.name,
@@ -1338,7 +1272,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
       hBeta(
         "div",
         { className: "m-panel m-setup-panel" },
-        hBeta("h2", { className: "m-section-title" }, tr("نمط الصعوبة")),
+        hBeta("h2", { className: "sr-only" }, tr("نمط الصعوبة")),
         hBeta(
           "div",
           { className: "m-mode-grid" },
@@ -1354,9 +1288,10 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
                 },
                 "aria-pressed": mode === item.id,
               },
-              hBeta("span", { className: "m-choice-icon", "aria-hidden": "true" }, item.icon),
+              hBeta(StudioModeArt, { mode: item.id }),
               hBeta("b", null, tr(item.label)),
-              hBeta("small", null, tr(item.description)),
+              hBeta("small", null, tr("حتى {v0}", { v0: modeTopTier(item) })),
+              hBeta("span", { className: "sr-only" }, tr(item.description)),
             ),
           ),
         ),
@@ -1376,7 +1311,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
                 },
                 "aria-pressed": roundSize === size,
               },
-              tr("{v0} سؤالًا", {v0: size}),
+              size.toLocaleString(getUiLocale()),
             ),
           ),
         ),
@@ -1396,11 +1331,12 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
                 },
                 "aria-pressed": timerLength === seconds,
               },
-              tr("{v0} ثانية", {v0: seconds}),
+              seconds.toLocaleString(getUiLocale()),
             ),
           ),
         ),
       ),
+      matchLanguage,
       hBeta(
         "div",
         { className: "m-panel m-setup-panel", "data-setup-section": "categories", tabIndex: -1 },
@@ -1418,7 +1354,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
           "label",
           { className: "m-search" },
           hBeta("span", { className: "sr-only" }, tr("ابحث عن فئة")),
-          hBeta("span", { "aria-hidden": "true" }, "🔎"),
+          hBeta("svg", { width: 24, height: 24, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 2, "aria-hidden": true }, hBeta("circle", {cx:10,cy:10,r:6}), hBeta("path", {d:"m15 15 6 6"})),
           hBeta("input", {
             "data-design-id": "category-search",
             value: categorySearch,
@@ -1452,7 +1388,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
           hBeta(
             "button",
             { "data-design-id": "random-categories", type: "button", className: "m-secondary", onClick: randomCategories },
-            tr("🎲 اختيار عشوائي"),
+            tr("اختيار عشوائي"),
           ),
           hBeta(
             "button",
@@ -1492,10 +1428,10 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
                     : tr("{v0} فئة {v1}", {v0: selected ? tr("إلغاء") : tr("اختيار"), v1: category.name}),
                 },
                 selected && hBeta("span", { className: "m-order-badge" }, order),
-                hBeta(CategoryCover, { id: category.id, icon: category.icon }),
+                hBeta(StudioCategoryArt, { category }),
                 hBeta("b", null, category.name),
                 locked && hBeta("span", { className: "m-lock" }, tr("🔒 بلس")),
-                hBeta("small", null, tr("حتى {v0}", {v0: modeTopTier(activeMode)})),
+
               ),
               hBeta(
                 "button",
@@ -1508,7 +1444,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
                     : tr("إضافة {v0} إلى المفضلة", {v0: category.name}),
                   "aria-pressed": favorite,
                 },
-                hBeta("span", { key: favorite ? "on" : "off", "aria-hidden": "true" }, favorite ? "★" : "☆"),
+                hBeta(IconStar, { fill: favorite ? "currentColor" : "none" }),
               ),
             );
           }),
@@ -1526,6 +1462,9 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
           ),
         ),
       ),
+      landingScreen === "setup" && hBeta("div", { className: "m-two" },
+        hBeta("button", { "data-design-id": "history", type: "button", className: "m-secondary m-small", onClick: () => setScreen("history") }, tr("النتائج السابقة")),
+        hBeta("button", { "data-design-id": "rules", type: "button", className: "m-secondary m-small", onClick: () => setShowRules(!0) }, tr("طريقة اللعب"))),
       selectedMediaUrls.length > 0 && hBeta(OfflineMediaRowBeta, { offlineMedia, count: selectedMediaUrls.length, onDownload: downloadSelectedMedia }),
       setupError && hBeta("p", { className: "m-error", role: "alert" }, setupError),
       hBeta(
@@ -1571,41 +1510,12 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
     return hBeta(
       "section",
       { className: "m-screen" },
-      hBeta(
-        "header",
-        { "data-design-id": "header", className: "m-board-header" },
-        hBeta(
-          "div",
-          null,
-          hBeta(
-            "div",
-            { className: "m-kicker" },
-            tr("{v0} {v1} · {v2} سؤالًا", {v0: activeMode.icon, v1: tr(activeMode.label), v2: roundSize}),
-          ),
-          hBeta(
-            "div",
-            { className: "m-current-turn", style: { "--team-color": TEAM_STYLE[turn].solid } },
-            hBeta("span", { "aria-hidden": "true" }),
-            hBeta("b", null, tr("الدور الآن: {v0}", {v0: teams[turn].name})),
-          ),
-        ),
-        hBeta(
-          "div",
-          { className: "m-header-actions" },
-          SoundButton(),
-          hBeta(
-            "button",
-            { "data-design-id": "scoreboard",
-              type: "button",
-              className: "m-icon-btn",
-              onClick: () => setShowScore(!0),
-              "aria-label": tr("فتح النتائج وتعديل النقاط"),
-            },
-            "📊",
-          ),
-        ),
-      ),
+      hBeta(StudioHeading, { title: tr("بَديهة"), leading: hBeta("button", {
+        "data-design-id": "scoreboard", type: "button", className: "m-icon-btn", onClick: () => setShowScore(true), "aria-label": tr("فتح النتائج وتعديل النقاط")
+      }, hBeta(IconSettings)), trailing: SoundButton() }),
       TeamScoreCards({}),
+      hBeta("div", { "data-design-id": "turn", className: "bl-board-turn" }, hBeta(IconUsers), hBeta("b", null, tr("الدور الآن: {v0}", {v0: teams[turn].name}))),
+      hBeta("p", { className: "bl-mode-caption" }, tr("{v0} · {v1} سؤالًا", {v0: tr(activeMode.label), v1: roundSize})),
       hBeta(
         "div",
         { className: "m-board-grid" },
@@ -1618,7 +1528,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
             hBeta(
               "h2",
               null,
-              hBeta("span", { "aria-hidden": "true" }, category.icon),
+              hBeta(StudioCategoryArt, { category, compact: true }),
               " ",
               category.name,
             ),
@@ -1639,13 +1549,14 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
                     "aria-label": tr("{v0}، سؤال {v1} نقطة{v2}", {v0: category.name, v1: question.p, v2: done ? tr("، مستخدم") : ""}),
                   },
                   hBeta("b", { dir: "ltr" }, question.p),
-                  hBeta("small", null, done ? tr("تم") : tr(MAYDAN_TIER_LABELS[question.p])),
+                  hBeta("small", { className: done ? "" : "sr-only" }, done ? tr("تم") : tr(MAYDAN_TIER_LABELS[question.p])),
                 );
               }),
             ),
           );
         }),
       ),
+      hBeta("footer", { className: "bl-board-footer" },
       hBeta(
         "div",
         { className: "m-progress-wrap" },
@@ -1690,7 +1601,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
               hBeta(
                 "button",
                 { "data-design-id": "cancel", "data-design-required": "true", type: "button", className: "m-secondary", onClick: () => setConfirmEnd(!1) },
-                "لا",
+                tr("لا"),
               ),
             )
           : hBeta(
@@ -1698,6 +1609,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
               { "data-design-id": "finish", type: "button", className: "m-link", onClick: () => setConfirmEnd(!0) },
               tr("إنهاء المباراة"),
             ),
+      ),
       ),
     );
   }
@@ -1711,7 +1623,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
         onClick: toggleAnswerHidden,
         "aria-pressed": answerHidden,
       },
-      hBeta("span", { "aria-hidden": "true" }, answerHidden ? "👁" : "🙈"),
+
       answerHidden ? tr(" إظهار الإجابة") : tr(" إخفاء الإجابة"),
     );
   }
@@ -1725,49 +1637,15 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
     return hBeta(
       "section",
       { className: "m-screen m-question-screen" },
-      hBeta(
-        "header",
-        { "data-design-id": "header", className: "m-question-header" },
-        hBeta(
-          "button",
-          { "data-design-id": "cancel", "data-design-required": "true",
-            type: "button",
-            className: "m-secondary m-small",
-            onClick: cancelQuestion,
-            disabled: revealed,
-          },
-          tr("إلغاء السؤال"),
-        ),
-        hBeta(
-          "div",
-          { "data-design-id": "category", className: "m-question-meta" },
-          hBeta("span", null, `${currentCategory.icon} ${currentCategory.name}`),
-          hBeta(
-            "b",
-            { className: `m-tier-text m-tier-text-${currentQuestion.p}` },
-            // مفتاحان على الرقم والتفصيل فقط: إعادة التصيير كل 250ms لا تعيد الحركة
-            hBeta("span", { key: questionAward, className: "m-award", dir: "ltr" }, questionAward),
-            tr(" نقطة"),
-            hBeta(
-              "small",
-              { key: `${effect.double ? "x2" : "x1"}-${hintsUsed}` },
-              // «×2» لا تنطبق على السرقة، والتلميحات تخصم ٢٥٪ لكل واحد: الرقم أعلاه
-              // هو ما سيُمنح فعلًا لفريق الدور، والتفصيل هنا.
-              effect.double
-                ? tr("×2 لصاحب الدور · {v0}", {v0: questionAward * 2})
-                : hintsUsed > 0
-                  ? tr("بعد {v0} · الأصل {v1}", {v0: hintsUsed === 1 ? tr("تلميح") : hintsUsed === 2 ? tr("تلميحين") : `${hintsUsed} تلاميح`, v1: currentQuestion.p})
-                  : tr(MAYDAN_TIER_LABELS[currentQuestion.p]),
-            ),
-          ),
-        ),
-        SoundButton(),
-      ),
-      hBeta(
+      hBeta(StudioHeading, { title: tr("بَديهة"), leading: SoundButton(), trailing: hBeta("button", {
+        "data-design-id": "cancel", "data-design-required": "true", type: "button", className: "m-secondary m-small", onClick: cancelQuestion, disabled: revealed, "aria-label": tr("إلغاء السؤال")
+      }, hBeta(IconBack), tr("رجوع")) }),
+      TeamScoreCards({}),
+      !revealed && hBeta(
         "div", { className: "m-question-status" },
         hBeta("div",
           { "data-design-id": "turn", className: "m-turn-banner", style: { "--team-color": TEAM_STYLE[turn].solid } },
-          hBeta("span", { "aria-hidden": "true" }),
+          hBeta(IconUsers),
           hBeta("strong", null, tr("السؤال لـ {v0}", {v0: teams[turn].name})),
           effect.two && hBeta("b", null, tr("جوابان مفعّلان")),
         ),
@@ -1787,18 +1665,41 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
             },
             // الرقم يُعاد تركيبه كل ثانية في العشر الأخيرة فقط (نبضة)، والمفتاح ثابت قبلها
             hBeta("b", { dir: "ltr" }, hBeta("span", { key: danger ? timeLeft : "n" }, timeLeft)),
-            paused && hBeta("small", null, tr("متوقف")),
+            hBeta("small", null, paused ? tr("متوقف") : tr("ثانية")),
           ),
         ),
         !revealed && timeLeft > 0 && hBeta(
           "button",
-          { "data-design-id": "pause", type: "button", className: "m-secondary m-pause", onClick: togglePause },
-          paused ? tr("▶ متابعة الوقت") : tr("⏸ إيقاف مؤقت"),
+          { "data-design-id": "pause", type: "button", className: "m-secondary m-pause", onClick: togglePause, "aria-label": paused ? tr("متابعة الوقت") : tr("إيقاف مؤقت"), "title": paused ? tr("متابعة الوقت") : tr("إيقاف مؤقت") },
+          hBeta("span", { "aria-hidden": "true" }, paused ? "▶" : "Ⅱ"),
         ),
       ),
+        hBeta(
+          "div",
+          { "data-design-id": "category", className: "m-question-meta" },
+          hBeta("span", null, hBeta(StudioCategoryArt, { category: currentCategory, compact: true }), hBeta("span", { className: "bl-category-name" }, currentCategory.name)),
+          hBeta(
+            "b",
+            { className: `m-tier-text m-tier-text-${currentQuestion.p}` },
+            // مفتاحان على الرقم والتفصيل فقط: إعادة التصيير كل 250ms لا تعيد الحركة
+            hBeta("span", { key: questionAward, className: "m-award", dir: "ltr" }, questionAward),
+            tr(" نقطة"),
+            hBeta(
+              "small",
+              { key: `${effect.double ? "x2" : "x1"}-${hintsUsed}` },
+              // «×2» لا تنطبق على السرقة، والتلميحات تخصم ٢٥٪ لكل واحد: الرقم أعلاه
+              // هو ما سيُمنح فعلًا لفريق الدور، والتفصيل هنا.
+              effect.double
+                ? tr("×2 لصاحب الدور · {v0}", {v0: questionAward * 2})
+                : hintsUsed > 0
+                  ? tr("بعد {v0} · الأصل {v1}", {v0: hintsUsed === 1 ? tr("تلميح") : hintsUsed === 2 ? tr("تلميحين") : `${hintsUsed} تلاميح`, v1: currentQuestion.p})
+                  : tr(MAYDAN_TIER_LABELS[currentQuestion.p]),
+            ),
+          ),
+        ),
       !revealed &&
         timeLeft <= 0 &&
-        hBeta("p", { className: "m-timeout", role: "alert" }, tr("انتهى الوقت ⏰")),
+        hBeta("p", { className: "m-timeout", role: "alert" }, tr("انتهى الوقت")),
       hBeta(
         "article",
         { "data-design-id": "question", className: `m-question-card ${revealed ? "is-revealed" : ""}` },
@@ -1853,7 +1754,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
                   onClick: () => spendTool(tool.id),
                   title: tr(tool.hint),
                 },
-                hBeta("span", { "aria-hidden": "true" }, tool.icon),
+                hBeta(StudioToolArt, { id: tool.id }),
                 hBeta("b", null, tr(tool.label)),
                 hBeta("small", null, effect[tool.id] ? tr("مفعّلة") : available ? tr("متاحة") : tr("استُخدمت")),
               );
@@ -1895,11 +1796,12 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
                   { "data-design-id": "judge-team",
                     key: team.id,
                     type: "button",
+                    className: index === turn ? "is-turn" : "",
                     style: { "--team-color": TEAM_STYLE[index].solid },
                     onClick: () => judgeQuestion(index),
                   },
-                  hBeta("span", { "aria-hidden": "true" }, "✓"),
                   hBeta("b", null, team.name),
+                  hBeta("strong", { className: "bl-judge-award", dir: "ltr" }, `+${questionAward * (index === turn && effect.double ? 2 : 1)}`),
                   hBeta(
                     "small",
                     null,
@@ -1929,9 +1831,9 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
               className: "m-primary m-large m-reveal-action",
               onClick: revealAnswer,
             },
-            hBeta("span", { "aria-hidden": "true" }, "◉"),
-            tr(" أظهر الإجابة"),
+            tr("اكشف الإجابة"),
           ),
+      hBeta("p", { className: "bl-question-progress" }, tr("السؤال {v0} من {v1}", {v0: usedCount + 1, v1: totalQuestions})),
     );
   }
   function ResultScreen() {
@@ -1945,11 +1847,11 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
     return hBeta(
       "section",
       { className: "m-result" },
-      hBeta(Podium, { entries: record.teams, title: record.winner ? tr("فاز {v0}", {v0: winners[0]}) : tr("تعادل جميل!") }),
+      hBeta(StudioPodium, { teams: record.teams, title: record.winner ? tr("فاز {v0}", {v0: winners[0]}) : tr("تعادل جميل!") }),
       hBeta("p", { className: "m-kicker" }, record.early ? tr("انتهت المباراة مبكرًا") : tr("اكتملت الجولة")),
       hBeta("div", { className: "m-result-statistics" }, record.teams.map((team) =>
         hBeta("div", { key: team.id },
-          hBeta("span", { className: "clay-stage clay-static no-contact" }, hBeta("span", { className: "clay-lift" }, hBeta(Avatar, { player: team }))),
+          hBeta(StudioTeamPortrait, { index: record.teams.indexOf(team), size: 44 }),
           hBeta("b", null, team.name),
           hBeta("small", null, tr("إجابات: {v0} · سرقات: {v1}", {v0: team.correct, v1: team.steals}))),
       )),
@@ -1991,24 +1893,28 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
     );
   }
   function HistoryScreen() {
-    const leaderboard = {};
+    const dateFormat = new Intl.DateTimeFormat(getUiLocale() === "ar" ? "ar-JO-u-nu-arab" : "en", { year: "numeric", month: "short", day: "numeric" });
+    const leaderboard = new Map();
     results.forEach((result) =>
       result.teams.forEach((team) => {
         const key = logic.normalizeTeamName(team.name),
-          item = leaderboard[key] || { name: team.name, games: 0, wins: 0, points: 0 };
-        ((item.games += 1),
-          (item.points += team.score),
-          result.winner && logic.normalizeTeamName(result.winner) === key && (item.wins += 1),
-          (leaderboard[key] = item));
+          item = leaderboard.get(key) || { name: team.name, games: 0, wins: 0, points: 0 };
+        item.games += 1;
+        item.points += team.score;
+        if (result.winner && logic.normalizeTeamName(result.winner) === key) item.wins += 1;
+        leaderboard.set(key, item);
       }),
     );
-    const honor = Object.values(leaderboard)
+    const honor = Array.from(leaderboard.values())
       .sort((left, right) => right.wins - left.wins || right.points - left.points)
       .slice(0, 10);
     return hBeta(
       "section",
-      { className: "m-screen" },
-      Header({ title: tr("النتائج والتقارير"), back: () => setScreen(landingScreen, "back") }),
+      { className: "m-screen history-list" },
+      hBeta(StudioHeading, { title: tr("النتائج والتقارير"), controlsInFooter: true, leading: SoundButton(), trailing: hBeta("button", {
+        type: "button", "data-design-id": "back", className: "history-back", "aria-label": tr("رجوع"),
+        onClick: () => { playSfx("click"); setScreen(historyOrigin.current, "back"); },
+      }, hBeta(IconBack)) }),
       hBeta(
         "div",
         { className: "m-panel" },
@@ -2021,10 +1927,10 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
                 hBeta(
                   "div",
                   { key: logic.normalizeTeamName(item.name) },
-                  hBeta("span", null, ["🥇", "🥈", "🥉"][index] || index + 1),
-                  hBeta("b", null, item.name),
-                  hBeta("small", null, tr("{v0} فوز · {v1} مباراة", {v0: item.wins, v1: item.games})),
-                  hBeta("strong", null, item.points),
+                  hBeta("span", { className: "history-medal", "data-rank": index + 1 }, numberForLocale(index + 1)),
+                  hBeta("bdi", { className: "history-team" }, item.name),
+                  hBeta("small", null, tr("الانتصارات {wins} · المباريات {matches}", { wins: numberForLocale(item.wins), matches: numberForLocale(item.games) })),
+                  hBeta("strong", null, numberForLocale(item.points)),
                 ),
               ),
             )
@@ -2055,8 +1961,8 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
                   hBeta(
                     "div",
                     { className: "m-row-between" },
-                    hBeta("small", null, result.date),
-                    hBeta("small", null, `${result.answered}/${result.total}`),
+                    hBeta("small", null, /^\d{13}$/.test(String(result.id)) ? dateFormat.format(Number(result.id)) : result.date),
+                    hBeta("small", { dir: "ltr" }, `${numberForLocale(result.answered)}/${numberForLocale(result.total)}`),
                   ),
                   hBeta(
                     "div",
@@ -2068,7 +1974,9 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
                           key: `${result.id}-${team.id || team.name}`,
                           className: result.winner === team.name ? "winner" : "",
                         },
-                        `${result.winner === team.name ? "🏆 " : ""}${team.name}: ${team.score}`,
+                        hBeta("bdi", null, team.name),
+                        hBeta("strong", null, numberForLocale(team.score)),
+                        result.winner === team.name && hBeta(TrophyArtwork),
                       ),
                     ),
                   ),
@@ -2084,7 +1992,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
           "div",
           { className: "m-row-between" },
           hBeta("h2", { className: "m-section-title" }, tr("بلاغات الأسئلة")),
-          hBeta("b", { className: "m-count" }, reports.length),
+          hBeta("b", { className: "m-count" }, numberForLocale(reports.length)),
         ),
         hBeta(
           "p",
@@ -2225,7 +2133,7 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
         hBeta(
           "button",
           { "data-design-id": "cancel", "data-design-required": "true", type: "button", className: "m-secondary", onClick: () => setPendingClear(null) },
-          "لا",
+          tr("لا"),
         ),
       ),
     );
@@ -2245,8 +2153,9 @@ function MaydanBeta({ api, entry = 'home' } = {}) {
               : screen === "history" && (content = HistoryScreen()),
     hBeta(
       "div",
-      { dir: localeDirection(getUiLocale()), className: `m-root m-screen-${screen}`, "data-dir": navDir, "data-design-screen": `badeeha.${screen}` },
+      { dir: localeDirection(getUiLocale()), className: `m-root m-local-studio m-screen-${screen}`, "data-dir": navDir, "data-design-screen": `badeeha.${screen}` },
       hBeta(PresentationStyles, { sheet: MAYDAN_BETA_CSS }),
+      hBeta(PresentationStyles, { sheet: STUDIO_LOCAL_CSS }),
       // مفتاح الشاشة يعيد تركيب القسم فتعمل حركة الدخول عند كل انتقال (كلها عناصر section)
       hBeta(React.Fragment, { key: screen }, roundLoading ? hBeta(
         "section", { className: "m-round-loading", "aria-busy": "true", "aria-label": tr("تجهيز الجولة") },

@@ -49,7 +49,7 @@
 .clay-stage.clay-jump::after, .clay-stage.clay-squash::after { animation: clay-shadow-react .6s ease-out both; }
 
 /* ضغط: أي زر يحوي حاملًا */
-button:active > .clay-stage > .clay-lift, .clay-stage.is-pressed > .clay-lift { transform: scale(.98) translateY(1px); transition: transform var(--dur-press) var(--ease-out); }
+button:active > .clay-stage > .clay-lift, .clay-stage.is-pressed > .clay-lift { transform: var(--interaction-transform, scale(.98) translateY(1px)); transition: transform var(--dur-press) var(--ease-out); }
 
 @keyframes clay-drop { from { opacity: 0; transform: translateY(8px) scale(.96); } to { opacity: 1; transform: none; } }
 @keyframes clay-shadow-land { 0% { opacity: 0; transform: scale(.35); } 55% { opacity: 1; transform: scale(1.15); } 100% { opacity: 1; transform: none; } }
@@ -208,7 +208,7 @@ button.card:active { transform: translateY(var(--ledge)); transition-duration: .
 .avatar-choice { position: relative; display: grid; place-items: center; padding: 5px; min-height: 68px; border: 2px solid transparent; border-radius: 22px;
   background: var(--top-light), var(--surface); box-shadow: var(--shadow-tile);
   transition: transform .2s var(--ease-spring), box-shadow .2s var(--ease-spring), background-color .18s, border-color .18s, opacity .2s; }
-.avatar-choice:active { transform: translateY(var(--ledge)); transition-duration: .08s; box-shadow: var(--shadow-press); }
+.avatar-choice:active { transform: var(--interaction-transform, translateY(var(--ledge))); transition-duration: .08s; box-shadow: var(--shadow-press); }
 .avatar-choice.selected { border-color: var(--purple); background: var(--top-light), #F2E4FB; box-shadow: inset 0 2px 1px #fff, 0 var(--ledge) 0 #CBA9E0, 0 8px 14px #9250BD22; animation: ui-pop-select .32s var(--ease-spring); }
 .avatar-choice .clay-stage { display: grid; width: 100%; }   /* الحامل يملأ البلاطة فتُحلّ نسبة عرض الرسمة (min(100%, 66px)) */
 .avatar-choice.selected .clay-lift { animation: clay-squash .45s var(--ease-spring); }

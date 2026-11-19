@@ -27,6 +27,7 @@ const common = [
   node('results', 'النتائج'), node('rules', 'طريقة اللعب'), node('artwork', 'الرسم التوضيحي', 'image'),
 ];
 const platformNodes = [
+  node('availability-retry','إعادة التحقق من توفر اللعبة','button',{required:true,editableText:false,editableIcon:false}),
   node('online-friend', 'قالب صديق متصل', 'button', {repeat:true,editableText:false,editableIcon:false}),
   node('ui-language', 'لغة الواجهة', 'input', {editableText:false,editableIcon:false}),
   node('profile-settings', 'إعدادات الحساب والتطبيق', 'button', {editableText:false,editableIcon:false}),
@@ -133,6 +134,8 @@ const socialNodes = [
   node('composer', 'كتابة الرسالة'), node('message-input', 'نص الرسالة', 'input'), node('send', 'إرسال الرسالة', 'button'),
   node('record', 'تسجيل صوتي', 'button'), node('record-preview', 'معاينة التسجيل', 'audio'), node('record-cancel', 'إلغاء التسجيل', 'button'),
   node('call', 'الاتصال', 'button'), node('game-invite', 'دعوة للعب', 'button'), node('mute', 'الكتم', 'button', { required: true }),
+  node('accept-call', 'قبول المكالمة الواردة', 'button', { editableText: false, editableIcon: false }),
+  node('decline-call', 'رفض المكالمة الواردة', 'button', { editableText: false, editableIcon: false }),
   node('end-call', 'إنهاء المكالمة', 'button', { required: true }), node('participants', 'مشاركو المكالمة', 'list', { repeat: true }),
   node('speaker', 'قالب صورة المتحدث', 'button', { repeat: true }), node('call-drag', 'تحريك المكالمة'),
   node('group-name', 'اسم الشلّة', 'input'), node('group-avatar', 'صورة الشلّة'), node('members', 'الأعضاء', 'list', { repeat: true }),
@@ -141,6 +144,15 @@ const socialNodes = [
   node('block', 'الحظر', 'button', { required: true }), node('report', 'الإبلاغ', 'button', { required: true }),
 ];
 const profileNodes = [
+  ...[['profile-stats-toggle','فتح إحصاءات الحساب'],['profile-achievements-toggle','عرض الإنجازات المكتسبة'],['profile-stats-note-toggle','شرح احتساب الإحصاءات']].map(([id,label])=>node(id,label,'button',{editableText:false,editableIcon:false})),
+  node('review-image-retry','إعادة تحميل صورة المراجعة','button',{repeat:true,editableText:false,editableIcon:false}),
+  node('profile-image-review-toggle','تفاصيل مراجعة الصورة','button',{repeat:true,editableText:false,editableIcon:false}),
+  node('mafia-progress-visibility','إظهار تقدم مافيا للآخرين','input',{editableText:false,editableIcon:false}),
+  node('mafia-progress-role','اختيار دور مافيا البارز','input',{editableText:false,editableIcon:false}),
+  node('mafia-progress-save','حفظ تفضيلات تقدم مافيا','button',{required:true,editableText:false,editableIcon:false}),
+  ...[['summary','ملخص اللاعب'],['xp','تقدم الحساب الفعلي'],['mastery','إتقان الألعاب'],['mastery-empty','بداية رحلة الإتقان'],['next-reward','المكافأة التالية']].map(([id,label])=>node(id,label,'container',{editableText:false,editableIcon:false})),
+  ...[['choose-badges','اختيار الشارات واللقب'],['profile-wardrobe-open','فتح المقتنيات المكتسبة'],['profile-title-edit','تعديل لقب اللاعب'],['profile-identity-toggle','عرض تفاصيل الملف'],['next-reward-toggle','عرض المكافأة التالية'],['profile-reward-preview','معاينة المكافأة'],['profile-library-toggle','عرض مكتبة اللاعب'],['mafia-progress-toggle','عرض تقدم مافيا']].map(([id,label])=>node(id,label,'button',{editableText:false,editableIcon:false})),
+  ...[['mastery-track','تفاصيل إتقان اللعبة'],['featured-badge','تفاصيل الشارة البارزة']].map(([id,label])=>node(id,label,'button',{repeat:true,editableText:false,editableIcon:false})),
   node('profile-library','اكتشاف المقتنيات والجلسات','container',{required:true,editableText:false,editableIcon:false}),
   node('profile-presets','فتح جلساتي الجاهزة','button',{editableText:false,editableIcon:false}),
   node('profile-store','فتح متجر المقتنيات','button',{editableText:false,editableIcon:false}),
@@ -162,6 +174,7 @@ const profileNodes = [
 // may style these surfaces, but cannot rewrite a grant, conceal consent or turn
 // a local test into an apparent real purchase.
 const storeNodes = [
+  node('frame-remove','إزالة الإطار المجهز فقط','button',{required:true,editableText:false,editableIcon:false}),
   node('store-legacy-toggle','عرض تراخيص سابقة محفوظة','button',{required:true,editableText:false,editableIcon:false}),
   node('plus-transition-open','اكتشاف مزايا بلس الحالية','button',{editableText:false,editableIcon:false}),
   ...[['store-tab-collections','تخصيص المظهر'],['store-tab-membership','ميدان بلس'],['store-tab-library','مقتنياتي الدائمة'],['store-tab-presets','جلساتي الجاهزة']].map(([id,label])=>node(id,label,'button',{required:true,editableText:false,editableIcon:false})),
@@ -181,6 +194,18 @@ const storeNodes = [
 // Native control templates and fixed semantic sections. Repeated controls preserve
 // their list flow; account identity, answers and stateful labels are never copy-editable.
 const extraNodes = [
+  node('dawn-art','مشهد الفجر العام','container',{editableText:false,editableIcon:false}),
+  node('recovery','حالة استعادة الاتصال الموثوق','container',{editableText:false,editableIcon:false}),
+  node('eliminated-notice','توضيح حالة اللاعب المقصي','text',{editableText:false,editableIcon:false}),
+  node('voice-details','تفاصيل الاتصال الصوتي الاختياري','button',{editableText:false,editableIcon:false}),
+  node('timeline-info','تفاصيل احتفاظ سجل الجلسة','button',{editableText:false,editableIcon:false}),
+  node('role-details','تفاصيل الدور الخاص والرصيد','button',{required:true,editableText:false,editableIcon:false}),
+  node('known-allies','الحلفاء المعروفون لصاحب الدور','container',{editableText:false,editableIcon:false}),
+  node('result-player','تفاصيل دور اللاعب بعد نهاية المباراة','button',{repeat:true,editableText:false,editableIcon:false}),
+  node('result-events','تفاصيل أحداث المباراة المنتهية','button',{editableText:false,editableIcon:false}),
+  node('drawer-identity','هوية الرسام الحالي','container',{required:true,editableText:false,editableIcon:false}),
+  node('result-statistics','إحصاءات نتيجة الفريق','container',{required:true,editableText:false,editableIcon:false}),
+  node('replay-notice','توضيح إعادة اللعب بالأسئلة نفسها','text',{required:true,editableText:false,editableIcon:false}),
   node('setup-jump','الانتقال إلى قسم الإعداد','button',{repeat:true,editableText:false}),
   node('settings-section-jump','فتح مجموعة إعدادات','button',{repeat:true,editableText:false}),
   node('settings-index-return','العودة إلى قائمة الإعدادات','button',{editableText:false}),
@@ -245,6 +270,7 @@ const screen = (id, label, group, nodes, states = {}) => Object.freeze({ id, lab
 const definitions = [];
 for (const [id, label] of [['home', 'الألعاب'], ['game-details', 'تفاصيل اللعبة'], ['players', 'دفتر اللاعبين'], ['settings', 'الإعدادات'], ['store', 'المتجر'], ['about', 'عن ميدان'], ['audio-credits', 'مصادر الصوت'], ['legal', 'الشروط والخصوصية'], ['play-setup', 'إعداد اللاعبين والفرق']]) definitions.push(screen(id, label, 'المنصة', id === 'play-setup' ? [...platformNodes, ...gameNodes] : platformNodes));
 definitions.push(screen('store.preview','معاينة قطعة أو طقم','المتجر',[...platformNodes,...storeNodes]));
+definitions.push(screen('game.entry','أهلية دخول اللعبة','المنصة', [...platformNodes, ...['local-recovery','resume-local','join-room','entry-sign-in','entry-ready','entry-watch-ad','entry-plus','entry-recheck','entry-ad-privacy','entry-ad-report','entry-back','entry-more-options'].map(id => node(id,id,id==='local-recovery'?'container':'button',{required:true,editableText:false,editableIcon:false}))]));
 definitions.push(screen('home.game-mode', 'اختيار نمط اللعبة', 'المنصة', platformNodes));
 for (const phase of ['home', 'setup', 'board', 'question', 'result', 'history']) definitions.push(screen(`badeeha.${phase}`, `بديهة · ${phase}`, 'بديهة', gameNodes, { game: 'badeeha', phase }));
 for (const [mode, phases] of [['three', ['intro', 'prompt', 'judge', 'over']], ['bomb', ['intro', 'prompt', 'boom', 'over']]]) for (const phase of phases) definitions.push(screen(`beep.${mode}.${phase}`, `بيب · ${mode} · ${phase}`, 'بيب', gameNodes, { game: 'beep', phase, mode }));
@@ -292,7 +318,7 @@ for (const [id,label] of [['beep','بيب'],['mamnoo','ممنوع'],['jabeen','�
 // carry a precise reason instead of pretending every screen has every control.
 const allNodes = new Map(dedupe([...common,...platformNodes,...gameNodes,...onlineNodes,...drawNodes,...socialNodes,...profileNodes,...accountNodes,...extraNodes,...mafiaNodes,...storeNodes]).map(value => [value.id,value]));
 const dynamicLabels = new Set(['presence','roster','game-name','game-description','start','continue','submit','skip','correct','wrong','reveal','answer-toggle','ready','history','hint','assistance','setup','options']);
-const statefulTitles = new Set(['game-details','shell.game-frame','online.chrome','profile',...definitions.filter(value => value.id.startsWith('ersomha.')).map(value => value.id)]);
+const statefulTitles = new Set(['game-details','game.entry','shell.game-frame','online.chrome','profile',...definitions.filter(value => value.id.startsWith('ersomha.')).map(value => value.id)]);
 export const DESIGN_SCREENS = Object.freeze(definitions.map(definition => {
   const observed = DESIGN_RENDERED_NODE_IDS[definition.id] || [];
   const conditional = DESIGN_CONDITIONAL_NODE_REASONS[definition.id] || {};

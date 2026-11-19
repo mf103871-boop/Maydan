@@ -26,7 +26,7 @@ function fixture(settings = {}) {
   for (const [n, p] of profiles.entries()) { game.connected(room, p.id, true, now); act(n, 'ready', { ready: true }); }
   const html = (n = 0) => {
     const state = game.snapshot(room, profiles[n].id, now);
-    return render.match({ state, me: state.members[n], isHost: n === 0, disabled: false, act: noop, clockOffset: 0 }).replace(/<style>[\s\S]*?<\/style>/g, '');
+    return render.match({ state, me: state.members[n], isHost: n === 0, disabled: false, act: noop, clockOffset: 0 }).replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '');
   };
   act(0, 'start');
   return { room, act, html };
@@ -44,7 +44,8 @@ test('online writing, anonymous voting, staged reveal and final scores render fr
     assert.doesNotMatch(html(1), /EXPLANATION_TOKEN|is-truth/);
     act(0, 'start_vote');
     const markup = html(0);
-    assert.match(markup, /اختيار الحقيقة/); assert.match(markup, /disabled=""><span class="grow">PRIVATE_ALPHA/);
+    assert.match(markup, /اختيار الحقيقة/);
+    assert.match(markup, /<button\b[^>]*\bdisabled=""[^>]*>(?:(?!<\/button>)[\s\S])*?PRIVATE_ALPHA/);
     assert.doesNotMatch(markup, /EXPLANATION_TOKEN|is-truth/);
     const truth = room.fab.options.find((o) => o.truth).id;
     for (let n = 0; n < 3; n++) act(n, 'vote', { optionId: truth });

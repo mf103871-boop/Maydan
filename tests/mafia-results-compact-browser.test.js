@@ -12,7 +12,7 @@ before(async () => {
   await mkdir(output, { recursive: true });
   const source = `import React,{useState}from'react';import{createRoot}from'react-dom/client';import{flushSync}from'react-dom';import{MafiaMatchView,MafiaLobby,MafiaDirectory}from'./src/online/Mafia.jsx';import{createMafiaVisualFixture}from'./src/games/mafia/preview-fixtures.js';import{useRoute,navigate}from'./src/platform/router.js';import ui from'./src/shared/ui/ui.css';import online from'./src/online/online.css';import shell from'./src/online/online-mafia.css';
   function initial(){const p=createMafiaVisualFixture('ending');p.state.chats={public:[{id:'public-chat',playerId:p.me.id,text:'PUBLIC_RECEIVED_CHAT',at:Date.now()}],team:[{id:'team-secret',text:'PRIVATE_TEAM_NEVER_PUBLISH'}],observers:[]};p.state.replay.events=Array.from({length:80},(_,i)=>({id:'replay-'+i,text:'PUBLIC_REPLAY_EVENT_'+i}));return{...p,accountId:'result-owner',isHost:true};}
-  function App(){const route=useRoute(),[p,set]=useState(initial);window.commands??=[];window.change=patch=>flushSync(()=>set(old=>({...old,...patch,state:{...old.state,...patch.state}})));window.replyRestart=()=>flushSync(()=>set(old=>({...old,state:{...old.state,phase:'lobby',phaseId:old.state.phaseId+1,matchId:old.state.matchId+1,replay:null,outcome:null,you:null}})));const act=async(type,fields)=>{window.commands.push({type,...fields});return true;};return <><style>{ui}{online}{shell}</style>{route.name==='online'?<MafiaDirectory rooms={[{code:'123456',roomName:'مجلس اختبار محلي',players:6,capacity:12,mode:'shadow',voiceMode:'off',status:'waiting',joinable:true}]} enabled footer={null} onJoin={()=>navigate('/room/123456')}/>:<div className="mafia-online-shell"><div className="mafia-room-shell"><div className="mafia-room-tools" style={{height:44}}>نتيجة عرض معزولة · ١٢ لاعبًا</div>{p.state.phase==='lobby'?<MafiaLobby {...p} act={act}/>:<MafiaMatchView {...p} act={act} voice={{status:'off'}}/>}</div></div>}</>;}createRoot(document.getElementById('root')).render(<App/>);`;
+  function App(){const route=useRoute(),[p,set]=useState(initial);window.commands??=[];window.getState=()=>p.state;window.change=patch=>flushSync(()=>set(old=>({...old,...patch,state:{...old.state,...patch.state}})));window.replyRestart=()=>flushSync(()=>set(old=>({...old,state:{...old.state,phase:'lobby',phaseId:old.state.phaseId+1,matchId:old.state.matchId+1,replay:null,outcome:null,you:null}})));const act=async(type,fields)=>{window.commands.push({type,...fields});return true;};return <><style>{ui}{online}{shell}</style>{route.name==='online'?<MafiaDirectory rooms={[{code:'123456',roomName:'مجلس اختبار محلي',players:6,capacity:12,mode:'shadow',voiceMode:'off',status:'waiting',joinable:true}]} enabled footer={null} onJoin={()=>navigate('/room/123456')}/>:<div className="mafia-online-shell"><div className="mafia-room-shell"><div className="mafia-room-tools" style={{height:44}}>نتيجة عرض معزولة · ١٢ لاعبًا</div>{p.state.phase==='lobby'?<MafiaLobby {...p} act={act}/>:<MafiaMatchView {...p} act={act} voice={{status:'off'}}/>}</div></div>}</>;}createRoot(document.getElementById('root')).render(<App/>);`;
   const bundle = await build({ stdin: { contents: source, resolveDir: process.cwd(), loader: 'jsx' }, bundle: true, write: false, format: 'iife', jsx: 'automatic', loader: { '.js': 'jsx', '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl' }, logLevel: 'silent' });
   const html = '<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>html,body,#root{margin:0;width:100%;min-height:100%}body{font-family:Arial,sans-serif}*{box-sizing:border-box}</style><div id="root"></div><script src="/app.js"></script></html>';
   server = createServer(async (req, res) => {
@@ -38,34 +38,48 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
     await writeFile(path.join(output, name + '-default.json'), JSON.stringify(baseline));
     await page.screenshot({ path: path.join(output, name + '-default.png'), fullPage: true });
     assert.ok(baseline.restart.y >= 0 && baseline.restart.bottom <= 932, 'the sole rematch action is available without scrolling past twelve portraits');
-    assert.ok(baseline.documentHeight < 1600, 'the default result is brief even with80 replay events');
+    const replayState=await page.evaluate(()=>window.getState().replay);
+    await page.evaluate(replay=>window.change({state:{replay:{...replay,events:[]}}}),replayState);
+    const withoutEvents=await page.evaluate(()=>document.documentElement.scrollHeight);
+    await page.evaluate(replay=>window.change({state:{replay}}),replayState);
+    // The section trigger itself is allowed to occupy one 48px row; the80
+    // collapsed event bodies must not grow the closed document.
+    const eventTriggerHeight=await page.locator('.mafia-result-replay').evaluate(el=>el.getBoundingClientRect().height);
+    assert.ok(baseline.documentHeight<=withoutEvents+eventTriggerHeight+13,'collapsed event bodies do not increase the closed page height');
     assert.equal(await restart.count(), 1);
     assert.equal(await page.locator('.mafia-recap-player').count(), 12);
     await page.evaluate(() => window.change({ state: { members: Array.from({ length: 12 }, (_, i) => ({ id: 'local-display-' + (i + 1), name: 'لاعب عرض ' + i, seat: 12 - i, connected: true, ready: true, alive: true })) } }));
     assert.equal(await page.locator('.mafia-result-seat').first().innerText(), '١٢', 'result numbers retain authoritative seats rather than assigning new recap positions');
-    assert.equal(await page.locator('.mafia-recap .mafia-role-art').count(), 0, 'large portraits mount only after an explicit disclosure');
+    assert.equal(await page.locator('.mafia-result-player-detail').count(),0,'role details mount only after an explicit disclosure');
     assert.equal(await page.getByText('PUBLIC_REPLAY_EVENT_79', { exact: true }).count(), 0);
     for (const viewport of [{ width: 320, height: 568 }, { width: 390, height: 844 }, { width: 430, height: 932 }, { width: 844, height: 390 }, { width: 390, height: 420 }]) {
       await page.setViewportSize(viewport); await page.evaluate(() => window.scrollTo(0, 0));
       const box = await restart.boundingBox();
-      assert.ok(box.height >= 44 && box.y >= 0 && box.y + box.height <= viewport.height, `${name} ${viewport.width}x${viewport.height} rematch remains usable`);
+      assert.ok(box.height >= 52 && box.y >= 0 && box.y + box.height <= viewport.height, `${name} ${viewport.width}x${viewport.height} rematch remains usable`);
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
       const cards = await page.locator('.mafia-recap-player>summary').evaluateAll(nodes => nodes.map(node => node.getBoundingClientRect().height));
-      assert.ok(cards.every(height => height >= 44));
+      assert.ok(cards.every(height => height >= 48));
     }
     await page.setViewportSize({ width: 320, height: 568 });
     await page.evaluate(() => window.change({ state: { members: Array.from({ length: 12 }, (_, i) => ({ id: 'local-display-' + (i + 1), name: 'عبدالرحمنأبوالميدان' + i, connected: true, ready: true, alive: true })) } }));
     const textStress = await page.addStyleTag({ content: '.mafia-results,.mafia-results *{font-size:20px!important}' });
-    const enlarged = await restart.boundingBox(); assert.ok(enlarged.height >= 44 && enlarged.y + enlarged.height <= 568);
+    const enlarged = await restart.boundingBox(); assert.ok(enlarged.height >= 48 && enlarged.y + enlarged.height <= 568);
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
     await textStress.evaluate(node => node.remove());
     await page.setViewportSize({ width: 430, height: 932 });
+    const recap = page.locator('.mafia-recap');
+    assert.ok(await recap.evaluate(el => el.scrollHeight > el.clientHeight), 'long results use the roster scroll area');
+    const lastRole = recap.locator('.mafia-recap-player').last();
+    await lastRole.locator('summary').click();
+    await lastRole.locator('.mafia-result-player-detail').waitFor();
+    assert.ok(await recap.evaluate(el => el.scrollTop > 0), 'the last full touch target is reachable in the roster');
+    await lastRole.locator('summary').click();
     const role = page.locator('.mafia-recap-player').first();
-    await role.locator('summary').click(); await role.locator('.mafia-role-art').waitFor();
-    assert.equal(await page.locator('.mafia-recap .mafia-role-art').count(), 1);
-    assert.ok((await role.locator('.mafia-role-art').boundingBox()).width >= 90);
+    await role.locator('summary').click();await role.locator('.mafia-result-player-detail').waitFor();
+    assert.equal(await page.locator('.mafia-result-player-detail').count(),1);
+    assert.ok((await role.locator('.mafia-result-player-detail p').innerText()).trim().length>20,'the real role explanation is readable after disclosure');
     await page.screenshot({ path: path.join(output, name + '-expanded-role.png'), fullPage: true });
-    await role.locator('summary').focus(); await page.keyboard.press('Enter'); await role.locator('.mafia-role-art').waitFor({ state: 'detached' });
+    await role.locator('summary').focus(); await page.keyboard.press('Enter'); await role.locator('.mafia-result-player-detail').waitFor({ state: 'detached' });
     const replay = page.locator('.mafia-result-replay'); await replay.locator('summary').click();
     await page.getByText('PUBLIC_REPLAY_EVENT_79', { exact: true }).waitFor();
     await page.screenshot({ path: path.join(output, name + '-expanded-replay.png') });

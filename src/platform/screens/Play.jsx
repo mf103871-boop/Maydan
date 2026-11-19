@@ -245,10 +245,11 @@ export function Play({ id, rewarded = false }) {
     <Button onClick={() => navigate('/play/badeeha?mode=local', { replace: true })}>{tr("العب بديهة المجانية")}</Button>
   </Screen>;
   const Component = game.Component;
+  const matchLanguage = ready && (stage === 'setup' || game.setup === 'self' && selfSetupActive) && !inGame && !accessPrompt && <section className="studio-local-language"><label htmlFor="local-content-locale">{tr('لغة المباراة')}</label><select id="local-content-locale" value={contentLocale} disabled={accessBusy} onChange={event => { const next = event.target.value; preferences.set('match-content-locale', next); setContentLocale(next); setSavedSession(null); setGameOptions(null); }}><option value="ar" lang="ar">{tr("العربية")}</option><option value="en" lang="en">English</option></select><small>{tr('لغة القوائم مستقلة عن لغة المباراة.')}</small></section>;
 
   return (
     <GameFrame game={game} inGame={ready && contentReady && inGame} exitMessage={exitMessage || game.exitMessage} beforeExit={beforeExit}>
-      {ready && (stage === 'setup' || game.setup === 'self' && selfSetupActive) && !inGame && !accessPrompt && <section className="studio-local-language"><label htmlFor="local-content-locale">{tr('لغة المباراة')}</label><select id="local-content-locale" value={contentLocale} disabled={accessBusy} onChange={event => { const next = event.target.value; preferences.set('match-content-locale', next); setContentLocale(next); setSavedSession(null); setGameOptions(null); }}><option value="ar" lang="ar">{tr("العربية")}</option><option value="en" lang="en">English</option></select><small>{tr('لغة القوائم مستقلة عن لغة المباراة.')}</small></section>}
+      {id !== "badeeha" && matchLanguage}
       <div inert={interruption.paused || Boolean(accessPrompt) || accessBusy || undefined} aria-hidden={interruption.paused || Boolean(accessPrompt) || undefined} style={interruption.paused || accessPrompt ? { visibility: 'hidden', pointerEvents: 'none' } : undefined}>
       {!ready ? <GameLoading game={game} progress={progress} /> : !contentReady ? <section className="stack" style={{padding:24}}><p role={pack.error?'alert':'status'}>{pack.key===contentKey&&pack.error?tr('تعذّر تحميل محتوى المباراة. محفوظاتك لم تتغير.'):tr('جارٍ تحميل محتوى المباراة…')}</p>{pack.key===contentKey&&pack.error&&<Button onClick={()=>{setPack({key:contentKey,ready:false,error:false});setPackAttempt(value=>value+1);}}>{tr('إعادة المحاولة')}</Button>}</section> : stage === 'setup' ? (
         <Screen dir={getDirection()} className="stack" style={{ '--game-accent': game.accent }} aria-label={tr('إعداد {game}', {game:gameName(game)})}>
@@ -267,7 +268,7 @@ export function Play({ id, rewarded = false }) {
           )}
         </Screen>
       ) : (
-        <><Component key={`${contentLocale}:${demo || account.gameplayPolicy ? `${owner}:${session}` : session}`} api={api} players={players} teams={teams} mode={mode} savedSession={savedSession} gameOptions={gameOptions} onExit={api.requestExit} />
+        <><Component key={`${contentLocale}:${demo || account.gameplayPolicy ? `${owner}:${session}` : session}`} api={api} matchLanguage={id === "badeeha" ? matchLanguage : undefined} players={players} teams={teams} mode={mode} savedSession={savedSession} gameOptions={gameOptions} onExit={api.requestExit} />
           {progressionReceipt && progressionReceipt.ownerId === owner && progressionReceipt.key === recorder.marker()?.key &&
             <MatchProgression key={progressionReceipt.eventId} {...progressionReceipt} />}</>
       )}

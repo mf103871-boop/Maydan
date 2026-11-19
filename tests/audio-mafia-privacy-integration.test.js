@@ -20,7 +20,14 @@ const modules = {
   '../shared/account/context.js': 'export const useAccount=()=>globalThis.__mafiaAudioFixture.account;',
   '../shared/account/api.js': 'export const resolveAccountServer=()=>"https://isolated.invalid";',
   '../shared/account/SignInSheet.jsx': 'export const SignInSheet=()=>null;',
-  '../shared/ui/components.jsx': "import React from 'react';export const Button=({children,...p})=>React.createElement('button',p,children);export const Modal=({children,title,onClose})=>React.createElement('section',{'data-testid':'social-modal'},title,children,React.createElement('button',{onClick:onClose},'إغلاق'));export const Sheet=Modal;",
+  '../shared/ui/components.jsx': `
+    import React from 'react';
+    export const Button = ({ children, ...props }) => React.createElement('button', props, children);
+    export const ModalCloseButton = Button;
+    export const Modal = ({ children, title, onClose }) => React.createElement('section',
+      { 'data-testid': 'social-modal' }, title, children, React.createElement('button', { onClick: onClose }, 'إغلاق'));
+    export const Sheet = Modal;
+  `,
   '../shared/ui/useVisualViewport.js': 'export const useVisualViewport=()=>{};',
   '../shared/ui/dialog-interaction.js': 'export const activateDialog=()=>()=>{};',
   '../platform/context.js': 'export const usePlatform=()=>({sound:globalThis.__mafiaAudioFixture.sound});',
@@ -34,7 +41,7 @@ const modules = {
   './LammaProvider.jsx': 'export const useLamma=()=>globalThis.__mafiaAudioFixture.lamma;',
   './CallDock.jsx': "import React from 'react';export const CallControls=p=>React.createElement('section',{'data-testid':'delegated-call-controls'},React.createElement('button',{'data-testid':'delegated-call-end',onClick:p.onEnd},'إنهاء المكالمة'),React.createElement('button',{'data-testid':'delegated-call-mute',onClick:()=>p.onMute(true)},'كتم'));",
   './CallViewport.jsx': 'export const useCallDockLayout=()=>{};',
-  './SocialScreen.jsx': "import React from 'react';export const ActionDialog=()=>null,Conversation=()=>null,PersonAvatar=()=>React.createElement('span'),SearchDialog=()=>null,presenceLabel=()=>'';",
+  './SocialScreen.jsx': "import React from 'react';export const ActionDialog=()=>null,Conversation=()=>null,Icon=()=>null,PersonAvatar=()=>React.createElement('span'),SearchDialog=()=>null,presenceLabel=()=>'';",
   './LammaMedia.jsx': "import React from 'react';export const LammaButton=({label,icon:_icon,...p})=>React.createElement('button',p,label),LammaIcon=()=>null,VoiceRecorder=()=>null,VoiceMessage=()=>null,GameInviteCard=()=>null,mediaError=x=>String(x);",
   './game-launch.js': 'export const createSocialGameLauncher=()=>({});',
 };

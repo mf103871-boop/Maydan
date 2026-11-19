@@ -16,8 +16,9 @@ test('coverage inventory preserves every node and exact conditional explanation 
   // A deliberate coverage/content change must update this semantic baseline;
   // whitespace, constant names and sharing structure do not affect it.
   const semantics = JSON.stringify({ DESIGN_CONDITIONAL_NODE_REASONS, DESIGN_RENDERED_NODE_IDS });
-  // Direction B plus the server-granted, owner-only Creator management action.
-  assert.equal(createHash('sha256').update(semantics).digest('hex'), 'c076fa64db44fa8710bee389d02f95ef25a2bcd726ec516df076719183952422');
+  // Existing IDs remain stable. The incoming-call actions are now exposed
+  // with metadata for when each real action is available.
+  assert.equal(createHash('sha256').update(semantics).digest('hex'), '669fc8abb58dc643ea79f859b01d622cadc5c699deccb0323ad2788e42a2a842');
 });
 
 test('semantic scene registry has stable unique identities and the eight actual games', () => {
@@ -192,7 +193,7 @@ test('actual online match components render host/guesser/result phases with corr
 });
 
 test('room chrome and team/player setup previews reuse production components with a semantic root', () => {
-  for (const id of ['online.chrome','online.lobby','play-setup','play-setup.teams','setup.pass-phone']) {
+  for (const id of ['game.entry','online.chrome','online.lobby','play-setup','play-setup.teams','setup.pass-phone']) {
     const html = renderer.renderScene(id);
     assert.match(html, new RegExp(`data-design-screen="${id.replaceAll('.', '\\.')}"`));
     assert.ok(html.includes('data-design-id='), id);

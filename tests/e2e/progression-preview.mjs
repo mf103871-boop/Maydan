@@ -88,7 +88,7 @@ async function checkFunctions(page) {
   await page.keyboard.press('Escape');
   await dialog.waitFor({ state: 'detached' });
 
-  await scope.getByRole('button', { name: /مافيا الإتقان/ }).click();
+  await scope.getByRole('button', { name: /إتقان مافيا/ }).click();
   await dialog.getByText('الإتقان ٨ من ١٠', { exact: true }).waitFor();
   await page.keyboard.press('Escape');
   await dialog.waitFor({ state: 'detached' });

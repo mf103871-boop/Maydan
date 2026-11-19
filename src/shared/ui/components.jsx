@@ -1,5 +1,6 @@
 import { tr } from '../i18n/core.js';
 import { Avatar, TrophyArtwork, ClayStage } from '../brand/art.jsx';
+import recoveryArtwork from '../brand/assets/playful-scenes/recovery-puzzle-v1.webp';
 import { ProfileAvatar } from '../../profiles/ProfileAvatar.jsx';
 import { PlayerName } from '../../profiles/PlayerIdentity.jsx';
 // المكونات المشتركة: زر، بطاقة، شارة، نافذة، ورقة سفلية، تنبيه، حلقة تقدم، لوحة نتائج، منصة تتويج، شاشة.
@@ -171,7 +172,7 @@ export function ConfirmModal({ title, message, confirmLabel = tr("نعم"), canc
 
 // ── Sheet (bottom sheet, drag down to close) ─────────────────
 export function Sheet({ open, onClose, title, children, ...designProps }) {
-  const [closing,close]=useAnimatedClose(onClose,210);
+  const [closing,close]=useAnimatedClose(onClose,180);
   const drag = useRef({ y: 0, dy: 0, active: false });
   const ref = useRef(null);
   const [host, anchor, syncVars] = useDialogHost();
@@ -201,18 +202,32 @@ export function Sheet({ open, onClose, title, children, ...designProps }) {
       </section>
     </div>
   );
-  return <><span ref={anchor} hidden aria-hidden="true" />{host ? createPortal(tree, host) : tree}</>;
+  const provided = <ModalCloseContext.Provider value={close}>{tree}</ModalCloseContext.Provider>;
+  return <><span ref={anchor} hidden aria-hidden="true" />{host ? createPortal(provided, host) : provided}</>;
 }
 
 // ── ErrorBoundary ────────────────────────────────────────────
 // خطأ تصيير في أي لعبة كان يُفرغ الصفحة كلها بلا رجعة. الحدّ هنا يعرض رسالة
 // عربية مع «العودة إلى الرئيسية» وزر مسح البيانات المحفوظة (سبب الأعطال
 // المتكررة عادة)، فلا تُسقط لعبة واحدة المنصة كلها.
+function SocialRecovery({ title, onHome, children }) {
+  const ref = useRef(null);
+  const [host, anchor, syncVars] = useDialogHost();
+  useDialogInteraction(ref, host, syncVars, onHome);
+  const overlay = (
+    <div ref={ref} className="recovery-dialog" role="alertdialog" aria-modal="true" aria-label={title} tabIndex={-1}>
+      {children}
+    </div>
+  );
+  return <><span ref={anchor} hidden aria-hidden="true" />{host ? createPortal(overlay, host) : overlay}</>;
+}
+
 export class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { error: null };
+    this.state = { error: null, dismissed: false };
     this.reset = this.reset.bind(this);
+    this.returnHome = this.returnHome.bind(this);
   }
   static getDerivedStateFromError(error) { return { error }; }
   componentDidCatch(error, info) {
@@ -220,25 +235,37 @@ export class ErrorBoundary extends React.Component {
   }
   componentDidUpdate(previous) {
     // تغيّر المسار (أو أي مفتاح يمرّره المستدعي) يعيد المحاولة تلقائيًا.
-    if (this.state.error && previous.resetKey !== this.props.resetKey) this.reset();
+    if (this.state.error && previous.resetKey !== this.props.resetKey &&
+      (this.props.scope !== 'social' || this.props.resetKey)) this.reset();
   }
-  reset() { this.setState({ error: null }); }
+  reset() { this.setState({ error: null, dismissed: false }); }
+  returnHome() {
+    this.props.onHome?.();
+    // A persistent social failure must release the shell when the player leaves.
+    if (this.props.scope === 'social') this.setState({ dismissed: true });
+    else this.reset();
+  }
   render() {
-    const { error } = this.state;
-    const { children, fallback, title = tr("تعطّلت هذه الشاشة"), message = tr("حدث خطأ غير متوقع. يمكنك العودة إلى الرئيسية، أو مسح البيانات المحفوظة إن تكرّر الخطأ."), homeLabel = tr("العودة إلى الرئيسية"), clearLabel = tr("مسح البيانات المحفوظة"), onHome, onClear } = this.props;
+    const { error, dismissed } = this.state;
+    const { children, fallback, title = tr("تعطّلت هذه الشاشة"), message = tr("حدث خطأ غير متوقع. يمكنك العودة إلى الرئيسية."), homeLabel = tr("العودة إلى الرئيسية"), clearLabel = tr("مسح البيانات المحفوظة"), onClear, scope = 'screen' } = this.props;
     if (!error) return children;
+    if (dismissed) return null;
     if (typeof fallback === 'function') return fallback(error, this.reset);
-    return (
-      <div className="error-boundary" role="alert">
+    const recovery = (
+      <div data-design-screen="app.error" data-recovery-scope={scope} className="error-boundary" role={scope === 'social' ? undefined : 'alert'}>
         <div className="error-card">
-          <h2>{title}</h2>
-          <p className="muted">{message}</p>
-          <p className="error-detail">{String((error && error.message) || error)}</p>
-          <Button variant="primary" size="lg" full onClick={() => { if (onHome) onHome(); this.reset(); }}>{homeLabel}</Button>
-          {onClear && <Button variant="danger" full onClick={() => { onClear(); }}>{clearLabel}</Button>}
+          <img data-design-id="artwork" src={recoveryArtwork} width="480" height="384" alt="" className="error-artwork" decoding="async" />
+          <h2 data-design-id="title">{title}</h2>
+          <p data-design-id="message" className="error-message">{message}</p>
+          <p data-design-id="detail" className="error-detail" dir="auto">{String(error.message || error)}</p>
+          <div data-design-id="actions" className="error-actions">
+            <Button data-design-id="home" data-design-required="true" variant="primary" size="lg" full onClick={this.returnHome}>{homeLabel}</Button>
+            {onClear && <Button data-design-id="clear-data" data-design-required="true" variant="danger" full onClick={onClear}>{clearLabel}</Button>}
+          </div>
         </div>
       </div>
     );
+    return scope === 'social' ? <SocialRecovery title={title} onHome={this.returnHome}>{recovery}</SocialRecovery> : recovery;
   }
 }
 
@@ -320,6 +347,7 @@ export function CountUp({ value, from = 0, duration = 900, delay = 0, className 
     let raf = 0;
     let start = 0;
     const step = (now) => {
+      if (prefersReducedMotion()) { show(value); return; }
       if (!start) start = now;
       const t = Math.min(1, (now - start) / duration);
       const eased = 1 - Math.pow(1 - t, 3);

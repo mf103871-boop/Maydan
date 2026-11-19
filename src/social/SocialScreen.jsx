@@ -1,7 +1,9 @@
 import { tr, getUiLocale, localeDirection } from '../shared/i18n/core.js';
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Button, Modal } from '../shared/ui/components.jsx';
 import { useVisualViewport } from '../shared/ui/useVisualViewport.js';
+import { prefersReducedMotion } from '../shared/fx/screen.js';
 import { useAccount } from '../shared/account/context.js';
 import { SignInSheet } from '../shared/account/SignInSheet.jsx';
 import { navigate } from '../platform/router.js';
@@ -12,6 +14,7 @@ import { PlayerName } from '../profiles/PlayerIdentity.jsx';
 import { useSubmitKey } from '../shared/ui/useSubmitKey.js';
 import { StickerMessage } from './PlusStickers.jsx';
 import { useSocialSendAudio } from './useSocialSendAudio.js';
+import searchLoupe from './assets/search-loupe-v1.webp';
 
 const MAX_TEXT = 2000;
 const EMPTY_CONVERSATION = { messages: [], loading: false };
@@ -33,6 +36,12 @@ const paths = {
   down: 'M6 9l6 6 6-6',
   inbox: 'M3 4h18v16H3zM3 13h5l2 3h4l2-3h5',
   shield: 'M12 2l8 3v7c0 5-8 10-8 10S4 17 4 12V5l8-3ZM8 8l8 8M16 8l-8 8',
+  wave: 'M4 10v4m4-8v12m4-15v18m4-15v12m4-8v4',
+  'person-add': 'M3 21v-2a4 4 0 0 1 4-4h5a4 4 0 0 1 4 4v2M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM19 7v8m-4-4h8',
+  retry: 'M20 7v5h-5M4 17v-5h5M6 8a7 7 0 0 1 12-2l2 6M4 12l2 6a7 7 0 0 0 12-2',
+  edit: 'm14 6 4 4M4 17l-1 4 4-1L20 7a2.8 2.8 0 0 0-4-4L4 17Z',
+  delete: 'M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7',
+  warning: 'M12 8v5m0 3h.01m10-4a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z',
 };
 export function Icon({ name, size = 22 }) {
   return <svg data-directional={name === 'back' ? 'back' : undefined} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={paths[name] || paths.chat} /></svg>;
@@ -64,15 +73,19 @@ export function presenceLabel(user, now = Date.now()) {
   if (!last) return tr("غير متصل");
   const minutes = Math.max(0, Math.floor((now - last) / 60000));
   if (minutes < 1) return tr("آخر ظهور قبل قليل");
-  if (minutes < 60) return tr("آخر ظهور قبل ") + minutes.toLocaleString(getUiLocale()) + tr(" دقيقة");
+  if (minutes < 60) {
+    const locale = getUiLocale();
+    if (locale === 'en') return `Last seen ${minutes} ${minutes === 1 ? 'minute' : 'minutes'} ago`;
+    return tr("آخر ظهور قبل ") + minutes.toLocaleString(locale) + tr(" دقيقة");
+  }
   if (minutes < 1440) return tr("آخر ظهور ") + timeLabel(last);
   return tr("آخر ظهور ") + dayLabel(last, now);
 }
-export function PersonAvatar({ user, large = false, presence = false }) {
-  return <span className={'social-avatar' + (large ? ' is-large' : '')} aria-hidden="true"><ProfileAvatar user={user} size={large ? 66 : 44} />{presence && <i className={user?.online ? 'is-online' : ''} />}</span>;
+export function PersonAvatar({ user, large = false, presence = false, size = large ? 66 : 44 }) {
+  return <span className={'social-avatar' + (large ? ' is-large' : '')} style={{ '--social-avatar-size': size + 'px' }} aria-hidden="true"><ProfileAvatar user={user} size={size} />{presence && <i className={user?.online ? 'is-online' : ''} />}</span>;
 }
-function EmptyState({ icon = 'chat', title, children, action, compact = false }) {
-  return <div className={'social-empty' + (compact ? ' is-compact' : '')}><span className="social-empty-art"><Icon name={icon} size={38} /></span><h2>{title}</h2>{children && <p>{children}</p>}{action}</div>;
+function EmptyState({ icon = 'chat', title, children, action, compact = false, artwork }) {
+  return <div className={'social-empty' + (compact ? ' is-compact' : '')}>{artwork || <span className="social-empty-art"><Icon name={icon} size={38} /></span>}<h2>{title}</h2>{children && <p>{children}</p>}{action}</div>;
 }
 function Notice({ children, error = false, onDismiss }) {
   return <div className={'social-notice' + (error ? ' is-error' : '')} role={error ? 'alert' : 'status'}><span>{children}</span>{onDismiss && <IconAction label={tr("إخفاء التنبيه")} icon="close" onClick={onDismiss} />}</div>;
@@ -114,12 +127,81 @@ export function MessageBubble({ message, mine, sender, read = false, onEdit, onD
   const failed = message.status === 'failed';
   const deleted = Boolean(message.deletedAt);
   const richContent = content || (message.kind === 'sticker' ? <StickerMessage message={message} /> : null);
-  const [menu, setMenu] = useState(false);
+  const [menu, setMenu] = useState(null);
+  const actions = useRef(null);
+  const popup = useRef(null);
+  useLayoutEffect(() => {
+    if (!menu || !popup.current) return;
+    const element = popup.current;
+    const place = () => {
+      const chat = menu.chat.getBoundingClientRect();
+      const trigger = menu.trigger.getBoundingClientRect();
+      const log = menu.log.getBoundingClientRect();
+      if (trigger.bottom <= log.top || trigger.top >= log.bottom) { setMenu(null); return; }
+      const composer = menu.chat.querySelector('.social-composer');
+      const bottom = composer?.getBoundingClientRect().top ?? chat.bottom;
+      const inset = 8;
+      element.style.maxHeight = Math.max(0, bottom - chat.top - 2 * inset) + 'px';
+      const { width, height } = element.getBoundingClientRect();
+      const left = trigger.left < chat.left + chat.width / 2 ? trigger.left : trigger.right - width;
+      const below = trigger.bottom + 4;
+      const top = below + height <= bottom - inset ? below : trigger.top - height - 4;
+      element.style.left = Math.max(inset, Math.min(left - chat.left, chat.width - width - inset)) + 'px';
+      element.style.top = Math.max(inset, Math.min(top, bottom - height - inset) - chat.top) + 'px';
+      element.style.visibility = 'visible';
+    };
+    place();
+    const focusFrame = requestAnimationFrame(() => element.querySelector('button')?.focus({ preventScroll: true }));
+    menu.log.addEventListener('scroll', place, { passive: true });
+    window.visualViewport?.addEventListener('resize', place);
+    window.addEventListener('resize', place);
+    return () => {
+      cancelAnimationFrame(focusFrame);
+      menu.log.removeEventListener('scroll', place);
+      window.visualViewport?.removeEventListener('resize', place);
+      window.removeEventListener('resize', place);
+    };
+  }, [menu]);
+  useEffect(() => {
+    if (!menu) return;
+    const dismiss = event => {
+      if (!actions.current?.contains(event.target) && !popup.current?.contains(event.target)) setMenu(null);
+    };
+    document.addEventListener('pointerdown', dismiss);
+    return () => document.removeEventListener('pointerdown', dismiss);
+  }, [menu]);
+  const toggleMenu = event => {
+    const trigger = event.currentTarget;
+    const log = trigger.closest('.social-message-scroll');
+    const chat = log?.closest('.social-chat');
+    setMenu(!menu && chat ? { trigger, log, chat } : null);
+  };
   const sentLabel = failed ? tr("لم تُرسل") : pending ? tr("جارٍ الإرسال") : read || message.read ? tr("قُرئت") : tr("أُرسلت");
+  const specialBubble = !deleted && ['voice', 'game_invite', 'room_invite', 'invite'].includes(message.kind) ? message.kind === 'voice' ? ' is-voice' : ' is-invite' : '';
   return <article data-message-key={messageKey(message)} className={'social-message ' + (mine ? 'is-mine' : 'is-theirs') + (failed ? ' is-failed' : '') + (continues ? ' is-continuation' : '')} aria-label={mine ? tr("رسالتك") : sender ? tr("رسالة من ") + displayName(sender) : tr("رسالة صديقك")}>
-    <div data-design-id="message" className={'social-bubble' + (deleted ? ' is-deleted' : '')}>{sender && !mine && !continues && <div className="social-message-sender"><ProfileAvatar user={sender} size={24} /><strong><PlayerName user={sender} name={mine ? tr("أنت") : displayName(sender)} card compact /></strong></div>}{!deleted && richContent ? richContent : <p dir="auto">{deleted ? tr("حُذفت هذه الرسالة") : message.text}</p>}<div className="social-message-meta">{message.editedAt && !deleted && <span>{tr("معدّلة")}</span>}<time dateTime={timestamp(message.createdAt) ? new Date(timestamp(message.createdAt)).toISOString() : undefined}>{timeLabel(message.createdAt)}</time>{mine && <span className={'social-delivery' + (read || message.read ? ' is-read' : '')} aria-label={sentLabel} title={sentLabel}><Icon name={pending ? 'clock' : read || message.read ? 'double' : 'check'} size={15} /><span>{sentLabel}</span></span>}</div></div>
-    {!deleted && !pending && !failed && <div className="social-message-actions"><IconAction label={mine ? tr("خيارات رسالتك") : tr("خيارات الرسالة")} icon="more" aria-expanded={menu} onClick={() => setMenu(v => !v)} />{menu && <div className="social-message-menu">{mine ? <>{(!message.kind || message.kind === 'text') && <button data-design-id="message-edit" type="button" onClick={() => { setMenu(false); onEdit?.(); }}>{tr("تعديل")}</button>}<button data-design-id="message-delete" type="button" className="is-danger" onClick={() => { setMenu(false); onDelete?.(); }}>{tr("حذف")}</button></> : <button data-design-id="report" type="button" onClick={() => { setMenu(false); onReport?.(); }}>{tr("إبلاغ عن الرسالة")}</button>}</div>}</div>}
-    {mine && failed && <button type="button" className="social-retry" data-design-id="message-retry" data-sound={retrySound} onClick={onRetry}>{tr("إعادة الإرسال")}</button>}
+    <div data-design-id="message" className={'social-bubble' + (deleted ? ' is-deleted' : '') + specialBubble}>
+      {sender && !mine && !continues && <div className="social-message-sender"><ProfileAvatar user={sender} size={24} /><strong><PlayerName user={sender} name={displayName(sender)} card compact /></strong></div>}
+      {!deleted && richContent ? richContent : <p dir="auto">{deleted ? tr("حُذفت هذه الرسالة") : message.text}</p>}
+      <div className="social-message-meta">
+        {message.editedAt && !deleted && <span>{tr("معدّلة")}</span>}
+        <time dateTime={timestamp(message.createdAt) ? new Date(timestamp(message.createdAt)).toISOString() : undefined}>{timeLabel(message.createdAt)}</time>
+        {mine && <span className={'social-delivery' + (read || message.read ? ' is-read' : '')} aria-label={sentLabel} title={sentLabel}><Icon name={failed ? 'warning' : pending ? 'clock' : read || message.read ? 'double' : 'check'} size={17} /><span>{sentLabel}</span></span>}
+        {mine && failed && <button type="button" className="social-retry" data-design-id="message-retry" data-sound={retrySound} onClick={onRetry}><Icon name="retry" size={17} />{tr("إعادة الإرسال")}</button>}
+      </div>
+    </div>
+    {!deleted && !pending && !failed && <div className="social-message-actions" ref={actions} onKeyDown={event => {
+      if (menu && event.key === 'Escape') {
+        event.stopPropagation();
+        setMenu(null);
+        actions.current?.querySelector('button')?.focus();
+      }
+    }}>
+      <IconAction label={mine ? tr("خيارات رسالتك") : tr("خيارات الرسالة")} icon="more" aria-expanded={!!menu} onClick={toggleMenu} />
+      {menu && createPortal(<div ref={popup} className="social-message-menu">{mine ? <>
+        {(!message.kind || message.kind === 'text') && <button data-design-id="message-edit" type="button" onClick={() => { setMenu(null); onEdit?.(); }}><Icon name="edit" size={18} />{tr("تعديل")}</button>}
+        <button data-design-id="message-delete" type="button" className="is-danger" onClick={() => { setMenu(null); onDelete?.(); }}><Icon name="delete" size={18} />{tr("حذف")}</button>
+      </> : <button data-design-id="report" type="button" onClick={() => { setMenu(null); onReport?.(); }}><Icon name="shield" size={18} />{tr("إبلاغ عن الرسالة")}</button>}</div>, menu.chat)}
+    </div>}
   </article>;
 }
 export function Conversation({ friend, conversation = EMPTY_CONVERSATION, account, social, onMenu, onBack, onAction, notify, onProfile = () => navigate(`/profile/${friend.id}`), headerActions, composerExtras, renderContent, draftValue, onDraftChange, subtitle, compactHeader = false, onClose, visible = true, designScreen = 'social.conversation' }) {
@@ -132,6 +214,52 @@ export function Conversation({ friend, conversation = EMPTY_CONVERSATION, accoun
   const [sending, setSending] = useState(false);
   const [newBelow, setNewBelow] = useState(false);
   const scroller = useRef(null);
+  const previousMessages = useRef(null);
+  const arrivals = useRef(new Map());
+  const conversationId = messageScope === 'group' ? friend.id : conversation.id || friend.conversationId;
+  useEffect(() => {
+    const live = event => {
+      const data = event.detail;
+      if (!visible || !conversationId || !data?.liveArrival || document.hidden || prefersReducedMotion()) return;
+      const matches = messageScope === 'group' ? data.type === 'group' && data.groupId === conversationId
+        : data.type === 'message' && data.conversationId === conversationId;
+      if (matches) arrivals.current.set(data.messageSeq, performance.now());
+    };
+    const clear = () => arrivals.current.clear();
+    window.addEventListener('maydan-social-event', live);
+    window.addEventListener('offline', clear);
+    document.addEventListener('visibilitychange', clear);
+    return () => {
+      clear();
+      window.removeEventListener('maydan-social-event', live);
+      window.removeEventListener('offline', clear);
+      document.removeEventListener('visibilitychange', clear);
+    };
+  }, [conversationId, messageScope, visible]);
+  useLayoutEffect(() => {
+    const previous = previousMessages.current, current = new Set(), entering = new Set();
+    const now = performance.now();
+    for (const [seq, at] of arrivals.current) {
+      if (now - at > 5000) arrivals.current.delete(seq);
+    }
+    for (const message of messages) {
+      const key = messageKey(message);
+      const localKey = message.clientId && JSON.stringify([message.senderId, message.clientId]);
+      current.add(key);
+      if (localKey) current.add(localKey);
+      const live = arrivals.current.delete(message.seq);
+      const pending = message.status === 'pending' && message.senderId === account.user.id;
+      if (previous && !previous.has(key) && !previous.has(localKey) && !message.deletedAt && (live || pending)) entering.add(key);
+    }
+    previousMessages.current = current;
+    if (!entering.size || !visible || document.hidden || prefersReducedMotion()) return;
+    for (const row of scroller.current?.querySelectorAll('[data-message-key]') || []) {
+      if (!entering.has(row.dataset.messageKey)) continue;
+      row.classList.add('is-arriving');
+      // Discard the one-shot class even when the preference changes mid-fade.
+      setTimeout(() => row.classList.remove('is-arriving'), 170);
+    }
+  }, [messages, account.user.id, visible]);
   const composer = useRef(null);
   const nearBottom = useRef(true);
   const initialScroll = useRef(false);
@@ -170,8 +298,7 @@ export function Conversation({ friend, conversation = EMPTY_CONVERSATION, accoun
   const goBottom = (smooth = false) => {
     const el = scroller.current;
     if (!el) return;
-    const reduced = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
-    el.scrollTo({ top: el.scrollHeight, behavior: smooth && !reduced ? 'smooth' : 'auto' });
+    el.scrollTo({ top: el.scrollHeight, behavior: smooth && !prefersReducedMotion() ? 'smooth' : 'auto' });
     nearBottom.current = true; setNewBelow(false);
     Promise.resolve(social.markRead(friend.id)).catch(() => {});
   };
@@ -250,14 +377,15 @@ export function Conversation({ friend, conversation = EMPTY_CONVERSATION, accoun
     try { await social.loadOlder(friend.id); }
     catch (error) { olderAnchor.current = null; notify(friendlyError(error), true); }
   };
-  return <section data-design-screen={designScreen || undefined} className="social-chat" aria-label={tr("المحادثة مع ") + displayName(friend)}>
+  return <section data-design-screen={designScreen || undefined} className={'social-chat' + (compactHeader ? ' is-studio-chat' : '')} aria-label={tr("المحادثة مع ") + displayName(friend)}>
     <header data-design-id="header" className={'social-chat-head' + (compactHeader ? ' is-unified' : '')}>
       <IconAction label={tr("العودة للأصدقاء")} icon="back" className="social-mobile-back" onClick={onBack} />
-      <button data-design-id="profile" type="button" className="social-icon-button social-chat-avatar" aria-label={tr("عرض بروفايل ") + displayName(friend)} onClick={onProfile}><PersonAvatar user={friend} presence /></button>
-      <div className="social-chat-person"><h2><button data-design-id="profile" type="button" className="social-profile-link" onClick={onProfile}><PlayerName user={friend} card compact /></button></h2><p className={friend.online || conversation.typing ? 'is-online' : ''}>{subtitle || (conversation.typing ? tr("يكتب الآن…") : presenceLabel(friend))}</p></div>
-      {compactHeader && headerActions ? <div className="social-chat-header-actions" role="group" aria-label={tr("أدوات المحادثة")}>{headerActions}</div> : headerActions}
+      <button data-design-id="profile" type="button" className="social-icon-button social-chat-avatar" aria-label={tr("عرض بروفايل ") + displayName(friend)} onClick={onProfile}><PersonAvatar user={friend} presence={!compactHeader} size={compactHeader ? 64 : 44} /></button>
+      <div className="social-chat-person"><h2><button data-design-id="profile" type="button" className="social-profile-link" onClick={onProfile}><PlayerName user={friend} card compact /></button></h2><p className={friend.online || conversation.typing ? 'is-online' : ''}>{compactHeader && !subtitle && <i className={'lamma-presence-dot' + (friend.online ? ' is-online' : '')} aria-hidden="true" />}{subtitle || (conversation.typing ? tr("يكتب الآن…") : presenceLabel(friend))}</p></div>
+      {!compactHeader && headerActions}
       <IconAction label={tr("خيارات المحادثة")} icon="more" aria-haspopup="dialog" onClick={onMenu} />
       {onClose && <IconAction label={tr("إغلاق اللّمة والعودة للعبة")} icon="close" onClick={onClose} />}
+      {compactHeader && headerActions && <div className="social-chat-header-actions" role="group" aria-label={tr("أدوات المحادثة")}>{headerActions}</div>}
     </header>
     <div data-design-id="messages" className="social-message-area">
       <div ref={scroller} className="social-message-scroll" role="log" aria-label={tr("الرسائل")} aria-live="polite" aria-relevant="additions text" onScroll={() => { const el = scroller.current; nearBottom.current = el.scrollHeight - el.scrollTop - el.clientHeight < 72; rememberReading(); if (nearBottom.current) { setNewBelow(false); Promise.resolve(social.markRead(friend.id)).catch(() => {}); } }}>
@@ -278,7 +406,7 @@ export function Conversation({ friend, conversation = EMPTY_CONVERSATION, accoun
     </div>
     <form data-design-id="composer" className="social-composer" onSubmit={send}>{composerExtras}
       {social.offline && <p className="social-composer-note" role="status">{tr("أنت غير متصل. ستتمكن من الإرسال عند عودة الاتصال.")}</p>}
-      <div className="social-composer-row"><textarea dir="auto" data-design-id="message-input" ref={composer} rows={1} maxLength={MAX_TEXT} value={text} aria-label={tr("اكتب رسالة")} placeholder={tr("اكتب رسالة…")} enterKeyHint="send" onChange={event => changeText(event.target.value)} onBlur={stopped} {...submitKeys} /><button type="submit" data-design-id="send" data-sound="none" className="social-send" aria-label={tr("إرسال الرسالة")} disabled={!text.trim() || sending || social.offline}><Icon name="send" /></button></div>
+      <div className="social-composer-row"><textarea dir={text.trim() ? 'auto' : localeDirection(getUiLocale())} data-design-id="message-input" ref={composer} rows={1} maxLength={MAX_TEXT} value={text} aria-label={tr("اكتب رسالة")} placeholder={tr("اكتب رسالة…")} enterKeyHint="send" onChange={event => changeText(event.target.value)} onBlur={stopped} {...submitKeys} /><button type="submit" data-design-id="send" data-sound="none" className="social-send" aria-label={tr("إرسال الرسالة")} disabled={!text.trim() || sending || social.offline}><Icon name="send" /></button></div>
       {text.length > MAX_TEXT - 200 && <small className="social-character-count" role="status">{text.length.toLocaleString(getUiLocale())} / {MAX_TEXT.toLocaleString(getUiLocale())}</small>}
     </form>
   </section>;
@@ -302,10 +430,10 @@ export function SearchDialog({ social, onClose, run, busy, onOpen, onProfile = i
     }, 350);
     return () => { clearTimeout(timer); generation.current += 1; };
   }, [query, social.searchUsers]);
-  return <Modal data-design-screen="social.search" title={tr("البحث عن أصدقاء")} onClose={onClose} className="social-dialog social-friend-search"><p className="social-dialog-intro">{tr("ابحث باسم صديقك أو أدخل رمز ميدان الخاص به.")}</p><label className="social-search"><Icon name="search" size={20} /><input data-design-id="search-input" autoFocus value={query} onChange={event => setQuery(event.target.value)} placeholder={tr("الاسم أو رمز الصديق")} aria-label={tr("ابحث بالاسم أو رمز الصديق")} maxLength={100} autoComplete="off" /></label><div className="social-search-results" aria-live="polite">{searched && results.length > 0 && <h3>{tr("نتائج البحث")}</h3>}{error && <Notice error>{error}</Notice>}{loading ? <LoadingRows /> : !searched ? !error && <p className="social-search-hint">{tr("اكتب حرفين على الأقل لبدء البحث.")}</p> : results.length === 0 ? <EmptyState compact title={tr("لم نجد هذا الاسم")} icon="search">{tr("جرّب رمز صديقك أو تأكد من كتابة الاسم.")}</EmptyState> : results.map(user => {
+  return <Modal data-design-screen="social.search" title={tr("البحث عن أصدقاء")} onClose={onClose} placement="bottom" className="social-dialog social-friend-search"><p className="social-dialog-intro">{tr("ابحث باسم صديقك أو أدخل رمز ميدان الخاص به.")}</p><label className="social-search"><Icon name="search" size={20} /><input data-design-id="search-input" autoFocus value={query} onChange={event => setQuery(event.target.value)} placeholder={tr("الاسم أو رمز الصديق")} aria-label={tr("ابحث بالاسم أو رمز الصديق")} maxLength={100} dir="auto" autoComplete="off" /></label><div className="social-search-results" aria-live="polite">{searched && results.length > 0 && <h3>{tr("نتائج البحث")}</h3>}{error && <Notice error>{error}</Notice>}{loading ? <LoadingRows /> : !searched ? !error && <p className="social-search-hint">{tr("اكتب حرفين على الأقل لبدء البحث.")}</p> : results.length === 0 ? <EmptyState compact title={tr("لم نجد هذا الاسم")} artwork={<img className="social-search-loupe" src={searchLoupe} alt="" width="124" height="124" />}>{tr("جرّب رمز صديقك أو تأكد من كتابة الاسم.")}</EmptyState> : results.map(user => {
     const isFriend = user.relationship === 'friend';
     const pending = requested.has(user.id) || user.relationship === 'pending_outgoing';
-    return <div key={user.id} className="social-search-result"><PersonAvatar user={user} /><div><button data-design-id="profile" type="button" className="social-profile-link" aria-label={tr("عرض بروفايل ") + displayName(user)} onClick={() => { onClose(); onProfile(user.id); }}><strong><PlayerName user={user} card compact /></strong></button><small>{presenceLabel(user)}{user.code && <> · <bdi>{user.code}</bdi></>}</small></div>{isFriend ? <Button data-design-id="friend-chat" variant="secondary" onClick={() => { onClose(); onOpen(user.id); }}>{tr("محادثة")}</Button> : pending ? <span className="social-status-pill">{tr("تم إرسال الطلب")}</span> : user.relationship === 'pending_incoming' ? <span className="social-status-pill">{tr("طلب وارد")}</span> : <Button data-design-id="add-friend" variant="primary" loading={busy === 'invite-' + user.id} disabled={social.offline || Boolean(busy)} onClick={async () => { setError(''); const ok = await run(() => social.sendRequest(user.id), 'invite-' + user.id, tr("أُرسل طلب الصداقة"), setError); if (ok) setRequested(prev => new Set([...prev, user.id])); }}>{tr("إضافة")}</Button>}</div>;
+    return <div key={user.id} className="social-search-result"><PersonAvatar user={user} size={70} /><div><button data-design-id="profile" type="button" className="social-profile-link" aria-label={tr("عرض بروفايل ") + displayName(user)} onClick={() => { onClose(); onProfile(user.id); }}><strong><PlayerName user={user} card compact /></strong></button><small><i className={'lamma-presence-dot' + (user.online ? ' is-online' : '')} aria-hidden="true" />{presenceLabel(user)}{user.code && <> · <bdi>{user.code}</bdi></>}</small></div>{isFriend ? <Button data-design-id="friend-chat" variant="primary" onClick={() => { onClose(); onOpen(user.id); }}>{tr("محادثة")}</Button> : pending ? <span className="social-status-pill">{tr("تم إرسال الطلب")}</span> : user.relationship === 'pending_incoming' ? <span className="social-status-pill">{tr("طلب وارد")}</span> : <Button data-design-id="add-friend" variant="primary" loading={busy === 'invite-' + user.id} disabled={social.offline || Boolean(busy)} onClick={async () => { setError(''); const ok = await run(() => social.sendRequest(user.id), 'invite-' + user.id, tr("أُرسل طلب الصداقة"), setError); if (ok) setRequested(prev => new Set([...prev, user.id])); }}>{tr("إضافة")}</Button>}</div>;
   })}</div></Modal>;
 }
 export function ActionDialog({ action, social, onClose, onComplete }) {

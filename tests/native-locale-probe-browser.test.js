@@ -14,7 +14,7 @@ const packagedApp = () => compiled ||= (async () => {
   const assets = new Map(result.outputFiles.filter(file => !file.path.endsWith('.js'))
     .map(file => ['/' + path.relative(DIST, file.path).replaceAll('\\', '/'), file.contents]));
   return { assets, html: await renderHtml(result.outputFiles.find(file => file.path.endsWith('.js')).text,
-    { version: 'native-locale-probe', assets: [...assets.keys()].map(url => '.' + url) }) };
+    { version: 'native-locale-probe', roomsUrl: 'same-origin', assets: [...assets.keys()].map(url => '.' + url) }) };
 })();
 const mime = { '.json':'application/json', '.css':'text/css', '.webp':'image/webp', '.png':'image/png',
   '.woff2':'font/woff2', '.svg':'image/svg+xml', '.webmanifest':'application/manifest+json', '.m4a':'audio/mp4' };

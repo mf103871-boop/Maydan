@@ -1,6 +1,7 @@
 import { tr, numberForLocale, getUiLocale, localeDirection } from '../../shared/i18n/core.js';
 import React, { useId, useState } from 'react';
 import { PresentationStyles } from '../../shared/ui/PresentationStyles.jsx';
+import { getAvatarArt } from '../../shared/brand/playful-identity.js';
 import stylesheet from './progression.css?sheet';
 
 const ROOT = './assets/progression/v1/';
@@ -27,16 +28,16 @@ export function ProgressionArt({ src, className = '', width, height, reportError
   return <img className={className} src={src} width={width} height={height} alt="" decoding="async" loading={eager ? 'eager' : 'lazy'} draggable={false} onError={() => setUnavailable(src)} />;
 }
 
-function ProfileAction({ onClick, className, children, label }) {
+function ProfileAction({ onClick, className, children, label, designId }) {
   return onClick
-    ? <button className={className} type="button" aria-label={label} onClick={event => { event.currentTarget.focus({ preventScroll: true }); onClick(event); }}>{children}</button>
+    ? <button className={className} type="button" data-design-id={designId} aria-label={label} onClick={event => { event.currentTarget.focus({ preventScroll: true }); onClick(event); }}>{children}</button>
     : <div className={className}>{children}</div>;
 }
 
 export function ProgressionPortrait({ portraitSrc, portrait, layeredPortrait, frameId, frameSrc, heroSrc, level, name, className = '', onCatalog }) {
   const frame = frameSrc || progressionFrameArt(frameId);
   const label = name ? tr("صورة ") + name : tr("الصورة الشخصية");
-  return <ProfileAction className={'pc-portrait ' + className + (heroSrc ? ' pc-portrait-reference' : '')} label={label + tr("، فتح خزانة المقتنيات")} onClick={onCatalog}>
+  return <ProfileAction designId="profile-wardrobe-open" className={'pc-portrait ' + className + (heroSrc ? ' pc-portrait-reference' : '')} label={label + tr("، فتح خزانة المقتنيات")} onClick={onCatalog}>
     {heroSrc ? <ProgressionArt className="pc-reference-art" src={heroSrc} width={285} height={282} reportError eager /> : <>{layeredPortrait ? <span className="pc-layered-portrait">{layeredPortrait}</span> : <span className={'pc-portrait-hole' + (frame ? ' is-framed' : '')}>
       {portrait || (portraitSrc
         ? <ProgressionArt className="pc-portrait-photo" src={portraitSrc} width={256} height={256} reportError eager />
@@ -54,7 +55,7 @@ export function ProgressionMeter({ value, max, label, className = '' }) {
   const limit = Math.max(1, integer(max));
   const progress = Math.min(limit, integer(value));
   return <div className={'pc-meter ' + className} role="progressbar" aria-label={label} aria-valuemin={0} aria-valuemax={limit}
-    aria-valuenow={progress} aria-valuetext={progressionNumber(progress) + ' ' + tr('من') + ' ' + progressionNumber(limit)} dir="ltr">
+    aria-valuenow={progress} aria-valuetext={progressionNumber(progress) + ' ' + tr('من') + ' ' + progressionNumber(limit)} dir={localeDirection(getUiLocale())}>
     <span style={{ width: (progress / limit * 100) + '%' }} />
   </div>;
 }
@@ -68,74 +69,78 @@ function Chevron() {
 }
 
 export function ProgressionProfile({
-  name, bio, title, portraitSrc, portrait, layeredPortrait, coverSrc, cover, level, xpIntoLevel, xpForNextLevel,
+  name, nameNode, bio, title, portraitSrc, portrait, layeredPortrait, coverSrc, cover, level, levelArtSrc, xpIntoLevel, xpForNextLevel,
   achievements = [], mastery = [], nextReward, frameId, frameSrc, heroSrc, owner = true, status = 'ready',
-  onCatalog, onAchievement, onMastery, onReward, onCustomize, onRetry, reference = false,
+  identityMeta, presence, summary, actions, afterBadges, hasProgression = Number.isInteger(level),
+  onCatalog, onAchievement, onMastery, onReward, onCustomize, onRetry, onStart, reference = false,
 }) {
   const id = useId();
-  const showXp = owner && Number.isFinite(xpIntoLevel) && Number.isFinite(xpForNextLevel) && xpForNextLevel > 0;
+  const showXp = owner && hasProgression && Number.isFinite(xpIntoLevel) && Number.isFinite(xpForNextLevel) && xpForNextLevel > 0;
   const displayName = name?.trim() || tr("لاعب ميدان");
-  const brandArt = coverSrc || progressionArt('profile-header');
   const rewardId = nextReward?.itemId || nextReward?.id;
+  const startedMastery = mastery.some(track => Number(track.completed) > 0 || Number(track.grade) > 0);
   return <section className={'pc-profile' + (reference ? ' pc-reference-profile' : '')} dir={localeDirection(getUiLocale())} aria-label={tr("بروفايل ") + displayName}>
-    <div className="pc-profile-masthead">
-      {cover || <ProgressionArt className="pc-masthead-art" src={brandArt} width={554} height={116} eager />}
-      <span className="pc-wordmark">{tr("ميدان")}</span>
-    </div>
+    {(cover || coverSrc) && <div className="pc-profile-masthead">{cover || <ProgressionArt className="pc-masthead-art" src={coverSrc} width={554} height={180} eager />}</div>}
     {status === 'loading' ? <div className="pc-profile-body pc-state" role="status" aria-busy="true"><div className="pc-loading-art" aria-hidden="true" /><p>{tr("جارٍ تحميل البروفايل…")}</p></div>
       : status === 'error' ? <div className="pc-profile-body pc-state" role="alert"><p>{tr("تعذّر تحميل البروفايل.")}</p>{onRetry && <button type="button" className="pc-control" onClick={onRetry}>{tr("حاول مجددًا")}</button>}</div>
       : <div className="pc-profile-body">
-        <div className="pc-identity">
-          <div className="pc-identity-copy">
-            <h2><bdi>{displayName}</bdi></h2>
-            {title && <ProfileAction className="pc-title-plaque" onClick={owner ? onCustomize : null} label={tr("اللقب الحالي: ") + title + tr("، اختر لقبًا")}><span>{title}</span></ProfileAction>}
-            {bio && <p className="pc-bio" dir="auto">{bio}</p>}
-          </div>
+        <div data-design-id="identity" className="pc-identity">
           <ProgressionPortrait portraitSrc={portraitSrc} portrait={portrait} layeredPortrait={layeredPortrait} frameId={frameId} frameSrc={frameSrc} heroSrc={heroSrc}
-            level={level} name={displayName} onCatalog={owner ? onCatalog : null} />
+            name={displayName} level={reference ? level : undefined} onCatalog={owner && hasProgression ? onCatalog : null} />
+          <div className="pc-identity-copy">
+            <h2 data-design-id="name">{nameNode || <bdi>{displayName}</bdi>}</h2>
+            {presence}
+            {title && <ProfileAction designId="profile-title-edit" className="pc-title-plaque profile-earned-title" onClick={owner ? onCustomize : null} label={tr("اللقب الحالي: ") + tr(title) + tr("، اختر لقبًا")}><span>{tr(title)}</span></ProfileAction>}
+            {showXp ? <div data-design-id="xp" className="pc-xp">
+              <strong className={levelArtSrc?'pc-xp-badge':undefined} aria-label={levelArtSrc?levelText(level):undefined}>{levelArtSrc?<><img src={levelArtSrc} alt=""/><span aria-hidden="true">{progressionNumber(level)}</span></>:levelText(level)}</strong>
+              <div className="pc-xp-label"><bdi dir="ltr"><bdi dir="ltr">{progressionNumber(xpIntoLevel)}</bdi> / <bdi dir="ltr">{progressionNumber(xpForNextLevel)}</bdi> XP</bdi></div>
+              <ProgressionMeter value={xpIntoLevel} max={xpForNextLevel} label={tr("نقاط الخبرة")} />
+            </div> : hasProgression && Number.isFinite(level) && level > 0 ? <strong className="pc-public-level">{levelText(level)}</strong> : null}
+            {!showXp && bio && <p data-design-id="bio" className="pc-bio" dir="auto">{bio}</p>}
+            {!showXp && identityMeta}
+            {!owner && summary}
+          </div>
         </div>
-        {showXp && <div className="pc-xp">
-          <div className="pc-xp-label"><bdi>{progressionNumber(xpIntoLevel)} {tr('من')} {progressionNumber(xpForNextLevel)}</bdi><strong>{tr("نقاط الخبرة")}</strong></div>
-          <ProgressionMeter value={xpIntoLevel} max={xpForNextLevel} label={tr("نقاط الخبرة")} />
-        </div>}
-        {(achievements.length > 0 || owner) && <section className="pc-achievements" aria-labelledby={id + 'achievements'}>
-          <SectionTitle id={id + 'achievements'}>{owner ? tr("إنجازاتي") : tr("الإنجازات")}</SectionTitle>
-          {achievements.length > 0 ? <div className="pc-achievement-list">{achievements.slice(0, 3).map(achievement =>
-            <ProfileAction key={achievement.id} className="pc-achievement" onClick={onAchievement ? () => onAchievement(achievement) : null}>
-              {achievement.artNode || <ProgressionArt className="pc-achievement-art" src={achievement.artSrc || progressionArt(achievement.art)} width={134} height={107} reportError />}
-              <strong>{tr(achievement.label)}</strong>
-              {achievement.detail && <span className="pc-detail">{tr(achievement.detail)}</span>}
-            </ProfileAction>
-          )}</div> : <p className="pc-empty">{tr("تظهر هنا شارات الإنجازات التي تختارها من تخصيص البروفايل.")}</p>}
-        </section>}
-        {owner && nextReward && Number.isFinite(nextReward.level) && <ProfileAction className="pc-reward" label={tr("معاينة ") + (tr(nextReward.label || nextReward.title || "المكافأة التالية"))}
-          onClick={onReward ? () => onReward(nextReward) : null}>
-          <Chevron />
-          <span className="pc-reward-copy">
-            <strong>{tr(nextReward.label || nextReward.title || "الإطار التالي")}</strong>
-            <span className="pc-detail">{progressionRewardRequirement(nextReward)}</span>
-            <span className="pc-reward-stages" aria-hidden="true" dir="ltr">
-              {Array.from({ length: 5 }, (_, n) => <i key={n} className={n < Math.min(4, Math.floor(integer(level) / nextReward.level * 4)) ? 'is-reached' : ''} />)}
-            </span>
-          </span>
-          <ProgressionArt className="pc-reward-art" src={nextReward.artSrc || progressionFrameArt(rewardId)} width={150} height={126} reportError />
-        </ProfileAction>}
-        {owner && mastery.length > 0 && <section className="pc-mastery" aria-labelledby={id + 'mastery'}>
+        {owner && summary}
+        {actions}
+        {owner && hasProgression && <section data-design-id="mastery" className="pc-mastery" aria-labelledby={id + 'mastery'}>
           <SectionTitle id={id + 'mastery'}>{tr("إتقان الألعاب")}</SectionTitle>
-          <div className="pc-mastery-list">{mastery.map(track => {
+          {startedMastery ? <div className="pc-mastery-list">{mastery.map(track => {
             const label = tr(track.label || masteryNames[track.game] || track.game);
             const max = Math.max(1, integer(track.maxGrade || 10));
             const grade = Math.min(max, integer(track.grade));
-            return <ProfileAction key={track.game} className={'pc-track' + (track.game === 'mafia' ? ' is-mafia' : '')}
+            return <ProfileAction key={track.game} designId="mastery-track" className="pc-track" label={tr("إتقان ") + label}
               onClick={onMastery ? () => onMastery(track) : null}>
-              <Chevron />
-              <span className="pc-track-copy"><strong>{label}</strong><span className="pc-detail">{tr("الإتقان ")}{progressionNumber(grade)} {tr('من')} {progressionNumber(max)}</span>
-                <ProgressionMeter value={grade} max={max} label={tr("إتقان ") + label} />
-              </span>
               {track.artNode || <ProgressionArt className="pc-track-art" src={track.artSrc || progressionArt(masteryArtwork[track.game])} width={92} height={92} reportError />}
+              <strong>{label}</strong>
+              <ProgressionMeter value={grade} max={max} label={tr("إتقان ") + label} />
+              <span className="pc-track-value" dir="ltr"><bdi dir="ltr">{progressionNumber(grade)}</bdi> / <bdi dir="ltr">{progressionNumber(max)}</bdi></span>
             </ProfileAction>;
-          })}</div>
+          })}</div> : <div data-design-id="mastery-empty" className="pc-mastery-empty"><span className="pc-first-game" aria-hidden="true">{getAvatarArt('controller',120) ? <ProgressionArt src={getAvatarArt('controller',120)} width={120} height={120} /> : '✦'}</span><div><p>{tr("أول مباراة تبدأ رحلتك.")}</p>{onStart && <button type="button" className="pc-control is-primary" data-design-id="home" onClick={onStart}>{tr("بدء اللعب")}</button>}</div></div>}
         </section>}
+        <section data-design-id="badges" className="pc-achievements" aria-labelledby={id + 'achievements'}>
+          <SectionTitle id={id + 'achievements'}>{tr("شارات بارزة")}</SectionTitle>
+          {achievements.length > 0 ? <div className="pc-achievement-list" style={{ '--badge-count': Math.min(3, achievements.length) }}>{achievements.slice(0, 3).map(achievement =>
+            <ProfileAction key={achievement.id} designId="featured-badge" className="pc-achievement profile-featured-badge" label={tr(achievement.label)} onClick={onAchievement ? () => onAchievement(achievement) : null}>
+              {achievement.artNode || <ProgressionArt className="pc-achievement-art" src={achievement.artSrc || progressionArt(achievement.art)} width={134} height={107} reportError />}
+              <strong>{tr(achievement.label)}</strong>
+            </ProfileAction>
+          )}</div> : <>
+            {owner && <div className="pc-empty-badges" aria-hidden="true"><span /><span /><span /></div>}
+            {owner && onCustomize ? <button type="button" data-design-id="choose-badges" className="pc-choose-badges" onClick={onCustomize}>{tr("اختر شاراتك المكتسبة من تعديل الملف.")}</button>
+              : <p className="pc-empty">{owner ? tr("اختر شاراتك المكتسبة من تعديل الملف.") : tr("لم يختر شارات بارزة بعد.")}</p>}
+          </>}
+        </section>
+        {afterBadges}
+        {showXp && (bio || identityMeta) && <details className="pc-identity-more"><summary data-design-id="profile-identity-toggle">{tr("تفاصيل الملف")}</summary>{bio && <p data-design-id="bio" className="pc-bio" dir="auto">{bio}</p>}{identityMeta}</details>}
+        {owner && nextReward && Number.isFinite(nextReward.level) && <details data-design-id="next-reward" className="pc-next-reward" open={reference || undefined}>
+          <summary data-design-id="next-reward-toggle">{tr("المكافأة التالية")}<span>{progressionRewardRequirement(nextReward)}</span></summary>
+          <ProfileAction designId="profile-reward-preview" className="pc-reward" label={tr("معاينة ") + tr(nextReward.label || nextReward.title || "المكافأة التالية")}
+            onClick={onReward ? () => onReward(nextReward) : null}>
+            <ProgressionArt className="pc-reward-art" src={nextReward.artSrc || progressionFrameArt(rewardId)} width={150} height={126} reportError />
+            <span className="pc-reward-copy"><strong>{tr(nextReward.label || nextReward.title || "الإطار التالي")}</strong><span className="pc-detail">{progressionRewardRequirement(nextReward)}</span></span><Chevron />
+          </ProfileAction>
+        </details>}
       </div>}
   </section>;
 }
@@ -159,7 +164,7 @@ export function ProgressionCatalog({ items = [], portraitSrc, portrait, onSelect
     </div>}
     {visible.length ? <div className="pc-catalog-grid">{visible.map(item =>
       <ProfileAction key={item.id} className="pc-catalog-item" onClick={onSelect ? () => onSelect(item) : null}
-        label={[item.level ? levelText(item.level) : '', item.title || item.label, stateNames[item.state]].filter(Boolean).join('، ')}>
+        label={[item.level ? levelText(item.level) : '', tr(item.title || item.label), tr(stateNames[item.state])].filter(Boolean).join('، ')}>
         <ItemArtwork item={item} portraitSrc={portraitSrc} portrait={portrait} />
         {item.level && <strong>{levelText(item.level)}</strong>}
         <span>{tr(item.title || item.label)}</span>

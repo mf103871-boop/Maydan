@@ -6,12 +6,17 @@ import { Store } from '../platform/screens/Store.jsx';
 export function StoreDesignPreview({ openPreview = false }) {
   const host = useRef(null);
   useEffect(() => {
-    let next;
+    let next, compare;
     const first = requestAnimationFrame(() => {
       host.current?.querySelector('[data-design-id="store-tab-collections"]')?.click();
-      if (openPreview) next = requestAnimationFrame(() => (host.current?.querySelector('[data-item-id="sahra.profileSkin"] [data-design-id="item-preview"]') || host.current?.querySelector('[data-design-id="item-preview"]'))?.click());
+      if (openPreview) next = requestAnimationFrame(() => {
+        const item = host.current?.querySelector('[data-item-id="sahra.profileSkin"] button')
+          || host.current?.querySelector('[data-item-id] button');
+        item?.click();
+        compare = requestAnimationFrame(() => host.current?.querySelector('.studio-store-links [data-design-id="item-preview"]')?.click());
+      });
     });
-    return () => { cancelAnimationFrame(first); if (next) cancelAnimationFrame(next); };
+    return () => { cancelAnimationFrame(first); cancelAnimationFrame(next); cancelAnimationFrame(compare); };
   }, [openPreview]);
   return <div ref={host}><Store /></div>;
 }

@@ -18,6 +18,7 @@ import { audioCatalogPackagingPlugin } from './audio/catalog-packaging.mjs';
 import { designRuntimePackagingPlugin } from './design-runtime-packaging.mjs';
 import { bankPackagingPlugin } from './lib/bank-packaging.mjs';
 import { localePackagingPlugin } from './lib/locale-packaging.mjs';
+import { writeWebGamePack } from './lib/web-game-pack.mjs';
 import { presentationCssPlugin } from './presentation-css.mjs';
 import { ticketPolicyEnabled } from '../src/shared/account/gameplay-policy.mjs';
 
@@ -107,7 +108,9 @@ export function esbuildOptions({ minify = true, version = '0.0.0', media = {}, a
     bundle: true,
     minify,
     format: 'iife',
-    target: ['es2019', 'safari14'],
+    // The signed native path can keep ES2020 syntax supported by its WebView.
+    // Ordinary browser and simulation bundles retain their compatibility target.
+    target: [rewardedPreview && !rewardedSimulation ? 'es2020' : 'es2019', 'safari14'],
     jsx: 'automatic',
     alias: { 'react/jsx-runtime': path.join(ROOT, 'src/design/jsx-runtime.js') },
     // New files are JSX; the migrated trivia game is plain React.createElement
@@ -145,37 +148,52 @@ export function escapeInlineScript(js) {
   return js.replace(/<\/script/gi, '<\\/script').replace(/<!--/g, '<\\!--');
 }
 
-// The splash art and the two fonts are needed for the first frame: preloading them
-// lets their download start while the inline script is still being parsed.
+// Preload the normal body and strongest heading faces in both scripts.
+// Intermediate static weights load normally only when the page uses them.
 const PRELOAD = [
   { pattern: /\.css$/, tag: (href) => `<link rel="preload" as="style" href="${href}">` },
   { pattern: /\/(world|game-icons|avatars)-[^/]+\.webp$/, tag: (href) => `<link rel="preload" as="image" href="${href}">` },
-  { pattern: /\/(arabic|latin)-[^/]+\.woff2$/, tag: (href) => `<link rel="preload" as="font" type="font/woff2" href="${href}" crossorigin>` },
+  { pattern: /\/(arabic|latin)-(400|800)-[^/]+\.woff2$/, tag: (href) => `<link rel="preload" as="font" type="font/woff2" href="${href}" crossorigin>` },
 ];
 export function preloadLinks(assets = []) {
   return assets.flatMap((href) => PRELOAD.filter((rule) => rule.pattern.test(href)).map((rule) => rule.tag(href))).join('\n');
 }
 
-export async function renderHtml(js, { version, assets = [], sourceCommit = process.env.GITHUB_SHA || '' }) {
-  if (sourceCommit && !/^[a-f0-9]{40}$/.test(sourceCommit)) throw new Error('Build source must be a complete Git commit SHA.');
-  let template = await readFile(path.join(ROOT, 'src/index.template.html'), 'utf8');
-  // The small boot guard also sits outside esbuild's imported bundle. Compact
-  // its whitespace while leaving the separate bundle placeholder untouched.
-  const boot = template.match(/<script>([\s\S]*?)<\/script>/);
-  if (boot && !boot[1].includes('<!--BUNDLE_JS-->')) {
-    const compact = (await transform(boot[1], { loader: 'js', minifyWhitespace: true,
-      target: ['es2019', 'safari14'], charset: 'utf8', legalComments: 'none' })).code;
-    template = template.replace(boot[0], () => `<script>${escapeInlineScript(compact)}</script>`);
+function openingFontFaces(assets) {
+  const arabicRange = 'U+0600-06FF,U+0750-077F,U+0870-089F,U+08A0-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FEFF';
+  const latin = [], arabic = [];
+  for (const url of assets) {
+    const match = /\/(arabic|latin)-(400|800)-[a-z0-9]+\.woff2$/i.exec(url);
+    if (!match) continue;
+    const rtl = match[1] === 'arabic';
+    const range = rtl ? ';unicode-range:' + arabicRange : '';
+    (rtl ? arabic : latin).push(`@font-face{font-family:'Maydan Opening';font-weight:${match[2]};font-display:swap;src:url('${url}') format('woff2')${range}}`);
   }
-  // Critical tokens bypass the CSS import loader, so compact their whitespace
-  // with the same policy before embedding them in the document head.
-  const tokens = (await transform(await readFile(path.join(ROOT, 'src/shared/theme/tokens.css'), 'utf8'), {
-    loader: 'css', minifyWhitespace: true, legalComments: 'none',
+  return [...latin, ...arabic].join('');
+}
+
+export async function renderHtml(js, { version, assets = [], sourceCommit = process.env.GITHUB_SHA || '', roomsUrl = process.env.MAYDAN_ROOMS_URL || '' }) {
+  if (sourceCommit && !/^[a-f0-9]{40}$/.test(sourceCommit)) throw new Error('Build source must be a complete Git commit SHA.');
+  const template = (await readFile(path.join(ROOT, 'src/index.template.html'), 'utf8'))
+    .replace(/>[\t \r]*\n[\t \r\n]*(?=<)/g, '>');
+  const boot = await esbuildBuild({ entryPoints: [path.join(ROOT, 'src/boot-guard.js')],
+    bundle: true, format: 'iife', write: false, minify: true, target: ['es2019', 'safari14'],
+    define: { __MAYDAN_ROOMS_URL__: JSON.stringify(roomsUrl) }, charset: 'utf8', legalComments: 'none' });
+  // Apply the same CSS compression to the critical styles delivered in HTML.
+  const tokens = await readFile(path.join(ROOT, 'src/shared/theme/tokens.css'), 'utf8');
+  const criticalStyle = /<style>([\s\S]*?)<\/style>/.exec(template)[1]
+    .replace('<!--TOKENS_CSS-->', () => tokens)
+    .replace('<!--OPENING_FONTS-->', () => openingFontFaces(assets));
+  const styles = (await transform(criticalStyle, {
+    loader: 'css', minify: true, legalComments: 'none',
   })).code;
+  const recoveryArt = assets.find(url => /\/recovery-puzzle-v1-[a-z0-9]+\.webp$/i.test(url));
   return template
     .replace('</head>', () => `${sourceCommit ? `<meta name="maydan-source" content="${sourceCommit}">` : ''}</head>`)
     .replace('<!--PRELOAD-->', () => preloadLinks(assets))
-    .replace('<!--TOKENS_CSS-->', () => tokens)
+    .replaceAll('<!--OPENING_RECOVERY_ART-->', () => recoveryArt ? `<img class="opening-recovery-art" width="140" height="120" alt="" src="${recoveryArt}">` : '')
+    .replace(/<style>[\s\S]*?<\/style>/, () => '<style>' + styles + '</style>')
+    .replace('<!--BOOT_GUARD_JS-->', () => escapeInlineScript(boot.outputFiles[0].text))
     .replace('<!--BUNDLE_JS-->', () => escapeInlineScript(js))
     .replaceAll('<!--VERSION-->', version);
 }
@@ -188,8 +206,9 @@ export function buildId(version, html) {
 
 // العامل الخدمي يتلقّى من البناء: معرّف الإصدار، صور فبركة، وأسماء ملفات المؤثرات (بأسمائها
 // المبصومة من sample-bank.js) كي يبقى manifest المؤثرات المصدر الوحيد لقائمة التخزين المسبق.
-export function renderServiceWorker(src, { id = 'dev', fabrakaImages = [], audioCues = [], brandAssets = [] } = {}) {
+export function renderServiceWorker(src, { id = 'dev', fabrakaImages = [], audioCues = [], brandAssets = [], manifest = '' } = {}) {
   return src.replaceAll('__BUILD_ID__', id)
+    .replace('/*__GAME_PACK__*/null', JSON.stringify(manifest || null))
     .replace('/*__FABRAKA_IMAGES__*/[]', JSON.stringify(fabrakaImages))
     .replace('/*__AUDIO_CUES__*/[]', JSON.stringify(audioCues))
     .replace('/*__BRAND_ASSETS__*/[]', JSON.stringify(brandAssets));
@@ -201,7 +220,7 @@ export const audioCueAssets = () => warmthAudioBuild()
   ...(privateAudioBuild() ? Object.values(CANDIDATE_EFFECTS).map((entry) => `./${entry.url}`) : []),
 ])];
 
-async function copyPublic({ id = 'dev', fabrakaImages = [], brandAssets = [], outdir = DIST } = {}) {
+async function copyPublic(outdir) {
   const pub = path.join(ROOT, 'public');
   try { await stat(pub); } catch { return; }
   for (const entry of await readdir(pub)) {
@@ -213,14 +232,9 @@ async function copyPublic({ id = 'dev', fabrakaImages = [], brandAssets = [], ou
         return true;
       } });
   }
-  const sw = path.join(outdir, 'sw.js');
-  try {
-    const src = await readFile(sw, 'utf8');
-    await writeFile(sw, renderServiceWorker(src, { id, fabrakaImages, audioCues: audioCueAssets(), brandAssets }), 'utf8');
-  } catch { /* لا عامل خدمي في public */ }
 }
 
-export async function buildOnce({ minify = true, includeStudio = true, version: releaseVersion, outdir = DIST, rewardedPreview = false, rewardedSimulation = false, roomsUrl } = {}) {
+export async function buildOnce({ minify = true, includeStudio = true, includePackTransport = true, version: releaseVersion, outdir = DIST, rewardedPreview = false, rewardedSimulation = false, roomsUrl = process.env.MAYDAN_ROOMS_URL || '' } = {}) {
   if (warmthAudioBuild()) await verifyWarmthMaterialized(ROOT);
   else if (privateAudioBuild()) await verifyMaterialized(ROOT);
   const pkg = await readPkg();
@@ -242,7 +256,7 @@ export async function buildOnce({ minify = true, includeStudio = true, version: 
   // Optional language packs are fetched on first use. They do not delay Arabic
   // startup or service-worker installation by precaching every English game.
   const brandAssets = packagedAssets.filter(url => !/\/locale-en-[^/]+\.json$/.test(url));
-  const html = await renderHtml(js, { version, assets: brandAssets });
+  const template = await renderHtml(js, { version, assets: brandAssets, roomsUrl });
   // An explicit destination is owned by its caller. Leave its other files
   // alone. The standard build retains its clean dist replacement.
   if (outdir === DIST) await rm(DIST, { recursive: true, force: true });
@@ -251,7 +265,7 @@ export async function buildOnce({ minify = true, includeStudio = true, version: 
     await mkdir(path.dirname(file.path), { recursive: true });
     await writeFile(file.path, file.contents);
   }
-  await copyPublic({ id: buildId(version, html), fabrakaImages, brandAssets, outdir });
+  await copyPublic(outdir);
   if (pkg.dependencies['livekit-client'] !== LIVEKIT_VERSION) throw new Error('Update the versioned LiveKit module filename with its pinned dependency.');
   await esbuildBuild({ stdin: { contents: "export { Room, RoomEvent, Track } from 'livekit-client';", resolveDir: ROOT, sourcefile: 'lamma-web-audio.js' },
     outfile: path.join(outdir, LIVEKIT_MODULE), bundle: true, format: 'esm', target: ['es2020', 'safari14'], minify: true,
@@ -263,7 +277,13 @@ export async function buildOnce({ minify = true, includeStudio = true, version: 
   }
   const copied = await copyMedia(ROOT, outdir);
   const out = path.join(outdir, 'index.html');
-  await writeFile(out, html, 'utf8');
+  const pack = await writeWebGamePack({
+    root: ROOT, outdir, template, includePackTransport, outputs: [...packagedAssets.map(file => file.slice(2)), LIVEKIT_MODULE],
+    worker: await readFile(path.join(outdir, 'sw.js'), 'utf8'),
+    renderWorker: (worker, manifest, html) => renderServiceWorker(worker, { id: buildId(version, html),
+      fabrakaImages, audioCues: audioCueAssets(), brandAssets, manifest }),
+  });
+  const { html } = pack;
   if (includeStudio) {
     const { buildStudio } = await import('./studio-build.mjs');
     const { buildDesignPreview } = await import('./design-preview-build.mjs');
@@ -272,7 +292,9 @@ export async function buildOnce({ minify = true, includeStudio = true, version: 
   }
   const bytes = Buffer.byteLength(html, 'utf8');
   const gzip = gzipSync(Buffer.from(html, 'utf8')).length;
-  return { out, bytes, gzip, version, buildId: buildId(version, html), warnings: result.warnings, brandAssets, media: { packs: media.packs, files: copied.count, bytes: copied.total } };
+  return { out, bytes, gzip, version, buildId: buildId(version, html), warnings: result.warnings, brandAssets,
+    gamePack: { manifest: pack.manifest, totalBytes: pack.totalBytes, totalFiles: pack.totalFiles },
+    media: { packs: media.packs, files: copied.count, bytes: copied.total } };
 }
 
 export function fmtKB(n) {

@@ -264,8 +264,25 @@ jobs:
             python3 scripts/ios/verify_rewarded_bundle.py "$ipa"
             python3 scripts/ios/verify_release_features.py "$ipa"
           done
+      - name: Verify the compiled public app icon
+        if: ${{ !inputs.private_audio_preview }}
+        run: |
+          shopt -s nullglob
+          ipas=(ios/build/export/*.ipa)
+          test "${#ipas[@]}" -eq 1
+          python3 scripts/ios/verify_public_icon.py --ipa "${ipas[0]}" \
+            --version "$IOS_VERSION" --build "$IOS_BUILD" --source "$GITHUB_SHA" \
+            --output ios/build/icon-proof
+      - name: Preserve the compiled public icon proof
+        if: ${{ !inputs.private_audio_preview }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: Maydan-icon-${{ inputs.version }}-${{ inputs.build }}
+          path: ios/build/icon-proof
+          if-no-files-found: error
+          retention-days: 7
       - name: Preserve the ordinary signed IPA
-        if: ${{ !inputs.private_audio_preview && !inputs.upload_to_testflight }}
+        if: ${{ !inputs.private_audio_preview }}
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: Maydan-iOS-${{ inputs.version }}-${{ inputs.build }}

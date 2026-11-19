@@ -1071,6 +1071,8 @@ export const EN_ONLINE = Object.freeze({
   "حديث الفريق · سري": "Team chat · private",
   "مجلس المقصيين": "Eliminated players' room",
   "المحادثة والأحداث": "Chat and events",
+  "النقاش العام": "Public discussion",
+  "التصويت يبدأ في مرحلته.": "Voting opens in its own phase.",
   "قناة خاصة": "Private channel",
   "للمتابعين": "For spectators",
   "عام": "Public",

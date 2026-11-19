@@ -7,8 +7,8 @@ import path from 'node:path';
 import {chromium,webkit} from 'playwright';
 
 let server,origin;
-const source=`import React,{useState}from'react';import{createRoot}from'react-dom/client';import{flushSync}from'react-dom';import{MafiaMatchView,MafiaDirectory}from'./src/online/Mafia.jsx';import{createMafiaVisualFixture}from'./src/games/mafia/preview-fixtures.js';import ui from'./src/shared/ui/ui.css';
-function App(){const initial=createMafiaVisualFixture('discussion');const[p,set]=useState({...initial,accountId:'local-owner'});window.commands??=[];window.change=(patch)=>flushSync(()=>set(old=>({...old,...patch,state:{...old.state,...patch.state}})));window.show=(kind,extra={})=>flushSync(()=>set({...createMafiaVisualFixture(kind),accountId:'local-owner',...extra}));return <><style>{ui}</style>{p.directory?<MafiaDirectory enabled rooms={[{code:'123456',roomName:'عرض محلي',players:3,capacity:8,mode:'classic',voiceMode:'off'}]} disabled={p.directoryDisabled} footer={null} onCreate={()=>{}}/>:<MafiaMatchView {...p} isHost voice={{simulated:true,status:'off',onJoin:()=>window.commands.push({type:'simulated-voice'})}} act={(type,fields)=>{window.commands.push({type,...fields});return true;}} onSafety={()=>{}}/>}</>;}createRoot(document.getElementById('root')).render(<App/>);`;
+const source=`import React,{useState}from'react';import{createRoot}from'react-dom/client';import{flushSync}from'react-dom';import{MafiaMatchView,MafiaDirectory}from'./src/online/Mafia.jsx';import{createMafiaVisualFixture}from'./src/games/mafia/preview-fixtures.js';import ui from'./src/shared/ui/ui.css';import tokens from'./src/shared/theme/tokens.css';
+function App(){const initial=createMafiaVisualFixture('discussion');const[p,set]=useState({...initial,accountId:'local-owner'});window.commands??=[];window.change=(patch)=>flushSync(()=>set(old=>({...old,...patch,state:{...old.state,...patch.state}})));window.show=(kind,extra={})=>flushSync(()=>set({...createMafiaVisualFixture(kind),accountId:'local-owner',...extra}));return <><style>{tokens+ui}</style>{p.directory?<MafiaDirectory enabled rooms={[{code:'123456',roomName:'عرض محلي',players:3,capacity:8,mode:'classic',voiceMode:'off'}]} disabled={p.directoryDisabled} footer={null} onCreate={()=>{}}/>:<MafiaMatchView {...p} isHost voice={{simulated:true,status:'off',onJoin:()=>window.commands.push({type:'simulated-voice'})}} act={(type,fields)=>{window.commands.push({type,...fields});return true;}} onSafety={()=>{}}/>}</>;}createRoot(document.getElementById('root')).render(<App/>);`;
 
 before(async()=>{
   const result=await build({stdin:{contents:source,resolveDir:process.cwd(),loader:'jsx'},bundle:true,write:false,platform:'browser',format:'iife',jsx:'automatic',loader:{'.js':'jsx','.css':'text','.webp':'dataurl','.woff2':'dataurl'},logLevel:'silent'});
@@ -37,7 +37,7 @@ for(const[name,engine]of[['chromium',chromium],['webkit',webkit]])test(`dense Ma
         return{overflow:document.documentElement.scrollWidth>innerWidth+1,composer:rect('[data-design-id="composer"]'),timer:rect('[data-design-id="timer"]'),timeline:rect('[data-design-id="messages"]'),seats:[...document.querySelectorAll('[data-design-id="player-seat"]')].map(el=>({width:el.getBoundingClientRect().width,height:el.getBoundingClientRect().height}))};
       });
       assert.equal(geometry.overflow,false,`${name} ${width} no horizontal page overflow`);assert.equal(geometry.seats.length,12);
-      assert.ok(geometry.seats.every(seat=>seat.width>=44&&seat.height>=44));assert.ok(geometry.composer.bottom<=height+1&&geometry.composer.y>=0);
+      assert.ok(geometry.seats.every(seat=>seat.width>=44&&seat.height>=44));assert.ok(geometry.composer.bottom<=height+1&&geometry.composer.y>=0,`${name} ${width}×${height}: composer ${JSON.stringify(geometry.composer)}`);
       assert.ok(geometry.timer.y>=0&&geometry.timer.bottom<=height);assert.ok(geometry.timeline.height>=65,`${name} ${width} timeline remains readable`);
     }
     await page.setViewportSize({width:320,height:568});
@@ -48,7 +48,7 @@ for(const[name,engine]of[['chromium',chromium],['webkit',webkit]])test(`dense Ma
     await page.setViewportSize({width:390,height:844});
     await page.locator('[data-design-id="message-input"]').fill('كتابة عربية دون تكبير');
     await page.setViewportSize({width:390,height:420});
-    const keyboard=await page.locator('[data-design-id="composer"]').boundingBox();assert.ok(keyboard.y>=0&&keyboard.y+keyboard.height<=420);
+    const keyboard=await page.locator('[data-design-id="composer"]').boundingBox();assert.ok(keyboard.y>=0&&keyboard.y+keyboard.height<=420,`${name} shortened composer: ${JSON.stringify(keyboard)}`);
     await page.locator('[data-design-id="player-seat"]').last().scrollIntoViewIfNeeded();
     assert.ok(await page.locator('[data-design-id="player-seat"]').last().isVisible(),'all12 seats remain reachable beside a shortened viewport');
     assert.equal(await page.locator('[data-design-id="message-input"]').evaluate(el=>getComputedStyle(el).fontSize),'16px');

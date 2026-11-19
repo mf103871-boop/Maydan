@@ -11,7 +11,7 @@ import { configuredBuildOrigin, MAFIA_PREVIEW_API_ORIGIN, PRODUCTION_API_ORIGIN 
 import { gameplayOfferById, gameplayEntryOfferById } from './gameplay-policy.mjs';
 import { callAndroidRewarded, isAndroidRewardedShell } from './android-rewarded.js';
 import entryStyles from './rewarded-entry.css';
-import ticketArtwork from '../../../assets/game-entry/manifest.json' with { type: 'json' };
+import { getPlayfulSceneArt } from '../brand/playful-scenes.js';
 
 const rewardNative = (type, payload, options) => isAndroidRewardedShell()
   ? callAndroidRewarded(type, payload, options) : callNative(type, payload, options);
@@ -86,12 +86,12 @@ export function RewardedEntry(props) {
   return scope && visibleScope === scope ? <RewardedOffer {...props} /> : null;
 }
 
-export function RewardedOffer({ offer, surface = 'selection', onReady, onFree, onBusy, onAccess, canPresent, requiredMode }) {
+export function RewardedOffer({ offer, surface = 'selection', onReady, onFree, onBusy, onAccess, canPresent, requiredMode, compact = false, joinAction = null }) {
   const account = useAccount();
-  return <Offer key={account.user?.id || 'guest'} {...{ account, offer, surface, onReady, onFree, onBusy, onAccess, canPresent, requiredMode }} />;
+  return <Offer key={account.user?.id || 'guest'} {...{ account, offer, surface, onReady, onFree, onBusy, onAccess, canPresent, requiredMode, compact, joinAction }} />;
 }
 
-function Offer({ account, offer, surface, onReady, onFree, onBusy, onAccess, canPresent, requiredMode }) {
+function Offer({ account, offer, surface, onReady, onFree, onBusy, onAccess, canPresent, requiredMode, compact = false, joinAction = null }) {
   const entry = gameplayEntryOfferById(offer);
   const gameplay = entry || gameplayOfferById(offer);
   const local = gameplay ? gameplay.mode === 'local' : offer === LOCAL_REWARDED_OFFER;
@@ -226,31 +226,38 @@ function Offer({ account, offer, surface, onReady, onFree, onBusy, onAccess, can
   const saved = !gameplay && local && hasRewardedDraft(owner);
   const effectiveAccess = entry && requiredMode ? status?.modeAccess?.[requiredMode] || 'required' : status?.access;
   const messages = entry ? entryFeedback : feedback;
-  const accessText = entry && effectiveAccess === 'required' ? tr("تحتاج تذكرة لبدء مباراة جديدة في هذه اللعبة.") : ACCESS[effectiveAccess];
+  const accessText = entry && effectiveAccess === 'required' ? tr("تحتاج تذكرة لبدء مباراة جديدة في هذه اللعبة.") : tr(ACCESS[effectiveAccess] || '');
   const mayWatch = status?.group === 'B' && status.adsAvailable && effectiveAccess === 'required' &&
     status.attempt !== 'pending' && (!native || nativeStatus?.available !== false);
   const unavailable = effectiveAccess === 'required' && status?.group === 'B' && (!status.adsAvailable || nativeStatus?.available === false);
-  return <Card className={entry ? 'stack rewarded-entry-card' : 'stack'} style={entry ? undefined : { padding: 16 }} data-maydan-ticket-ui={entry ? 'ticket-clay-v1' : undefined} data-entry-access={effectiveAccess || 'checking'} role="region" aria-label={gameplay ? tr("بدء مباراة {v0}", {v0: gameplay.label}) : tr("تحدّي اللمّة التجريبي")}>
+  return <><Card className={entry ? 'stack rewarded-entry-card' + (compact ? ' is-recovery' : '') : 'stack'} style={entry ? undefined : { padding: 16 }} data-maydan-ticket-ui={entry ? 'ticket-clay-v1' : undefined} data-entry-access={effectiveAccess || 'checking'} role="region" aria-label={gameplay ? tr("بدء مباراة {v0}", {v0: tr(gameplay.label)}) : tr("تحدّي اللمّة التجريبي")}>
     {entry && <style>{entryStyles}</style>}
     {entry ? <header className="rewarded-entry-header">
-      <span className="rewarded-entry-kicker">{tr("تذكرة ميدان ")}<span aria-hidden="true">✦</span>{tr(" مباراة كاملة")}</span>
-      <div className="rewarded-entry-art" aria-hidden="true"><img src={ticketArtwork.url} width="300" height="200" alt="" decoding="async" /></div>
-      <span className="rewarded-entry-game">{gameplay.label}</span>
-      <h2>{effectiveAccess === 'trial' ? tr("أول مباراة علينا!") : readyAccess.has(effectiveAccess) ? tr("جاهز للّمة؟") : tr("تذكرتك إلى اللمّة")}</h2>
-      <p>{effectiveAccess === 'trial' ? tr("جرّب مباراة كاملة مجانًا، ثم اختر إعلانًا أو بلس للمباريات التالية.") : readyAccess.has(effectiveAccess) ? tr("أهليتك مؤكدة. اختر طريقة اللعب واستمتع بمباراتك.") : tr("شاهد إعلانًا لتذكرة مباراة، أو ادخل مباشرة مع بلس.")}</p>
-      <div className="rewarded-entry-benefits" aria-label={tr("مزايا التذكرة")}><span>{tr("مباراة كاملة")}</span><span>{tr("بلا فواصل إعلانية")}</span>{entry.modes.includes('online') && <span>{tr("ضيوفك مجانًا")}</span>}</div>
+      {!compact && <><span className="rewarded-entry-kicker">{tr("تذكرة ميدان ")}<span aria-hidden="true">✦</span>{tr(" مباراة كاملة")}</span>
+      <div className="rewarded-entry-art" aria-hidden="true"><img src={getPlayfulSceneArt('ticket',244)} width="300" height="200" alt="" decoding="async" /></div>
+      </>}
+      <h2>{compact ? tr("لبدء مباراة جديدة") : effectiveAccess === 'trial' ? tr("أول مباراة علينا!") : readyAccess.has(effectiveAccess) ? tr("جاهز للّمة؟") : tr("تذكرتك إلى اللمّة")}</h2>
+      {!compact && <p>{effectiveAccess === 'trial' ? tr("جرّب مباراة كاملة مجانًا، ثم اختر إعلانًا أو بلس للمباريات التالية.") : readyAccess.has(effectiveAccess) ? tr("أهليتك مؤكدة. اختر طريقة اللعب واستمتع بمباراتك.") : tr("شاهد إعلانًا لتذكرة مباراة، أو ادخل مباشرة مع بلس.")}</p>}
+      {!compact && !readyAccess.has(effectiveAccess) && <div className="rewarded-entry-benefits" aria-label={tr("مزايا التذكرة")}><span>{tr("مباراة كاملة")}</span><span>{tr("بلا فواصل إعلانية")}</span>{entry.modes.includes('online') && <span>{tr("ضيوفك مجانًا")}</span>}</div>}
     </header> : <header><small>{gameplay ? tr("مباراة كاملة · إعلان اختياري أو بلس") : configuredBuildOrigin() === PRODUCTION_API_ORIGIN ? tr("تحدّي اللمّة") : tr("معاينة اختبار · تحدّي اللمّة")}</small><h2 className="card-title">{gameplay ? gameplay.label : local ? tr("بديهة · ست حزم مختارة") : tr("مين فينا · غرفة تجريبية خاصة")}</h2></header>}
-    <p className={entry ? 'card-muted rewarded-entry-explanation' : 'card-muted'}>{entry ? tr("التذكرة محفوظة حتى تبدأ المباراة.{v0}", {v0: entry.modes.includes('online') ? tr(" ضيوف غرفتك يدخلون معك مجانًا.") : tr(" لا إعلانات بين الأسئلة أو الجولات.")}) : local ? tr("مباراة {v0} كاملة على جهاز واحد.", {v0: gameplay?.label || tr("بديهة")}) : tr("المضيف فقط يحتاج أهلية البدء. الضيوف يدخلون بالدعوة مجانًا.")}</p>
+    {!(entry && compact) && <p className={entry ? 'card-muted rewarded-entry-explanation' : 'card-muted'}>{entry ? tr("التذكرة محفوظة حتى تبدأ المباراة.{v0}", {v0: entry.modes.includes('online') ? tr(" ضيوف غرفتك يدخلون معك مجانًا.") : tr(" لا إعلانات بين الأسئلة أو الجولات.")}) : local ? tr("مباراة {v0} كاملة على جهاز واحد.", {v0: gameplay?.label || tr("بديهة")}) : tr("المضيف فقط يحتاج أهلية البدء. الضيوف يدخلون بالدعوة مجانًا.")}</p>}
     {entry && requiredMode && <p className="card-muted">{tr("تذكرتك السابقة مخصّصة لنمط آخر. لبدء ")}{requiredMode === 'online' ? tr("مباراة أونلاين") : tr("مباراة مع العائلة")}{tr(" اختر تذكرة جديدة أو بلس؛ تذكرتك السابقة محفوظة.")}</p>}
-    <p className={entry ? 'rewarded-entry-status' : undefined} data-state={busy ? 'loading' : note || (unavailable ? 'unavailable' : effectiveAccess || 'checking')} role="status" aria-live="polite">{busy ? tr("جارٍ تجهيز الإعلان…") : messages[note] || (unavailable ? messages.noAds : status ? accessText : owner ? tr("جارٍ التحقق من الأهلية…") : tr("سجّل الدخول لحفظ التجربة أو التذكرة على حسابك."))}</p>
-    {!owner && <Button size="lg" onClick={() => setSignIn(true)}>{tr("تسجيل الدخول للتجربة")}</Button>}
-    {owner && onReady && (entry ? readyAccess.has(effectiveAccess) : gameplay || !local || saved || readyAccess.has(status?.access)) && <Button size="lg" variant="accent" disabled={busy} onClick={onReady}>{entry ? tr("اختر طريقة اللعب") : gameplay ? tr("تحقّق وابدأ المباراة") : saved ? tr("استأنف مباراة بديهة التجريبية") : local ? tr("إلى إعداد المباراة التجريبية") : tr("إلى إعداد الغرفة التجريبية")}</Button>}
-    <div ref={marker}>{mayWatch && <Button size="lg" full variant="accent" disabled={busy} onClick={watch}>{tr("شاهد إعلان والعب مباراة كاملة")}</Button>}</div>
-    {!account.premium && <Button size="lg" disabled={busy} onClick={() => account.openPaywall({ reason: 'cosmetics' })}>{tr("العب فورًا مع بلس")}</Button>}
-    {owner && !readyAccess.has(effectiveAccess) && <Button size="lg" variant="ghost" disabled={busy} onClick={refreshManually}>{tr("تحقّق من تذكرتي")}</Button>}
-    {nativeStatus?.privacyOptionsRequired && <Button size="lg" disabled={busy} onClick={() => { void rewardNative('rewardedPrivacyOptions').catch(() => setNote('privacy-required')); }}>{tr("خيارات خصوصية الإعلانات")}</Button>}
-    {native && !android && <Button size="lg" variant="ghost" disabled={busy} onClick={() => { void callNative('rewardedReport').then(result => { if (result?.state !== 'shown') setNote('unavailable'); }).catch(() => setNote('unavailable')); }}>{tr("الإبلاغ عن آخر إعلان")}</Button>}
-    <Button size="lg" variant="ghost" disabled={busy} onClick={onFree}>{entry ? tr("ارجع إلى الألعاب") : tr("ارجع للمحتوى المجاني")}</Button>
+    <p className={entry ? 'rewarded-entry-status' : undefined} data-state={busy ? 'loading' : note || (unavailable ? 'unavailable' : effectiveAccess || 'checking')} role="status" aria-live="polite">{busy ? tr("جارٍ تجهيز الإعلان…") : tr(messages[note] || '') || (unavailable ? tr(messages.noAds) : status ? accessText : owner ? tr("جارٍ التحقق من الأهلية…") : tr("سجّل الدخول لحفظ التجربة أو التذكرة على حسابك."))}</p>
+    {!owner && <Button data-design-id="entry-sign-in" size="lg" onClick={() => setSignIn(true)}>{tr("تسجيل الدخول للتجربة")}</Button>}
+    {owner && onReady && (entry ? readyAccess.has(effectiveAccess) : gameplay || !local || saved || readyAccess.has(status?.access)) && <Button data-design-id="entry-ready" size="lg" variant="accent" disabled={busy} onClick={onReady}>{entry ? tr("اختر طريقة اللعب") : gameplay ? tr("تحقّق وابدأ المباراة") : saved ? tr("استأنف مباراة بديهة التجريبية") : local ? tr("إلى إعداد المباراة التجريبية") : tr("إلى إعداد الغرفة التجريبية")}</Button>}
+    <div ref={marker}>{mayWatch && <Button data-design-id="entry-watch-ad" size="lg" full variant="accent" disabled={busy} onClick={watch}>{tr("شاهد إعلان والعب مباراة كاملة")}</Button>}</div>
+    {entry && readyAccess.has(effectiveAccess) && joinAction}
+    {entry && (readyAccess.has(effectiveAccess) || compact) ? <details className="rewarded-entry-options"><summary data-design-id="entry-more-options">{tr("خيارات أخرى")}</summary>
+    {!account.premium && <Button data-design-id="entry-plus" size="lg" disabled={busy} onClick={() => account.openPaywall({ reason: 'cosmetics' })}>{tr("العب فورًا مع بلس")}</Button>}
+    {nativeStatus?.privacyOptionsRequired && <Button data-design-id="entry-ad-privacy" size="lg" disabled={busy} onClick={() => { void rewardNative('rewardedPrivacyOptions').catch(() => setNote('privacy-required')); }}>{tr("خيارات خصوصية الإعلانات")}</Button>}
+    {native && !android && <Button data-design-id="entry-ad-report" size="lg" variant="ghost" disabled={busy} onClick={() => { void callNative('rewardedReport').then(result => { if (result?.state !== 'shown') setNote('unavailable'); }).catch(() => setNote('unavailable')); }}>{tr("الإبلاغ عن آخر إعلان")}</Button>}
+    </details> : <>
+    {!account.premium && <Button data-design-id="entry-plus" size="lg" disabled={busy} onClick={() => account.openPaywall({ reason: 'cosmetics' })}>{tr("العب فورًا مع بلس")}</Button>}
+    {nativeStatus?.privacyOptionsRequired && <Button data-design-id="entry-ad-privacy" size="lg" disabled={busy} onClick={() => { void rewardNative('rewardedPrivacyOptions').catch(() => setNote('privacy-required')); }}>{tr("خيارات خصوصية الإعلانات")}</Button>}
+    {native && !android && <Button data-design-id="entry-ad-report" size="lg" variant="ghost" disabled={busy} onClick={() => { void callNative('rewardedReport').then(result => { if (result?.state !== 'shown') setNote('unavailable'); }).catch(() => setNote('unavailable')); }}>{tr("الإبلاغ عن آخر إعلان")}</Button>}
+    </>}
+    {owner && !readyAccess.has(effectiveAccess) && <Button data-design-id="entry-recheck" size="lg" variant="ghost" disabled={busy} onClick={refreshManually}>{tr("تحقّق من تذكرتي")}</Button>}
+    <Button data-design-id="entry-back" size="lg" variant="ghost" disabled={busy} onClick={onFree}>{entry ? tr("ارجع إلى الألعاب") : tr("ارجع للمحتوى المجاني")}</Button>
     <SignInSheet open={signIn} onClose={() => setSignIn(false)} note={entry ? tr("الحساب يحفظ التجربة والتذاكر. لا تُستهلك إلا عند بدء المباراة، والانضمام إلى غرف الآخرين مجاني.") : gameplay ? tr("الحساب يحفظ أهلية المباراة والتذاكر. الانضمام إلى غرف الآخرين والحزم الأساسية في بديهة مجانيان.") : tr("الحساب مطلوب للتجربة وتذكرة الإعلان. اللعب العادي متاح مجانًا.")} />
-  </Card>;
+  </Card>{entry && !readyAccess.has(effectiveAccess) && joinAction}</>;
 }

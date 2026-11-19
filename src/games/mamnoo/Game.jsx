@@ -1,18 +1,23 @@
 import { tr } from '../../shared/i18n/core.js';
 import { Avatar } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
-import { Screen, Button, Podium, Segment, Card, Scoreboard } from '../../shared/ui/components.jsx';
+import { Screen, Button, Segment, Card } from '../../shared/ui/components.jsx';
 import { Timer, useTimer, useTimerCues } from '../../shared/ui/index.js';
 import { flashScreen, stampScreen, wait } from '../../shared/fx/index.js';
 import { trimSeen } from '../../shared/lib/noRepeat.js';
 import { mulberry32, randomSeed } from '../../shared/lib/rng.js';
 import { getGameContent } from '../../data/game-content.js';
-import css from './mamnoo.css';
+import { PresentationStyles } from '../../shared/ui/PresentationStyles.jsx';
+import css from './mamnoo.css?sheet';
 import { initialState, reduce, currentTeam, opponentLabel, standings, createCardSource, normalizeOptions, restoreSession, sessionSnapshot, SECONDS, ROUNDS, MAX_SKIPS } from './logic.js';
 import { loadSession } from '../../shared/lib/session.js';
 import { useSessionSave } from '../../shared/ui/useSessionSave.js';
 import { useGameMusicScene } from '../../shared/fx/useGameMusicScene.js';
-import { IconCheck, IconClock, IconInfo, IconPlay, IconSkip, IconTrophy } from '../../shared/ui/icons.jsx';
+import { IconStar } from '../../shared/ui/icons.jsx';
+import { PartyPodium, PartyStyles } from '../beep/StudioParty.jsx';
+import correctArt from './illustrations/correct.webp';
+import skipArt from './illustrations/skip.webp';
+import forbiddenArt from './illustrations/forbidden.webp';
 
 const OPTIONS_KEY = 'options';
 const SEEN_KEY = 'seen';
@@ -28,30 +33,43 @@ export function SetupOptions({ storage, api }) {
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); };
   const activePreset = PRESETS.find(preset => preset.seconds === opts.seconds && preset.rounds === opts.rounds);
   return (
-    <div data-design-screen="setup.mamnoo" data-design-id="options" className="stack mamnoo-setup">
-    <style>{css}</style>
+    <div data-design-screen="setup.mamnoo" data-design-id="options" className="stack mamnoo-setup party-setup">
+    <PartyStyles />
+    <PresentationStyles sheet={css} />
     {resume && <Card className="stack resume-card">
       <span className="card-title">{tr("لعبتكم بانتظاركم")}</span>
       <p className="card-muted">{tr("الجولة ")}{resume.state.round}{tr(" من ")}{resume.state.rounds} · {resume.teams.map((t) => t.name).join(' و')}</p>
       <Button data-design-id="resume" data-design-required="true" variant="accent" full onClick={() => api.resumeGame(resume)}>{tr("استئناف اللعبة المحفوظة")}</Button>
       <p className="card-muted">{tr("بدء لعبة جديدة يستبدل هذا التقدم.")}</p>
     </Card>}
-    <Card className="stack">
-      <div className="field"><span>{tr("إعدادات سريعة")}</span>
+    <div className="stack">
+      <div className="party-setting"><span>{tr("إعدادات سريعة")}</span>
         <Segment accent label={tr("إعدادات سريعة")} options={PRESETS} value={activePreset?.value} onChange={value => {
           const preset = PRESETS.find(option => option.value === value);
           if (preset) update({ seconds: preset.seconds, rounds: preset.rounds });
         }} />
       </div>
-      <div className="field"><span>{tr("مدة الجولة")}</span>
+      <div className="party-setting"><span>{tr("مدة الجولة")}</span>
         <Segment data-design-id="setting-duration" accent label={tr("المدة")} value={opts.seconds} onChange={(v) => update({ seconds: v })} options={SECONDS.map((s) => ({ value: s, label: tr("{v0} ث", {v0: s}) }))} />
       </div>
-      <div className="field"><span>{tr("جولات لكل فريق")}</span>
+      <div className="party-setting"><span>{tr("جولات لكل فريق")}</span>
         <Segment data-design-id="setting-rounds" accent label={tr("الجولات")} value={opts.rounds} onChange={(v) => update({ rounds: v })} options={ROUNDS.map((r) => ({ value: r, label: tr("{v0} جولات", {v0: r}) }))} />
       </div>
-    </Card>
+    </div>
     </div>
   );
+}
+
+const teamPortraitIndex = (teams, team) => teams.findIndex(entry => entry.id === team.id);
+
+function TeamScores({ state, rows = false }) {
+  return <div data-design-id="scoreboard" className={`mamnoo-scores ${rows ? 'mamnoo-score-rows' : ''}`}>
+    {state.teams.map((team, index) => (
+      <div key={team.id} className="mamnoo-score">
+        <Avatar index={index} /><div><strong dir="auto">{team.name}</strong><b>{state.scores[team.id]}</b></div>
+      </div>
+    ))}
+  </div>;
 }
 
 function Round({ state, dispatch, api, source, timeLeftRef, resumeLeft }) {
@@ -72,23 +90,21 @@ function Round({ state, dispatch, api, source, timeLeftRef, resumeLeft }) {
     if (type === 'BUZZ') { flashScreen('bad'); stampScreen({ text: tr("ممنوع!"), tone: 'bad' }); }
     dispatch({ type, card: source.next() });
   };
-  // في نهاية الجولة يُمرَّر فرق الجولة (+N يطير في لوحة النتائج) للفريق الذي لعب
   const roundDelta = state.phase === 'roundEnd' ? state.tally.correct - state.tally.buzz : 0;
-  const entries = state.teams.map((t) => ({ ...t, score: state.scores[t.id], delta: t.id === team.id && roundDelta > 0 ? roundDelta : 0 }));
+  const portrait = teamPortraitIndex(state.teams, team);
 
   if (state.phase === 'intro') {
     return (
       <div data-design-id="intro" className="mamnoo-intro">
-        <div className="mamnoo-meta"><span>{tr("الفريق الحالي")}<b>{team.name}</b></span><span>{tr("الجولة")}<b>{state.round}{tr(" من ")}{state.rounds}</b></span><span>{tr("الوقت")}<b>{state.seconds}{tr(" ثانية")}</b></span></div>
-        <h2>{tr("استعداد الفريق")}</h2>
-        <div className="mamnoo-team-hero"><Avatar player={team} /><strong>{tr("فريق ")}{team.name}</strong></div>
-        <div className="who" style={{ '--team': team.color }}>
+        <div className="mamnoo-meta"><bdi>{team.name}</bdi> · {tr("الجولة {v0} من {v1}", { v0: state.round, v1: state.rounds })} · {tr("{v0} ثانية", { v0: state.seconds })}</div>
+        <div className="mamnoo-team-hero party-sparks"><Avatar index={portrait} /></div>
+        <h2 className="party-heading is-lavender">{tr("استعداد الفريق")}</h2>
+        <div className="who">
           <strong>{tr("اشرح الكلمة دون قول الكلمات الممنوعة")}</strong>
-          <span>{tr("فريق ")}{team.name}{tr(" يخمّن دون رؤية الشاشة. لاعب من ")}{opponentLabel(state)}{tr(" يراقب المخالفات.")}</span>
         </div>
-        <h3>{tr("النتيجة الحالية")}</h3>
-        <Scoreboard data-design-id="scoreboard" entries={entries} />
-        <Button data-design-id="start" data-design-required="true" variant="accent" size="lg" full onClick={() => { api.sound.play('whoosh'); dispatch({ type: 'BEGIN', card: source.next() }); }}><IconPlay />{tr(" ابدأ ")}{state.seconds}{tr(" ثانية")}</Button>
+        <p className="mamnoo-opponent"><bdi>{team.name}</bdi>{tr(" يخمّن دون رؤية الشاشة. لاعب من ")}<bdi>{opponentLabel(state)}</bdi>{tr(" يراقب المخالفات.")}</p>
+        <TeamScores state={state} />
+        <Button data-design-id="start" data-design-required="true" variant="accent" size="lg" full onClick={() => { api.sound.play('whoosh'); dispatch({ type: 'BEGIN', card: source.next() }); }}>{tr(" ابدأ ")}{state.seconds}{tr(" ثانية")}</Button>
       </div>
     );
   }
@@ -96,26 +112,31 @@ function Round({ state, dispatch, api, source, timeLeftRef, resumeLeft }) {
     return (
       <div className="stack">
         <div data-design-id="header" className="mamnoo-head">
-          <Avatar player={team} />
-          <div className="grow"><b style={{ color: team.color }}>{team.name}</b><small>{tr("صح ")}{state.tally.correct}{tr(" · ممنوع ")}{state.tally.buzz}{tr(" · تخطي ")}{state.tally.skip}</small></div>
-          <span className="badge"><b key={state.scores[team.id]}>{state.scores[team.id]}</b></span>
-          <Timer data-design-id="timer" timer={timer} size={57} accent="#087f87" />
+          <div className="mamnoo-active-team">
+            <Avatar index={portrait} />
+            <div><b dir="auto">{team.name}</b><strong key={state.scores[team.id]}>{state.scores[team.id]}</strong></div>
+          </div>
+          <Timer data-design-id="timer" timer={timer} size={94} accent="#08796d" />
+        </div>
+        <div className="mamnoo-live-tally">
+          <span>{tr("صح ")}{state.tally.correct}</span>
+          <span>{tr("ممنوع")}{' '}{state.tally.buzz}</span>
+          <span>{tr("تخطيات مستخدمة")}{' '}{state.tally.skip}</span>
         </div>
         <div className={`mamnoo-judge ${flash}`}>
         <div data-design-id="question" className="mamnoo-card" key={state.card.id}>
-          <span className="mamnoo-card-label">{tr("الكلمة")}</span>
-          <div data-design-id="word" className="mamnoo-word">{state.card.word}</div>
-          <div data-design-id="category" className="mamnoo-cat">{tr("الفئة: ")}{state.card.category}</div>
+          <div data-design-id="category" className="mamnoo-cat">{state.card.category}</div>
+          <div data-design-id="word" className="mamnoo-word party-word-rays">{state.card.word}</div>
         </div>
         <section className="mamnoo-forbidden-panel">
-          <h3><IconInfo />{tr(" الكلمات الممنوعة")}</h3>
+          <h3>{tr(" الكلمات الممنوعة")}</h3>
           <ul data-design-id="options-list" className="mamnoo-forbidden">{state.card.forbidden.map((w) => <li key={w}>{w}</li>)}</ul>
         </section>
         </div>
         <div data-design-id="actions" className="mamnoo-buttons">
-          <Button data-design-id="correct" variant="success" onClick={() => act('CORRECT', 'correct', 'success', 'flash-good')}><IconCheck /><span>{tr("صح")}</span><span>+1</span></Button>
-          <Button data-design-id="skip" variant="secondary" disabled={state.skipsLeft <= 0} onClick={() => act('SKIP', 'pass', 'light', '')}><IconSkip /><span>{tr("تخطي")}</span><span>({state.skipsLeft})</span></Button>
-          <Button data-design-id="wrong" className="mamnoo-buzz" onClick={() => act('BUZZ', 'buzzer', 'error', 'shake')}><IconInfo /><span>{tr("ممنوع!")}</span><span>−1</span></Button>
+          <Button data-design-id="correct" variant="success" onClick={() => act('CORRECT', 'correct', 'success', 'flash-good')}><span>{tr("صح")}</span><bdi>+1</bdi></Button>
+          <Button data-design-id="skip" variant="secondary" disabled={state.skipsLeft <= 0} onClick={() => act('SKIP', 'pass', 'light', '')}><span>{tr("تخطي")}</span><bdi>({state.skipsLeft})</bdi></Button>
+          <Button data-design-id="wrong" className="mamnoo-buzz" onClick={() => act('BUZZ', 'buzzer', 'error', 'shake')}><span>{tr("ممنوع!")}</span><bdi>−1</bdi></Button>
         </div>
       </div>
     );
@@ -123,16 +144,16 @@ function Round({ state, dispatch, api, source, timeLeftRef, resumeLeft }) {
   if (state.phase === 'roundEnd') {
     return (
       <div data-design-id="intro" className="mamnoo-intro">
-        <div className="mamnoo-meta"><span>{tr("الفريق")}<b>{team.name}</b></span><span>{tr("الجولة")}<b>{state.round}{tr(" من ")}{state.rounds}</b></span><span>{tr("الوقت")}<b><IconClock />{tr(" متوقف")}</b></span></div>
-        <h2>{tr("حصيلة الجولة")}</h2>
+        <div className="mamnoo-meta is-lavender"><bdi>{team.name}</bdi> · {tr("الجولة {v0} من {v1}", { v0: state.round, v1: state.rounds })} · {tr("الوقت")} {tr(" متوقف")}</div>
+        <h2 className="party-heading">{tr("حصيلة الجولة")}</h2>
         <div data-design-id="results" className="mamnoo-tally">
-          <span className="is-correct"><IconCheck />{tr(" صح")}<b>{state.tally.correct}</b></span>
-          <span className="is-skip"><IconSkip />{tr(" تخطي")}<b>{state.tally.skip}</b></span>
-          <span className="is-forbidden"><IconInfo />{tr(" ممنوع")}<b>{state.tally.buzz}</b></span>
+          <span className="is-correct"><img src={correctArt} alt="" width="64" height="64" />{tr(" صح")}<b>{state.tally.correct}</b></span>
+          <span className="is-skip"><img src={skipArt} alt="" width="64" height="64" />{tr(" تخطي")}<b>{state.tally.skip}</b></span>
+          <span className="is-forbidden"><img src={forbiddenArt} alt="" width="64" height="64" />{tr(" ممنوع")}<b>{state.tally.buzz}</b></span>
         </div>
-        <div className="mamnoo-round-points"><IconTrophy />{tr(" نقاط الجولة ")}<strong>{roundDelta > 0 ? '+' : ''}{roundDelta}</strong></div>
-        <h3>{tr("النتيجة بعد الجولة")}</h3>
-        <Scoreboard data-design-id="scoreboard" entries={entries} />
+        <div className="mamnoo-round-points"><IconStar /><div>{tr(" نقاط الجولة ")}<strong dir="ltr">{roundDelta > 0 ? '+' : ''}{roundDelta}</strong></div></div>
+        <h3 className="party-ribbon">{tr("النتيجة بعد الجولة")}</h3>
+        <TeamScores state={state} rows />
         <Button data-design-id="continue" data-design-required="true" variant="accent" size="lg" full onClick={() => { api.sound.play('whoosh'); dispatch({ type: 'NEXT' }); }}>{state.turn === state.teams.length - 1 && state.round >= state.rounds ? tr("النتائج النهائية") : tr("الفريق التالي")}</Button>
       </div>
     );
@@ -171,12 +192,13 @@ export function Game({ api, teams, onExit, savedSession = null, designPreviewSta
     api.matchOver?.({ completed: state.completed === true });
   }, [state.phase]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
-    <Screen data-design-screen={`mamnoo.${state.phase}`} className="mamnoo" aria-label={tr("ممنوع")}>
-      <style>{css}</style>
+    <Screen data-design-screen={`mamnoo.${state.phase}`} className="mamnoo party-studio" aria-label={tr("ممنوع")}>
+      <PartyStyles />
+      <PresentationStyles sheet={css} />
       {state.phase === 'over' ? (
         <div className="stack">
-          <h2 className="mamnoo-result-heading">{tr("النتائج النهائية")}</h2>
-          <Podium data-design-id="podium" entries={standings(state)} />
+          <h2 className="party-heading">{tr("النتائج النهائية")}</h2>
+          <PartyPodium entries={standings(state)} teamLabels portraitIndex={entry => teamPortraitIndex(state.teams, entry)} />
           <Button data-design-id="restart" variant="accent" size="lg" full onClick={() => { api.sound.play('whoosh'); api.restart(); }}>{tr("العب مرة أخرى")}</Button>
           <Button variant="secondary" full data-design-id="options" onClick={api.backToSetup}>{tr("تغيير الفرق أو الإعدادات")}</Button>
           <Button variant="ghost" full data-design-id="exit" data-design-required="true" onClick={onExit}>{tr("العودة للمنصة")}</Button>

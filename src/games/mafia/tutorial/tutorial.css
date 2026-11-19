@@ -49,3 +49,10 @@
 .mafia-tutorial-stage .mafia-density .mafia-heading h1 { color:#352139; }
 .mafia-tutorial-stage .mafia-density .mafia-lobby-ready .btn { min-height:48px; }
 .mafia-tutorial-stage .mafia-density .mafia-voice .btn-primary { background:#08796D; color:#FFF; }
+
+@media (orientation:portrait) {
+  .mafia-tutorial-stage .mafia-seats { display:flex!important; flex-wrap:wrap; }
+  .mafia-tutorial-stage .mafia-seats > .mafia-seat { flex:1 0 calc(25% - 6px); grid-template-columns:minmax(min-content,1fr); min-inline-size:min-content; max-inline-size:100%; height:auto!important; }
+  .mafia-tutorial-stage .mafia-seat .mafia-seat-copy { width:auto; min-inline-size:min-content; justify-self:stretch; }
+  .mafia-tutorial-stage .mafia-seat-copy :is(b,small,.player-name-card-text) { white-space:normal; overflow-wrap:break-word; }
+}

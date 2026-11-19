@@ -1,5 +1,4 @@
 import { tr, setUiLocale, numberForLocale } from '../../shared/i18n/core.js';
-import { SubscriptionTransition } from '../../plus/SubscriptionTransition.jsx';
 import { SELECTED_AUDIO } from '../../shared/fx/selected-audio.js';
 import { AudioCandidateLab, candidateCallBusy } from '../../shared/fx/AudioCandidateLab.jsx';
 import { isPrivateAudioCandidateBuild } from '../../shared/fx/audio-candidate-policy.js';
@@ -8,20 +7,22 @@ import { useLamma } from '../../social/LammaProvider.jsx';
 // الإعدادات: الصوت، الموسيقى، الاهتزاز، تقليل الحركة، مسح البيانات، الإصدار، وبلاغات أسئلة بَديهة.
 import React, { useState } from 'react';
 import { Screen, TopBar, Button, Card, ConfirmModal, IconButton, Segment } from '../../shared/ui/components.jsx';
-import { IconBack, IconVolume, IconMusic, IconVibrate, IconMotion, IconTrash, IconFlag, IconShare, IconInfo, IconUsers, IconSettings } from '../../shared/ui/icons.jsx';
-import { clearAllPlatformData, createStorage } from '../../shared/lib/storage.js';
+import { IconBack, IconVolume, IconMusic, IconVibrate, IconMotion, IconTrash, IconFlag, IconShare, IconInfo, IconUsers, IconSettings, IconLock, IconBook, IconRotate, IconPlay, IconTag, IconTrophy, IconStar } from '../../shared/ui/icons.jsx';
+import { createStorage } from '../../shared/lib/storage.js';
 import { AccountCard } from '../../shared/account/AccountCard.jsx';
 import { useAccount } from '../../shared/account/context.js';
 import { LEGAL_ROUTES, PUBLIC_SITE_ORIGIN, SUPPORT_EMAIL } from '../../shared/account/config.js';
 import { isNativeShell } from '../../shared/account/native.js';
 import { RewardedPrivacySettings } from '../../shared/account/RewardedOffer.jsx';
-import { ACCOUNT_PREFIX } from '../../shared/account/store.js';
+import { clearLocalDataKeepingAccount } from '../../shared/account/local-data.js';
 import { shareText } from '../../shared/fx/haptics.js';
 import { usePlatform } from '../context.js';
 import { back, navigate, getDirection, getPreviousPath, useRoute } from '../router.js';
 import { ModerationSettingsLink } from '../../moderation/ModerationScreen.jsx';
-import settingsStyles from './settings-rebuild.css';
+import settingsStyles from './settings-rebuild.css?sheet';
+import { PresentationStyles } from '../../shared/ui/PresentationStyles.jsx';
 import { useI18n } from '../../shared/i18n/react.jsx';
+import { getAvatarArt } from '../../shared/brand/playful-identity.js';
 
 // index: تدرّج دخول الصفوف (45ms لكل صف) عبر --delay
 function Toggle({ icon, title, sub, checked, onChange, index = 0 }) {
@@ -36,6 +37,10 @@ function Toggle({ icon, title, sub, checked, onChange, index = 0 }) {
 
 function SettingsGroup({ id, title, icon, description, children }) {
   return <section data-design-id={id} data-design-required={id === 'settings-account' || id === 'settings-privacy' ? 'true' : undefined} className="settings-group" aria-labelledby={id}><header className="settings-group-heading"><span aria-hidden="true">{icon}</span><div><h2 id={id} tabIndex={-1}>{title}</h2>{description && <p>{description}</p>}</div></header><div className="stack">{children}</div></section>;
+}
+
+function SettingsLink({ id, href, icon, children }) {
+  return <a className="settings-row" data-design-id={id} href={href}><span className="settings-row-icon" aria-hidden="true">{icon}</span><span>{children}</span><IconBack className="settings-row-arrow" /></a>;
 }
 
 const sections = [
@@ -56,6 +61,7 @@ export function Settings() {
   const [audioCandidates, setAudioCandidates] = useState(false);
   const [confirmClear, setConfirmClear] = useState(false);
   const reports = createStorage('badeeha').get('question-reports-v1', []) || [];
+  const storeAction = <button className="settings-row" data-design-id="plus-store" type="button" onClick={() => navigate('/store')}><span className="settings-row-icon" aria-hidden="true"><IconTag /></span><span>{tr("تخصيص مظهري ومتجر بلس")}</span><IconBack className="settings-row-arrow" /></button>;
   const returnToSettings = () => {
     if (getPreviousPath() === '/settings') back();
     else navigate('/settings', { replace: true });
@@ -68,20 +74,35 @@ export function Settings() {
   };
   return (
     <Screen key={section?.key || 'index'} data-design-screen="settings" dir={getDirection()} className="stack settings-screen" aria-label={tr(section?.label || "الإعدادات")}>
-      <style>{settingsStyles}</style>
-      <TopBar data-design-id="topbar" title={tr(section?.label || "الإعدادات")} start={<IconButton data-design-id="back" label={tr("رجوع")} onClick={section ? returnToSettings : back}><IconBack /></IconButton>} end={<span className="settings-top-icon" aria-hidden="true">{section?.icon || <IconSettings />}</span>} />
+      <PresentationStyles sheet={settingsStyles} />
+      <TopBar data-design-id="topbar" title={tr(section?.label || "الإعدادات")} start={<IconButton data-design-id="back" label={tr("رجوع")} onClick={section ? returnToSettings : back}><IconMotion data-directional="back" /></IconButton>} end={<span className="settings-top-icon" aria-hidden="true">{section ? null : <IconSettings />}</span>} />
       {!section && <>
-        <section className="studio-language-setting"><label htmlFor="ui-locale">{t('لغة الواجهة')}</label><select data-design-id="ui-language" id="ui-locale" value={settings.uiLocale} onChange={event => setSettings({ uiLocale:event.target.value })}><option value="ar" lang="ar">العربية</option><option value="en" lang="en">English</option></select><p>{t('لغة القوائم مستقلة عن لغة المباراة.')}</p>{localeStatus.loading && <p role="status" lang="en">Loading English…</p>}{localeStatus.error && <p role="alert">تعذّر تحميل اللغة · Could not load English <button type="button" className="btn" data-design-id="retry" onClick={()=>setUiLocale(settings.uiLocale)}>إعادة المحاولة · Retry</button></p>}</section>
+        <section className="studio-language-setting">
+          <span className="settings-languages-art" aria-hidden="true"><span lang="ar">ع</span><span lang="en">A</span></span>
+          <label htmlFor="ui-locale">{t('لغة الواجهة')}</label>
+          <div className="settings-language-select"><select data-design-id="ui-language" id="ui-locale" value={settings.uiLocale} onChange={event => setSettings({ uiLocale:event.target.value })}><option value="ar" lang="ar">العربية</option><option value="en" lang="en">English</option></select><IconBack aria-hidden="true" /></div>
+          <p>{t('لغة القوائم مستقلة عن لغة المباراة.')}</p>
+          {localeStatus.loading && <p role="status" lang="en">Loading English…</p>}
+          {localeStatus.error && <p role="alert">تعذّر تحميل اللغة · Could not load English <button type="button" className="btn" data-design-id="retry" onClick={()=>setUiLocale(settings.uiLocale)}>إعادة المحاولة · Retry</button></p>}
+        </section>
         <nav className="settings-index" aria-label={tr("مجموعات الإعدادات")}>
-          {sections.map(({ key, label, icon }) => <button key={key} type="button" data-settings-section={key} data-design-id={key === 'account' ? 'settings-account' : 'settings-section-jump'} data-design-required={key === 'account' ? 'true' : undefined} onClick={() => navigate('/settings?section=' + key)}>{icon}<span>{tr(label)}</span><IconBack className="settings-row-arrow" /></button>)}
+          {sections.map(({ key, label, icon }) => <button className="settings-row" key={key} type="button" data-settings-section={key} data-design-id={key === 'account' ? 'settings-account' : 'settings-section-jump'} data-design-required={key === 'account' ? 'true' : undefined} onClick={() => navigate('/settings?section=' + key)}><span className="settings-row-icon" aria-hidden="true">{icon}</span><span>{tr(label)}</span><IconBack className="settings-row-arrow" /></button>)}
         </nav>
         {account.ready && account.me?.creator?.enabled === true && <Button data-design-id="creator-analytics" variant="secondary" icon={<IconInfo />} onClick={() => navigate('/creator')}>{locale === 'en' ? 'Creator dashboard · live activity' : 'لوحة الصانع · النشاط المباشر'}</Button>}
-        <div className="settings-account-status"><IconUsers /><span><b>{tr("حالة الحساب")}</b><small>{!account.ready ? tr("جارٍ التحقق من حالة الحساب…") : account.signedIn ? account.me?.moderation?.suspended ? tr("حسابك معلّق.") : tr("أنت مسجّل الدخول إلى ميدان.") : tr("أنت تلعب كضيف.")}</small></span></div>
-        <Button data-design-id="manage-roster" variant="secondary" icon={<IconUsers />} onClick={() => navigate('/players')}>{tr("دفتر اللاعبين · اللعب مع العائلة")}</Button>
+        <section className="settings-account-status" aria-labelledby="settings-account-status-title">
+          <img src={getAvatarArt('controller', 64)} alt="" width="64" height="64" decoding="async" />
+          <h2 id="settings-account-status-title">{tr("حالة الحساب")}</h2>
+          <p>{!account.ready ? tr("جارٍ التحقق من حالة الحساب…") : account.signedIn ? account.me?.moderation?.suspended ? tr("حسابك معلّق.") : tr("أنت مسجّل الدخول إلى ميدان.") : tr("أنت تلعب كضيف.")}</p>
+          <button type="button" className="settings-roster-link" data-design-id="manage-roster" onClick={() => navigate('/players')}>{tr("دفتر اللاعبين · اللعب مع العائلة")}</button>
+        </section>
         <Button data-design-id="home" className="settings-return" variant="accent" full onClick={() => navigate('/')}>{tr("العودة إلى ميدان")}</Button>
       </>}
-      {section?.key === 'account' && <SettingsGroup id="settings-account" title={tr("حسابك وميدان بلس")} icon={<IconUsers />}><SubscriptionTransition /><AccountCard /><Button data-design-id="plus-store" onClick={() => navigate('/store')}>{tr("تخصيص مظهري ومتجر بلس")}</Button></SettingsGroup>}
+      {section?.key === 'account' && <SettingsGroup id="settings-account" title={account.signedIn ? tr("الحساب") : tr("حسابك وميدان بلس")} icon={<IconUsers />}>
+        <AccountCard settingsStoreAction={storeAction} guestArtwork={<span className="settings-guest-art" aria-hidden="true"><img src={getAvatarArt('human-01', 96)} alt="" width="96" height="96" decoding="async" /><span><IconTrophy />+</span></span>} />
+        {!account.user && storeAction}
+      </SettingsGroup>}
       {section?.key === 'audio' && <SettingsGroup id="settings-audio" title={tr("الصوت والموسيقى")} icon={<IconVolume />}>
+        <div className="settings-sound-card">
         <Toggle index={0} icon={<IconVolume />} title={tr("الصوت")} sub={tr("المؤثرات ومقاطع الأسئلة والموسيقى معًا")} checked={settings.soundOn} onChange={(v) => { setSettings({ soundOn: v }); if (v) sound.play('pop'); }} />
         {typeof __MAYDAN_AUDIO_PREVIEW__ !== 'undefined' && __MAYDAN_AUDIO_PREVIEW__ === true &&
           (typeof __MAYDAN_WARMTH_PREVIEW__ === 'undefined' || __MAYDAN_WARMTH_PREVIEW__ !== true) && isPrivateAudioCandidateBuild() && <Button data-sound="none" size="sm" disabled={candidateCallBusy(lamma)} onClick={() => setAudioCandidates(true)}>{tr("معاينة أصوات التحديث")}</Button>}
@@ -91,7 +112,8 @@ export function Settings() {
             aria-valuetext={tr("{v0} بالمئة", {v0: Math.round(sound.volume * 100)})}
             onChange={(event) => setSettings({ soundVolume: Number(event.target.value) / 100 })}
             onPointerUp={() => sound.play('pop')} onKeyUp={(event) => { if (event.key.startsWith('Arrow') || event.key === 'Home' || event.key === 'End') sound.play('pop'); }} />
-          <Button data-design-id="sound-test" size="sm" disabled={!settings.soundOn || sound.volume === 0} onClick={() => sound.play('correct')}>{tr("تجربة الصوت")}</Button>
+          <Button data-design-id="sound-test" size="sm" icon={<IconPlay />} disabled={!settings.soundOn || sound.volume === 0} onClick={() => sound.play('correct')}>{tr("تجربة الصوت")}</Button>
+        </div>
         </div>
         {SELECTED_AUDIO.voicesProductionApproved && <Toggle index={1} icon={<IconVolume />} title={tr("تعليقات الإجابات")} sub={tr("تصمت أثناء المكالمات والتسجيل ومقاطع الأسئلة")} checked={settings.voiceOn} onChange={(v) => setSettings({ voiceOn: v })} />}
         <Toggle index={2} icon={<IconMusic />} title={tr("الموسيقى")} sub={tr("خلفيات مرتبطة باللعبة، وتنخفض أثناء الكلام")} checked={settings.musicOn} onChange={(v) => {
@@ -112,20 +134,20 @@ export function Settings() {
         <p className="settings-autosave">{tr("تُحفظ هذه الخيارات تلقائيًا على هذا الجهاز.")}</p>
       </SettingsGroup>}
       {section?.key === 'display' && <SettingsGroup id="settings-experience" title={tr("العرض وتجربة اللعب")} icon={<IconMotion />}>
-        <Toggle index={1} icon={<IconMotion />} title={tr("تقليل الحركة")} sub={tr("يعطّل الجسيمات والانتقالات مع بقاء الوظائف")} checked={settings.reducedMotion} onChange={(v) => setSettings({ reducedMotion: v })} />
+        <Toggle index={1} icon={<IconStar />} title={tr("تقليل الحركة")} sub={tr("يعطّل الجسيمات والانتقالات مع بقاء الوظائف")} checked={settings.reducedMotion} onChange={(v) => setSettings({ reducedMotion: v })} />
         <Card className="settings-text-preview stack"><b>{tr("حجم النص")}</b><Segment accent label={tr("حجم النص")} options={[{ value: false, label: tr("عادي") }, { value: true, label: tr("كبير") }]} value={!!settings.largeText} onChange={v => setSettings({ largeText: v })} /><p style={{ fontSize: settings.largeText ? 17 : 14 }}>{tr("معاينة: هذا مثال على حجم النص داخل التطبيق.")}</p></Card>
-        <Toggle index={3} icon={<IconMotion />} title={tr("تباين أعلى")} sub={tr("يقوّي حدود العناصر والنصوص الثانوية")} checked={!!settings.highContrast} onChange={(v) => setSettings({ highContrast: v })} />
+        <Toggle index={3} icon={<svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="2" /><path d="M12 5a7 7 0 0 1 0 14z" fill="currentColor" /></svg>} title={tr("تباين أعلى")} sub={tr("يقوّي حدود العناصر والنصوص الثانوية")} checked={!!settings.highContrast} onChange={(v) => setSettings({ highContrast: v })} />
         <Toggle index={4} icon={<IconMotion />} title={tr("زينة أخف")} sub={tr("يوقف حركة الزينة المستمرة ويخفف الظلال؛ تبقى مؤشرات اللعب")} checked={settings.visualQuality === 'calm'} onChange={(v) => setSettings({ visualQuality: v ? 'calm' : 'auto' })} />
         <p className="settings-autosave">{tr("تُحفظ هذه الخيارات تلقائيًا على هذا الجهاز.")}</p>
       </SettingsGroup>}
       {section?.key === 'account' && <SettingsGroup id="settings-privacy" title={tr("الخصوصية والأمان")} icon={<IconInfo />}>
         {typeof __MAYDAN_REWARDED_PREVIEW__ !== 'undefined' && __MAYDAN_REWARDED_PREVIEW__ && native && <RewardedPrivacySettings />}
-        <Card className="settings-legal-card legal-links">
-          <a data-design-id="privacy-link" href={LEGAL_ROUTES.privacy}>{tr("سياسة الخصوصية")}</a>
-          <a data-design-id="terms-link" href={LEGAL_ROUTES.terms}>{tr("شروط الاستخدام")}</a>
-          <a data-design-id="refunds-link" href={native ? `${PUBLIC_SITE_ORIGIN}/refunds/` : 'refunds/'}>{tr("سياسة الاسترداد")}</a>
-          {!native && <a data-design-id="pricing-link" href="pricing/">{tr("التسعير")}</a>}
-        </Card>
+        <div className="settings-index settings-legal-card">
+          <SettingsLink id="privacy-link" icon={<IconLock />} href={LEGAL_ROUTES.privacy}>{tr("سياسة الخصوصية")}</SettingsLink>
+          <SettingsLink id="terms-link" icon={<IconBook />} href={LEGAL_ROUTES.terms}>{tr("شروط الاستخدام")}</SettingsLink>
+          <SettingsLink id="refunds-link" icon={<IconRotate />} href={native ? `${PUBLIC_SITE_ORIGIN}/refunds/` : 'refunds/'}>{tr("سياسة الاسترداد")}</SettingsLink>
+          {!native && <SettingsLink id="pricing-link" icon={<IconTag />} href="pricing/">{tr("التسعير")}</SettingsLink>}
+        </div>
         <ModerationSettingsLink />
       </SettingsGroup>}
       {section?.key === 'help' && <SettingsGroup id="settings-support" title={tr("المساعدة وعن ميدان")} icon={<IconFlag />}>
@@ -154,7 +176,7 @@ export function Settings() {
           (typeof __MAYDAN_WARMTH_PREVIEW__ === 'undefined' || __MAYDAN_WARMTH_PREVIEW__ !== true) && audioCandidates && isPrivateAudioCandidateBuild() && <AudioCandidateLab onClose={() => setAudioCandidates(false)} />}
       {confirmClear && (
         <ConfirmModal title={tr("مسح بيانات هذا الجهاز؟")} className="settings-clear-confirmation" danger message={tr("لا يمكن التراجع. ستُحذف أسماء اللاعبين والنتائج والمباريات المحفوظة ومفاتيح العودة للغرف من هذا الجهاز. يبقى حسابك واشتراكك.")} confirmLabel={tr("نعم، امسح")} cancelLabel={tr("إلغاء")}
-          onConfirm={() => { clearAllPlatformData({ keep: [ACCOUNT_PREFIX] }); setConfirmClear(false); toast(tr("تم مسح البيانات")); setTimeout(() => location.reload(), 500); }} onCancel={() => setConfirmClear(false)} />
+          onConfirm={() => { clearLocalDataKeepingAccount(); setConfirmClear(false); toast(tr("تم مسح البيانات")); setTimeout(() => location.reload(), 500); }} onCancel={() => setConfirmClear(false)} />
       )}
     </Screen>
   );

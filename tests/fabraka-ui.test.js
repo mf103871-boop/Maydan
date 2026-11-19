@@ -24,7 +24,7 @@ const players=[{id:'a',name:'PLAYER_A'},{id:'b',name:'PLAYER_B'},{id:'c',name:'P
 const deck=Array.from({length:24},(_,i)=>({id:`q${i}`,text:`سؤال ${i}: ___.`,answer:'CORRECT_TOKEN',aliases:[],decoys:['HOUSE_ONE','HOUSE_TWO','HOUSE_THREE'],explanation:'EXPLANATION_TOKEN',kind:'text',sourceUrl:'https://example.com/fabraka-answer'}));
 const make=opts=>initialState(players,{writeSeconds:0,discussionSeconds:20,...opts},{deck,seed:1});
 const go=(s,type,extra={})=>reduce(s,{type,round:s.round,key:turnKey(s),playerId:currentActor(s)?.id,...extra});
-const html=s=>render.game({api,players,savedSession:s,onExit:noop}).replace(/<style>[\s\S]*?<\/style>/g,'');
+const html=s=>render.game({api,players,savedSession:s,onExit:noop}).replace(/<style\b[^>]*>[\s\S]*?<\/style>/g,'');
 function written(){let s=go(go(make(),'BEGIN'),'START_WRITING');for(let i=0;i<3;i++){s=go(s,'READY');s=go(s,'DRAFT',{text:`LIE_TOKEN_${i}`});s=go(s,'SUBMIT_LIE');}return s;}
 
 test('restoring a private writing/host/voting screen cannot render drafts or answers',()=>{

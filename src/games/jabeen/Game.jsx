@@ -1,22 +1,37 @@
 import { tr } from '../../shared/i18n/core.js';
-import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
+import { Avatar } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
-import { Screen, Button, Podium, Segment, Card } from '../../shared/ui/components.jsx';
+import { Screen, Button, Segment, Card } from '../../shared/ui/components.jsx';
 import { ResumeCountdown, useTimer, useTimerCues } from '../../shared/ui/index.js';
 import { stampScreen, vignette, wait } from '../../shared/fx/index.js';
 import { trimSeen } from '../../shared/lib/noRepeat.js';
 import { mulberry32, randomSeed } from '../../shared/lib/rng.js';
 import { getGameContent } from '../../data/game-content.js';
-import css from './jabeen.css';
+import { PresentationStyles } from '../../shared/ui/PresentationStyles.jsx';
+import css from './jabeen.css?sheet';
 import { initialState, reduce, currentEntrant, standings, createItemSource, normalizeOptions, restoreSession, sessionSnapshot, SECONDS } from './logic.js';
 import { loadSession } from '../../shared/lib/session.js';
 import { useSessionSave } from '../../shared/ui/useSessionSave.js';
 import { useGameMusicScene } from '../../shared/fx/useGameMusicScene.js';
 import { useTilt } from './useTilt.js';
 import { IconCheck, IconClock, IconPlay, IconRotate, IconSkip } from '../../shared/ui/icons.jsx';
+import { getPlayfulSceneArt } from '../../shared/brand/playful-scenes.js';
+import { PartyPodium, PartyStyles } from '../beep/StudioParty.jsx';
+import actingArt from './illustrations/acting.webp';
+import foodArt from './illustrations/food.webp';
+import homeArt from './illustrations/home.webp';
+import jobsArt from './illustrations/jobs.webp';
+import proverbsArt from './illustrations/proverbs.webp';
+import phoneGuideArt from './illustrations/guide.webp';
+import turnArt from './illustrations/marker.webp';
 
 const OPTIONS_KEY = 'options';
 const SEEN_KEY = 'seen';
+const CATEGORY_SCENES = {
+  animals: 'category-animals', figures: 'category-history', places: 'category-geo',
+};
+const CATEGORY_ART = { acting: actingArt, food: foodArt, home: homeArt, jobs: jobsArt, proverbs: proverbsArt };
+const CATEGORY_DISPLAY_ORDER = ['animals', 'acting', 'food', 'figures', 'jobs', 'home', 'proverbs', 'places'];
 
 export function SetupOptions({ storage, api }) {
   const categories = useMemo(() => getGameContent('jabeen', api.contentLocale, api.contentVersion), [api.contentLocale, api.contentVersion]);
@@ -24,42 +39,46 @@ export function SetupOptions({ storage, api }) {
   const [resume] = useState(() => loadSession(storage, (raw) => restoreSession(raw, categories)));
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }, categories); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
-    <div data-design-screen="setup.jabeen" data-design-id="options" className="stack jabeen-setup">
+    <div data-design-screen="setup.jabeen" data-design-id="options" className="stack jabeen-setup party-setup">
+    <PartyStyles />
+    <PresentationStyles sheet={css} />
     {resume && <Card className="stack resume-card">
-      <style>{css}</style>
       <span className="card-title">{tr("لعبتكم بانتظاركم")}</span>
       <p className="card-muted">{tr("فئة «")}{resume.state.categoryName}{tr("» · دور ")}{currentEntrant(resume.state)?.name} ({resume.state.turn + 1}{tr(" من ")}{resume.state.entrants.length})</p>
       <Button data-design-id="resume" data-design-required="true" variant="accent" full onClick={() => api.resumeGame(resume)}>{tr("استئناف اللعبة المحفوظة")}</Button>
       <p className="card-muted">{tr("بدء لعبة جديدة يستبدل هذا التقدم.")}</p>
     </Card>}
-    <Card className="stack">
-      <style>{css}</style>
-      <div className="field"><span>{tr("طريقة التحكم")}</span>
+    <div className="stack">
+      <div className="party-setting"><span>{tr("طريقة التحكم")}</span>
         <Segment accent label={tr("طريقة التحكم")} value={opts.control} onChange={control => update({ control })} options={[{ value: 'auto', label: tr("الإمالة واللمس") }, { value: 'touch', label: tr("اللمس") }]} />
       </div>
-      <span className="card-title">{tr("الفئة")}</span>
+      <div className="party-setting"><span>{tr("الفئة")}</span>
       <div className="jabeen-cats">
-        {categories.map((c) => (
+        {[...categories].sort((first, second) => CATEGORY_DISPLAY_ORDER.indexOf(first.id) - CATEGORY_DISPLAY_ORDER.indexOf(second.id)).map((c) => {
+          const artwork = CATEGORY_ART[c.id] || getPlayfulSceneArt(CATEGORY_SCENES[c.id] || '', 48);
+          return (
           <button data-design-id="category-card" key={c.id} type="button" className={`jabeen-cat ${opts.categoryId === c.id ? 'selected' : ''}`} aria-pressed={opts.categoryId === c.id} onClick={() => update({ categoryId: c.id })}>
-            <span aria-hidden="true">{c.icon}</span>{c.name}{opts.categoryId === c.id && <IconCheck />}
+            {artwork && <img src={artwork} alt="" width="48" height="48" loading="lazy" decoding="async" />}
+            <span>{c.name}</span>{opts.categoryId === c.id && <IconCheck />}
           </button>
-        ))}
+        );})}
       </div>
-      <div className="field"><span>{tr("مدة الجولة")}</span>
+      </div>
+      <div className="party-setting"><span>{tr("مدة الجولة")}</span>
         <Segment data-design-id="setting-duration" accent label={tr("المدة")} value={opts.seconds} onChange={(v) => update({ seconds: v })} options={SECONDS.map((s) => ({ value: s, label: tr("{v0} ثانية", {v0: s}) }))} />
       </div>
-    </Card>
+    </div>
     </div>
   );
 }
 
 function PhoneGuide({ rotation = false }) {
+  if (!rotation) return <img className="jabeen-phone-guide" src={phoneGuideArt} width="600" height="364" decoding="async" alt="" />;
   return <svg className="jabeen-phone-guide" viewBox="0 0 180 112" aria-hidden="true" fill="none" strokeLinecap="round" strokeLinejoin="round">
-    {rotation ? <g stroke="#087f87" strokeWidth="4"><path d="M30 57c3-16 12-29 27-35m-13-4 14 4-6 13M150 58c-3 16-12 29-27 35m13 4-14-4 6-13" /></g>
-      : <g stroke="#8d6b9a" strokeWidth="4" fill="#d9bfdc"><circle cx="33" cy="61" r="12" /><circle cx="147" cy="61" r="12" /><path d="M15 97c0-11 7-18 18-18s18 7 18 18m78 0c0-11 7-18 18-18s18 7 18 18M67 99c1-12 8-20 23-20s22 8 23 20m-40-28L59 56l7-19m41 34 14-15-7-19" /><circle cx="90" cy="62" r="14" /></g>}
-    <rect x={rotation ? 56 : 68} y={rotation ? 35 : 22} width={rotation ? 68 : 44} height={rotation ? 42 : 21} rx="6" fill="#e9d5ec" stroke="#4f2c63" strokeWidth="4" />
-    <path d={rotation ? 'M66 51v10m48-10v10' : 'M77 32h26'} stroke="#94709f" strokeWidth="3" />
-    <path d={rotation ? 'm29 72 8 2m-6 8 8-4m105-51 8-3m-8 10 9 1' : 'M90 5v7m-20-1 5 6m35-6-5 6'} stroke="#d9912d" strokeWidth="4" />
+    <path d="M30 57c3-16 12-29 27-35m-13-4 14 4-6 13M150 58c-3 16-12 29-27 35m13 4-14-4 6-13" stroke="#087f87" strokeWidth="4" />
+    <rect x="56" y="35" width="68" height="42" rx="6" fill="#e9d5ec" stroke="#4f2c63" strokeWidth="4" />
+    <path d="M66 51v10m48-10v10" stroke="#94709f" strokeWidth="3" />
+    <path d="m29 72 8 2m-6 8 8-4m105-51 8-3m-8 10 9 1" stroke="#d9912d" strokeWidth="4" />
   </svg>;
 }
 
@@ -69,16 +88,17 @@ function Stage({ state, timer, tilt, onAnswer, onEnd, flash, blocked }) {
   const danger = timer.left <= 10;
   const okCount = state.results.filter((r) => r.ok).length;
   // التظليل الأحمر في آخر 3 ثوانٍ: عنصر ثابت في body (fx.vignette) يُطفأ عند إزالة المسرح.
-  useEffect(() => { vignette(timer.running && timer.left > 0 && timer.left <= 3); return () => vignette(false); }, [timer.left, timer.running]);
+  useEffect(() => { vignette(!blocked && timer.running && timer.left > 0 && timer.left <= 3); return () => vignette(false); }, [blocked, timer.left, timer.running]);
+  if (blocked) return null;
   return (
-    <div data-design-id="content" className={`jabeen-stage ${flash}`} role="group" aria-label={tr("جولة على جبينك")} inert={blocked} aria-hidden={blocked || undefined}>
+    <div data-design-id="content" className={`jabeen-stage ${flash}`} role="group" aria-label={tr("جولة على جبينك")}>
       <div data-design-id="header" className="jabeen-stage-top">
         {/* في ثواني الخطر يُعاد تركيب الرقم كل ثانية (key) فيُلكم ثم ينبض */}
         <span data-design-id="timer" className={`num ${danger ? 'is-danger' : ''}`} role="timer" aria-label={tr("{v0} ثانية متبقية", {v0: timer.left})}><IconClock /><bdi>{timer.left}</bdi><small>{tr("ث")}</small></span>
-        <span className="jabeen-active-player"><Avatar player={currentEntrant(state)} /><b>{currentEntrant(state).name}</b><span className="count" key={`c${okCount}`}>✓ {okCount}</span></span>
+        <span className="jabeen-active-player"><Avatar player={currentEntrant(state)} /><b dir="auto">{currentEntrant(state).name}</b><span className="count" key={`c${okCount}`}><IconCheck /> {okCount}</span></span>
         <Button size="sm" variant="ghost" className="jabeen-finish" data-design-id="continue" data-design-required="true" onClick={onEnd}>{tr("إنهاء")}</Button>
       </div>
-      <div data-design-id="word" className="jabeen-word"><span key={state.item ? state.item.id : 'none'}>{state.item ? state.item.text : '…'}</span></div>
+      <div data-design-id="word" className="jabeen-word party-sparks"><span key={state.item ? state.item.id : 'none'}>{state.item ? state.item.text : '…'}</span></div>
       <div data-design-id="controls" className="jabeen-controls">
         {tiltLive && <p className="jabeen-hint">{tilt.calibrated ? tr("أَمِل للأسفل = صح · للأعلى = تخطي — أو استخدم الزرين.") : tr("ثبّت الجوال على جبينك لحظة… تُعاير الحركة.")}</p>}
         {tiltLost && <Button data-design-id="tilt-retry" size="sm" variant="ghost" onClick={() => { tilt.retry(); }}>{tr("إعادة تفعيل الميلان")}</Button>}
@@ -167,7 +187,8 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
     if (timer.paused) timer.resume(); else timer.start();
   }, [landscape]); // eslint-disable-line react-hooks/exhaustive-deps
   // A browser visibility resume must not restart behind the rotate prompt.
-  useEffect(() => { if (!landscape && timer.running) timer.pause(); }, [landscape, timer.running, timer.pause]);
+  const { running: timerRunning, pause: pauseTimer } = timer;
+  useEffect(() => { if (!landscape && timerRunning) pauseTimer(); }, [landscape, timerRunning, pauseTimer]);
   useEffect(() => {
     if (state.phase !== 'over') return;
     api.storage.set(SEEN_KEY, trimSeen(source.seen(), 1200));
@@ -177,16 +198,18 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
   }, [state.phase]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const entrant = state.phase === 'over' ? null : currentEntrant(state);
+  const finalTurn = state.turn === state.entrants.length - 1;
 
   return (
-    <Screen data-design-screen={`jabeen.${state.phase}`} className="jabeen" aria-label={tr("على جبينك")}>
-      <style>{css}</style>
+    <Screen data-design-screen={`jabeen.${state.phase}`} className="jabeen party-studio" aria-label={tr("على جبينك")}>
+      <PartyStyles />
+      <PresentationStyles sheet={css} />
       {state.phase === 'intro' && (
         <div data-design-id="intro" className="jabeen-intro">
-          <h2 className="jabeen-player-ribbon"><Avatar player={entrant} />{tr(" دور ")}{entrant.name}</h2>
+          <div className="jabeen-player-header"><Avatar player={entrant} /><div><img className="jabeen-player-marker" src={turnArt} width="72" height="72" alt="" /><h2 className="party-heading">{tr(" دور ")}<bdi>{entrant.name}</bdi></h2></div></div>
           <p className="jabeen-category-pill">{tr("فئة «")}{state.categoryName}» · {state.seconds}{tr(" ثانية")}</p>
-          <div className="jabeen-instruction"><PhoneGuide /><strong>{tr("ضع الجوال على جبينك والشاشة نحو الآخرين")}</strong><p>{tr("هم يصفون وأنت تخمّن. يمكنك استخدام الحركة أو أزرار اللمس.")}</p></div>
-          {tilt.needsPermission && <p className="jabeen-perm">{tr("قد يطلب جهازك إذن استخدام مستشعر الحركة عند البدء. إن رفضت، يمكنك اللعب باللمس.")}</p>}
+          <div className="jabeen-instruction"><strong>{tr("ضع الجوال على جبينك والشاشة نحو الآخرين")}</strong><PhoneGuide /><p className="party-ribbon">{tr("هم يصفون وأنت تخمّن. يمكنك استخدام الحركة أو أزرار اللمس.")}</p></div>
+          {state.control === 'auto' && tilt.needsPermission && <p className="jabeen-perm">{tr("قد يطلب جهازك إذن استخدام مستشعر الحركة عند البدء. إن رفضت، يمكنك اللعب باللمس.")}</p>}
           {exhausted && <p className="jabeen-perm">{tr("انتهت كلمات «")}{state.categoryName}{tr("» — سنعيد خلطها من جديد ليكمل كل لاعب دوره.")}</p>}
           {!landscape && <p className="jabeen-perm" role="status">{tr("أدر الجوال أفقيًا قبل البدء، أو تابع بهذا الاتجاه. الوقت لم يبدأ بعد.")}</p>}
           <Button data-design-id="start" data-design-required="true" variant="accent" size="lg" full onClick={async () => { if (!landscape) { setLandscape(true); return; } if (state.control === 'auto') await tilt.request(); tilt.recalibrate(); api.sound.play('whoosh'); const draw = drawForTurn(); dispatch({ type: 'BEGIN', item: draw.item, recycled: draw.recycled }); }}><IconPlay /> {landscape ? tr("ابدأ الجولة") : tr("متابعة بهذا الاتجاه")}</Button>
@@ -201,7 +224,7 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
       )}
       {state.phase === 'review' && (
         <div className="stack">
-          <h2 className="jabeen-player-ribbon"><Avatar player={entrant} />{tr(" نتيجة ")}{entrant.name}</h2>
+          <div className="jabeen-player-header jabeen-review-header"><Avatar player={entrant} /><h2 className="party-heading">{tr(" نتيجة ")}<bdi>{entrant.name}</bdi></h2></div>
           <p className="jabeen-category-pill">{state.results.filter((r) => r.ok).length}{tr(" من ")}{state.results.length}{tr(" — المس أي كلمة لتصحيحها.")}</p>
           <div data-design-id="results" className="jabeen-review">
             {state.results.map((r, i) => (
@@ -212,12 +235,20 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
             {state.results.length === 0 && <p className="muted center">{tr("لم تُعرض كلمات في هذه الجولة.")}</p>}
           </div>
           {state.recycled && <p className="center muted">{tr("أُعيد خلط كلمات «")}{state.categoryName}{tr("» بعد نفادها، فقد تتكرر كلمة مع لاعب سابق.")}</p>}
-          <Button data-design-id="continue" data-design-required="true" variant="accent" size="lg" full onClick={() => { api.sound.play('pop'); const n = state.results.filter((r) => r.ok).length; if (api.toast) api.toast(tr("+{v0} لـ {v1}", {v0: n, v1: entrant.name}), { kind: 'success' }); dispatch({ type: 'CONFIRM' }); }}>{state.turn === state.entrants.length - 1 ? tr("النتائج النهائية") : tr("اللاعب التالي")}</Button>
+          <Button data-design-id="continue" data-design-required="true" variant="accent" size="lg" full onClick={() => {
+            api.sound.play('pop');
+            if (!finalTurn) {
+              const points = state.results.filter(result => result.ok).length;
+              api.toast?.(tr("+{v0} لـ {v1}", {v0: points, v1: entrant.name}), {kind: 'success'});
+            }
+            dispatch({type: 'CONFIRM'});
+          }}>{finalTurn ? tr("النتائج النهائية") : tr("اللاعب التالي")}</Button>
         </div>
       )}
       {state.phase === 'over' && (
         <div className="stack">
-          <Podium data-design-id="podium" entries={standings(state)} />
+          <h2 className="party-heading">{tr("النتائج")}</h2>
+          <PartyPodium entries={standings(state)} />
           <Button data-design-id="restart" variant="accent" size="lg" full onClick={() => { api.sound.play('whoosh'); api.restart(); }}>{tr("العب مرة أخرى")}</Button>
           <Button variant="secondary" full data-design-id="options" onClick={api.backToSetup}>{tr("تغيير اللاعبين أو الفئة")}</Button>
           <Button variant="ghost" full data-design-id="exit" data-design-required="true" onClick={onExit}>{tr("العودة للمنصة")}</Button>

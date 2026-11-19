@@ -9,7 +9,7 @@ const root = process.cwd();
 await mkdir(path.join(root, '.cache'), { recursive: true });
 const dir = await mkdtemp(path.join(root, '.cache/plus-identity-'));
 after(() => rm(dir, { recursive: true, force: true }));
-await build({ stdin: { contents: `import React from 'react';import{renderToStaticMarkup}from'react-dom/server';import{ProfileAvatar,frameDetail}from'./src/profiles/ProfileAvatar.jsx';import{PlayerName,PlayerIdentity,MembershipBadge}from'./src/profiles/PlayerIdentity.jsx';import{ProductPreview}from'./src/plus/ProductPreview.jsx';export{frameDetail};export{cosmeticPosterSources}from'./src/profiles/identity-assets.js';const render=(C,p)=>renderToStaticMarkup(React.createElement(C,p));export const avatar=p=>render(ProfileAvatar,p),name=p=>render(PlayerName,p),identity=p=>render(PlayerIdentity,p),badge=p=>render(MembershipBadge,p),preview=p=>render(ProductPreview,p);`, resolveDir: root, loader: 'jsx' }, outfile: path.join(dir, 'render.mjs'), bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic', define: { __MAYDAN_ROOMS_URL__: JSON.stringify('https://identity.invalid') }, logLevel: 'silent' });
+await build({ stdin: { contents: `import React from 'react';import{renderToStaticMarkup}from'react-dom/server';import{ProfileAvatar,frameDetail}from'./src/profiles/ProfileAvatar.jsx';import{PlayerName,PlayerIdentity,MembershipBadge}from'./src/profiles/PlayerIdentity.jsx';import{ProductPreview}from'./src/plus/ProductPreview.jsx';export{frameDetail};export{cosmeticPosterSources}from'./src/profiles/identity-assets.js';const render=(C,p)=>renderToStaticMarkup(React.createElement(C,p));export const avatar=p=>render(ProfileAvatar,p),name=p=>render(PlayerName,p),identity=p=>render(PlayerIdentity,p),badge=p=>render(MembershipBadge,p),preview=p=>render(ProductPreview,p);`, resolveDir: root, loader: 'jsx' }, outfile: path.join(dir, 'render.mjs'), bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic', loader: { '.webp': 'dataurl' }, define: { __MAYDAN_ROOMS_URL__: JSON.stringify('https://identity.invalid') }, logLevel: 'silent' });
 const view = await import(pathToFileURL(path.join(dir, 'render.mjs')));
 const photo = 'https://identity.invalid/api/profiles/member/images/avatar/' + 'a'.repeat(64);
 const user = { id: 'member', name: 'أحمد', avatarUrl: photo, theme: 'teal', avatarPreset: 'fox', cosmetics: { frameId: 'sahra.frame', badge: false } };
@@ -22,12 +22,12 @@ test('an equipped frame keeps the uploaded portrait inside its own crop and the 
   assert.doesNotMatch(html, /sahra-avatar\.webp/);
 });
 
-test('chat, seat and profile sizes select three distinct frame detail assets', () => {
-  for (const [size, detail, side] of [[24, 'small', 72], [40, 'medium', 176], [100, 'large', 480]]) {
+test('chat, seat and profile retain detail-dependent motion with the approved B frame', () => {
+  for (const [size, detail] of [[24, 'small'], [40, 'medium'], [100, 'large']]) {
     const html = view.avatar({ user, size });
     assert.equal(view.frameDetail(size), detail);
     assert.ok(html.includes(`data-frame-detail="${detail}"`));
-    assert.ok(html.includes(`/assets/plus/v3/sahra-frame-${side}.webp`));
+    assert.match(html, /class="player-avatar-frame"><img[^>]*src="data:image\/webp;base64,/);
     assert.ok(html.includes(`min-width:${size}px`));
     assert.equal(html.includes('player-avatar-frame-light'), detail !== 'small');
     assert.equal(html.includes('player-avatar-live-halo'), detail === 'large');
@@ -60,7 +60,8 @@ test('gold ownership and local premium-shaped fields cannot create the membershi
   assert.equal(view.badge({ user: { ...user, cosmetics: { badge: 1 } } }), '');
   const member = { ...user, cosmetics: { frameId: 'artist.frame', badge: true } };
   assert.match(view.identity({ user: member }), /aria-label="عضو ميدان بلس"/);
-  assert.match(view.identity({ user: member }), /artist-frame/);
+  assert.match(view.identity({ user: member }), /data-frame-theme="artist"/);
+  assert.match(view.identity({ user: member }), /data-frame-art="true"/);
 });
 
 test('the name card is independent from the selected cover and escapes the actual player name', () => {
@@ -80,6 +81,7 @@ test('missing new art has a bounded existing-art fallback without inventing a ne
 test('current Plus preview contains only profile presentation and preserves the original uploaded photograph', () => {
   const html=view.preview({user,items:[{id:'sahra.profileSkin',kind:'profileSkin'}]});
   assert.match(html,/معاينة بروفايلك/);assert.ok(html.includes(photo));
-  assert.match(html,/profile-sahra-background\.webp/);
+  assert.match(html,/data-profile-skin="sahra"/);
+  assert.match(html,/--profile-skin-garland:url\(/);
   assert.doesNotMatch(html,/assets\/council|council-scene|مقعد اللعب|RoomLook|plus-room-entrance/);
 });

@@ -64,7 +64,7 @@ function packagedApp() {
     const result = await build(options);
     const files = result.outputFiles.filter(file => !file.path.endsWith('.js'));
     const urls = files.map(file => './' + path.relative(DIST, file.path).replaceAll('\\', '/'));
-    const html = await renderHtml(result.outputFiles.find(file => file.path.endsWith('.js')).text, { version: 'language-browser', assets: urls });
+    const html = await renderHtml(result.outputFiles.find(file => file.path.endsWith('.js')).text, { version: 'language-browser', roomsUrl: 'same-origin', assets: urls });
     const sw = renderServiceWorker(await readFile(path.join(ROOT, 'public/sw.js'), 'utf8'), { id: 'language-browser', audioCues, brandAssets: urls.filter(url => !/\/locale-en-[^/]+\.json$/.test(url)) });
     return { html, sw, assets: new Map(files.map(file => ['/' + path.relative(DIST, file.path).replaceAll('\\', '/'), file.contents])) };
   })();

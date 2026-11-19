@@ -1,11 +1,11 @@
 // تخزين الحساب على الجهاز: رمز الجلسة، نسخة /api/me المخزّنة، وعلامات التجارب.
 // كل قراءة تُطبّع الشكل كي لا تُسقط بياناتٌ تالفة الواجهةَ (JSON آمن دائمًا).
 import { createStorage } from '../lib/storage.js';
-import { environmentStorageKey } from '../lib/environment.js';
+import { accountStoragePrefix } from './local-data.js';
 import { GAMEPLAY_TRIAL_GAMES as TRIAL_GAMES } from './config.js';
 
 // البادئة التي يحميها «مسح البيانات» في الإعدادات (keep).
-export const ACCOUNT_PREFIX = environmentStorageKey('maydan:account:');
+export const ACCOUNT_PREFIX = accountStoragePrefix();
 export const KEYS = { session: 'session', me: 'me', trials: 'trials', promo: 'promo' };
 
 function normalizeTrials(value) {
@@ -18,7 +18,7 @@ function normalizeTrials(value) {
 }
 
 export function createAccountStore(backend, { apiOrigin } = {}) {
-  const storage = createStorage(environmentStorageKey('maydan:account:', apiOrigin), backend);
+  const storage = createStorage(accountStoragePrefix(apiOrigin), backend);
   const api = {
     storage,
     prefix: storage.prefix,

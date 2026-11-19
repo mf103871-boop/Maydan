@@ -169,6 +169,8 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
         configuration.suppressesIncrementalRendering = false
         if let directory = Self.gameDirectory {
             configuration.setURLSchemeHandler(AppSchemeHandler(directory: directory), forURLScheme: AppSchemeHandler.scheme)
+            configuration.userContentController.addScriptMessageHandler(InstalledPackVerifier(directory: directory),
+                contentWorld: .page, name: "maydanInstalledPack")
         }
 
         let bridgeProxy = WeakScriptMessageHandler(delegate: self)

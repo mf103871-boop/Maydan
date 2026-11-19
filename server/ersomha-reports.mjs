@@ -4,7 +4,9 @@ import { requireSession, withRotation } from './accounts/session.mjs';
 import { clientIdOf, textOf, userId } from './social/model.mjs';
 import { chargeUser } from './social/db.mjs';
 import { liveAccountSql } from './moderation/access.mjs';
-import { ERSOMHA_PALETTE, ERSOMHA_WIDTHS } from '../src/games/ersomha/drawing.js';
+import { ERSOMHA_WIDTHS } from '../src/games/ersomha/drawing.js';
+
+import { drawingPaletteVersion, drawingPalette } from '../src/games/ersomha/palette.js';
 
 const stmt = (env, sql, ...args) => env.DB.prepare(sql).bind(...args);
 const first = (env, sql, ...args) => stmt(env, sql, ...args).first();
@@ -28,9 +30,11 @@ export function privateDrawingEvidence(value, input) {
   const drawerUserId = userId(value.drawerUserId);
   const canvas = value.canvas;
   if (!Number.isSafeInteger(canvas.epoch) || canvas.epoch < 1 || !Number.isSafeInteger(canvas.seq) || canvas.seq < 0) fail('INVALID', 400);
+  const paletteVersion = drawingPaletteVersion(canvas.paletteVersion);
+  if (paletteVersion === null) fail('INVALID', 400);
   let points = 0;
   const strokes = canvas.strokes.map(stroke => {
-    if (!stroke || !/^[A-Za-z0-9_-]{1,100}$/.test(stroke.strokeId || '') || !ERSOMHA_PALETTE.includes(stroke.color)
+    if (!stroke || !/^[A-Za-z0-9_-]{1,100}$/.test(stroke.strokeId || '') || !drawingPalette(paletteVersion).includes(stroke.color)
       || !ERSOMHA_WIDTHS.includes(stroke.width) || !['pen', 'eraser'].includes(stroke.tool)
       || !Array.isArray(stroke.points) || !stroke.points.length) fail('INVALID', 400);
     points += stroke.points.length;
@@ -42,7 +46,7 @@ export function privateDrawingEvidence(value, input) {
     return { strokeId: stroke.strokeId, points: coordinates, color: stroke.color, width: stroke.width, tool: stroke.tool, end: Boolean(stroke.end) };
   });
   return { game: 'ersomha', roomCode: input.roomCode, matchId: input.matchId, round: input.round,
-    drawerUserId, createdAt: value.createdAt, canvas: { epoch: canvas.epoch, seq: canvas.seq, strokes, undoneIds: [] } };
+    drawerUserId, createdAt: value.createdAt, canvas: { ...(canvas.paletteVersion === undefined ? {} : { paletteVersion }), epoch: canvas.epoch, seq: canvas.seq, strokes, undoneIds: [] } };
 }
 
 export async function saveDrawingReport(env, reporterId, body, now = Date.now()) {

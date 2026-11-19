@@ -1,4 +1,5 @@
-import { tr, getUiLocale } from '../../shared/i18n/core.js';
+import { tr, gameName } from '../../shared/i18n/core.js';
+import { useI18n } from '../../shared/i18n/react.jsx';
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { GameArtwork, ClayStage } from '../../shared/brand/art.jsx';
 import { MenuGameIcon } from '../MenuGameIcon.jsx';
@@ -46,14 +47,17 @@ function LoadingStatus({ progress, label }) {
 }
 
 export function GameLoading({ game, progress }) {
-  return <section className="game-loading" aria-busy="true" aria-label={tr("تجهيز {v0}", {v0: game.name})}>
+  const { locale } = useI18n();
+  const displayName = gameName(game, locale);
+  return <section className="game-loading" aria-busy="true" aria-label={tr("تجهيز {v0}", {v0: displayName})}>
     <ClayStage className="clay-static"><GameArtwork game={game.id} /></ClayStage>
-    <h1>{game.name}</h1>
+    <h1>{displayName}</h1>
     <LoadingStatus progress={progress} label={tr("نجهّز ساحة اللعب…")} />
   </section>;
 }
 
 export function Splash({ onDone, visible = true, reducedMotion = false }) {
+  const { t: tr, number } = useI18n();
   const { ready } = useVisualReadiness();
   const route = useRoute(), lamma = useLamma();
   const [downloadGate] = useState(createBackgroundDownloadGate);
@@ -91,7 +95,7 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
     const root = document.documentElement, property = '--startup-background-space';
     const previous = root.style.getPropertyValue(property), previousVisible = root.hasAttribute('data-startup-background-visible');
     const previousVisibility = node.style.visibility, previousPointerEvents = node.style.pointerEvents;
-    let frame, gestureTimer, typingForm = null, pointerForm = null;
+    let frame, gestureTimer, typingForm = null, pointerForm = null, observedLauncher = null;
     const measure = (focused = document.activeElement) => {
       const editable = focused?.matches?.('textarea,[contenteditable="true"],input:not([type="range"]):not([type="checkbox"]):not([type="radio"])');
       // Keep the notice suppressed through input → submit-button focus. Changing
@@ -101,9 +105,23 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
       const typing = editable || Boolean(typingForm || pointerForm);
       const modal = [...document.querySelectorAll('[role="dialog"][aria-modal="true"]')].some(dialog => dialog.getClientRects().length && getComputedStyle(dialog).visibility !== 'hidden');
       const shown = !typing && !modal && node.getClientRects().length > 0;
+      const launcher = document.querySelector('.lamma-launcher');
+      if (launcher !== observedLauncher) {
+        if (observedLauncher) resize.unobserve(observedLauncher);
+        if (launcher) resize.observe(launcher);
+        observedLauncher = launcher;
+      }
+      const launcherRect = launcher?.getBoundingClientRect();
+      const viewportBottom = (window.visualViewport?.offsetTop || 0) + (window.visualViewport?.height || window.innerHeight);
+      const launcherSpace = shown && launcherRect?.height && getComputedStyle(launcher).visibility !== 'hidden'
+        ? Math.max(0, Math.ceil(viewportBottom - launcherRect.top)) : 0;
+      const menuSpace = parseFloat(getComputedStyle(root).getPropertyValue('--menu-nav-space')) || 0;
+      // The launcher remains usable below the notice. Reserve its real height
+      // too, so raising the notice cannot cover the game's own bottom actions.
+      node.style.setProperty('--startup-controls-space', `${launcherSpace}px`);
       node.style.visibility = shown ? previousVisibility : 'hidden';
       node.style.pointerEvents = shown ? previousPointerEvents : 'none';
-      root.style.setProperty(property, shown ? `${Math.ceil(node.getBoundingClientRect().height) + 8}px` : '0px');
+      root.style.setProperty(property, shown ? `${Math.ceil(node.getBoundingClientRect().height) + 8 + Math.max(0, launcherSpace - menuSpace)}px` : '0px');
       root.toggleAttribute('data-startup-background-visible', Boolean(shown));
     };
     const schedule = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(() => measure()); };
@@ -117,8 +135,8 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
     const pointerEnded = () => { if (pointerForm) { clearTimeout(gestureTimer); gestureTimer = setTimeout(releasePointer, 250); } };
     const clicked = () => { if (pointerForm) { clearTimeout(gestureTimer); gestureTimer = setTimeout(releasePointer, 0); } };
     const pointerCancelled = () => { clearTimeout(gestureTimer); releasePointer(); };
-    measure();
     const resize = new ResizeObserver(schedule); resize.observe(node);
+    measure();
     // Keep suppression and measured space atomic: focus and dialog portals may
     // change without resizing this fixed element.
     const mutations = new MutationObserver(schedule); mutations.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['hidden', 'aria-modal', 'class'] });
@@ -179,29 +197,30 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
     finished.current = true;
     onDone();
   };
-  const number = (value) => value.toLocaleString(getUiLocale());
   const incomplete = Math.max(0, images.total - images.ok);
 
   if (!visible) {
     if (['ready', 'skipped'].includes(phase) || statusHidden) return null;
-    return <aside ref={statusRef} className="startup-background" aria-label={tr("حالة تحميل الصور")}>
-      <span role="status">{phase === 'error' ? tr("باقي {v0} صورة", {v0: number(incomplete)}) : phase === 'unsaved' ? tr("الصور نُزّلت لكن المتصفح لم يحفظها؛ ستُجلب عند الحاجة.") : backgroundPaused ? tr("تجهيز الصور متوقف مؤقتًا لإعطاء الأولوية للعب والصوت") : <>{tr("نجهّز الصور بالخلفية · ")}<bdi dir="ltr" style={{whiteSpace:'nowrap',unicodeBidi:'isolate-override'}}>{number(images.ok)} / {number(images.total)}</bdi></>}</span>
+    return <aside ref={statusRef} className="startup-background" data-design-screen="startup" data-startup-phase={phase} aria-label={tr("حالة تحميل الصور")}>
+      <span role="status">{phase === 'error' ? tr("باقي {v0} صورة", {v0: number(incomplete)}) : phase === 'unsaved' ? tr("الصور نُزّلت لكن المتصفح لم يحفظها؛ ستُجلب عند الحاجة.") : backgroundPaused ? tr("تجهيز الصور متوقف مؤقتًا لإعطاء الأولوية للعب والصوت") : <>{tr("نجهّز الصور بالخلفية · ")}<bdi dir="ltr">{number(images.ok)} / {number(images.total)}</bdi></>}</span>
       {phase === 'error' && <button type="button" onClick={() => setAttempt((value) => value + 1)}>{tr("إعادة المحاولة")}</button>}
       <button type="button" className="startup-background-close" aria-label={tr("إخفاء حالة الصور")} onClick={() => setStatusHidden(true)}>×</button>
     </aside>;
   }
 
-  return <div className="splash" aria-busy={phase === 'loading'} aria-label={tr("تجهيز ميدان")} data-reduced-motion={reducedMotion ? 'true' : undefined}>
+  const count = { v0: number(images.ok), v1: number(images.total) };
+  return <div className="splash" data-design-screen="startup" data-startup-phase={phase} aria-busy={phase === 'loading'} aria-label={tr("تجهيز ميدان")} data-reduced-motion={reducedMotion ? 'true' : undefined}>
       <div className="startup-download">
         <MenuGameIcon id="badeeha" className="startup-download-art" />
         <h1>{phase === 'error' ? tr("باقي صور لم يكتمل تحميلها") : phase === 'unsaved' ? tr("الصور جاهزة لهذه الجلسة") : ['ready', 'skipped'].includes(phase) ? tr("الصور جاهزة، نفتح الساحة…") : tr("جارٍ تجهيز ميدان")}</h1>
-        <progress className="startup-download-progress" max={images.total || 1} value={images.ok} aria-label={tr("تحميل صور اللعبة")} aria-valuetext={tr("{v0} من {v1} صورة", {v0: number(images.ok), v1: number(images.total)})} />
+        <progress className="startup-download-progress" max={images.total || 1} value={images.ok} aria-label={tr("تحميل صور اللعبة")} aria-valuetext={tr("{v0} من {v1} صورة", count)} />
         <p className="startup-download-note" role="status" aria-live="polite">
           {phase === 'error'
-            ? tr("تعذّر تجهيز {v0} صورة. تحقّق من الاتصال وأعد المحاولة؛ الصور المكتملة محفوظة إذا كانت مساحة الجهاز تسمح.", {v0: number(incomplete)})
+            ? <><span aria-hidden="true">{tr("تحقق من الاتصال ثم أعد المحاولة")}</span>
+                <span className="sr-only">{tr("تعذّر تجهيز {v0} صورة. تحقّق من الاتصال وأعد المحاولة؛ الصور المكتملة محفوظة إذا كانت مساحة الجهاز تسمح.", {v0: number(incomplete)})}</span></>
             : phase === 'unsaved'
               ? tr("المتصفح لا يسمح بحفظ الصور على هذا الجهاز (تصفّح خاص أو مساحة ممتلئة)، فستُجلب من الإنترنت عند الحاجة.")
-              : tr("{v0} من {v1} صورة · تكتمل الصور عند العودة للقوائم", {v0: number(images.ok), v1: number(images.total)})}
+              : tr(backgroundPaused ? "{v0} من {v1} صورة · تكتمل الصور عند العودة للقوائم" : "{v0} من {v1} صورة", count)}
         </p>
         <div className="startup-download-actions">
           {phase === 'error' && <Button variant="primary" full onClick={() => setAttempt((value) => value + 1)}>{tr("إعادة المحاولة")}</Button>}

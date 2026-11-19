@@ -34,6 +34,10 @@
 .online-connection{color:#755c29;background:#fff0c5;border-radius:24px;text-align:center;padding:8px 12px;font-size:.875rem;transition:background-color .3s ease,color .3s ease}.online-connection.connected{color:#08645f;background:#dff1e9}
 .online-connection::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;margin-inline-end:8px;vertical-align:middle;background:currentColor}
 .online-connection:not(.connected)::before{animation:ui-glow 1.2s ease-in-out infinite}
+.online-recovery-panel { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px 12px; padding:12px 14px; border:1px solid #e2c7a2; border-radius:20px; background:#fff2dd; color:#633c17; }
+.online-recovery-panel>div { flex:1 1 12rem; min-width:0; }
+.online-screen .online-recovery-panel p { margin:3px 0 0; font-size:.875rem; }
+.online-recovery-panel .btn { flex:1 1 auto; min-height:48px; border-radius:16px; white-space:normal; }
 /* سؤال المباراة: بطاقة تنقلب لكل جولة والرسم يهبط على حامله */
 .online-question{text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;background:var(--top-light),#f4e9f5;transform-origin:50% 0;animation:ui-flip-in .45s var(--ease-out) both}.online-question .clay-art{width:78px;height:78px;flex:none}
 .online-question>.clay-stage{--contact-inset:18%;--contact-y:-2px}
@@ -44,7 +48,7 @@
 .online-vote-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
 /* بلاطات التصويت: تنبثق بالتتابع، حافة تنضغط، وتنبض بنفسجية عند الاختيار */
 .online-vote-choice{border:2px solid #dfd2bb;background:var(--top-light),#fffcf5;box-shadow:inset 0 2px 1px #fff,0 4px 0 #dfd2bb,0 8px 14px rgba(91,61,36,.08);border-radius:20px;padding:12px 6px;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;font:inherit;color:#493652;min-height:112px;min-width:0;transition:transform .2s var(--ease-spring),box-shadow .2s var(--ease-spring),background-color .18s,border-color .18s;animation:ui-pop-in .4s var(--ease-spring) both;animation-delay:calc(var(--i,0) * 40ms)}
-.online-vote-choice:active:not(:disabled){transform:translateY(4px);transition-duration:.08s;box-shadow:inset 0 2px 4px rgba(91,61,36,.16),0 0 0 #dfd2bb}
+.online-vote-choice:active:not(:disabled){transform:var(--interaction-transform, translateY(4px));transition-duration:.08s;box-shadow:inset 0 2px 4px rgba(91,61,36,.16),0 0 0 #dfd2bb}
 .online-vote-choice .clay-avatar{width:62px;height:62px}.online-vote-choice b{font-size:.9rem;line-height:1.3;overflow-wrap:anywhere;max-width:100%}.online-vote-choice small{font-size:.875rem}
 .online-vote-choice>.clay-stage{--contact-inset:18%;--contact-y:-2px}
 .online-vote-choice.selected{border-color:#713a91;box-shadow:inset 0 2px 1px #fff,0 4px 0 #713a91,0 8px 14px #713a9133;background:var(--top-light),#efdef7;animation:ui-pop-select .3s var(--ease-spring)}
@@ -64,7 +68,7 @@
 .online-game-picker { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 /* اختيار اللعبة: بلاطة صلصالية بحافة بنفسجية فاتحة عند الاختيار، والرسم ينضغط */
 .online-game-picker > button { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 14px 10px; border: 2px solid var(--stroke); border-radius: 20px; background: var(--top-light), var(--surface); color: var(--text); font: inherit; cursor: pointer; box-shadow: var(--shadow-tile); transition: transform .2s var(--ease-spring), box-shadow .2s var(--ease-spring), background-color .18s, border-color .18s; }
-.online-game-picker > button:active:not(:disabled) { transform: translateY(var(--ledge, 3px)); transition-duration: .08s; box-shadow: var(--shadow-press); }
+.online-game-picker > button:active:not(:disabled) { transform: var(--interaction-transform, translateY(var(--ledge, 3px))); transition-duration: .08s; box-shadow: var(--shadow-press); }
 .online-game-picker > button.selected { border-color: #9250bd; background: var(--top-light), #f3e9f6; box-shadow: inset 0 2px 1px #fff, 0 3px 0 #C9AEDF, 0 8px 14px #9250BD22; animation: ui-pop-select .3s var(--ease-spring); }
 .online-game-picker > button.selected > .clay-stage > .clay-lift { animation: clay-squash .42s var(--ease-spring); }
 .online-game-picker > button > .clay-stage { --contact-inset: 18%; --contact-y: -2px; }
@@ -101,7 +105,7 @@
 .online-dropped{gap:8px}.online-dropped .btn{width:100%}
 .room-reactions{display:flex;justify-content:center;flex-wrap:wrap;gap:6px}
 .room-reaction{min-width:46px;min-height:46px;border-radius:23px;border:1px solid #e7d6b8;background:#fffaf0;font-size:1.35rem;line-height:1;cursor:pointer;box-shadow:0 2px 0 #e7d6b8;transition:transform .12s ease,opacity .2s ease}
-.room-reaction:active:not(:disabled){transform:translateY(2px) scale(.92);box-shadow:none}
+.room-reaction:active:not(:disabled){transform:var(--interaction-transform, translateY(2px) scale(.92));box-shadow:none}
 .room-reaction:disabled{opacity:.45;cursor:default}
 .room-reaction-layer{position:fixed;inset-inline:0;bottom:calc(110px + var(--safe-bottom,0px));height:0;pointer-events:none;z-index:40}
 .room-reaction-float{position:absolute;bottom:0;display:grid;justify-items:center;gap:2px;animation:room-reaction-rise 2.6s ease-out forwards}
@@ -110,6 +114,24 @@
 .room-reaction-float.lane-0{inset-inline-start:10%}.room-reaction-float.lane-1{inset-inline-start:28%}.room-reaction-float.lane-2{inset-inline-start:46%}.room-reaction-float.lane-3{inset-inline-start:64%}.room-reaction-float.lane-4{inset-inline-start:80%}
 @keyframes room-reaction-rise{0%{opacity:0;transform:translateY(12px) scale(.6)}12%{opacity:1;transform:translateY(0) scale(1.08)}75%{opacity:1}100%{opacity:0;transform:translateY(-170px) scale(1)}}
 html[data-reduced-motion="true"] .room-reaction-float{animation:none}
+
+.meen-room-reactions { display: grid; gap: 4px; min-width: 0; }
+.meen-room-reactions .room-reaction-layer {
+  position: static; z-index: auto;
+  display: flex; align-items: center; gap: 6px;
+  height: auto; min-height: 2.5rem; min-width: 0;
+  overflow-x: auto;
+  pointer-events: auto;
+}
+.meen-room-reactions .room-reaction-float {
+  position: static; flex: none;
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 1px 6px; border-radius: 14px; background: #eee3f5;
+  animation: none;
+}
+.meen-room-reactions .room-reaction-float b { font-size: 1.25rem; line-height: 1.4; }
+.meen-room-reactions .room-reaction-float small { padding: 0; background: transparent; color: #352139; }
+.meen-room-reactions .room-reaction-float .plus-room-reaction-art { width: 1.75rem; height: 1.75rem; object-fit: contain; }
 
 
 .online-room-chrome.mafia-room-compact{gap:8px}.mafia-room-tools{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px}.mafia-room-tools strong{font-size:14px}.mafia-room-tools .online-connection{font-size:14px;padding:5px 8px;margin:0}.online-screen:has(.phase-night){padding-top:calc(8px + var(--safe-top,0px));padding-inline:10px}

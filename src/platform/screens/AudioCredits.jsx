@@ -1,12 +1,25 @@
-import { tr } from '../../shared/i18n/core.js';
+import { getUiLocale, numberForLocale, tr } from '../../shared/i18n/core.js';
 // اعتماد الصوت في شاشة «عن ميدان»: المكتبات المرخَّصة التي أُخذت منها مؤثرات، وسطور الإسناد
 // الإلزامي (CC BY ونحوها)، وما بقي من تأليف ميدان. البيانات مولَّدة من provenance (audio-credits.js).
 import React from 'react';
+import { IconMusic } from '../../shared/ui/icons.jsx';
 import { AUDIO_CREDITS } from '../../shared/fx/audio-credits.js';
 import { SELECTED_AUDIO } from '../../shared/fx/selected-audio.js';
 import { integratedPreviewAudio } from '../../shared/fx/integrated-preview-audio.js';
 
-const plural = (n, one, few, many) => (n === 1 ? one : n >= 3 && n <= 10 ? `${n} ${few}` : `${n} ${many}`);
+const audioUnits = {
+  files: ['ملف واحد', 'ملفان', 'ملفات', 'ملفًا', 'file', 'files'],
+  effects: ['مؤثر واحد', 'مؤثران', 'مؤثرات', 'مؤثرًا', 'effect', 'effects'],
+  tracks: ['مقطوعة واحدة', 'مقطوعتان', 'مقطوعات', 'مقطوعة', 'track', 'tracks'],
+};
+
+function countAudio(n, unit) {
+  const [one, two, few, many, singular, plural] = audioUnits[unit];
+  if (getUiLocale() === 'en') return `${numberForLocale(n)} ${n === 1 ? singular : plural}`;
+  if (n === 1) return one;
+  if (n === 2) return two;
+  return `${numberForLocale(n)} ${n === 0 || new Intl.PluralRules('ar').select(n) === 'few' ? few : many}`;
+}
 
 export function AudioCredits({ credits = AUDIO_CREDITS }) {
   const localAudio = integratedPreviewAudio();
@@ -23,17 +36,26 @@ export function AudioCredits({ credits = AUDIO_CREDITS }) {
   const own = credits.inHouse.cues.length + credits.inHouse.tracks.length;
   return (
     <div data-design-screen="audio-credits" data-design-id="content" className="stack audio-credits" aria-label={tr("اعتماد الصوت")}>
-      <p className="card-muted">{tr(" المؤثرات الصوتية والموسيقى: ")}{sourced ? tr("{v0} من مكتبات مفتوحة الرخصة، مع القصّ والضبط والإتقان لميدان، و", {v0: plural(sourced, tr("ملف واحد"), tr("ملفات"), tr("ملفًا"))}) : ''}
-        {plural(own, tr("ملف واحد"), tr("ملفات"), tr("ملفًا"))} ({plural(credits.inHouse.cues.length, tr("مؤثر"), tr("مؤثرات"), tr("مؤثرًا"))}{tr(" و")}{plural(credits.inHouse.tracks.length, tr("مقطوعة"), tr("مقطوعات"), tr("مقطوعة"))}{tr(") من تأليف ميدان وتصنيعه رقميًا. ")}</p>
+      <div className="audio-intro"><span className="audio-intro-art" aria-hidden="true"><IconMusic /></span><div><h2>{tr("اعتماد الصوت")}</h2>
+      <p>{sourced > 0 && <>{tr("من المكتبات المرخّصة {files} جرى تعديلها لميدان.", { files: countAudio(sourced, 'files') })} </>}
+        {tr("من تأليف ميدان وإنتاجه الرقمي {files} ({effects}، {tracks}).", {
+          files: countAudio(own, 'files'), effects: countAudio(credits.inHouse.cues.length, 'effects'), tracks: countAudio(credits.inHouse.tracks.length, 'tracks'),
+        })}</p></div></div>
       {credits.sources.length > 0 && (
-        <ul className="credits-list">
-          {credits.sources.map((s) => (
+        <ul className="audio-providers">
+          {credits.sources.map((s) => {
+            const [provider, description] = s.name.split(' — ');
+            return (
             <li key={s.provider}>
-              <a data-design-id="source-link" href={s.url} target="_blank" rel="noreferrer noopener">{s.name}</a>
-              <span className="muted"> — {plural(s.items, tr("ملف واحد"), tr("ملفات"), tr("ملفًا"))} · </span>
-              <a data-design-id="license-link" href={s.licenseUrl} target="_blank" rel="noreferrer noopener">{s.license}</a>
+              <a className="provider-name" data-design-id="source-link" aria-label={s.name} href={s.url} target="_blank" rel="noreferrer noopener">
+                <span className="provider-title"><bdi>{provider}</bdi><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 4h6v6m0-6-9 9M10 5H5v14h14v-5"/></svg></span>
+                {description && <span className="provider-description" dir="auto">{description}</span>}
+              </a>
+              <div className="provider-facts"><span>{countAudio(s.items, 'files')}</span>
+                <a data-design-id="license-link" href={s.licenseUrl} target="_blank" rel="noreferrer noopener"><bdi>{s.license}</bdi></a></div>
             </li>
-          ))}
+            );
+          })}
         </ul>
       )}
       {credits.attribution.length > 0 && (
@@ -47,8 +69,8 @@ export function AudioCredits({ credits = AUDIO_CREDITS }) {
           ))}
         </ul>
       )}
-      <details className="card-muted">
-        <summary>{tr("موسيقى «خطوات شمس» والعبارات التجريبية")}</summary>
+      <details className="help-disclosure">
+        <summary><IconMusic />{tr("موسيقى «خطوات شمس» والعبارات التجريبية")}</summary>
         <p>{tr("ترتيب أصلي مدته ثماني دقائق من نغمات آلات حقيقية مسجّلة، يتغيّر عبر ١٤ جزءًا. بعض المصادر الأصلية بدقة 44.1kHz و16-bit؛ تصدير المزيج بدقة أعلى لا يضيف تفاصيل إلى المصدر.")}</p>
         <ul className="credits-list">
           {SELECTED_AUDIO.sources.instrument_libraries.map((source) => (

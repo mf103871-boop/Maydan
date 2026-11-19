@@ -157,6 +157,7 @@ public final class MainActivity extends Activity {
                 }
             });
 
+        InstalledPackVerifier installedPack = new InstalledPackVerifier(this);
         WebViewAssetLoader loader = new WebViewAssetLoader.Builder()
             .addPathHandler(ASSET_PATH, new WebViewAssetLoader.AssetsPathHandler(this))
             .build();
@@ -176,9 +177,12 @@ public final class MainActivity extends Activity {
                 if (!isLocalAsset(url) || !"GET".equals(request.getMethod())) {
                     return emptyResponse(403, "Forbidden");
                 }
+                String path = url.getPath();
+                if (path.startsWith(InstalledPackVerifier.PATH)) {
+                    return installedPack.response(path.substring(InstalledPackVerifier.PATH.length()));
+                }
                 WebResourceResponse response = loader.shouldInterceptRequest(url);
                 if (response == null || response.getData() == null) return emptyResponse(404, "Not Found");
-                String path = url.getPath();
                 if (path.endsWith(".html")) {
                     response.setResponseHeaders(Collections.singletonMap("Content-Security-Policy", DOCUMENT_CSP));
                 } else if (path.endsWith(".woff2")) {

@@ -11,14 +11,17 @@ test('game and room flows hide navigation, menu entry and details retain it', ()
   assert.equal(menuRouteVisible({ name: 'friends', params: { id: 'alice' } }), false);
   for (const name of ['home', 'game', 'players', 'store', 'settings']) assert.equal(menuRouteVisible({ name }), true, name);
   assert.equal(menuRouteVisible({ name: 'friends' }, { presentation: 'page', view: { type: 'list' } }), true);
-  assert.equal(menuRouteVisible({ name: 'friends' }, { presentation: 'page', view: { type: 'profile' } }), false);
+  assert.equal(menuRouteVisible({ name: 'friends' }, { presentation: 'page', view: { type: 'profile' } }), true);
+  assert.equal(menuRouteVisible({ name: 'friends', params: { id: 'alice' } }, { presentation: 'page', view: { type: 'direct' } }), false);
 });
-test('settings live under Me, while other players profiles keep their origin', () => {
+test('settings and owner profiles live under Me; visitor profiles belong to Friends', () => {
   assert.equal(menuSection({ name: 'friend-group' }), 'friends');
   for (const name of ['settings', 'terms', 'privacy', 'moderation', 'about']) assert.equal(menuSection({ name }), 'profile');
   assert.equal(menuSection({ name: 'game' }), 'games');
-  assert.equal(menuSection({ name: 'profile', params:{id:'friend'} }, 'friends'), 'friends');
-  assert.equal(menuSection({ name: 'profile' }, 'friends'), 'profile');
+  assert.equal(menuSection({ name: 'profile', params:{id:'friend'} }, 'owner'), 'friends');
+  assert.equal(menuSection({ name: 'profile', params:{id:'friend'} }), 'friends');
+  assert.equal(menuSection({ name: 'profile', params:{id:'owner'} }, 'owner'), 'profile');
+  assert.equal(menuSection({ name: 'profile' }, 'owner'), 'profile');
 });
 test('keyboard detection ignores browser chrome, hardware focus and pinch zoom', () => {
   const baseline = { layoutHeight: 844, visualHeight: 540, editable: true };

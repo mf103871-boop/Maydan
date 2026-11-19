@@ -1,67 +1,76 @@
-/* G03 — each card, tally and action reflects the same round state. */
-.mamnoo { --game-accent: #a3494e; display: grid; gap: 14px; align-content: start; }
-.mamnoo-setup .card:not(.resume-card) { border-color: #e2d3be; background: transparent; box-shadow: none; }
-.mamnoo-meta { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); width: 100%; padding: 10px 0; border-radius: 15px; color: #4b2d5b; background: #f8ecd8; text-align: center; }
-.mamnoo-meta > span { min-width: 0; padding: 0 6px; display: grid; justify-items: center; gap: 2px; font-size:14px; }
-.mamnoo-meta > span + span { border-inline-start: 1px solid #cdbba6; }
-.mamnoo-meta b { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; font-size: 15px; overflow-wrap: anywhere; }
-.mamnoo-meta svg { width: 16px; height: 16px; }
-.mamnoo-head { display: flex; align-items: center; gap: 9px; border-radius: 15px; padding: 8px 10px; background: #f7ead6; }
-.mamnoo-head > .clay-avatar { width: 44px; height: 44px; flex: none; }
-.mamnoo-head .grow { min-width: 0; }
-.mamnoo-head .grow b { display: block; font-size: 17px; overflow-wrap: anywhere; }
-.mamnoo-head .grow small { color: #664d63; font-size:14px; }
-.mamnoo-head .badge { font-size: 15px; padding-inline: 8px; }
-.mamnoo-head .timer { flex: none; }
-.mamnoo-head .timer-num { font-size: 23px; }
-.mamnoo-head .timer-sub { font-size:14px; }
-.mamnoo-judge { display: grid; gap: 22px; padding-block: 9px 0; }
-.mamnoo-card, .mamnoo-forbidden-panel { position: relative; border: 1px solid #c9a3d5; border-radius: 19px; padding: 20px 13px 13px; text-align: center; background: #eddcf4; }
-.mamnoo-card-label, .mamnoo-forbidden-panel h3 { position: absolute; inset-block-start: 0; left: 50%; translate: -50% -50%; border-radius: 999px; padding: 3px 14px; white-space: nowrap; font-size: 14px; font-weight: 900; }
-.mamnoo-card-label { background: #754693; color: #fff; }
-.mamnoo-word { font-size: clamp(40px, 13vw, 67px); font-weight: 900; line-height: 1.18; color: #33134b; overflow-wrap: anywhere; }
-.mamnoo-cat { display: inline-block; margin-top: 10px; padding: 3px 12px; border: 1px solid #d2b4d9; border-radius: 9px; color: #4d305b; background: #fcf0dc; font-weight: 800; font-size: 14px; }
-.mamnoo-forbidden-panel { border-color: #f1bfb5; background: #fce1da; }
-.mamnoo-forbidden-panel h3 { display: flex; align-items: center; gap: 4px; margin: 0; background: #f9d0c9; color: #8c242e; }
-.mamnoo-forbidden-panel svg { width: 16px; height: 16px; }
-.mamnoo-forbidden { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 8px; list-style: none; margin: 0; padding: 0; color: #391a4d; font-size: clamp(18px, 5vw, 24px); font-weight: 850; }
-.mamnoo-forbidden li + li::before { content: '·'; color: #91565f; margin-inline-end: 8px; }
-.mamnoo-buttons { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; align-items: stretch; }
-.mamnoo-buttons .btn { min-width: 0; min-height: 84px; flex-direction: column; gap: 3px; padding: 7px 3px; font-size: clamp(14px, 4.3vw, 20px); }
-.mamnoo-buttons .btn svg { width: 22px; height: 22px; flex: none; }
-.mamnoo-buttons .mamnoo-buzz { --btn-bg: linear-gradient(#f7a399,#e47770); --btn-ledge: #ba504e; color: #541922; border-color: #d16a66; }
-.mamnoo-intro { display: grid; justify-items: center; gap: 10px; text-align: center; padding-block: 4px 16px; }
-.mamnoo-intro h2, .mamnoo-result-heading { color: #36174f; font-size: clamp(24px, 7vw, 34px); font-weight: 900; text-align: center; }
-.mamnoo-intro h3 { font-size: 15px; font-weight: 900; }
-.mamnoo-intro .scoreboard { width: 100%; }
-.mamnoo-team-hero { display: grid; gap: 6px; justify-items: center; width: 100%; }
-.mamnoo-team-hero .clay-avatar { width: 100px; height: 100px; }
-.mamnoo-team-hero strong { width: min(100%, 270px); padding: 6px 12px; border-radius: 12px; color: #472457; background: #e9cdef; font-size: 20px; overflow-wrap: anywhere; }
-.mamnoo-intro .who { display: grid; gap: 5px; width: 100%; padding: 12px 14px; border: 1px solid #ead5b8; border-radius: 14px; background: #faeedb; color: #624b62; font-size: 14px; }
-.mamnoo-intro .who strong { color: #40214f; font-size: 19px; }
-.mamnoo-tally { width: 100%; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 7px; }
-.mamnoo-tally > span { display: grid; justify-items: center; gap: 3px; padding: 9px 3px; border: 1px solid #dac9b2; border-radius: 13px; background: #f6ead8; color: #483750; font-weight: 800; }
-.mamnoo-tally .is-correct { background: #e3f1d0; border-color: #a7c58d; color: #2d6125; }
-.mamnoo-tally .is-forbidden { background: #f9dcd5; border-color: #dfaaa0; color: #8b2e37; }
-.mamnoo-tally b { font-size: 24px; }
-.mamnoo-tally svg, .mamnoo-round-points svg { width: 20px; height: 20px; }
-.mamnoo-round-points { display: flex; justify-content: center; align-items: center; gap: 7px; width: 100%; border: 1px solid #d8b56a; border-radius: 13px; padding: 9px; background: #ffedb9; color: #65451a; font-weight: 850; }
-.mamnoo-round-points strong { font-size: 21px; }
+.mamnoo-intro { display: grid; justify-items: center; gap: 10px; text-align: center; }
+.mamnoo-meta, .mamnoo-opponent { width: 100%; border-radius: 20px; padding: 7px 10px; text-align: center; background: var(--party-mint); font-size: .9375rem; font-weight: 800; line-height: 1.4; }
+.mamnoo-meta.is-lavender, .mamnoo-opponent { background: var(--party-lavender); }
+.mamnoo-team-hero { display: grid; place-items: center; width: min(100%,260px); height: 146px; background: radial-gradient(ellipse at 50% 70%,#e5c6ec 0 57%,transparent 58%); }
+.mamnoo-team-hero .clay-avatar { width: 154px; height: 154px; border-radius: 50%; }
+.mamnoo .who, .mamnoo-card, .mamnoo-score { border: 1px solid var(--party-line); background: var(--party-paper); box-shadow: var(--party-shadow); }
+.mamnoo .who { width: 100%; padding: 11px; border-radius: 22px; text-wrap: balance; font-size: 1.3rem; line-height: 1.35; }
+.mamnoo-scores { width: 100%; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 6px; }
+.mamnoo-score { display: flex; align-items: center; gap: 6px; min-width: 0; padding: 5px; border-radius: 16px; }
+.mamnoo-score .clay-avatar { width: clamp(42px,13vw,58px); height: clamp(42px,13vw,58px); border-radius: 50%; flex: none; }
+.mamnoo-score > div { display: grid; align-items: center; gap: 2px; flex: 1; min-width: 0; }
+.mamnoo-score strong { display: block; font-size: .875rem; }
+.mamnoo-score b { font-size: 1.3rem; border-radius: 999px; background: var(--party-mint); padding-inline: 8px; }
+.mamnoo-score:nth-child(even) b { background: var(--party-lavender); }
+.mamnoo-score-rows { grid-template-columns: 1fr; direction: ltr; }
+.mamnoo-score-rows .mamnoo-score > div { grid-template-columns: minmax(0,1fr) minmax(40px,auto); text-align: start; }
+.mamnoo-score-rows .mamnoo-score b { text-align: center; }
+.mamnoo-head { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 12px; align-items: center; }
+.mamnoo-active-team { display: flex; direction: ltr; flex-wrap: wrap; align-items: center; gap: 6px 8px; min-width: 0; padding: 3px 9px; border-radius: 22px; background: var(--party-lavender); }
+.mamnoo-active-team .clay-avatar { width: clamp(66px,22vw,94px); height: clamp(66px,22vw,94px); flex: none; border-radius: 50%; }
+.mamnoo-active-team > div { display: grid; gap: 3px; min-width: 0; text-align: center; }
+.mamnoo-active-team b { font-size: 1.0625rem; overflow-wrap: anywhere; }
+.mamnoo-active-team strong { color: #fff; background: var(--party-teal); border-radius: 14px; font-size: 1.25rem; }
+/* The shared ring supplies a fixed pixel diameter. Let its live text expand the circle. */
+.mamnoo .timer .ring { width: max-content !important; height: auto !important; min-inline-size: 94px; aspect-ratio: 1; }
+.mamnoo .timer .ring > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.mamnoo .timer .ring-label { position: relative; }
+.mamnoo .timer-num { min-inline-size: 3.15em; color: var(--party-ink); font-size: 1.55rem; }
+.mamnoo .timer-sub { padding-inline: 1.2em; color: var(--party-ink); font-size: .8125rem; }
+.mamnoo-live-tally { display: flex; flex-wrap: wrap; gap: 6px; text-align: center; font-weight: 800; }
+.mamnoo-live-tally span { flex: 1 1 max-content; min-width: 0; max-width: 100%; padding: 7px 5px; border-radius: 999px; background: var(--party-mint); overflow-wrap: anywhere; }
+.mamnoo-live-tally span:nth-child(2) { background: var(--party-coral); }
+.mamnoo-live-tally span:nth-child(3) { background: var(--party-lavender); }
+.mamnoo-judge { display: grid; gap: 10px; }
+.mamnoo-card, .mamnoo-forbidden-panel { display: grid; align-content: center; gap: 6px; border-radius: 24px; padding: 9px 10px 12px; text-align: center; }
+.mamnoo-card { min-height: 170px; }
+.mamnoo-word { font-size: clamp(2rem,12vw,3.65rem); font-weight: 800; line-height: 1.15; overflow-wrap: anywhere; text-wrap: balance; }
+.party-studio .mamnoo-word.party-word-rays { padding-inline: 18px; }
+.mamnoo-cat { justify-self: center; max-width: 100%; padding: 3px 14px; border-radius: 999px; background: var(--party-lavender); font-size: 1.05rem; font-weight: 800; }
+.mamnoo-forbidden-panel { background: var(--party-lavender); border: 1px solid #d9c5df; box-shadow: var(--party-shadow); }
+.mamnoo-forbidden-panel h3 { font-size: 1.125rem; font-weight: 800; }
+.mamnoo-forbidden { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; padding: 0; list-style: none; margin: 0; }
+.mamnoo-forbidden li { flex: 0 0 calc(50% - 3px); min-width: 0; padding: 6px 8px; border-radius: 999px; background: var(--party-paper); border: 1px solid var(--party-line); font-size: 1.05rem; font-weight: 800; overflow-wrap: anywhere; }
+.mamnoo-buttons { display: flex; flex-wrap: wrap; gap: 7px; }
+.mamnoo .mamnoo-buttons .btn { flex: 1 0 0; min-inline-size: min-content; max-inline-size: 100%; min-height: 76px; flex-direction: column; gap: 0; padding: 8px 4px; white-space: normal; line-height: 1.3; font-size: 1.125rem; overflow-wrap: break-word; }
+.mamnoo-tally { width: 100%; display: flex; flex-wrap: wrap; gap: 6px; }
+.mamnoo-tally > span { flex: 1 1 0; min-inline-size: min-content; display: grid; justify-items: center; align-content: start; gap: 5px; padding: 7px 5px; border: 1px solid var(--party-line); border-radius: 18px; background: var(--party-paper); box-shadow: var(--party-shadow); font-weight: 800; overflow-wrap: break-word; }
+.mamnoo-tally b { width: 100%; border-radius: 999px; padding: 2px; font-size: 1.45rem; background: var(--tally-bg); }
+.mamnoo-tally img { object-fit: contain; width: min(100%,64px); height: 64px; }
+.mamnoo-tally .is-correct { --tally-bg: var(--party-mint); }
+.mamnoo-tally .is-skip { --tally-bg: var(--party-lavender); }
+.mamnoo-tally .is-forbidden { --tally-bg: var(--party-coral); }
+.mamnoo-round-points { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; padding: 8px 12px; border-radius: 24px; background: var(--party-lavender); font-weight: 800; }
+.mamnoo-round-points svg { width: 49px; height: 49px; flex: none; color: #bb790c; fill: #ffc343; }
+.mamnoo-round-points strong { display: block; font-size: 2rem; line-height: 1; }
+.game-frame:has(.mamnoo-setup) [data-design-id="teams-setup"],
+.game-frame .mamnoo-setup .stack { gap: 6px; }
+.game-frame:has(.mamnoo-setup) [data-design-id="teams-setup"] .card { padding: 6px; }
+.game-frame:has(.mamnoo-setup) [data-design-id="team-row"] .clay-avatar { width: 52px; height: 52px; }
+.mamnoo-setup .party-setting { padding-block: 4px; }
+.mamnoo .party-podium-step { border-bottom: 6px solid #dac9e6; }
+.mamnoo .party-podium-stage { border: none; }
+.mamnoo .party-podium-player[data-rank="2"] .party-podium-step { background: linear-gradient(160deg,#eee3f5,#d6c0e4); }
+.mamnoo .party-podium-name { margin-block-start: 5px; padding: 5px 8px; background: var(--party-lavender); border-radius: 22px; }
 @media (orientation: landscape) and (max-height: 520px) {
-  .mamnoo-judge { grid-template-columns: 1fr 1fr; align-items: stretch; gap: 12px; }
-  .mamnoo-buttons .btn { min-height: 54px; flex-direction: row; }
-  .mamnoo-word { font-size: 39px; }
+  .mamnoo-judge { grid-template-columns: 1fr 1fr; align-items: stretch; }
+  .mamnoo .mamnoo-buttons .btn { min-height: 52px; flex-direction: row; gap: 4px; }
 }
-/* Playful Studio: the word and its forbidden clues remain separate and legible. */
-.mamnoo { --game-accent: #A53D4D; }
-.mamnoo :is(.mamnoo-meta,.mamnoo-head,.mamnoo-intro .who) { background: #FFFDF9; border: 1px solid #DFD1DC; color: #352139; border-radius: 20px; }
-.mamnoo .mamnoo-card { background: #EEE3F5; border-color: #D8CAD9; border-radius: 24px; padding-block: 24px 18px; }
-.mamnoo .mamnoo-word { color: #352139; }
-.mamnoo .mamnoo-card-label { background: #76518D; }
-.mamnoo .mamnoo-forbidden-panel { background: #FFE5DB; border-color: #E8B7AD; border-radius: 24px; padding-block: 24px 18px; }
-.mamnoo .mamnoo-forbidden-panel h3 { background: #FFB7A7; color: #652736; }
-.mamnoo .mamnoo-buttons .btn { border-radius: 20px; }
-.mamnoo .mamnoo-buttons .mamnoo-buzz { --btn-bg: #FF8A70; --btn-ledge: #D26B57; color: #352139; }
-.mamnoo .mamnoo-tally>span { background: #FFFDF9; border-radius: 16px; }
-.mamnoo .mamnoo-tally .is-correct { background: #DDF2EA; color: #12614F; }
-.mamnoo .mamnoo-team-hero strong { background: #EEE3F5; color: #352139; border-radius: 16px; }
+
+.game-frame[data-creator-game="mamnoo"]:has(.party-studio) > .game-bar { flex-wrap: wrap; justify-content: center; }
+.game-frame[data-creator-game="mamnoo"]:has(.party-studio) > .game-bar .title {
+  flex: 1 1 min-content;
+  min-inline-size: min-content;
+  overflow-wrap: normal;
+  overflow: visible;
+}

@@ -58,7 +58,7 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
     await page.evaluate(() => { window.tabSeen = false; });
     await page.evaluate(next => window.show(next, true), game);
     // Wait for this game's own room form, not the previous game's still-mounted one.
-    await page.locator('.online-public-create h2', { hasText: ONLINE_GAMES[game].name }).waitFor();
+    await page.locator('.studio-entry-header h1', { hasText: ONLINE_GAMES[game].name }).waitFor();
     await page.locator('[data-design-id="entry-create"][aria-pressed="true"]').waitFor();
     // The member's list is read again after the switch to the form. The tab
     // must stay hidden throughout that read, not just once it settles.

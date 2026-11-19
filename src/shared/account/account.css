@@ -20,7 +20,7 @@
   border-radius: 20px; border: 2px solid var(--stroke); background: var(--top-light), var(--surface); color: var(--text);
   box-shadow: inset 0 2px 1px #fff9, 0 var(--ledge, 3px) 0 var(--clay-ledge, #E3D3BE), 0 6px 12px #63432F14;
   transition: border-color .2s ease, background-color .2s ease, transform .12s ease; }
-.paywall-plan:active { transform: translateY(var(--ledge, 3px)); transition-duration: .08s; }
+.paywall-plan:active { transform: var(--interaction-transform, translateY(var(--ledge, 3px))); transition-duration: .08s; }
 .paywall-plan.is-selected { border-color: var(--purple, #9250BD); background: var(--top-light), #F4E6FB; animation: ui-pop-select .3s var(--ease-spring); }
 .paywall-plan-name { display: flex; align-items: center; gap: 6px; font-weight: 900; font-size: 1rem; }
 .paywall-plan-price { font-size: 1.15rem; font-weight: 900; color: #663385; font-variant-numeric: tabular-nums; line-height: 1.4; }
@@ -39,7 +39,10 @@
 .account-fineprint { margin: 0; font-size: .8rem; color: var(--muted); line-height: 1.8; }
 
 /* ── بطاقة الإعدادات ─────────────────────────────────────────────── */
+.account-card > [data-design-id="profile"] { flex-wrap:wrap; overflow-wrap:break-word; }
 .account-card .account-identity { display: grid; gap: 2px; }
+.account-identity-copy { display:grid; gap:2px; }
+.account-subscription { display:grid; gap:inherit; }
 .account-card .account-identity b { font-size: 1.05rem; font-weight: 900; overflow-wrap: anywhere; }
 .account-card .account-identity small { font-size: .82rem; overflow-wrap: anywhere; }
 .account-plan { margin: 0; font-size: .92rem; font-weight: 800; line-height: 1.7; color: var(--muted); }
@@ -64,6 +67,115 @@
 .account-card .account-suspension { display:grid; gap:8px; padding:0 0 10px; overflow:hidden; }
 .account-suspension > b { padding:10px 12px; color:#fff; background:#43294d; }
 .account-suspension > :not(b) { margin-inline:12px; }
-.sheet[data-design-screen="account.redeem"] .modal-head { padding:4px 10px; border-radius:12px; background:#43294d; color:#fff; }
-.sheet[data-design-screen="account.redeem"] .modal-head h2 { color:inherit; }
-.sheet[data-design-screen="account.redeem"] .modal-head .btn-icon { color:inherit; background:transparent; border-color:transparent; box-shadow:none; }
+.modal-layer.is-sheet:has(> [data-design-screen="account.redeem"]) {
+  background-color: rgba(53, 32, 43, .42);
+}
+.sheet[data-design-screen="account.redeem"] {
+  --redeem-height: var(--dialog-viewport-height, 100dvh);
+  --redeem-space: clamp(9px, calc((var(--redeem-height) - 290px) * .053), 31px);
+  background: #fff9f4;
+  color: #43294d;
+  border-color: #ebdfe2;
+  border-radius: 26px 26px 0 0;
+  max-height: min(90dvh, 100%);
+  max-width: 520px;
+  padding: 0 20px max(var(--redeem-space), var(--safe-bottom));
+  scroll-padding: 12px;
+}
+.sheet[data-design-screen="account.redeem"] .sheet-handle {
+  width: 48px;
+  background: #a185ae;
+}
+.sheet[data-design-screen="account.redeem"] .modal-head {
+  color: #43294d;
+  margin: 0;
+  min-height: 48px;
+}
+.sheet[data-design-screen="account.redeem"] .modal-head h2 {
+  color: inherit;
+  font-size: 1.65rem;
+  line-height: 1.25;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.sheet[data-design-screen="account.redeem"] .modal-head .btn-icon {
+  color: inherit;
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  flex: none;
+  min-width: 48px;
+  min-height: 48px;
+}
+.sheet[data-design-screen="account.redeem"] .modal-head .btn-icon svg {
+  width: 32px;
+  height: 32px;
+}
+.sheet[data-design-screen="account.redeem"] .modal-body {
+  gap: var(--redeem-space);
+  padding-block-start: var(--redeem-space);
+}
+.redeem-gift-art {
+  display: block;
+  width: clamp(48px, calc((var(--redeem-height) - 290px) * .17), 98px);
+  height: auto;
+  margin-inline: auto;
+}
+.sheet[data-design-screen="account.redeem"] .account-redeem {
+  gap: var(--redeem-space);
+  min-width: 0;
+  text-align: center;
+}
+.sheet[data-design-screen="account.redeem"] .card-muted {
+  color: #43294d;
+  font-size: 1.06rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.sheet[data-design-screen="account.redeem"] .input {
+  min-height: 56px;
+  background: #fff9f5;
+  border: 2px solid #9d8597;
+  border-radius: 18px;
+  color: #43294d;
+  font-size: 1.35rem;
+  letter-spacing: .035em;
+}
+.sheet[data-design-screen="account.redeem"] .input:focus {
+  border-color: #9975ae;
+  box-shadow: none;
+}
+.sheet[data-design-screen="account.redeem"] .input[aria-invalid="true"] {
+  border-color: #af202b;
+}
+.sheet[data-design-screen="account.redeem"] .redeem-error {
+  color: #a6202a;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  font-size: 1rem;
+  font-weight: 800;
+  margin: calc(6px - var(--redeem-space)) 0 0;
+  padding: 0;
+}
+.sheet[data-design-screen="account.redeem"] .redeem-submit {
+  min-height: 58px;
+  margin-block-start: calc(var(--redeem-space) * .66);
+  border-radius: 21px;
+  background: #08796d;
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.35rem;
+  box-shadow: none;
+}
+.sheet[data-design-screen="account.redeem"] .account-redeem:not(:has(.redeem-error)) .redeem-submit {
+  margin-block-start: calc(var(--redeem-space) * .66 + clamp(0px, calc((var(--redeem-height) - 490px) * .08), 1.5rem));
+}
+.sheet[data-design-screen="account.redeem"] .redeem-submit:disabled {
+  opacity: 1;
+  background: #cdb8da;
+  color: #43294d;
+  border-color: transparent;
+}

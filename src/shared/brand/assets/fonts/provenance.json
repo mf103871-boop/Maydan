@@ -1,0 +1,147 @@
+{
+  "tool": "fonttools 4.68.0",
+  "sourceLicense": "SIL Open Font License 1.1",
+  "sources": [
+    {
+      "path": "../latin.woff2",
+      "bytes": 34868,
+      "sha256": "332a4fc624d786925f03d480df6eb051aca5fb9f2a8f105f8300dcfac201425c",
+      "axes": [
+        {
+          "axisTag": "wght",
+          "minValue": 400.0,
+          "defaultValue": 400.0,
+          "maxValue": 800.0
+        }
+      ]
+    },
+    {
+      "path": "../arabic.woff2",
+      "bytes": 38424,
+      "sha256": "643bd83b53ec8f25db2428e338673ddc85c345b976c449ccdad4d2b394f719e7",
+      "axes": [
+        {
+          "axisTag": "wght",
+          "minValue": 400.0,
+          "defaultValue": 400.0,
+          "maxValue": 800.0
+        }
+      ]
+    }
+  ],
+  "instances": [
+    {
+      "file": "latin-400.woff2",
+      "sha256": "372df141b7f62522568da9f4b2524c4d6bb364c5a70fa5ed5cd6209a02944b7a",
+      "bytes": 20104,
+      "weightClass": 400,
+      "variable": false,
+      "cmapPreserved": true,
+      "unitsPerEm": 1000,
+      "family": "Baloo Bhaijaan 2",
+      "subfamily": "Regular"
+    },
+    {
+      "file": "latin-500.woff2",
+      "sha256": "dfdffc724258b3623bc74987bd3d99cbd98fed6fe83ced6c8c415bbf1d708480",
+      "bytes": 20516,
+      "weightClass": 500,
+      "variable": false,
+      "cmapPreserved": true,
+      "unitsPerEm": 1000,
+      "family": "Baloo Bhaijaan 2 Medium",
+      "subfamily": "Regular"
+    },
+    {
+      "file": "latin-600.woff2",
+      "sha256": "65abdbe097ea239a9b124c21a6e6ef53e96f08153e8314b132425429802ddc0c",
+      "bytes": 20672,
+      "weightClass": 600,
+      "variable": false,
+      "cmapPreserved": true,
+      "unitsPerEm": 1000,
+      "family": "Baloo Bhaijaan 2 SemiBold",
+      "subfamily": "Regular"
+    },
+    {
+      "file": "latin-700.woff2",
+      "sha256": "6a3eb1f80b4e27175c17e6bd249dd4a5d724ddb5a1a7357b06656aa8563907aa",
+      "bytes": 20612,
+      "weightClass": 700,
+      "variable": false,
+      "cmapPreserved": true,
+      "unitsPerEm": 1000,
+      "family": "Baloo Bhaijaan 2",
+      "subfamily": "Bold"
+    },
+    {
+      "file": "latin-800.woff2",
+      "sha256": "e9b1b0cbf5155e714f6f053c4ea44eec40c0c11c516926e92af00415af7cf009",
+      "bytes": 19844,
+      "weightClass": 800,
+      "variable": false,
+      "cmapPreserved": true,
+      "unitsPerEm": 1000,
+      "family": "Baloo Bhaijaan 2 ExtraBold",
+      "subfamily": "Regular"
+    },
+    {
+      "file": "arabic-400.woff2",
+      "sha256": "49ebe1b304fee2b7719d1a09b6db9fe5b1f40d3c92ffb1f773402ab5eafbcf9a",
+      "bytes": 21076,
+      "weightClass": 400,
+      "variable": false,
+      "cmapPreserved": true,
+      "unitsPerEm": 1000,
+      "family": "Baloo Bhaijaan 2",
+      "subfamily": "Regular"
+    },
+    {
+      "file": "arabic-500.woff2",
+      "sha256": "f81f80c038428338d68b0dc1a1f32e7ca23e7ad9a3f0bcbb2e0fce67b5b7315e",
+      "bytes": 22272,
+      "weightClass": 500,
+      "variable": false,
+      "cmapPreserved": true,
+      "unitsPerEm": 1000,
+      "family": "Baloo Bhaijaan 2 Medium",
+      "subfamily": "Regular"
+    },
+    {
+      "file": "arabic-600.woff2",
+      "sha256": "34994a059e90bc1ee7268d4aa77d99e89a98d01116d348c01b01ef853e7130f5",
+      "bytes": 22324,
+      "weightClass": 600,
+      "variable": false,
+      "cmapPreserved": true,
+      "unitsPerEm": 1000,
+      "family": "Baloo Bhaijaan 2 SemiBold",
+      "subfamily": "Regular"
+    },
+    {
+      "file": "arabic-700.woff2",
+      "sha256": "698f99216b40f75cbd4d1205711cdfb498bd8de807568ff2266315f09f4ae0d8",
+      "bytes": 22324,
+      "weightClass": 700,
+      "variable": false,
+      "cmapPreserved": true,
+      "unitsPerEm": 1000,
+      "family": "Baloo Bhaijaan 2",
+      "subfamily": "Bold"
+    },
+    {
+      "file": "arabic-800.woff2",
+      "sha256": "469492212af60fa8c10a97fb6c68d24a860f4b6a160b6a06fa6f3bdf5e81d40a",
+      "bytes": 21212,
+      "weightClass": 800,
+      "variable": false,
+      "cmapPreserved": true,
+      "unitsPerEm": 1000,
+      "family": "Baloo Bhaijaan 2 ExtraBold",
+      "subfamily": "Regular"
+    }
+  ],
+  "license": "../../FONT-LICENSE.txt",
+  "sourceFontFamily": "Baloo Bhaijaan 2",
+  "generation": "fontTools.varLib.instancer.instantiateVariableFont(TTFont(source), {\"wght\": weight}, updateFontNames=True), WOFF2 flavor"
+}

@@ -17,7 +17,7 @@ test('Chromium/WebKit: card entry is read-only, opt-in, owner-safe and keeps fre
   const server=createServer((req,res)=>{
     traffic.push({method:req.method,url:req.url});
     if(new URL(req.url,'http://fixture.invalid').pathname==='/media/game-entry/match-ticket-v1.webp'){res.setHeader('content-type','image/webp');res.end(ticketArt);return;}
-    if(req.url.startsWith('/api/')){res.setHeader('content-type','application/json');res.end(JSON.stringify({enabled:true,rooms:[],capabilities:{}}));return;}
+    if(req.url.startsWith('/api/')){res.setHeader('content-type','application/json');res.end(JSON.stringify({enabled:true,rooms:[],capabilities:{mafia:2}}));return;}
     res.setHeader('content-type',req.url==='/bundle.js'?'text/javascript':'text/html;charset=utf-8');res.end(req.url==='/bundle.js'?bundle:html);
   });
   await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));

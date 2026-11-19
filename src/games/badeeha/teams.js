@@ -1,4 +1,5 @@
 // إنشاء الفرق ونسخها: الوسائل الثلاث لكل فريق، والنسخ عميق للوسائل كي لا يشارك التراجع حالتها.
+import { tr } from "../../shared/i18n/core.js";
 import { TEAM_STYLE } from "./constants.js";
 
 export function betaFreshTools() {
@@ -7,7 +8,7 @@ export function betaFreshTools() {
 export function betaTeam(index, name) {
   return {
     id: `team-${index + 1}`,
-    name: name || TEAM_STYLE[index].name,
+    name: name || tr(TEAM_STYLE[index].name),
     score: 0,
     correct: 0,
     steals: 0,

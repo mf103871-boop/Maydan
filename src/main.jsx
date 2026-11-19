@@ -8,13 +8,12 @@ const rootElement = document.getElementById('root');
 // لوحة العطل الأخيرة: try/catch لا يلتقط أخطاء التصيير، وحدود الخطأ داخل
 // المنصة تلتقط ما تقدر عليه؛ ما يفلت منها يصل إلى onUncaughtError.
 function showFatal(error) {
-  const fatal = document.getElementById('fatal');
-  if (!fatal) return;
+  const message = String(error?.message || error);
+  if (window.__maydanShowFatal) { window.__maydanShowFatal(message); return; }
   const detail = document.getElementById('fatal-detail');
-  fatal.style.display = 'block';
-  const message = `تعذّر عرض المنصة:\n${(error && error.message) || error}`;
   if (detail) detail.textContent = message;
-  else fatal.textContent = message;
+  const fatal = document.getElementById('fatal');
+  if (fatal) fatal.hidden = false;
 }
 
 const log = (label, value) => { try { console.error(label, value); } catch (e) { /* ignore */ } };
@@ -32,7 +31,9 @@ function armRuntimeErrorHandlers() {
   window.addEventListener('unhandledrejection', (event) => log('[ميدان] وعد مرفوض', event && event.reason));
 }
 
-try {
+function mountApp() {
+  if (window.__maydanStartupFailed) return;
+  window.__maydanOpening?.stage();
   if (typeof __MAYDAN_WARMTH_PREVIEW__ !== 'undefined' && __MAYDAN_WARMTH_PREVIEW__) {
     // A runtime audio failure stays silent; it must not hide a playable game.
     configureIntegratedPreviewAudio({ pack: __MAYDAN_WARMTH_PACK__, baseUrl: '/audio-warmth-preview/' });
@@ -46,9 +47,17 @@ try {
   if (typeof __MAYDAN_UI_PREVIEW__ !== 'undefined' && __MAYDAN_UI_PREVIEW__
     && ['127.0.0.1', 'localhost', '[::1]'].includes(location.hostname)
     && location.pathname === '/__preview__/scene') {
-    import('./preview/LocalUIScenes.jsx').then(({ LocalUIScenes }) => appRoot.render(<LocalUIScenes />)).catch(showFatal);
+    import('./preview/LocalUIScenes.jsx').then(({ LocalUIScenes }) => {
+      appRoot.render(<LocalUIScenes />);
+      window.__maydanOpening?.reveal();
+    }).catch(showFatal);
   } else appRoot.render(<PlatformApp />);
   armRuntimeErrorHandlers();
+}
+
+try {
+  if (window.__maydanOpening) window.__maydanOpening.ready.then(mountApp).catch(showFatal);
+  else mountApp();
 } catch (error) {
   showFatal(error);
 }

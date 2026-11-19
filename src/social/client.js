@@ -333,9 +333,9 @@ export class SocialClient {
     let message; try { message = JSON.parse(event.data); } catch { return; }
     if (!message || typeof message !== 'object' || typeof message.type !== 'string') return;
     if (message.type === 'pong') { this.lastPong = this.now(); return; }
-    if(live)this.liveAudio.receive(message,{visible:this.visible(),locked:this.state.mafiaCommunicationLocked===true});
+    const liveArrival = live && this.liveAudio.receive(message,{visible:this.visible(),locked:this.state.mafiaCommunicationLocked===true});
     if (typeof window !== 'undefined' && typeof CustomEvent === 'function') {
-      window.dispatchEvent(new CustomEvent('maydan-social-event', { detail: message }));
+      window.dispatchEvent(new CustomEvent('maydan-social-event', { detail: { ...message, liveArrival } }));
     }
     if (message.type === 'typing' && this.state.friends.some(f => f.id === message.userId)) {
       const id = message.userId; clearTimeout(this.typingTimers.get(id));

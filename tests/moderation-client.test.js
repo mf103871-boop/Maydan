@@ -18,6 +18,28 @@ test('late private responses are discarded on account switch', async () => {
   assert.equal(client.state.userId, null); assert.deepEqual(client.state.reports, []); assert.equal(client.state.moderator, false);
 });
 
+test('a failed access check can be retried, and a failed report read names the list being refreshed', async () => {
+  let available = false;
+  const client = new ModerationClient({ request: async path => {
+    if (!available) throw Object.assign(new Error(), { code: 'NETWORK' });
+    return path.endsWith('/me') ? { moderator: true } : { reports: [{ id: 'reviewed-locally' }] };
+  } });
+  await client.start('reviewer');
+  assert.equal(client.state.accessUnconfirmed, true);
+  assert.equal(client.state.moderator, false);
+  available = true;
+  await client.start('reviewer');
+  assert.equal(client.state.accessUnconfirmed, false);
+  available = false;
+  await client.load('reports');
+  assert.match(client.state.error, /تحميل البلاغات/);
+  assert.doesNotMatch(client.state.error, /القرار/);
+  available = true;
+  await client.load();
+  assert.equal(client.state.error, '');
+  assert.deepEqual(client.state.reports, [{ id: 'reviewed-locally' }]);
+});
+
 test('permission removal clears cached reports and prevents additional list requests', async () => {
   let reject = false;
   const client = new ModerationClient({ request: async path => {

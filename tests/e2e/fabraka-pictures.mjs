@@ -31,7 +31,7 @@ before(async () => {
       createRoot(document.getElementById('app')).render(<View/>);
       if(new URLSearchParams(location.search).has('sw')) navigator.serviceWorker.register('./sw.js');
     ` }, bundle: true, write: false, format: 'iife', platform: 'browser', jsx: 'automatic',
-    define: { __MAYDAN_MEDIA_VERSIONS__: JSON.stringify({ 'fabraka-v3': 'unit' }) },
+    define: { __MAYDAN_MEDIA_VERSIONS__: JSON.stringify(Object.fromEntries(['001', '002'].map(id => [`fabraka-v3/fab3-${id}.webp`, 'unit']))) },
     loader: { '.js': 'jsx', '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl' }, logLevel: 'silent',
   });
   const html = `<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><body><div id="app"></div><script>${bundle.outputFiles[0].text}</script></body></html>`;

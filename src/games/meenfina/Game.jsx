@@ -1,19 +1,23 @@
 import { tr, getUiLocale } from '../../shared/i18n/core.js';
-import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
+import { GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { socialInterruption } from '../../social/interruption.js';
-import { Screen, Button, Podium, Segment, Card, Scoreboard } from '../../shared/ui/components.jsx';
+import { Screen, Button, Segment, Card, Scoreboard } from '../../shared/ui/components.jsx';
+import { cssAssetUrl } from '../../shared/ui/css-asset-url.js';
 import { PassPhoneScreen } from '../../shared/setup/PassPhoneScreen.jsx';
 import { trimSeen } from '../../shared/lib/noRepeat.js';
 import { mulberry32, randomSeed } from '../../shared/lib/rng.js';
 import { getGameContent } from '../../data/game-content.js';
-import css from './meenfina.css';
+import css from './meenfina.css?sheet';
+import choiceCss from './choice-studio.css?sheet';
+import lockArt from './meenfina-lock-v1-320.webp';
+import { PresentationStyles } from '../../shared/ui/PresentationStyles.jsx';
 import { stampScreen, wait } from '../../shared/fx/index.js';
 import { initialState, reduce, currentVoter, standings, createStatementSource, normalizeOptions, tallyVotes, statementsLabel, restoreSession, sessionSnapshot, ROUNDS } from './logic.js';
 import { loadSession } from '../../shared/lib/session.js';
 import { useSessionSave } from '../../shared/ui/useSessionSave.js';
 import { useGameMusicScene } from '../../shared/fx/useGameMusicScene.js';
-import { IconCheck, IconInfo } from '../../shared/ui/icons.jsx';
+import { ChoicePortrait, MeenChoice, MeenFinal, MeenQuestion, MeenScoreTotals } from './Studio.jsx';
 
 const OPTIONS_KEY = 'options';
 const SEEN_KEY = 'seen';
@@ -24,22 +28,24 @@ export function SetupOptions({ storage, api }) {
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
     <div data-design-screen="setup.meenfina" data-design-id="options" className="stack meen-setup">
-    <style>{css}</style>
+    <PresentationStyles sheet={choiceCss} />
+    <PresentationStyles sheet={css} />
     {resume && <Card className="stack resume-card">
       <span className="card-title">{tr("لعبتكم بانتظاركم")}</span>
       <p className="card-muted">{tr("العبارة ")}{resume.state.round}{tr(" من ")}{resume.state.rounds} · {resume.players.map((p) => p.name).join('، ')}</p>
       <Button data-design-id="resume" data-design-required="true" variant="accent" full onClick={() => api.resumeGame(resume)}>{tr("استئناف اللعبة المحفوظة")}</Button>
       <p className="card-muted">{tr("بدء لعبة جديدة يستبدل هذا التقدم.")}</p>
     </Card>}
-    <Card className="stack">
+    <GameArtwork game="meenfina" className="meen-setup-art" />
+    <div className="stack meen-setup-options">
       <div className="field"><span>{tr("وضع اللعب")}</span>
-        <Segment data-design-id="setting-mode" accent label={tr("وضع اللعب")} value={opts.mode} onChange={(v) => update({ mode: v })} options={[{ value: 'point', label: tr("👉 أشّر!") }, { value: 'secret', label: tr("🤫 تصويت سري") }]} />
+        <Segment data-design-id="setting-mode" accent label={tr("وضع اللعب")} value={opts.mode} onChange={(v) => update({ mode: v })} options={[{ value: 'point', label: tr("👉 أشّر!").replace(/^\S+\s/u, '') }, { value: 'secret', label: tr("🤫 تصويت سري").replace(/^\S+\s/u, '') }]} />
       </div>
       <div className="field"><span>{tr("عدد العبارات")}</span>
         <Segment data-design-id="setting-rounds" accent label={tr("الجولات")} value={opts.rounds} onChange={(v) => update({ rounds: v })} options={ROUNDS.map((r) => ({ value: r, label: statementsLabel(r, api.contentLocale) }))} />
       </div>
-      <p className="meen-info-note"><IconInfo /> {opts.mode === 'point' ? tr("أشّر: الجميع يشيرون في اللحظة نفسها.") : tr("سري: نمرّر الجوال ثم نكشف النتائج.")}</p>
-    </Card>
+      <p className="meen-info-note">{opts.mode === 'point' ? tr("أشّر: الجميع يشيرون في اللحظة نفسها.") : tr("سري: نمرّر الجوال ثم نكشف النتائج.")}</p>
+    </div>
     </div>
   );
 }
@@ -65,13 +71,14 @@ function Countdown({ api, statement, round, rounds, onDone }) {
   }, [n, hidden]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div className="meen-count">
-      <h2 className="meen-phase-heading">{tr("مين فينا")}</h2>
+      <h2 className="meen-section-title">{tr("استعد")}</h2>
       <p className="meen-round-pill">{tr("العبارة ")}{round}{tr(" من ")}{rounds}</p>
-      <div data-design-id="question" className="meen-statement">{statement}</div>
+      <MeenQuestion text={statement} />
+      <GameArtwork game="meenfina" className="meen-count-art" />
       <div className="meen-count-num" role="status" aria-live="assertive" aria-label={n > 0 ? String(n) : tr("أشّر الآن!")}>
         {n > 0 ? <div className="meen-count-beads" dir="ltr" aria-hidden="true">{[3, 2, 1].map(number => <span key={number} className={n === number ? 'current' : ''}>{number}</span>)}</div> : <div className="go">{tr("أشّر الآن!")}</div>}
       </div>
-      <p className="meen-info-note"><IconInfo />{tr(" نقرأ أولًا، ثم نشير معًا.")}</p>
+      <p className="meen-info-note">{tr(" نقرأ أولًا، ثم نشير معًا.")}</p>
     </div>
   );
 }
@@ -136,26 +143,22 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
     const table = standings(state, api.contentLocale);
     return (
       <Screen data-design-screen={`meenfina.local.${state.phase}`} className="meenfina" aria-label={tr("مين فينا")}>
-        <style>{css}</style>
+        <PresentationStyles sheet={choiceCss} />
+        <PresentationStyles sheet={css} />
         <div className="stack">
-          <h2 className="meen-phase-heading">{tr("النتائج والألقاب")}</h2>
-          <Podium data-design-id="podium" entries={table} />
-          <div className="meen-titles">
-            {table.map((p, i) => (
-              <div key={p.id} style={{ '--i': i }}><span aria-hidden="true"><Avatar player={p} /></span><span className="grow"><b>{p.name}</b><small>{p.title || tr("بلا لقب هذه المرة")}</small></span><span className="badge">{p.score}</span></div>
-            ))}
-          </div>
+          <MeenFinal sorted={table} />
           <Button data-design-id="restart" variant="accent" size="lg" full onClick={() => { api.sound.play('whoosh'); api.restart(); }}>{tr("العب مرة أخرى")}</Button>
           <Button variant="secondary" full data-design-id="options" onClick={api.backToSetup}>{tr("تغيير اللاعبين أو الوضع")}</Button>
-          <Button variant="ghost" full data-design-id="exit" data-design-required="true" onClick={onExit}>{tr("العودة للمنصة")}</Button>
+          <Button variant="secondary" full data-design-id="exit" data-design-required="true" onClick={onExit}>{tr("العودة للمنصة")}</Button>
         </div>
       </Screen>
     );
   }
 
   return (
-    <Screen data-design-screen={`meenfina.local.${state.phase}`} className="meenfina" aria-label={tr("مين فينا")}>
-      <style>{css}</style>
+    <Screen data-design-screen={`meenfina.local.${state.phase}`} className="meenfina" aria-label={tr("مين فينا")} style={{ '--meen-lock': cssAssetUrl(lockArt) }}>
+      <PresentationStyles sheet={choiceCss} />
+      <PresentationStyles sheet={css} />
       {state.phase === 'intro' && (
         <div data-design-id="intro" className="meen-intro">
           <h2 className="meen-phase-heading">{tr("مين فينا")}</h2>
@@ -171,35 +174,25 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
       )}
 
       {state.phase === 'pick' && (
-        <div className="stack">
-          <p className="meen-info-note"><IconInfo />{tr(" يمكن اختيار أكثر من لاعب عند التعادل.")}</p>
-          <div data-design-id="question" className={`meen-statement ${leaving ? 'is-leaving' : ''}`}>{state.statement.text}</div>
-          <p className="center muted">{tr("اضغطوا من حصل على أكثر إشارات (يمكن اختيار أكثر من واحد عند التعادل).")}</p>
+        <div className="stack meen-pick-stage">
+          <MeenQuestion className={leaving ? 'is-leaving' : ''} text={state.statement.text} />
+          <p className="meen-info-note">{tr(" يمكن اختيار أكثر من لاعب عند التعادل.")}</p>
           <div data-design-id="options-list" className="meen-grid">
-            {state.players.map((p, i) => (
-              <button key={p.id} type="button" data-design-id="option" className={`meen-pick ${picked.includes(p.id) ? 'selected' : ''}`} style={{ '--pick-color': p.color, '--i': i }} aria-pressed={picked.includes(p.id)} onClick={() => toggle(p.id)}>
-                <span className="clay-stage clay-static" aria-hidden="true"><span className="clay-lift"><Avatar player={p} /></span></span>{p.name}
-                <span className="meen-pick-mark" aria-hidden="true">{picked.includes(p.id) && <IconCheck />}</span>
-              </button>
-            ))}
+            {state.players.map(player => <MeenChoice key={player.id} player={player} selected={picked.includes(player.id)} onClick={() => toggle(player.id)} />)}
           </div>
+          <p className="meen-info-note">{tr("اضغطوا من حصل على أكثر إشارات (يمكن اختيار أكثر من واحد عند التعادل).")}</p>
           <Button variant="accent" size="lg" full disabled={picked.length === 0 || leaving} data-design-id="submit" data-design-required="true" onClick={confirmPick}>{tr("تأكيد (")}{picked.length})</Button>
-          <Button variant="ghost" full disabled={leaving} data-design-id="skip" onClick={skipStatement}>{tr("لا أحد تنطبق عليه")}</Button>
+          <Button variant="secondary" full disabled={leaving} data-design-id="skip" onClick={skipStatement}>{tr("لا أحد تنطبق عليه")}</Button>
         </div>
       )}
 
       {state.phase === 'vote' && (
         <PassPhoneScreen key={`${state.round}:${state.voter}`} player={currentVoter(state)} api={api} designPreviewShown={!!designPreviewState} hint={tr("صوّت سرًا. لن يرى أحد اختيارك حتى الكشف.")} ready={tr("أنا أصوّت")}>
           <div className="stack">
-            <div data-design-id="question" className="meen-statement">{state.statement.text}</div>
-            <p className="center muted">{tr("من تختار يا ")}{currentVoter(state).name}؟</p>
+            <MeenQuestion text={state.statement.text} art />
+            <p className="meen-section-title">{tr("من تختار يا ")}<bdi>{currentVoter(state).name}</bdi>؟</p>
             <div data-design-id="options-list" className="meen-grid">
-              {state.players.map((p, i) => (
-                <button key={p.id} type="button" data-design-id="option" className={`meen-pick ${cast === p.id ? 'selected' : ''}`} style={{ '--pick-color': p.color, '--i': i }} aria-pressed={cast === p.id} onClick={() => castVote(p.id)}>
-                  <span className="clay-stage clay-static" aria-hidden="true"><span className="clay-lift"><Avatar player={p} /></span></span>{p.name}
-                  <span className="meen-pick-mark" aria-hidden="true">{cast === p.id && <IconCheck />}</span>
-                </button>
-              ))}
+              {state.players.map(player => <MeenChoice key={player.id} player={player} selected={cast === player.id} onClick={() => castVote(player.id)} />)}
             </div>
             <p className="meen-vote-hint">{tr("اختيارك لم يُرسل بعد. يمكنك تغييره ثم تأكيده.")}</p>
             <Button data-design-id="submit" data-design-required="true" variant="accent" size="lg" full disabled={cast === null} onClick={confirmVote}>{tr("تأكيد التصويت وإخفاء الشاشة")}</Button>
@@ -212,21 +205,22 @@ export function Game({ api, players, onExit, savedSession = null, designPreviewS
         const winners = state.winners.map((id) => state.players.find((p) => p.id === id)).filter(Boolean);
         return (
           <div className="stack">
-            <div data-design-id="question" className="meen-statement">{state.statement.text}</div>
-            {state.mode === 'secret' && (
+            <MeenQuestion text={state.statement.text} art={state.mode === 'secret'} />
+            {state.mode === 'secret' && <>
+              <h2 className="meen-round-pill">{tr("نتيجة التصويت")}</h2>
               <div data-design-id="results" className="meen-bars">
-                {state.players.map((p, i) => (
+                {state.players.map(p => (
                   <div key={p.id} className={`meen-bar ${state.winners.includes(p.id) ? 'is-winner' : ''}`}>
-                    <span className="who"><Avatar player={p} /> {p.name}</span>
-                    <span className="track"><span className="fill" style={{ '--w-frac': max ? (counts[p.id] || 0) / max : 0, '--bar-color': p.color, '--delay': `${i * 70}ms` }} /></span>
+                    <ChoicePortrait player={p} size={44} />
+                    <span className="who" dir="auto">{p.name}</span>
+                    <span className="track" aria-hidden="true"><span className="fill" style={{ width: `${max ? 100 * (counts[p.id] || 0) / max : 0}%` }} /></span>
                     <b>{counts[p.id] || 0}</b>
                   </div>
                 ))}
               </div>
-            )}
+            </>}
             <p data-design-id="results" className="meen-result-ribbon">{winners.length ? `${new Intl.ListFormat(getUiLocale(), {style:'long',type:'conjunction'}).format(winners.map(w => w.name))} · ${winners.length > 1 ? tr("نقطة لكل واحد") : tr("نقطة واحدة")}` : tr("لم تنطبق على أحد هذه المرة.")}</p>
-            <h3 className="meen-result-title">{tr("إجمالي النقاط")}</h3>
-            <div className="meen-score-chips">{state.players.map(player => <span key={player.id} className={state.winners.includes(player.id) ? 'is-winner' : ''}><b>{player.name}</b>{state.scores[player.id]}</span>)}</div>
+            <MeenScoreTotals players={state.players} score={player => state.scores[player.id]} />
             <Button data-design-id="continue" data-design-required="true" variant="accent" size="lg" full onClick={() => { api.sound.play('whoosh'); dispatch({ type: 'NEXT' }); }}>{state.round >= state.rounds ? tr("الألقاب والنتائج") : tr("العبارة التالية")}</Button>
           </div>
         );

@@ -164,12 +164,12 @@ test('one browser player plays a whole public Mafia match through the real UI', 
       for (const id of alive.filter((id) => id !== seatId && r.roleStates[id].faction === 'mafia')) await botOf(id).command('mafia_vote', { targetId: target });
       if (me.alive) {
         if (me.faction === 'mafia') {
-          await page.locator('[data-design-id="player-seat"].is-target').first().click();
+          await page.locator('[data-design-id="target"]').first().click();
           await page.locator('[data-design-id="mafia-vote"]').first().click();
           await until(() => room().killVotes[seatId] !== undefined, 'the browser Mafia vote reached the server');
         } else if (await page.locator('[data-design-id="ability-submit"]').count()) {
-          await page.locator('[data-design-id="player-seat"].is-target').first().click();
-          if (mine().roleId === 'analyst') await page.locator('[data-design-id="player-seat"].is-target').nth(1).click();
+          await page.locator('[data-design-id="target"]').first().click();
+          if (mine().roleId === 'analyst') await page.locator('[data-design-id="target"]').nth(1).click();
           await page.locator('[data-design-id="ability-submit"]').click();
           await until(() => Boolean(room().nightActions[seatId]), 'the browser night ability reached the server');
         } else {

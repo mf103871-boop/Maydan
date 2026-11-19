@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { mkdir, readFile, realpath, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import sharp from 'sharp';
+import { writeInstalledPack } from '../native/installed-pack.mjs';
 import { buildOnce, ROOT } from '../lib.mjs';
 import { ticketPolicyEnabled } from '../../src/shared/account/gameplay-policy.mjs';
 
@@ -33,12 +34,13 @@ const version = '1.9';
 const assets = path.join(generated, 'assets');
 // This explicit output is already owned and cleaned above. Do not replace the
 // shared web dist while another preview or native preparation is using it.
-const { buildId } = await buildOnce({ minify: true, includeStudio: false, version, roomsUrl: '', outdir: assets });
-for (const entry of ['pricing', 'pay.html', 'sw.js', '_headers', '_redirects']) {
+const { buildId } = await buildOnce({ minify: true, includeStudio: false, includePackTransport: false, version, roomsUrl: '', outdir: assets });
+for (const entry of ['pricing', 'pay.html', 'sw.js', '_headers', '_redirects', '.nojekyll']) {
   const target = path.resolve(assets, entry);
   if (path.dirname(target) !== assets) throw new Error('Android exclusion escaped its generated asset directory.');
   await rm(target, { recursive: true, force: true });
 }
+await writeInstalledPack(assets);
 const icon = path.join(generated, 'res/drawable-nodpi/maydan_launcher.png');
 await mkdir(path.dirname(icon), { recursive: true });
 await sharp(path.join(ROOT, 'public/icons/icon-1024.png')).resize(192).png().toFile(icon);

@@ -32,6 +32,7 @@ import { MafiaDirectoryFeed } from './mafia-directory-feed.mjs';
 import { normalizeRoomDirectory, assertOnlineDirectoryAdmission, needsOnlineDirectory, updateOnlineDirectory, ONLINE_DIRECTORY_REFRESH_MS } from './online-directory.mjs';
 import { advanceObserverStream,observerNextAlarm,observerView,observerCanPromote,claimObserver,releaseObserver,promoteObserverClaim,observerAuthorizations,OBSERVER_CAP,OBSERVER_LEASE,assertObserverAdmission,loadObserverStream,saveObserverStream,observerEvidenceAccount,observerEvidenceAccounts,dropObserverEvidenceAccounts } from './mafia-observers.mjs';
 import { blockUser } from './social/db.mjs';
+import { ERSOMHA_PALETTE_VERSIONS } from '../src/games/ersomha/palette.js';
 import { getErsomhaPool } from './ersomha-content.mjs';
 import { setErsomhaChoices, ERSOMHA_PLAYING, ERSOMHA_SELECT_MS } from './ersomha-model.mjs';
 import { acquireErsomhaLease, assertErsomhaLease, renewErsomhaLease, releaseErsomhaLease, releaseErsomhaAccounts, ersomhaSeen, exposeErsomhaCards, buildErsomhaTurnPlan } from './ersomha-history.mjs';
@@ -184,7 +185,7 @@ export class Room {
     const outbox = [...this.profileOutbox, ...stats];
     const mafiaOutbox=[...this.mafiaResultOutbox,...(mafiaResult?[mafiaResult]:[])];
     const resetDrawing = candidate.game === 'ersomha' && (!this.drawing || this.drawing.boardId !== ersomhaBoardId(candidate));
-    const nextDrawing = resetDrawing ? emptyErsomhaDrawing(candidate) : this.drawing;
+    const nextDrawing = resetDrawing ? emptyErsomhaDrawing(candidate, this.env.ERSOMHA_PALETTE_V2_ENABLED === '1' ? 2 : 1) : this.drawing;
     let nextDrawingHead = this.drawingHead, nextArchives = this.drawingArchives || [];
     const observerStream=candidate.game==='mafia'?advanceObserverStream(this.observerStream,candidate):null;
     let observerChunks=this.observerChunks||0;
@@ -606,6 +607,7 @@ export class Room {
       && marker.progressionReceipt?.users.includes(owner)) {
       state.progressionReceipt = { eventId: marker.eventId, notBefore: marker.progressionReceipt.notBefore };
     }
+    if (this.room.game === 'ersomha') state.capabilities.ersomhaPaletteVersions = ERSOMHA_PALETTE_VERSIONS;
     if (this.room.game === 'ersomha' && this.drawing?.boardId === ersomhaBoardId(this.room)) state.drawing = ersomhaDrawingMeta(this.drawing);
     if (this.room.game === 'mafia') {
       if(this.room.ranked){

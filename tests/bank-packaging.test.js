@@ -67,7 +67,11 @@ test('no client module reads a stripped editorial field', async () => {
   // sourceUrl and source also name media credits and unrelated values, so only
   // the bank-only names are scanned; the bundled-bank test covers the rest.
   for (const file of files) {
-    const text = await readFile(file, 'utf8');
+    let text = await readFile(file, 'utf8');
+    // These two references belong to the asset verification handle. Keep
+    // checking question.verified and every other receiver even in these files.
+    if (file === path.join('src', 'boot', 'opening.js')) text = text.replace(/\bhandle\.verified\b/g, '');
+    if (file === path.join('src', 'platform', 'PlatformApp.jsx')) text = text.replace(/\bopening\?\.verified\b/g, '');
     for (const field of ['verified', 'verifiedAt', 'verification', 'difficultyTarget']) {
       assert.doesNotMatch(text, new RegExp(`(?:\\.|\\[['"])${field}\\b`), `${file} reads ${field}, which the shipped bank omits`);
     }
