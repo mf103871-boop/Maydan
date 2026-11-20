@@ -1,0 +1,19 @@
+name: Inspect small-screen store geometry
+on:
+  push:
+    branches: [codex/testflight-visual-v4-store320-check]
+permissions:
+  contents: read
+jobs:
+  store:
+    runs-on: macos-15
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npx playwright install chromium webkit
+      - run: node --test tests/plus-store-v2-browser.test.js

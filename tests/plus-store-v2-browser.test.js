@@ -25,6 +25,55 @@ for (const [name,engine] of [['chromium',chromium],['webkit',webkit]]) test(`${n
   const browser=await engine.launch({headless:true});t.after(()=>browser.close());const page=await browser.newPage({viewport:{width:390,height:844},reducedMotion:'reduce'});const errors=[],outside=[];page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{const url=new URL(r.url());if(url.protocol!=='data:'&&url.origin!==origin)outside.push(url.origin+url.pathname);});
   const central=page.locator('.studio-store-preview'),use=central.locator('[data-design-id=item-use]'),dialog=page.getByRole('dialog');
   const select=async id=>{const before=await page.evaluate(()=>window.writes.length);await page.locator(`[data-item-id="${id}"] [data-design-id=item-preview]`).click();await central.locator(`[data-preview-item="${id}"]`).waitFor();assert.equal(await dialog.count(),0,'rail selection updates the central preview without opening a dialog');assert.equal(await page.evaluate(()=>window.writes.length),before,'rail preview cannot mutate cosmetics');};
+  const diagnoseNarrowStore = async (label) => {
+    const result = await page.evaluate(() => {
+      const root = document.documentElement;
+      const body = document.body;
+      const viewport = innerWidth;
+      const round = n => Math.round(n * 100) / 100;
+      const id = el => (el.id ? '#' + el.id : el.tagName.toLowerCase() + (typeof el.className === 'string' && el.className.trim() ? '.' + el.className.trim().split(/\s+/).join('.') : '')) + (el.dataset.designId ? '[design=' + el.dataset.designId + ']' : '');
+      const path = el => {
+        const names = [];
+        for (let node = el; node && names.length < 6; node = node.parentElement) names.unshift(id(node));
+        return names.join('>');
+      };
+      const box = el => {
+        const r = el.getBoundingClientRect(), s = getComputedStyle(el);
+        return { left: round(r.left), right: round(r.right), width: round(r.width), client: el.clientWidth, scroll: el.scrollWidth, scrollLeft: el.scrollLeft, overflowX: s.overflowX, overflowY: s.overflowY, position: s.position, minWidth: s.minWidth, transform: s.transform, direction: s.direction };
+      };
+      const elements = [...body.querySelectorAll('*')].filter(el => el instanceof HTMLElement && el.getClientRects().length);
+      const nodes = [];
+      for (const el of elements) {
+        const metrics = box(el);
+        const ranges = [...el.childNodes].filter(node => node.nodeType === 3 && node.textContent.trim()).flatMap(node => {
+          const range = document.createRange(); range.selectNodeContents(node);
+          return [...range.getClientRects()].filter(r => r.left < -.5 || r.right > viewport + .5).map(r => ({ left: round(r.left), right: round(r.right), text: node.textContent.trim().slice(0, 38) }));
+        });
+        if (!ranges.length && metrics.left >= -.5 && metrics.right <= viewport + .5 && metrics.scroll <= metrics.client + 1 && el !== body.firstElementChild) continue;
+        const clips = [];
+        for (let parent = el.parentElement; parent; parent = parent.parentElement) if (getComputedStyle(parent).overflowX !== 'visible') clips.push({el: id(parent), ...box(parent)});
+        nodes.push({path: path(el), ...metrics, textRanges: ranges, clipping: clips.map(c => [c.el,c.left,c.right,c.overflowX,c.scrollLeft])});
+      }
+      const originalBody = body.scrollWidth;
+      const isolation = [];
+      if (originalBody > viewport) {
+        for (const el of elements) {
+          const original = el.getAttribute('style');
+          el.style.setProperty('visibility','hidden','important');
+          el.style.setProperty('overflow','clip','important');
+          const clipped = body.scrollWidth;
+          el.style.setProperty('display','none','important');
+          const removed = body.scrollWidth;
+          if (original == null) el.removeAttribute('style'); else el.setAttribute('style',original);
+          if (removed < originalBody || clipped < originalBody) isolation.push({ path:path(el), clipped, removed });
+        }
+      }
+      return { frame: { root:box(root), body:box(body), viewport, visualWidth:visualViewport.width, windowX:scrollX, animations:document.getAnimations().map(a=>[a.animationName,a.playState]), userAgent:navigator.userAgent }, nodes, isolation };
+    });
+    console.log('STORE_FRAME', label, JSON.stringify(result.frame));
+    for (const row of result.nodes) console.log('STORE_NODE', JSON.stringify(row));
+    for (const row of result.isolation) console.log('STORE_ISOLATION', JSON.stringify(row));
+  };
   const assertNoPageOverflow=([html,body,viewport],message)=>assert.ok(html<=viewport&&body<=viewport,message+' (document '+html+', body '+body+', viewport '+viewport+')');
   const reviewControls=async()=>{const controls=await page.locator('button:visible,input:visible,select:visible,summary:visible').evaluateAll(nodes=>nodes.map(n=>({id:n.dataset.designId,screen:n.closest('[data-design-screen]')?.dataset.designScreen})));assert.ok(controls.every(n=>n.id));for(const control of controls)assert.ok(getNodeDefinition(control.screen,control.id),control.screen+':'+control.id);};
   await page.goto(origin+'/#/store?tab=presets');await page.locator('[data-item-id="sahra.profileSkin"]').waitFor();await page.waitForFunction(()=>!document.body.innerText.includes('جارٍ تحميل مقتنياتك'));
@@ -63,7 +112,7 @@ for (const [name,engine] of [['chromium',chromium],['webkit',webkit]]) test(`${n
   await page.evaluate(()=>window.choose('plus'));await select('noir.frame');await central.getByRole('button',{name:'مقارنة المظهر',exact:true}).click();await dialog.waitFor();await page.evaluate(()=>window.deferSave=true);await dialog.locator('.plus-preview-category').getByRole('button',{name:'استخدام',exact:true}).click();await page.waitForFunction(()=>window.resolveSave!==null);await page.evaluate(()=>window.choose('free'));await dialog.waitFor({state:'hidden'});await page.evaluate(()=>window.resolveSave());await page.waitForFunction(()=>!document.body.innerText.includes('جارٍ تحميل مقتنياتك'));assert.equal(await page.getByRole('dialog').count(),0);assert.equal(await page.evaluate(()=>window.snapshot().free.selection.frameId),null,'a late old-owner save cannot equip the new account');assert.equal(await central.locator('.studio-store-status.owned').count(),0,'old ownership cannot paint the new account');
   await page.evaluate(()=>document.fonts.ready);
   assert.equal(await page.evaluate(()=>[...document.fonts].some(face=>face.family.includes('Maydan Round')&&face.status==='loaded')),true,'the store uses the bundled game typeface');
-  for(const [width,height]of[[320,844],[390,844],[430,932],[844,390]]){await page.setViewportSize({width,height});await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));assertNoPageOverflow(await page.evaluate(()=>[document.documentElement.scrollWidth,document.body.scrollWidth,innerWidth]),'settled Arabic width '+width);}
+  for(const [width,height]of[[320,844],[390,844],[430,932],[844,390]]){await page.setViewportSize({width,height});await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));if(name==='chromium'&&width===320)await diagnoseNarrowStore('Arabic 320');assertNoPageOverflow(await page.evaluate(()=>[document.documentElement.scrollWidth,document.body.scrollWidth,innerWidth]),'settled Arabic width '+width);}
   await reviewControls();
   // Actual English dictionary and a new owner mount, not translated fixture copy.
   const writesBeforeEnglish=await page.evaluate(()=>window.writes.length);await page.evaluate(async()=>{await window.locale('en');window.choose('plus');});await page.locator('.studio-store').filter({has:page.getByRole('tab',{name:'Maydan Plus',exact:true})}).waitFor();await select('sahra.profileSkin');assert.equal(await page.locator('html').getAttribute('dir'),'ltr');assert.equal(await use.innerText(),'Equip');assert.doesNotMatch(await page.locator('.studio-store').innerText(),/[\u0600-\u06ff]/u);assert.deepEqual(await page.evaluate(()=>window.missingUi()),[]);assert.equal(await page.evaluate(()=>window.writes.length),writesBeforeEnglish,'locale and account presentation cannot equip');
