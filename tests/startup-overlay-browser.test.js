@@ -104,8 +104,8 @@ test('verified and legacy entry exercise recovery and the menu, game and input c
     await page.locator('[data-design-screen="badeeha.setup"] [data-design-id="round-size"]').filter({hasText:/^(٢٠|20)$/}).tap();
     for(let index=0;index<6;index++)await page.locator('[data-design-id="category-card"]').nth(index).tap();
     await page.locator('[data-design-screen="badeeha.setup"] [data-design-id="start"]').tap();await page.locator('[data-design-screen="badeeha.board"]').waitFor();
-    await page.waitForFunction(()=>{const status=document.querySelector('.startup-background')?.getBoundingClientRect(),launcher=document.querySelector('.lamma-launcher')?.getBoundingClientRect();return status&&launcher&&status.bottom<=launcher.top-7;});
-    const game=await geometry(page);assert.ok(game.close.width>=48&&game.close.height>=48&&game.close.hit);assert.ok(game.launcher.hit);assert.ok(game.status.bottom<=game.launcher.top-7);assert.ok(game.reserved>=game.status.height+8,'bottom gameplay reserves space for the notice');
+    await page.waitForFunction(()=>{const status=document.querySelector('.startup-background')?.getBoundingClientRect(),launcher=document.querySelector('.lamma-launcher')?.getBoundingClientRect();return status&&launcher&&status.top>=0&&status.bottom<=innerHeight&&launcher.bottom+7<=status.top;});
+    const game=await geometry(page);assert.ok(game.close.width>=48&&game.close.height>=48&&game.close.hit);assert.ok(game.launcher.hit);assert.ok(game.launcher.bottom+7<=game.status.top,'header launcher remains separate from the bottom notice');assert.ok(game.reserved>=game.status.height+8,'bottom gameplay reserves space for the notice');
     await page.screenshot({path:path.join(output,`${engineName}-${width}-before-close.png`)});
     await close.tap();await page.locator('.startup-background').waitFor({state:'detached'});
     await page.locator('.lamma-launcher').tap();await page.locator('.lamma-layer [role="dialog"]').waitFor();

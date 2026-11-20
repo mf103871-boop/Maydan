@@ -113,7 +113,10 @@ export function Splash({ onDone, visible = true, reducedMotion = false }) {
       }
       const launcherRect = launcher?.getBoundingClientRect();
       const viewportBottom = (window.visualViewport?.offsetTop || 0) + (window.visualViewport?.height || window.innerHeight);
-      const launcherSpace = shown && launcherRect?.height && getComputedStyle(launcher).visibility !== 'hidden'
+      // Only the floating launcher occupies the bottom edge. A launcher in the
+      // game header is in normal layout and requires no space below the notice.
+      const launcherStyle = launcher && getComputedStyle(launcher);
+      const launcherSpace = shown && launcherRect?.height && launcherStyle.position === 'fixed' && launcherStyle.visibility !== 'hidden'
         ? Math.max(0, Math.ceil(viewportBottom - launcherRect.top)) : 0;
       const menuSpace = parseFloat(getComputedStyle(root).getPropertyValue('--menu-nav-space')) || 0;
       // The launcher remains usable below the notice. Reserve its real height
