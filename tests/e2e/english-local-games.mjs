@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { chromium } from 'playwright';
+import { acceptTermsIfShown } from '../helpers/terms-consent.mjs';
 
 const origin=process.env.UI_REVIEW_ORIGIN||'http://127.0.0.1:4192';assert.ok(['127.0.0.1','localhost'].includes(new URL(origin).hostname));
 const output=path.resolve('.cache/english-local-games');await mkdir(output,{recursive:true});
@@ -17,7 +18,12 @@ try{for(const game of games){
   const english=async locator=>assert.doesNotMatch(await locator.innerText(),/[\u0600-\u06ff]/u,'English match must draw English authored content');
   const click=async id=>{await select(id).last().click();};
   try{
-    await page.goto(origin+'/#/settings');await page.locator('#ui-locale').waitFor({timeout:180000});await page.locator('#ui-locale').selectOption('en');await page.goto(origin+`/#/play/${game}?mode=local`);await page.locator(`[data-design-screen="setup.${game}"]`).waitFor();
+    await page.goto(origin+'/#/settings');await page.locator('#ui-locale').waitFor({timeout:180000});await page.locator('#ui-locale').selectOption('en');
+    await page.waitForFunction(() => document.documentElement.lang === 'en');
+    await page.goto(origin+`/#/play/${game}?mode=local`);
+    await page.locator(`[data-design-screen="legal.consent"],[data-design-screen="setup.${game}"]`).first().waitFor();
+    await acceptTermsIfShown(page);
+    await page.locator(`[data-design-screen="setup.${game}"]`).waitFor();
     if(game==='mamnoo'){for(const [index,name]of ['Blue Team','Gold Team'].entries())await select('team-name').nth(index).fill(name);}
     else{for(const name of ['Mira','Omar','Sam']){await page.locator('[data-design-id="players-setup"] [data-design-id="add-player"]').click();const dialog=page.getByRole('dialog');await dialog.locator('[data-design-id="name-input"]').fill(name);await dialog.locator('[data-design-id="add-player"]').click();await dialog.waitFor({state:'hidden'});}}
     const rounds=select('setting-rounds');if(await rounds.count())await rounds.locator('button').first().click();
