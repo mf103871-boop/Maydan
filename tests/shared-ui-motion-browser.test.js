@@ -52,6 +52,12 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
         assert.equal(before.transform, 'none');
         await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
         await page.mouse.down();
+        // Inset and outset shadow lists can switch discretely during the 90ms press.
+        // Keep the real pointer held until a frame shows the changed shadow.
+        await page.waitForFunction(resting => {
+          const control = document.querySelector('#press');
+          return control.matches(':active') && getComputedStyle(control).boxShadow !== resting;
+        }, before.shadow, { polling:'raf', timeout:2000 });
         await tick(page);
         const first = await state(button);
         assert.equal(first.active, true, 'the real pointer is held down on the button');
