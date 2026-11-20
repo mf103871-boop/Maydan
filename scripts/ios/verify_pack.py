@@ -9,7 +9,7 @@ import plistlib
 import re
 import zipfile
 
-PINS_SHA = "dc40c52c7c38eddf3375879cef0b1e0f65b8883d8c297f334a481b74614f1d5c"
+PINS_SHA = "f959bd812f15c1bf420b99f89f501691a68c448fa84c7212864188f592d42479"
 ORIGIN = "https://maydan-mafia-preview.mf103871.workers.dev"
 def SHA(data):
     return hashlib.sha256(data).hexdigest()
