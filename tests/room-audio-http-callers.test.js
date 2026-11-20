@@ -14,19 +14,32 @@ import {contentVersionFor} from '../src/shared/content-locale.mjs';
 // response handling and real semantic bus are retained; only transport/storage
 // and navigation are controlled. No production request can leave this fixture.
 const source=readFileSync(new URL('../src/online/Online.jsx',import.meta.url),'utf8');
+function entryDeclaration(name){
+  const line=source.split(/\r?\n/).find(line=>line.startsWith(`  const ${name} = `));
+  assert.ok(line?.endsWith(';'),`actual ${name} declaration found`);
+  return line;
+}
 function actualFunction(name,next,context){
   const start=source.indexOf(`  async function ${name}(`),end=source.indexOf(next.startsWith('const ')?`  ${next}`:`  async function ${next}(`,start);
   assert.ok(start>=0&&end>start,`actual ${name} caller found`);
-  return new Function(...Object.keys(context),`${source.slice(start,end)}\nreturn ${name};`)(...Object.values(context));
+  const declarations = name === 'submit' ? ['roomContentReady','topicsReady'] : name === 'joinPublicRoom' ? ['roomContentReady'] : [];
+  const body = [...declarations.map(entryDeclaration),source.slice(start,end),`return ${name};`].join('\n');
+  return new Function(...Object.keys(context),body)(...Object.values(context));
 }
 function fixture(gameplayPolicy=null){
-  const played=[],requests=[],joined=[],writes=[],notices=[],navigations=[];
+  const played=[],requests=[],joined=[],writes=[],notices=[],navigations=[],preflights=[];
   const bus=createAudioEvents(cue=>{played.push(cue);return true;});
   const account={gameplayPolicy,user:{id:'owner'},authHeaders:()=>({Authorization:'Bearer synthetic-only'})};
   let settle,owner='owner',current=true;
-  const transport=()=>new Promise(resolve=>{settle=resolve;});
+  const transport=(url)=>{
+    if (new URL(url).pathname==='/api/content/capabilities') {
+      preflights.push(url);
+      return Promise.resolve(Response.json(context.serverCapabilities || {}));
+    }
+    return new Promise(resolve=>{settle=resolve;});
+  };
   const context={
-    tr,contentLocale:'ar',contentVersionFor,
+    tr,contentLocale:'ar',contentVersionFor,preferredLocale:'ar',contentCapabilities:{},serverCapabilities:{},entryPack:{ready:true},
     busy:false,setError(){},name:'ضيف الاختبار',mode:'join',game:'meenfina',account,mafiaCreationBlocked:false,rewarded:false,joinOnly:false,gameEntryPath,
     normalizeCode,code:'123456',validCode,ROOM_CAPABILITIES,initialObserver:false,entryLifetime:{current:{generation:1}},
     ticketPolicyEnabled,gameplayOffer,badeehaFreeSelection,
@@ -43,7 +56,7 @@ function fixture(gameplayPolicy=null){
     eventAudio:{current:{dispose(){}}},clientRef:{current:{stop(){}}},setExitGuard(){},
     onLeft(){},navigate:(...args)=>navigations.push(args),
   };
-  return{context,played,requests,joined,writes,notices,navigations,
+  return{context,played,requests,joined,writes,notices,navigations,preflights,
     finish(ok=true){assert.ok(settle,'a real post has reached its injected transport');settle(new Response(JSON.stringify(ok?{code:'123456'}:{error:'FULL'}),{status:ok?200:409}));},
     switchOwner(){owner='other';context.entryAccountRef.current={...account,user:{id:'other'}};context.accountRef.current=context.entryAccountRef.current;},
     dispose(){current=false;},
@@ -74,6 +87,54 @@ test('actual public-directory admission uses the same accepted-owner gate, not t
     assert.deepEqual(f.played,mode==='accepted'?['pop']:[],mode);assert.equal(f.joined.length,mode==='accepted'?1:0);
   }
 });
+test('entry checks host and quick-match content while allowing an explicit room join to use the room language',async()=>{
+  for(const phase of ['checking-capabilities','loading-pack','ready']){
+    for(const flow of ['create','join','public-room','observe','quick-match']){
+      const f=fixture(ENTRY_POLICY);
+      Object.assign(f.context,{preferredLocale:'en',contentLocale:'en',game:'mafia',mafiaSettings:{},
+        contentCapabilities:phase==='checking-capabilities'?null:{localizedContent:1,contentVersions:{en:'new-en'}},
+        serverCapabilities:{localizedContent:1,contentVersions:{en:'new-en'}},
+        entryPack:{ready:phase!=='loading-pack'},mode:flow==='create'?'create':'join'});
+      const isForm=flow==='create'||flow==='join';
+      const call=isForm?actualFunction('submit','joinPublicRoom',f.context):actualFunction('joinPublicRoom','const helpActions=',f.context);
+      const pending=isForm?call({preventDefault(){}}):call(flow==='quick-match'?undefined:'123456',flow==='observe');
+      assert.deepEqual(f.played,[],`${phase} ${flow} does not play on tap`);
+      if(phase!=='ready'&&(flow==='create'||flow==='quick-match')){
+        await pending;
+        assert.deepEqual(f.requests,[]);assert.deepEqual(f.writes,[]);assert.deepEqual(f.joined,[]);
+        continue;
+      }
+      assert.equal(f.requests.length,1,`${phase} ${flow} posts exactly once`);
+      const expected=flow==='create'?'/api/rooms':flow==='quick-match'?'/api/matchmaking/join':flow==='observe'?'/api/rooms/123456/observe':'/api/rooms/123456/join';
+      assert.equal(f.requests[0].path,expected);
+      if(flow==='create')assert.equal(f.requests[0].body.contentVersion,'new-en');
+      if(['join','public-room','observe'].includes(flow)){
+        assert.equal(Object.hasOwn(f.requests[0].body,'contentLocale'),false);
+        assert.equal(Object.hasOwn(f.requests[0].body,'community'),false);
+        assert.deepEqual(f.preflights,[],`${flow} never probes the host's new-English capability`);
+      }
+      if (f.requests[0].body.contentLocale==='en') await new Promise(resolve=>setImmediate(resolve));
+      f.finish();await pending;
+      assert.deepEqual(f.played,['pop'],`${phase} ${flow} plays only on acceptance`);assert.equal(f.joined.length,1);
+    }
+  }
+});
+
+test('a server rollback blocks new English admission but not existing-room directory joins and observers',async()=>{
+  for(const flow of ['create','quick-match','public-room','observe']){
+    const f=fixture();
+    Object.assign(f.context,{game:'mafia',mafiaSettings:{},mode:'create',preferredLocale:'en',contentLocale:'en',
+      contentCapabilities:{localizedContent:1,contentVersions:{en:'new-en'}},entryPack:{ready:true},serverCapabilities:{}});
+    const pending=flow==='create'?actualFunction('submit','joinPublicRoom',f.context)({preventDefault(){}}):
+      actualFunction('joinPublicRoom','const helpActions=',f.context)(flow==='quick-match'?undefined:'123456',flow==='observe');
+    const newMatch=flow==='create'||flow==='quick-match';
+    if(!newMatch)f.finish();
+    await pending;
+    assert.equal(f.preflights.length,newMatch?1:0);assert.equal(f.joined.length,newMatch?0:1);
+    assert.deepEqual(f.played,newMatch?[]:['pop']);
+  }
+});
+
 test('actual confirmed HTTP leave sounds once; failed leave has no exit success or victory',async()=>{
   for(const accepted of [true,false]){
     const f=fixture(),leave=actualFunction('leave','promoteObserver',f.context);
