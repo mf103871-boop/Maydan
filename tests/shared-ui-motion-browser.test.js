@@ -3,7 +3,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createServer } from 'node:http';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { build } from 'esbuild';
 import { chromium, webkit } from 'playwright';
@@ -11,17 +11,22 @@ import { chromium, webkit } from 'playwright';
 const output = process.env.SHARED_MOTION_EVIDENCE_DIR || path.join(process.cwd(), '.cache/shared-ui-motion');
 const source = `import React,{useState}from'react';import{createRoot}from'react-dom/client';
 import{Button,Modal,Sheet}from'./src/shared/ui/components.jsx';
-import tokens from'./src/shared/theme/tokens.css';import ui from'./src/shared/ui/ui.css';import brand from'./src/shared/brand/brand.css';
 function App(){const[open,setOpen]=useState(false),[sheet,setSheet]=useState(false),[clicks,setClicks]=useState(0);return <>
-<style>{tokens}</style><style>{ui}</style>{location.search.includes('brand')&&<style>{brand}</style>}
 <main style={{padding:24,display:'grid',gap:24}}><Button id="press" onClick={()=>setClicks(n=>n+1)} onPointerDown={event=>{
 const ripple=event.currentTarget.querySelector('.ripple');window.rippleAtPress=ripple?{duration:getComputedStyle(ripple).animationDuration,name:getComputedStyle(ripple).animationName}:null;
 }}>اختبار الضغط</Button><output id="clicks">{clicks}</output><Button id="open" onClick={()=>setOpen(true)}>افتح النافذة</Button><Button id="open-sheet" onClick={()=>setSheet(true)}>افتح اللوحة</Button></main>
 {open&&<Modal placement="bottom" title="نافذة سفلية" onClose={()=>setOpen(false)}><p>محتوى النافذة المشتركة</p></Modal>}
 {sheet&&<Sheet open title="لوحة الخيارات" onClose={()=>{window.sheetClosedAt=performance.now();setSheet(false);}}><p>خيارات اللعبة</p></Sheet>}</>};createRoot(document.getElementById('root')).render(<App/>);`;
 const bundle = await build({ stdin: { contents: source, resolveDir: process.cwd(), loader: 'jsx' }, bundle: true, write: false, format: 'iife', jsx: 'automatic', loader: { '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl' }, logLevel: 'silent' });
-const html = '<!doctype html><html lang="ar" dir="rtl"><meta name="viewport" content="width=device-width,initial-scale=1"><div id="root"></div><script>' + bundle.outputFiles[0].text + '</script></html>';
-const server = createServer((_, response) => { response.writeHead(200, { 'content-type': 'text/html;charset=utf-8' }); response.end(html); });
+const [tokens, ui, brand] = await Promise.all(['theme/tokens.css','ui/ui.css','brand/brand.css'].map(
+  name => readFile(new URL('../src/shared/' + name, import.meta.url), 'utf8')
+));
+const server = createServer((request, response) => {
+  const styles = tokens + '\n' + ui + (request.url === '/?brand' ? '\n' + brand : '');
+  response.writeHead(200, { 'content-type': 'text/html;charset=utf-8' });
+  response.end('<!doctype html><html lang="ar" dir="rtl"><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>' +
+    styles + '</style></head><body><div id="root"></div><script>' + bundle.outputFiles[0].text + '</script></body></html>');
+});
 await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
 const origin = `http://127.0.0.1:${server.address().port}`;
 await mkdir(output, { recursive: true });
@@ -47,6 +52,8 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
         await page.goto(`${origin}/?${layer}`);
         const button = page.locator('#press');
         await button.waitFor();
+        await page.evaluate(() => document.fonts.ready);
+        assert.equal(await page.evaluate(() => getComputedStyle(document.body).margin), '0px', 'measure the styled page');
         await tick(page);
         const before = await state(button), box = before.rect;
         assert.equal(before.transform, 'none');
