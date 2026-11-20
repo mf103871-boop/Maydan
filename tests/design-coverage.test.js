@@ -18,7 +18,17 @@ test('coverage inventory preserves every node and exact conditional explanation 
   const semantics = JSON.stringify({ DESIGN_CONDITIONAL_NODE_REASONS, DESIGN_RENDERED_NODE_IDS });
   // Existing IDs remain stable. The incoming-call actions are now exposed
   // with metadata for when each real action is available.
-  assert.equal(createHash('sha256').update(semantics).digest('hex'), '669fc8abb58dc643ea79f859b01d622cadc5c699deccb0323ad2788e42a2a842');
+  assert.equal(createHash('sha256').update(semantics).digest('hex'), '9d2175a81a9a31de2111701252ec1bb147cd00bb6ca1d144385dc75491afe9be');
+});
+
+test('room return, recovery and the visible invite URL retain their conditional semantics', () => {
+  for (const [screen, id] of [['online.entry','resume-room'], ['online.chrome','room-recovery'], ['system.dialog','invite-link-preview']]) {
+    const node = getNodeDefinition(screen, id);
+    assert.equal(node.required, true, id);
+    assert.equal(node.editableText, false, id);
+    assert.ok(node.coverageReason, id);
+    assert.ok(!DESIGN_RENDERED_NODE_IDS[screen].includes(id), id);
+  }
 });
 
 test('semantic scene registry has stable unique identities and the eight actual games', () => {

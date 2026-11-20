@@ -32,6 +32,16 @@ test('compact JSON preserves nested keys, numeric arrays, empty values and indep
     assert.throws(() => packedQuestionBank(invalid), /acyclic JSON/);
 });
 
+test('bank text round trips all UTF-16 units, literal markers, mixed scripts and legacy packs', () => {
+  const units = Array.from({ length: 65_536 }, (_, index) => String.fromCharCode(index)).join('');
+  const strings = [units, '', '~', '~A', '~S', '~~', '~Aabc', '~S أحمد', 'سُؤال 17: ABC/١٢٣ 🙂',
+    'عربي'.repeat(80), 'https://example.test/ab?q=سلام#xyz', '\0\n\r\t\u202eزيْد\u202c'];
+  const value = { names: strings, nested: [{ id: 'abc-123', enabled: true, hints: [...strings] }] };
+  const decoded = unpackQuestionBank(JSON.parse(JSON.stringify(packedQuestionBank(value))));
+  assert.deepEqual(decoded, value);
+  assert.deepEqual(unpackQuestionBank({ keys: [], shapes: [], data: [1, '~Aabc', '~Sabc'] }), ['~Aabc', '~Sabc']);
+});
+
 test('the bundled bank keeps every playable field of every question and no editorial field', { timeout: 60_000 }, async () => {
   const options = { stdin: { contents: "export { CATS } from './src/data/categories/index.js';", resolveDir: process.cwd() }, bundle: true, write: false, minify: true, format: 'esm', logLevel: 'silent' };
   const plain = await build(options), shipped = await build({ ...options, plugins: [bankPackagingPlugin()] });

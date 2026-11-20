@@ -4,6 +4,7 @@
 // reviewers; no screen or rule reads it, and it was a third of the bank's bytes.
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
+import { packBankText } from '../../src/data/packed-bank.mjs';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = fileURLToPath(new URL('../../', import.meta.url));
@@ -23,7 +24,8 @@ export function shippedBankPack(pack) {
 export function packedQuestionBank(pack) {
   const keys = [], keyIds = new Map(), shapes = [], shapeIds = new Map(), ancestors = new Set();
   const encode = value => {
-    if (value === null || ['string', 'boolean'].includes(typeof value)) return value;
+    if (typeof value === 'string') return packBankText(value);
+    if (value === null || typeof value === 'boolean') return value;
     if (typeof value === 'number' && Number.isFinite(value)) return value;
     if (!value || typeof value !== 'object' || ancestors.has(value)
       || !Array.isArray(value) && ![Object.prototype, null].includes(Object.getPrototypeOf(value)))
@@ -44,7 +46,7 @@ export function packedQuestionBank(pack) {
     return encoded;
   };
   const data = encode(pack);
-  return { keys, shapes, data };
+  return { keys, shapes, data, textVersion: 1 };
 }
 
 export function bankPackagingPlugin() {

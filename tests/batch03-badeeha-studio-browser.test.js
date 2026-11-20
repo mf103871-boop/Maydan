@@ -57,8 +57,14 @@ f.reset=async options=>{const response=await fetch('/fixture/reset?id='+id,{meth
 const act=async(type,fields={})=>{const r=await fetch('/fixture/action?id='+id+'&role='+f.role,{method:'POST',body:JSON.stringify({type,...fields})});if(!r.ok)throw Error('Unexpected game rejection '+r.status);await f.reload();};f.act=act;f.data=data;
 React.useEffect(()=>{f.reload()},[]);return <PlatformContext.Provider value={{settings:{reducedMotion:true},sound:{play:noop,emit:noop,music:{scene:noop,releaseScene:noop}},haptics:{vibrate:noop}}}><BrandFonts/><PlusStyles/><style>{tokens+ui+brand+platformCSS+studioCSS+onlineCSS}</style><style>{'body{margin:0;background:#FFF8F0} .fixture-room{padding:20px;max-width:720px;margin:auto} .fixture-room-header{text-align:center;margin-bottom:16px;color:#352139}.fixture-room-header h1{font-size:28px;margin:0}.fixture-room-header p{font-size:14px;margin:4px 0}'}</style><main className="fixture-room online-screen" dir={locale==='ar'?'rtl':'ltr'}>{data&&<><RoomChrome state={data.state} code={data.state.code} status="connected" disabled={disabled} onExit={()=>{f.exited=true;}} onReconnect={()=>{f.reconnected=true;}}><BadeehaMatch {...data} disabled={disabled} act={act} clockOffset={0}/></RoomChrome></>}</main></PlatformContext.Provider>};createRoot(document.getElementById('root')).render(<App/>);`;
 const built=await build({stdin:{contents:source,resolveDir:process.cwd(),loader:'jsx'},bundle:true,write:false,format:'iife',jsx:'automatic',logLevel:'silent',loader:{'.css':'text','.webp':'dataurl','.woff2':'dataurl','.mp3':'dataurl'},define:{__MAYDAN_ROOMS_URL__:'"same-origin"',__MAYDAN_AUDIO_PREVIEW__:'false'}});
+let releaseAudioFailure;
+let pendingAudioFailure;
 const server=createServer(async(req,res)=>{try{
   const u=new URL(req.url,'http://localhost'),id=u.searchParams.get('id'),role=u.searchParams.get('role')||'host';
+  if(u.pathname.startsWith('/media/sound/') && u.pathname.endsWith('.mp3')){
+    await pendingAudioFailure;
+    res.writeHead(404,{'cache-control':'no-store','content-length':'0'});res.end();return;
+  }
   if(u.pathname==='/bundle.js'){res.writeHead(200,{'content-type':'text/javascript'});res.end(built.outputFiles[0].contents);return;}
   if(u.pathname.startsWith('/fixture/')){let raw='';for await(const c of req)raw+=c;const body=raw?JSON.parse(raw):{};
     if(u.pathname==='/fixture/reset')reset(id,body);
@@ -104,9 +110,19 @@ for(const[name,engine]of[['chromium',chromium],['webkit',webkit]])for(const loca
   for(const width of[360,390,430]){await page.setViewportSize({width,height:844});await inspect('over-'+width);if(width===390)await save('over');}
   const finished=await page.evaluate(()=>fixture.data.state);await asRole('guest');await page.locator('[data-design-id=restart]').waitFor({state:'detached'});await asRole('host');await page.locator('[data-design-id=restart]').click();await page.waitForFunction(()=>fixture.data.state.phase==='lobby');assert.deepEqual(await page.evaluate(()=>fixture.data.state.settings.deck),finished.settings.deck);assert.equal(await page.evaluate(()=>fixture.data.state.matchId),finished.matchId+1);
   for(const phase of['question','reveal','over']){await resetPage({phase});await page.locator('.bs-'+phase).waitFor();await page.setViewportSize({width:360,height:844});await page.evaluate(()=>document.documentElement.style.fontSize='200%');await inspect(phase+'-text200');await page.evaluate(()=>document.documentElement.style.fontSize='');}
-  await resetPage({type:'audio'});
+  // WebKit can postpone loading until a user gesture. Hold the missing file
+  // until Play is clicked, then return a genuine HTTP error to the audio element.
+  pendingAudioFailure=new Promise(resolve=>{releaseAudioFailure=resolve;});
+  try {
+    await resetPage({type:'audio'});
+    await page.locator('[data-design-id="audio-play"]').click();
+  } finally { releaseAudioFailure(); }
   const retry=page.locator('[data-design-id="media-retry"]');
-  await retry.waitFor(); // This fixture serves HTML rather than the requested audio.
+  await retry.waitFor();
+  const retryResponse=page.waitForResponse(r=>new URL(r.url()).pathname.startsWith('/media/sound/')&&r.request().resourceType()==='fetch');
+  await retry.click();
+  assert.equal((await retryResponse).status(),404);
+  await retry.waitFor();
   await page.waitForFunction(()=>getComputedStyle(document.querySelector('[data-design-id="media-retry"]')).backgroundColor==='rgb(8, 121, 109)');
   assert.equal(await retry.evaluate(button=>getComputedStyle(button).color),'rgb(255, 255, 255)');
   await resetPage({type:'hints'});await page.locator('[data-design-id=hint]').waitFor();await page.locator('[data-design-id=hint]').click();await page.waitForFunction(()=>fixture.data.state.hintsUsed===1);await inspect('hint-open');await asRole('guest');assert.equal(await page.locator('[data-design-id=hint]').count(),0);

@@ -30,6 +30,11 @@ for(const[name,engine]of[['chromium',chromium],['webkit',webkit]])test(`dense Ma
   await page.route('**/*',route=>{if(new URL(route.request().url()).origin===origin)return route.continue();external.push(route.request().url());return route.abort();});
   try{
     await page.goto(origin);await page.locator('[data-design-id="message-input"]').waitFor();
+    // Measure the settled layout; the approved page entrance briefly translates the entire chat.
+    await page.locator('.mafia-studio').evaluate(async root => {
+      await Promise.all(root.getAnimations().filter(animation => animation.animationName === 'mafia-studio-page')
+        .map(animation => animation.finished));
+    });
     for(const[width,height]of[[360,640],[390,844],[430,932],[844,390],[1024,768]]) {
       await page.setViewportSize({width,height});
       const geometry=await page.evaluate(()=>{

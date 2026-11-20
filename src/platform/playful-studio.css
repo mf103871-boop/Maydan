@@ -7,6 +7,20 @@
 .studio-local-language { display:grid; grid-template-columns:1fr minmax(120px,auto); align-items:center; gap:8px 16px; max-width:640px; width:calc(100% - 40px); margin:16px auto 0; padding:16px; border:1px solid var(--stroke); border-radius:20px; background:var(--surface); }
 .studio-local-language label { font-size:16px; font-weight:700; }
 .studio-local-language select { min-height:48px; border:1px solid var(--stroke-strong); border-radius:12px; background:var(--bg); padding:8px 12px; font:inherit; }
+/* A native macOS menu can cap the painted control at 32px despite min-height. */
+:root .studio-local-language select, :root select[data-design-id="report-category"] {
+  -webkit-appearance: none;
+  appearance: none;
+  min-height: 48px;
+  padding-inline-end: 32px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='m1 1 5 5 5-5' fill='none' stroke='%23352139' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+:root[dir="rtl"] .studio-local-language select, :root[dir="rtl"] select[data-design-id="report-category"] {
+  background-position: left 10px center;
+}
+.fab-setup button.chip[data-design-id="category-card"] { min-height: 50px; }
 .studio-local-language small { grid-column:1/-1; font-size:14px; color:var(--muted); }
 html[dir=ltr] [data-directional=back]:not(.home-game-arrow) { transform:rotate(180deg); }
 

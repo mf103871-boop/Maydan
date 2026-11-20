@@ -369,6 +369,7 @@ const conditionalNodeReasons = {
     "tilt-retry": "Auto-tilt mode shows the recovery button if the motion permission or sensor becomes unavailable."
   },
   "online.entry": {
+    "resume-room": "A saved room and its session token enable return from a normal entry without an invitation code or rewarded challenge.",
     "room-name": "The real room-name field is mounted only after public visibility is chosen; the default isolated create form starts with private visibility.",
     ...Object.fromEntries(['game-picker','game-choice.badeeha','game-choice.ersomha','game-choice.fabraka','game-choice.mafia','game-choice.meenfina','hero'].map(id => [id, 'Retired cross-game entry selector retained for saved-design compatibility; the selected game is now fixed by its route and the shared mode sheet, without placeholder controls.'])),
     "my-history":"Displayed only for a signed-in account while Mafia is the selected game; its data is account scoped.","entry-public":"Available only after selecting Mafia; opens the existing-room directory without creating a paid room.",
@@ -387,6 +388,7 @@ const conditionalNodeReasons = {
     "invite-share":"The actual room invitation opens in a dialog; the lobby keeps this legacy styling key for saved designs."
   },
   "online.chrome": {"observer-join":"Shown only for an authenticated delayed observer when the authoritative snapshot permits promotion to a waiting seat.",
+    "room-recovery": "A replaced, reconnecting or disconnected session outside the compact Mafia view exposes its recovery panel and reconnect action.",
     "dropped": reasonDropped,
     "member-remove": reasonDropped,
     "reconnect": reasonDropped
@@ -535,6 +537,7 @@ const conditionalNodeReasons = {
     "legal-pricing": "Web checkout alone shows its pricing policy link; the baseline fixture is iPhone."
   },
   "system.dialog": {
+    "invite-link-preview": "The invitation dialog displays the generated room URL and its code over the read-only input while that input is unfocused.",
     "save":"The local player editor exposes its save action after opening a specific player or starting a new roster entry.",
     "name-input":"The local player editor shows a name field only after opening its add or edit dialog.",
     "avatar-choice":"The local player editor provides optional avatar choices after its add or edit dialog opens.",

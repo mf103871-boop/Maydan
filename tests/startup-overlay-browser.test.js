@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtemp,mkdir,rm,writeFile} from 'node:fs/promises';
+import {mkdtemp,mkdir,rm,writeFile,readFile} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import net from 'node:net';
@@ -14,17 +14,69 @@ async function geometry(page){return page.evaluate(()=>{
  return {close:box('.startup-background-close'),status:box('.startup-background'),launcher:box('.lamma-launcher'),menu:box('.menu-navigation'),reserved:parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--startup-background-space'))||0};
 });}
 
-test('real app startup notice stays touchable above the launcher and menu without disrupting input', {timeout:150_000},async t=>{
+test('verified and legacy entry exercise recovery and the menu, game and input controls', {timeout:420_000},async t=>{
  const directory=await mkdtemp(path.join(os.tmpdir(),'maydan-startup-overlay-'));
  const output=path.resolve('.cache/startup-overlay-browser');await mkdir(output,{recursive:true});
- let app;
+ let app,interruptManifest=true,failures=0;
  t.after(async()=>{if(app)await app.close();assert.equal(path.dirname(path.resolve(directory)),path.resolve(os.tmpdir()));await rm(directory,{recursive:true,force:true});});
- app=await startUIReview({port:await freePort(),apiPort:await freePort(),watchSource:false,assetRoot:directory});
+ app=await startUIReview({port:await freePort(),apiPort:await freePort(),watchSource:false,assetRoot:directory,
+  requestHook:async({url,res})=>{
+   if(interruptManifest && /^\/game-pack\/[a-f0-9]{64}\.json$/.test(url.pathname)){
+    failures++;res.writeHead(503,{'cache-control':'no-store'});res.end('Temporary manifest outage');return true;
+   }
+   // The review dashboard normally unregisters its worker. This test serves the
+   // actual built worker so the verified product path can prepare offline files.
+   if(url.pathname==='/' && url.searchParams.get('legacy-document')==='1'){
+    // Compatibility fixture for documents shipped before the verified game pack.
+    const html=await readFile(path.join(directory,'index.html'),'utf8');
+    const old=html.replace(/<meta name="maydan-game-pack" content="[^"]+">/,'');
+    assert.notEqual(old,html);
+    res.writeHead(200,{'content-type':'text/html; charset=utf-8','cache-control':'no-store'});
+    res.end(old);return true;
+   }
+   if(url.pathname==='/sw.js'){
+    res.writeHead(200,{'content-type':'application/javascript','cache-control':'no-store','service-worker-allowed':'/'});
+    res.end(await readFile(path.join(directory,'sw.js')));return true;
+   }
+   return false;
+  }});
  app.backend.env.MAFIA_ENABLED='0';app.backend.env.TERMS_ENFORCEMENT_ENABLED='1';
  const origin=new URL(app.url).origin,report=[];
  for(const [engineName,engine]of Object.entries({chromium,webkit})){
   const browser=await engine.launch({headless:true});
-  try{for(const width of [360,393,430])await t.test(engineName+' '+width,async()=>{
+  try{for(const width of [360,393,430])await t.test('verified '+engineName+' '+width,async()=>{
+   const context=await browser.newContext({viewport:{width,height:852},isMobile:true,hasTouch:true,reducedMotion:'reduce',serviceWorkers:'allow'});
+   const page=await context.newPage(),errors=[];page.on('pageerror',error=>errors.push(error.message));page.setDefaultTimeout(25000);
+   try{
+    await context.addInitScript(()=>{
+      localStorage.setItem('maydan:platform:settings',JSON.stringify({uiLocale:'ar',soundOn:false,musicOn:false,reducedMotion:true}));
+    });
+    const previousFailures=failures;interruptManifest=true;
+    await page.goto(origin);
+    const retry=page.locator('#opening-retry');
+    await page.locator('#boot[data-phase="error"]').waitFor();
+    assert.ok(failures>previousFailures,'the real manifest fetch failed');
+    assert.ok(await retry.isVisible());
+    assert.equal(await page.locator('[data-design-screen="legal.consent"],[data-design-screen="home"]').count(),0);
+    interruptManifest=false;
+    await retry.tap();
+    await page.locator('[data-design-screen="legal.consent"]').waitFor({timeout:85000});
+    assert.equal(await page.locator('#opening-progress').getAttribute('aria-valuenow'),'100');
+    await acceptTermsIfShown(page,{locale:'ar'});
+    await page.locator('[data-design-screen="home"]').waitFor();
+    assert.equal(await page.locator('.startup-background').count(),0,'no legacy background load after verification');
+    await page.getByRole('navigation').last().getByText('الأصدقاء',{exact:true}).tap();await page.waitForURL(url => url.hash === '#/friends');
+    await page.goto(origin+'/#/play/badeeha');await page.locator('[data-design-screen="badeeha.setup"]').waitFor();
+    const field=page.locator('[data-design-screen="badeeha.setup"] input').first();await field.focus();
+    await field.fill('فريق اللمّة');assert.equal(await field.inputValue(),'فريق اللمّة');await field.press('Tab');await page.locator('[data-design-id="mode-choice"]').first().tap();
+    await page.locator('[data-design-screen="badeeha.setup"] [data-design-id="round-size"]').filter({hasText:/^(٢٠|20)$/}).tap();
+    for(let index=0;index<6;index++)await page.locator('[data-design-id="category-card"]').nth(index).tap();
+    await page.locator('[data-design-screen="badeeha.setup"] [data-design-id="start"]').tap();await page.locator('[data-design-screen="badeeha.board"]').waitFor();
+    await page.locator('.lamma-launcher').tap();await page.locator('.lamma-layer [role="dialog"]').waitFor();
+    assert.deepEqual(errors,[]);report.push({engine:engineName,width,mode:'verified',blockedBeforeConsent:true,restoredAfterRetry:true,launcherStillOpens:true,inputFilled:true,pageErrors:0});
+   }finally{await context.close();}
+  });
+  for(const width of [360,393,430])await t.test('legacy '+engineName+' '+width,async()=>{
    const context=await browser.newContext({viewport:{width,height:852},isMobile:true,hasTouch:true,reducedMotion:'reduce',serviceWorkers:'block'});
    const page=await context.newPage(),errors=[];page.on('pageerror',error=>errors.push(error.message));page.setDefaultTimeout(18000);
    try{
@@ -39,13 +91,13 @@ test('real app startup notice stays touchable above the launcher and menu withou
     });
     // Only the programmatic cache fetch fails. DOM image loads remain real.
     await context.route('**/*',route=>new URL(route.request().url()).origin===origin?route.continue():route.abort());
-    await page.goto(origin);await acceptTermsIfShown(page,{locale:'ar'});await page.locator('[data-design-screen="home"]').waitFor();
+    await page.goto(origin+'/?legacy-document=1');await acceptTermsIfShown(page,{locale:'ar'});await page.locator('[data-design-screen="home"]').waitFor();
     const close=page.locator('.startup-background-close');await close.waitFor();
     await page.waitForFunction(()=>document.querySelector('.startup-background')?.getBoundingClientRect().bottom<=document.querySelector('.menu-navigation')?.getBoundingClientRect().top-7);
     const menu=await geometry(page);assert.ok(menu.close.width>=48&&menu.close.height>=48&&menu.close.hit);assert.ok(menu.status.bottom<=menu.menu.top-7);
     await close.tap();await page.locator('.startup-background').waitFor({state:'detached'});
-    await page.getByRole('navigation').last().getByText('الأصدقاء',{exact:true}).tap();await page.waitForURL('**/#/friends');
-    await page.goto(origin+'/?overlay-game=1#/play/badeeha');await page.locator('[data-design-screen="badeeha.setup"]').waitFor();await close.waitFor();
+    await page.getByRole('navigation').last().getByText('الأصدقاء',{exact:true}).tap();await page.waitForURL(url => url.hash === '#/friends');
+    await page.goto(origin+'/?legacy-document=1&overlay-game=1#/play/badeeha');await page.locator('[data-design-screen="badeeha.setup"]').waitFor();await close.waitFor();
     const field=page.locator('[data-design-screen="badeeha.setup"] input').first();await field.focus();
     await page.waitForFunction(()=>getComputedStyle(document.querySelector('.startup-background')).visibility==='hidden'&&parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--startup-background-space'))===0);
     await field.fill('فريق اللمّة');await field.press('Tab');await page.locator('[data-design-id="mode-choice"]').first().tap();
@@ -57,9 +109,9 @@ test('real app startup notice stays touchable above the launcher and menu withou
     await page.screenshot({path:path.join(output,`${engineName}-${width}-before-close.png`)});
     await close.tap();await page.locator('.startup-background').waitFor({state:'detached'});
     await page.locator('.lamma-launcher').tap();await page.locator('.lamma-layer [role="dialog"]').waitFor();
-    assert.deepEqual(errors,[]);report.push({engine:engineName,width,menu,game,realTouchClose:true,launcherStillOpens:true,inputSuppression:true,pageErrors:0});
+    assert.deepEqual(errors,[]);report.push({engine:engineName,width,mode:'legacy',menu,game,realTouchClose:true,launcherStillOpens:true,inputSuppression:true,pageErrors:0});
    }finally{await context.close();}
   });}finally{await browser.close();}
  }
- await writeFile(path.join(output,'report.json'),JSON.stringify({passed:true,views:report,scope:'Actual application, real local account/Terms API and real Splash/SocialHost. Only startup cache transport fails. Input focus is tested, not a physical mobile keyboard.'},null,2)+'\n');
+ await writeFile(path.join(output,'report.json'),JSON.stringify({passed:true,views:report,scope:'Actual complete game pack, opening, worker, terms and local game. Only the initial manifest request fails. A separate old-document fixture retains actual Splash, keyboard focus, menu and launcher checks.'},null,2)+'\n');
 });
