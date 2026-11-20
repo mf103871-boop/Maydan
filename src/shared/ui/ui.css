@@ -151,6 +151,8 @@ body:has(.sheet:is([data-design-screen="account.redeem"], [data-design-screen="s
 .screen[data-dir="back"] { animation-name: screen-in-back; }
 @keyframes screen-in { from { opacity: 0; transform: translateX(calc(var(--flow, -1) * 14px)); } }
 @keyframes screen-in-back { from { opacity: 0; transform: translateX(calc(var(--flow, -1) * -12px)); } }
+:root[data-reduced-motion="true"] .screen { animation: none; }
+@media (prefers-reduced-motion: reduce) { :root .screen { animation: none; } }
 /* Short stagger; backwards fill releases transformed containing blocks. */
 .screen > * { animation: none; } /* Content appears immediately; timed/private stages opt in explicitly. */
 .screen > :nth-child(2) { --n: 1 } .screen > :nth-child(3) { --n: 2 } .screen > :nth-child(4) { --n: 3 } .screen > :nth-child(5) { --n: 4 } .screen > :nth-child(6) { --n: 5 } .screen > :nth-child(7) { --n: 6 } .screen > :nth-child(8) { --n: 7 }

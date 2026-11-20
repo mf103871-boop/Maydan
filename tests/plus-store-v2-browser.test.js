@@ -134,6 +134,7 @@ for (const [name,engine] of [['chromium',chromium],['webkit',webkit]]) test(`${n
   for(const preference of ['system','app']){
     await page.emulateMedia({reducedMotion:preference==='system'?'reduce':'no-preference'});
     await page.evaluate(value=>{document.documentElement.dataset.reducedMotion=String(value==='app');window.storeMotion=[];},preference);
+    assert.equal(await page.locator('.studio-store').evaluate(screen=>getComputedStyle(screen).animationName),'none','reduced motion disables the screen slide for '+preference);
     await select(preference==='system'?'sahra.frame':'artist.frame');
     assert.deepEqual(await central.locator('.studio-store-art,.studio-store-status').evaluateAll(elements=>elements.map(element=>({name:getComputedStyle(element).animationName,transform:getComputedStyle(element).transform}))),[{name:'none',transform:'none'},{name:'none',transform:'none'}]);
     assert.deepEqual(await page.evaluate(()=>window.storeMotion),[]);
