@@ -8,7 +8,7 @@
 .studio-local-language label { font-size:16px; font-weight:700; }
 .studio-local-language select { min-height:48px; border:1px solid var(--stroke-strong); border-radius:12px; background:var(--bg); padding:8px 12px; font:inherit; }
 /* A native macOS menu can cap the painted control at 32px despite min-height. */
-:root .studio-local-language select, :root select[data-design-id="report-category"] {
+:root :is(.studio-local-language, .fab-funny-choice) select, :root select[data-design-id="report-category"] {
   -webkit-appearance: none;
   appearance: none;
   min-height: 48px;
@@ -17,7 +17,7 @@
   background-repeat: no-repeat;
   background-position: right 10px center;
 }
-:root[dir="rtl"] .studio-local-language select, :root[dir="rtl"] select[data-design-id="report-category"] {
+:root[dir="rtl"] :is(.studio-local-language, .fab-funny-choice) select, :root[dir="rtl"] select[data-design-id="report-category"] {
   background-position: left 10px center;
 }
 .fab-setup button.chip[data-design-id="category-card"] { min-height: 50px; }

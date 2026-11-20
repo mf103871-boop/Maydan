@@ -82,7 +82,7 @@ concurrency:
 jobs:
   signed-build:
     runs-on: macos-15
-    timeout-minutes: 120
+    timeout-minutes: 60
     env:
       IOS_RELEASE_ENVIRONMENT: ${{ inputs.environment || 'production' }}
       IOS_VERSION: ${{ inputs.version }}
@@ -160,10 +160,15 @@ jobs:
               out.write('DEVELOPER_DIR=' + selected + '\n')
           print('Selected', selected)
           PY
-      - name: Test and prepare the current game
+      - name: Install browser test dependencies
         run: |
           npm ci --no-audit --no-fund
           npx playwright install chromium webkit
+      - name: Check native form controls, the drawing palette and the small-screen store
+        run: |
+          node --test --test-concurrency=2 tests/batch04-bluff-studio-browser.test.js tests/ersomha-palette-v2-browser.test.js tests/plus-store-v2-browser.test.js tests/ios-release-features.test.js
+      - name: Test and prepare the current game
+        run: |
           npm test
           python3 scripts/ios/verify_audio_policy.py
           python3 scripts/ios/verify_storage_migration.py
