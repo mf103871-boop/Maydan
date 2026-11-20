@@ -5,6 +5,20 @@ on:
 permissions:
   contents: read
 jobs:
+  preview-readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Read the isolated preview from the hosted runner
+        run: |
+          node --input-type=module <<'JS'
+          const origin = 'https://maydan-mafia-preview.mf103871.workers.dev';
+          for (const path of ['/health', '/api/cosmetics/catalog', '/api/billing/config', '/api/legal/status']) {
+            const response = await fetch(origin + path, {headers: {Origin:'maydan://app'}, signal: AbortSignal.timeout(18000)});
+            console.log(JSON.stringify({path, status:response.status, region:response.headers.get('cf-ray')?.split('-').pop()}));
+            if (!response.ok) process.exitCode = 1;
+          }
+          JS
   store:
     runs-on: macos-15
     timeout-minutes: 8
