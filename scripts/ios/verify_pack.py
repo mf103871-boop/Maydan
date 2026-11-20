@@ -9,7 +9,7 @@ import plistlib
 import re
 import zipfile
 
-PINS_SHA = "6e41655ae3fce725edfd6de7dfbbd009f8957ef4f5ff29792a0f38c857306e07"
+PINS_SHA = "dc40c52c7c38eddf3375879cef0b1e0f65b8883d8c297f334a481b74614f1d5c"
 ORIGIN = "https://maydan-mafia-preview.mf103871.workers.dev"
 def SHA(data):
     return hashlib.sha256(data).hexdigest()
@@ -86,6 +86,16 @@ def verify(args):
         match = re.search(r'<meta name="maydan-game-pack" content="\./(game-pack/([a-f0-9]{64})\.json)">', html)
         require(match, "Missing native target game pack")
         manifest_name, pack_id = match.groups()
+        if args.profile == "complete-preview":
+            # The source and pack IDs are injected after the reviewed application is built.
+            # Verify those two independently, then compare every other byte of the HTML/JS.
+            source_tags = re.findall(r'<meta name="maydan-source" content="([a-f0-9]{40})">', html)
+            require(source_tags == ([expected_source] if expected_source else []), "Wrong HTML source")
+            template = html.replace(match.group(0), "", 1)
+            if expected_source:
+                template = template.replace(f'<meta name="maydan-source" content="{expected_source}">', "", 1)
+            require(SHA(template.replace("\r\n", "\n").encode("utf8")) == reference["reviewedTemplate"],
+                    "Installed interface differs from the reviewed application")
         pack = json.loads(read(manifest_name))
         require(pack["id"] == pack_id and pack["schema"] == 2 and "transport" not in pack and
                 len(pack["files"]) == len({row["file"] for row in pack["files"]}) == pack["totalFiles"],
