@@ -128,7 +128,7 @@ function StoreAccount() {
         onClick={() => selected ? equip(selected) : save({frameId:null}, 'remove-frame')}>
         {selected ? selectionEquipped ? tr("مجهّز") : canUse(selected) ? tr("تجهيز") : tr("عرض بلس") : !preferred.frameId ? tr("مجهّز") : effective.frameId ? tr("إزالة الإطار") : tr("إزالة الإطار المحفوظ")}
       </Button>
-      <p className="studio-store-preview-note">{basePreview && preferred.frameId && !effective.frameId ? tr("يوجد إطار محفوظ يعود عند توفر استحقاقه. يمكنك إزالته.") : selectionEquipped ? tr("صورتك وبقية اختياراتك محفوظة كما هي.") : selected ? tr("المعاينة لا تغيّر مظهرك حتى تختار تجهيز.") : tr("المعاينة لا تغيّر مظهرك حتى تؤكد الاختيار.")}</p>
+      <p className="studio-store-preview-note">{basePreview && preferred.frameId && !effective.frameId ? tr("يوجد إطار محفوظ يعود عند توفر استحقاقه. يمكنك إزالته.") : selectionEquipped ? tr("صورتك وبقية اختياراتك محفوظة كما هي.") : selected && !canUse(selected) ? tr("يمكنك معاينة هذا المظهر دون تغيير اختياراتك.") : selected ? tr("المعاينة لا تغيّر مظهرك حتى تختار تجهيز.") : tr("المعاينة لا تغيّر مظهرك حتى تؤكد الاختيار.")}</p>
       <div ref={railRef} data-design-id="collections" className="studio-store-items" aria-label={tr("تصفح المظهر والإطارات")}>
         <button type="button" data-design-id="item-preview" className="studio-store-choice studio-store-base" aria-label={tr("معاينة بدون إطار")} aria-pressed={basePreview} onClick={() => select('base')}>
           <ProfileAvatar user={{...previewUser,cosmetics:{...effective,frameId:null}}} size={52}/><span>{tr("بدون إطار")}</span>

@@ -89,6 +89,7 @@ export const EN_PLATFORM = {
   "بدون إطار": "No frame",
   "إزالة الإطار": "Remove frame",
   "عرض بلس": "View Plus",
+  "يمكنك معاينة هذا المظهر دون تغيير اختياراتك.": "You can preview this look without changing your appearance.",
   "المعاينة لا تغيّر مظهرك حتى تختار تجهيز.": "Preview only. Choose Equip to save.",
   "معاينة بدون إطار": "Preview without a frame",
   "مقارنة المظهر": "Compare looks",

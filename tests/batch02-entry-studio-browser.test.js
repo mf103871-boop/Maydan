@@ -61,12 +61,14 @@ for(const[name,engine]of[['chromium',chromium],['webkit',webkit]])for(const loca
    const draw=cards.find(c=>c.game==='ersomha'), b=cards.find(c=>c.game==='badeeha'), mafia=cards.find(c=>c.game==='mafia');
    assert.ok(draw.width>b.width*1.8 && Math.abs(b.y-mafia.y)<1 && b.y>=draw.y+draw.height);
    assert.ok(locale==='ar'?b.x>mafia.x:b.x<mafia.x,'game cards follow logical direction');
+   const bell=cards.find(c=>c.game==='beep'), sign=cards.find(c=>c.game==='mamnoo');
+   assert.ok(Math.abs(bell.y-sign.y)<1 && bell.x<sign.x,'bell and prohibition sign match both visual references');
    const artwork = await page.locator('.home-game-row').evaluateAll(rows => rows.map(row => {
     const card=row.getBoundingClientRect(), copy=row.querySelector('.home-game-copy').getBoundingClientRect();
     const img=row.querySelector('img'), art=img.getBoundingClientRect();
     const start=getComputedStyle(row).direction==='rtl'?card.right-copy.right:copy.left-card.left;
     return {game:row.dataset.game, loaded:img.naturalWidth>0, start,
-     belowText:art.top>=copy.bottom-1, inside:art.left>=card.left-1 && art.right<=card.right+1 &&
+     belowText:art.top>=copy.bottom-1, aboveText:art.bottom<=copy.top+1, inside:art.left>=card.left-1 && art.right<=card.right+1 &&
       art.top>=card.top-1 && art.bottom<=card.bottom+1};
    }));
    for (const item of artwork) {
@@ -74,7 +76,8 @@ for(const[name,engine]of[['chromium',chromium],['webkit',webkit]])for(const loca
     if (item.game==='ersomha' || item.game==='meenfina') {
      assert.ok(item.start>=0 && item.start<=28,'banner copy aligned to the start: '+item.game);
     } else {
-     assert.ok(item.inside && item.belowText,'artwork fits below the title: '+item.game+' at '+width);
+     const artFirst=item.game==='beep' || item.game==='mamnoo';
+     assert.ok(item.inside && (artFirst?item.aboveText:item.belowText),'artwork fits on its intended side of the title: '+item.game+' at '+width);
     }
    }
   }

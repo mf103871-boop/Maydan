@@ -301,8 +301,8 @@ for (const uiLocale of ['ar', 'en']) test(`real host lobby controls remain hit-t
     await acceptTermsIfShown(page);
     await page.locator('[data-design-screen="online.mafia.lobby"]').waitFor();
     await page.waitForFunction(locale => document.documentElement.lang === locale, uiLocale);
-    assert.equal(await page.locator('.mafia-lobby-language strong[data-design-id="content-language"]').inputValue(), uiLocale);
-    assert.equal(await page.locator('.mafia-lobby-language strong[data-design-id="content-language"]').getAttribute('aria-label'), uiLocale === 'en' ? 'Match language' : 'لغة المباراة');
+    assert.equal(await page.locator('.mafia-lobby-language strong[data-design-id="content-language"]').getAttribute('lang'), uiLocale);
+    assert.equal(await page.locator('.mafia-lobby-language .online-field-label').innerText(), uiLocale === 'en' ? 'Match language' : 'لغة المباراة');
     await until(() => bots.every(client => client.state?.members.every(member => member.connected && member.ready)), 'layout host and bots ready');
     await page.waitForFunction(() => document.documentElement.hasAttribute('data-startup-background-visible'));
     for (const [width, height] of [[320,568],[390,844],[430,932],[844,390]]) { await page.setViewportSize({ width, height }); await page.evaluate(() => document.activeElement?.blur()); await controls('notice-visible', width, height); }
@@ -323,7 +323,7 @@ for (const uiLocale of ['ar', 'en']) test(`real host lobby controls remain hit-t
       await guest.waitForFunction(() => { document.querySelector('.splash .startup-download-actions button:last-child:not(:disabled)')?.click(); return !document.querySelector('.splash') && document.querySelector('[data-design-screen]'); }, null, { timeout: 30000 });
       await acceptTermsIfShown(guest);
       await guest.locator('[data-design-screen="online.mafia.lobby"]').waitFor();
-      assert.equal(await guest.locator('.mafia-lobby-language strong[data-design-id="content-language"]').count(), 0);
+      assert.equal(await guest.locator('.mafia-lobby-language select').count(), 0);
       assert.equal(await guest.locator('.mafia-lobby-language strong').getAttribute('lang'), uiLocale);
       assert.equal(await guest.locator('.mafia-lobby-language strong').innerText(), uiLocale === 'en' ? 'English' : 'العربية');
       for (const [width, height] of [[320,568],[844,390]]) { await guest.setViewportSize({ width, height }); await controls('guest-readonly', width, height, guest, false); }

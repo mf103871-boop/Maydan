@@ -97,7 +97,9 @@ export function Home() {
   const [searching, setSearching] = useState(false);
   const [query, setQuery] = useState('');
   const normalize = value => value.replace(/[\u064B-\u065F\u0670]/g, '').replace(/[أإآ]/g, 'ا').trim();
-  const order = ['ersomha', 'badeeha', 'mafia', 'beep', 'mamnoo', 'jabeen', 'fabraka', 'meenfina'];
+  // In both approved boards, the bell is on the left and the prohibition sign on the right.
+  const secondPair = locale === 'ar' ? ['mamnoo', 'beep'] : ['beep', 'mamnoo'];
+  const order = ['ersomha', 'badeeha', 'mafia', ...secondPair, 'jabeen', 'fabraka', 'meenfina'];
   const games = [...GAMES].sort((a,b) => order.indexOf(a.id) - order.indexOf(b.id)).filter(game => normalize(gameName(game, locale)).toLowerCase().includes(normalize(query).toLowerCase()) || normalize(game.name).includes(normalize(query)));
   const onlineFriends = account.ready && account.signedIn ? (social?.friends || []).filter(friend => friend.online).slice(0, 3) : [];
   const requestCount = account.ready && account.signedIn ? social?.incoming?.length || 0 : 0;

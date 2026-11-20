@@ -52,8 +52,9 @@
 .home-screen .home-game-row[data-game=ersomha] .name { font-size:2rem; }
 .home-screen .home-game-row[data-game=ersomha] .menu-game-art { position:absolute; inset-inline-end:8px; top:50%; width:calc(100% - 16px); max-width:360px; height:auto; aspect-ratio:1; transform:translateY(-50%); pointer-events:none; }
 html[dir=ltr] .home-screen .home-game-row[data-game=ersomha] .menu-game-art img { transform:scaleX(-1); }
-.home-screen .home-game-row[data-game=mafia],.home-screen .home-game-row[data-game=beep] { background:linear-gradient(145deg,#ffe2d8,#ffc7b7); }
-.home-screen .home-game-row[data-game=badeeha],.home-screen .home-game-row[data-game=mamnoo] { background:linear-gradient(145deg,#ffedca,#ffdda4); }
+.home-screen .home-game-row[data-game=mafia] { background:linear-gradient(145deg,#ffe2d8,#ffc7b7); }
+.home-screen .home-game-row[data-game=badeeha] { background:linear-gradient(145deg,#ffedca,#ffdda4); }
+.home-screen .home-game-row:is([data-game=beep],[data-game=mamnoo]) { flex-direction:column-reverse; padding-block:6px 14px; background:linear-gradient(145deg,#f2dff6,#e7ccf0); }
 .home-screen .home-game-row[data-game=jabeen] { background:#ebd7f1; }
 .home-screen .home-game-row[data-game=fabraka] { background:#fbd6d5; }
 .home-screen .home-game-row[data-game=meenfina] { min-height:136px; background:#d5efdf; }
