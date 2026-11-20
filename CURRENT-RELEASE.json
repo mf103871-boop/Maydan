@@ -1,53 +1,53 @@
 {
   "schemaVersion": 1,
-  "verifiedAt": "2026-11-20T01:41:21.637592+00:00",
+  "verifiedAt": "2026-11-20T04:24:42.156039+00:00",
   "repository": "https://github.com/mf103871-boop/Maydan",
   "developmentBranch": "main",
   "status": "internal-testflight-available",
   "packageVersion": "1.9.0",
   "ios": {
     "version": "1.9",
-    "build": "62",
+    "build": "63",
     "bundleId": "Maydan",
     "appId": "6808385717",
-    "buildId": "fcd5ae8d-6298-4c0b-844e-069f41aa29dd",
+    "buildId": "7d7ad4c0-401e-495d-a2f4-1b0f9dc8028f",
     "expired": false,
-    "expirationDate": "2027-02-17T17:38:12-08:00",
+    "expirationDate": "2027-02-17T20:20:42-08:00",
     "processingState": "VALID",
     "internalBuildState": "IN_BETA_TESTING",
     "internalGroupId": "0f254efa-38d9-406c-9ab0-1664b99f3213",
     "environment": "mafia-preview",
     "releaseProfile": "complete-preview",
-    "sourceCommit": "344d0d9ff3fc407cb0809deac6dadc90cdfa3152",
-    "sourceTree": "8a5fe0359d0918645b2e330202344619b3c88b17",
-    "sourceBranch": "codex/testflight-visual-v4-build62-r4",
-    "workflowRunId": 44648854561,
-    "workflowUrl": "https://github.com/mf103871-boop/Maydan/actions/runs/44648854561",
-    "ipaSHA256": "f6b833e6e832a93c23a085b6fd8f2c6293eb81cffe9d24d6f4032b190fea2659",
-    "ipaBytes": 234881988
+    "sourceCommit": "e08c30e39101ebdbd2a94879c9f70a6621a830a7",
+    "sourceTree": "5e03fb4e59b7d8cb59e06d54aca236df50a0ed49",
+    "sourceBranch": "codex/testflight-studio-feedback-v1",
+    "workflowRunId": 44669580975,
+    "workflowUrl": "https://github.com/mf103871-boop/Maydan/actions/runs/44669580975",
+    "ipaSHA256": "e8a33a3bbe1851a7a629a4381194e8b220957fe7fbdc3f075ed4aa626643076a",
+    "ipaBytes": 235479222
   },
   "links": {
     "startHere": "docs/releases/CURRENT.md",
-    "source": "https://github.com/mf103871-boop/Maydan/commit/344d0d9ff3fc407cb0809deac6dadc90cdfa3152",
+    "source": "https://github.com/mf103871-boop/Maydan/tree/e08c30e39101ebdbd2a94879c9f70a6621a830a7",
     "appStoreConnect": "https://appstoreconnect.apple.com/apps/6808385717/testflight",
     "currentMain": "https://github.com/mf103871-boop/Maydan/tree/main",
     "preview": "https://maydan-mafia-preview.mf103871.workers.dev/",
-    "previousHandoff": "https://github.com/mf103871-boop/Maydan/blob/344d0d9ff3fc407cb0809deac6dadc90cdfa3152/docs/releases/CURRENT.md",
-    "testflightBuild": "https://appstoreconnect.apple.com/apps/6808385717/testflight/ios/fcd5ae8d-6298-4c0b-844e-069f41aa29dd"
+    "previousHandoff": "https://github.com/mf103871-boop/Maydan/blob/e08c30e39101ebdbd2a94879c9f70a6621a830a7/docs/releases/CURRENT.md",
+    "testflightBuild": "https://appstoreconnect.apple.com/apps/6808385717/testflight/ios/7d7ad4c0-401e-495d-a2f4-1b0f9dc8028f"
   },
   "verification": {
     "signedPack": {
       "apiOrigin": "https://maydan-mafia-preview.mf103871.workers.dev",
       "appIdentityChecked": true,
-      "build": "62",
-      "installedFiles": 3832,
-      "installedInventory": "b46c391bd9c38540a1f6cacd58e3d0270b939f6379e00b3792908516a26dcbc7",
+      "build": "63",
+      "installedFiles": 3844,
+      "installedInventory": "ea958917212be14f9df0e55bcdc8c8419f679cd139341c0ff37e3ad3d4574f52",
       "mode": "artifact",
-      "nativeHTML": "3edf093d7957640b0a51cf648dac14d8d1b8b73347257fe592d4cff4b330c932",
+      "nativeHTML": "d2b65ce531f0b511c55dc3e22b18bea347b8f5d1d8c6280f6cb902988b455e01",
       "profile": "complete-preview",
-      "reviewHTML": "91c27891504ca6d9941909d2f6a7c787ee7b2a2527a4ef78dd9397aa2a716791",
-      "source": "344d0d9ff3fc407cb0809deac6dadc90cdfa3152",
-      "staticFiles": 3811,
+      "reviewHTML": "cbed21e2b4e9b0b520b92a90de6cee1fce16ae041564a8aad0ccec206d1fd791",
+      "source": "e08c30e39101ebdbd2a94879c9f70a6621a830a7",
+      "staticFiles": 3823,
       "staticLFVariants": 19,
       "version": "1.9",
       "warmthFiles": 14
@@ -59,13 +59,25 @@
       "/api/billing/config",
       "/api/content/capabilities"
     ],
+    "signedNodeTests": {
+      "total": 2935,
+      "passed": 2929,
+      "skipped": 6,
+      "failed": 0
+    },
+    "nativePythonTests": {
+      "total": 102,
+      "passed": 102,
+      "skipped": 0,
+      "failed": 0
+    },
     "nativeSimulator": {
-      "artifactId": 14591991618,
-      "githubDigest": "sha256:1003a92d8ef0f70198d8d9f15ad6c190683749a4d44fa164c76c50fe50c58f11",
-      "bytes": 16783869,
+      "artifactId": 14600668853,
+      "githubDigest": "sha256:469617c1834922a045573f12f9f56f9250a465a7bf32bf9958a306240627757d",
+      "bytes": 17003771,
       "kind": "release simulator",
       "fivePhasesPassed": true,
-      "sameExecutable": "7e9bc259b3210f95e506df3fa690a99f0482467b5b9bdcd3ca6d3d318f8c56b2",
+      "sameExecutable": "a72634d7e645279c6071c07b5406bd36a0991758c412268966a63f01ee597675",
       "phases": {
         "launch-smoke": {
           "launches": [
@@ -87,130 +99,50 @@
           "launches": [
             "required-update"
           ],
-          "passed": true
+          "passed": true,
+          "boundedRetries": 3
         },
         "audio-stream-smoke": {
           "launches": [
             "audio-stream"
           ],
-          "passed": true
+          "passed": true,
+          "mixerActive": true,
+          "lifecycleInjected": true,
+          "physicalDevice": false
         },
         "drawing-orientation-smoke": {
           "launches": [
             "drawing-orientation"
           ],
-          "passed": true
+          "passed": true,
+          "geometryMeasured": true,
+          "eligibilityInjected": true,
+          "physicalDevice": false
         }
       }
     },
-    "cipherSHA256": "e9e89a63df8397d186bc9c41639a8c1b808a1c6b2546051d60ef084a6929e4ca",
-    "cipherBytes": 234882172,
-    "artifacts": {
-      "Maydan-features-1.9-62": {
-        "id": 14590693423,
-        "digest": "sha256:29037d484e913040a4486993ed61a921decc310f60599d9cfaaf2047c5ab86af"
-      },
-      "Maydan-launch-1.9-62": {
-        "id": 14591991618,
-        "digest": "sha256:1003a92d8ef0f70198d8d9f15ad6c190683749a4d44fa164c76c50fe50c58f11"
-      },
-      "Maydan-visual-pack-1.9-62": {
-        "id": 14592136315,
-        "digest": "sha256:073b882eb5536cae8c3e333647342a1119dd35b655d16909c133a51a86690037"
-      },
-      "Maydan-iOS-1.9-62-encrypted": {
-        "id": 14591324659,
-        "digest": "sha256:0cc5f40dfba62c1ee3bf5dd14ec05f36589f06c32ecdd00d6b263d6b0e6ad3c5"
-      }
-    },
-    "localComparison": {
-      "matchesLocalInstalledInventory": true,
-      "matchesLocalNativeHtml": true,
-      "featureResourceDifferences": []
-    },
-    "compatibilityNotes": [
-      {
-        "text": "فُحصت الحزمة الموقّعة المسترجعة بصورة مستقلة. طابقت جميع ملفاتها الـ3,832 الحزمة المحلية ملفًا بملف.",
-        "evidenceSHA256": "4c262c2725f09afeb2af2b0e9a4851080c8dc63fb6469d345a12abe6ab7465b4"
-      },
-      {
-        "text": "تفعّل خادم المعاينة وحده على الإصدار b91ce249، بعلم اللافندر للغرف الجديدة، مع الحفاظ على الأصول الـ17 التي أُعيد فحصها.",
-        "evidenceSHA256": "f04f588c26c5dca26ce1d085d4b51094d08c81adeb340a9874026bc478c08bd3"
-      },
-      {
-        "text": "على بايتات خادم المعاينة المنشور قبِل الفحص المعرّفات البشرية الأربعة، ووافق لوحات ارسمها الجديدة والقديمة. جرى الفحص ببيانات معزولة.",
-        "evidenceSHA256": "9bcced8eac4c2a400967b4a10d68f24e79a37cd6fa79832abfa8c4db8c52526f"
-      },
-      {
-        "text": "اجتاز خادم المعاينة فحص الوصول من نقطة بيتسبرغ للكتالوج والفوترة وحالة الشروط.",
-        "evidenceSHA256": "48c5a89154613e5ce7aa5f7b9f118e29ee204045276fc0c262f2371d581716cc"
-      }
-    ],
-    "signedNodeTests": {
-      "total": 2929,
-      "passed": 2923,
-      "skipped": 6,
-      "failed": 0
-    },
-    "nativePythonTests": {
-      "total": 102,
-      "passed": 102
-    },
     "fullIPAReadback": {
-      "installedFiles": 3832,
+      "installedFiles": 3844,
       "differingFiles": 0,
       "hashVerified": true
     },
-    "regionalCheck": {
-      "lastObservedAt": "2026-11-20T01:43:03.393852+00:00",
-      "edge": "AMM",
-      "allThreePassed": false,
-      "paths": [
-        {
-          "path": "/api/cosmetics/catalog",
-          "status": 500
-        },
-        {
-          "path": "/api/billing/config",
-          "status": 500
-        },
-        {
-          "path": "/api/legal/status",
-          "status": 500
-        }
-      ],
-      "pittsburgh": [
-        {
-          "path": "/health",
-          "status": 200,
-          "region": "PIT"
-        },
-        {
-          "path": "/api/cosmetics/catalog",
-          "status": 200,
-          "region": "PIT"
-        },
-        {
-          "path": "/api/billing/config",
-          "status": 200,
-          "region": "PIT"
-        },
-        {
-          "path": "/api/legal/status",
-          "status": 200,
-          "region": "PIT"
-        }
-      ]
-    },
     "appleUploadDiagnostics": {
-      "errors": [],
       "warnings": [
         {
           "code": "90725",
           "description": "SDK version issue. This app was built with the iOS 26.2 SDK. Starting April 2027, iOS and iPadOS apps must be built with the iOS 27 SDK or later, included in Xcode 27 or later, in order to be uploaded to App Store Connect or submitted for distribution."
         }
-      ]
+      ],
+      "errors": []
     }
+  },
+  "preview": {
+    "url": "https://maydan-mafia-preview.mf103871.workers.dev/",
+    "apiOrigin": "https://maydan-mafia-preview.mf103871.workers.dev",
+    "workerVersion": "cf10f085-510a-4f64-8cf9-2611b531cee8",
+    "workerSHA256": "94ef4df9dc02ca3156002f555da167f9d4ed198f008f03399159ffffc205ac49",
+    "allAmmanPathsHealthyAtReleaseCheck": true
   },
   "handoff": {
     "temporaryAudioBuildSecretRemoved": true,
@@ -218,7 +150,9 @@
     "scope": "Internal TestFlight with the existing preview API",
     "productionDeploymentPerformed": false,
     "publicReviewSubmitted": false,
-    "serverPromotion": "maydan-mafia-preview only"
+    "serverPromotion": "maydan-mafia-preview only",
+    "mergeCommit": "13e90086cfd2c3661aa068329c7b7b42e65ff294",
+    "mergeTreeMatchesSignedSource": true
   },
   "remainingAcceptance": [
     "Physical iPhone and Android input, keyboard, microphone, calls, cross-platform networking, thermal and battery acceptance.",
@@ -230,21 +164,5 @@
   "verificationLimits": [
     "A physical iPhone, real in-app purchase and real multiplayer session have separate acceptance checks.",
     "The simulator orientation scenario rotates the wrapper using injected drawing eligibility."
-  ],
-  "preview": {
-    "url": "https://maydan-mafia-preview.mf103871.workers.dev/",
-    "apiOrigin": "https://maydan-mafia-preview.mf103871.workers.dev",
-    "workerVersion": "b91ce249-23b0-4d08-9eab-f55d52da00b0",
-    "workerSHA256": "57361ffb8508a9e1416c0d0ebbc8553b1c1780a757078d8cc5c290b0de0bbfe1",
-    "paletteVersion2Enabled": true,
-    "compatibleLegacyDrawings": true,
-    "humanAvatarIds": [
-      "human-01",
-      "human-02",
-      "human-03",
-      "human-04"
-    ],
-    "hostedStaticSampleCount": 17,
-    "hostedWebAssetsReplaced": false
-  }
+  ]
 }
