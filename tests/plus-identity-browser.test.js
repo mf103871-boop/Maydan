@@ -10,6 +10,7 @@ import { build } from 'esbuild';
 import { chromium, webkit } from 'playwright';
 import sharp from 'sharp';
 import { getCosmetic } from '../src/plus/catalog.js';
+import { AVATAR_PRESETS } from '../src/profiles/catalog.js';
 
 const root = process.cwd();
 const output = path.join(root, '.cache/plus-identity-browser');
@@ -18,7 +19,14 @@ const source = `import React,{useState}from'react';import{createRoot}from'react-
 import{ProfileAvatar}from'./src/profiles/ProfileAvatar.jsx';import{PlayerName}from'./src/profiles/PlayerIdentity.jsx';import identity from'./src/profiles/identity.css';
 const initial={id:'member',name:'أحمد',theme:'teal',avatarUrl:'/api/profiles/member/images/avatar/'+'a'.repeat(64),cosmetics:{frameId:'sahra.frame',nameColorId:'noir.nameColor',coverId:'artist.cover',badge:false}};
 function Harness(){const[user,setUser]=useState(initial),[room,setRoom]=useState({code:'123456',game:'mafia',phase:'lobby',members:[{id:'host',name:'المضيف',profile:initial}]}),[status,setStatus]=useState('connected');window.identityTest={user:patch=>setUser(u=>({...u,...patch,cosmetics:{...u.cosmetics,...patch.cosmetics}})),join:(id)=>setRoom(r=>({...r,members:[...r.members,{id,name:'ضيف '+id,profile:{...initial,name:'ضيف '+id,cosmetics:{...initial.cosmetics,entranceId:'sahra.entrance'}}}]})),phase:phase=>setRoom(r=>({...r,phase})),status:setStatus,roomCode:code=>setRoom(r=>({...r,code}))};return <><style>{identity}</style><style>{'body{margin:0;padding:25px;background:#fff6e5;color:#30203f;font-family:Arial}*{box-sizing:border-box}.cases{display:flex;align-items:center;gap:34px;flex-wrap:wrap;padding:24px}.status-wrap{position:relative;display:inline-flex}.fixture-status{position:absolute;right:-3px;bottom:-3px;width:9px;height:9px;border:2px solid white;border-radius:50%;background:rgb(0,140,90);z-index:4}.room{position:relative;min-height:180px;border:1px solid #ccc;margin-top:30px}.spacer{height:1200px}.offscreen{padding:30px}.long{max-width:100%;margin-top:20px}'}</style><h1>اختبار هوية محلي</h1><div className='cases'>{[24,40,100].map(size=><span className='status-wrap' data-case={size} key={size}><ProfileAvatar user={user} size={size}/><i className='fixture-status'/></span>)}</div><div id='name'><PlayerName user={user} card/></div><div className='long'><PlayerName user={{...user,name:'اسم طويل جدًا للاعب الميدان من دون قص معلومة مهمة'}} card/></div><div className='spacer'/><div className='offscreen'><ProfileAvatar user={user} size={40}/></div></>};createRoot(document.getElementById('root')).render(<React.StrictMode><Harness/></React.StrictMode>);`;
-const built = await build({ stdin: { contents: source, resolveDir: root, loader: 'jsx' }, bundle: true, write: false, format: 'iife', jsx: 'automatic', loader: { '.css': 'text' }, define: { __MAYDAN_ROOMS_URL__: JSON.stringify('same-origin'), 'process.env.NODE_ENV': JSON.stringify('production') }, logLevel: 'silent' });
+const studioNoir = '/fixture-assets/noir.webp';
+const serveNoir = { name: 'serve-studio-noir', setup(builder) {
+  builder.onLoad({filter:/[\\/]playful-cosmetics[\\/]noir\.webp$/}, () => ({
+    contents: 'export default ' + JSON.stringify(studioNoir), loader:'js',
+  }));
+} };
+const built = await build({ plugins:[serveNoir], stdin: { contents: source, resolveDir: root, loader: 'jsx' }, bundle: true, write: false, format: 'iife', jsx: 'automatic', loader: { '.css': 'text', '.webp': 'dataurl' }, define: { __MAYDAN_ROOMS_URL__: JSON.stringify('same-origin'), 'process.env.NODE_ENV': JSON.stringify('production') }, logLevel: 'silent' });
+const approvedFrameData = 'data:image/webp;base64,' + (await readFile(path.join(root, 'src/shared/brand/assets/playful-cosmetics/sahra.webp'))).toString('base64');
 const testImage = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="#06768b"/><circle cx="50" cy="40" r="22" fill="#fff6e5"/><path d="M12 100a38 38 0 0 1 76 0" fill="#fff6e5"/></svg>');
 const testFrame = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx="50" cy="50" r="39" fill="none" stroke="#ffbf36" stroke-width="12"/><path d="M50 0 58 12 50 20 42 12Z" fill="#06768b"/></svg>');
 
@@ -28,6 +36,7 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
     const url = new URL(req.url, 'http://local');
     if (broken.has(url.pathname)) { res.writeHead(404, { 'cache-control': 'no-store' }); res.end(); return; }
     if (url.pathname === '/bundle.js') { res.setHeader('content-type', 'text/javascript'); res.end(built.outputFiles[0].contents); return; }
+    if (url.pathname === studioNoir) { res.setHeader('content-type', 'image/webp'); res.end(await readFile(path.join(root,'src/shared/brand/assets/playful-cosmetics/noir.webp'))); return; }
     if (url.pathname.startsWith('/assets/plus/')) {
       const target = path.resolve(root, 'public', '.' + url.pathname);
       assert.ok(target.startsWith(path.resolve(root, 'public/assets/plus') + path.sep));
@@ -66,7 +75,7 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
         return { slot: element.getBoundingClientRect().width, portrait: portrait.getBoundingClientRect().width, frame: frame.getBoundingClientRect().width, overflow: getComputedStyle(element).overflow, crop: getComputedStyle(portrait).overflow, pointer: getComputedStyle(frame).pointerEvents, detail: element.dataset.frameDetail, url: portrait.querySelector('img').src, ring: new URL(frame.querySelector('img').src).pathname, status: getComputedStyle(element.parentElement.querySelector('.fixture-status')).backgroundColor };
       });
       assert.equal(value.slot, size); assert.equal(value.detail, detail); assert.ok(value.frame > size); assert.ok(value.portrait < size); assert.equal(value.overflow, 'visible'); assert.equal(value.crop, 'hidden'); assert.equal(value.pointer, 'none'); assert.match(value.url, /\/api\/profiles\/member\/images\/avatar\//); assert.equal(value.status, 'rgb(0, 140, 90)');
-      assert.equal(value.ring, getCosmetic('sahra.frame').frameAssets[detail]);
+      assert.equal(value.ring, new URL(approvedFrameData).pathname, 'the shared avatar uses the approved B frame bytes at every supported size');
     }
     observations.checks.push('24/40/100 LOD, outer art separate from inner crop, uploaded avatar preserved, status indicator untouched.');
     stage = 'membership-and-name';
@@ -134,8 +143,8 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
     // Start the unavailable-art scenario without any previously successful
     // decoded/in-flight artist image. Toggling a server to404 does not evict a
     // resource already held by the first browser context.
-    const artistFrame = getCosmetic('artist.frame');
-    for (const pathname of Object.values(artistFrame.frameAssets)) broken.add(pathname);
+    const fallbackFrame = getCosmetic('noir.frame');
+    for (const pathname of [studioNoir, ...Object.values(fallbackFrame.frameAssets)]) broken.add(pathname);
     stage = 'v2-frame-fallback';
     const legacyContext = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'no-preference' });
     const legacyPage = await legacyContext.newPage();
@@ -143,12 +152,12 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
     await attach(legacyPage, 'legacy-frame-fallback');
     await legacyPage.goto(origin);
     await legacyPage.locator('[data-case="100"] .player-avatar-frame img').waitFor();
-    await legacyPage.evaluate(() => window.identityTest.user({ cosmetics: { frameId: 'artist.frame' } }));
+    await legacyPage.evaluate(() => window.identityTest.user({ cosmetics: { frameId: 'noir.frame' } }));
     await legacyPage.waitForFunction(expected => [...document.querySelectorAll('.cases .player-avatar-frame img')].every(image =>
-      Object.values(expected).includes(new URL(image.src).pathname) && image.complete && image.naturalWidth > 0), artistFrame.fallbackFrameAssets);
+      Object.values(expected).includes(new URL(image.src).pathname) && image.complete && image.naturalWidth > 0), fallbackFrame.fallbackFrameAssets);
     await legacyContext.close();
     observations.checks.push('Unavailable v3 artwork uses the corresponding existing v2 size.');
-    const failedPaths = [...Object.values(artistFrame.frameAssets), ...Object.values(artistFrame.fallbackFrameAssets),
+    const failedPaths = [studioNoir, ...Object.values(fallbackFrame.frameAssets), ...Object.values(fallbackFrame.fallbackFrameAssets),
       '/assets/plus/v2/artist-avatar.webp', '/assets/plus/v1/artist.webp'];
     for (const pathname of failedPaths) broken.add(pathname);
     stage = 'fresh-failure-context';
@@ -163,7 +172,7 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
     const failedResponses = failedPaths.map(pathname => failurePage.waitForResponse(response => new URL(response.url()).pathname === pathname && response.status() === 404, { timeout: 30000 }));
     await Promise.all([
       ...failedResponses,
-      failurePage.evaluate(() => window.identityTest.user({ cosmetics: { avatarId: 'artist.avatar', frameId: 'artist.frame' } })),
+      failurePage.evaluate(() => window.identityTest.user({ cosmetics: { avatarId: 'artist.avatar', frameId: 'noir.frame' } })),
     ]);
     stage = 'uploaded-portrait-and-css-frame-fallback';
     await failurePage.waitForFunction(() => {
@@ -174,6 +183,23 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
     });
     observations.failedArtworkResponses = failedPaths.map(path => ({ path, status: 404 }));
     observations.checks.push('Fresh context received every intended 404; portraits return to the uploaded image and all three frames render CSS fallback without broken img elements.');
+    stage = 'approved-preset-family-and-photo-priority';
+    await page.evaluate(() => window.identityTest.user({ avatarPreset: 'human-01', cosmetics: { avatarId: null, frameId: 'sahra.frame' } }));
+    await page.waitForFunction(() => document.querySelector('[data-case="100"] .player-avatar-portrait img')?.src.includes('/api/profiles/member/'));
+    assert.match(await page.locator('[data-case="100"] .player-avatar-portrait img').getAttribute('src'), /\/api\/profiles\/member\//, 'a catalog addition never displaces an existing uploaded photo');
+    for (const { id } of AVATAR_PRESETS) {
+      await page.evaluate(avatarPreset => window.identityTest.user({ avatarUrl: null, avatarPreset }), id);
+      const expectedSmall = 'data:image/webp;base64,' + (await readFile(path.join(root, `src/shared/brand/assets/playful-identity/avatar-${id}-128.webp`))).toString('base64');
+      await page.waitForFunction(expected => document.querySelector('[data-case="24"] .player-avatar-portrait img')?.src === expected && [...document.querySelectorAll('.cases .player-avatar-portrait img')].every(image => image.complete && image.naturalWidth > 0), expectedSmall);
+      for (const [size, resolution] of [[24, 128], [40, 128], [100, 256]]) {
+        const artwork = await page.locator(`[data-case="${size}"] .player-avatar-portrait img`).evaluate(image => ({ src: image.src, width: image.naturalWidth, fit: getComputedStyle(image).objectFit, crop: getComputedStyle(image.parentElement).borderRadius }));
+        const bytes = await readFile(path.join(root, `src/shared/brand/assets/playful-identity/avatar-${id}-${resolution}.webp`));
+        assert.equal(artwork.src, 'data:image/webp;base64,' + bytes.toString('base64'), id + ' must keep its own approved artwork');
+        assert.equal(artwork.width, resolution); assert.equal(artwork.fit, 'contain'); assert.equal(artwork.crop, '50%');
+      }
+      await page.screenshot({ path: path.join(output, `${name}-preset-${id}.png`) });
+    }
+    observations.checks.push('All eight preserved IDs and four explicitly chosen humans load their own real B artwork at 128/256 LOD with a circular crop; an uploaded photo still takes precedence.');
     for (const [context, checkedPage] of [['successful-artwork', page], ['unavailable-artwork', failurePage]]) {
       activePage = checkedPage;
       for (const [width, height] of [[320, 844], [390, 844], [844, 390]]) {

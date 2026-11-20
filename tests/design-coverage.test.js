@@ -16,8 +16,19 @@ test('coverage inventory preserves every node and exact conditional explanation 
   // A deliberate coverage/content change must update this semantic baseline;
   // whitespace, constant names and sharing structure do not affect it.
   const semantics = JSON.stringify({ DESIGN_CONDITIONAL_NODE_REASONS, DESIGN_RENDERED_NODE_IDS });
-  // Direction B plus the server-granted, owner-only Creator management action.
-  assert.equal(createHash('sha256').update(semantics).digest('hex'), 'c076fa64db44fa8710bee389d02f95ef25a2bcd726ec516df076719183952422');
+  assert.equal(DESIGN_RENDERED_NODE_IDS.settings.includes('plus-store'), false);
+  assert.equal(getNodeDefinition('online.mafia.lobby','content-language')?.kind, 'text');
+  assert.equal(createHash('sha256').update(semantics).digest('hex'), '115ccd8b2f93f9af2a06f08fb5c699ce2df3fb8c1e04b36438aef3245cc1f600');
+});
+
+test('room return, recovery and the visible invite URL retain their conditional semantics', () => {
+  for (const [screen, id] of [['online.entry','resume-room'], ['online.chrome','room-recovery'], ['system.dialog','invite-link-preview']]) {
+    const node = getNodeDefinition(screen, id);
+    assert.equal(node.required, true, id);
+    assert.equal(node.editableText, false, id);
+    assert.ok(node.coverageReason, id);
+    assert.ok(!DESIGN_RENDERED_NODE_IDS[screen].includes(id), id);
+  }
 });
 
 test('semantic scene registry has stable unique identities and the eight actual games', () => {
@@ -192,7 +203,7 @@ test('actual online match components render host/guesser/result phases with corr
 });
 
 test('room chrome and team/player setup previews reuse production components with a semantic root', () => {
-  for (const id of ['online.chrome','online.lobby','play-setup','play-setup.teams','setup.pass-phone']) {
+  for (const id of ['game.entry','online.chrome','online.lobby','play-setup','play-setup.teams','setup.pass-phone']) {
     const html = renderer.renderScene(id);
     assert.match(html, new RegExp(`data-design-screen="${id.replaceAll('.', '\\.')}"`));
     assert.ok(html.includes('data-design-id='), id);

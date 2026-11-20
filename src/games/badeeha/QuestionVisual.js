@@ -8,6 +8,7 @@ import { HINT_COST_PERCENT } from "./logic.js";
 import { TYPE_PROMPT } from "./constants.js";
 import { Flag } from "./Flag.js";
 import { MediaBox, MediaImage, MediaAudio, FourPics, MediaVideo } from "./media.js";
+import { IconVolume, IconVolumeOff } from "../../shared/ui/icons.jsx";
 const hBeta = React.createElement;
 // مقارنة الإجابات بالموحّد نفسه الذي يستعمله bank:validate، فما يقبله المدقّق خيارًا صحيحًا تُبرزه الشاشة حتمًا.
 const arabicKey = arabicNormalize;
@@ -297,7 +298,7 @@ export function QuestionVisual({ question, packId = null, revealed = false, hint
                 disabled: !soundOn || !onPlaySound,
                 "aria-label": tr("تشغيل صوت السؤال"),
               },
-              hBeta("span", { "aria-hidden": "true" }, soundOn ? "🔊" : "🔇"),
+              hBeta(soundOn ? IconVolume : IconVolumeOff),
               hBeta("b", null, soundOn ? tr("شغّل الصوت") : tr("الصوت مكتوم")),
             )
           : hBeta("p", { className: "m-question-text" }, question.q);

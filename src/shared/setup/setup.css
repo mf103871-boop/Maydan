@@ -3,7 +3,7 @@
 .chip .avatar { width: 32px; height: 32px; flex: 0 0 auto; }
 .chip.selected { background: var(--top-light, linear-gradient(180deg, rgba(255,255,255,.62), rgba(255,255,255,0) 46%)), color-mix(in srgb, var(--chip-color) 22%, var(--surface)); border-color: var(--chip-color); animation: ui-pop-select .28s var(--ease-spring); }
 .chip.selected .order { position: absolute; top: -2px; inset-inline-start: -2px; width: 20px; height: 20px; border-radius: 50%; background: var(--chip-color); color: #0B0E1A; font-size: 12px; display: grid; place-items: center; font-weight: 900; animation: ui-pop-in .3s var(--ease-spring) both; }
-.chip:active { transform: translateY(2px); box-shadow: inset 0 1px 0 #fff, 0 0 0 var(--clay-ledge-soft, #E3D3BE); }
+.chip:active { transform: var(--interaction-transform, translateY(2px)); box-shadow: inset 0 1px 0 #fff, 0 0 0 var(--clay-ledge-soft, #E3D3BE); }
 .chip-add { border-style: dashed; color: var(--muted); }
 .emoji-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
 .emoji-grid button { min-height: 46px; font-size: 24px; border-radius: 12px; background: var(--surface); border: 1px solid transparent; }
@@ -60,3 +60,70 @@
   .pass-panel .pass-avatar { display: none; }
   .pass-panel .btn { grid-column: 1 / -1; }
 }
+
+.modal-layer.is-docked .player-editor-sheet {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px 20px max(20px, var(--safe-bottom));
+  min-height: min(53dvh, var(--dialog-viewport-height, 100dvh) - 14px);
+  max-height: calc(100% - 8px);
+  border-radius: 28px 28px 0 0;
+  background: #fff8f0;
+  color: #352139;
+}
+.modal-layer.is-docked .player-editor-sheet::before { display: none; }
+.modal-layer.is-docked .player-editor-sheet .modal-head { flex: none; min-height: 48px; margin: 0; }
+.player-editor-sheet .modal-head h2 { font-size: 1.55rem; overflow-wrap: anywhere; }
+.modal-layer.is-docked .player-editor-sheet .modal-head > button {
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.modal-layer.is-docked .player-editor-sheet .modal-body {
+  flex: 1 0 auto;
+  align-content: start;
+  gap: 18px;
+  text-align: start;
+}
+.player-editor-sheet .field > span { color: #352139; font-size: 1rem; font-weight: 800; }
+.player-editor-sheet .input { min-height: 52px; font-size: 1.1rem; border: 1px solid #d6bfca; border-radius: 17px; background: #fffdf9; }
+.player-editor-sheet .avatar-picker { gap: 6px; }
+.player-editor-sheet .avatar-choice {
+  aspect-ratio: 1;
+  min-height: 48px;
+  padding: 2px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  background: radial-gradient(circle at center, var(--portrait-bg) 64%, transparent 66%);
+  box-shadow: none;
+}
+.player-editor-sheet .avatar-choice:nth-child(4n+1) { --portrait-bg: #d9f1e8; }
+.player-editor-sheet .avatar-choice:nth-child(4n+2) { --portrait-bg: #f0dff4; }
+.player-editor-sheet .avatar-choice:nth-child(4n+3) { --portrait-bg: #f7e5ee; }
+.player-editor-sheet .avatar-choice:nth-child(4n) { --portrait-bg: #fff0cd; }
+.player-editor-sheet .avatar-picker .avatar-choice { opacity: 1; }
+.player-editor-sheet .avatar-choice.selected { border-color: #08796d; }
+.player-editor-sheet .avatar-choice.selected::after {
+  content: "✓";
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  font: 800 14px/1 system-ui, sans-serif;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: #08796d;
+  color: white;
+}
+.player-editor-sheet .modal-foot { flex: none; margin: 0; }
+.player-editor-sheet .modal-foot .btn { min-height: 52px; border-radius: 28px; }
+.player-editor-sheet .modal-foot [data-design-id="add-player"],
+.player-editor-sheet .modal-foot [data-design-id="save"] { color: white; background: #08796d; }

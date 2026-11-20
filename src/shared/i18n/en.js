@@ -41,6 +41,7 @@ export const EN = {
   'معاينة الإطار': 'Frame preview', 'مملوك': 'Owned', 'مجهّز': 'Equipped', 'مجهز': 'Equipped', 'تجهيز': 'Equip', 'متاح': 'Available',
   'الإنجازات': 'Achievements', 'الإحصاءات': 'Statistics', 'إحصاءات اللعب': 'Play statistics', 'الشارات': 'Badges',
   'المستوى': 'Level', 'الخبرة': 'XP', 'إتقان الألعاب': 'Game mastery', 'شارات بارزة': 'Featured badges',
+  'تستخدم المباريات الجديدة هذه اللغة عند توفرها. وتحتفظ الغرف والمباريات المحفوظة بلغتها.': 'New matches use this language when available. Existing rooms and saved matches keep their language.',
   'اللغة': 'Language', 'لغة الواجهة': 'Interface language', 'لغة محتوى المباراة': 'Match language',
   'العربية': 'العربية', 'الإنجليزية': 'English', 'لغة القوائم مستقلة عن لغة المباراة.': 'Your menus can use a different language from your match.',
   'الصوت والاهتزاز': 'Sound & haptics', 'العرض والراحة': 'Display & accessibility', 'الحساب والخصوصية': 'Account & privacy', 'المساعدة': 'Help',

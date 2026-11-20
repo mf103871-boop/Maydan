@@ -162,6 +162,9 @@ html[dir=ltr] [data-directional=back]:not(.home-game-arrow) { transform:rotate(1
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
+/* Controls opt in on their pressed/hovered transforms. Layout transforms such
+   as positioning a floating call or indicating a checked switch stay intact. */
+[data-reduced-motion="true"] { --interaction-transform: none; --switch-press-scale: 1; }
 [data-reduced-motion="true"] *, [data-reduced-motion="true"] *::before, [data-reduced-motion="true"] *::after {
   animation-duration: 0.01ms !important;
   animation-iteration-count: 1 !important;
@@ -171,6 +174,7 @@ html[dir=ltr] [data-directional=back]:not(.home-game-arrow) { transform:rotate(1
   scroll-behavior: auto !important;
 }
 @media (prefers-reduced-motion: reduce) {
+  :root { --interaction-transform: none; --switch-press-scale: 1; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

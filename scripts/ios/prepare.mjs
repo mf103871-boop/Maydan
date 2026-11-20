@@ -2,6 +2,7 @@ import { appendFile, cp, mkdir, readdir, readFile, rm, writeFile } from 'node:fs
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import sharp from 'sharp';
+import { writeInstalledPack } from '../native/installed-pack.mjs';
 import { migrateHtml, nativeConfig } from './native.mjs';
 import { resolveNativeBuildOrigin } from './release-environment.mjs';
 import { resolveRewardedBuild } from './rewarded-config.mjs';
@@ -17,7 +18,7 @@ process.env.MAYDAN_ROOMS_URL = apiOrigin;
 const { buildOnce, esbuildOptions, ROOT, DIST } = await import('../lib.mjs');
 
 // Build from this checkout on every invocation; never ship a stale copied bank.
-const build = await buildOnce({ minify: true, includeStudio: false, version: process.env.IOS_VERSION, rewardedPreview: Boolean(rewarded) });
+const build = await buildOnce({ minify: true, includeStudio: false, includePackTransport: false, version: process.env.IOS_VERSION, rewardedPreview: Boolean(rewarded) });
 const defines = esbuildOptions({ rewardedPreview: Boolean(rewarded) }).define;
 const projectDir = rewarded ? await generateSignedRewardedProject(process.env) : path.join(ROOT, 'ios');
 const destination = path.join(projectDir, 'Maydan/www');
@@ -48,6 +49,7 @@ if (rewarded) config.rewarded = { mode: rewarded.mode, appId: rewarded.appId, ad
 await writeFile(path.join(destination, 'native-config.json'), `${JSON.stringify(config, null, 2)}\n`, 'utf8');
 await writeFile(path.join(destination, 'migrate.html'), migrateHtml(), 'utf8');
 const features = await writePreparedFeatures({ projectDir, destination, build, defines });
+await writeInstalledPack(destination, { ios: true });
 console.log(`Prepared release feature receipt SHA-256 ${features.sha256}; ${features.evidence}`);
 // Derive Xcode's required slots from the approved release artwork.
 const iconDirectory = path.join(projectDir, 'Maydan/Assets.xcassets/AppIcon.appiconset');

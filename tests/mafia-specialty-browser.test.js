@@ -52,7 +52,7 @@ test('Chromium/WebKit: six real specialty lessons, wrong choices/retry, RTL, pri
       const button=id=>page.locator('[data-design-id="'+id+'"]').filter({visible:true}).first();
       const expectStep=expected=>page.waitForFunction(step=>document.querySelector('[data-lesson-step]')?.getAttribute('data-lesson-step')===step,expected,{timeout:7000});
       const next=async step=>{await button('tutorial-continue').click();await expectStep(step);};
-      const target=async id=>{await page.locator('[data-design-id="player-seat"][data-player-id="'+id+'"]').click();await button('ability-submit').click();};
+      const target=async id=>{await page.locator(`:is([data-design-id="player-seat"]:enabled,[data-design-id="target"]:enabled)[data-player-id="${id}"]`).click();await button('ability-submit').click();};
       const by=(course,role)=>labActors(course).find(actor=>actor.roleId===role).id;
       const retry=async step=>{await button('tutorial-retry').click();await expectStep(step);};
       const ability=async()=>{if(await button('night-ability-tab').count())await button('night-ability-tab').click();};

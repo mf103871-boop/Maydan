@@ -20,12 +20,12 @@ function Preferences({data,busy,onSave}) {
   const [role,setRole]=useState(data.preferences?.representativeRoleId||'');
   return <form className="mafia-profile-preferences" onSubmit={event=>{event.preventDefault();if(!busy)onSave({revision:data.revision,visibility,representativeRoleId:role||null});}}>
     <h3>{tr("خصوصية التقدم")}</h3><p>{tr("هذا الإعداد يخص لوحة تقدم مافيا. تبقى إحصاءات ميدان العامة ضمن ملفك العام.")}</p><p>{tr("الدور الممثل اختيار ثابت لبروفايلك. لا يكشف دورك أو فريقك في أي مباراة جارية.")}</p>
-    <div className="mafia-profile-fields"><label>{tr("ظهور لوحة مافيا")}<select aria-label={tr("ظهور لوحة مافيا")} value={visibility} disabled={busy||data.preferencesLocked} onChange={event=>setVisibility(event.target.value)}>
+    <div className="mafia-profile-fields"><label>{tr("ظهور لوحة مافيا")}<select data-design-id="mafia-progress-visibility" aria-label={tr("ظهور لوحة مافيا")} value={visibility} disabled={busy||data.preferencesLocked} onChange={event=>setVisibility(event.target.value)}>
       <option value="private">{tr("أنا فقط")}</option><option value="friends">{tr("أصدقائي")}</option><option value="public">{tr("الجميع")}</option></select></label>
-      <label>{tr("الدور الممثل")}<select aria-label={tr("الدور الممثل")} value={role} disabled={busy||data.preferencesLocked} onChange={event=>setRole(event.target.value)}><option value="">{tr("دون دور ممثل")}</option>
+      <label>{tr("الدور الممثل")}<select data-design-id="mafia-progress-role" aria-label={tr("الدور الممثل")} value={role} disabled={busy||data.preferencesLocked} onChange={event=>setRole(event.target.value)}><option value="">{tr("دون دور ممثل")}</option>
         {data.roles.map(item=><option key={item.roleId} value={item.roleId} disabled={!item.representativeUnlocked}>{roleName(item.roleId)}{item.representativeUnlocked?'':tr(" · لم يُفتح")}</option>)}</select></label></div>
     {data.preferencesLocked&&<p role="status">{messages.MAFIA_SOCIAL_LOCKED}</p>}
-    <button type="submit" disabled={busy||data.preferencesLocked}>{busy?tr("جارٍ الحفظ…"):tr("حفظ إعدادات مافيا")}</button>
+    <button type="submit" data-design-id="mafia-progress-save" disabled={busy||data.preferencesLocked}>{busy?tr("جارٍ الحفظ…"):tr("حفظ إعدادات مافيا")}</button>
   </form>;
 }
 export function MafiaProgressView({state,owner=false,onRetry=()=>{},onSave=()=>{}}) {

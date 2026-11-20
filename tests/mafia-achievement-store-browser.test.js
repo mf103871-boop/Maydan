@@ -67,15 +67,18 @@ test('Chromium and WebKit: real authenticated Store equips an earned item withou
         await page.getByRole('button', { name: 'مقتنياتي', exact: true }).click();
         const inventory = page.locator('[data-design-id="store-product"][data-item-id="noir.frame"]'); await inventory.waitFor();
         assert.match(await inventory.innerText(), /إطار ليلة مافيا/);
-        assert.match(await inventory.innerText(), /ملك دائم/);
+        assert.match(await inventory.innerText(), /مملوك/);
+        await inventory.getByRole('button', { name: 'إطار ليلة مافيا', exact: true }).click();
+        const preview = page.locator('.studio-store-preview');
+        assert.match(await preview.innerText(), /مملوك دائمًا/);
         assert.doesNotMatch(await inventory.innerText(), /noir\.frame|mafia_first_qualified/);
         for (const [width, height] of [[320, 568], [390, 844], [844, 390]]) {
           await page.setViewportSize({ width, height });
           assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), `${name} ${width}: overflow`);
           await inventory.screenshot({ path: path.join(proof, `${name}-${width}.png`) });
         }
-        await inventory.getByRole('button', { name: 'استخدام', exact: true }).click();
-        await inventory.getByRole('button', { name: 'مستخدم الآن', exact: true }).waitFor();
+        await preview.getByRole('button', { name: 'تجهيز', exact: true }).click();
+        await preview.getByText('مجهّز الآن', { exact: true }).waitFor();
         assert.deepEqual(writes, [{ selection: { frameId: 'noir.frame' }, revision: 0 }]);
         assert.equal((await cosmeticsFor(app.env, user.id)).effective.frameId, 'noir.frame');
         const rejected = await fetch(app.url + '/api/me/cosmetics', { method: 'PATCH', headers: { Origin: origin, Authorization: 'Bearer ' + session.token, 'Content-Type': 'application/json' }, body: JSON.stringify({ selection: { avatarId: 'artist.avatar' }, revision: 1 }) });

@@ -1,5 +1,6 @@
 import { isCurrentTermsAcceptance, termsIdentity } from './terms.js';
 import { parseGuestTermsReceipt, termsApiOrigin } from './guest-receipt.js';
+import { guestReceiptPrefix } from '../lib/environment.js';
 
 export const LOCAL_TERMS_KEY = 'maydan:legal:guest-acceptance-v1';
 const storageOrNull = () => { try { return globalThis.localStorage || null; } catch { return null; } };
@@ -23,7 +24,7 @@ export function localTermsAcceptPayload(value) {
   return isCurrentTermsAcceptance(value) && value.accepted === true ? { ...termsIdentity(value.locale), accepted: true } : null;
 }
 
-const receiptKey = (origin, identity) => `maydan:legal:receipt:${encodeURIComponent(origin)}:${identity.termsVersion}:${identity.locale}:${identity.documentHash}`;
+const receiptKey = (origin, identity) => `${guestReceiptPrefix(origin)}${identity.termsVersion}:${identity.locale}:${identity.documentHash}`;
 // Browser-session fallback when storage is denied. These are actual server
 // receipts, never manufactured local consent; the same identity/expiry checks
 // apply. Nothing here claims persistence across a reload or a device restart.

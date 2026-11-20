@@ -8,7 +8,8 @@ import { useLamma } from '../../../social/LammaProvider.jsx';
 import { createMafiaTutorial } from './adapter.mjs';
 import { TUTORIAL_HUMAN_ID } from './scenario.mjs';
 import { useTutorialProgress } from './useTutorialProgress.js';
-import css from './tutorial.css';
+import css from './tutorial.css?sheet';
+import { PresentationStyles } from '../../../shared/ui/PresentationStyles.jsx';
 import shellCss from '../../../online/online-mafia.css';
 import { usePlatform } from '../../../platform/context.js';
 import { useI18n } from '../../../shared/i18n/react.jsx';
@@ -79,7 +80,7 @@ export function TutorialSession({ owner, progress, update, mark, isCurrentOwner=
   const coach=view.coach || {};
   const finishExit=(target,skip=false)=>{if(!live.current||!latest.current.isCurrentOwner(owner))return;if(designPreview){setExitTarget(null);return;}if(skip&&!latest.current.mark('skipped',owner))return;setExitGuard(null);navigate(target||'/online/mafia',{replace:true});};
   return <section ref={frame} data-design-screen="mafia.tutorial" className="mafia-noir mafia-room-shell mafia-tutorial-screen" dir={localeDirection(getUiLocale())} aria-label={covered?tr("التدريب محجوب"):tr("{v0} — تدريب محلي", {v0: title})}>
-    <style>{shellCss}{css}</style>
+    <style>{shellCss}</style><PresentationStyles sheet={css} />
     {covered?<MafiaPrivacy/>:<>
     <header className="mafia-tutorial-top"><span className="mafia-training-badge">{tr("تدريب")}</span><div><strong>{title}</strong><small data-design-id="tutorial-disclosure" data-design-required="true">{disclosure}</small></div><Button data-design-id="tutorial-exit" data-design-required="true" onClick={()=>setExitTarget(finishTarget)}>{tr("لاحقًا")}</Button></header>
     <aside data-design-id="tutorial-coach" data-design-required="true" className={`mafia-tutorial-coach ${minimized?'is-minimized':''}`} aria-live="polite" data-lesson-step={coach.stepId}>
@@ -111,7 +112,7 @@ export function MafiaTutorial() {
   if(lamma?.activeCall?.scope==='mafia')return <div className="stack"><p>{tr("أكمل مجلسك الحالي أولًا. التدريب لا يقطع مكالمة مافيا القائمة.")}</p><Button onClick={goRooms}>{tr("إلى المجلس")}</Button></div>;
   const selected=choice.owner===context.owner?choice.mode:null;
   if(!selected)return <div role="status">{tr("نجهّز التدريب…")}</div>;
-  if(selected==='prompt')return <section data-design-screen="mafia.tutorial" className="mafia-noir mafia-tutorial-resume" dir={localeDirection(getUiLocale())}><style>{css}</style><h1>{tr("أول ليلة في الميدان")}</h1><p data-design-id="tutorial-disclosure" data-design-required="true">{tr("تدريب محلي مع ٧ شخصيات تدريب، دون لاعبين حقيقيين.")}</p><p>{tr("عندك تدريب محفوظ على هذا الجهاز.")}</p><Button data-design-id="tutorial-resume" onClick={()=>setChoice({owner:context.owner,mode:'resume'})}>{tr("استكمل من آخر قرار")}</Button><Button data-design-id="tutorial-restart" onClick={()=>setChoice({owner:context.owner,mode:'new'})}>{tr("ابدأ من جديد")}</Button><Button data-design-id="tutorial-exit" data-design-required="true" onClick={()=>{context.mark('skipped');goRooms();}}>{tr("لاحقًا")}</Button></section>;
+  if(selected==='prompt')return <section data-design-screen="mafia.tutorial" className="mafia-noir mafia-tutorial-resume" dir={localeDirection(getUiLocale())}><PresentationStyles sheet={css} /><h1>{tr("أول ليلة في الميدان")}</h1><p data-design-id="tutorial-disclosure" data-design-required="true">{tr("تدريب محلي مع ٧ شخصيات تدريب، دون لاعبين حقيقيين.")}</p><p>{tr("عندك تدريب محفوظ على هذا الجهاز.")}</p><Button data-design-id="tutorial-resume" onClick={()=>setChoice({owner:context.owner,mode:'resume'})}>{tr("استكمل من آخر قرار")}</Button><Button data-design-id="tutorial-restart" onClick={()=>setChoice({owner:context.owner,mode:'new'})}>{tr("ابدأ من جديد")}</Button><Button data-design-id="tutorial-exit" data-design-required="true" onClick={()=>{context.mark('skipped');goRooms();}}>{tr("لاحقًا")}</Button></section>;
   return <TutorialSession key={context.owner} owner={context.owner} progress={selected==='new'?null:context.record.progress} update={context.update} mark={context.mark} isCurrentOwner={context.isCurrentOwner}/>;
 }
 

@@ -11,6 +11,7 @@ import os from 'node:os';
 import path from 'node:path';
 
 
+const paletteVersion = process.env.E2E_ERSOMHA_PALETTE_V2 === '1' ? 2 : 1;
 const dir = await mkdtemp(path.join(os.tmpdir(), 'maydan-ersomha-launch-'));
 const out = process.env.E2E_OUTPUT_DIR || '.cache/ersomha-online'; await mkdir(out, { recursive: true });
 let bundle = '', mf; const inputs = new Map(); const requests = [];
@@ -21,14 +22,33 @@ const front = http.createServer((req, res) => {
 });
 await new Promise(resolve => front.listen(0, '127.0.0.1', resolve));
 const origin = `http://127.0.0.1:${front.address().port}`;
-const result = { scope: 'Real group launch, Ersomha canvas/guesses, Lamma privacy and room WebSockets against local workerd/D1; external media transport is simulated, no production writes', engines: [] };
+const result = { paletteVersion, scope: 'Real group launch, Ersomha canvas/guesses, Lamma privacy and room WebSockets against local workerd/D1; external media transport is simulated, no production writes', engines: [] };
 const drawerToolsVisible = () => {
   const board = document.querySelector('canvas.ers-board')?.getBoundingClientRect();
   const visible = button => button.getClientRects().length && getComputedStyle(button).display !== 'none';
   const buttons = [...document.querySelectorAll('.ers-tools button')].filter(visible);
   const colours = [...document.querySelectorAll('.ers-tools .ers-colour')].filter(visible);
   const more = document.querySelector('.ers-tools-more');
-  return board && document.querySelector('[data-ersomha-drawing-focus="true"]') && !document.querySelector('.ers-board-status') && board.top >= 0 && board.bottom <= innerHeight + 1 && colours.length === (innerWidth > innerHeight ? 4 : 12) && (innerWidth <= innerHeight || more && visible(more)) && buttons.every(button => { const r = button.getBoundingClientRect(); return r.top >= 0 && r.bottom <= innerHeight + 1 && r.left >= 0 && r.right <= innerWidth + 1 && r.width >= 44 && r.height >= 44; });
+  return board && document.querySelector('[data-ersomha-drawing-focus="true"]') && !document.querySelector('.ers-board-status') && board.top >= 0 && board.bottom <= innerHeight + 1 && colours.length === (innerWidth > innerHeight ? 4 : 5) && (innerWidth <= innerHeight || more && visible(more)) && buttons.every(button => { const r = button.getBoundingClientRect(); return r.top >= 0 && r.bottom <= innerHeight + 1 && r.left >= 0 && r.right <= innerWidth + 1 && r.width >= 48 && r.height >= 48; });
+};
+const railAtRightEdge = () => {
+  const dock = document.querySelector('[data-testid="call-dock"]');
+  const space = dock?.closest('.call-dock-viewport');
+  const rail = dock?.getBoundingClientRect();
+  return innerWidth > innerHeight && rail?.width > 0 && rail.height > 0 && space && Math.abs(rail.right - space.getBoundingClientRect().right) < 1;
+};
+const drawingRailGeometry = () => {
+  const dock = document.querySelector('[data-testid="call-dock"]');
+  const rail = dock.getBoundingClientRect();
+  const space = dock.closest('.call-dock-viewport').getBoundingClientRect();
+  const board = document.querySelector('canvas.ers-board').getBoundingClientRect();
+  const overlaps = [...document.querySelectorAll('canvas.ers-board, .ers-tools button')].flatMap(node => {
+    if (!node.getClientRects().length || getComputedStyle(node).display === 'none') return [];
+    const bounds = node.getBoundingClientRect();
+    if (bounds.right <= rail.left || bounds.left >= rail.right || bounds.bottom <= rail.top || bounds.top >= rail.bottom) return [];
+    return [{ target: node.getAttribute('aria-label') || node.tagName, bounds: bounds.toJSON() }];
+  });
+  return { rail: rail.toJSON(), availableSpace: space.toJSON(), board: board.toJSON(), overlaps };
 };
 // Observe the receiving device's actual raster, not only normalized message
 // coordinates. Its square/portrait projection must keep a wide drawer's circle
@@ -50,7 +70,7 @@ try {
   await build({ entryPoints: ['server/worker.mjs'], outfile: scriptPath, bundle: true, format: 'esm', platform: 'browser', logLevel: 'silent' });
   mf = new Miniflare(convertV4MiniflareOptions({ rootPath: dir, name: 'social-launch', modules: true, scriptPath,
     compatibilityDate: '2026-09-01', durableObjects: { ROOMS: { className: 'Room', useSQLite: true }, LIMITERS: { className: 'RequestLimiter', useSQLite: true }, SOCIAL_HUB: { className: 'SocialHub', useSQLite: true } },
-    d1Databases: { DB: 'social-launch-db' }, bindings: { ALLOWED_ORIGINS: origin, APP_ORIGIN: origin, AUTH_DEV_FAKE: '1', SESSION_SECRET: 'local-launch-test-secret', LIVEKIT_URL: 'wss://fixture.livekit.cloud', LIVEKIT_API_KEY: 'fixture-key', LIVEKIT_API_SECRET: 'fixture-secret' },
+    d1Databases: { DB: 'social-launch-db' }, bindings: { ERSOMHA_PALETTE_V2_ENABLED: paletteVersion === 2 ? '1' : '0', ALLOWED_ORIGINS: origin, APP_ORIGIN: origin, AUTH_DEV_FAKE: '1', SESSION_SECRET: 'local-launch-test-secret', LIVEKIT_URL: 'wss://fixture.livekit.cloud', LIVEKIT_API_KEY: 'fixture-key', LIVEKIT_API_SECRET: 'fixture-secret' },
     outboundService: async request => { requests.push({ provider: new URL(request.url).hostname, path: new URL(request.url).pathname }); assert.equal(new URL(request.url).hostname, 'fixture.livekit.cloud'); return Response.json({}); },
     host: '127.0.0.1', port: 0, cf: false }));
   const apiOrigin = (await mf.ready).origin, DB = await mf.getD1Database('DB'); await DB.exec(migrationSql());
@@ -68,7 +88,7 @@ class Room{constructor(){this.remoteParticipants=new Map([[input.other.id,{ident
 window.fixtureSDK={Room,RoomEvent:Object.fromEntries(['ParticipantConnected','ParticipantDisconnected','ActiveSpeakersChanged','TrackMuted','TrackUnmuted','LocalTrackPublished','LocalTrackUnpublished','TrackSubscribed','TrackUnsubscribed','Reconnecting','Reconnected','Disconnected'].map(x=>[x,x])),Track:{Kind:{Audio:'audio'}}};
 const account={...NULL_ACCOUNT,ready:true,signedIn:true,user:input.user,requestAuthenticated:request,authHeaders:()=>({Authorization:'Bearer '+input.token}),gameAccess:()=> 'trial',markTrial:()=>{window.markedTrials=(window.markedTrials||0)+1;},refresh:async()=>{},openPaywall:()=>{throw new Error('unexpected paywall')}};
 const platform={sound:{play(){},emit(){},setDucking(){},music:{scene(){},releaseScene(){}}},toast(){},haptics:{vibrate(){}},confetti:{fire(){}},settings:{reducedMotion:true},roster:[],storage:{get(){},set(){}}};
-function Screen(){const route=useRoute(),lamma=useLamma(),social=useSocial(),ui=useSocialUI();window.fixture={refresh:async()=>{await social.refresh({quiet:true});await lamma.refreshGroups({quiet:true});await lamma.loadGroup(input.group);},call:()=>({id:lamma.activeCall?.id,connected:lamma.media.connected,connections:window.mediaConnections||0,disconnects:window.mediaDisconnects||0,muted:lamma.media.muted}),privateTurn:()=>socialInterruption.getSnapshot().privateTurn,unmute:()=>lamma.setCallMuted(false),navigate,group:()=>ui.openGroup(input.group)};return route.name==='room'?<Online key={route.params.id} code={route.params.id}/>:<main><div data-social-page-slot/></main>}
+function Screen(){const route=useRoute(),lamma=useLamma(),social=useSocial(),ui=useSocialUI();window.fixture={refresh:async()=>{await social.refresh({quiet:true});await lamma.refreshGroups({quiet:true});await lamma.loadGroup(input.group);},hasGroupMessage:seq=>lamma.groupConversations?.[input.group]?.messages?.some(message=>message.seq===seq),call:()=>({id:lamma.activeCall?.id,connected:lamma.media.connected,connections:window.mediaConnections||0,disconnects:window.mediaDisconnects||0,muted:lamma.media.muted}),privateTurn:()=>socialInterruption.getSnapshot().privateTurn,unmute:()=>lamma.setCallMuted(false),navigate,group:()=>ui.openGroup(input.group)};return route.name==='room'?<Online key={route.params.id} code={route.params.id}/>:<main><div data-social-page-slot/></main>}
 createRoot(document.getElementById('root')).render(<AccountContext.Provider value={account}><PlatformContext.Provider value={platform}><BrandFonts/><style>{tokens}</style><style>{uiCss}</style><style>{brand}</style><style>{platformCss}</style><style>{onlineCss+studioCss}</style><SocialProvider><LammaProvider><SocialUIProvider><ProfileProvider><Screen/><SocialHost/></ProfileProvider></SocialUIProvider></LammaProvider></SocialProvider></PlatformContext.Provider></AccountContext.Provider>);`;
   const built = await build({ stdin: { contents: fixtureSource, resolveDir: process.cwd(), loader: 'jsx' }, bundle: true, write: false, format: 'iife', jsx: 'automatic', define: { __MAYDAN_ROOMS_URL__: JSON.stringify(apiOrigin) }, loader: { '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl' }, logLevel: 'silent', plugins: [{ name: 'local-media-transport-only', setup(build) { build.onLoad({ filter: /[\\/]src[\\/]social[\\/]media\.js$/ }, async args => ({ contents: (await readFile(args.path, 'utf8')).replace('this.loadSDK = loadSDK;', 'this.loadSDK = () => Promise.resolve(window.fixtureSDK);'), loader: 'js' })); } }] });
   bundle = built.outputFiles[0].text;
@@ -121,7 +141,7 @@ createRoot(document.getElementById('root')).render(<AccountContext.Provider valu
         window.fixture.navigate(`/room/${code}`);
       }, { server: apiOrigin, code: otherRoom.code, session: otherSession });
       await guest.waitForURL(new RegExp(`#/room/${otherRoom.code}$`));
-      await guest.getByText('متصل · كل واحد بجواله', { exact: true }).waitFor();
+      await guest.locator('[data-design-screen="online.chrome"] [data-design-id="connection"].connected').waitFor();
       await guest.evaluate(() => window.fixture.group());
       await guest.getByRole('button', { name: 'قبول الدعوة', exact: true }).click();
       await guest.getByRole('heading', { name: 'تطلع من الغرفة؟', exact: true }).waitFor();
@@ -143,6 +163,8 @@ createRoot(document.getElementById('root')).render(<AccountContext.Provider valu
       await guest.getByRole('button', { name: 'أنا جاهز', exact: true }).click();
       await host.getByRole('button', { name: 'ابدأ اللعب', exact: true }).click();
       const chosen = [], circleEvidence = [];
+      const landscapeGuesser = [];
+      const landscapeMessages = [];
       for (let turn = 1; turn <= 2; turn++) {
         const drawer = pages[turn - 1], guesser = pages[2 - turn];
         await drawer.locator('.ers-word-choices button').first().waitFor();
@@ -154,18 +176,29 @@ createRoot(document.getElementById('root')).render(<AccountContext.Provider valu
         assert.equal(await guesser.getByText(answer, { exact: true }).count(), 0);
         await drawer.locator('.ers-word-choices button').first().click();
         const canvas = drawer.locator('canvas.ers-board'); await canvas.waitFor();
+        if(!await drawer.locator('[data-ersomha-drawing-focus="true"]').count())await drawer.getByRole('button',{name:'عرض الرسم أفقيًا',exact:true}).click();
         await drawer.waitForFunction(drawerToolsVisible);
         assert.equal(await drawer.locator('.online-social-slot .lamma-launcher').isVisible(), false, 'the room launcher is hidden behind focused drawing, so it cannot cover rotation controls');
         assert.equal(await drawer.getByText('انتهت هذه الجولة. انتظر تحديث الشاشة.', { exact: true }).count(), 0, 'initial drawing synchronization retains the numeric round identity required by the real server');
+        await drawer.evaluate(() => {
+          window.drawingResizeSample = null;
+          window.addEventListener('resize', () => {
+            const rail = document.querySelector('[data-testid="call-dock"]')?.getBoundingClientRect();
+            const board = document.querySelector('canvas.ers-board')?.getBoundingClientRect();
+            if (rail && board) window.drawingResizeSample = { viewportWidth: innerWidth, rail: rail.toJSON(), board: board.toJSON() };
+          }, { once: true });
+        });
         await drawer.setViewportSize({ width: 844, height: 390 });
         await drawer.waitForFunction(drawerToolsVisible);
-        await drawer.waitForFunction(() => document.querySelector('[data-testid="call-dock"]')?.getBoundingClientRect().right >= innerWidth - 20);
-        const clearDrawing = await drawer.evaluate(() => {
-          const call = document.querySelector('[data-testid="call-dock"]').getBoundingClientRect();
-          return [...document.querySelectorAll('canvas.ers-board,.ers-tools button')].filter(node=>node.getClientRects().length&&getComputedStyle(node).display!=='none').every(node=>{const r=node.getBoundingClientRect();return r.right<=call.left||r.left>=call.right||r.bottom<=call.top||r.top>=call.bottom;});
-        });
-        assert.equal(clearDrawing, true, 'after orientation settles, the existing call stays beside the board and all drawing tools');
+        // The media query changes the rail width before ResizeObserver updates its position.
+        await drawer.waitForFunction(railAtRightEdge);
+        const railGeometry = await drawer.evaluate(drawingRailGeometry);
+        const resizeSample = await drawer.evaluate(() => window.drawingResizeSample);
+        assert.deepEqual(railGeometry.overlaps, [], 'after orientation settles, the existing call stays beside the board and all drawing tools');
         await drawer.screenshot({ path: path.join(out, `${engineName}-turn-${turn}-landscape-tools.png`), fullPage: true });
+        assert.equal(await drawer.locator('[data-design-id=canvas-panel]').getAttribute('data-palette-version'), String(paletteVersion));
+        assert.equal(await drawer.locator('[data-design-id=canvas-panel]').getAttribute('data-palette-ready'), 'true');
+        if(paletteVersion===2){await drawer.getByRole('button',{name:'ألوان وأدوات إضافية',exact:true}).click();const palette=drawer.getByRole('dialog',{name:'ألوان وأدوات الرسم',exact:true});await palette.getByRole('button',{name:'لافندر',exact:true}).click();await palette.getByRole('button',{name:'إكمال الرسم',exact:true}).click();await palette.waitFor({state:'hidden'});}
         const landscapeBoard = await canvas.boundingBox();
         assert.ok(landscapeBoard.width >= 600 && landscapeBoard.height >= 240 && landscapeBoard.width > landscapeBoard.height * 1.8, `the landscape camera makes the phone's empty width drawable: ${JSON.stringify(landscapeBoard)}`);
         assert.equal(await canvas.getAttribute('data-camera-mode'), 'wide');
@@ -187,11 +220,13 @@ createRoot(document.getElementById('root')).render(<AccountContext.Provider valu
         });
         const circle = await guesser.evaluate(receivedInk);
         assert.ok(circle.width > 45 && circle.height > 45 && Math.abs(circle.width - circle.height) <= 2, `portrait guesser receives an undistorted circle: ${JSON.stringify(circle)}`);
-        circleEvidence.push({ turn, physicalDiameter: 140, drawerViewportWidth: landscapeBoard.width, drawerViewportHeight: landscapeBoard.height, portraitReceiver: circle });
+        let lavenderPixels=null;
+        if(paletteVersion===2){lavenderPixels=await guesser.evaluate(()=>{const c=document.querySelector('canvas.ers-board'),data=c.getContext('2d').getImageData(0,0,c.width,c.height).data;let exact=0;for(let i=0;i<data.length;i+=4)if(data[i]===239&&data[i+1]===211&&data[i+2]===250&&data[i+3]>=240)exact++;return exact;});assert.ok(lavenderPixels>10,'real WebSocket receiver paints approved #EFD3FA');await guesser.screenshot({path:path.join(out,`${engineName}-turn-${turn}-lavender-received.png`)});}
+        circleEvidence.push({ turn, lavenderPixels, physicalDiameter: 140, drawerViewportWidth: landscapeBoard.width, drawerViewportHeight: landscapeBoard.height, portraitReceiver: circle, resizeSample, railGeometry });
         await drawer.getByRole('button', { name: 'ألوان وأدوات إضافية', exact: true }).click();
         const toolsDialog = drawer.getByRole('dialog', { name: 'ألوان وأدوات الرسم', exact: true });
         await toolsDialog.waitFor();
-        assert.equal(await toolsDialog.locator('.ers-colour').count(), 12, 'compact tools retain the complete palette behind More');
+        assert.equal(await toolsDialog.locator('.ers-colour').count(), paletteVersion===2?13:12, 'compact tools retain the complete palette behind More');
         await toolsDialog.getByRole('button', { name: 'إكمال الرسم', exact: true }).click();
         await toolsDialog.waitFor({ state: 'hidden' });
         await drawer.setViewportSize({ width: 390, height: 844 });
@@ -205,7 +240,7 @@ createRoot(document.getElementById('root')).render(<AccountContext.Provider valu
         await drawer.getByRole('dialog', { name: 'الأصدقاء واللّمة', exact: true }).waitFor();
         await drawer.getByRole('button', { name: 'إغلاق اللّمة والعودة للعبة', exact: true }).click();
         await drawer.getByRole('dialog', { name: 'الأصدقاء واللّمة', exact: true }).waitFor({ state: 'hidden' });
-        await drawer.getByRole('button', { name: 'تكبير لوحة الرسم', exact: true }).click();
+        await drawer.getByRole('button', { name: 'عرض الرسم أفقيًا', exact: true }).click();
         await drawer.waitForFunction(drawerToolsVisible);
         const currentCall = await drawer.evaluate(() => window.fixture.call()), initialCall = callsBefore[turn - 1];
         for (const key of ['id', 'connected', 'connections', 'disconnects']) assert.equal(currentCall[key], initialCall[key], `focus changes and friends navigation preserve the existing call's ${key}`);
@@ -216,6 +251,50 @@ createRoot(document.getElementById('root')).render(<AccountContext.Provider valu
         assert.deepEqual(await guesser.evaluate(receivedInk), circle, 'drawer rotation, fit changes and friends navigation do not mutate the remote canonical ink');
         assert.equal((await guesser.evaluate(() => window.fixture.call())).connected, true);
         await drawer.screenshot({ path: path.join(out, `${engineName}-turn-${turn}-live-drawing.png`), fullPage: true });
+        await guesser.setViewportSize({ width:844, height:390 });
+        await guesser.waitForFunction(railAtRightEdge);
+        await drawer.setViewportSize({ width:844, height:390 });
+        await drawer.waitForFunction(drawerToolsVisible);
+        for (const [receiver, sender, role] of [[drawer, users[2 - turn], 'drawer'], [guesser, users[turn - 1], 'guesser']]) {
+          const sent = await api(sender, `/api/social/groups/${group}/messages`, 'POST', {
+            text: `رسالة أثناء الرسم ${turn}-${role}`, clientId: `landscape-message-${turn}-${role}`, kind: 'text'
+          });
+          assert.ok(sent.message?.seq > 0);
+          await receiver.evaluate(() => window.fixture.refresh());
+          await receiver.waitForFunction(seq => window.fixture.hasGroupMessage(seq), sent.message.seq);
+          const popup = receiver.locator('.lamma-notification').first();
+          assert.equal(await popup.isVisible(), false, 'an incoming message never covers the canvas in landscape');
+          if (role === 'guesser') await receiver.locator('.online-social-slot .lamma-launcher .lamma-unread').waitFor();
+          landscapeMessages.push({ turn, role, seq: sent.message.seq, popupVisible: false });
+        }
+        const actionSelectors = ['.ers-header-report', '.online-social-slot .lamma-launcher', '.ers-guess input', '.ers-guess button'];
+        const hitTargets = await guesser.evaluate(selectors => selectors.map(selector => {
+          const target = document.querySelector(selector);
+          const rect = target.getBoundingClientRect();
+          const mid = document.elementFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2);
+          return { selector, bounds: rect.toJSON(), receivesTap: target.contains(mid) };
+        }), actionSelectors);
+        assert.ok(hitTargets.every(target => target.receivesTap), JSON.stringify(hitTargets));
+        const covered = await guesser.evaluate(() => {
+          const rail = document.querySelector('[data-testid="call-dock"]').getBoundingClientRect();
+          return ['.ers-word-banner', '.ers-side-panel', '.ers-board-wrap'].filter(selector => {
+            const bounds = document.querySelector(selector).getBoundingClientRect();
+            return bounds.right > rail.left && bounds.left < rail.right && bounds.bottom > rail.top && bounds.top < rail.bottom;
+          });
+        });
+        assert.deepEqual(covered, [], 'the active call leaves the category, canvas and complete guess panel readable');
+        await guesser.screenshot({ path: path.join(out, `${engineName}-turn-${turn}-landscape-guesser.png`) });
+        await guesser.locator('.ers-header-report').click();
+        const reportDialog = guesser.getByRole('dialog', { name: 'الإبلاغ عن الرسمة', exact: true });
+        await reportDialog.getByRole('button', { name: 'إلغاء', exact: true }).click();
+        await reportDialog.waitFor({ state:'hidden' });
+        await guesser.locator('.online-social-slot .lamma-launcher').click();
+        const lammaDialog = guesser.getByRole('dialog', { name: 'الأصدقاء واللّمة', exact:true });
+        await lammaDialog.getByRole('button', { name: 'إغلاق اللّمة والعودة للعبة', exact:true }).click();
+        await lammaDialog.waitFor({ state:'hidden' });
+        landscapeGuesser.push({ turn, hitTargets, covered, reportOpened: true, lammaOpened: true });
+        await drawer.setViewportSize({ width:390, height:844 });
+        await guesser.setViewportSize({ width:390, height:844 });
         const input = guesser.locator('.ers-guess input');
         await input.fill(answer); await input.press('Enter');
         await drawer.getByText('كانت الرسمة…', { exact: true }).waitFor();
@@ -230,10 +309,17 @@ createRoot(document.getElementById('root')).render(<AccountContext.Provider valu
       assert.equal((await DB.prepare('SELECT COUNT(*) AS n FROM trials WHERE user_id=?').bind(users[0].id).first()).n, 0, 'the default free-play policy never spends a historical trial; ticket policies have separate acceptance tests');
       assert.deepEqual(errors, []);
       await host.screenshot({ path: path.join(out, `${engineName}-cooperative-result-with-call.png`) });
-      result.engines.push({ engine: engineName, groupLaunch: true, groupRoomDifficulty: 'easy', cancelledActiveRoomInvitationAllocatesNoSeat: true, automaticGuestJoin: true, roomCode: code, completedDrawingTurns: 2, bothDrawingsDelivered: true, wideCanvasCircleCompatibility: circleEvidence, rotationAndFocusPreserveRemoteInk: true, drawerMutedBeforeWord: true, microphoneUnmuteBlockedDuringDrawing: true, microphoneNeverAutoReopened: true, bothCallStatesPreserved: true, mediaConnectCount: callsAfter.map(call => call.connections), mediaDisconnectCount: callsAfter.map(call => call.disconnects), browserErrors: errors });
+      result.engines.push({ engine: engineName, groupLaunch: true, groupRoomDifficulty: 'easy', cancelledActiveRoomInvitationAllocatesNoSeat: true, automaticGuestJoin: true, roomCode: code, completedDrawingTurns: 2, bothDrawingsDelivered: true, wideCanvasCircleCompatibility: circleEvidence, landscapeGuesser, landscapeMessages, rotationAndFocusPreserveRemoteInk: true, drawerMutedBeforeWord: true, microphoneUnmuteBlockedDuringDrawing: true, microphoneNeverAutoReopened: true, bothCallStatesPreserved: true, mediaConnectCount: callsAfter.map(call => call.connections), mediaDisconnectCount: callsAfter.map(call => call.disconnects), browserErrors: errors });
     } finally { await browser.close(); }
   }
   result.providerRequests = requests;
   await writeFile(path.join(out, 'summary.json'), JSON.stringify(result, null, 2));
   console.log(JSON.stringify(result, null, 2));
-} finally { if (mf) await mf.dispose(); await new Promise(resolve => front.close(resolve)); await rm(dir, { recursive: true, force: true }); }
+} finally {
+  if (mf) await mf.dispose();
+  await new Promise(resolve => front.close(resolve));
+  const resolvedTemp = path.resolve(dir), tempRoot = path.resolve(os.tmpdir());
+  assert.equal(path.dirname(resolvedTemp), tempRoot, 'cleanup stays directly under the OS temporary directory');
+  assert.ok(path.basename(resolvedTemp).startsWith('maydan-ersomha-launch-'), 'cleanup targets only this generated fixture directory');
+  await rm(resolvedTemp, { recursive: true, force: true });
+}

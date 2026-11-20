@@ -6,6 +6,7 @@ import { createDesignFixture } from './screen-catalog.js';
 import { Home, GameModeSheet } from '../platform/screens/Home.jsx';
 import { getGame } from '../platform/registry.js';
 import { OnlineDirectoryView, OnlineRoomRow } from '../online/OnlineDirectoryView.jsx';
+import { GameEntry } from '../platform/screens/GameEntry.jsx';
 import { GameDetails } from '../platform/screens/GameDetails.jsx';
 import { Players } from '../platform/screens/Players.jsx';
 import { Settings } from '../platform/screens/Settings.jsx';
@@ -119,6 +120,7 @@ export function DesignScene({ sceneId = 'home', previewState, platform, account,
   if (sceneId === 'social.call') return <CallControls call={{ id: 'demo-call', scope: 'group', status: 'active', name: 'شلّة الخميس', startedAt: Date.now() }} currentUserId={fixture.players[0].id} media={{ connected: true, userId: fixture.players[0].id, muted: false, participants: fixture.players.map((p, i) => ({ ...p, identity: p.id, speaking: i === 1, local: i === 0, muted: i === 2 })) }} onMute={resolved} onEnd={noop} onOpen={noop} />;
   if (sceneId === 'home') return <Home />;
   if (sceneId === 'home.game-mode') return <><Home /><GameModeSheet game={getGame('badeeha')} onClose={noop} onSelect={noop} /></>;
+  if (sceneId === 'game.entry') return <GameEntry id="ersomha" />;
   if (sceneId === 'game-details') return <GameDetails id="ersomha" />;
   if (sceneId === 'players') return <Players />;
   if (sceneId === 'settings') return <Settings />;

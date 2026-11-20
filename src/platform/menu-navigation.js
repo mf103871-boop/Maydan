@@ -5,17 +5,20 @@ export const MENU_ITEMS = Object.freeze([
   { id: 'profile', label: 'أنا', path: '/profile', icon: 'profile' },
 ]);
 
-export function menuSection(route, previous = 'games') {
+export function menuSection(route, ownerId = null) {
   if (route.name === 'friends' || route.name === 'friend-group') return 'friends';
   if (route.name === 'store') return 'store';
   if (['settings', 'creator', 'moderation', 'about', 'terms', 'privacy'].includes(route.name)) return 'profile';
-  if (route.name === 'profile') return route.params?.id ? previous : 'profile';
+  // A visitor profile belongs to the social destination. Back history remains
+  // owned by the router; it must not turn another player's profile into Me.
+  if (route.name === 'profile') return route.params?.id && route.params.id !== ownerId ? 'friends' : 'profile';
   return 'games';
 }
 
 export function menuRouteVisible(route, socialUI) {
   // The room directory owns a compact profile footer; do not stack menu chrome.
   if (['play', 'room', 'online', 'mafia-tutorial'].includes(route.name)) return false;
+  if (socialUI?.presentation === 'page' && socialUI.view?.type === 'profile') return true;
   if (route.name === 'friend-group' || (route.name === 'friends' && route.params?.id)) return false;
   if (socialUI?.presentation === 'page' && socialUI.view?.type !== 'list') return false;
   return true;

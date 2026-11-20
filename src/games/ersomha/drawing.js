@@ -1,6 +1,7 @@
 // Public drawing primitives only. Answer content must never enter this module.
 import { cameraPoint, setDrawingTransform } from './camera.js';
-export const ERSOMHA_PALETTE = Object.freeze(['#35224a', '#ffffff', '#118d96', '#9250bd', '#ed6a5a', '#f4b942', '#64a66f', '#3b72b8', '#f08db4', '#8a563d', '#ef8a38', '#83929b']);
+import { drawingPaletteVersion, drawingPalette } from './palette.js';
+export { ERSOMHA_PALETTE } from './palette.js';
 export const ERSOMHA_WIDTHS = Object.freeze([2, 6, 12]);
 export const DRAW_BATCH_MS = 80;
 export const DRAW_BATCH_POINTS = 32;
@@ -16,10 +17,35 @@ export function drawingPoint(event, bounds, options) {
   return [Math.round(Math.max(0, Math.min(1, x)) * 10000) / 10000, Math.round(Math.max(0, Math.min(1, y)) * 10000) / 10000];
 }
 
-export function createDrawingState(epoch = null) { return { epoch, seq: 0, strokes: new Map(), undoneIds: new Set() }; }
+export function createDrawingState(epoch = null, paletteVersion) { return { epoch, paletteVersion: drawingPaletteVersion(paletteVersion), seq: 0, strokes: new Map(), undoneIds: new Set() }; }
+
+// Sync parts belong to one exact board/version/sequence. A conflicting set is
+// discarded whole; never let a partial checkpoint enable drawing.
+export function createDrawingSyncAssembler() {
+  let pending = null;
+  return event => {
+    const version = drawingPaletteVersion(event.paletteVersion);
+    const chunks = event.chunks === undefined ? 1 : event.chunks, chunk = event.chunk === undefined ? 0 : event.chunk;
+    if (version === null || !Number.isInteger(chunks) || chunks < 1 || chunks > 128 || !Number.isInteger(chunk) || chunk < 0 || chunk >= chunks) { pending = null; return { error: true }; }
+    const key = `${event.matchId}:${event.round}:${event.epoch}:${event.seq}`;
+    if (pending?.key === key && (pending.version !== version || pending.count !== chunks)) { pending = null; return { error: true }; }
+    if (!pending || pending.key !== key) pending = { key, version, count: chunks, parts: new Map() };
+    const previous = pending.parts.get(chunk);
+    if (previous && JSON.stringify(previous) !== JSON.stringify(event)) { pending = null; return { error: true }; }
+    pending.parts.set(chunk, event);
+    if (pending.parts.size !== chunks) return { event: null };
+    const parts = [...pending.parts.entries()].sort(([a], [b]) => a - b).map(([, part]) => part);
+    pending = null;
+    return { event: { ...event, paletteVersion: version, ops: parts.flatMap(part => part.ops || []), undoneIds: [...new Set(parts.flatMap(part => part.undoneIds || []))] } };
+  };
+}
 
 export function applyDrawingEvent(model, event) {
   if (!event || !['append', 'undo', 'redo', 'clear', 'sync'].includes(event.kind)) return false;
+  const version = drawingPaletteVersion(event.paletteVersion);
+  if (version === null || version !== model.paletteVersion) return false;
+  if (event.op && !drawingPalette(version).includes(event.op.color)) return false;
+  if ((event.ops || []).some(op => !drawingPalette(version).includes(op.color))) return false;
   if (event.kind === 'sync' || event.kind === 'clear') {
     model.epoch = event.epoch; model.seq = Number(event.seq) || 0;
     model.strokes.clear(); model.undoneIds = new Set(event.undoneIds || []);

@@ -19,70 +19,60 @@
 <!--PRELOAD-->
 <style>
 <!--TOKENS_CSS-->
-#boot{min-height:100dvh;display:grid;align-content:center;justify-items:center;gap:16px;color:#35213d;background:#fff5e6;text-align:center}
-#boot .mark{display:grid;place-items:center;width:88px;height:88px;border-radius:20px;background:linear-gradient(135deg,#ffdfbf,#fce3c9)}
-#boot .name{font-size:27px;font-weight:900;margin:0}
-#boot .track{width:min(75%,300px);height:12px;overflow:hidden;border-radius:99px;background:#e4d2e8}
-#boot .track::after{content:"";display:block;width:34%;height:100%;border-radius:inherit;background:#087d89;animation:boot-load 1.2s ease-in-out infinite alternate}
-@keyframes boot-load{to{transform:translateX(-190%)}}
-@media (prefers-reduced-motion:reduce){#boot .track::after{animation:none}}
-#fatal{position:fixed;inset:0;display:none;padding:24px;background:#FFFCF4;color:#A52C37;font-size:14px;line-height:2;overflow:auto;z-index:9999}
-#fatal pre{margin:0 0 18px;font:inherit;white-space:pre-wrap;word-break:break-word}
-#fatal .acts{display:grid;gap:10px;max-width:420px}
-#fatal button{min-height:52px;padding:0 16px;border-radius:18px;border:1px solid #CFB599;background:#FFFEF8;color:#352547;font:inherit;font-weight:800;cursor:pointer}
-#fatal button.danger{border-color:#EDB1AA;background:#FCE9E3;color:#A42F32}
+<!--OPENING_FONTS-->
+body{margin:0}
+#boot{background:#fff8f0;color:#352139}
+#root[hidden],#boot[hidden],#fatal[hidden]{display:none!important}
+#root[data-opening-covered]{isolation:isolate;pointer-events:none}
+#fatal,.maydan-no-script{position:fixed;inset:0;z-index:9999;overflow:auto;box-sizing:border-box;padding:clamp(16px,5vw,40px);background:#fff8f0;color:#352139;font:400 16px/1.55 'Maydan Opening',system-ui,sans-serif}
+.opening-card{box-sizing:border-box;max-width:420px;margin:clamp(0px,5vh,48px) auto;padding:clamp(16px,5vw,28px);text-align:center;background:#fffdf9;border:1px solid #e7d9cf;border-radius:24px;box-shadow:0 12px 36px #795d4314}
+.opening-card .opening-recovery-art{display:block;object-fit:contain;width:clamp(84px,16vh,140px);height:clamp(72px,14vh,120px);margin:12px auto}.opening-card>b{font-size:24px}.opening-card h1{font-size:26px;line-height:1.35;margin:8px 0}.opening-card p{margin:0 0 12px}.opening-card button,.opening-card summary{min-height:48px;font:inherit;font-weight:700;cursor:pointer}
+.opening-card button{border:1px solid #503c55;border-radius:16px;background:#fffdf9;color:inherit;padding:8px 16px;width:100%;margin:4px 0}.opening-card button:first-child{background:#08796d;color:white;border-color:#08796d}.opening-card .danger{color:#9f323d;border-color:#9f323d}
+.opening-card small{display:block;font-size:14px;margin:12px 0 4px}.opening-card details{margin-top:8px}.opening-card summary{align-content:center}.opening-card pre{white-space:pre-wrap;overflow-wrap:anywhere;text-align:start;font:400 14px/1.5 system-ui}
 </style>
+<link rel="stylesheet" href="./opening/studio.css">
+<link rel="preload" as="image" href="./opening/maydan-bulb.webp">
 </head>
 <body>
-<div id="root"><div id="boot" role="status" aria-live="polite"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="58" height="58" fill="none" stroke="#422a37" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path fill="#f9cf55" d="M12 4.5a5.4 5.4 0 0 0-3.4 9.6c.9.7 1.4 1.6 1.4 2.9h4c0-1.3.5-2.2 1.4-2.9A5.4 5.4 0 0 0 12 4.5Z"/><path fill="#ad7863" d="M10 17h4v2.5h-4z"/><path d="M11 21h2M12 1v1M4.5 3.5l1 1M2 9h2m16 0h2m-3.5-5.5-1 1M4 15l1.4-.8m14.6.8-1.4-.8"/></svg></span><p class="name">جارٍ تجهيز ميدان</p><span class="track" aria-hidden="true"></span></div></div>
-<noscript>تحتاج ميدان إلى تفعيل JavaScript في المتصفح لتشغيل الألعاب.</noscript>
-<div id="fatal" role="alert">
-<pre id="fatal-detail"></pre>
-<div class="acts">
-<button type="button" id="fatal-reload">إعادة المحاولة</button>
-<button type="button" id="fatal-home">العودة إلى الرئيسية</button>
-<button type="button" id="fatal-clear" class="danger">مسح البيانات وإعادة التشغيل</button>
-</div>
-</div>
+<div id="root"></div>
+  <div id="boot" data-phase="checking"><main class="opening-studio">
+    <div class="opening-brand" aria-hidden="true"><span data-ar="ميدان" data-en="Maydan">ميدان</span><i></i></div>
+    <div class="opening-scene" aria-hidden="true">
+      <div class="opening-bloom"></div>
+      <div class="opening-plinth-shade"></div><div class="opening-plinth"><div class="opening-rim"></div></div>
+      <div class="opening-contact-shadow"></div><div id="opening-ripple"></div>
+      <canvas id="opening-orbit-back"></canvas>
+      <div class="opening-lamp-mount"><div class="opening-lamp-float"><img id="opening-lamp" src="./opening/maydan-bulb.webp" width="600" height="600" alt="" draggable="false" fetchpriority="high"><i id="opening-glint"></i></div></div>
+      <canvas id="opening-orbit-front"></canvas>
+    </div>
+    <section class="opening-readout" aria-labelledby="opening-title">
+      <h1 class="opening-title" id="opening-title" data-ar="جارٍ تجهيز ميدان" data-en="Opening Maydan">جارٍ تجهيز ميدان</h1>
+      <div id="opening-meter">
+        <div class="opening-readout-top"><span class="opening-status"><i></i><span id="opening-state" data-ar="فحص ملفات اللعبة" data-en="Checking game files">فحص ملفات اللعبة</span></span><bdi id="opening-pct" dir="ltr">—</bdi></div>
+        <div id="opening-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-labelledby="opening-title"><div id="opening-fill"><div></div></div></div>
+        <div class="opening-amounts"><span id="opening-files"></span><bdi dir="ltr" id="opening-bytes"></bdi></div>
+      </div>
+      <div id="opening-failure" hidden><p id="opening-reason"></p><button id="opening-retry" type="button" data-ar="إعادة المحاولة" data-en="Try again">إعادة المحاولة</button><details class="opening-details"><summary class="opening-summary" data-ar="تفاصيل الخطأ" data-en="Error details">تفاصيل الخطأ</summary><p id="opening-detail" dir="auto"></p></details></div>
+    </section>
+    <p class="opening-sr" id="opening-announce" role="status" aria-live="polite" aria-atomic="true"></p>
+  </main></div>
+<noscript><style>#boot,#root{display:none!important}</style><main class="maydan-no-script"><section class="opening-card"><b>ميدان · Maydan</b><!--OPENING_RECOVERY_ART--><h1>JavaScript غير مفعّل</h1><p lang="ar" dir="rtl">لتشغيل ميدان، فعّل JavaScript من إعدادات المتصفح ثم أعد فتح الصفحة.</p><h2 lang="en" dir="ltr">JavaScript is turned off</h2><p lang="en" dir="ltr">To play Maydan, enable JavaScript in your browser settings, then reopen this page.</p></section></main></noscript>
+<div id="fatal" role="alert" hidden tabindex="-1"><section class="opening-card">
+<b data-ar="ميدان" data-en="Maydan">ميدان</b><!--OPENING_RECOVERY_ART--><h1 data-ar="تعذّر بدء ميدان" data-en="Maydan couldn’t start">تعذّر بدء ميدان</h1><p data-ar="أعد المحاولة أو ارجع إلى الرئيسية." data-en="Try again or return to Home.">أعد المحاولة أو ارجع إلى الرئيسية.</p>
+<div class="acts"><button type="button" id="fatal-reload" data-ar="إعادة المحاولة" data-en="Try again">إعادة المحاولة</button>
+<button type="button" id="fatal-home" data-ar="العودة إلى الرئيسية" data-en="Return to Home">العودة إلى الرئيسية</button>
+<small data-ar="قد تُمسح إعداداتك ومبارياتك المحلية. يبقى تسجيل دخولك محفوظًا." data-en="Local settings and saved games may be cleared. You’ll stay signed in.">قد تُمسح إعداداتك ومبارياتك المحلية. يبقى تسجيل دخولك محفوظًا.</small>
+<button type="button" id="fatal-clear" class="danger" data-ar="مسح البيانات المحلية وإعادة التشغيل" data-en="Clear local data and restart">مسح البيانات المحلية وإعادة التشغيل</button></div>
+<details><summary data-ar="تفاصيل الخطأ" data-en="Error details">تفاصيل الخطأ</summary><pre id="fatal-detail" dir="auto"></pre></details></section></div>
 <script>
-// حارس مرحلة الإقلاع فقط: يلتقط حزمة لا تُحلَّل أو لا تعمل قبل تركيب React.
-// بعد نجاح التركيب يستبدله main.jsx، فلا يغطي خطأٌ عابر (معالج نقر، تنبيه
-// ResizeObserver) لعبةً تعمل بلوحة عطل ملء الشاشة.
-window.onerror = function (msg, src, line, col) {
-  if (window.__maydanBooted) return false;
-  if (/ResizeObserver loop/.test(String(msg))) return false;
-  var f = document.getElementById('fatal');
-  var d = document.getElementById('fatal-detail');
-  if (f) { f.style.display = 'block'; if (d) { d.textContent = 'خطأ في تشغيل المنصة:\n' + msg + '\nسطر ' + line + ':' + col; } }
-  return false;
-};
-// لوحة العطل لم يكن فيها مخرج: هذه الأزرار تعيد المحاولة أو تمسح البيانات
-// المعطوبة، فلا يبقى اللاعب أمام شاشة ميتة في كل فتح.
-(function () {
-  function on(id, fn) { var el = document.getElementById(id); if (el) { el.addEventListener('click', fn); } }
-  function home() { location.hash = '#/'; location.reload(); }
-  on('fatal-reload', function () { location.reload(); });
-  on('fatal-home', home);
-  on('fatal-clear', function () {
-    try {
-      for (var i = localStorage.length - 1; i >= 0; i--) {
-        var k = localStorage.key(i);
-        if (k && (k.indexOf('maydan:') === 0 || k.indexOf('maydan-') === 0)) { localStorage.removeItem(k); }
-      }
-    } catch (e) { /* ignore */ }
-    home();
-  });
-})();
+<!--BOOT_GUARD_JS-->
 </script>
 <script>
 <!--BUNDLE_JS-->
 </script>
 <script>
-if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-  // An update is used on the next normal launch, never by interrupting a round.
-  window.addEventListener('load', function () {
-    navigator.serviceWorker.register('sw.js').catch(function () {});
-  });
+if (!window.__maydanOpening && 'serviceWorker' in navigator && location.protocol !== 'file:') {
+  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
 }
 </script>
 </body>

@@ -1,79 +1,224 @@
 {
   "schemaVersion": 1,
-  "verifiedAt": "2026-11-12T02:39:31.079337+00:00",
+  "verifiedAt": "2026-11-20T01:41:21.637592+00:00",
   "repository": "https://github.com/mf103871-boop/Maydan",
   "developmentBranch": "main",
   "status": "internal-testflight-available",
   "packageVersion": "1.9.0",
   "ios": {
     "version": "1.9",
-    "build": "60",
-    "appId": "6808385717",
+    "build": "62",
     "bundleId": "Maydan",
-    "buildId": "0f5f5c9b-c81d-4690-8135-a011d150daed",
+    "appId": "6808385717",
+    "buildId": "fcd5ae8d-6298-4c0b-844e-069f41aa29dd",
+    "expired": false,
+    "expirationDate": "2027-02-17T17:38:12-08:00",
     "processingState": "VALID",
     "internalBuildState": "IN_BETA_TESTING",
-    "expired": false,
+    "internalGroupId": "0f254efa-38d9-406c-9ab0-1664b99f3213",
     "environment": "mafia-preview",
     "releaseProfile": "complete-preview",
-    "workflowRunId": 43139334222,
-    "workflowUrl": "https://github.com/mf103871-boop/Maydan/actions/runs/43139334222",
-    "sourceCommit": "406f2637de48a25076e162506a2242629d3ca2ec",
-    "sourceTree": "f65985887aa11884f892f00d387ce6940c0dd713",
-    "mainMergeAtDelivery": "71b0443f6d4deade79e0cd7513b25e7bed2ef2c7",
-    "mainMergeTreeMatchesSignedSource": true,
-    "ipaSHA256": "654888f7be0720072e01df57228e1c89de1f7f29a594d5e825e594d4ebc88ca2",
-    "nextBuild": "Read Apple build and upload inventories before reserving a new number; do not rebuild or upload 60 again."
-  },
-  "preview": {
-    "url": "https://maydan-mafia-preview.mf103871.workers.dev/",
-    "apiOrigin": "https://maydan-mafia-preview.mf103871.workers.dev",
-    "workerVersion": "822df2e4-b49b-4086-95d0-d215d807d02a",
-    "htmlVersion": "1.9",
-    "htmlSourceCommit": "406f2637de48a25076e162506a2242629d3ca2ec",
-    "serviceWorkerBuildId": "1.9-a19b834e",
-    "gameplayPolicy": "game-entry-ticket-v2",
-    "ticketDesign": "ticket-clay-v1",
-    "webRewardedAdsEnabled": false,
-    "privateWarmthAudioPublishedToWeb": false,
-    "migration31Verified": true,
-    "contentLocales": [
-      "ar",
-      "en"
-    ],
-    "contentVersions": {
-      "ar": "legacy-ar",
-      "en": "new-en"
-    },
-    "htmlSHA256": "a19b834eeb2312e4c7142de8ace12f59c5a4928b1e0deff006f885c494b8f9cc"
-  },
-  "audio": {
-    "approvedPreview": "دفء وخفّة / Warmth",
-    "verifiedBundledFiles": 14,
-    "runtimePackSHA256": "7286f0eee8f45affac5701c502766ddbe9b64ea2669f42675a138768f9ec1940",
-    "publicReleaseApproved": false
+    "sourceCommit": "344d0d9ff3fc407cb0809deac6dadc90cdfa3152",
+    "sourceTree": "8a5fe0359d0918645b2e330202344619b3c88b17",
+    "sourceBranch": "codex/testflight-visual-v4-build62-r4",
+    "workflowRunId": 44648854561,
+    "workflowUrl": "https://github.com/mf103871-boop/Maydan/actions/runs/44648854561",
+    "ipaSHA256": "f6b833e6e832a93c23a085b6fd8f2c6293eb81cffe9d24d6f4032b190fea2659",
+    "ipaBytes": 234881988
   },
   "links": {
     "startHere": "docs/releases/CURRENT.md",
-    "source": "https://github.com/mf103871-boop/Maydan/commit/406f2637de48a25076e162506a2242629d3ca2ec",
-    "mainAtDelivery": "https://github.com/mf103871-boop/Maydan/commit/71b0443f6d4deade79e0cd7513b25e7bed2ef2c7",
+    "source": "https://github.com/mf103871-boop/Maydan/commit/344d0d9ff3fc407cb0809deac6dadc90cdfa3152",
+    "appStoreConnect": "https://appstoreconnect.apple.com/apps/6808385717/testflight",
     "currentMain": "https://github.com/mf103871-boop/Maydan/tree/main",
     "preview": "https://maydan-mafia-preview.mf103871.workers.dev/",
-    "appStoreConnect": "https://appstoreconnect.apple.com/apps/6808385717/testflight",
-    "publishedGame": "https://maydan-game.mf103871.workers.dev/",
-    "productionProcedure": "docs/releases/production-paired-release.md"
+    "previousHandoff": "https://github.com/mf103871-boop/Maydan/blob/344d0d9ff3fc407cb0809deac6dadc90cdfa3152/docs/releases/CURRENT.md",
+    "testflightBuild": "https://appstoreconnect.apple.com/apps/6808385717/testflight/ios/fcd5ae8d-6298-4c0b-844e-069f41aa29dd"
+  },
+  "verification": {
+    "signedPack": {
+      "apiOrigin": "https://maydan-mafia-preview.mf103871.workers.dev",
+      "appIdentityChecked": true,
+      "build": "62",
+      "installedFiles": 3832,
+      "installedInventory": "b46c391bd9c38540a1f6cacd58e3d0270b939f6379e00b3792908516a26dcbc7",
+      "mode": "artifact",
+      "nativeHTML": "3edf093d7957640b0a51cf648dac14d8d1b8b73347257fe592d4cff4b330c932",
+      "profile": "complete-preview",
+      "reviewHTML": "91c27891504ca6d9941909d2f6a7c787ee7b2a2527a4ef78dd9397aa2a716791",
+      "source": "344d0d9ff3fc407cb0809deac6dadc90cdfa3152",
+      "staticFiles": 3811,
+      "staticLFVariants": 19,
+      "version": "1.9",
+      "warmthFiles": 14
+    },
+    "previewEndpoints": [
+      "/health",
+      "/api/mafia/capabilities",
+      "/api/cosmetics/catalog",
+      "/api/billing/config",
+      "/api/content/capabilities"
+    ],
+    "nativeSimulator": {
+      "artifactId": 14591991618,
+      "githubDigest": "sha256:1003a92d8ef0f70198d8d9f15ad6c190683749a4d44fa164c76c50fe50c58f11",
+      "bytes": 16783869,
+      "kind": "release simulator",
+      "fivePhasesPassed": true,
+      "sameExecutable": "7e9bc259b3210f95e506df3fa690a99f0482467b5b9bdcd3ca6d3d318f8c56b2",
+      "phases": {
+        "launch-smoke": {
+          "launches": [
+            "cold",
+            "relaunch"
+          ],
+          "passed": true
+        },
+        "locale-smoke": {
+          "launches": [
+            "set-en",
+            "retain-en",
+            "set-ar",
+            "retain-ar"
+          ],
+          "passed": true
+        },
+        "update-gate-smoke": {
+          "launches": [
+            "required-update"
+          ],
+          "passed": true
+        },
+        "audio-stream-smoke": {
+          "launches": [
+            "audio-stream"
+          ],
+          "passed": true
+        },
+        "drawing-orientation-smoke": {
+          "launches": [
+            "drawing-orientation"
+          ],
+          "passed": true
+        }
+      }
+    },
+    "cipherSHA256": "e9e89a63df8397d186bc9c41639a8c1b808a1c6b2546051d60ef084a6929e4ca",
+    "cipherBytes": 234882172,
+    "artifacts": {
+      "Maydan-features-1.9-62": {
+        "id": 14590693423,
+        "digest": "sha256:29037d484e913040a4486993ed61a921decc310f60599d9cfaaf2047c5ab86af"
+      },
+      "Maydan-launch-1.9-62": {
+        "id": 14591991618,
+        "digest": "sha256:1003a92d8ef0f70198d8d9f15ad6c190683749a4d44fa164c76c50fe50c58f11"
+      },
+      "Maydan-visual-pack-1.9-62": {
+        "id": 14592136315,
+        "digest": "sha256:073b882eb5536cae8c3e333647342a1119dd35b655d16909c133a51a86690037"
+      },
+      "Maydan-iOS-1.9-62-encrypted": {
+        "id": 14591324659,
+        "digest": "sha256:0cc5f40dfba62c1ee3bf5dd14ec05f36589f06c32ecdd00d6b263d6b0e6ad3c5"
+      }
+    },
+    "localComparison": {
+      "matchesLocalInstalledInventory": true,
+      "matchesLocalNativeHtml": true,
+      "featureResourceDifferences": []
+    },
+    "compatibilityNotes": [
+      {
+        "text": "فُحصت الحزمة الموقّعة المسترجعة بصورة مستقلة. طابقت جميع ملفاتها الـ3,832 الحزمة المحلية ملفًا بملف.",
+        "evidenceSHA256": "4c262c2725f09afeb2af2b0e9a4851080c8dc63fb6469d345a12abe6ab7465b4"
+      },
+      {
+        "text": "تفعّل خادم المعاينة وحده على الإصدار b91ce249، بعلم اللافندر للغرف الجديدة، مع الحفاظ على الأصول الـ17 التي أُعيد فحصها.",
+        "evidenceSHA256": "f04f588c26c5dca26ce1d085d4b51094d08c81adeb340a9874026bc478c08bd3"
+      },
+      {
+        "text": "على بايتات خادم المعاينة المنشور قبِل الفحص المعرّفات البشرية الأربعة، ووافق لوحات ارسمها الجديدة والقديمة. جرى الفحص ببيانات معزولة.",
+        "evidenceSHA256": "9bcced8eac4c2a400967b4a10d68f24e79a37cd6fa79832abfa8c4db8c52526f"
+      },
+      {
+        "text": "اجتاز خادم المعاينة فحص الوصول من نقطة بيتسبرغ للكتالوج والفوترة وحالة الشروط.",
+        "evidenceSHA256": "48c5a89154613e5ce7aa5f7b9f118e29ee204045276fc0c262f2371d581716cc"
+      }
+    ],
+    "signedNodeTests": {
+      "total": 2929,
+      "passed": 2923,
+      "skipped": 6,
+      "failed": 0
+    },
+    "nativePythonTests": {
+      "total": 102,
+      "passed": 102
+    },
+    "fullIPAReadback": {
+      "installedFiles": 3832,
+      "differingFiles": 0,
+      "hashVerified": true
+    },
+    "regionalCheck": {
+      "lastObservedAt": "2026-11-20T01:43:03.393852+00:00",
+      "edge": "AMM",
+      "allThreePassed": false,
+      "paths": [
+        {
+          "path": "/api/cosmetics/catalog",
+          "status": 500
+        },
+        {
+          "path": "/api/billing/config",
+          "status": 500
+        },
+        {
+          "path": "/api/legal/status",
+          "status": 500
+        }
+      ],
+      "pittsburgh": [
+        {
+          "path": "/health",
+          "status": 200,
+          "region": "PIT"
+        },
+        {
+          "path": "/api/cosmetics/catalog",
+          "status": 200,
+          "region": "PIT"
+        },
+        {
+          "path": "/api/billing/config",
+          "status": 200,
+          "region": "PIT"
+        },
+        {
+          "path": "/api/legal/status",
+          "status": 200,
+          "region": "PIT"
+        }
+      ]
+    },
+    "appleUploadDiagnostics": {
+      "errors": [],
+      "warnings": [
+        {
+          "code": "90725",
+          "description": "SDK version issue. This app was built with the iOS 26.2 SDK. Starting April 2027, iOS and iPadOS apps must be built with the iOS 27 SDK or later, included in Xcode 27 or later, in order to be uploaded to App Store Connect or submitted for distribution."
+        }
+      ]
+    }
   },
   "handoff": {
-    "startFrom": "fresh origin/main, preserving any existing local work",
-    "historicalDefaults": [
-      "ios/app-store.json",
-      "ios/Maydan.xcodeproj/project.pbxproj"
-    ],
-    "mainAfterDelivery": "Documentation-only successors may have a different Git tree; sourceCommit and mainMergeAtDelivery pin the exact delivered application. Inspect subsequent diffs before assuming they are included in build 60.",
     "temporaryAudioBuildSecretRemoved": true,
-    "originalSigningAndEncryptedAudioKeyPreserved": true,
+    "originalSigningUnchanged": true,
+    "scope": "Internal TestFlight with the existing preview API",
+    "productionDeploymentPerformed": false,
     "publicReviewSubmitted": false,
-    "productionDeploymentPerformed": false
+    "serverPromotion": "maydan-mafia-preview only"
   },
   "remainingAcceptance": [
     "Physical iPhone and Android input, keyboard, microphone, calls, cross-platform networking, thermal and battery acceptance.",
@@ -83,45 +228,23 @@
     "Public-release review and the previously deferred audio licensing certificates."
   ],
   "verificationLimits": [
-    "The signed source passed macOS CI, all five native Release simulator phases, authenticated IPA inspection, and existing internal TestFlight availability.",
-    "Final application-source PR validation passed on Ubuntu, including the complete browser E2E chain.",
-    "The Android companion is offlineDebug and does not establish production Android authentication, online voice or payments.",
-    "Earlier 143-state visual review, 62-row game matrix and 30-minute soak retain their original source/measurement scope.",
-    "Simulator/browser evidence does not replace the remaining physical-device and human acceptance.",
-    "Android Badeeha restart passed after normal background and storage-settle time; immediate force-stop shortly after a localStorage write restored an older disk snapshot, so abrupt-kill latest-action durability is not established.",
-    "Drawing-orientation smoke uses injected eligibility and rotates the native wrapper; the captured landscape image is Home. It is not proof of a live drawing canvas or production room."
+    "A physical iPhone, real in-app purchase and real multiplayer session have separate acceptance checks.",
+    "The simulator orientation scenario rotates the wrapper using injected drawing eligibility."
   ],
-  "verification": {
-    "signedNodeTests": {
-      "total": 2718,
-      "pass": 2712,
-      "fail": 0,
-      "skip": 6
-    },
-    "signedSkippedTests": [
-      "ok 249 - the private pack files exactly match every public catalog byte/hash without escaping their supplied root # SKIP",
-      "ok 2317 - 10 · the shipped page only needs the sources the policy allows # SKIP",
-      "ok 2524 - actual private build preserves the full live Arabic semantic digest, retirement and current bilingual choice runtime # SKIP",
-      "ok 2525 - private worker cannot be prepared with an omitted or changed English supplement # SKIP",
-      "ok 2526 - actual compiled preview advertises versioned English only while enabled, and keeps five game services # SKIP",
-      "ok 2527 - actual compiled Room preserves old Arabic history across English starts, private projections, authorization and reconnect # SKIP"
+  "preview": {
+    "url": "https://maydan-mafia-preview.mf103871.workers.dev/",
+    "apiOrigin": "https://maydan-mafia-preview.mf103871.workers.dev",
+    "workerVersion": "b91ce249-23b0-4d08-9eab-f55d52da00b0",
+    "workerSHA256": "57361ffb8508a9e1416c0d0ebbc8553b1c1780a757078d8cc5c290b0de0bbfe1",
+    "paletteVersion2Enabled": true,
+    "compatibleLegacyDrawings": true,
+    "humanAvatarIds": [
+      "human-01",
+      "human-02",
+      "human-03",
+      "human-04"
     ],
-    "nativePythonTests": {
-      "tests": 97,
-      "passed": 97
-    },
-    "nativeSimulatorPhases": [
-      "startup/relaunch",
-      "AR/EN settings and native retention",
-      "update gate",
-      "audio stream",
-      "wrapper orientation with injected drawing eligibility"
-    ],
-    "publicEnglishPacks": 7,
-    "privateDrawingArabicTranslated": 1400,
-    "privateDrawingEnglishTotal": 1616,
-    "browserMafiaGeometryCases": 44,
-    "hostedPreviewHttpChecks": 22,
-    "hostedPreviewBrowserJourneys": 4
+    "hostedStaticSampleCount": 17,
+    "hostedWebAssetsReplaced": false
   }
 }

@@ -36,11 +36,19 @@ test('the shipped document and its largest inputs stay inside the size budget', 
   const html = await renderHtml(js, { version: '0.0.0-test', assets });
   // الرسوم والخطوط ملفات مبصومة بجانب المستند لا base64 داخله.
   assert.ok(!/data:(image\/webp|image\/png|font\/woff2)/.test(html), 'brand art and fonts must ship as files, not data: URLs inside the document');
-  for (const game of ['badeeha', 'mafia', 'ersomha', 'beep', 'mamnoo', 'jabeen', 'fabraka', 'meenfina']) {
-    assert.ok(result.outputFiles.some(f => new RegExp(`assets/brand/${game}-[A-Z0-9]+\\.webp$`).test(f.path.replaceAll('\\', '/'))), `${game} artwork is emitted as a hashed file`);
+  const gameArtwork = { badeeha:'badeeha-b-v2', mafia:'mafia-b-v2', ersomha:'ersomha-v2', beep:'beep-v2', mamnoo:'mamnoo', jabeen:'jabeen-v2', fabraka:'fabraka-v2', meenfina:'meenfina-v2' };
+  for (const [game, basename] of Object.entries(gameArtwork)) {
+    assert.ok(result.outputFiles.some(f => new RegExp(`assets/brand/${basename}-[A-Z0-9]+\\.webp$`).test(f.path.replaceAll('\\', '/'))), `${game} artwork is emitted as a hashed file`);
   }
+  const fontPreloads = [...html.matchAll(/<link rel="preload" as="font"[^>]+href="([^"]+)"/g)].map(match => match[1]);
+  assert.equal(fontPreloads.length, 4, 'only the body400 and heading800 faces load eagerly in both scripts');
+  assert.deepEqual(fontPreloads.map(href => href.match(/\/(arabic|latin)-(400|800)-[A-Z0-9]+\.woff2$/)?.slice(1).join('-')).sort(),
+    ['arabic-400', 'arabic-800', 'latin-400', 'latin-800']);
+  assert.ok(!fontPreloads.some(href => /-(500|600|700)-/.test(href)), 'intermediate weights are requested by font use, not preloaded');
   assertDocumentBudget(html);
   const inputs = Object.entries(result.metafile.inputs).map(([file, info]) => [file, info.bytes]).sort((a, b) => b[1] - a[1]);
+  assert.ok(!inputs.some(([file]) => file.replaceAll('\\', '/') === 'src/online/online-studio.css'),
+    'the shared room stylesheet is packaged once as a local sheet, never duplicated as inline CSS by another consumer');
   assert.ok(!inputs.some(([file]) => /server[\\/]data[\\/]ersomha|server[\\/]ersomha-content\.mjs/.test(file)), 'private Draw It answers and aliases must never enter the client bundle');
   // Lazy JSON files are independent network assets, not code parsed at launch.
   // Keep the original code-input limit and separately bound each content pack.
@@ -75,6 +83,6 @@ test('a signed Rewarded build ships the native ad bridge without loopback simula
   }
   const assets = result.outputFiles.filter(file => !file.path.endsWith('.js'))
     .map(file => './' + path.relative(DIST, file.path).replaceAll('\\', '/')).sort();
-  const html = await renderHtml(js, { version: '1.9', assets });
+  const html = await renderHtml(js, { version: '1.9', assets, roomsUrl: JSON.parse(options.define.__MAYDAN_ROOMS_URL__) });
   assertDocumentBudget(html);
 });

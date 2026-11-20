@@ -2,9 +2,9 @@
 import { CATS } from "../../data/categories/index.js";
 
 export const TOOLS = [
-    { id: "double", label: "دبل النقاط", icon: "✨", hint: "نقاط هذا السؤال ×2 إذا جاوبتوا صح" },
-    { id: "two", label: "جوابين", icon: "✌️", hint: "يحق لفريقكم قول إجابتين" },
     { id: "time", label: "وقت زيادة", icon: "⏳", hint: "+30 ثانية على المؤقت" },
+    { id: "two", label: "جوابين", icon: "✌️", hint: "يحق لفريقكم قول إجابتين" },
+    { id: "double", label: "دبل النقاط", icon: "✨", hint: "نقاط هذا السؤال ×2 إذا جاوبتوا صح" },
   ],
   TEAM_STYLE = [
     {

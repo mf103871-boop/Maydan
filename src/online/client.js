@@ -1,7 +1,9 @@
+import { drawingPaletteVersion, drawingPaletteSupported } from '../games/ersomha/palette.js';
 import { GAME_PROTOCOLS, ROOM_CAPABILITIES, validateServerUrl } from './shared.js';
 import { supportsMafiaRuleset } from './mafia-shared.js';
 import { createMafiaClientMetrics } from './mafia-metrics.mjs';
 import { getGuestTermsReceipt } from '../shared/legal/acceptance.js';
+import { ONLINE_DEVICE_KEY } from '../shared/lib/environment.js';
 export class ClientError extends Error {
   constructor(code) { super(code); this.code = code; }
 }
@@ -26,12 +28,11 @@ export function clearSession(server, code) {
   if (readSaved(server, 'lastRoom') === code) save(server, 'lastRoom', null);
 }
 // معرّف جهاز ثابت لاحتساب الغرفة المجانية لغير المسجّلين على الخادم؛ ليس سرًّا ولا هوية.
-const DEVICE_KEY = 'maydan:online:device';
 export function deviceId() {
-  try { const saved = localStorage.getItem(DEVICE_KEY); if (/^[a-f0-9]{32}$/.test(saved || '')) return saved; } catch { /* private browsing */ }
-  const fresh = memory.get(DEVICE_KEY) || Array.from(crypto.getRandomValues(new Uint8Array(16)), (b) => b.toString(16).padStart(2, '0')).join('');
-  memory.set(DEVICE_KEY, fresh);
-  try { localStorage.setItem(DEVICE_KEY, fresh); } catch { /* memory only */ }
+  try { const saved = localStorage.getItem(ONLINE_DEVICE_KEY); if (/^[a-f0-9]{32}$/.test(saved || '')) return saved; } catch { /* private browsing */ }
+  const fresh = memory.get(ONLINE_DEVICE_KEY) || Array.from(crypto.getRandomValues(new Uint8Array(16)), (b) => b.toString(16).padStart(2, '0')).join('');
+  memory.set(ONLINE_DEVICE_KEY, fresh);
+  try { localStorage.setItem(ONLINE_DEVICE_KEY, fresh); } catch { /* memory only */ }
   return fresh;
 }
 export function newCredentials() {
@@ -218,6 +219,11 @@ export class RoomClient {
     if (type === 'content_locale' && fields.contentLocale === 'en' && (this.state?.capabilities?.localizedContent !== 1 || this.state.capabilities.newEnglishContent === false)) return Promise.reject(new ClientError('CONTENT_UNAVAILABLE'));
     if(this.session?.scope==='observer')return Promise.reject(new ClientError('WAITING'));
     if (this.connectionStatus !== 'connected' || this.ws?.readyState !== 1 || !this.state) return Promise.reject(new ClientError('DISCONNECTED'));
+    if (this.state.game === 'ersomha' && type.startsWith('drawing_') && type !== 'drawing_sync') {
+      const version = drawingPaletteVersion(this.state.drawing?.paletteVersion);
+      if (!drawingPaletteSupported(version, this.state.capabilities?.ersomhaPaletteVersions) || (fields.paletteVersion !== undefined && fields.paletteVersion !== version)) return Promise.reject(new ClientError('ERSOMHA_PALETTE_UNSUPPORTED'));
+      fields = { ...fields, paletteVersion: version };
+    }
     if (this.pending.size >= MAX_PENDING_COMMANDS || (this.ws.bufferedAmount || 0) > MAX_BUFFERED_BYTES) {
       // Never build an unbounded queue of stale game actions. Reconcile from
       // the durable room state; uncertain commands are not automatically replayed.

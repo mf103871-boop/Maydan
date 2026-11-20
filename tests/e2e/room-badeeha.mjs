@@ -10,6 +10,9 @@ import { chromium } from 'playwright';
 import { startLocalServer } from '../../server/local.mjs';
 import { esbuildOptions, renderHtml, readPkg, mediaVersions } from '../../scripts/lib.mjs';
 import { acceptTermsIfShown } from '../helpers/terms-consent.mjs';
+import { approvedBadeehaArtwork } from '../fixtures/badeeha-category-art.mjs';
+
+const roomCategoryFixture = ['arabcelebs', 'arabmusic', 'seerah', 'turkishdrama', 'cartoon', 'jujutsu'];
 
 let web, app, browser, webOrigin, html;
 before(async () => {
@@ -61,7 +64,19 @@ test('two phones play Badeeha: turns, aids, reveal, judge, steal, undo and end',
   await h.getByRole('button', { name: '٢٠ سؤالًا' }).click();
   await h.getByRole('button', { name: '٣٠ ثانية' }).click();
   await h.getByRole('button', { name: 'ست فئات عشوائية' }).click();
-  assert.equal(await h.locator('.badeeha-picker button[aria-pressed="true"]').count(), 6);
+  const picker = h.locator('.badeeha-picker');
+  const selected = picker.locator('button[aria-pressed="true"]');
+  assert.equal(await selected.count(), 6);
+  while (await selected.count()) await selected.first().click();
+  for (const id of approvedBadeehaArtwork) {
+    const artwork = picker.locator(`img[data-category-art="${id}"]`);
+    await artwork.scrollIntoViewIfNeeded();
+    const width = await artwork.evaluate(async image => { await image.decode(); return image.getBoundingClientRect().width; });
+    assert.equal(width, 40, `Online picker artwork for ${id}`);
+  }
+  for (const id of roomCategoryFixture) await picker.locator('button').filter({ has: h.locator(`img[data-category-art="${id}"]`) }).click();
+  await picker.locator('button').first().scrollIntoViewIfNeeded();
+  await shot(h, 'badeeha-approved-categories-picker');
   await create.click();
   await h.locator('[data-design-id="invite-toggle"]').click();
   const code = (await h.locator('[data-design-id="invite-code"]').textContent({ timeout: 15_000 })).trim();
@@ -85,12 +100,21 @@ test('two phones play Badeeha: turns, aids, reveal, judge, steal, undo and end',
   // The host's team opens; the guest waits with a locked board.
   await h.getByText('دور فريقك').waitFor({ timeout: 10_000 });
   await g.getByText('الدور: المضيف').waitFor();
+  for (const page of [h, g]) {
+    const artwork = await page.locator('.m-board-grid img[data-category-art]').evaluateAll(images =>
+      Promise.all(images.map(async image => {
+        await image.decode();
+        return { id: image.dataset.categoryArt, width: image.getBoundingClientRect().width, nativeWidth: image.naturalWidth };
+      })));
+    assert.deepEqual(artwork.map(image => image.id), roomCategoryFixture);
+    assert.ok(artwork.every(image => image.width === 40 && image.nativeWidth === 128));
+  }
   await shot(g, 'badeeha-board');
   assert.equal(await g.locator('.m-tier:not(:disabled)').count(), 0, 'not the guest\'s turn');
   assert.equal(await h.locator('.m-tier:not(:disabled)').count(), 20);
   await h.locator('.m-tier:not(:disabled)').first().click();
   await g.locator('[data-design-id="timer"]').waitFor();
-  assert.equal(await g.locator('.badeeha-tools').count(), 0, 'aids belong to the turn team');
+  assert.equal(await g.locator('[data-design-id=tools]').count(), 0, 'aids belong to the turn team');
   await h.getByRole('button', { name: /دبل النقاط/ }).click();
   await g.getByText('✨ دبل النقاط').waitFor();
   await shot(h, 'badeeha-question-host');
@@ -98,7 +122,7 @@ test('two phones play Badeeha: turns, aids, reveal, judge, steal, undo and end',
   await g.locator('.badeeha-answer').waitFor();
   assert.equal(await answer(g), await answer(h), 'both phones show the same question');
   for (const page of [h, g]) await page.waitForFunction(() => Object.keys(JSON.parse(localStorage.getItem('maydan:badeeha:question-history-v4') || '{}')).length === 1);
-  const right = h.locator('.badeeha-judge button').filter({ hasText: '✓ المضيف' });
+  const right = h.locator('[data-design-id=judge-team]').filter({ hasText: 'المضيف' });
   const doubled = Number((await right.textContent()).match(/\+([\d٠-٩]+)/)[1].replace(/[٠-٩]/g, (d) => '٠١٢٣٤٥٦٧٨٩'.indexOf(d)));
   await right.click();
   await g.getByText(`✓ المضيف +`).waitFor();
@@ -108,7 +132,7 @@ test('two phones play Badeeha: turns, aids, reveal, judge, steal, undo and end',
   await g.getByText('دور فريقك').waitFor();
   assert.equal(await g.locator('.m-tier:not(:disabled)').count(), 19, 'the judged cell is used');
   await g.locator('.m-tier:not(:disabled)').first().click();
-  await g.locator('.badeeha-tools').waitFor();
+  await g.locator('[data-design-id=tools]').waitFor();
   const seconds = async () => Number((await g.locator('[data-design-id="timer"] bdi').textContent()).replace(/[٠-٩]/g, (d) => '٠١٢٣٤٥٦٧٨٩'.indexOf(d)));
   const before = await seconds();
   await g.getByRole('button', { name: /وقت زيادة/ }).click();
@@ -118,7 +142,7 @@ test('two phones play Badeeha: turns, aids, reveal, judge, steal, undo and end',
   }, before);
   assert.equal(await g.getByRole('button', { name: /وقت زيادة/ }).isDisabled(), true, 'once per match');
   await h.getByRole('button', { name: 'اكشف الإجابة' }).click();
-  await h.locator('.badeeha-judge button').filter({ hasText: '⚡ سرقة: المضيف' }).click();
+  await h.locator('[data-design-id=judge-team]').filter({ hasText: '⚡ سرقة: المضيف' }).click();
   await g.getByText('⚡ سرقة! المضيف').waitFor();
   await h.getByText('دور فريقك').waitFor();
   await g.getByText('الدور: المضيف').waitFor();

@@ -1,9 +1,12 @@
 import { getCosmetic } from '../plus/catalog.js';
+import sahraPanorama from '../shared/brand/assets/playful-cosmetics/panorama.webp';
+import { cssAssetUrl } from '../shared/ui/css-asset-url.js';
 export function profileSkin(cosmetics) { return getCosmetic(cosmetics?.profileSkinId,{kind:'profileSkin'}); }
+export const profileSkinArt = id => id === 'sahra.profileSkin' ? sahraPanorama : null;
 export function profileSkinStyle(cosmetics) {
   return profileSkin(cosmetics)?.id==='sahra.profileSkin'?{
-    '--profile-accent':'#f1c56f','--profile-soft':'#244c4d','--profile-deep':'#ffe1a1',
-    '--profile-gradient':'linear-gradient(135deg,#153d43,#3e2c48)',
-    '--profile-skin-art':'url("/assets/plus/v2/profile-sahra-background.webp")',
+    '--profile-accent':'#08796d','--profile-soft':'#e0f1e8','--profile-deep':'#28524b',
+    '--profile-gradient':'linear-gradient(135deg,#e0f1e8,#fff3d8)',
+    '--profile-skin-panorama':cssAssetUrl(sahraPanorama),
   }:{};
 }

@@ -176,7 +176,7 @@ class PrivateAudioExpectationTests(unittest.TestCase):
             root=Path(temporary)/'source'; app=Path(temporary)/'Maydan.app'; root.mkdir()
             (root/'package.json').write_text('{"type":"module"}',encoding='utf-8')
             for name in ['scripts/audio/private-preview.mjs','scripts/ios/release-environment.mjs','scripts/ios/native.mjs',
-                         'src/shared/fx/audio-candidate-policy.js','src/shared/lib/environment.js','src/shared/account/config.js']:
+                         'src/shared/fx/audio-candidate-policy.js','src/shared/lib/environment.js','src/online/server-url.js','src/shared/account/config.js']:
                 file=root/name; file.parent.mkdir(parents=True,exist_ok=True); file.write_bytes((source_root/name).read_bytes())
             payload=b'synthetic-media-integrity-fixture'; digest=hashlib.sha256(payload).hexdigest()
             entries=[]
@@ -221,7 +221,7 @@ class WarmthAudioExpectationTests(unittest.TestCase):
         (root/'package.json').write_text('{"type":"module"}',encoding='utf-8')
         for name in ['scripts/audio/private-preview.mjs','scripts/audio/warmth-preview.mjs',
                      'scripts/ios/release-environment.mjs','scripts/ios/native.mjs',
-                     'src/shared/lib/environment.js','src/shared/account/config.js']:
+                     'src/shared/lib/environment.js','src/online/server-url.js','src/shared/account/config.js']:
             file=root/name; file.parent.mkdir(parents=True,exist_ok=True); file.write_bytes((source_root/name).read_bytes())
         manifest=json.loads((source_root/'assets/audio-warmth-preview/manifest.json').read_text(encoding='utf-8'))
         original_pin=manifest['runtimePackSHA256']; files=[]; payloads={}

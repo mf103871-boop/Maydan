@@ -10,7 +10,9 @@ export async function acceptTermsIfShown(page,{required=true,locale}={}) {
     await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
     await page.waitForFunction(()=>{
       const visible=node=>node&&node.getBoundingClientRect().width>0&&node.getBoundingClientRect().height>0&&!node.closest('[hidden],[inert]');
-      return visible(document.querySelector('[data-design-screen="legal.consent"]'))||[...document.querySelectorAll('[data-design-screen]')].some(node=>! /^(?:shell|system)\./.test(node.dataset.designScreen)&&visible(node));
+      return visible(document.querySelector('[data-design-screen="legal.consent"]')) ||
+        [...document.querySelectorAll('[data-design-screen]')].some(node =>
+          node.dataset.designScreen !== 'startup' && !/^(?:shell|system)\./.test(node.dataset.designScreen) && visible(node));
     });
     if(!await form.isVisible())return false;
   }

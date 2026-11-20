@@ -1,7 +1,7 @@
 import { fail } from '../room-model.mjs';
 import { sha256 } from '../protocol.mjs';
 import { publicName, imageUrl } from '../profiles/model.mjs';
-import { approvedImageSql, isModerator } from './access.mjs';
+import { approvedImageSql, isModerator, canPerformModerationAction } from './access.mjs';
 import { profileAchievementStatements } from '../profiles/db.mjs';
 
 const stmt=(env,sql,...args)=>env.DB.prepare(sql).bind(...args);
@@ -52,8 +52,8 @@ export async function auditOf(env,{before,limit}) {
   return page(rows.map(r=>({id:r.id,seq:r.seq,actorId:r.actor_id,action:r.action,targetId:r.target_id,
     subjectUserId:r.subject_user_id,reason:r.reason,reportId:r.report_id,createdAt:r.created_at})),limit,'actions');
 }
-export const reviewImage=(env,id,version)=>first(env,`SELECT r.data_base64,r.byte_length FROM moderation_image_reviews r
-  WHERE r.id=? AND r.version=? AND ${accountExists('r.user_id')}`,id,version);
+export const reviewImage=(env,id,version,pendingOnly=false)=>first(env,`SELECT r.data_base64,r.byte_length FROM moderation_image_reviews r
+  WHERE r.id=? AND r.version=? AND (?=0 OR r.status='pending') AND ${accountExists('r.user_id')}`,id,version,Number(pendingOnly));
 
 const ACTIONS=new Set(['resolve_report','review_mafia_report','remove_message','clear_profile_text','remove_image','suspend_user','restore_user','approve_image','reject_image']);
 export function actionOf(body) {
@@ -78,7 +78,7 @@ export function actionOf(body) {
   return value;
 }
 export async function performAction(env,actor,body,now=Date.now()) {
-  if(!isModerator(env,actor.userId))fail('FORBIDDEN',403);
+  if(!canPerformModerationAction(env,actor.userId,body))fail('FORBIDDEN',403);
   const input=actionOf(body);const hash=await sha256(JSON.stringify(input));
   const prior=await first(env,'SELECT id,request_hash FROM moderation_actions WHERE actor_id=? AND client_id=?',actor.userId,input.clientId);
   if(prior){if(prior.request_hash!==hash)fail('CONFLICT',409);return {ok:true,actionId:prior.id};}
@@ -164,7 +164,7 @@ export async function performAction(env,actor,body,now=Date.now()) {
   if(resolvedReport)run(`INSERT INTO moderation_report_decisions(report_id,action_id,actor_id,reason,resolved_at)
     SELECT ?,?,?,?,? WHERE ${newAction} ON CONFLICT(report_id) DO UPDATE SET action_id=excluded.action_id,actor_id=excluded.actor_id,reason=excluded.reason,resolved_at=excluded.resolved_at`,resolvedReport,id,actor.userId,reason,now);
   if(action==='approve_image')statements.push(...profileAchievementStatements(env,subject,now));
-  if(!isModerator(env,actor.userId))fail('FORBIDDEN',403);
+  if(!canPerformModerationAction(env,actor.userId,input))fail('FORBIDDEN',403);
   await env.DB.batch(statements);
   const saved=await first(env,'SELECT id,request_hash FROM moderation_actions WHERE actor_id=? AND client_id=?',actor.userId,input.clientId);
   if(!saved || saved.request_hash!==hash)fail('CONFLICT',409);

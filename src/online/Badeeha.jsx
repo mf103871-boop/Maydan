@@ -5,7 +5,7 @@ import { tr } from '../shared/i18n/core.js';
 // والفريق صاحب الدور يختار السؤال ويستعمل وسائله من جواله. كل جوال يحمل بنك الأسئلة،
 // فالغرفة تنقل معرّفات الأسئلة فقط ويعرضها كل جوال من نسخته بالمكوّن نفسه (QuestionVisual).
 import React, { useEffect, useMemo, useState } from 'react';
-import { Button, Card, ConfirmModal, Podium, Scoreboard } from '../shared/ui/components.jsx';
+import { Button, Card, ConfirmModal } from '../shared/ui/components.jsx';
 import { usePlatform } from '../platform/context.js';
 import { useAccount } from '../shared/account/context.js';
 import { vignette } from '../shared/fx/index.js';
@@ -14,7 +14,7 @@ import { getCategories } from '../data/game-content.js';
 import { normalizeContentIdentity } from '../shared/content-locale.mjs';
 import MaydanLogicBeta, { pointsAfterHints } from '../games/badeeha/logic.js';
 import { QuestionVisual } from '../games/badeeha/QuestionVisual.js';
-import { TOOLS, TEAM_STYLE, MAYDAN_TIER_LABELS, TYPE_PROMPT, answerText } from '../games/badeeha/constants.js';
+import { TOOLS, MAYDAN_TIER_LABELS, TYPE_PROMPT, answerText } from '../games/badeeha/constants.js';
 import { questionAssistance } from '../games/badeeha/assistance.js';
 import { rememberBadeehaQuestions } from '../games/badeeha/persistence.js';
 import { badeehaContentStorage } from './badeeha-storage.js';
@@ -22,29 +22,27 @@ import { mulberry32 } from '../shared/lib/rng.js';
 import BADEEHA_CSS from '../games/badeeha/styles.css?sheet';
 import { PresentationStyles } from '../shared/ui/PresentationStyles.jsx';
 import { BADEEHA_TIMERS} from './shared.js';
+import { Avatar } from '../shared/brand/art.jsx';
+import { IconFlask, IconUsers } from '../shared/ui/icons.jsx';
+import { getPlayfulSceneArt } from '../shared/brand/playful-scenes.js';
+import { ProfileAvatar } from '../profiles/ProfileAvatar.jsx';
+import BOARD_CSS from '../games/badeeha/studio-local.css?sheet';
+import STUDIO_CSS from './badeeha-studio.css?sheet';
 
 const { MODES, ROUND_SIZES, questionId } = MaydanLogicBeta;
 // أنماط بَديهة مكتوبة لصفحة كاملة (.m-root)؛ داخل الغرفة تأخذ مكانها في البطاقة فقط.
-const EMBED_CSS = `.m-root.m-embedded{min-height:0;padding:0;background:transparent;isolation:auto;overflow:visible}
+const EMBED_CSS = `.online-badeeha .m-root.m-embedded{min-height:0;padding:0;background:transparent;isolation:auto;overflow:visible}
 .m-root.m-embedded::before{display:none}
 .online-badeeha .m-board-grid{margin-top:4px}
 .online-badeeha .m-tier:disabled{cursor:default}
-.badeeha-turn{display:flex;align-items:center;gap:8px;font-weight:800}
-.badeeha-turn i{width:12px;height:12px;border-radius:50%;background:var(--team)}
-.badeeha-tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.badeeha-tools button{min-height:48px;border-radius:16px;border:1px solid #e7d6b8;background:#fffaf0;font-weight:800;padding:6px}
-.badeeha-tools button:disabled{opacity:.45}
-.badeeha-tools small{display:block;font-weight:600;font-size:.72rem;color:#77677c}
-.badeeha-cell{display:grid;gap:2px}.badeeha-cell span{font-weight:800;color:#9250bd}
-.badeeha-effects{display:flex;flex-wrap:wrap;gap:6px}.badeeha-effects span{background:#fff0c5;border-radius:12px;padding:2px 10px;font-weight:800;font-size:.8rem}
-.badeeha-answer{background:#dff1e9;color:#08645f;border-radius:16px;padding:10px 14px;font-weight:900;font-size:1.1rem}
-.badeeha-judge{display:grid;gap:8px}
 .badeeha-verdict{border-radius:16px;padding:10px 14px;font-weight:800;background:#fffaf0;border:1px solid #e7d6b8}
 .badeeha-verdict.is-good{background:#dff1e9;color:#08645f}.badeeha-verdict.is-none{color:#77677c}
 .badeeha-picker{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:6px;max-height:300px;overflow:auto;padding:2px}
-.badeeha-picker button{display:flex;align-items:center;gap:6px;min-height:44px;border-radius:14px;border:1px solid #e7d6b8;background:#fffaf0;font:inherit;font-size:.85rem;text-align:start;padding:4px 8px;cursor:pointer}
+.badeeha-picker button{display:flex;flex-wrap:wrap;align-content:center;align-items:center;gap:6px;min-height:44px;border-radius:14px;border:1px solid #e7d6b8;background:#fffaf0;font:inherit;font-size:.85rem;text-align:start;padding:4px 8px;cursor:pointer}
 .badeeha-picker button[aria-pressed="true"]{background:#e9dcf7;border-color:#9250bd;font-weight:800}
 .badeeha-picker button.is-locked{opacity:.6}
+.badeeha-category-art{object-fit:contain;flex:none;vertical-align:middle}
+.badeeha-picker button>span:last-child{flex:1 0 min-content;min-width:0;max-inline-size:max-content;overflow-wrap:break-word}
 .badeeha-segment{display:flex;flex-wrap:wrap;gap:6px}
 .badeeha-segment button{min-height:44px;border-radius:14px;border:1px solid #e7d6b8;background:#fffaf0;font:inherit;padding:4px 12px;cursor:pointer}
 .badeeha-segment button[aria-pressed="true"]{background:#e9dcf7;border-color:#9250bd;font-weight:800}`;
@@ -102,6 +100,13 @@ function Segment({ label, options, value, onChange, disabled, designId }) {
     <div className="badeeha-segment">{options.map(([id, text]) => <button data-design-id={designId} key={id} type="button" aria-pressed={value === id} disabled={disabled} onClick={() => onChange(id)}>{text}</button>)}</div></div>;
 }
 
+function CategoryArtwork({ category, size = 32, lazy = false, fallback }) {
+  const art = category && getPlayfulSceneArt(`category-${category.id}`, size);
+  return art
+    ? <img className="badeeha-category-art" data-category-art={category.id} src={art} width={size} height={size} alt="" loading={lazy ? 'lazy' : undefined} decoding="async" />
+    : <span aria-hidden="true">{category?.icon || fallback}</span>;
+}
+
 export function BadeehaSettings({ value, onChange, disabled }) {
   const { CATS } = contentFor(value);
   const account = useAccount();
@@ -129,7 +134,7 @@ export function BadeehaSettings({ value, onChange, disabled }) {
     <div className="row-between"><span className="online-field-label">{tr("الفئات (")}{number(options.categories.length)}{tr(" من ٦)")}</span><Button data-design-id="random-categories" size="sm" variant="ghost" disabled={disabled} onClick={random}>{tr("ست فئات عشوائية")}</Button></div>
     <div className="badeeha-picker" role="group" aria-label={tr("اختر ست فئات")}>
       {CATS.map((category) => { const locked = account.lockedPack(category.id); return <button data-design-id="category-choice" key={category.id} type="button" className={locked ? 'is-locked' : ''} aria-pressed={options.categories.includes(category.id)} disabled={disabled}
-        onClick={() => toggle(category.id)}><span aria-hidden="true">{locked ? '🔒' : category.icon}</span><span>{category.name}</span></button>; })}
+        onClick={() => toggle(category.id)}>{locked ? <span aria-hidden="true">🔒</span> : <CategoryArtwork category={category} size={40} lazy />}<span>{category.name}</span></button>; })}
     </div>
     {ready && !ready.ok && <p className="online-notice error" role="alert">{ready.message}</p>}
     <p className="online-footnote">{tr("جوال لكل فريق (من فريقين إلى أربعة). المضيف فريق أيضًا، ويكشف الإجابة ويحكم كما في بَديهة على جهاز واحد.")}</p>
@@ -178,9 +183,9 @@ export function BadeehaMatch({ state, me, isHost, disabled, act, clockOffset, sp
   // ConnectedRoom owns live authorized reveal/verdict transitions. Mounting a
   // retained question/result here must not sound its historical outcome.
 
-  const teams = state.teams.map((team, index) => {
+  const teams = state.teams.map(team => {
     const seat = state.members.find((m) => m.id === team.id);
-    return { ...team, name: seat?.name || tr("فريق"), emoji: seat?.emoji, left: seat?.left, connected: seat?.connected, color: TEAM_STYLE[index % TEAM_STYLE.length].solid };
+    return { ...team, name: seat?.name || tr("فريق"), emoji: seat?.emoji, avatar: seat?.avatar, profile: seat?.profile, left: seat?.left, connected: seat?.connected };
   });
   const turn = teams.find((team) => team.id === state.turnId);
   const mine = teams.find((team) => team.id === me?.id);
@@ -192,23 +197,19 @@ export function BadeehaMatch({ state, me, isHost, disabled, act, clockOffset, sp
   const soundOn = platform?.settings ? platform.settings.soundOn !== false : true;
   const verdictTeam = state.verdict?.teamId ? teams.find((team) => team.id === state.verdict.teamId) : null;
   const sorted = [...teams].sort((a, b) => b.score - a.score);
-  const scoreboard = <Scoreboard data-design-id="scoreboard" entries={teams.map((team) => ({ id: team.id, name: team.left ? tr("{v0} (غادر)", {v0: team.name}) : team.name, emoji: team.emoji, score: team.score, color: team.color }))} />;
+  if (state.phase === 'over') return <BadeehaResults state={state} teams={sorted} isHost={isHost && !spectating} disabled={disabled} act={act} />;
+  if (['question', 'reveal'].includes(state.phase) && state.current) return <BadeehaQuestion
+    state={state} teams={teams} turn={turn} mine={mine} myTurn={myTurn}
+    isHost={isHost && !spectating} disabled={disabled} act={act}
+    question={question} category={CATEGORY.get(state.current.categoryId)} assistance={assistance}
+    seconds={seconds} pointsNow={pointsNow} soundOn={soundOn} platform={platform} />;
 
-  if (state.phase === 'over') return <section data-design-screen="online.badeeha.over" className="stack online-badeeha">
-    {state.reason === 'players_left' && <p className="online-notice">{tr("انتهت المباراة لأن الفرق المتبقية أقل من اثنين.")}</p>}
-    {state.reason === 'ended' && <p className="online-notice">{tr("أنهى المضيف المباراة قبل آخر سؤال.")}</p>}
-    <Podium data-design-id="podium" entries={sorted.map((team) => ({ id: team.id, name: team.name, emoji: team.emoji, score: team.score, color: team.color }))} />
-    <Card className="stack">{sorted.map((team) => <div className="row-between" key={team.id}><b>{team.name}</b><span>{number(team.score)}{tr(" نقطة، ")}{number(team.correct)}{tr(" صح، ")}{number(team.steals)}{tr(" سرقة")}</span></div>)}</Card>
-    <p className="online-footnote">{tr("إعادة اللعب هنا تستخدم الأسئلة نفسها. لأسئلة جديدة، اخرجوا وأنشئوا غرفة جديدة من بَديهة.")}</p>
-    {isHost ? <Button data-design-id="restart" full size="lg" variant="primary" disabled={disabled} onClick={() => act('restart')}>{tr("العودة للانتظار وإعادة نفس الأسئلة")}</Button> : <p className="online-footnote">{tr("بانتظار المضيف لبدء مباراة جديدة.")}</p>}
-  </section>;
-
-  return <section data-design-screen={`online.badeeha.${state.phase}`} className="stack online-badeeha">
-    <div className="m-root m-embedded" dir={uiDirection()}><PresentationStyles sheet={BADEEHA_CSS}/><style>{EMBED_CSS}</style><div className="stack">
-      <div className="row-between">
-        <span data-design-id="turn" className="badeeha-turn" style={{ '--team': turn?.color }}><i aria-hidden="true" />{turn ? (myTurn ? tr("دور فريقك") : tr("الدور: {v0}", {v0: turn.name})) : '—'}</span>
-        <span data-design-id="round" className="online-footnote">{mode.icon} {tr(mode.label)}{tr(" · السؤال ")}{number(Math.min(state.round, state.rounds))}{tr(" من ")}{number(state.rounds)}</span>
-      </div>
+  return <section data-design-screen={`online.badeeha.${state.phase}`} className="online-badeeha badeeha-studio" dir={uiDirection()}>
+    <PresentationStyles sheet={BADEEHA_CSS}/><PresentationStyles sheet={BOARD_CSS}/><PresentationStyles sheet={STUDIO_CSS}/>
+    <StudioScores teams={teams} turnId={state.turnId}/>
+    <div className="m-root m-local-studio m-embedded"><style>{EMBED_CSS}</style><div className="stack">
+      <div data-design-id="turn" className="bl-board-turn"><IconUsers/><b>{turn ? (myTurn ? tr("دور فريقك") : tr("الدور: {v0}", {v0: turn.name})) : '—'}</b></div>
+      <span data-design-id="round" className="bl-mode-caption">{tr(mode.label)}{tr(" · السؤال ")}{number(Math.min(state.round, state.rounds))}{tr(" من ")}{number(state.rounds)}</span>
       {state.verdict && state.phase === 'board' && <p className={`badeeha-verdict ${verdictTeam ? 'is-good' : 'is-none'}`} role="status">
         {verdictTeam ? `${state.verdict.steal ? tr("⚡ سرقة! ") : '✓ '}${verdictTeam.name} +${number(state.verdict.points)}` : tr("ولا أحد هالمرة.")}</p>}
 
@@ -218,13 +219,13 @@ export function BadeehaMatch({ state, me, isHost, disabled, act, clockOffset, sp
           {state.settings.categories.map((categoryId, categoryIndex) => {
             const category = CATEGORY.get(categoryId);
             return <article key={categoryId} className="m-board-category" style={{ '--i': categoryIndex }}>
-              <h2><span aria-hidden="true">{category?.icon || '❔'}</span> {category?.name || tr("فئة غير متاحة في نسختك")}</h2>
+              <h2><CategoryArtwork category={category} size={40} fallback="❔" /> {category?.name || tr("فئة غير متاحة في نسختك")}</h2>
               <div className="m-question-buttons">{(state.settings.deck[categoryId] || []).map((cell, index) => {
                 const done = state.used.includes(cell.qid);
                 return <button key={cell.qid} data-design-id="tier" type="button" className={`m-tier m-tier-${cell.p} ${done ? 'done' : ''}`} style={{ '--n': index }}
                   data-sound="none" disabled={done || disabled || spectating || !(isHost || myTurn)} onClick={() => act('open', { categoryId, index })}
                   aria-label={tr("{v0}، سؤال {v1} نقطة{v2}", {v0: category?.name || '', v1: cell.p, v2: done ? tr("، مستخدم") : ''})}>
-                  <b dir="ltr">{cell.p}</b><small>{done ? tr("تم") : tr(MAYDAN_TIER_LABELS[cell.p])}</small></button>;
+                  <b dir="ltr">{cell.p}</b><small className={done ? undefined : "sr-only"}>{done ? tr("تم") : tr(MAYDAN_TIER_LABELS[cell.p])}</small></button>;
               })}</div>
             </article>;
           })}
@@ -235,33 +236,112 @@ export function BadeehaMatch({ state, me, isHost, disabled, act, clockOffset, sp
         </div>}
       </>}
 
-      {['question', 'reveal'].includes(state.phase) && state.current && <Card data-design-id="question" className="stack">
-        <div className="row-between"><div data-design-id="category" className="badeeha-cell"><b>{CATEGORY.get(state.current.categoryId)?.name}</b><span>{number(pointsNow)}{tr(" نقطة")}{state.effect.double ? tr(" (دبل)") : ''}</span></div>
-          {seconds !== null && <span data-design-id="timer" className={`online-timer ${seconds <= 5 ? 'urgent' : ''}`} role="timer" aria-label={tr("متبقي {v0} ثانية", {v0: seconds})}><b><bdi>{number(seconds)}</bdi></b>{tr(" ث")}</span>}</div>
-        {(state.effect.double || state.effect.two) && <div className="badeeha-effects">{state.effect.double && <span>{tr("✨ دبل النقاط")}</span>}{state.effect.two && <span>{tr("✌️ جوابان")}</span>}</div>}
-        {question && TYPE_PROMPT[question.type] && <p data-design-id="prompt" className="m-prompt">{tr(TYPE_PROMPT[question.type])}</p>}
-        {state.phase === 'question' && assistance && (assistance.context || assistance.shape) && <aside data-design-id="assistance" className="m-question-assistance" aria-label={tr("مساعدة خفيفة بلا خصم نقاط")}>
-          {assistance.context && <span>{assistance.context}</span>}{assistance.shape && <small>{assistance.shape}</small>}
-        </aside>}
-        {question ? QuestionVisual({ question, packId: state.current.categoryId, revealed: state.phase === 'reveal', hintsUsed: state.hintsUsed, mixedItems: mixedOrder(question),
-          onHint: state.phase === 'question' && (isHost || myTurn) && !disabled ? () => act('hint') : null,
-          soundOn, volume: platform?.settings?.soundVolume, sound: platform?.sound, onSfx: (name) => platform?.sound?.play(name) })
-          : <p className="online-notice">{tr("هذا السؤال غير موجود في نسخة جوالك. حدّث ميدان؛ المضيف يكمل الجولة.")}</p>}
-        {state.phase === 'question' && seconds === 0 && <p className="online-footnote" role="status">{tr("انتهى الوقت.")}</p>}
-        {state.phase === 'reveal' && question && <p data-design-id="answer" className="badeeha-answer" role="status">{tr("الإجابة: ")}{answerText(question)}</p>}
-        {state.phase === 'reveal' && question?.alt?.length > 0 && <p className="online-footnote">{tr("تُقبل أيضًا: ")}{question.alt.join('، ')}</p>}
-        {state.phase === 'question' && myTurn && <div data-design-id="tools" className="badeeha-tools" role="group" aria-label={tr("وسائل فريقك")}>{TOOLS.map((tool) => <button data-design-id="tool" data-sound="none" key={tool.id} type="button" disabled={disabled || !mine.tools[tool.id] || seconds === 0}
-          onClick={() => act('tool', { tool: tool.id })} title={tr(tool.hint)}>{tool.icon} {tr(tool.label)}<small>{mine.tools[tool.id] ? tr(tool.hint) : tr("استُعملت")}</small></button>)}</div>}
-        {state.phase === 'question' && (isHost ? <Button data-design-id="reveal" data-sound="none" full variant="primary" size="lg" disabled={disabled} onClick={() => act('reveal')}>{tr("اكشف الإجابة")}</Button>
-          : <p className="online-footnote">{myTurn ? tr("جاوبوا بصوتكم، والمضيف يكشف الإجابة.") : tr("المضيف يكشف الإجابة ويحكم.")}</p>)}
-        {state.phase === 'reveal' && (isHost ? <div data-design-id="judge" className="badeeha-judge" role="group" aria-label={tr("من جاوب صح؟")}>
-          {teams.filter((team) => !team.left).map((team) => <Button data-design-id="judge-team" data-sound="none" key={team.id} full variant={team.id === state.turnId ? 'primary' : 'secondary'} disabled={disabled} onClick={() => act('judge', { teamId: team.id })}>
-            {team.id === state.turnId ? '✓' : tr("⚡ سرقة:")} {team.name} +{number(team.id === state.turnId && state.effect.double ? pointsNow * 2 : pointsNow)}</Button>)}
-          <Button data-design-id="judge-nobody" data-sound="none" full variant="ghost" disabled={disabled} onClick={() => act('judge', { teamId: null })}>{tr("ولا أحد")}</Button>
-        </div> : <p className="online-footnote">{tr("المضيف يحكم الآن.")}</p>)}
-      </Card>}
+
     </div></div>
-    <Card className="stack"><h2>{tr("النقاط")}</h2>{scoreboard}</Card>
     {confirmEnd && <ConfirmModal title={tr("إنهاء المباراة؟")} message={tr("تنتهي المباراة الآن بالنقاط الحالية.")} confirmLabel={tr("إنهاء")} cancelLabel={tr("نكمل")} onConfirm={async () => { setConfirmEnd(false); await act('end'); }} onCancel={() => setConfirmEnd(false)} />}
+  </section>;
+}
+
+
+function TeamPortrait({ team, size = 76, presentation = 'cutout' }) {
+  return team.profile ? <ProfileAvatar user={{ ...team.profile, name: team.name }} size={size} presentation={presentation} />
+    : <Avatar player={team} style={{ width: size, height: size, flexShrink: 0 }} />;
+}
+
+function StudioScores({ teams, turnId }) {
+  return <div data-design-id="scoreboard" className="bs-scores" aria-label={tr('النقاط')}>
+    {teams.map(team => <div key={team.id} className={'bs-score' + (team.id === turnId ? ' is-turn' : '')}>
+      <TeamPortrait team={team}/><div className="bs-score-copy"><b>{team.left ? tr('{v0} (غادر)', {v0: team.name}) : team.name}</b>
+        <strong><bdi dir="ltr">{number(team.score)}</bdi></strong></div>
+    </div>)}
+  </div>;
+}
+
+function ToolArtwork({ id }) {
+  // The aid remains identified by its original ID; art never controls its cost.
+  if (id === 'double') return <span className="bs-tool-art bs-double" aria-hidden="true" dir="ltr">×2</span>;
+  return <span className={'bs-tool-art bs-tool-' + id} aria-hidden="true"><img src={getPlayfulSceneArt(id === 'two' ? 'badeeha-cards' : 'badeeha-time', 80)} width={80} height={80} alt=""/></span>;
+}
+
+function BadeehaQuestion({ state, teams, turn, mine, myTurn, isHost, disabled, act, question, category, assistance, seconds, pointsNow, soundOn, platform }) {
+  const revealed = state.phase === 'reveal';
+  const progress = Math.max(0, Math.min(1, seconds / (state.settings.timer || 60)));
+  return <section data-design-screen={'online.badeeha.' + state.phase} className={'online-badeeha badeeha-studio bs-' + state.phase} dir={uiDirection()}>
+    <PresentationStyles sheet={BADEEHA_CSS}/><PresentationStyles sheet={STUDIO_CSS}/>
+    <StudioScores teams={teams} turnId={state.turnId}/>
+    {!revealed && <div className="bs-turn-strip">
+      <IconUsers className="bs-turn-icon"/>
+      <strong data-design-id="turn">{turn ? (myTurn ? tr('دور فريقك') : tr('الدور: {v0}', {v0: turn.name})) : '—'}</strong>
+      {seconds !== null && <span data-design-id="timer" className={'bs-timer' + (seconds <= 5 ? ' is-urgent' : '')}
+        style={{'--timer-progress': `${progress * 360}deg`}} role="timer" aria-label={tr('متبقي {v0} ثانية', {v0: seconds})}>
+        <span><b><bdi dir="ltr">{number(seconds)}</bdi></b><small>{tr('ث')}</small></span>
+      </span>}
+    </div>}
+    <div data-design-id="category" className="bs-category"><strong>{category?.id === 'science' ? <IconFlask className="bs-category-icon"/> : <CategoryArtwork category={category} />}{category?.name}</strong>
+      <span className="bs-points"><bdi dir="ltr">{number(pointsNow)}</bdi>{' '}{tr('نقطة')}{state.effect.double ? tr(' (دبل)') : ''}</span>
+    </div>
+    <article data-design-id="question" className={'bs-question-body' + (revealed ? ' is-revealed' : '')}>
+      {question ? QuestionVisual({ question, packId: state.current.categoryId, revealed, hintsUsed: state.hintsUsed, mixedItems: mixedOrder(question),
+        onHint: !revealed && (isHost || myTurn) && !disabled ? () => act('hint') : null,
+        soundOn, volume: platform?.settings?.soundVolume, sound: platform?.sound, onSfx: name => platform?.sound?.play(name) })
+        : <p className="online-notice">{tr('هذا السؤال غير موجود في نسخة جوالك. حدّث ميدان؛ المضيف يكمل الجولة.')}</p>}
+      {question && TYPE_PROMPT[question.type] && <p data-design-id="prompt" className="bs-prompt">{tr(TYPE_PROMPT[question.type])}</p>}
+      {!revealed && assistance && (assistance.context || assistance.shape) && <aside data-design-id="assistance" className="bs-assistance" aria-label={tr('مساعدة خفيفة بلا خصم نقاط')}>
+        {assistance.context && <span>{assistance.context}</span>}{assistance.shape && <span>{assistance.shape}</span>}
+      </aside>}
+    </article>
+    {!revealed && seconds === 0 && <p className="bs-status" role="status">{tr('انتهى الوقت.')}</p>}
+    {!revealed && (state.effect.double || state.effect.two) && <div className="bs-effects">
+      {state.effect.double && <span>{tr('✨ دبل النقاط')}</span>}{state.effect.two && <span>{tr('✌️ جوابان')}</span>}
+    </div>}
+    {revealed && question && <p data-design-id="answer" className="badeeha-answer bs-answer" role="status">{tr('الإجابة: ')}{answerText(question)}</p>}
+    {revealed && question?.alt?.length > 0 && <p className="bs-status">{tr('تُقبل أيضًا: ')}{question.alt.join('، ')}</p>}
+    {!revealed && myTurn && <div data-design-id="tools" className="bs-tools" role="group" aria-label={tr('وسائل فريقك')}>
+      {TOOLS.map(tool => <button data-design-id="tool" data-sound="none" key={tool.id} type="button" className="bs-tool"
+        disabled={disabled || !mine.tools[tool.id] || seconds === 0} onClick={() => act('tool', {tool: tool.id})}
+        aria-label={tr(tool.label) + ' · ' + tr(tool.hint)} title={tr(tool.hint)}>
+        <ToolArtwork id={tool.id}/><b>{tr(tool.label)}</b>{!mine.tools[tool.id] && <small>{tr('استُعملت')}</small>}
+      </button>)}
+    </div>}
+    {!revealed && (isHost ? <div className="bs-reveal-action"><Button data-design-id="reveal" data-sound="none" full variant="primary" size="lg" disabled={disabled} onClick={() => act('reveal')}>{tr('اكشف الإجابة')}</Button><small>{tr('للمضيف')}</small></div>
+      : <p className="bs-status">{myTurn ? tr('جاوبوا بصوتكم، والمضيف يكشف الإجابة.') : tr('المضيف يكشف الإجابة ويحكم.')}</p>)}
+    {revealed && (isHost ? <div data-design-id="judge" className="bs-judge" role="group" aria-label={tr('من جاوب صح؟')}>
+      <h2>{tr('من جاوب صح؟')}</h2>
+      {teams.filter(team => !team.left).map(team => <Button data-design-id="judge-team" data-sound="none" key={team.id} full size="lg"
+        variant={team.id === state.turnId ? 'primary' : 'secondary'} disabled={disabled} onClick={() => act('judge', {teamId: team.id})}>
+        <span>{team.id !== state.turnId && <span className="bs-steal">{tr('⚡ سرقة:')}{' '}</span>}{team.name}</span>
+        <bdi dir="ltr">+{number(team.id === state.turnId && state.effect.double ? pointsNow * 2 : pointsNow)}</bdi>
+      </Button>)}
+      <Button data-design-id="judge-nobody" data-sound="none" full size="lg" variant="secondary" disabled={disabled} onClick={() => act('judge', {teamId: null})}>{tr('ولا أحد')}</Button>
+      <p className="bs-status">{tr('اختيارك يسجّل الحكم ويعيد للوحة')}</p>
+    </div> : <p className="bs-status">{tr('المضيف يحكم الآن.')}</p>)}
+    {!revealed && <p data-design-id="round" className="bs-round">{tr('السؤال {v0} من {v1}', {v0: number(Math.min(state.round, state.rounds)), v1: number(state.rounds)})}</p>}
+  </section>;
+}
+
+function BadeehaResults({ state, teams, isHost, disabled, act }) {
+  const tie = teams.length > 1 && teams[0].score === teams[1].score;
+  return <section data-design-screen="online.badeeha.over" className="online-badeeha badeeha-studio bs-over" dir={uiDirection()}>
+    <PresentationStyles sheet={STUDIO_CSS}/>
+    {state.reason === 'players_left' && <p className="bs-status">{tr('انتهت المباراة لأن الفرق المتبقية أقل من اثنين.')}</p>}
+    {state.reason === 'ended' && <p className="bs-status">{tr('أنهى المضيف المباراة قبل آخر سؤال.')}</p>}
+    <div data-design-id="podium" className="bs-results-podium">
+      <div className="bs-trophy" aria-hidden="true"><svg className="bs-trophy-rays" viewBox="0 0 180 90"><path d="m20 26 7 6m-14 13 9 2m137-21-7 6m14 13-9 2"/></svg><img src={getPlayfulSceneArt('badeeha-trophy',144)} width="144" height="96" alt=""/></div><h1>{tr('النتيجة النهائية')}</h1>
+      {tie && <p className="bs-status">{tr('تعادل جميل!')}</p>}
+      <div className="bs-podium-teams">{teams.map(team => {
+        const rank = teams.findIndex(other => other.score === team.score) + 1;
+        return <div key={team.id} data-rank={rank} className={'bs-podium-team' + (rank === 1 ? ' is-winner' : '')}>
+          <TeamPortrait team={team} size={144}/><div className="bs-podium-block"><b className="bs-rank" aria-label={tr('الترتيب')}>{number(rank)}</b>
+            <b>{team.name}</b><strong><bdi dir="ltr">{number(team.score)}</bdi></strong>
+          </div>
+        </div>;
+      })}</div>
+    </div>
+    <div data-design-id="result-statistics" className="bs-statistics">{teams.map(team => <div key={team.id}>
+      <TeamPortrait team={team} size={40} presentation="avatar"/><b>{team.name}</b><span>{tr('{v0} صح · {v1} سرقة', {v0: number(team.correct), v1: number(team.steals)})}</span>
+    </div>)}</div>
+    <p data-design-id="replay-notice" className="bs-replay-notice"><span aria-hidden="true">ⓘ</span>{tr('إعادة اللعب هنا تستخدم الأسئلة نفسها. لأسئلة جديدة، اخرجوا وأنشئوا غرفة جديدة من بَديهة.')}</p>
+    {isHost ? <Button data-design-id="restart" full size="lg" variant="primary" disabled={disabled} onClick={() => act('restart')}>{tr('العودة للانتظار وإعادة نفس الأسئلة')}</Button>
+      : <p className="bs-status">{tr('بانتظار المضيف لبدء مباراة جديدة.')}</p>}
   </section>;
 }

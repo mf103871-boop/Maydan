@@ -21,15 +21,16 @@ export async function startIntegratedPreview({port=4186,apiPort=8796,assetRoot=D
   async function rebuild(){
     dirty=true;if(building)return building;
     building=(async()=>{while(dirty){dirty=false;try{
-      const options=esbuildOptions({minify:false,version:'1.9-local-integrated',media:await mediaVersions(ROOT),assets:'files'});
+      const roomsUrl='same-origin';
+      const options=esbuildOptions({minify:false,version:'1.9-local-integrated',media:await mediaVersions(ROOT),assets:'files',roomsUrl});
       const result=await build({...options,entryPoints:[path.join(ROOT,'scripts/integrated-preview/entry.jsx')],outfile:path.join(outRoot,'bundle.js'),write:false,
-        define:{...options.define,__MAYDAN_UI_PREVIEW__:'true',__MAYDAN_LOCAL_AUDIO_REVIEW__:'true',__MAYDAN_AUDIO_PREVIEW__:'false',__MAYDAN_ROOMS_URL__:'"same-origin"'}});
+        define:{...options.define,__MAYDAN_UI_PREVIEW__:'true',__MAYDAN_LOCAL_AUDIO_REVIEW__:'true',__MAYDAN_AUDIO_PREVIEW__:'false'}});
       const next=new Map(result.outputFiles.map(f=>['/'+path.relative(outRoot,f.path).split(path.sep).join('/'),f.contents]));
-      const nextHtml=await renderHtml(result.outputFiles.find(f=>f.path.endsWith('/bundle.js')||f.path.endsWith('\\bundle.js')).text,{version:'1.9 · معاينة محلية',assets:[...next.keys()].filter(n=>n!=='/bundle.js').map(n=>'.'+n)});
-      const fixture=await build({...options,entryPoints:[path.join(ROOT,'scripts/integrated-preview/fixtures.jsx')],outfile:path.join(outRoot,'fixtures.js'),write:false,define:{...options.define,__MAYDAN_UI_PREVIEW__:'true',__MAYDAN_LOCAL_AUDIO_REVIEW__:'false',__MAYDAN_AUDIO_PREVIEW__:'false',__MAYDAN_ROOMS_URL__:'"same-origin"'}});
+      const nextHtml=await renderHtml(result.outputFiles.find(f=>f.path.endsWith('/bundle.js')||f.path.endsWith('\\bundle.js')).text,{version:'1.9 · معاينة محلية',roomsUrl,assets:[...next.keys()].filter(n=>n!=='/bundle.js').map(n=>'.'+n)});
+      const fixture=await build({...options,entryPoints:[path.join(ROOT,'scripts/integrated-preview/fixtures.jsx')],outfile:path.join(outRoot,'fixtures.js'),write:false,define:{...options.define,__MAYDAN_UI_PREVIEW__:'true',__MAYDAN_LOCAL_AUDIO_REVIEW__:'false',__MAYDAN_AUDIO_PREVIEW__:'false'}});
       for(const f of fixture.outputFiles)next.set('/'+path.relative(outRoot,f.path).split(path.sep).join('/'),f.contents);
       const fixtureJs=fixture.outputFiles.find(f=>f.path.endsWith('fixtures.js')).text;
-      const nextFixture=await renderHtml(fixtureJs,{version:'QA-local',assets:[]});
+      const nextFixture=await renderHtml(fixtureJs,{version:'QA-local',roomsUrl,assets:[]});
       outputs=next;html=nextHtml;fixtureHtml=nextFixture;revision++;buildError=null;console.log(`[integrated] built ${revision}`);
     }catch(error){buildError=error.message;console.error('[integrated] build failed:',error.message);}}})().finally(()=>building=null);
     return building;

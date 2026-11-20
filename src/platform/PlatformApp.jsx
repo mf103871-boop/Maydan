@@ -7,8 +7,8 @@ import { PlusStyles } from '../plus/PlusStyles.jsx';
 import { PlatformContext, usePlatform } from './context.js';
 import { useRoute, navigate, getDirection, getRoute, installNativeBackBridge } from './router.js';
 import { getGame } from './registry.js';
-import { createStorage, clearAllPlatformData } from '../shared/lib/storage.js';
-import { ACCOUNT_PREFIX } from '../shared/account/store.js';
+import { createStorage } from '../shared/lib/storage.js';
+import { clearLocalDataKeepingAccount } from '../shared/account/local-data.js';
 import { createSound } from '../shared/fx/sound.js';
 import { integratedPreviewAudio, integratedPreviewDefaults, registerIntegratedPreviewSound } from '../shared/fx/integrated-preview-audio.js';
 import { bindNetworkAudio } from '../shared/fx/network-audio.js';
@@ -172,7 +172,8 @@ function Shell() {
   const { locale, localeStatus } = useI18n();
   const route = useRoute();
   const { settings, setSettings, sound, confetti, toast } = usePlatform();
-  const [booted, setBooted] = useState(false);
+  const opening = typeof window === 'undefined' ? null : window.__maydanOpening;
+  const [booted, setBooted] = useState(() => Boolean(opening?.verified));
   const [languageBooted, setLanguageBooted] = useState(settings.uiLocale !== 'en' || locale === 'en');
   useEffect(() => {
     if (settings.uiLocale !== 'en' || locale === 'en') setLanguageBooted(true);
@@ -180,6 +181,10 @@ function Shell() {
   // Only the first mount waits for its dictionary. Later language changes keep
   // the live match, drafts and dialog instances mounted throughout the request.
   const usable = booted && languageBooted;
+  // Dictionary recovery is the one first screen outside the legal boundary.
+  useLayoutEffect(() => {
+    if (opening?.verified && !usable && localeStatus.error) return opening.reveal();
+  }, [opening, usable, localeStatus.error]);
   useEffect(() => usable ? startSimulatorTermsProbe() : undefined,[usable]);
   useEffect(() => installNativeBackBridge(), []);
   useEffect(() => {
@@ -220,7 +225,7 @@ function Shell() {
   useEffect(() => { sound.music.scene(shellMusic.current, 'home', route.name, 0); }, [route.name, sound]);
   useEffect(() => { const lease = shellMusic.current; return () => sound.music.releaseScene(lease); }, [sound]);
   // «مسح كل البيانات» من الشاشة الحمراء يبقي الحساب كما تفعل الإعدادات.
-  const resetKeepingAccount = () => { clearAllPlatformData({ keep: [ACCOUNT_PREFIX] }); location.reload(); };
+  const resetKeepingAccount = () => { clearLocalDataKeepingAccount(); location.reload(); };
   return (
     <>
       <BrandFonts />
@@ -228,13 +233,11 @@ function Shell() {
       <style>{uiCss}</style>
       <style>{setupCss}</style>
       <style>{platformCss}</style>
-      <Splash visible={!booted} onDone={finishSplash} reducedMotion={settings.reducedMotion} />
+      {!opening?.verified && <Splash visible={!booted} onDone={finishSplash} reducedMotion={settings.reducedMotion} />}
       {/* حدّ خطأ حول الشاشات: خطأ تصيير واحد كان يُفرغ الصفحة بلا رجعة. */}
       {booted && !languageBooted && <main className="screen stack center" aria-busy={localeStatus.loading} lang="en" dir="ltr"><h1>Maydan</h1><p role={localeStatus.error ? 'alert' : 'status'}>{localeStatus.error ? 'Could not load English. Please try again.' : 'Loading English…'}</p>{localeStatus.error && <><button type="button" className="btn btn-primary" onClick={() => setUiLocale('en')}>Try again</button><button type="button" className="btn" lang="ar" onClick={() => setSettings({uiLocale:'ar'})}>المتابعة بالعربية</button></>}</main>}
-      {usable && <TermsBoundary route={route}><CreatorPresence route={route} /><ErrorBoundary
+      {usable && <TermsBoundary route={route} onDestinationReady={opening?.reveal}><CreatorPresence route={route} /><ErrorBoundary
         resetKey={route.path}
-        title={tr("تعطّلت هذه الشاشة")}
-        message={tr("حدث خطأ غير متوقع. يمكنك العودة إلى الرئيسية، أو مسح البيانات المحفوظة إن تكرّر الخطأ عند كل فتح.")}
         clearLabel={tr("مسح كل البيانات وإعادة التشغيل")}
         onHome={() => navigate('/', { replace: true })}
         onClear={resetKeepingAccount}
@@ -244,7 +247,7 @@ function Shell() {
       <MenuScrollRestoration route={route} />
       <BottomNavigation route={route} />
       <PaywallHost />
-      <ErrorBoundary title={tr("تعذّر فتح اللّمة")} message={tr("أعد فتح ميدان لتتصل بأصحابك.")} onHome={() => navigate('/')}><SocialHost /></ErrorBoundary></TermsBoundary>}
+      <ErrorBoundary scope="social" resetKey={route.name === 'friends' || route.name === 'friend-group' ? route.path : null} title={tr("تعذّر فتح اللّمة")} message={tr("أعد فتح ميدان لتتصل بأصحابك.")} onHome={() => navigate('/')}><SocialHost /></ErrorBoundary></TermsBoundary>}
       <style>{brandCss}</style>
       <style>{onlineCss}</style>
       <PresentationStyles sheet={accountCss} />

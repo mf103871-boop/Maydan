@@ -23,6 +23,7 @@
 		A10000000000000000000005 /* www in Resources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000005 /* www */; };
 		A10000000000000000000006 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000006 /* PrivacyInfo.xcprivacy */; };
 		A10000000000000000000007 /* AppSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000009 /* AppSchemeHandler.swift */; };
+		A10000000000000000000017 /* InstalledPackVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000029 /* InstalledPackVerifier.swift */; };
 		A10000000000000000000008 /* NativeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000A /* NativeConfig.swift */; };
 		A10000000000000000000009 /* StorageMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000B /* StorageMigration.swift */; };
 		A1000000000000000000000A /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000C /* StoreManager.swift */; };
@@ -49,6 +50,7 @@
 		B10000000000000000000007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B10000000000000000000008 /* Maydan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maydan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B10000000000000000000009 /* AppSchemeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSchemeHandler.swift; sourceTree = "<group>"; };
+		B10000000000000000000029 /* InstalledPackVerifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstalledPackVerifier.swift; sourceTree = "<group>"; };
 		B1000000000000000000000A /* NativeConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeConfig.swift; sourceTree = "<group>"; };
 		B1000000000000000000000B /* StorageMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageMigration.swift; sourceTree = "<group>"; };
 		B1000000000000000000000C /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				B10000000000000000000002 /* SceneDelegate.swift */,
 				B10000000000000000000003 /* GameViewController.swift */,
 				B10000000000000000000009 /* AppSchemeHandler.swift */,
+				B10000000000000000000029 /* InstalledPackVerifier.swift */,
 				B1000000000000000000000A /* NativeConfig.swift */,
 				B10000000000000000000016 /* NativeLocalization.swift */,
 				D10000000000000000000004 /* InfoPlist.strings */,
@@ -192,6 +195,7 @@
 				A10000000000000000000002 /* SceneDelegate.swift in Sources */,
 				A10000000000000000000003 /* GameViewController.swift in Sources */,
 				A10000000000000000000007 /* AppSchemeHandler.swift in Sources */,
+				A10000000000000000000017 /* InstalledPackVerifier.swift in Sources */,
 				A10000000000000000000008 /* NativeConfig.swift in Sources */,
 				A10000000000000000000014 /* NativeLocalization.swift in Sources */,
 				A10000000000000000000009 /* StorageMigration.swift in Sources */,

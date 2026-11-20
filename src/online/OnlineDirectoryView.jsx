@@ -2,12 +2,15 @@ import { arabicNumber, errorText } from './format.js';
 import { tr } from '../shared/i18n/core.js';
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Button } from '../shared/ui/components.jsx';
+import { IconBack, IconPlus, IconRotate } from '../shared/ui/icons.jsx';
 import { useAccount } from '../shared/account/context.js';
 import { ProfileAvatar } from '../profiles/ProfileAvatar.jsx';
 import { useProfiles } from '../profiles/ProfileProvider.jsx';
 import { navigate, registerBackLayer } from '../platform/router.js';
 
 import css from './online-directory.css';
+import studioCss from './online-studio.css?sheet';
+import { PresentationStyles } from '../shared/ui/PresentationStyles.jsx';
 
 const footerReservations=new WeakMap();
 function footerReservation(root) {
@@ -18,11 +21,11 @@ function footerReservation(root) {
   return {update(value){state.owners.set(owner,value);apply();},release(){state.owners.delete(owner);if(state.owners.size)apply();else{if(state.previous)root.style.setProperty('--online-directory-footer-space',state.previous,state.priority);else root.style.removeProperty('--online-directory-footer-space');footerReservations.delete(root);}}};
 }
 
-export function OnlineDirectoryProfile() {
+export function OnlineDirectoryProfile({ studio = false }) {
   const account=useAccount(),profiles=useProfiles();
   const user=account.user&&(profiles?.mine?.id===account.user.id?profiles.mine:account.user);
   return <footer data-design-id="profile-footer" className="online-directory-profile"><button data-design-id="profile" type="button" onClick={()=>navigate(user?'/profile':'/settings?section=account')} aria-label={user?tr("فتح بروفايلي"):tr("تسجيل الدخول")}>
-    <ProfileAvatar user={user||{}} size={48}/><span><b>{user?.name||tr("ضيف ميدان")}</b><small>{user?tr("بروفايلي"):tr("سجّل الدخول للغرف العامة")}</small></span><span className="online-directory-profile-arrow" aria-hidden="true">‹</span>
+    <ProfileAvatar user={user||{}} size={studio ? 64 : 48}/><span><b dir="auto">{user?.name||tr("ضيف ميدان")}</b><small>{user?tr("بروفايلي"):tr("سجّل الدخول للغرف العامة")}</small></span>{studio?<IconBack className="online-directory-profile-arrow"/>:<span className="online-directory-profile-arrow" aria-hidden="true">‹</span>}
   </button></footer>;
 }
 
@@ -33,9 +36,9 @@ export function OnlineRoomRow({room,title,subtitle,statusLabel,voiceLabel,canJoi
   const Content=action?'button':'div';
   return <article data-design-id="room" className="online-directory-row" data-room-code={room.code} data-room-status={room.status||'waiting'}>
     <Content className="online-directory-row-content" type={action?'button':undefined} data-sound={action?'none':undefined} data-design-id={action?(canJoin?'room-join':'room-observe'):undefined} aria-label={action?`${canJoin?tr("الانضمام إلى"):tr("مشاهدة")} ${title||room.roomName}`:undefined} disabled={action?disabled:undefined} onClick={action?()=>action(room.code):undefined}>
-    <div className="online-directory-row-copy"><b>{title||room.roomName}</b><div className="online-directory-row-meta"><span>{statusLabel}</span><span lang={room.contentLocale||'ar'}>{room.contentLocale==='en'?'English':tr('العربية')}</span>{voiceLabel&&<span>{voiceLabel}</span>}{subtitle&&<span>{subtitle}</span>}</div></div>
+    <div className="online-directory-row-copy"><b dir="auto">{title||room.roomName}</b><div className="online-directory-row-meta"><span>{statusLabel}</span><span lang={room.contentLocale||'ar'}>{room.contentLocale==='en'?'English':tr('العربية')}</span>{voiceLabel&&<span>{voiceLabel}</span>}{subtitle&&<span className="online-directory-room-note">{subtitle}</span>}</div></div>
     <div className="online-directory-row-side"><bdi className={room.full?'is-full':''}>{arabicNumber(room.players)}{tr(" من ")}{arabicNumber(room.capacity)}</bdi>
-      {action?<span className="online-directory-row-label">{canJoin?tr("انضم"):tr("شاهد")}</span>:<small>{room.full?tr("مكتملة"):tr("غير متاحة")}</small>}
+      {action?<span className="online-directory-row-label">{canJoin?tr("انضم"):tr("شاهد")}</span>:<small className="online-directory-row-unavailable">{room.full?tr("مكتملة"):tr("غير متاحة")}</small>}
     </div>
     </Content>
   </article>;
@@ -59,16 +62,28 @@ export function OnlineDirectoryView({game,title=tr("الغرف العامة"),he
     window.addEventListener('resize',schedule);window.addEventListener('scroll',schedule,{passive:true});view.addEventListener('animationend',schedule);viewport?.addEventListener('resize',schedule);viewport?.addEventListener('scroll',schedule);update();
     return()=>{active=false;if(frame!==null)cancelAnimationFrame(frame);observer?.disconnect();window.removeEventListener('resize',schedule);window.removeEventListener('scroll',schedule);view.removeEventListener('animationend',schedule);viewport?.removeEventListener('resize',schedule);viewport?.removeEventListener('scroll',schedule);reservation.release();};
   },[]);
-  return <section ref={viewRef} className={`online-directory-view online-directory-${game||'all'}`} data-design-screen={`online.${game||'all'}.directory`}>
+  const studio = game !== 'mafia';
+  return <section ref={viewRef} className={`online-directory-view online-directory-${game||'all'}${studio ? ' is-studio-directory' : ''}`} data-design-screen={`online.${game||'all'}.directory`}>
     <style>{css}</style>
+    {studio && <PresentationStyles sheet={studioCss}/>}
     {heading}
-    {toolbar??<div data-design-id="toolbar" className="online-directory-toolbar" aria-label={title}>
+    {toolbar??(studio ? <div data-design-id="toolbar" className="studio-directory-tools" aria-label={title}>
+      <div className="studio-directory-actions">
+        {onCreate&&<Button aria-label={tr("إنشاء غرفة جديدة")} data-design-id="create-public-room" disabled={disabled||createDisabled} onClick={onCreate} variant="primary"><IconPlus/>{tr("إنشاء غرفة")}</Button>}
+        {onCode&&<Button data-design-id="entry-join" disabled={disabled} onClick={onCode}>{tr("دخول برمز")}</Button>}
+        {onQuickJoin&&<Button data-design-id="quick-join" data-sound="none" disabled={disabled||enabled!==true||loading} onClick={onQuickJoin}>{tr("سريع")}</Button>}
+      </div>
+      <div className="studio-directory-secondary">
+        {(filters||help)&&<Button data-design-id="directory-options" variant="ghost" aria-label={tr("خيارات الغرف والمساعدة")} aria-expanded={Boolean(panel)} onClick={()=>setPanel(value=>value?'':'options')}><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/><circle cx="8" cy="6" r="2" fill="var(--surface-2)"/><circle cx="16" cy="12" r="2" fill="var(--surface-2)"/><circle cx="9" cy="18" r="2" fill="var(--surface-2)"/></svg>{tr("خيارات الغرف والمساعدة")}</Button>}
+        <Button data-design-id="refresh" variant="ghost" aria-label={tr("تحديث الغرف")} disabled={disabled||loading} onClick={onRefresh}><IconRotate/></Button>
+      </div>
+    </div> : <div data-design-id="toolbar" className="online-directory-toolbar" aria-label={title}>
       {onCreate&&<Button size="sm" aria-label={tr("إنشاء غرفة جديدة")} data-design-id="create-public-room" disabled={disabled||createDisabled} onClick={onCreate} variant={heading?'primary':undefined}>{tr("+ إنشاء غرفة")}</Button>}
       {onCode&&<Button size="sm" data-design-id="entry-join" disabled={disabled} onClick={onCode}>{tr("دخول برمز")}</Button>}
       {onQuickJoin&&<Button size="sm" aria-label={tr("انضمام سريع إلى غرفة متاحة")} data-design-id="quick-join" data-sound="none" variant="primary" disabled={disabled||enabled!==true||loading} onClick={onQuickJoin}>{tr("سريع")}</Button>}
       <Button size="sm" data-design-id="refresh" variant="ghost" aria-label={tr("تحديث الغرف")} disabled={disabled||loading} onClick={onRefresh}>↻</Button>
       {(filters||help)&&<Button data-design-id="directory-options" size="sm" variant="ghost" aria-label={tr("خيارات الغرف والمساعدة")} aria-expanded={Boolean(panel)} onClick={()=>setPanel(value=>value?'':'options')}>⋯</Button>}
-    </div>}
+    </div>)}
     {panel&&<div className="online-directory-options"><div className="online-directory-option-tabs">{filters&&<Button data-design-id="directory-filter" size="sm" onClick={()=>setPanel('filters')}>{tr("تصفية الغرف")}</Button>}{help&&<Button data-design-id="directory-help" size="sm" onClick={()=>setPanel('help')}>{tr("المساعدة والمزيد")}</Button>}<Button data-design-id="directory-options-close" size="sm" aria-label={tr("إغلاق خيارات الغرف")} variant="ghost" onClick={()=>setPanel('')}>×</Button></div>{panel==='help'?help:filters}</div>}
     {notice&&<div data-design-id="notice" className="online-directory-notice" role="status">{notice}</div>}
     {error&&<p className={`online-directory-notice error${heading?' online-directory-retry':''}`} role="alert">{errorText(error)}</p>}
@@ -80,10 +95,10 @@ export function OnlineDirectoryView({game,title=tr("الغرف العامة"),he
     </div>
     {(hasPrevious||nextCursor)&&<nav className="online-directory-pages" aria-label={tr("صفحات الغرف")}><Button size="sm" data-design-id="directory-previous" disabled={disabled||loading||!hasPrevious} onClick={onPrevious}>{tr("السابق")}</Button><Button size="sm" data-design-id="directory-next" disabled={disabled||loading||!nextCursor} onClick={onNext}>{tr("التالي")}</Button></nav>}
     {children}
-    <div ref={footerRef} className="online-directory-footer-slot">{footer===undefined?<OnlineDirectoryProfile/>:footer}</div>
+    <div ref={footerRef} className="online-directory-footer-slot">{footer===undefined?<OnlineDirectoryProfile studio={studio}/>:footer}</div>
   </section>;
 }
 
 export function OnlineLobbyFrame({game,children,footer}) {
-  return <section data-design-screen="online.lobby" className={`stack online-lobby-frame online-lobby-${game}`}><style>{css}</style><div className="online-lobby-body">{children}</div>{footer&&<footer className="online-lobby-controls">{footer}</footer>}</section>;
+  return <section data-design-screen="online.lobby" className={`stack online-lobby-frame online-lobby-${game} studio-lobby`}><style>{css}</style><PresentationStyles sheet={studioCss}/><div className="online-lobby-body">{children}</div>{footer&&<footer className="online-lobby-controls">{footer}</footer>}</section>;
 }

@@ -18,7 +18,7 @@
   .m-root * { box-sizing:border-box; }
   .m-root button,.m-root input { font:inherit; }
   .m-root button { min-height:48px; touch-action:manipulation; cursor:pointer; transition:transform .13s ease,background-color .16s ease,border-color .16s ease,box-shadow .16s ease; }
-  .m-root button:active:not(:disabled) { transform:translateY(2px) scale(.985); }
+  .m-root button:active:not(:disabled) { transform:var(--interaction-transform, translateY(2px) scale(.985)); }
   .m-root button:focus-visible,.m-root input:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
   .m-root button:disabled { cursor:not-allowed; color:#8C7A91; background:#EDE2D5; border-color:rgba(148,163,184,.14); box-shadow:none; }
   .m-screen,.m-home,.m-result { width:min(100%,900px); margin:0 auto; animation:m-screen-in .28s var(--ease-out,ease-out) backwards; }
@@ -277,7 +277,7 @@
   @media (hover:hover) {
     .m-primary:hover:not(:disabled) { filter:brightness(1.045); box-shadow:inset 0 1px rgba(255,255,255,.55),0 15px 32px rgba(246,196,83,.23); }
     .m-secondary:hover:not(:disabled),.m-icon-btn:hover:not(:disabled) { background:linear-gradient(180deg,#FFF6E2,#F3E4C9); border-color:#D9C5AB; }
-    .m-tier:hover:not(:disabled) { filter:brightness(1.06); transform:translateY(-1px); }
+    .m-tier:hover:not(:disabled) { filter:brightness(1.06); transform:var(--interaction-transform, translateY(-1px)); }
   }
   @media (min-width:720px) {
     .m-board-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
@@ -488,14 +488,14 @@
   .m-root .m-header, .m-root .m-board-header, .m-root .m-panel, .m-root .m-home-eyebrow, .m-root .m-home-stats span, .m-root .m-modal-layer { backdrop-filter: none; -webkit-backdrop-filter: none; }
   .m-root .m-panel, .m-root .m-question-card, .m-root .m-board-category, .m-root .m-saved-card { background: var(--top-light), linear-gradient(145deg, #FFFEF7, #FCF3E4); box-shadow: inset 0 2px #fff, 0 4px 0 #E3D3BE, 0 10px 20px #70462F14; }
   .m-root .m-tier { box-shadow: inset 0 2px #FFFFFFA8, 0 4px 0 rgba(0,0,0,.18), 0 8px 14px #78533522; transition: transform .2s var(--ease-spring), box-shadow .2s var(--ease-spring), filter .16s; }
-  .m-root .m-tier:active:not(:disabled) { transform: translateY(4px); transition-duration: .08s; box-shadow: inset 0 2px 3px #78533522, 0 0 0 rgba(0,0,0,.18); }
+  .m-root .m-tier:active:not(:disabled) { transform: var(--interaction-transform, translateY(4px)); transition-duration: .08s; box-shadow: inset 0 2px 3px #78533522, 0 0 0 rgba(0,0,0,.18); }
   .m-root .m-tier.done { transform: translateY(3px); box-shadow: inset 0 2px 4px #78533522, 0 0 0 #EDE2D5; }
   .m-root .m-primary { box-shadow: inset 0 2px 1px #FFFFFF80, 0 4px 0 #066A77, 0 9px 18px #106F7C2E; }
-  .m-root .m-primary:active:not(:disabled) { transform: translateY(4px); box-shadow: inset 0 2px 4px #04525C55, 0 0 0 #066A77; }
+  .m-root .m-primary:active:not(:disabled) { transform: var(--interaction-transform, translateY(4px)); box-shadow: inset 0 2px 4px #04525C55, 0 0 0 #066A77; }
   .m-root .m-secondary, .m-root .m-icon-btn { box-shadow: inset 0 2px #fff, 0 3px 0 #D9C5AB, 0 6px 12px #63432F14; }
-  .m-root .m-secondary:active:not(:disabled), .m-root .m-icon-btn:active:not(:disabled) { transform: translateY(3px); box-shadow: inset 0 2px 3px rgba(91,61,36,.14), 0 0 0 #D9C5AB; }
+  .m-root .m-secondary:active:not(:disabled), .m-root .m-icon-btn:active:not(:disabled) { transform: var(--interaction-transform, translateY(3px)); box-shadow: inset 0 2px 3px rgba(91,61,36,.14), 0 0 0 #D9C5AB; }
   .m-root .m-tools button, .m-root .m-choice, .m-root .m-category-pick { box-shadow: var(--shadow-tile); transition: transform .2s var(--ease-spring), box-shadow .2s var(--ease-spring), background-color .18s, border-color .18s, opacity .3s; }
-  .m-root .m-tools button:active:not(:disabled), .m-root .m-choice:active:not(:disabled), .m-root .m-category-pick:active { transform: translateY(var(--ledge)); transition-duration: .08s; box-shadow: var(--shadow-press); }
+  .m-root .m-tools button:active:not(:disabled), .m-root .m-choice:active:not(:disabled), .m-root .m-category-pick:active { transform: var(--interaction-transform, translateY(var(--ledge))); transition-duration: .08s; box-shadow: var(--shadow-press); }
   .m-root .m-choice.selected, .m-root .m-category-pick.selected { box-shadow: inset 0 2px 1px #fff, 0 var(--ledge) 0 #CBA9E0, 0 8px 14px #9250BD22; animation: ui-pop-select .32s var(--ease-spring); }
   .m-root .m-category-pick.selected { box-shadow: inset 0 2px 1px #fff, 0 var(--ledge) 0 #D49B25, 0 8px 14px #D49B2533; }
   .m-root .m-timer { box-shadow: 0 0 0 1px #F5B82E, 0 6px 0 #E3C27A, 0 14px 30px #70462F22; }

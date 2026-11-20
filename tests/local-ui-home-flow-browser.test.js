@@ -79,11 +79,11 @@ test('Chromium/WebKit: geometry accepts a static header, waits for finite animat
       // An explicit paused animation tests the guard deterministically, without
       // requiring production to keep a decorative entrance or racing 0.01ms.
       await page.locator('.home-head').evaluate(header => {
-        const entrance = header.animate([{ transform: 'translateY(14px) scale(.98)' }, { transform: 'none' }], { duration: 1000, fill: 'both' });
+        const entrance = header.animate([{ transform: 'translateY(14px) scale(' + (47 / header.querySelector('.home-profile').offsetWidth) + ')'  }, { transform: 'none' }], { duration: 1000, fill: 'both' });
         entrance.pause(); entrance.currentTime = 0; window.finishEntrance = () => entrance.finish();
       });
-      assert.equal(await page.locator('.home-profile').evaluate(node => node.offsetWidth), 48);
-      assert.ok((await page.locator('.home-profile').boundingBox()).width < 48, 'the controlled ancestor scales its 48px layout before settling');
+      assert.ok(await page.locator('.home-profile').evaluate(node => node.offsetWidth) >= 48);
+      assert.ok((await page.locator('.home-profile').boundingBox()).width < 48, 'the controlled ancestor scales the usable layout below48px before settling');
       let settled = false;
       const waiting = waitForProfileGeometry(page).then(() => { settled = true; });
       await page.waitForTimeout(40);
@@ -94,9 +94,15 @@ test('Chromium/WebKit: geometry accepts a static header, waits for finite animat
       await assert.rejects(waitForProfileGeometry(page, 150), /Timeout/, 'waiting must not hide a persistent layout defect');
       await page.locator('.home-screen').evaluate(node => node.insertAdjacentHTML('beforeend', '<div class="games-grid home-game-list"><button class="game-card home-game-row">لعبة تجريبية</button><button class="game-card home-game-row">لعبة أخرى</button></div>'));
       await waitForHomeRowsGeometry(page);
-      await page.locator('.home-game-row').first().evaluate(node => { node.style.width = '47px'; });
+      const firstRow = page.locator('.home-game-row').first();
+      await firstRow.evaluate(node => {
+        node.style.flex = '0 0 47px';
+        node.style.minInlineSize = '0';
+        node.style.width = '47px';
+      });
+      assert.equal((await firstRow.boundingBox()).width, 47, 'the fixture provides a genuinely narrow flex item');
       await assert.rejects(waitForHomeRowsGeometry(page, 150), /Timeout/, 'atomic measurement must still reject a persistent narrow row');
-      await page.locator('.home-game-row').first().evaluate(node => { node.style.width = ''; });
+      await firstRow.evaluate(node => node.removeAttribute('style'));
       await waitForHomeRowsGeometry(page);
     } finally { await browser.close(); }
   }
@@ -112,10 +118,17 @@ test('Chromium/WebKit: Playful Studio Home, every mode, family setup/resume, rel
     function App(){const route=useRoute(),[roster,setRoster]=useState(${JSON.stringify(roster)}),[settings,setSettings]=useState({soundOn:false,musicOn:false,hapticsOn:false,reducedMotion:true});const platform={roster,setRoster,settings,setSettings,version:'local-ui',sound,haptics:{vibrate:noop},confetti:{fire:noop,burst:noop},toast:noop};
       return <AccountContext.Provider value={account}><PlatformContext.Provider value={platform}><ProfileContext.Provider value={{mine:null,beginSession:async()=>null,completeSession:async()=>null}}><BrandFonts/><style>{tokens+ui+brand+platformCSS+setupCSS+studioCSS}</style><main>{route.name==='home'?<Home/>:route.name==='game'?<GameDetails id={route.params.id} mode={route.params.mode}/>:route.name==='play'?<Play id={route.params.id}/>:route.name==='settings'?<Settings/>:route.name==='players'?<Players/>:<output data-testid="destination">{route.name+':'+(route.params.id||'')}</output>}</main></ProfileContext.Provider></PlatformContext.Provider></AccountContext.Provider>;}
     createRoot(document.getElementById('root')).render(<App/>);`;
-  const built = await build({ stdin: { contents: entry, loader: 'jsx', resolveDir: process.cwd() }, bundle: true, write: false, format: 'iife', jsx: 'automatic', loader: { '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl', '.mp3': 'dataurl' }, logLevel: 'silent', define: { __MAYDAN_AUDIO_PREVIEW__: 'false' } });
+  const built = await build({ stdin: { contents: entry, loader: 'jsx', resolveDir: process.cwd() }, bundle: true, write: false, format: 'iife', jsx: 'automatic', loader: { '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl', '.mp3': 'dataurl' }, logLevel: 'silent', define: { __MAYDAN_AUDIO_PREVIEW__: 'false', __MAYDAN_ROOMS_URL__: '"same-origin"' } });
   const header = await readFile(path.resolve('public/art/home/home-header-v1.webp'));
   const html = '<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><body><div id="root"></div><script src="/bundle.js"></script></body></html>';
   const server = createServer((request, response) => {
+    // This journey exercises the available online mode. Unavailable, pending,
+    // failed and incompatible capability responses have their own browser test.
+    if (request.url === '/api/mafia/capabilities') {
+      response.setHeader('content-type', 'application/json');
+      response.end(JSON.stringify({ enabled: true, capabilities: { mafia: 2 } }));
+      return;
+    }
     const image = request.url === '/art/home/home-header-v1.webp';
     response.setHeader('content-type', image ? 'image/webp' : request.url === '/bundle.js' ? 'text/javascript' : 'text/html');
     response.end(image ? header : request.url === '/bundle.js' ? built.outputFiles[0].contents : html);
@@ -199,6 +212,9 @@ test('Chromium/WebKit: Playful Studio Home, every mode, family setup/resume, rel
         await page.getByRole('button', { name: 'دفتر اللاعبين · اللعب مع العائلة', exact: true }).click();
         await page.getByRole('heading', { name: /دفتر اللاعبين/ }).waitFor();
         assert.ok(await page.getByText('نور', { exact: true }).count());
+        const portrait = page.locator('.players-screen .score-row .clay-avatar').first();
+        const bounds = await portrait.boundingBox();
+        assert.ok(bounds?.width >= 48 && bounds.height >= 48, 'the roster portrait has a visible square for its background artwork');
         await page.evaluate(() => window.go('/'));
         await page.locator('[data-design-id="game-card.badeeha"]').click();
         await page.getByRole('dialog').locator('[data-design-id="local-mode"]').click();
@@ -208,8 +224,13 @@ test('Chromium/WebKit: Playful Studio Home, every mode, family setup/resume, rel
         assert.equal(await page.evaluate(key => localStorage.getItem(key), BADEEHA_KEYS.active), JSON.stringify(savedBadeeha));
         await family.locator('[data-design-id="history"]').click();
         await page.locator('[data-design-screen="badeeha.history"]').waitFor();
-        await page.locator('[data-design-screen="badeeha.history"] [data-design-id="back"]').click();
-        await family.waitFor(); await family.locator('[data-design-id="back"]').click();
+        const footerHome = page.locator('.game-footer-controls [data-design-id="home"]');
+        await footerHome.waitFor({ state: 'attached' });
+        assert.ok(await footerHome.evaluate(node => Boolean(document.querySelector('[data-design-screen="badeeha.history"]').compareDocumentPosition(node) & Node.DOCUMENT_POSITION_FOLLOWING)),
+          'the keyboard reaches history content before the shortcuts shown at the bottom');
+        const back = page.locator('.game-bar [data-design-id="back"]');
+        await back.click();
+        await family.waitFor(); await back.click();
         await page.locator('[data-design-id="skip-instructions"]').click();
         await family.locator('[data-design-id="resume"]').click();
         await page.locator('[data-design-screen="badeeha.board"]').waitFor();

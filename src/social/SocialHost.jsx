@@ -9,7 +9,7 @@ import { createPortal } from 'react-dom';
 import { useAccount } from '../shared/account/context.js';
 import { resolveAccountServer } from '../shared/account/api.js';
 import { SignInSheet } from '../shared/account/SignInSheet.jsx';
-import { Button, Modal, Sheet } from '../shared/ui/components.jsx';
+import { Button, Modal, ModalCloseButton, Sheet } from '../shared/ui/components.jsx';
 import { useVisualViewport } from '../shared/ui/useVisualViewport.js';
 import { activateDialog } from '../shared/ui/dialog-interaction.js';
 import { usePlatform } from '../platform/context.js';
@@ -19,6 +19,7 @@ import { ProfileView } from '../profiles/ProfileScreen.jsx';
 import { ProfileAvatar } from '../profiles/ProfileAvatar.jsx';
 import { PlayerName } from '../profiles/PlayerIdentity.jsx';
 import { AVATAR_PRESETS } from '../profiles/catalog.js';
+import { GameArtwork } from '../shared/brand/art.jsx';
 import { normalizeCode, validCode } from '../online/shared.js';
 import { useSocial } from './SocialProvider.jsx';
 import { useSocialUI, conversationDraftKey } from './SocialUIProvider.jsx';
@@ -27,7 +28,8 @@ import { socialInterruption } from './interruption.js';
 import { CallControls } from './CallDock.jsx';
 import { useCallDockLayout } from './CallViewport.jsx';
 import { hasVisibleMafiaCallControls } from './mafia-call-controls.js';
-import { ActionDialog, Conversation, PersonAvatar, SearchDialog, presenceLabel } from './SocialScreen.jsx';
+import { ActionDialog, Conversation, Icon, PersonAvatar, SearchDialog, presenceLabel } from './SocialScreen.jsx';
+import { ConversationOption } from './ConversationOption.jsx';
 import { LammaButton, LammaIcon, VoiceRecorder, VoiceMessage, GameInviteCard, mediaError } from './LammaMedia.jsx';
 import { createSocialNotificationAudio } from './media.js';
 import { liveNotificationAudio,confirmSocialSend } from './audio-feedback.js';
@@ -41,6 +43,49 @@ import friendsChatIllustration from '../shared/brand/assets/friends-chat-2026110
 
 const EMPTY = [];
 const nameOf = user => user?.name?.trim() || tr("لاعب ميدان");
+
+function SocialTabs({ activeTab, onSelect, options }) {
+  const nav = useRef(null);
+  const marker = useRef(null);
+  useLayoutEffect(() => {
+    const container = nav.current;
+    const selected = container.querySelector('[aria-current="page"]');
+    if (!selected) return;
+    const position = () => {
+      const x = selected.offsetLeft + selected.offsetWidth / 2 - marker.current.offsetWidth / 2;
+      const y = selected.offsetTop + selected.offsetHeight + 1;
+      marker.current.style.transform = `translate(${x}px, ${y}px)`;
+      marker.current.style.visibility = 'visible';
+    };
+    position();
+    const observer = new ResizeObserver(position);
+    observer.observe(container);
+    for (const button of container.querySelectorAll('button')) observer.observe(button);
+    return () => observer.disconnect();
+  }, [activeTab]);
+  return <nav ref={nav} data-design-id="tabs" className="lamma-tabs" aria-label={tr("أقسام اللّمة")}>
+    {options.map(([tab, label, count]) => <button data-design-id={`tab.${tab}`} type="button" key={tab}
+      aria-current={activeTab === tab ? 'page' : undefined} className={activeTab === tab ? 'is-active' : ''}
+      onClick={() => onSelect(tab)}><span>{label}</span>{count > 0 && <b>{count > 99 ? '99+' : count.toLocaleString(getUiLocale())}</b>}</button>)}
+    <span ref={marker} className="lamma-tab-marker" aria-hidden="true" />
+  </nav>;
+}
+
+function IncomingCallCard({ caller, name, inline, busy, enabled, onAccept, onDecline }) {
+  const ref = useRef(null);
+  useVisualViewport(ref, { heightProperty: '--incoming-call-height', topProperty: '--incoming-call-top' });
+  return <div ref={ref} className={'lamma-incoming-call' + (inline ? ' is-inline' : '')} data-testid="incoming-call" role="alertdialog" aria-label={tr("مكالمة واردة")} aria-modal="false">
+    <div className="lamma-incoming-caller">
+      {caller ? <ProfileAvatar user={caller} size={52} /> : <span className="lamma-ringing-avatar"><LammaIcon name="phone" size={24} /></span>}
+      <div><strong><bdi>{name}</bdi></strong><small>{tr("مكالمة صوتية واردة")}</small></div>
+    </div>
+    <div className="lamma-incoming-actions">
+      <button type="button" aria-label={tr("قبول المكالمة")} className="lamma-call-accept" data-design-id="accept-call" data-testid="incoming-call-accept" disabled={busy || !enabled} onClick={onAccept}><LammaIcon name="phone" /><span>{tr("قبول")}</span></button>
+      <button type="button" aria-label={tr("رفض المكالمة")} className="lamma-call-end" data-design-id="decline-call" data-testid="incoming-call-decline" disabled={busy} onClick={onDecline}><LammaIcon name="end" /><span>{getUiLocale() === 'en' ? 'Decline' : 'رفض'}</span></button>
+    </div>
+  </div>;
+}
+
 export const groupMemberCount = group => group?.memberCount ?? group?.members?.length ?? 0;
 export const groupPreview = group => group?.lastMessage?.deletedAt ? tr("حُذفت رسالة") : group?.lastMessage?.kind === 'voice' ? tr("رسالة صوتية") : ['game_invite', 'room_invite'].includes(group?.lastMessage?.kind) ? tr("دعوة للّعب") : group?.lastMessage?.text || tr("{v0} من الأصحاب", {v0: groupMemberCount(group).toLocaleString(getUiLocale())});
 export const isConversationMuted = (preferences, scope, conversationId) => (preferences?.mutedConversations || []).some(item => item.scope === scope && item.conversationId === conversationId);
@@ -51,10 +96,31 @@ function Empty({ title, children, icon = 'people', illustration = false, action 
 function GroupAvatar({ group, size = 44 }) {
   return <span className="lamma-group-avatar" style={{ width: size, height: size }} aria-hidden="true">{group?.avatarPreset ? <ProfileAvatar user={{ avatarPreset: group.avatarPreset, theme: 'teal' }} size={size} /> : <LammaIcon name="people" size={Math.round(size * .55)} />}</span>;
 }
-export function FriendListItem({ friend, onChat, onProfile, onInvite, inviting, favorite = false, onFavorite }) {
+export function FriendListItem({ friend, onChat, onProfile, onInvite, inviting, favorite = false, onFavorite, conversation = true }) {
   const message = friend.lastMessage;
-  const preview = message?.deletedAt ? tr("حُذفت رسالة") : message?.kind === 'voice' ? tr("رسالة صوتية") : ['game_invite', 'room_invite'].includes(message?.kind) ? tr("دعوة للّعب") : message?.text;
-  return <div data-design-id="friend-row" className="lamma-friend-row"><button type="button" data-design-id="friend-avatar" className="lamma-avatar-link" aria-label={tr("عرض بروفايل ") + nameOf(friend)} onClick={onProfile}><PersonAvatar user={friend} presence /></button><button type="button" data-design-id="friend-chat" className="lamma-person-copy" onClick={onChat}><strong><PlayerName user={friend} card compact />{friend.unreadCount > 0 && <b className="lamma-unread">{friend.unreadCount > 99 ? '99+' : friend.unreadCount}</b>}</strong><small>{preview || presenceLabel(friend)}</small></button>{onFavorite && <LammaButton data-design-id="favorite" className={'lamma-favorite' + (favorite ? ' is-favorite' : '')} label={(favorite ? tr("إزالة ") : tr("إضافة ")) + nameOf(friend) + (favorite ? tr(" من المفضّلين") : tr(" إلى المفضّلين"))} icon="star" aria-pressed={favorite} onClick={onFavorite} />}{onInvite ? <button type="button" data-design-id="friend-invite" data-sound="none" className="lamma-small-primary" onClick={onInvite} disabled={inviting}>{tr("دعوة")}</button> : <LammaButton label={tr("محادثة مع ") + nameOf(friend)} icon="chat" onClick={onChat} />}</div>;
+  const voice = conversation && !message?.deletedAt && message?.kind === 'voice';
+  const preview = conversation && (message?.deletedAt ? tr("حُذفت رسالة") : voice ? tr("رسالة صوتية") : ['game_invite', 'room_invite'].includes(message?.kind) ? tr("دعوة للّعب") : message?.text);
+  return <div data-design-id="friend-row" className="lamma-friend-row">
+    <button type="button" data-design-id="friend-avatar" className="lamma-avatar-link" aria-label={tr("عرض بروفايل ") + nameOf(friend)} onClick={onProfile}><PersonAvatar user={friend} size={62} presence={conversation} /></button>
+    <button type="button" data-design-id="friend-chat" className="lamma-person-copy" onClick={onChat}>
+      <strong><PlayerName user={friend} card compact /></strong>
+      <small className={!preview && friend.online ? 'is-online' : ''}>
+        {!preview && <i className={'lamma-presence-dot' + (friend.online ? ' is-online' : '')} aria-hidden="true" />}
+        {voice && <Icon name="wave" size={18} />}
+        <bdi>{preview || presenceLabel(friend)}</bdi>
+      </small>
+    </button>
+    {friend.unreadCount > 0 && conversation && <b className="lamma-unread">{friend.unreadCount > 99 ? '99+' : friend.unreadCount.toLocaleString(getUiLocale())}</b>}
+    {onFavorite && <LammaButton data-design-id="favorite" className={'lamma-favorite' + (favorite ? ' is-favorite' : '')} label={(favorite ? tr("إزالة ") : tr("إضافة ")) + nameOf(friend) + (favorite ? tr(" من المفضّلين") : tr(" إلى المفضّلين"))} icon="star" aria-pressed={favorite} onClick={onFavorite} />}
+    {onInvite ? <button type="button" data-design-id="friend-invite" data-sound="none" className="lamma-small-primary" onClick={onInvite} disabled={inviting}>{tr("دعوة")}</button> : <LammaButton label={tr("محادثة مع ") + nameOf(friend)} icon="chat" onClick={onChat} />}
+  </div>;
+}
+
+function RequestCard({ icon, children, actions }) {
+  return <article className="lamma-request">
+    <div className="lamma-request-main">{children}<span className="lamma-request-icon"><Icon name={icon} /></span></div>
+    <div className="lamma-request-actions">{actions}</div>
+  </article>;
 }
 
 function ProfilePreview({ id, onBack, onInvite, run }) {
@@ -65,7 +131,9 @@ function ProfilePreview({ id, onBack, onInvite, run }) {
     if (path.startsWith('/friends/')) ui.openChat(decodeURIComponent(path.slice(9)));
     else onBack();
   };
-  return <div className="lamma-profile-preview">{friend && <div className="lamma-profile-actions"><button data-design-id="call" type="button" disabled={!lamma.capabilities?.liveCalls || !!lamma.activeCall || !conversationId} onClick={() => run(() => lamma.startCall({ targetType: 'direct', targetId: conversationId }), 'profile-call')}><LammaIcon name="phone" size={18} />{tr("مكالمة صوتية")}</button><button data-design-id="game-invite" type="button" disabled={!conversationId} onClick={() => onInvite({ targetType: 'direct', targetId: conversationId })}><LammaIcon name="game" size={18} />{tr("دعوة للعبة")}</button></div>}<ProfileView account={account} profiles={profiles} social={social} profileId={id} onNavigate={move} /></div>;
+  const fullPage = ui.presentation === 'page';
+  const actions = friend && <div className="lamma-profile-actions"><button data-design-id="call" type="button" disabled={!lamma.capabilities?.liveCalls || !!lamma.activeCall || !conversationId} onClick={() => run(() => lamma.startCall({ targetType: 'direct', targetId: conversationId }), 'profile-call')}><LammaIcon name="phone" size={18} />{tr("مكالمة صوتية")}</button><button data-design-id="game-invite" type="button" disabled={!conversationId} onClick={() => onInvite({ targetType: 'direct', targetId: conversationId })}><LammaIcon name="game" size={18} />{tr("دعوة للعبة")}</button></div>;
+  return <div className={'lamma-profile-preview' + (fullPage ? ' is-full-profile' : '')}>{!fullPage && actions}<ProfileView account={account} profiles={profiles} social={social} profileId={id} onNavigate={move} onBack={onBack} />{fullPage && actions}</div>;
 }
 
 export function GameInviteDialog({ target, lamma, initialCode = '', canCreate = true, memberCount = 2, onClose, onLaunched, notify }) {
@@ -262,10 +330,14 @@ export function SocialHost() {
   const friends = social.friends || EMPTY; const groups = lamma.groups || EMPTY; const invites = lamma.groupInvites || EMPTY;
   const view = ui.view;
   const filter = ui.listState[view.tab]?.filter || '';
-  const listScrollTop = ui.listState[view.tab]?.scrollTop || 0;
   const friendFilter = ui.listState.friends?.friendFilter || 'all';
-  const setFilter = value => ui.updateListState(view.tab, { filter: value, scrollTop: 0 });
-  const setFriendFilter = value => ui.updateListState('friends', { friendFilter: value, scrollTop: 0 });
+  const updateFilter = patch => {
+    ui.listOffsets?.set(view.tab, 0);
+    if (listScroll.current) listScroll.current.scrollTop = 0;
+    ui.updateListState(view.tab, patch);
+  };
+  const setFilter = value => updateFilter({ filter: value });
+  const setFriendFilter = value => updateFilter({ friendFilter: value });
   const friend = view.type === 'direct' ? friends.find(item => item.id === view.id) : null;
   const group = view.type === 'group' ? groups.find(item => item.id === view.id) : null;
   const groupChat = lamma.groupConversations?.[view.id];
@@ -293,6 +365,7 @@ export function SocialHost() {
   }, [callOwned, currentCall?.id, callGroupId, callGroupAllowed, callMembers, callMembersStore, loadCallMembers]);
   const directId = friend?.conversationId || social.conversationList?.find(item => item.user?.id === friend?.id)?.id;
   const targetType = group ? 'group' : 'direct'; const targetId = group?.id || directId;
+  const conversationMuted = isConversationMuted(lamma.notifications, targetType, targetId);
   const sendAudio=useSocialSendAudio(account.user?.id,'action',JSON.stringify([ui.open,view.type,view.id,view.tab]));
   const sendVoice=clip=>confirmSocialSend(sendAudio,{scope:targetType,id:targetId},()=>lamma.sendVoiceNote({targetType,targetId,...clip}));
   const groupUnread = groups.reduce((sum, item) => sum + (item.unreadCount || 0), 0);
@@ -328,8 +401,8 @@ export function SocialHost() {
     return () => observer.disconnect();
   }, [route.path, ui.presentation]);
   useLayoutEffect(() => {
-    if (panelOpen && view.type === 'list' && listScroll.current) listScroll.current.scrollTop = listScrollTop;
-  }, [panelOpen, ui.presentation, view.type, view.tab, pageHost, listScrollTop]);
+    if (panelOpen && view.type === 'list' && listScroll.current) listScroll.current.scrollTop = ui.listOffsets?.get(view.tab) || 0;
+  }, [panelOpen, ui.presentation, view.type, view.tab, pageHost, ui.listOffsets]);
   useEffect(() => {
     if (!drawerOpen || !host || communicationLocked) return undefined;
     return activateDialog({node:panel.current,host,close:closePanel,priority:10});
@@ -393,12 +466,21 @@ export function SocialHost() {
   const directNotificationEnabled = notification?.type === 'request' ? lamma.notifications?.friendRequests !== false : lamma.notifications?.enabled !== false;
   const notificationMuted = notification?.friend && isConversationMuted(lamma.notifications, 'direct', notification.friend.conversationId);
   const join = id => run(async () => { await lamma.acceptGameInvite(id); ui.close(); }, 'join-invite');
-  const content = message => message.kind === 'voice' ? <VoiceMessage attachment={message.attachment} getVoiceUrl={lamma.getVoiceUrl} /> : ['game_invite', 'room_invite', 'invite'].includes(message.kind) ? <GameInviteCard invite={message.roomInvitation || message.invite || message.gameInvite || message} onJoin={join} /> : null;
+  const content = message => {
+    if (message.kind === 'voice') return <VoiceMessage attachment={message.attachment} getVoiceUrl={lamma.getVoiceUrl} />;
+    if (!['game_invite', 'room_invite', 'invite'].includes(message.kind)) return null;
+    const invitation = message.roomInvitation || message.invite || message.gameInvite || message;
+    const artwork = ['mafia', 'badeeha', 'ersomha', 'fabraka', 'meenfina'].includes(invitation.game) && <GameArtwork game={invitation.game} variant="mark" />;
+    return <GameInviteCard invite={invitation} onJoin={join} artwork={artwork} />;
+  };
   const ongoingGroupCall = group && lamma.calls?.find(call => call.scope === 'group' && call.conversationId === group.id && !['ended', 'rejected', 'cancelled', 'missed', 'expired'].includes(call.status));
   const startCall = () => { if (targetId) run(() => ongoingGroupCall ? lamma.acceptCall(ongoingGroupCall.id) : lamma.startCall({ targetType, targetId }), 'call'); };
   const sendInvite = (scope, id) => run(() => confirmSocialSend(sendAudio,{scope,id},()=>lamma.sendGameInvite({ targetType: scope, targetId: id, ...ui.invite })), 'invite-' + id, tr("وصلت دعوة اللعب"));
   const favoriteIds = ui.favorites || EMPTY;
   const activeFriendFilter = view.tab === 'friends' ? friendFilter : 'all';
+  const query = filter.trim().toLocaleLowerCase(getUiLocale());
+  const onlineShortcuts = friends.filter(item => item.online && nameOf(item).toLocaleLowerCase(getUiLocale()).includes(query)).slice(0, 2);
+  const displayedGroups = groups.filter(item => item.name?.toLocaleLowerCase(getUiLocale()).includes(query));
   const displayedFriends = [...friends].filter(item => nameOf(item).toLocaleLowerCase('ar').includes(filter.trim().toLocaleLowerCase('ar'))).filter(item => activeFriendFilter === 'online' ? item.online : activeFriendFilter === 'favorites' ? favoriteIds.includes(item.id) : true).filter(item => view.tab !== 'chats' || item.lastMessage || item.unreadCount).sort((a, b) => view.tab === 'chats' ? (Number(b.lastMessage?.createdAt) || 0) - (Number(a.lastMessage?.createdAt) || 0) : Number(!!b.online) - Number(!!a.online));
   const totalRequests = social.incoming.length + invites.length;
   const openCall = call => { if (call.scope === 'group') ui.openGroup(call.conversationId); else { const peer = friends.find(item => item.conversationId === call.conversationId); if (peer) ui.openChat(peer.id); else ui.show(); } };
@@ -409,21 +491,68 @@ export function SocialHost() {
   }) };
   const title = view.type === 'profile' ? tr("أهل الميدان") : friend ? nameOf(friend) : group ? group.name : tr("الأصدقاء");
   const hasConversation = account.ready && account.signedIn && ['direct', 'group'].includes(view.type) && !!(friend || group);
-  const panelContent = ui.open && !communicationLocked && <section data-design-screen={view.type === 'list' || view.type === 'profile' ? 'social.list' : 'social.conversation'} ref={panel} className={'lamma-panel lamma-host' + (ui.presentation === 'page' ? ' lamma-page-panel' : '') + (['direct', 'group'].includes(view.type) ? ' is-chat' : '')} role={drawerOpen ? 'dialog' : 'region'} aria-modal={drawerOpen ? true : undefined} aria-label={tr("الأصدقاء واللّمة")} tabIndex={-1} dir={localeDirection(getUiLocale())}>{!hasConversation && <header data-design-id="header" className="lamma-panel-head"><div className="lamma-panel-title">{view.type !== 'list' ? <LammaButton label={tr("العودة للّمة")} icon="back" onClick={ui.back} /> : null}<div><h2><bdi>{title}</bdi></h2></div></div><div className="lamma-header-actions"><LammaButton label={tr("إعدادات التنبيهات")} icon="bell" onClick={() => setPreferences(true)} />{drawerOpen && <LammaButton label={tr("إغلاق اللّمة والعودة للعبة")} icon="close" onClick={ui.close} />}</div></header>}
+  const incoming = !communicationLocked && !lamma.activeCall && lamma.incomingCall;
+  const caller = incoming && !privateSurface ? friends.find(item => item.id === incoming.initiatorId) : null;
+  const incomingCard = incoming && <IncomingCallCard caller={caller} name={privateSurface ? tr("أحد أصحابك يتصل") : incoming.name || nameOf(caller)} inline={ui.open} busy={!!busy} enabled={lamma.capabilities?.liveCalls}
+    onAccept={() => run(() => lamma.acceptCall(incoming.id), 'accept')}
+    onDecline={() => run(() => lamma.declineCall(incoming.id), 'decline')} />;
+  const panelContent = ui.open && !communicationLocked && <section data-design-screen={view.type === 'list' || view.type === 'profile' ? 'social.list' : 'social.conversation'} ref={panel} className={'lamma-panel lamma-host' + (ui.presentation === 'page' ? ' lamma-page-panel' : '') + (['direct', 'group'].includes(view.type) ? ' is-chat' : '') + (view.type === 'profile' ? ' is-profile' : view.type === 'list' ? ' is-studio-list' : '')} role={drawerOpen ? 'dialog' : 'region'} aria-modal={drawerOpen ? true : undefined} aria-label={tr("الأصدقاء واللّمة")} tabIndex={-1} dir={localeDirection(getUiLocale())}>{!hasConversation && !(view.type === 'profile' && ui.presentation === 'page') && <header data-design-id="header" className="lamma-panel-head"><div className="lamma-panel-title">{view.type !== 'list' ? <LammaButton label={tr("العودة للّمة")} icon="back" onClick={ui.back} /> : null}<div><h2><bdi>{title}</bdi></h2></div></div><div className="lamma-header-actions"><LammaButton label={tr("إعدادات التنبيهات")} icon="bell" onClick={() => setPreferences(true)} />{view.type === 'list' && account.ready && account.signedIn && <button data-design-id="profile" type="button" className="lamma-me-avatar" aria-label={tr("ملفك في الميدان")} onClick={() => ui.openProfile(account.user.id)}><PersonAvatar user={profiles.mine || account.user} size={70} /></button>}{drawerOpen && <LammaButton label={tr("إغلاق اللّمة والعودة للعبة")} icon="close" onClick={ui.close} />}</div></header>}
+      {incomingCard}
       <div ref={setCallInlineHost} className="lamma-call-inline-host" />
       {drawerOpen && interruption.online && interruption.turnDeadline && <div className="lamma-game-status"><LammaIcon name="game" size={17} />{tr("الجولة مستمرة. ارجع لدورك متى ما احتجت.")}<button type="button" onClick={ui.close}>{tr("العودة للعب")}</button></div>}
       {ui.invite && <div className="lamma-invite-banner"><LammaIcon name="game" /><span>{tr("ادعُ أصحابك للغرفة ")}<bdi>{ui.invite.roomCode}</bdi></span><LammaButton label={tr("إنهاء إرسال الدعوات")} icon="close" onClick={ui.clearInvite} /></div>}
       {notice && <div className={'lamma-notice' + (notice.error ? ' is-error' : '')} role={notice.error ? 'alert' : 'status'}>{notice.text}<LammaButton label={tr("إخفاء")} icon="close" onClick={() => setNotice(null)} /></div>}
       {!account.ready ? <Empty title={tr("نجهّز لمّتك…")}>{tr("لحظات ونكون معك.")}</Empty> : !account.signedIn ? <Empty illustration title={tr("الجمعة تبدأ بأصحابك")} action={<Button data-design-id="account-signin" variant="primary" onClick={() => setSignIn(true)}>{tr("سجّل الدخول وخلّك قريب")}</Button>}>{tr("أضف أصحابك، اسأل عنهم، واجمعهم على لعبة أو مكالمة. اللّمة مجانية للجميع.")}</Empty> : <>
         {(social.error || lamma.error) && <div className="lamma-connection" role="status">{social.error || lamma.error}<button data-design-id="retry" type="button" className="lamma-text-button" onClick={() => run(() => Promise.allSettled([social.refresh(), lamma.refreshGroups()]), 'refresh')}>{tr("إعادة المحاولة")}</button></div>}{(social.offline || lamma.offline) && <p className="lamma-connection" role="status">{tr("انقطع الاتصال · رسائلك المحمّلة ما زالت هنا")}</p>}
-        {view.type === 'profile' ? <ProfilePreview id={view.id} onBack={ui.back} onInvite={setInviteTarget} run={run} /> : view.type === 'direct' || view.type === 'group' ? friend || group ? <Conversation compactHeader onClose={drawerOpen ? ui.close : undefined} designScreen={null} key={view.type + view.id} friend={friend || { ...group, online: false }} conversation={friend ? social.conversations?.[friend.id] : groupChat} account={account} social={friend ? social : groupSocial} onBack={ui.back} onProfile={() => friend ? ui.openProfile(friend.id) : setGroupEditor(group)} onMenu={() => setMenu(friend || group)} onAction={next => setAction(group ? { ...next, groupId: group.id, user: groupChat?.members?.find(member => (member.userId || member.id) === next.message?.senderId) || { id: next.message?.senderId, name: tr("عضو اللّمة") } } : next)} notify={notify} subtitle={busy === 'call' ? <span role="status">{tr("جارٍ الاتصال…")}</span> : group ? tr("{v0} من الأصحاب{v1}", {v0: groupMemberCount(group), v1: ongoingGroupCall ? tr(" · مكالمة جارية") : ''}) : undefined} draftValue={ui.drafts[conversationDraftKey(view.type, view.id)] || ''} onDraftChange={text => ui.setDraft(conversationDraftKey(view.type, view.id), text)} renderContent={content} headerActions={<><LammaButton label={tr("يلا نلعب")} icon="game" disabled={!targetId || social.offline || lamma.offline} onClick={() => setInviteTarget({ targetType, targetId })} /><LammaButton label={lamma.capabilities?.liveCalls ? ongoingGroupCall ? tr("انضم للمكالمة الجارية") : tr("مكالمة صوتية") : tr("المكالمات غير متاحة في هذه النسخة")} icon="phone" disabled={!lamma.capabilities?.liveCalls || !!lamma.activeCall || busy === 'call' || !targetId || social.offline} onClick={startCall} /></>} composerExtras={<VoiceRecorder key={view.type + view.id} disabled={social.offline || lamma.offline || !!lamma.activeCall} unavailableReason={!lamma.capabilities?.voiceMessages ? tr("الرسائل الصوتية غير متاحة في هذه النسخة.") : lamma.activeCall ? tr("أنهِ المكالمة قبل تسجيل رسالة صوتية.") : ''} onError={text => notify(text, true)} onSend={sendVoice} />} /> : <Empty title={tr("هذه المحادثة غير متاحة")} action={<Button data-design-id="back" variant="secondary" onClick={ui.back}>{tr("العودة للأصدقاء")}</Button>}>{tr("قد تكون الصداقة أو عضويتك في اللّمة تغيّرت.")}</Empty> : <div ref={listScroll} className="lamma-list-content lamma-list-scroll" onScroll={event => ui.updateListState(view.tab, { scrollTop: event.currentTarget.scrollTop })}>
+        {view.type === 'profile' ? <ProfilePreview id={view.id} onBack={ui.back} onInvite={setInviteTarget} run={run} /> : view.type === 'direct' || view.type === 'group' ? friend || group ? <Conversation compactHeader onClose={drawerOpen ? ui.close : undefined} designScreen={null} key={view.type + view.id} friend={friend || { ...group, online: false }} conversation={friend ? social.conversations?.[friend.id] : groupChat} account={account} social={friend ? social : groupSocial} onBack={ui.back} onProfile={() => friend ? ui.openProfile(friend.id) : setGroupEditor(group)} onMenu={() => setMenu(friend || group)} onAction={next => setAction(group ? { ...next, groupId: group.id, user: groupChat?.members?.find(member => (member.userId || member.id) === next.message?.senderId) || { id: next.message?.senderId, name: tr("عضو اللّمة") } } : next)} notify={notify} subtitle={busy === 'call' ? <span role="status">{tr("جارٍ الاتصال…")}</span> : group ? tr("{v0} من الأصحاب{v1}", {v0: groupMemberCount(group), v1: ongoingGroupCall ? tr(" · مكالمة جارية") : ''}) : undefined} draftValue={ui.drafts[conversationDraftKey(view.type, view.id)] || ''} onDraftChange={text => ui.setDraft(conversationDraftKey(view.type, view.id), text)} renderContent={content} headerActions={<>
+          <Button data-design-id="game-invite" variant="primary" icon={<LammaIcon name="game" />} disabled={!targetId || social.offline || lamma.offline} onClick={() => setInviteTarget({ targetType, targetId })}>{tr("يلا نلعب")}</Button>
+          <Button data-design-id="call" variant="secondary" icon={<LammaIcon name="phone" />} title={!lamma.capabilities?.liveCalls ? tr("المكالمات غير متاحة في هذه النسخة") : undefined} disabled={!lamma.capabilities?.liveCalls || !!lamma.activeCall || busy === 'call' || !targetId || social.offline} onClick={startCall}>{ongoingGroupCall ? tr("انضم للمكالمة الجارية") : tr("مكالمة صوتية")}</Button>
+        </>} composerExtras={<VoiceRecorder key={view.type + view.id} disabled={social.offline || lamma.offline || !!lamma.activeCall} unavailableReason={!lamma.capabilities?.voiceMessages ? tr("الرسائل الصوتية غير متاحة في هذه النسخة.") : lamma.activeCall ? tr("أنهِ المكالمة قبل تسجيل رسالة صوتية.") : ''} onError={text => notify(text, true)} onSend={sendVoice} />} /> : <Empty title={tr("هذه المحادثة غير متاحة")} action={<Button data-design-id="back" variant="secondary" onClick={ui.back}>{tr("العودة للأصدقاء")}</Button>}>{tr("قد تكون الصداقة أو عضويتك في اللّمة تغيّرت.")}</Empty> : <div className="lamma-people-view"><div key={view.tab} ref={listScroll} className="lamma-list-content lamma-list-scroll" onScroll={event => ui.listOffsets?.set(view.tab, event.currentTarget.scrollTop)}>
 
-          <nav data-design-id="tabs" className="lamma-tabs" aria-label={tr("أقسام اللّمة")}>{[['friends', tr("الأصدقاء"), 0], ['chats', tr("المحادثات"), social.unreadCount || 0], ['groups', tr("الشِّلل"), groupUnread], ['requests', tr("الطلبات"), totalRequests]].map(([tab, label, count]) => <button data-design-id={`tab.${tab}`} type="button" key={tab} aria-current={view.tab === tab ? 'page' : undefined} className={view.tab === tab ? 'is-active' : ''} onClick={() => ui.show({ type: 'list', tab })}>{label}{count > 0 && <b>{count > 99 ? '99+' : count}</b>}</button>)}</nav>
+          <SocialTabs activeTab={view.tab} onSelect={tab => ui.show({ type: 'list', tab })} options={[['friends', tr("الأصدقاء"), 0], ['chats', tr("المحادثات"), social.unreadCount || 0], ['groups', tr("الشِّلل"), groupUnread], ['requests', tr("الطلبات"), totalRequests]]} />
           {view.tab !== 'requests' && <label data-design-id="search" className="lamma-search"><LammaIcon name="search" size={18} /><input data-design-id="search-input" value={filter} placeholder={view.tab === 'groups' ? tr("ابحث في لمّاتك") : tr("دوّر على صاحبك")} aria-label={tr("البحث في اللّمة")} onChange={event => setFilter(event.target.value)} /></label>}
           {view.tab === 'friends' && <><div className="lamma-friend-filters" role="group" aria-label={tr("تصفية الأصدقاء")}>{[['all', tr("الكل")], ['online', tr("المتصلون")], ['favorites', tr("المفضّلون")]].map(([value, label]) => <button data-design-id="friend-filter" type="button" key={value} aria-pressed={friendFilter === value} onClick={() => setFriendFilter(value)}>{value === 'favorites' && <LammaIcon name="star" size={14} />}{label}</button>)}</div>{friendFilter === 'favorites' && <p className="lamma-favorites-note">{tr("مفضّلوك محفوظون لحسابك على هذا الجهاز.")}</p>}</>}
-          <div data-design-id="list" className="lamma-list-items">{view.tab === 'groups' ? <>{groups.filter(item => item.name?.includes(filter.trim())).map(item => <div data-design-id="friend-row" className="lamma-friend-row" key={item.id}><button type="button" data-design-id="group-row" className="lamma-group-open" onClick={() => ui.openGroup(item.id)}><GroupAvatar group={item} /><span className="lamma-person-copy"><strong>{item.name}{item.unreadCount > 0 && <b className="lamma-unread">{item.unreadCount}</b>}</strong><small>{groupPreview(item)}</small></span></button>{ui.invite && <button type="button" data-design-id="friend-invite" data-sound="none" className="lamma-small-primary" disabled={!!busy} onClick={() => sendInvite('group', item.id)}>{tr("دعوة")}</button>}</div>)}{!groups.length && <Empty illustration title={tr("لمّتكم لها مكان")} icon="chat">{tr("اجمع أصحابك في محادثة واحدة. خططوا للّعب، وأرسلوا صوتيات، وسولفوا براحتكم.")}</Empty>}</> : view.tab === 'requests' ? <>{social.incoming.map(request => <div className="lamma-request" key={request.id}><button data-design-id="profile" type="button" className="lamma-request-person" onClick={() => ui.openProfile(request.user.id)}><ProfileAvatar user={request.user} /><span><strong><PlayerName user={request.user} card compact /></strong><small>{tr("يريد إضافتك إلى أصدقائه")}</small></span></button><div><Button data-design-id="friend-accept" variant="primary" size="sm" disabled={!!busy} onClick={() => run(() => social.acceptRequest(request.id), request.id, tr("صار من أصحابك"))}>{tr("قبول")}</Button><Button data-design-id="friend-reject" variant="ghost" size="sm" disabled={!!busy} onClick={() => run(() => social.rejectRequest(request.id), request.id)}>{tr("رفض")}</Button></div></div>)}{invites.map(invitation => <div className="lamma-request" key={invitation.id}><div className="lamma-request-person"><GroupAvatar group={invitation.group || invitation} /><span><strong>{invitation.group?.name || invitation.groupName || tr("دعوة إلى لمّة")}</strong><small>{tr("أصحابك ينتظرونك")}</small></span></div><div><Button data-design-id="group-accept" variant="primary" size="sm" disabled={!!busy} onClick={() => run(() => lamma.acceptGroupInvite(invitation.groupId || invitation.group?.id, invitation.id), invitation.id, tr("دخلت اللّمة"))}>{tr("انضمام")}</Button><Button data-design-id="group-reject" variant="ghost" size="sm" disabled={!!busy} onClick={() => run(() => lamma.rejectGroupInvite(invitation.groupId || invitation.group?.id, invitation.id), invitation.id)}>{tr("اعتذار")}</Button></div></div>)}{social.outgoing.map(request => <div className="lamma-request" key={request.id}><div className="lamma-request-person"><ProfileAvatar user={request.user} /><span><strong><PlayerName user={request.user} card compact /></strong><small>{tr("بانتظار الموافقة")}</small></span></div><Button data-design-id="friend-cancel" variant="ghost" size="sm" disabled={!!busy} onClick={() => run(() => social.cancelRequest(request.id), request.id)}>{tr("إلغاء الطلب")}</Button></div>)}{!totalRequests && !social.outgoing.length && <Empty title={tr("كل شيء هادئ")} icon="bell">{tr("طلبات الصداقة ودعوات اللّمات تظهر هنا.")}</Empty>}</> : <><div className="lamma-list-heading"><strong>{view.tab === 'chats' ? tr("آخر سوالفكم") : tr("أصحاب الميدان")}</strong><small>{friends.filter(item => item.online).length}{tr(" متصل الآن")}</small></div>{displayedFriends.map(item => <FriendListItem friend={item} key={item.id} favorite={favoriteIds.includes(item.id)} onFavorite={() => ui.toggleFavorite(item.id)} onChat={() => ui.openChat(item.id)} onProfile={() => ui.openProfile(item.id)} inviting={!!busy} onInvite={ui.invite ? () => sendInvite('direct', item.conversationId || social.conversationList.find(conversation => conversation.user.id === item.id)?.id) : null} />)}{!displayedFriends.length && <Empty illustration={!filter && activeFriendFilter === 'all'} title={filter ? tr("ما لقينا هذا الاسم") : activeFriendFilter === 'favorites' ? tr("أصحابك الأقرب، بنجمة") : activeFriendFilter === 'online' ? tr("أصحابك غير متصلين الآن") : view.tab === 'chats' ? tr("ابدأ السالفة") : tr("أصحابك يكملون اللّمة")} action={!filter && activeFriendFilter === 'all' && <Button data-design-id="add-friend" variant="secondary" onClick={() => setSearch(true)}>{tr("أضف صديقًا")}</Button>}>{filter ? tr("جرّب جزءًا آخر من الاسم أو اختر الكل.") : activeFriendFilter === 'favorites' ? tr("اضغط النجمة بجانب صاحبك ليظهر هنا.") : activeFriendFilter === 'online' ? tr("تقدر ترسل لهم رسالة الآن، ويشوفونها لما يرجعون.") : tr("ابحث عن صاحبك باسمه أو شاركه رمز ميدان.")}</Empty>}</>}</div>
-          <div className="lamma-list-actions"><Button data-design-id="new-group" type="button" variant="accent" icon={<LammaIcon name="people" />} onClick={() => setGroupEditor({ create: true })}>{tr("تكوين شلّة")}</Button><Button data-design-id="add-friend" type="button" variant="secondary" icon={<LammaIcon name="search" />} onClick={() => setSearch(true)}>{tr("البحث")}</Button></div><footer className="lamma-footer"><button data-design-id="profile" type="button" className="lamma-me-profile" onClick={() => ui.openProfile(account.user.id)}><ProfileAvatar user={profiles.mine || account.user} size={26} /><span>{tr("ملفك في الميدان")}</span></button><button data-design-id="code" type="button" onClick={async () => { try { await navigator.clipboard.writeText(social.profile?.code || ''); notify(tr("نُسخ رمزك. أرسله لأصحابك")); } catch { notify(tr("رمزك: {v0}", {v0: social.profile?.code || tr("غير متاح")})); } }}>{tr("رمزك ")}<bdi>{social.profile?.code || '…'}</bdi></button></footer>
-        </div>}
+          {view.tab === 'chats' && onlineShortcuts.length > 0 && <div className="lamma-online-shortcuts" aria-label={tr("المتصلون")}>
+            {onlineShortcuts.map(person => <button type="button" key={person.id} onClick={() => ui.openChat(person.id)} aria-label={tr("محادثة مع ") + nameOf(person)}><PersonAvatar user={person} presence size={62} /><bdi>{nameOf(person)}</bdi></button>)}
+          </div>}
+          <div key={view.tab} data-design-id="list" className="lamma-list-items lamma-tab-content">
+            {view.tab === 'groups' ? <>
+              {displayedGroups.map(item => <div data-design-id="friend-row" className="lamma-friend-row is-group" key={item.id}>
+                <button type="button" data-design-id="group-row" className="lamma-group-open" onClick={() => ui.openGroup(item.id)}>
+                  <GroupAvatar group={item} size={70} />
+                  <span className="lamma-person-copy"><strong><bdi>{item.name}</bdi></strong><small>{!item.lastMessage?.deletedAt && item.lastMessage?.kind === 'voice' && <Icon name="wave" size={18} />}<bdi>{groupPreview(item)}</bdi></small></span>
+                </button>
+                {item.unreadCount > 0 && <b className="lamma-unread">{item.unreadCount > 99 ? '99+' : item.unreadCount.toLocaleString(getUiLocale())}</b>}
+                {ui.invite ? <button type="button" data-design-id="friend-invite" data-sound="none" className="lamma-small-primary" disabled={!!busy} onClick={() => sendInvite('group', item.id)}>{tr("دعوة")}</button> : <LammaButton label={tr("محادثة مع ") + item.name} icon="chat" onClick={() => ui.openGroup(item.id)} />}
+              </div>)}
+              {!displayedGroups.length && (filter ? <Empty title={tr("ما لقينا هذا الاسم")} icon="search">{tr("جرّب جزءًا آخر من الاسم أو اختر الكل.")}</Empty> : <Empty illustration title={tr("لمّتكم لها مكان")} icon="chat">{tr("اجمع أصحابك في محادثة واحدة. خططوا للّعب، وأرسلوا صوتيات، وسولفوا براحتكم.")}</Empty>)}
+            </> : view.tab === 'requests' ? <>
+              {social.incoming.map(request => <RequestCard key={request.id} icon="person-add" actions={<>
+                <Button data-design-id="friend-accept" variant="primary" size="sm" disabled={!!busy} onClick={() => run(() => social.acceptRequest(request.id), request.id, tr("صار من أصحابك"))}>{tr("قبول")}</Button>
+                <Button data-design-id="friend-reject" variant="secondary" size="sm" disabled={!!busy} onClick={() => run(() => social.rejectRequest(request.id), request.id)}>{tr("رفض")}</Button>
+              </>}>
+                <button data-design-id="profile" type="button" className="lamma-request-person" onClick={() => ui.openProfile(request.user.id)}><PersonAvatar user={request.user} size={74} /><span><strong><PlayerName user={request.user} card compact /></strong><small>{tr("يريد إضافتك إلى أصدقائه")}</small></span></button>
+              </RequestCard>)}
+              {invites.map(invitation => <RequestCard key={invitation.id} icon="people" actions={<>
+                <Button data-design-id="group-accept" variant="primary" size="sm" disabled={!!busy} onClick={() => run(() => lamma.acceptGroupInvite(invitation.groupId || invitation.group?.id, invitation.id), invitation.id, tr("دخلت اللّمة"))}>{tr("انضمام")}</Button>
+                <Button data-design-id="group-reject" variant="secondary" size="sm" disabled={!!busy} onClick={() => run(() => lamma.rejectGroupInvite(invitation.groupId || invitation.group?.id, invitation.id), invitation.id)}>{tr("اعتذار")}</Button>
+              </>}>
+                <div className="lamma-request-person"><GroupAvatar group={invitation.group || invitation} size={74} /><span><strong><bdi>{invitation.group?.name || invitation.groupName || tr("دعوة إلى لمّة")}</bdi></strong><small>{tr("أصحابك ينتظرونك")}</small></span></div>
+              </RequestCard>)}
+              {social.outgoing.map(request => <RequestCard key={request.id} icon="send" actions={
+                <Button data-design-id="friend-cancel" variant="secondary" size="sm" disabled={!!busy} onClick={() => run(() => social.cancelRequest(request.id), request.id)}>{tr("إلغاء الطلب")}</Button>
+              }>
+                <div className="lamma-request-person"><PersonAvatar user={request.user} size={74} /><span><strong><PlayerName user={request.user} card compact /></strong><small>{tr("بانتظار الموافقة")}</small></span></div>
+              </RequestCard>)}
+              {!totalRequests && !social.outgoing.length && <Empty title={tr("كل شيء هادئ")} icon="bell">{tr("طلبات الصداقة ودعوات اللّمات تظهر هنا.")}</Empty>}</> : <><div className="lamma-list-heading"><strong>{view.tab === 'chats' ? tr("آخر سوالفكم") : tr("أصحاب الميدان")}</strong>{view.tab === 'friends' && <small><i className="lamma-presence-dot is-online" aria-hidden="true" />{friends.filter(item => item.online).length.toLocaleString(getUiLocale())}{tr(" متصل الآن")}</small>}</div>{displayedFriends.map(item => <FriendListItem friend={item} key={item.id} conversation={view.tab === 'chats'} favorite={favoriteIds.includes(item.id)} onFavorite={() => ui.toggleFavorite(item.id)} onChat={() => ui.openChat(item.id)} onProfile={() => ui.openProfile(item.id)} inviting={!!busy} onInvite={ui.invite ? () => sendInvite('direct', item.conversationId || social.conversationList.find(conversation => conversation.user.id === item.id)?.id) : null} />)}{!displayedFriends.length && <Empty illustration={!filter && activeFriendFilter === 'all'} title={filter ? tr("ما لقينا هذا الاسم") : activeFriendFilter === 'favorites' ? tr("أصحابك الأقرب، بنجمة") : activeFriendFilter === 'online' ? tr("أصحابك غير متصلين الآن") : view.tab === 'chats' ? tr("ابدأ السالفة") : tr("أصحابك يكملون اللّمة")} action={!filter && activeFriendFilter === 'all' && <Button data-design-id="add-friend" variant="secondary" onClick={() => setSearch(true)}>{tr("أضف صديقًا")}</Button>}>{filter ? tr("جرّب جزءًا آخر من الاسم أو اختر الكل.") : activeFriendFilter === 'favorites' ? tr("اضغط النجمة بجانب صاحبك ليظهر هنا.") : activeFriendFilter === 'online' ? tr("تقدر ترسل لهم رسالة الآن، ويشوفونها لما يرجعون.") : tr("ابحث عن صاحبك باسمه أو شاركه رمز ميدان.")}</Empty>}</>}</div>
+          <footer className="lamma-list-footer">
+            <div className="lamma-list-actions">
+              <Button data-design-id="new-group" type="button" variant="primary" icon={<LammaIcon name="people" />} onClick={() => setGroupEditor({ create: true })}>{tr("تكوين شلّة")}</Button>
+              <Button data-design-id="add-friend" type="button" variant="secondary" icon={<LammaIcon name="search" />} onClick={() => setSearch(true)}>{tr("البحث")}</Button>
+            </div>
+            <button data-design-id="code" className="lamma-copy-code" type="button" disabled={!social.profile?.code} onClick={async () => { try { await navigator.clipboard.writeText(social.profile.code); notify(tr("نُسخ رمزك. أرسله لأصحابك")); } catch { notify(tr("رمزك: {v0}", {v0: social.profile.code})); } }}><span>{tr("رمزك ")}</span><bdi>{social.profile?.code || '…'}</bdi><Icon name="copy" size={20} /></button>
+          </footer>
+        </div></div>}
       </>}
     </section>;
   const launcher = !ui.open && !communicationLocked && <button ref={trigger} type="button" className={'lamma-launcher' + (unread ? ' has-unread' : '')} aria-label={unread ? tr("الأصدقاء، {v0} تنبيه", {v0: unread}) : tr("افتح الأصدقاء واللّمة")} aria-expanded={false} onClick={() => ui.show()}><span className="lamma-launcher-faces">{account.signedIn && friends.some(item => item.online) ? friends.filter(item => item.online).slice(0, 2).map(item => <ProfileAvatar key={item.id} user={item} size={30} />) : <LammaIcon name="people" />}</span><strong>{tr("اللّمة")}</strong>{unread > 0 && <b className="lamma-unread">{unread > 99 ? '99+' : unread}</b>}</button>;
@@ -438,9 +567,47 @@ export function SocialHost() {
     {dialogsOwned && search && <SearchDialog social={social} onClose={() => setSearch(false)} run={run} busy={busy} onOpen={ui.openChat} onProfile={ui.openProfile} />}
     {dialogsOwned && inviteTarget && <GameInviteDialog key={`${account.user?.id}:${inviteTarget.targetType}:${inviteTarget.targetId}`} target={inviteTarget} lamma={lamma} initialCode={ui.invite?.roomCode || (route.name === 'room' ? route.params.id : '')} canCreate={!['play', 'room'].includes(route.name)} memberCount={inviteTarget.targetType === 'group' ? groupMemberCount(groups.find(item => item.id === inviteTarget.targetId)) : 2} onClose={() => setInviteTarget(null)} onLaunched={code => { ui.close(); navigate(`/room/${code}`); }} notify={notify} />}{dialogsOwned && preferences && <Preferences lamma={lamma} social={social} onClose={() => setPreferences(false)} notify={notify} />}
     {dialogsOwned && groupEditor && <GroupEditor key={groupEditor.id || 'new'} group={groupEditor.create ? null : groupEditor} detail={lamma.groupConversations?.[groupEditor.id]} friends={friends} accountId={account.user?.id} lamma={lamma} onClose={() => setGroupEditor(null)} onCreated={ui.openGroup} notify={notify} onPlay={groupEditor.id === group?.id && targetId && !social.offline && !lamma.offline ? () => { setGroupEditor(null); setInviteTarget({ targetType, targetId }); } : undefined} onCall={groupEditor.id === group?.id && lamma.capabilities?.liveCalls && targetId ? () => { setGroupEditor(null); startCall(); } : undefined} callDisabled={!!lamma.activeCall || busy === 'call' || social.offline} />}
-    {dialogsOwned && menu && <Sheet open title={group ? tr("خيارات الشلّة") : tr("خيارات المحادثة")} data-design-screen="social.conversation-options" onClose={() => setMenu(null)}><div className="lamma-menu">{!group && <button type="button" onClick={() => { ui.toggleFavorite(menu.id); setMenu(null); }}><LammaIcon name="star" />{favoriteIds.includes(menu.id) ? tr("إزالة من المفضّلة") : tr("إضافة للمفضّلة")}</button>}<button data-design-id="preferences" type="button" onClick={() => { setMenu(null); setPreferences(true); }}><LammaIcon name="settings" />{tr("إعدادات التنبيهات")}</button><button type="button" onClick={() => { setInviteTarget({ targetType, targetId }); setMenu(null); }}><LammaIcon name="game" />{tr("دعوة للعبة")}</button>{group ? <button data-design-id="group-manage" type="button" onClick={() => { setGroupEditor(group); setMenu(null); }}><LammaIcon name="people" />{tr("الأعضاء وإدارة اللّمة")}</button> : <button type="button" onClick={() => { ui.openProfile(menu.id); setMenu(null); }}><LammaIcon name="people" />{tr("عرض البروفايل")}</button>}<button type="button" onClick={async () => { const muted = isConversationMuted(lamma.notifications, targetType, targetId); if (await run(() => lamma.setConversationMuted({ targetType, targetId, muted: !muted }), 'mute-chat', muted ? tr("شُغّلت تنبيهات المحادثة") : tr("كُتمت تنبيهات المحادثة"))) setMenu(null); }}><LammaIcon name="bell" />{isConversationMuted(lamma.notifications, targetType, targetId) ? tr("تشغيل التنبيهات") : tr("كتم تنبيهات المحادثة")}</button>{!group && <><button type="button" onClick={() => { setAction({ kind: 'remove', user: menu }); setMenu(null); }}>{tr("إزالة من الأصدقاء")}</button><button type="button" className="is-danger" onClick={() => { setAction({ kind: 'block', user: menu }); setMenu(null); }}>{tr("حظر الحساب")}</button><button type="button" onClick={() => { setAction({ kind: 'report', user: menu }); setMenu(null); }}>{tr("إبلاغ عن الحساب")}</button></>}<Button variant="secondary" full onClick={() => setMenu(null)}>{tr("إلغاء")}</Button></div></Sheet>}
+    {dialogsOwned && menu && <Sheet open title={group ? tr("خيارات الشلّة") : tr("خيارات المحادثة")}
+      data-design-screen="social.conversation-options" data-conversation-kind={targetType} onClose={() => setMenu(null)}>
+      <div className="lamma-conversation-rows">
+        {!group && <ConversationOption icon="favorite" onClick={() => { ui.toggleFavorite(menu.id); setMenu(null); }}>
+          {favoriteIds.includes(menu.id) ? tr("إزالة من المفضّلة") : tr("إضافة للمفضّلة")}
+        </ConversationOption>}
+        <ConversationOption icon="settings" data-design-id="preferences" onClick={() => { setMenu(null); setPreferences(true); }}>
+          {tr("إعدادات التنبيهات")}
+        </ConversationOption>
+        <ConversationOption icon="invite" onClick={() => { setInviteTarget({ targetType, targetId }); setMenu(null); }}>
+          {tr("دعوة للعبة")}
+        </ConversationOption>
+        {group ? <ConversationOption icon="group" data-design-id="group-manage" onClick={() => { setGroupEditor(group); setMenu(null); }}>
+          {tr("الأعضاء وإدارة اللّمة")}
+        </ConversationOption> : <ConversationOption icon="profile" onClick={() => { ui.openProfile(menu.id); setMenu(null); }}>
+          {tr("عرض البروفايل")}
+        </ConversationOption>}
+        <ConversationOption icon={conversationMuted ? 'unmute' : 'mute'} disabled={busy === 'mute-chat'} onClick={async () => {
+          const success = conversationMuted ? tr("شُغّلت تنبيهات المحادثة") : tr("كُتمت تنبيهات المحادثة");
+          if (await run(() => lamma.setConversationMuted({ targetType, targetId, muted: !conversationMuted }), 'mute-chat', success)) {
+            setMenu(current => current === menu ? null : current);
+          }
+        }}>
+          {conversationMuted ? tr("تشغيل التنبيهات") : tr("كتم تنبيهات المحادثة")}
+        </ConversationOption>
+        {!group && <>
+          <ConversationOption icon="remove" danger onClick={() => { setAction({ kind: 'remove', user: menu }); setMenu(null); }}>
+            {tr("إزالة من الأصدقاء")}
+          </ConversationOption>
+          <ConversationOption icon="block" danger onClick={() => { setAction({ kind: 'block', user: menu }); setMenu(null); }}>
+            {tr("حظر الحساب")}
+          </ConversationOption>
+          <ConversationOption icon="report" danger onClick={() => { setAction({ kind: 'report', user: menu }); setMenu(null); }}>
+            {tr("إبلاغ عن الحساب")}
+          </ConversationOption>
+        </>}
+      </div>
+      <ModalCloseButton variant="secondary" full className="lamma-conversation-cancel">{tr("إلغاء")}</ModalCloseButton>
+    </Sheet>}
     {dialogsOwned && action && (action.groupId ? <GroupMessageAction action={action} lamma={lamma} social={social} onClose={() => setAction(null)} notify={notify} /> : <ActionDialog action={action} social={social} onClose={() => setAction(null)} onComplete={kind => { notify(kind === 'report' ? tr("وصل بلاغك") : tr("تمّ")); if (kind === 'block' || kind === 'remove') ui.show(); }} />)}
-    {!communicationLocked && lamma.incomingCall && !lamma.activeCall && <div className="lamma-incoming-call" role="alertdialog" aria-label={tr("مكالمة واردة")} aria-modal="false"><span className="lamma-ringing-avatar"><LammaIcon name="phone" size={29} /></span><div><small>{tr("مكالمة صوتية واردة")}</small><strong>{privateSurface ? tr("أحد أصحابك يتصل") : lamma.incomingCall.name || nameOf(friends.find(item => item.id === lamma.incomingCall.initiatorId))}</strong></div><LammaButton label={tr("رفض المكالمة")} icon="end" className="lamma-call-end" disabled={!!busy} onClick={() => run(() => lamma.declineCall(lamma.incomingCall.id), 'decline')} /><LammaButton label={tr("قبول المكالمة")} icon="phone" className="lamma-call-accept" disabled={!!busy || !lamma.capabilities?.liveCalls} onClick={() => run(() => lamma.acceptCall(lamma.incomingCall.id), 'accept')} /></div>}
+    {!ui.open && incomingCard}
   </>;
   return host ? createPortal(tree, host) : tree;
 }

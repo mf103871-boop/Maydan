@@ -8,6 +8,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { build } from 'esbuild';
 import { chromium, webkit } from 'playwright';
 import { presentationCssPlugin } from '../scripts/presentation-css.mjs';
+import { ROOM_CAPABILITIES } from '../src/online/shared.js';
 
 const cases=['home','setup.jabeen','setup.fabraka','badeeha.setup','beep.bomb.prompt','beep.bomb.over','mamnoo.play','mamnoo.over','jabeen.intro','jabeen.play','jabeen.review','jabeen.over','fabraka.local.write','fabraka.local.discussion','fabraka.local.over','meenfina.local.vote','meenfina.local.over','online.mafia.lobby','online.mafia.night','ersomha.draw.drawer','ersomha.over','online.badeeha.over','online.fabraka.over','online.meenfina.over'];
 const output=path.resolve(process.env.PROFILE_ONLY_QA_OUT||'.cache/profile-only-game-ui');
@@ -21,11 +22,14 @@ function Harness(){const[id,setId]=useState('home');window.showProfileOnlyCase=s
 for(const[name,engine]of[['chromium',chromium],['webkit',webkit]])test(`${name}: familiar game views and free chat/voice/reactions remain without council or extra Plus pickers`,{timeout:90000},async t=>{
   const result=await build({stdin:{contents:source,resolveDir:process.cwd(),loader:'jsx'},bundle:true,write:false,metafile:true,format:'iife',jsx:'automatic',plugins:[presentationCssPlugin()],loader:{'.css':'text','.webp':'dataurl','.woff2':'dataurl'},define:{__MAYDAN_ROOMS_URL__:'"same-origin"',__MAYDAN_AUDIO_PREVIEW__:'false'},logLevel:'silent'});
   assert.equal(Object.keys(result.metafile.inputs).some(file=>/CouncilScene|CouncilGame|RoomLook|council-model|live-base/.test(file)),false,'removed experiments are outside the actual component graph');
-  const publicRoot=path.resolve('public'),api=[],errors=[],requests=[];
+  const publicRoot=path.resolve('public'),api=[],errors=[],requests=[],capabilityReads=[];
   const server=http.createServer(async(req,res)=>{
     const pathname=new URL(req.url,'http://fixture').pathname;
     if(pathname==='/__fixture__/voice.wav'){res.writeHead(200,{'content-type':'audio/wav','content-length':voice.length,'accept-ranges':'bytes'});return res.end(voice);}
     if(pathname==='/bundle.js'){res.setHeader('content-type','text/javascript');return res.end(result.outputFiles[0].contents);}
+    // The real Home now checks availability before offering Mafia. Keep this
+    // one read local and disabled; every other unexpected API call still fails.
+    if(pathname==='/api/mafia/capabilities'){capabilityReads.push(pathname);res.setHeader('content-type','application/json');return res.end(JSON.stringify({enabled:false,capabilities:{mafia:ROOM_CAPABILITIES.mafia}}));}
     if(pathname.startsWith('/api/')){api.push(pathname);res.writeHead(404);return res.end('{}');}
     if(pathname.startsWith('/assets/')){const file=path.resolve(publicRoot,'.'+pathname);if(file.startsWith(publicRoot+path.sep))try{const bytes=await readFile(file);res.setHeader('content-type',file.endsWith('.webp')?'image/webp':file.endsWith('.svg')?'image/svg+xml':'application/octet-stream');return res.end(bytes);}catch{/* Real missing assets stay404. */}res.writeHead(404);return res.end();}
     res.setHeader('content-type','text/html;charset=utf-8');res.end('<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><div id="root"></div><script src="/bundle.js"></script></html>');

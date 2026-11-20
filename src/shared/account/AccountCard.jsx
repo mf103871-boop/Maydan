@@ -3,7 +3,9 @@ import { tr, getUiLocale } from '../i18n/core.js';
 // (إدارة الاشتراك، استعادة المشتريات، الخروج، وحذف الحساب).
 import React, { useEffect, useState } from 'react';
 import { Button, Card, ConfirmModal } from '../ui/components.jsx';
-import { IconUsers, IconStar, IconRotate, IconTrash, IconBack } from '../ui/icons.jsx';
+import { IconUsers, IconStar, IconRotate, IconTrash, IconBack, IconExit } from '../ui/icons.jsx';
+import { ProfileAvatar } from '../../profiles/ProfileAvatar.jsx';
+import { useProfiles } from '../../profiles/ProfileProvider.jsx';
 import { useAccount } from './context.js';
 import { PLUS_NAME } from './config.js';
 import { isPremium } from './entitlements.js';
@@ -38,16 +40,17 @@ export function subscriptionLine(me, premium, promo = null, now = Date.now()) {
   return tr("{v0} فعّال{v1}{v2}", {v0: tr(PLUS_NAME), v1: until ? tr(" حتى {date}", {date:until}) : '', v2: sourceText ? ` · ${sourceText}` : ''});
 }
 
-export function AccountCard() {
+export function AccountCard({ guestArtwork, inSettings } = {}) {
   const account = useAccount();
   // A deletion confirmation belongs to the account that opened it. Remount
   // before paint when its owner changes, rather than rebinding it to user B.
   const owner = account.user?.id || (account.signedIn ? 'pending' : 'guest');
-  return <AccountCardOwner key={`${resolveAccountServer()}:${owner}`} />;
+  return <AccountCardOwner key={`${resolveAccountServer()}:${owner}`} guestArtwork={guestArtwork} inSettings={inSettings} />;
 }
 
-function AccountCardOwner() {
+function AccountCardOwner({ guestArtwork, inSettings }) {
   const account = useAccount();
+  const profiles = useProfiles();
   const accepted = useAcceptedFeedback(`${resolveAccountServer()}:${account.user?.id || 'guest'}`);
   const restore = async () => {
     const feedback = accepted.begin();
@@ -62,6 +65,7 @@ function AccountCardOwner() {
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [redeem, setRedeem] = useState(false);
   const user = account.user;
+  const profile = user?.id && profiles?.mine?.id === user.id ? profiles.mine : user;
   const suspension = account.me?.moderation?.suspended ? account.me.moderation : null;
   const ios = account.platform === 'ios';
   const canRedeem = !account.premium && (!ios || REDEEM_ON_IOS);
@@ -69,10 +73,11 @@ function AccountCardOwner() {
   const redeemButton = canRedeem ? <Button variant="ghost" onClick={() => setRedeem(true)}>{tr(REDEEM_PROMPT)}</Button> : null;
 
   return (
-    <Card data-design-screen="account.card" className={`stack account-card${user ? '' : ' is-guest'}`} aria-label={tr("الحساب")}>
+    <Card data-design-screen="account.card" className={`stack account-card${user ? '' : ' is-guest'}${!user && guestArtwork ? ' has-guest-art' : ''}${inSettings && user ? ' settings-account-member' : ''}`} aria-label={tr("الحساب")}>
       <div className="row"><IconUsers style={{ color: 'var(--accent)' }} /><span className="card-title">{tr("الحساب")}</span></div>
       {!user ? (
         <>
+          {guestArtwork}
           <h3 className="account-guest-title">{tr("احفظ ملفك وأصدقاءك")}</h3>
           {account.promo && <p className="account-plan is-plus">{subscriptionLine(account.me, account.premium, account.promo)}{tr(" · على هذا الجهاز")}</p>}
           <p className="card-muted">{tr("سجّل الدخول لتحفظ بروفايلك وأصدقاءك وإنجازاتك على أجهزتك.")}</p>
@@ -85,12 +90,16 @@ function AccountCardOwner() {
       ) : (
         <>
           <div className="account-identity">
-            <b>{user.name || tr("لاعب ميدان")}</b>
-            {user.email && <small className="muted">{user.email}</small>}
+            {inSettings && <ProfileAvatar user={profile} size={92} />}
+            <div className="account-identity-copy">
+              <b dir="auto">{profile?.name || user.name || tr("لاعب ميدان")}</b>
+              {user.email && <small className="muted" dir="ltr">{user.email}</small>}
+            </div>
           </div>
-          {suspension ? <div className="online-notice error account-suspension" role="status"><b>{tr("حسابك معلّق")}</b><p>{tr("الملف والتواصل والغرف غير متاحة أثناء التعليق. يمكنك إدارة اشتراكك واستعادة المشتريات أو حذف الحساب.")}</p>{suspension.reason && <p dir="auto">{tr("السبب: ")}{suspension.reason}</p>}<a href={`mailto:${SUPPORT_EMAIL}`}>{tr("التواصل مع الدعم بخصوص التعليق")}</a></div> : <Button variant="secondary" icon={<IconUsers />} data-design-id="profile" onClick={() => navigate('/profile')}>{tr("بروفايلي وإنجازاتي")}</Button>}
-          <p className={`account-plan ${account.premium ? 'is-plus' : ''}`}>{subscriptionLine(account.me, account.premium, account.promo)}</p>
-          {!account.premium && !suspension && (
+          {suspension ? <div className="online-notice error account-suspension" role="status"><b>{tr("حسابك معلّق")}</b><p>{tr("الملف والتواصل والغرف غير متاحة أثناء التعليق. يمكنك إدارة اشتراكك واستعادة المشتريات أو حذف الحساب.")}</p>{suspension.reason && <p dir="auto">{tr("السبب: ")}{suspension.reason}</p>}<a href={`mailto:${SUPPORT_EMAIL}`}>{tr("التواصل مع الدعم بخصوص التعليق")}</a></div> : !inSettings && <Button variant="secondary" icon={<IconUsers />} data-design-id="profile" onClick={() => navigate('/profile')}>{tr("بروفايلي وإنجازاتي")}</Button>}
+          <div className="account-subscription">
+          <div className="account-plan-row"><p className={`account-plan ${account.premium ? 'is-plus' : ''}`}>{subscriptionLine(account.me, account.premium, account.promo)}</p></div>
+          {!inSettings && !account.premium && !suspension && (
             <Button variant="primary" icon={<IconStar />} data-design-id="purchase" onClick={() => account.openPaywall({ reason: 'settings' })}>{tr("اشترك في ")}{tr(PLUS_NAME)}</Button>
           )}
           {!suspension && redeemButton}
@@ -100,7 +109,8 @@ function AccountCardOwner() {
           {ios && (
             <Button data-sound="none" variant="secondary" icon={<IconRotate />} loading={account.busy === 'restore'} data-design-id="restore" data-design-required="true" onClick={restore}>{tr("استعادة المشتريات")}</Button>
           )}
-          <Button variant="ghost" icon={<IconBack />} loading={account.busy === 'signout'} data-design-id="account-signout" data-design-required="true" onClick={() => account.signOut()}>{tr("تسجيل الخروج")}</Button>
+          </div>
+          <Button variant="ghost" icon={inSettings ? <IconExit /> : <IconBack />} loading={account.busy === 'signout'} data-design-id="account-signout" data-design-required="true" onClick={() => account.signOut()}>{tr("تسجيل الخروج")}</Button>
           <Button variant="danger" icon={<IconTrash />} data-design-id="account-delete" data-design-required="true" onClick={() => setConfirmDelete(true)}>{tr("حذف الحساب")}</Button>
         </>
       )}
@@ -108,7 +118,7 @@ function AccountCardOwner() {
       <SignInSheet open={signIn} onClose={() => setSignIn(false)} />
       <RedeemSheet open={redeem} onClose={() => setRedeem(false)} />
       {confirmDelete && (
-        <ConfirmModal title={tr("حذف الحساب؟")} danger
+        <ConfirmModal title={tr("حذف الحساب؟")} className={inSettings ? 'settings-account-deletion' : undefined} danger
           message={tr("سيُحذف حسابك وسجل اشتراكك من خوادمنا نهائيًا ولا يمكن التراجع. إن كان اشتراكك عبر App Store فألغِه من إعدادات جهازك أيضًا.")}
           confirmLabel={tr("نعم، احذف الحساب")} cancelLabel={tr("إلغاء")}
           onConfirm={async () => { setConfirmDelete(false); await account.deleteAccount(user?.id); }}

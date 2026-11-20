@@ -1,0 +1,55 @@
+name: Check the internal TestFlight preview service
+on:
+  push:
+    branches: [codex/testflight-studio-feedback-v1]
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      IOS_RELEASE_ENVIRONMENT: mafia-preview
+      IOS_RELEASE_PROFILE: complete-preview
+      IOS_VERSION: '1.9'
+      IOS_BUILD: '63'
+      IOS_REWARDED_MODE: testflight-owned
+      IOS_ADMOB_APP_ID: 'ca-app-pub-6382290742060099~3157998334'
+      IOS_ADMOB_REWARDED_UNIT_ID: 'ca-app-pub-6382290742060099/3289860273'
+      IOS_ADMOB_TEST_VERSION: '1.9'
+      MAYDAN_GAMEPLAY_ACCESS_POLICY: game-entry-ticket-v2
+      MAYDAN_PRIVATE_AUDIO_PREVIEW: '1'
+      MAYDAN_WARMTH_PREVIEW: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22
+      - run: node scripts/ios/release-features.mjs --server-readiness
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: preview-readiness
+          path: ios/build/server-readiness.json
+          if-no-files-found: error
+          retention-days: 7
+  shared-motion:
+    runs-on: macos-15
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npx playwright install chromium webkit
+      - name: Check pointer feedback and reduced motion with parallel browser work
+        run: |
+          for round in 1 2 3; do
+            node --test --test-concurrency=2 tests/shared-ui-motion-browser.test.js tests/batch02-entry-studio-browser.test.js
+          done

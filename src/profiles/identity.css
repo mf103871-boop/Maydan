@@ -24,8 +24,10 @@
 .player-avatar-live-sparks>i:nth-child(2){bottom:14%;right:19%;animation-delay:1.5s}
 .player-avatar-live-sparks>i:nth-child(3){top:18%;right:12%;animation-delay:2.7s}
 .player-avatar-live-sparks>i:nth-child(4){bottom:27%;left:9%;animation-delay:3.9s}
-.player-avatar-portrait{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:32%;font-size:inherit;line-height:1;box-shadow:inset 0 0 0 1px #30203f12}
+.player-avatar-portrait{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:50%;font-size:inherit;line-height:1;box-shadow:inset 0 0 0 1px #30203f12}
 .player-avatar-portrait>img{width:100%;height:100%;display:block;object-fit:cover}
+.player-avatar-portrait>img.player-avatar-preset-art{object-fit:contain;padding:2%;box-sizing:border-box}
+[data-avatar-art=studio]>.player-avatar-portrait{border-radius:50%}
 .player-avatar-portrait>img.plus-avatar-art{object-fit:contain;padding:10%;box-sizing:border-box;animation:none;will-change:auto}
 .player-avatar-portrait>img.player-avatar-layer{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;animation-play-state:paused}
 .player-avatar-layer.is-glow.has-motion{animation:identity-layer-glow 6s ease-in-out infinite;animation-play-state:paused}
@@ -65,13 +67,16 @@
 .profile-identity-top>.plus-avatar-shell{margin-inline:4px}
 .mafia-seat-copy .player-identity-name{flex-wrap:nowrap;gap:2px}.mafia-seat-copy .player-name-card-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mafia-seat-copy .player-membership-badge.is-compact{font-size:8px;padding:1px 3px}
 .call-dock-person.is-speaking .player-avatar-frame{filter:drop-shadow(0 0 3px #64f19a)}
-.player-membership-badge{display:inline-flex;align-items:center;justify-content:center;gap:3px;flex:0 0 auto;white-space:nowrap;padding:3px 7px;border:1px solid #d2ac55;border-radius:9px;background:linear-gradient(145deg,#fff3be,#e6ce8a);color:#493417;font-size:11px;font-weight:900;line-height:1.35;box-shadow:0 1px 0 #986b2b33}
-.player-membership-badge>span:first-child{color:#80601c;font-size:12px}.player-membership-badge.is-compact{font-size:9px;padding:2px 5px;gap:2px}
+.player-membership-badge{display:inline-flex;align-items:center;justify-content:center;gap:.32em;flex:0 0 auto;white-space:nowrap;padding:3px 7px;border:1px solid #09695f;border-radius:9px;background:#08796d;color:#fff;font-size:11px;font-weight:900;line-height:1.35;box-shadow:inset 0 1px #ffffff24,0 1px #06594f}
+.membership-plus-mark{position:relative;width:.86em;height:.86em;display:inline-block}
+.membership-plus-mark::before,.membership-plus-mark::after{content:'';position:absolute;inset:34% 0;border-radius:2px;background:#ffdc8e}
+.membership-plus-mark::after{transform:rotate(90deg)}
+.player-membership-badge.is-compact{font-size:9px;padding:2px 5px;gap:2px}
 .profile-name-row .player-name-card.is-equipped{padding:5px 24px;font-size:24px;min-height:42px}
 .profile-identity-library{display:grid;gap:13px;padding:18px 20px;border:1px solid #dfccac;border-radius:20px;background:linear-gradient(120deg,#fff9e9,#f0f8f3);margin-top:16px}
 .profile-identity-library h2{font-size:17px;margin:0;color:#42304f}.profile-identity-library p{font-size:12px;color:#6d5c74;line-height:1.7;margin:0}
 .profile-identity-library-head{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
-.profile-identity-links{display:flex;gap:8px;flex-wrap:wrap}.profile-identity-links>.btn{min-height:44px;flex:1;white-space:nowrap}
+.profile-identity-links{display:flex;gap:8px;flex-wrap:wrap}.profile-identity-links>.btn{min-height:48px;flex:1;white-space:nowrap}
 .profile-equipped-pieces{display:flex;gap:7px;flex-wrap:wrap}.profile-equipped-pieces>span{font-size:11px;line-height:1.5;padding:5px 9px;background:#fffaf0;border:1px solid #e0cfae;border-radius:9px;color:#655040}
 @keyframes identity-frame-light{
   0%,8%{transform:translateX(-100%);opacity:0}

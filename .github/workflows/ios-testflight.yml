@@ -107,6 +107,7 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           ref: ${{ inputs.source_commit }}
+          fetch-depth: 0
           persist-credentials: false
       - name: Verify checked-out source identity
         env:
@@ -159,10 +160,15 @@ jobs:
               out.write('DEVELOPER_DIR=' + selected + '\n')
           print('Selected', selected)
           PY
-      - name: Test and prepare the current game
+      - name: Install browser test dependencies
         run: |
           npm ci --no-audit --no-fund
           npx playwright install chromium webkit
+      - name: Check native form controls, the drawing palette and the small-screen store
+        run: |
+          node --test --test-concurrency=2 tests/batch04-bluff-studio-browser.test.js tests/ersomha-palette-v2-browser.test.js tests/plus-store-v2-browser.test.js tests/ios-release-features.test.js
+      - name: Test and prepare the current game
+        run: |
           npm test
           python3 scripts/ios/verify_audio_policy.py
           python3 scripts/ios/verify_storage_migration.py
@@ -264,8 +270,42 @@ jobs:
             python3 scripts/ios/verify_rewarded_bundle.py "$ipa"
             python3 scripts/ios/verify_release_features.py "$ipa"
           done
+      - name: Match the exported TestFlight game to the reviewed visual release
+        if: ${{ inputs.environment == 'mafia-preview' && inputs.release_profile == 'complete-preview' }}
+        run: |
+          shopt -s nullglob
+          ipas=(ios/build/export/*.ipa)
+          test "${#ipas[@]}" -eq 1
+          python3 scripts/ios/verify_pack.py "${ipas[0]}" --source "$GITHUB_SHA" \
+            --version "$IOS_VERSION" --build "$IOS_BUILD" --profile "$IOS_RELEASE_PROFILE" \
+            --receipt ios/build/visual-pack.json
+      - name: Preserve visual pack verification
+        if: ${{ inputs.environment == 'mafia-preview' && inputs.release_profile == 'complete-preview' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: Maydan-visual-pack-${{ inputs.version }}-${{ inputs.build }}
+          path: ios/build/visual-pack.json
+          if-no-files-found: error
+          retention-days: 7
+      - name: Verify the compiled public app icon
+        if: ${{ !inputs.private_audio_preview }}
+        run: |
+          shopt -s nullglob
+          ipas=(ios/build/export/*.ipa)
+          test "${#ipas[@]}" -eq 1
+          python3 scripts/ios/verify_public_icon.py --ipa "${ipas[0]}" \
+            --version "$IOS_VERSION" --build "$IOS_BUILD" --source "$GITHUB_SHA" \
+            --output ios/build/icon-proof
+      - name: Preserve the compiled public icon proof
+        if: ${{ !inputs.private_audio_preview }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: Maydan-icon-${{ inputs.version }}-${{ inputs.build }}
+          path: ios/build/icon-proof
+          if-no-files-found: error
+          retention-days: 7
       - name: Preserve the ordinary signed IPA
-        if: ${{ !inputs.private_audio_preview && !inputs.upload_to_testflight }}
+        if: ${{ !inputs.private_audio_preview }}
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: Maydan-iOS-${{ inputs.version }}-${{ inputs.build }}

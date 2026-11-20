@@ -1,0 +1,21 @@
+/* Shared approved media layout for local and online Badeeha. */
+.m-media-box .m-audio{display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;gap:8px;padding:14px;background:#eee3f5;border-radius:20px;color:#352139}
+.m-media-box .m-audio.is-spent{opacity:1}
+.m-media-box .m-audio-illustration{width:96px;height:96px;flex:none;color:#53315d}
+.m-media-box .m-audio-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:auto;min-height:52px;padding:8px 14px;border:1px solid #08796d;border-radius:24px;background:#08796d;color:#fff;font-family:inherit;font-size:22px;font-weight:800;line-height:1.4;box-shadow:0 2px 0 #35213912}
+.m-media-box .m-audio-btn>svg{width:24px;height:24px;flex:none}
+.m-media-box .m-audio-btn:disabled{background:#e6dfe7;color:#655467;border-color:#d3c5d3;opacity:1;box-shadow:none}
+.m-media-box .m-audio-meta{display:grid;gap:4px;width:100%;text-align:center}
+.m-media-box .m-audio-meta>b{font-size:16px;line-height:1.5;color:#352139}
+.m-media-box .m-audio-meta>small{font-size:16px;line-height:1.5;color:#53315d}
+.m-media-box [data-design-id=audio-restart]{display:flex;align-items:center;justify-content:center;gap:8px;min-width:180px;max-width:100%;min-height:48px;border:1px solid #d4bfdf;border-radius:22px;padding:8px 14px;background:#fffdf9;color:#352139;font-size:18px;font-weight:800;line-height:1.4}
+.m-media-box [data-design-id=audio-restart]>svg{width:24px;height:24px;flex:none}
+.m-media-box .m-media-error{display:grid;width:100%;box-sizing:border-box;justify-items:center;gap:10px;padding:16px;background:#eee3f5;border-radius:20px;color:#352139;text-align:center}
+.m-media-box .m-media-error-icon{width:72px;height:72px;color:#53315d}
+.m-media-box .m-media-error>b{font-size:24px;line-height:1.4}
+.m-media-box .m-media-error>small{font-size:16px;line-height:1.5;color:#53315d}
+.m-media-box [data-design-id=media-retry]{width:100%;max-width:320px;min-height:52px;padding:8px 14px;border-radius:24px;background:#08796d;border:1px solid #08796d;color:#fff;font-size:22px;font-weight:800;line-height:1.4}
+.m-media-box .m-secondary[data-design-id=media-retry]:hover:not(:disabled){background:#08796d;border-color:#08796d;color:#fff}
+.m-media-box .m-secondary[data-design-id=audio-restart]:hover:not(:disabled){background:#fffdf9;border-color:#d4bfdf;color:#352139}
+.m-image-enlarge-label{position:absolute;bottom:8px;inset-inline-start:8px;display:flex;align-items:center;gap:6px;padding:8px 12px;max-width:calc(100% - 16px);border:1px solid #e4d5dc;border-radius:16px;background:#fffdf9;color:#352139;pointer-events:none;font-size:14px;font-weight:800;line-height:1.4}
+.m-image-enlarge-label>svg{width:18px;height:18px;flex:none}

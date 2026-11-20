@@ -1,0 +1,62 @@
+#boot{--paper:#fff8f0;--ink:#352139;--muted:#695765;--teal:#08796d;--level:0%;--warmth:.52;color-scheme:light}
+#boot,#boot *{box-sizing:border-box}
+#boot{position:fixed;inset:0;z-index:9998;overflow:auto;overscroll-behavior:contain;isolation:isolate;margin:0;min-width:0;min-height:100vh;min-height:100svh;color:var(--ink);background:radial-gradient(ellipse at 50% 38%,#fffdf7 0%,#fff8ef 50%,#f8ebdd 110%);font:400 16px/1.58 'Maydan Opening',system-ui,sans-serif}
+#boot::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 12% 86%,#ead9ed43,transparent 41%),radial-gradient(ellipse at 89% 1%,#ffcfac33,transparent 48%);z-index:-1}
+.opening-studio{position:relative;isolation:isolate;min-height:100vh;min-height:100svh;max-width:880px;margin:auto;padding:max(24px,env(safe-area-inset-top)) 20px max(32px,env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;justify-content:center}
+.opening-brand{flex:none;position:relative;align-self:center;line-height:1.2;font-size:clamp(32px,5.5svh,43px);font-weight:800;letter-spacing:-.05em;text-align:center;margin-bottom:clamp(16px,4.8svh,52px)}
+#boot[dir=rtl] .opening-brand{letter-spacing:0}
+.opening-brand i{display:block;width:45%;height:4px;border-radius:100%;margin:1px 9% 0 auto;background:#f18067;transform:skewX(-16deg) rotate(-5deg)}
+.opening-scene{direction:ltr;width:min(100%,510px);height:clamp(234px,41svh,385px);position:relative;flex:none;isolation:isolate;pointer-events:none}
+.opening-scene canvas{position:absolute;display:block;inset:0;width:100%;height:100%}
+#opening-orbit-back{z-index:3}#opening-orbit-front{z-index:5}
+.opening-bloom{position:absolute;inset:-13% -4% -8%;z-index:0;background:radial-gradient(ellipse at 49% 44%,#ffdc8c94 0%,#ffdb9c52 31%,#fff5dc0a 62%,transparent 69%);opacity:var(--warmth);transition:opacity 1.2s}
+.opening-plinth-shade,.opening-contact-shadow{position:absolute;left:50%;transform:translateX(-50%);border-radius:50%;pointer-events:none}
+.opening-plinth-shade{z-index:0;bottom:3%;width:65%;height:16%;background:radial-gradient(ellipse,#865a4759,transparent 69%);filter:blur(5px)}
+.opening-plinth{position:absolute;z-index:1;left:19%;width:62%;bottom:10%;height:19%;border-radius:50% / 39%;background:linear-gradient(90deg,#e9ceac,#f3dfc3 17%,#fff0d8 44%,#edcfaa 83%,#dfbc95);box-shadow:inset 0 -2px 3px #bd8d7182,0 4px 6px #9967451c}
+.opening-plinth::before{content:"";position:absolute;inset:0 0 14%;border-radius:50%;background:radial-gradient(ellipse at 63% 31%,#fff6e5 5%,#ffebc8 64%,#e9cfab);border:1px solid #f8e2c4;box-shadow:inset 0 2px 2px #fffaf0}
+.opening-rim{position:absolute;inset:-7% 11% 31%;border-radius:50%;background:radial-gradient(ellipse at 60% 27%,#f7e9f4,#e7cee9 65%,#d0add4);box-shadow:0 3px 1px #c29bc6,0 5px 6px #b99a9b5c,inset 0 1px 2px #fff7ff}
+.opening-rim::before{content:"";position:absolute;inset:3% 15% 24%;border-radius:50%;background:radial-gradient(ellipse at 62% 27%,#fffaf1,#ffeadd 77%);box-shadow:0 3px 2px #cdb3bc80}
+.opening-contact-shadow{z-index:2;bottom:20%;width:28%;height:7%;filter:blur(5px);background:radial-gradient(ellipse,#8c5c4866,transparent 72%);animation:opening-shadow 3.8s ease-in-out infinite}
+.opening-lamp-mount{position:absolute;z-index:4;left:16%;right:16%;top:0;bottom:20%;animation:opening-arrive .78s cubic-bezier(.18,.78,.2,1) both}
+.opening-lamp-float{width:100%;height:100%;transform-origin:52% 71%;animation:opening-float 3.8s ease-in-out infinite}
+.opening-lamp-float img{width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(1px 6px 4px #9d6f3620);user-select:none}
+#opening-glint{position:absolute;inset:0;pointer-events:none;opacity:0;background:linear-gradient(115deg,transparent 35%,#fff2ba99 48%,transparent 59%) no-repeat;background-size:250% 100%;mask:url('./maydan-bulb.webp') center/contain no-repeat;-webkit-mask:url('./maydan-bulb.webp') center/contain no-repeat}
+#opening-ripple{position:absolute;z-index:2;left:24%;width:52%;height:11%;bottom:16%;pointer-events:none;opacity:0;border-radius:50%;border:2px solid #fff3ce;box-shadow:0 0 5px #e5b17c85}
+.opening-readout{flex:none;width:min(100%,340px);margin-top:clamp(8px,1.9svh,24px);text-align:center}
+.opening-title{font-size:clamp(30px,6.9vw,40px);line-height:1.4;margin:0 0 clamp(20px,3.5svh,32px);font-weight:800;text-wrap:balance}
+#boot[lang=en] .opening-title{letter-spacing:-.045em}
+.opening-readout-top,.opening-amounts{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.opening-readout-top{margin-bottom:10px;line-height:1.4}
+.opening-status{display:inline-flex;align-items:center;gap:9px;text-align:start;font-size:15px;font-weight:800}
+.opening-status i{height:8px;width:8px;flex:none;border-radius:50%;background:#0a8075;box-shadow:0 0 0 3px #0a807519}
+#opening-pct{font-size:22px;font-weight:800;line-height:1.25;color:#086e64;font-variant-numeric:tabular-nums}
+#opening-progress{height:18px;position:relative;overflow:hidden;border-radius:30px;background:#e9ddec;box-shadow:inset 0 2px 4px #6a437625,0 1px #fffdf9}
+#opening-fill{position:relative;overflow:hidden;height:100%;width:100%;border-radius:inherit;background:linear-gradient(0deg,#08776c,#0b9a87);box-shadow:inset 0 1px 1px #9de6c480;transform:scaleX(var(--fraction,0));transform-origin:left;transition:transform .15s linear}
+#boot[dir=rtl] #opening-fill{transform-origin:right}
+#opening-fill>div{position:absolute;inset:0;opacity:.55;background:linear-gradient(108deg,transparent 34%,#a4eed65e 49%,transparent 62%);background-size:200% 100%;animation:opening-shine 2.9s linear infinite}
+.opening-amounts{color:var(--muted);margin-top:9px;font-size:14px;font-variant-numeric:tabular-nums;line-height:1.5;min-height:22px}
+#opening-reason,.opening-off p{font-size:16px;color:var(--muted)}
+#opening-retry{font:800 16px 'Maydan Opening',sans-serif;color:white;border:0;background:var(--teal);border-radius:16px;min-height:52px;padding:.5em 22px;cursor:pointer;width:100%}
+.opening-details{margin-top:8px;text-align:start;overflow-wrap:anywhere}
+.opening-summary{min-height:48px;align-content:center;cursor:pointer;font-weight:800}
+#opening-detail{font-family:system-ui,sans-serif;font-size:14px}
+.opening-off{width:min(calc(100% - 40px),420px);margin:auto;min-height:100svh;display:grid;align-content:center;text-align:center}
+.opening-sr{position:absolute;clip-path:inset(50%);width:1px;height:1px;overflow:hidden;white-space:nowrap}
+#boot [hidden],#boot[hidden]{display:none!important}
+#boot[data-phase=ready] .opening-bloom{opacity:1}
+#boot[data-phase=ready] .opening-lamp-float{animation:opening-lift .36s ease-out both}
+#boot[data-phase=error] .opening-lamp-float,#boot[data-phase=error] .opening-contact-shadow{animation-play-state:paused}
+@keyframes opening-arrive{from{opacity:.2;transform:translateY(16px) scale(.92)}to{opacity:1;transform:none}}
+@keyframes opening-float{0%,100%{transform:translateY(2px) rotate(-2deg)}50%{transform:translateY(-9px) rotate(2deg)}}
+@keyframes opening-lift{to{transform:translateY(-12px) scale(1.035)}}
+@keyframes opening-shadow{50%{opacity:.64;transform:translateX(-50%) scale(.86)}}
+@keyframes opening-shine{from{background-position:170% 0}to{background-position:-40% 0}}
+/* Leave room for enlarged download counters before shortening the illustration. */
+@media (orientation:portrait) {
+  .opening-studio {height:100svh;justify-content:safe center}
+  .opening-scene {flex-shrink:1;min-height:118px}
+}
+@media(min-width:650px){.opening-readout{flex:none;width:358px}.opening-scene{height:clamp(275px,43svh,390px)}}
+@media(max-height:600px) and (min-width:620px){.opening-studio{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);grid-template-rows:auto auto;align-content:center;justify-items:center;column-gap:16px}.opening-scene{grid-row:1/3;grid-column:1;height:clamp(215px,66svh,298px)}.opening-brand{grid-column:2;align-self:end;margin:0}.opening-readout{grid-column:2;align-self:start;margin:12px 0 0}.opening-readout .opening-title{font-size:30px;margin-bottom:18px}}
+@media(prefers-reduced-motion:reduce){#boot *,#boot *::before,#boot *::after{animation:none!important;transition:none!important}}
+#boot[data-reduce=true] *,#boot[data-reduce=true] *::before,#boot[data-reduce=true] *::after{animation:none!important;transition:none!important}

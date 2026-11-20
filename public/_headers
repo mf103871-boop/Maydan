@@ -30,5 +30,7 @@
   Cache-Control: public, max-age=31536000, immutable
 /assets/brand/*
   Cache-Control: public, max-age=31536000, immutable
+/game-pack/download/*
+  Cache-Control: public, max-age=31536000, immutable
 /index.html
   Cache-Control: no-cache

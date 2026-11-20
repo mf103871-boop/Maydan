@@ -1,26 +1,41 @@
 import { tr } from '../shared/i18n/core.js';
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Button, ConfirmModal, Modal } from '../shared/ui/components.jsx';
-import { ERSOMHA_PALETTE, ERSOMHA_WIDTHS, DRAW_BATCH_MS, DRAW_BATCH_POINTS, DRAW_MAX_PENDING, DRAW_MAX_BUFFERED_BYTES, drawingPoint, createDrawingState, applyDrawingEvent, drawStroke, paintDrawing } from '../games/ersomha/drawing.js';
+import { ERSOMHA_PALETTE, ERSOMHA_WIDTHS, DRAW_BATCH_MS, DRAW_BATCH_POINTS, DRAW_MAX_PENDING, DRAW_MAX_BUFFERED_BYTES, drawingPoint, createDrawingState, createDrawingSyncAssembler, applyDrawingEvent, drawStroke, paintDrawing } from '../games/ersomha/drawing.js';
+import { drawingPaletteVersion, drawingPalette, drawingPaletteSupported, ERSOMHA_LAVENDER } from '../games/ersomha/palette.js';
 import { drawingCamera, inkOutsideCamera } from '../games/ersomha/camera.js';
 import { ErsomhaToolIcon, ErsomhaToolStyles } from './ErsomhaToolIcon.jsx';
 
-const COLOUR_LABELS = ['بنفسجي داكن', 'أبيض', 'فيروزي', 'بنفسجي', 'أحمر', 'أصفر', 'أخضر', 'أزرق', 'وردي', 'بني', 'برتقالي', 'رمادي'];
+const COLOUR_LABELS = Object.fromEntries(ERSOMHA_PALETTE.map((value, index) => [value, ['بنفسجي داكن', 'أبيض', 'فيروزي', 'بنفسجي', 'أحمر', 'أصفر', 'أخضر', 'أزرق', 'وردي', 'بني', 'برتقالي', 'رمادي'][index]]));
+COLOUR_LABELS[ERSOMHA_LAVENDER] = 'لافندر';
 function strokeId() { return `s${Array.from(crypto.getRandomValues(new Uint8Array(10)), value => value.toString(16).padStart(2, '0')).join('')}`; }
 const drawingRound = key => { const [matchId, round] = String(key).split(':').map(Number); return { matchId, round }; };
 
 /** The high-frequency pointer path intentionally lives outside React state. */
-export function ErsomhaCanvas({ client, roundKey, epoch, serverSeq = 0, canDraw, wide = false, paused, connected, onError = () => {}, onReport, label = tr("لوحة الرسم المباشر") }) {
-  const canvasRef = useRef(null), modelRef = useRef(createDrawingState(epoch)), optimisticRef = useRef(new Map());
+export function ErsomhaCanvas({ client, roundKey, epoch, serverSeq = 0, paletteVersion, paletteVersions, canDraw, wide = false, paused, connected, onError = () => {}, onReport, label = tr("لوحة الرسم المباشر") }) {
+  const canvasRef = useRef(null), modelRef = useRef(createDrawingState(epoch, paletteVersion)), optimisticRef = useRef(new Map());
   const activeRef = useRef(null), queueRef = useRef([]), pendingRef = useRef(0), timerRef = useRef(null), mountedRef = useRef(false);
   const currentRef = useRef({}), syncPendingRef = useRef(false), wasConnectedRef = useRef(connected);
-  const generationRef = useRef(0), syncRequestRef = useRef(0);
-  const pointerEndRef = useRef(null);
+  const generationRef = useRef(0), syncRequestRef = useRef(0), syncRepairRef = useRef(false), syncAgainRef = useRef(false);
+  const pointerEndRef = useRef(null), synchronizedRef = useRef(false);
+  const [paletteIssue, setPaletteIssue] = useState(false);
   const viewRef = useRef(null), cameraRef = useRef({ mode: 'wide', centerY: .5 }), panRef = useRef(null), resizeRef = useRef(null);
   const [cameraMode, setCameraMode] = useState('wide');
   const [colour, setColour] = useState(ERSOMHA_PALETTE[0]), [width, setWidth] = useState(6), [tool, setTool] = useState('pen');
   const [clearConfirm, setClearConfirm] = useState(false), [moreTools, setMoreTools] = useState(false), [history, setHistory] = useState({ undo: false, redo: false }), [syncing, setSyncing] = useState(true), [backpressure, setBackpressure] = useState(false);
-  currentRef.current = { client, canDraw, wide, paused, connected, colour, width, tool, epoch, roundKey, onError };
+  currentRef.current = { client, paletteVersion, paletteVersions, canDraw, wide, paused, connected, colour, width, tool, epoch, roundKey, onError };
+  const paletteReady = () => synchronizedRef.current && drawingPaletteSupported(currentRef.current.paletteVersion, currentRef.current.paletteVersions) && modelRef.current.paletteVersion === drawingPaletteVersion(currentRef.current.paletteVersion);
+  const invalidatePalette = () => { synchronizedRef.current = false; setPaletteIssue(true); setSyncing(true); clearTimeout(timerRef.current); timerRef.current = null; queueRef.current = []; activeRef.current = null; optimisticRef.current.clear(); repaint(); };
+  const verifyAck = (ack, stillCurrent) => {
+    // A prior round/generation can finish after this Canvas has moved on. Fence
+    // before reading the current model or touching optimistic ink/recovery.
+    if (!stillCurrent()) return ack;
+    if (drawingPaletteVersion(ack?.drawing?.paletteVersion) !== modelRef.current.paletteVersion) {
+      invalidatePalette(); requestSync(true);
+      throw Object.assign(new Error('ERSOMHA_PALETTE_UNSUPPORTED'), { code: 'ERSOMHA_PALETTE_UNSUPPORTED' });
+    }
+    return ack;
+  };
   const repaint = () => { const context = canvasRef.current?.getContext('2d'); if (context) paintDrawing(context, modelRef.current, optimisticRef.current, viewRef.current); };
   const alignPaper = view => {
     const canvas = canvasRef.current, paper = canvas?.previousElementSibling;
@@ -78,18 +93,24 @@ export function ErsomhaCanvas({ client, roundKey, epoch, serverSeq = 0, canDraw,
     panCamera(event.key === 'Home' ? .5 : viewRef.current.centerY + (event.key === 'ArrowUp' ? -1 : 1) * .12);
   };
   const updateHistory = () => setHistory({ undo: [...modelRef.current.strokes.values()].some(stroke => stroke.end && !modelRef.current.undoneIds.has(stroke.strokeId)), redo: modelRef.current.undoneIds.size > 0 });
-  const requestSync = () => {
+  const requestSync = useCallback(function requestDrawingSync(repair = false) {
     const current = currentRef.current;
-    if (!current.connected || !current.client || syncPendingRef.current) return;
+    if (!current.connected || !current.client) return;
+    if (repair) {
+      if (syncRepairRef.current) return;
+      syncRepairRef.current = true;
+      if (syncPendingRef.current) { syncAgainRef.current = true; return; }
+    }
+    if (syncPendingRef.current) return;
     const request = ++syncRequestRef.current;
     syncPendingRef.current = true;
-    setSyncing(true);
-    current.client.command('drawing_sync', { ...drawingRound(current.roundKey), epoch: modelRef.current.epoch ?? current.epoch }).catch(error => { if (mountedRef.current && request === syncRequestRef.current) { setSyncing(false); currentRef.current.onError(error.code || 'DISCONNECTED'); } }).finally(() => { if (request === syncRequestRef.current) syncPendingRef.current = false; });
-  };
+    synchronizedRef.current = false; setSyncing(true);
+    current.client.command('drawing_sync', { ...drawingRound(current.roundKey), epoch: modelRef.current.epoch ?? current.epoch }).catch(error => { if (mountedRef.current && request === syncRequestRef.current) { setSyncing(true); currentRef.current.onError(error.code || 'DISCONNECTED'); } }).finally(() => { if (request === syncRequestRef.current) { syncPendingRef.current = false; if (syncAgainRef.current && mountedRef.current) { syncAgainRef.current = false; requestDrawingSync(); } } });
+  }, []);
   const drain = () => {
     timerRef.current = null;
     const current = currentRef.current;
-    if (!current.connected || current.paused || !current.canDraw || !current.client) return;
+    if (!current.connected || current.paused || !current.canDraw || !current.client || !paletteReady()) return;
     // A drain can replace the pointer's scheduled flush while older batches
     // are queued. Flush its unsent tail here too, even if the finger now rests.
     while (activeRef.current?.unsent.length) enqueueActive(false, false);
@@ -102,7 +123,8 @@ export function ErsomhaCanvas({ client, roundKey, epoch, serverSeq = 0, canDraw,
     pendingRef.current++;
     const requestRound = current.roundKey;
     const generation = generationRef.current;
-    current.client.command('drawing_batch', { ...drawingRound(current.roundKey), epoch: modelRef.current.epoch, ...next }).catch(error => {
+    const stillCurrent = () => mountedRef.current && currentRef.current.roundKey === requestRound && generation === generationRef.current;
+    current.client.command('drawing_batch', { ...drawingRound(current.roundKey), epoch: modelRef.current.epoch, paletteVersion: modelRef.current.paletteVersion, ...next }).then(ack => verifyAck(ack, stillCurrent)).catch(error => {
       if (!mountedRef.current || currentRef.current.roundKey !== requestRound || generation !== generationRef.current) return;
       queueRef.current = []; activeRef.current = null; optimisticRef.current.clear(); repaint();
       currentRef.current.onError(error.code || 'DISCONNECTED'); requestSync();
@@ -140,33 +162,38 @@ export function ErsomhaCanvas({ client, roundKey, epoch, serverSeq = 0, canDraw,
     return () => { observer?.disconnect(); positionObserver?.disconnect(); window.removeEventListener('resize', schedule); if (frame != null) cancelAnimationFrame(frame); };
   }, []);
   useLayoutEffect(() => { resizeRef.current?.(); }, [wide, canDraw]);
-  useEffect(() => {
+  // Close the ACK fence during unmount commit, before passive cleanup runs.
+  useLayoutEffect(() => {
     mountedRef.current = true;
     return () => { mountedRef.current = false; clearTimeout(timerRef.current); queueRef.current = []; };
   }, []);
   useEffect(() => {
     generationRef.current++; syncRequestRef.current++;
-    clearTimeout(timerRef.current); timerRef.current = null; queueRef.current = []; activeRef.current = null; optimisticRef.current.clear(); pendingRef.current = 0; syncPendingRef.current = false;
-    modelRef.current = createDrawingState(epoch); setSyncing(true); setBackpressure(false); setClearConfirm(false); setMoreTools(false); setHistory({ undo: false, redo: false }); repaint();
+    clearTimeout(timerRef.current); timerRef.current = null; queueRef.current = []; activeRef.current = null; optimisticRef.current.clear(); pendingRef.current = 0; syncPendingRef.current = false; syncRepairRef.current = false; syncAgainRef.current = false;
+    modelRef.current = createDrawingState(epoch, paletteVersion); synchronizedRef.current = false; setPaletteIssue(!drawingPaletteSupported(paletteVersion, paletteVersions)); setSyncing(true); setBackpressure(false); setClearConfirm(false); setMoreTools(false); setHistory({ undo: false, redo: false }); repaint();
     cameraRef.current = { mode: 'wide', centerY: .5 }; setCameraMode('wide'); panRef.current = null; resizeRef.current?.({ fitHidden: false });
-    let pieces = null;
+    let assemble = createDrawingSyncAssembler();
     const unsubscribe = client?.subscribeDrawing(event => {
       if (event.matchId != null && String(event.matchId) !== String(currentRef.current.roundKey.split(':')[0])) return;
       if (event.round != null && String(event.round) !== String(currentRef.current.roundKey.split(':')[1])) return;
-      if (event.kind === 'sync' && Number(event.chunks) > 1) {
-        if (!pieces || pieces.epoch !== event.epoch || pieces.seq !== event.seq) pieces = { epoch: event.epoch, seq: event.seq, chunks: new Map() };
-        pieces.chunks.set(event.chunk, event);
-        if (pieces.chunks.size !== event.chunks) return;
-        const parts = [...pieces.chunks.values()].sort((a, b) => a.chunk - b.chunk);
-        event = { ...event, ops: parts.flatMap(part => part.ops || []), undoneIds: parts.flatMap(part => part.undoneIds || []) }; pieces = null;
+      const expected = drawingPaletteVersion(currentRef.current.paletteVersion);
+      if (!drawingPaletteSupported(expected, currentRef.current.paletteVersions) || modelRef.current.paletteVersion !== expected || drawingPaletteVersion(event.paletteVersion) !== expected) { assemble = createDrawingSyncAssembler(); invalidatePalette(); requestSync(true); return; }
+      if (event.kind === 'sync') {
+        const assembled = assemble(event);
+        if (assembled.error) { invalidatePalette(); requestSync(true); return; }
+        if (!assembled.event) { synchronizedRef.current = false; setSyncing(true); return; }
+        event = assembled.event;
       }
       if (event.kind !== 'sync' && event.kind !== 'clear' && event.epoch !== modelRef.current.epoch) { requestSync(); return; }
       if (event.kind !== 'sync' && event.kind !== 'clear' && event.seq > modelRef.current.seq + 1) { requestSync(); return; }
-      if (!applyDrawingEvent(modelRef.current, event)) return;
+      if (!applyDrawingEvent(modelRef.current, event)) { if (event.kind === 'sync') { invalidatePalette(); requestSync(true); } return; }
       if (event.kind === 'sync' || event.kind === 'clear') {
         generationRef.current++; pendingRef.current = 0;
+        setBackpressure(false);
         clearTimeout(timerRef.current); timerRef.current = null;
-        optimisticRef.current.clear(); activeRef.current = null; queueRef.current = []; setSyncing(false);
+        optimisticRef.current.clear(); activeRef.current = null; queueRef.current = [];
+        if (event.kind === 'sync') { synchronizedRef.current = true; syncRepairRef.current = false; syncAgainRef.current = false; }
+        setPaletteIssue(false); setSyncing(!synchronizedRef.current);
       }
       else if (event.kind === 'append' && event.op?.end) optimisticRef.current.delete(event.op.strokeId);
       updateHistory(); repaint();
@@ -174,16 +201,20 @@ export function ErsomhaCanvas({ client, roundKey, epoch, serverSeq = 0, canDraw,
     if (connected) requestSync();
     return () => { unsubscribe?.(); clearTimeout(timerRef.current); timerRef.current = null; };
   }, [client, roundKey]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (!drawingPaletteSupported(paletteVersion, paletteVersions) || modelRef.current.paletteVersion !== drawingPaletteVersion(paletteVersion)) { invalidatePalette(); requestSync(); return; }
+    if (connected && !paletteReady()) requestSync();
+  }, [paletteVersion, paletteVersions, connected]); // eslint-disable-line react-hooks/exhaustive-deps
   // Clear deltas advance the board epoch without a game-state broadcast. A later
   // matching snapshot must not reset fresh ink; a missed clear requests a sync.
   useEffect(() => {
     if (Number.isSafeInteger(epoch) && epoch > modelRef.current.epoch) requestSync();
-  }, [epoch]);
+  }, [epoch, requestSync]);
   useEffect(() => {
     if (connected && !wasConnectedRef.current) requestSync();
-    else if (!connected) { clearTimeout(timerRef.current); timerRef.current = null; activeRef.current = null; queueRef.current = []; optimisticRef.current.clear(); setSyncing(true); repaint(); }
+    else if (!connected) { synchronizedRef.current = false; clearTimeout(timerRef.current); timerRef.current = null; activeRef.current = null; queueRef.current = []; optimisticRef.current.clear(); setSyncing(true); repaint(); }
     wasConnectedRef.current = connected;
-  }, [connected]);
+  }, [connected, requestSync]);
   useEffect(() => {
     if (!paused && canDraw) return;
     setClearConfirm(false); setMoreTools(false);
@@ -214,7 +245,8 @@ export function ErsomhaCanvas({ client, roundKey, epoch, serverSeq = 0, canDraw,
     document.addEventListener('pointerup', endOutside); document.addEventListener('pointercancel', endOutside);
     return () => { document.removeEventListener('pointerup', endOutside); document.removeEventListener('pointercancel', endOutside); };
   }, []);
-  const blocked = !canDraw || !connected || paused || syncing || backpressure;
+  const selectedColourUnavailable = canDraw && paletteReady() && !drawingPalette(modelRef.current.paletteVersion)?.includes(colour);
+  const blocked = selectedColourUnavailable || !canDraw || !connected || paused || syncing || backpressure || !paletteReady();
   const pointerDown = event => {
     if (canDraw) {
       // End the previous text editor before drawing, without changing its draft.
@@ -232,7 +264,7 @@ export function ErsomhaCanvas({ client, roundKey, epoch, serverSeq = 0, canDraw,
       try { event.currentTarget.setPointerCapture?.(event.pointerId); } catch { /* outside release is still observed */ }
       return;
     }
-    if (blocked || tool === 'hand' || queueRef.current.length >= DRAW_MAX_PENDING * 2) return;
+    if (blocked || !drawingPalette(modelRef.current.paletteVersion)?.includes(colour) || tool === 'hand' || queueRef.current.length >= DRAW_MAX_PENDING * 2) return;
     const point = drawingPoint(event, event.currentTarget.getBoundingClientRect(), { view: viewRef.current, clampOutside: false });
     if (!point) return;
     event.preventDefault();
@@ -269,27 +301,30 @@ export function ErsomhaCanvas({ client, roundKey, epoch, serverSeq = 0, canDraw,
   };
   pointerEndRef.current = pointerEnd;
   const changeHistory = async type => {
+    if (!paletteReady()) return;
     finishStroke();
     if (queueRef.current.length || pendingRef.current) { currentRef.current.onError('DRAW_PENDING'); return; }
     const current = currentRef.current;
     const requestRound = current.roundKey, generation = generationRef.current;
     const stillCurrent = () => mountedRef.current && currentRef.current.roundKey === requestRound && generation === generationRef.current;
-    try { await current.client.command(type, { ...drawingRound(current.roundKey), epoch: modelRef.current.epoch }); if (stillCurrent()) currentRef.current.onError(''); }
+    try { await current.client.command(type, { ...drawingRound(current.roundKey), epoch: modelRef.current.epoch, paletteVersion: modelRef.current.paletteVersion }).then(ack => verifyAck(ack, stillCurrent)); if (stillCurrent()) currentRef.current.onError(''); }
     catch (error) { if (stillCurrent()) { currentRef.current.onError(error.code || 'DISCONNECTED'); requestSync(); } }
   };
   const selectTool = value => { finishStroke(); panRef.current = null; setTool(value); };
-  const chooseColour = value => { setColour(value); if (tool === 'hand') selectTool('pen'); };
-  return <section data-design-id="canvas-panel" className={`ers-canvas-panel ${canDraw ? 'is-drawer' : ''}`} aria-label={label}>
+  const availableColours = paletteReady() ? drawingPalette(modelRef.current.paletteVersion) : ERSOMHA_PALETTE;
+  const primaryColours = availableColours.includes(ERSOMHA_LAVENDER) ? ERSOMHA_PALETTE.map(value => value === '#9250bd' ? ERSOMHA_LAVENDER : value) : ERSOMHA_PALETTE;
+  const chooseColour = value => { if (!availableColours.includes(value)) return; setColour(value); if (tool === 'hand') selectTool('pen'); };
+  return <section data-design-id="canvas-panel" data-palette-version={drawingPaletteVersion(paletteVersion) ?? 'unsupported'} data-palette-ready={paletteReady()} className={`ers-canvas-panel ${canDraw ? 'is-drawer' : ''}`} aria-label={label}>
     <ErsomhaToolStyles />
     <div className="ers-board-wrap">
       <div className="ers-world-paper" aria-hidden="true" />
       <canvas data-design-id="canvas" data-design-required="true" ref={canvasRef} width="1000" height="1000" className={`ers-board ${tool === 'hand' ? 'is-panning' : ''}`} role="img" contentEditable={false} inputMode="none" draggable={false} tabIndex={canDraw && tool === 'hand' ? 0 : undefined} onKeyDown={cameraKeys} aria-label={canDraw ? tool === 'hand' ? tr("تحريك اللوحة: اسحب لأعلى أو لأسفل، أو استخدم الأسهم. زر اللوحة كاملة يعرض الرسم كله.") : tr("لوحتك: ارسم بالإصبع أو القلم أو الفأرة. الأدوات بجانب اللوحة أو أسفلها.") : tr("لوحة مباشرة يرسم عليها صاحب الدور. اكتب تخمينك أسفل اللوحة.")} onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerEnd} onPointerCancel={pointerEnd} onLostPointerCapture={pointerEnd} style={{ touchAction: canDraw ? 'none' : 'pan-y' }} />
       {canDraw && tool === 'hand' && cameraMode === 'wide' && <span className="ers-camera-hint" role="status">{tr("اسحب اللوحة لأعلى أو لأسفل")}</span>}
-      {(syncing || paused || !connected) && <div data-design-id="canvas-status" data-design-required="true" className="ers-board-status" role="status"><span>{!connected ? tr("نستعيد اتصالك والرسمة…") : paused ? tr("ننتظر عودة الرسّام…") : tr("نحضّر اللوحة…")}</span></div>}
+      {(syncing || paused || !connected || paletteIssue || selectedColourUnavailable) && <div data-design-id="canvas-status" data-design-required="true" className="ers-board-status" role="status"><span>{selectedColourUnavailable ? tr("هذا اللون غير متاح في هذه اللوحة. اختر لونًا من الألوان الأصلية.") : paletteIssue ? tr("ألوان هذه اللوحة غير متوافقة. نعيد المزامنة دون تغيير الرسم.") : !connected ? tr("نستعيد اتصالك والرسمة…") : paused ? tr("ننتظر عودة الرسّام…") : tr("نحضّر اللوحة…")}</span></div>}
     </div>
     {canDraw && <div data-design-id="drawing-tools" data-design-required="true" className="ers-tools" aria-label={tr("أدوات الرسم")}>
       <div className="ers-tool-row" role="group" aria-label={tr("نوع الأداة")}><Button size="sm" data-design-id="pen" aria-label={tr("قلم")} aria-pressed={tool === 'pen'} onClick={() => selectTool('pen')}><ErsomhaToolIcon name="pen" ink={colour} /><span className="ers-tool-label">{tr("قلم")}</span></Button><Button size="sm" data-design-id="eraser" aria-label={tr("ممحاة")} aria-pressed={tool === 'eraser'} onClick={() => selectTool('eraser')}><ErsomhaToolIcon name="eraser" /><span className="ers-tool-label">{tr("ممحاة")}</span></Button><span className="ers-tool-divider" /><Button size="sm" data-design-id="undo" data-sound="none" aria-label={tr("تراجع عن آخر خط")} disabled={blocked || !history.undo} onClick={() => changeHistory('drawing_undo')}><ErsomhaToolIcon name="undo" /></Button><Button size="sm" data-design-id="redo" data-sound="none" aria-label={tr("إعادة الخط المتراجع عنه")} disabled={blocked || !history.redo} onClick={() => changeHistory('drawing_redo')}><ErsomhaToolIcon name="redo" /></Button><Button size="sm" data-design-id="clear" aria-label={tr("مسح اللوحة")} disabled={blocked} onClick={() => setClearConfirm(true)}><ErsomhaToolIcon name="clear" /><span className="ers-tool-label">{tr("مسح")}</span></Button></div>
-      <div data-design-id="palette" className="ers-colours" role="group" aria-label={tr("ألوان القلم")}>{ERSOMHA_PALETTE.map((value, index) => <button data-design-id="color" type="button" key={value} className={`ers-colour ${colour === value ? 'selected' : ''}`} style={{ '--ink': value }} aria-label={tr(COLOUR_LABELS[index])} aria-pressed={colour === value} disabled={tool === 'eraser'} onClick={() => chooseColour(value)}><span /></button>)}</div>
+      <div data-design-id="palette" className="ers-colours" role="group" aria-label={tr("ألوان القلم")}>{primaryColours.map(value => <button data-design-id="color" type="button" key={value} className={`ers-colour ${colour === value ? 'selected' : ''}`} style={{ '--ink': value }} aria-label={tr(COLOUR_LABELS[value])} aria-pressed={colour === value} disabled={tool === 'eraser'} onClick={() => chooseColour(value)}><span /></button>)}</div>
       <div data-design-id="widths" className="ers-widths" role="group" aria-label={tr("سماكة الخط")}>{ERSOMHA_WIDTHS.map((value, index) => <button data-design-id="width" type="button" key={value} aria-label={[tr("خط رفيع"), tr("خط متوسط"), tr("خط عريض")][index]} aria-pressed={width === value} onClick={() => setWidth(value)}><i style={{ width: `${4 + index * 5}px`, height: `${4 + index * 5}px` }} /><span>{[tr("رفيع"), tr("متوسط"), tr("عريض")][index]}</span></button>)}</div>
       <div data-design-id="camera-controls" data-design-required="true" className="ers-camera-controls" role="group" aria-label={tr("عرض اللوحة")}><Button data-design-id="camera-view" data-design-required="true" className="ers-tool-button" aria-label={cameraMode === 'wide' ? tr("عرض اللوحة كاملة") : tr("مساحة الرسم الواسعة")} title={cameraMode === 'wide' ? tr("شاهد الرسم كله") : tr("استعمل كامل مساحة الهاتف")} onClick={changeCamera}><ErsomhaToolIcon name={cameraMode === 'wide' ? 'fit' : 'expand'} /></Button><Button data-design-id="camera-hand" data-design-required="true" className="ers-tool-button" disabled={cameraMode !== 'wide'} aria-label={tr("تحريك اللوحة")} title={tr("اسحب لأعلى أو أسفل، أو استخدم الأسهم")} aria-pressed={tool === 'hand'} onClick={() => selectTool(tool === 'hand' ? 'pen' : 'hand')} onKeyDown={cameraKeys}><ErsomhaToolIcon name="hand" /></Button></div>
       <Button data-design-id="tools-more" data-design-required="true" className="ers-tools-more" aria-label={tr("ألوان وأدوات إضافية")} aria-haspopup="dialog" style={{ '--ink': colour }} onClick={() => { finishStroke(); setMoreTools(true); }}><ErsomhaToolIcon name="palette" ink={colour} /><span className="ers-tool-label">{tr("المزيد")}</span></Button>
@@ -297,7 +332,8 @@ export function ErsomhaCanvas({ client, roundKey, epoch, serverSeq = 0, canDraw,
     </div>}
     {onReport && <button type="button" data-design-id="report" data-design-required="true" className="ers-report" onClick={onReport}>{tr("الإبلاغ عن الرسمة")}</button>}
     {moreTools && <Modal title={tr("ألوان وأدوات الرسم")} className="ers-tools-modal" onClose={() => setMoreTools(false)} footer={<Button full variant="primary" onClick={() => setMoreTools(false)}>{tr("إكمال الرسم")}</Button>}>
-      <div className="ers-colours" role="group" aria-label={tr("جميع ألوان القلم")}>{ERSOMHA_PALETTE.map((value, index) => <button type="button" key={value} className={`ers-colour ${colour === value ? 'selected' : ''}`} style={{ '--ink': value }} aria-label={tr(COLOUR_LABELS[index])} aria-pressed={colour === value} disabled={tool === 'eraser'} onClick={() => chooseColour(value)}><span /></button>)}</div>
+      {!availableColours.includes(ERSOMHA_LAVENDER) && <p className="ers-canvas-note" role="status">{drawingPaletteVersion(paletteVersion) === 1 ? tr("هذه اللوحة تستخدم الألوان الأصلية. يظهر اللافندر في لوحة جديدة تدعم التحديث.") : tr("اللون الجديد متاح بعد تأكيد دعم الغرفة ومزامنة اللوحة.")}</p>}
+      <div className="ers-colours" role="group" aria-label={tr("جميع ألوان القلم")}>{availableColours.map(value => <button type="button" key={value} className={`ers-colour ${colour === value ? 'selected' : ''}`} style={{ '--ink': value }} aria-label={tr(COLOUR_LABELS[value])} aria-pressed={colour === value} disabled={tool === 'eraser'} onClick={() => chooseColour(value)}><span /></button>)}</div>
       <div className="ers-widths" role="group" aria-label={tr("سماكة الخط")}>{ERSOMHA_WIDTHS.map((value, index) => <button type="button" key={value} aria-label={[tr("خط رفيع"), tr("خط متوسط"), tr("خط عريض")][index]} aria-pressed={width === value} onClick={() => setWidth(value)}><i style={{ width: `${4 + index * 5}px`, height: `${4 + index * 5}px` }} /><span>{[tr("رفيع"), tr("متوسط"), tr("عريض")][index]}</span></button>)}</div>
       <div className="ers-tool-row"><Button data-sound="none" aria-label={tr("إعادة الخط المتراجع عنه")} disabled={blocked || !history.redo} onClick={() => changeHistory('drawing_redo')}><ErsomhaToolIcon name="redo" />{tr("إعادة الخط")}</Button><Button aria-label={tr("مسح اللوحة")} disabled={blocked} onClick={() => { setMoreTools(false); setClearConfirm(true); }}><ErsomhaToolIcon name="clear" />{tr("مسح اللوحة")}</Button></div>
     </Modal>}

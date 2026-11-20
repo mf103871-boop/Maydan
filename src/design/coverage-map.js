@@ -55,10 +55,11 @@ const reasonRules = "Stable MaydanModal/Profile modal content exposes these real
 // Actual production-node inventory verified by the semantic browser coverage test.
 // Each template ID names a semantic component; it never identifies an array index or a user.
 export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
+  "game.entry": Object.freeze(["topbar","title","back","join-room"]),
   "mafia.tutorial": Object.freeze(["tutorial-disclosure","tutorial-coach","tutorial-exit","tutorial-help-toggle","tutorial-continue"]),
   "online.mafia.tools": Object.freeze(["close","content","header","player-safety","rules","tab.notes"]),
   "online.mafia.spectator": Object.freeze(["chat","event","header","mafia-tools","messages","narrative","observer-delay","phase-title","player-rail","player-seat","players","timer"]),
-  "online.mafia.role-card": Object.freeze(["actions","close","content","header","role-content","role-hide"]),
+  "online.mafia.role-card": Object.freeze(["actions","close","content","header","role-content","role-details","role-hide"]),
   "online.mafia.history": Object.freeze(["close","content","header","history","history-review","history-reference","history-previous","history-next","refresh","stats"]),
   "online.mafia.privacy": Object.freeze(["privacy"]),
   "online.mafia.guide": Object.freeze(["tutorial-start","specialist-training","back","close","content","continue","header"]),
@@ -68,36 +69,36 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "online.mafia.lobby": Object.freeze(["content-language","chat","close","composer","content","event","header","invite","message-input","messages","player-rail","player-seat","players","ready","room-settings","rules","send","start","voice","voice-join"]),
   "online.mafia.role": Object.freeze(["reveal-private-card","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
   "online.mafia.opening": Object.freeze(["audio-output","chat","composer","event","header","mafia-tools","message-input","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
-  "online.mafia.night": Object.freeze(["ability","ability-submit","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
-  "online.mafia.dawn": Object.freeze(["audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
+  "online.mafia.night": Object.freeze(["ability","ability-submit","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
+  "online.mafia.dawn": Object.freeze(["dawn-art","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
   "online.mafia.discussion": Object.freeze(["audio-output","chat","composer","event","header","mafia-tools","message-input","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
   "online.mafia.nomination": Object.freeze(["ability","ability-submit","abstain","audio-output","chat","composer","event","header","mafia-tools","message-input","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
   "online.mafia.defense": Object.freeze(["audio-output","chat","defense","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
-  "online.mafia.verdict": Object.freeze(["ability","audio-output","chat","composer","event","header","mafia-tools","message-input","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","verdict-no","verdict-yes","voice","voice-leave"]),
+  "online.mafia.verdict": Object.freeze(["ability","audio-output","chat","composer","event","header","mafia-tools","message-input","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","send","tab.council","tab.notes","tabs","timer","verdict-no","verdict-yes","voice","voice-leave"]),
   "online.mafia.over": Object.freeze(["header","mafia-tools","phase-title","recap","restart","results","rules"]),
   "online.mafia.closed": Object.freeze(["header","mafia-tools","phase-title","recap","results","rules"]),
   "online.mafia.waiting": Object.freeze(["notice","rules"]),
-  "online.mafia.night.citizen": Object.freeze(["ability","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
-  "online.mafia.night.investigator": Object.freeze(["ability","ability-submit","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
-  "online.mafia.night.doctor": Object.freeze(["ability","ability-submit","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
-  "online.mafia.night.guard": Object.freeze(["ability","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
-  "online.mafia.night.observer": Object.freeze(["ability","ability-submit","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
-  "online.mafia.night.reporter": Object.freeze(["ability","ability-submit","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
-  "online.mafia.night.herald": Object.freeze(["ability","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
-  "online.mafia.night.analyst": Object.freeze(["ability","ability-submit","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
-  "online.mafia.night.mafia": Object.freeze(["ability","abstain","audio-output","chat","composer","event","header","mafia-tools","mafia-vote","message-input","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
-  "online.mafia.night.masker": Object.freeze(["ability","abstain","audio-output","chat","composer","event","header","mafia-tools","mafia-vote","message-input","messages","mute","narrative","night-ability-tab","night-attack-tab","phase-title","player-rail","player-seat","players","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
-  "online.mafia.night.blocker": Object.freeze(["ability","abstain","audio-output","chat","composer","event","header","mafia-tools","mafia-vote","message-input","messages","mute","narrative","night-ability-tab","night-attack-tab","phase-title","player-rail","player-seat","players","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
-  "online.mafia.night.leader": Object.freeze(["ability","ability-submit","audio-output","chat","composer","event","header","mafia-tools","message-input","messages","mute","narrative","phase-title","player-rail","player-seat","players","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
+  "online.mafia.night.citizen": Object.freeze(["ability","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
+  "online.mafia.night.investigator": Object.freeze(["ability","ability-submit","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
+  "online.mafia.night.doctor": Object.freeze(["ability","ability-submit","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
+  "online.mafia.night.guard": Object.freeze(["ability","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
+  "online.mafia.night.observer": Object.freeze(["ability","ability-submit","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
+  "online.mafia.night.reporter": Object.freeze(["ability","ability-submit","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
+  "online.mafia.night.herald": Object.freeze(["ability","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
+  "online.mafia.night.analyst": Object.freeze(["ability","ability-submit","audio-output","chat","event","header","mafia-tools","messages","mute","narrative","phase-title","player-rail","role-card","role-toggle","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
+  "online.mafia.night.mafia": Object.freeze(["ability","abstain","audio-output","chat","composer","event","header","mafia-tools","mafia-vote","message-input","messages","mute","narrative","phase-title","player-rail","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
+  "online.mafia.night.masker": Object.freeze(["ability","abstain","audio-output","chat","composer","event","header","mafia-tools","mafia-vote","message-input","messages","mute","narrative","night-ability-tab","night-attack-tab","phase-title","player-rail","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
+  "online.mafia.night.blocker": Object.freeze(["ability","abstain","audio-output","chat","composer","event","header","mafia-tools","mafia-vote","message-input","messages","mute","narrative","night-ability-tab","night-attack-tab","phase-title","player-rail","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
+  "online.mafia.night.leader": Object.freeze(["ability","ability-submit","audio-output","chat","composer","event","header","mafia-tools","message-input","messages","mute","narrative","phase-title","player-rail","role-card","role-toggle","send","tab.clues","tab.council","tab.notes","tabs","timer","voice","voice-leave"]),
   "online.mafia.clues": Object.freeze(["actions","close","content","header","reports","tab.council"]),
   "online.mafia.notes": Object.freeze(["actions","close","content","header","notebook","notes-input","tab.council"]),
   "home": Object.freeze(["online-friend","brand","footer","game-card.badeeha","game-card.mafia","game-card.beep","game-card.ersomha","game-card.fabraka","game-card.jabeen","game-card.mamnoo","game-card.meenfina","games","header","home-search-open","privacy-link","profile","refunds-link","requests-open","terms-link","title"]),
   "home.game-mode": Object.freeze(["close","content","header","local-mode","online-mode","sheet-drag-handle"]),
   "game-details": Object.freeze(["actions","back","facts","game-description","game-icon","game-name","hero","skip-instructions","steps","title","topbar"]),
   "players": Object.freeze(["add-player","back","friends","player-edit","player-remove","player-row","players","title","topbar"]),
-  "settings": Object.freeze(["ui-language","about","back","clear-data","credits-open","home","manage-roster","music-volume","plus-store","pricing-link","privacy-link","refunds-link","segment-option","setting","setting-toggle","settings-account","settings-audio","settings-experience","settings-index-return","settings-local","settings-privacy","settings-section-jump","settings-support","share-reports","sound-test","sound-volume","support-link","terms-link","title","topbar"]),
+  "settings": Object.freeze(["ui-language","about","back","clear-data","credits-open","home","manage-roster","music-volume","pricing-link","privacy-link","refunds-link","segment-option","setting","setting-toggle","settings-account","settings-audio","settings-experience","settings-index-return","settings-local","settings-privacy","settings-section-jump","settings-support","share-reports","sound-test","sound-volume","support-link","terms-link","title","topbar"]),
   "account.card": Object.freeze(["account-delete","account-signin","account-signout","continue","profile","purchase","restore","title"]),
-  "store": Object.freeze(["artwork","collections","item-preview","item-use","plus-details","plus-retry","profile","store-membership","store-navigation","store-product","store-reset","store-tab-collections","store-tab-library","store-tab-membership","title","topbar"]),
+  "store": Object.freeze(["back","artwork","collections","item-preview","item-use","plus-details","plus-retry","profile","store-membership","store-navigation","store-product","store-reset","store-tab-collections","store-tab-library","store-tab-membership","title","topbar"]),
   "store.preview": Object.freeze(["header","close","content","product-preview","item-use","collection-use","store-detail-actions"]),
   "about": Object.freeze(["back","license-link","pricing-link","privacy-link","refunds-link","show-all","source-link","terms-link","title","topbar"]),
   "audio-credits": Object.freeze(["content","license-link","source-link"]),
@@ -105,9 +106,9 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "play-setup": Object.freeze(["actions","add-player","player-choice","players","players-setup","start"]),
   "badeeha.home": Object.freeze(["actions","history","intro","rules","start","title"]),
   "badeeha.setup": Object.freeze(["back","categories-reset","category-card","category-filter","category-search","clear-history","favorite","header","mode-choice","random-categories","round-size","setup-jump","start","team-count","team-name","timer-length","title"]),
-  "badeeha.board": Object.freeze(["actions","finish","header","score-cards","scoreboard","tier","undo"]),
-  "badeeha.question": Object.freeze(["answer","answer-toggle","cancel","category","header","judge","judge-nobody","judge-team","options-list","pause","question","report","reveal","timer","tool","tools","turn"]),
-  "badeeha.result": Object.freeze(["actions","history","setup","share-result","start"]),
+  "badeeha.board": Object.freeze(["actions","finish","header","score-cards","scoreboard","tier","title","turn","undo"]),
+  "badeeha.question": Object.freeze(["answer","answer-toggle","cancel","category","header","judge","judge-nobody","judge-team","options-list","pause","question","report","reveal","score-cards","timer","title","tool","tools","turn"]),
+  "badeeha.result": Object.freeze(["actions","history","setup","share-result","start","title"]),
   "badeeha.history": Object.freeze(["back","clear-results","header","title"]),
   "beep.three.intro": Object.freeze(["intro","players","start"]),
   "beep.three.prompt": Object.freeze(["continue","prompt","timer","turn"]),
@@ -162,8 +163,8 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "online.badeeha.over": Object.freeze(["podium","restart"]),
   "ersomha.select.drawer": Object.freeze(["header","report","timer","title","word-choice","word-choices"]),
   "ersomha.select.guesser": Object.freeze(["header","players","report","timer","title"]),
-  "ersomha.draw.drawer": Object.freeze(["aside","camera-controls","camera-hand","camera-view","canvas","canvas-panel","clear","color","drawing-tools","eraser","focus-toggle","guesses","header","mic-note","orientation","palette","pen","players","redo","report","timer","title","tools-more","undo","width","widths","word-banner"]),
-  "ersomha.draw.guesser": Object.freeze(["aside","canvas","canvas-panel","guess-form","guess-input","guess-send","guesses","header","players","report","timer","title","word-banner"]),
+  "ersomha.draw.drawer": Object.freeze(["drawer-identity","aside","camera-controls","camera-hand","camera-view","canvas","canvas-panel","clear","color","drawing-tools","eraser","focus-toggle","guesses","header","mic-note","orientation","palette","pen","players","redo","report","timer","title","tools-more","undo","width","widths","word-banner"]),
+  "ersomha.draw.guesser": Object.freeze(["drawer-identity","aside","canvas","canvas-panel","guess-form","guess-input","guess-send","guesses","header","players","report","timer","title","word-banner"]),
   "ersomha.result.drawer": Object.freeze(["aside","canvas","canvas-panel","guesses","header","players","report","results","timer","title","word-banner"]),
   "ersomha.result.guesser": Object.freeze(["aside","canvas","canvas-panel","guesses","header","players","report","results","timer","title","word-banner"]),
   "ersomha.over": Object.freeze(["podium","restart","results","title"]),
@@ -199,6 +200,10 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
 
 // These controls are state-dependent and intentionally absent from the default fixture.
 const conditionalNodeReasons = {
+  "game.entry": {"local-recovery": "Shown only when an existing owned local match or pending start is recoverable; opening this route never spends another ticket.", "resume-local": "Returns to the matching saved local game owned by the authenticated player; the saved-session validator still decides whether it can resume.", "entry-sign-in": "Appears for a guest needing an account to retain a trial or ticket; the isolated signed-in preview omits this action.", "entry-ready": "Appears only after the current authoritative eligibility response permits a trial, ticket or Plus match; it opens mode selection without spending a ticket.", "entry-watch-ad": "Available only when the current entry response permits rewarded advertising and no pending attempt already exists.", "entry-plus": "Opens the existing Plus paywall for a non-subscriber; it does not grant gameplay rights from the presentation layer.", "entry-recheck": "Appears for a signed-in player whose current access is not ready, allowing a fresh authoritative ticket eligibility check.", "entry-ad-privacy": "Appears only when the native advertising provider reports that its privacy options must be available.", "entry-ad-report": "Available only in the supported native iOS advertising surface; browser preview never claims a native report action.", "entry-back": "Returns from a loaded ticket offer to games without starting a match or consuming any ticket.", "entry-more-options": "Expands secondary Plus and native advertising actions when the offer is ready or a saved local session is being recovered."},
+  "home.game-mode": {
+    "availability-retry":"The real Mafia availability sheet allows retry after an unavailable or failed check; the pending check and enabled game modes do not render it."
+  },
   "mafia.tutorial": {
     "tutorial-retry":"The actual rule-engine decision consequence exposes this whole-checkpoint retry only after an incorrect action or a missed deadline.",
     "tutorial-answer":"The two local learning checks expose their explicit choices only after the full two-night scenario has reached its real ending.",
@@ -214,6 +219,7 @@ const conditionalNodeReasons = {
   },
   "online.mafia.lobby": {"event":"Waiting-room event cards appear only when a public event is supplied by the server; a fresh lobby has no dawn or elimination from a prior match."},
   "store": {
+      "frame-remove":"The owner can remove the selected equipped frame directly below its preview; profile skin, portrait and other selections stay unchanged.",
       "plus-retry":"Store catalog or inventory failure reveals this retry action; the standard fixture has a successful catalog.",
       "plus-details":"The membership tab opens the existing subscription sheet for its optional cosmetic features.",
       "store-membership":"The membership tab presents the subscription disclosure; the default store opens the collections tab.",
@@ -306,7 +312,7 @@ const conditionalNodeReasons = {
   },
   "settings": {
     "creator-analytics":"Displayed only after the authenticated account response grants the server creator capability; layout customization cannot grant analytics access or hide this owner's management action.",
-    "plus-transition-open":"The active subscriber's existing transition notice links to the Store; ordinary guest and unsubscribed settings fixtures do not mount that notice.",
+    "plus-transition-open":"Saved design compatibility: the subscription transition and offers now live in the Store.",
     "pricing-link":"The pricing link is visible in help for a web billing account; the standard account fixture models an iPhone.",
     "share-reports":"The help section offers report sharing only when this device has saved reports to share."
   },
@@ -363,6 +369,7 @@ const conditionalNodeReasons = {
     "tilt-retry": "Auto-tilt mode shows the recovery button if the motion permission or sensor becomes unavailable."
   },
   "online.entry": {
+    "resume-room": "A saved room and its session token enable return from a normal entry without an invitation code or rewarded challenge.",
     "room-name": "The real room-name field is mounted only after public visibility is chosen; the default isolated create form starts with private visibility.",
     ...Object.fromEntries(['game-picker','game-choice.badeeha','game-choice.ersomha','game-choice.fabraka','game-choice.mafia','game-choice.meenfina','hero'].map(id => [id, 'Retired cross-game entry selector retained for saved-design compatibility; the selected game is now fixed by its route and the shared mode sheet, without placeholder controls.'])),
     "my-history":"Displayed only for a signed-in account while Mafia is the selected game; its data is account scoped.","entry-public":"Available only after selecting Mafia; opens the existing-room directory without creating a paid room.",
@@ -372,7 +379,7 @@ const conditionalNodeReasons = {
     "title": reasonHome
   },
   "online.lobby": {
-    "content-language": "The host can change content language only in the editable lobby settings; changes reset readiness and regenerate content before play.",
+    "content-language": "All players see the match language fixed by the room; the interface language is set in Settings.",
     "host-handover": "Shown only to a Mafia host while another seat is connected; the waiting-room fixture is an Ersomha room.",
     "invite":"The actual room invitation opens in a dialog; the lobby keeps this legacy styling key for saved designs.",
     "invite-code":"The actual room invitation opens in a dialog; the lobby keeps this legacy styling key for saved designs.",
@@ -381,6 +388,7 @@ const conditionalNodeReasons = {
     "invite-share":"The actual room invitation opens in a dialog; the lobby keeps this legacy styling key for saved designs."
   },
   "online.chrome": {"observer-join":"Shown only for an authenticated delayed observer when the authoritative snapshot permits promotion to a waiting seat.",
+    "room-recovery": "A replaced, reconnecting or disconnected session outside the compact Mafia view exposes its recovery panel and reconnect action.",
     "dropped": reasonDropped,
     "member-remove": reasonDropped,
     "reconnect": reasonDropped
@@ -482,16 +490,43 @@ const conditionalNodeReasons = {
   },
   "social.call": {
     "call-open": reasonCallOpen,
+    "accept-call": "A pending inbound call exposes acceptance only when the current call can be joined.",
+    "decline-call": "A pending inbound call exposes its dismissal until the call is resolved.",
     "audio-output": reasonCallOpen,
     "resume-audio": reasonCallOpen
   },
   "profile": {
+    "profile-stats-toggle": "The owner with progression can open real account statistics from the compact actions after featured badges.",
+    "profile-achievements-toggle": "An owner without account progression can disclose the full existing achievement list below statistics and collection access.",
+    "profile-stats-note-toggle": "Available profile statistics expose their existing counting explanation through a secondary disclosure.",
+    "review-image-retry": "An owner-only image review preview exposes retry after its actual image request fails.",
+    "profile-image-review-toggle": "A pending or reviewed uploaded avatar or cover exposes its own review details, only when a preview image is present.",
+    "mafia-progress-visibility": "Owner-only Mafia progress preferences appear after opening the real progress disclosure.",
+    "mafia-progress-role": "Owner-only Mafia progress preferences allow selection of an eligible featured role after opening details.",
+    "mafia-progress-save": "Only the owner's open Mafia progress preferences can save the selected visibility and featured role.",
+    "summary": "The signed-in and visitor profile layouts expose the real available summary counts; loading and error states do not.",
+    "xp": "Only the owner's successful account-progression response exposes private XP; visitors and environments without progression omit it.",
+    "mastery": "Only an owner with account-progression support sees game mastery; no unsupported public or visitor tracks are invented.",
+    "mastery-empty": "An owner with supported progression and no played tracks sees the first-match prompt.",
+    "mastery-track": "Each supported played mastery track opens its own actual progress details.",
+    "featured-badge": "A selected earned featured badge opens its details when the profile provides the action.",
+    "choose-badges": "Only the owner can open the existing title and featured-badge editor.",
+    "profile-wardrobe-open": "Only the owner with progression support can open earned cosmetics.",
+    "profile-title-edit": "Only the owner can edit a progression title from the account progression layout.",
+    "profile-identity-toggle": "The compact owner XP layout discloses existing bio and profile metadata without duplicating the primary identity.",
+    "next-reward": "A supported progression response with a real upcoming level reward supplies this disclosure.",
+    "next-reward-toggle": "The owner can expand a real upcoming progression reward when one is available.",
+    "profile-reward-preview": "The real upcoming reward offers a preview only when its details action is provided.",
+    "profile-library-toggle": "The owner can disclose existing collection and store links; visitor layouts omit owner library controls.",
+    "mafia-progress-toggle": "Signed-in owner details disclose the account-scoped Mafia progress panel when supported.",
     "mafia-progress-refresh": "The real Mafia progress panel renders this refresh action for a signed-in profile; guest profiles do not mount the account-scoped progress panel.",
     "add-friend": reasonAddFriend,
     "friend-accept": reasonAddFriend,
     "friend-cancel": reasonAddFriend
   },
   "profile.editor": {
+    "review-image-retry": "An owner editing an uploaded image may retry loading its failed review preview.",
+    "profile-image-review-toggle": "An uploaded avatar or cover under review exposes its status details while editing the profile.",
     "avatar-remove": reasonAvatarRemove,
     "cover-remove": reasonAvatarRemove
   },
@@ -502,6 +537,7 @@ const conditionalNodeReasons = {
     "legal-pricing": "Web checkout alone shows its pricing policy link; the baseline fixture is iPhone."
   },
   "system.dialog": {
+    "invite-link-preview": "The invitation dialog displays the generated room URL and its code over the read-only input while that input is unfocused.",
     "save":"The local player editor exposes its save action after opening a specific player or starting a new roster entry.",
     "name-input":"The local player editor shows a name field only after opening its add or edit dialog.",
     "avatar-choice":"The local player editor provides optional avatar choices after its add or edit dialog opens.",
@@ -528,9 +564,21 @@ conditionalNodeReasons.profile = { ...conditionalNodeReasons.profile, 'profile-p
 for (const screen of ['online.lobby','online.mafia.lobby']) conditionalNodeReasons[screen] = { ...conditionalNodeReasons[screen], 'room-theme':'Retired room-theme picker: membership no longer changes room appearance; the normal room and historical data remain intact.', 'appearance-toggle':'Retired room-appearance disclosure: the original game interface no longer offers paid room styling or a seated council.' };
 const liveCouncil = /^online\.mafia\.(?:role|opening|night(?:\..+)?|dawn|discussion|nomination|defense|verdict|spectator)$/;
 const legacyPrivateCouncilIds = ['audio-output','mafia-tools','mute','phase-title','player-rail','player-seat','players','role-card','role-toggle','tab.clues','tab.notes','tabs','timer','voice','voice-leave'];
+conditionalNodeReasons['online.badeeha.over'] = {...conditionalNodeReasons['online.badeeha.over'], 'result-statistics':'Displayed after a completed online Badeeha match using the actual per-team correct-answer and steal totals.', 'replay-notice':'Explains that returning to this lobby reuses its current question set; it never promises fresh content for replay.'};
+
 export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze(Object.fromEntries(Object.entries(conditionalNodeReasons).map(([screen, reasons]) => {
   const next = { ...reasons };
   if (liveCouncil.test(screen)) {
+    next.recovery = 'Shown only while the active council is not connected; authoritative state must be restored before new decisions or private details are accepted.';
+    next['eliminated-notice'] = 'Only an assigned eliminated participant sees the dead-channel explanation; external delayed observers never inherit private participant controls.';
+    next['voice-details'] = 'The compact Studio voice bar exposes the existing optional-voice explanation in a disclosure; actual permission, connection and error states remain visible outside it.';
+    if (/^online\.mafia\.night(?:\..+)?$/.test(screen)) {
+      next['known-allies'] = 'Only a living player with server-projected known allies sees this private team strip; it never derives hidden identities from public seats.';
+      next.players = next['player-seat'] = 'The general roster is shown to observers and unassigned viewers; a living assigned night actor instead sees authorized action targets and known allies without a duplicate public roster.';
+    }
+    if (screen === 'online.mafia.verdict') {
+      next['role-toggle'] = next['tab.clues'] = 'The same private role/evidence actions are accessible through the explicit More dialog during verdict, keeping the public decision and chat compact.';
+    }
     next.ability = reasonAbility;
     next.narrative = 'The legacy standalone phase narrative is retained for saved-design compatibility; the dense live layout now renders authorized event cards inside the public timeline instead.';
     if (/^online\.mafia\.(?:night(?:\..+)?|nomination)$/.test(screen)) next.target = 'Only a living actor with an authorized action sees its eligible targets after opening the decision. The list never adds targets outside the server projection.';
@@ -547,7 +595,14 @@ export const DESIGN_CONDITIONAL_NODE_REASONS = Object.freeze(Object.fromEntries(
     next['directory-filter-apply'] = 'Closes the expanded Mafia filters after their actual selections have updated the visible room list.';
     for (const id of ['actions','header']) next[id] = 'Retired oversized directory heading/action wrapper retained for saved-design compatibility; the real compact toolbar now owns room creation, refresh and entry actions.';
   }
+  if (screen === 'online.mafia.tools') {
+    next['timeline-info'] = 'The Studio More dialog keeps the existing session-history retention explanation available without repeating it inside every live timeline.';
+    next['role-toggle'] = 'During verdict, the existing private role trigger is available from More; it still requires explicit opening and retains all secrecy guards.';
+    next['tab.clues'] = 'During verdict, the existing owner evidence trigger is available from More; the same private evidence dialog remains authoritative.';
+  }
   if (['online.mafia.over','online.mafia.closed'].includes(screen)) {
+    next['result-player'] = 'A final server-revealed player role exposes this read-only disclosure only when the finished result contains its authoritative recap entry.';
+    next['result-events'] = 'Finished public events are mounted inside this disclosure only after opening it and only when at least one authorized result event exists.';
     for (const id of ['chat','messages','event']) next[id] = 'The retained authorized timeline appears only after its finished-match disclosure is opened; this history is read-only and never mounts a composer.';
     next['chat-channel'] = 'An eliminated participant may select an already authorized retained channel inside the opened finished-match history; sending remains disabled.';
     next['load-older'] = 'Older retained authorized rows can be paged inside the opened finished-match history when they exceed its visible window; no chat is sent.';

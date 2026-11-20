@@ -1,10 +1,13 @@
-import { tr } from '../../shared/i18n/core.js';
+import { tr, getUiLocale } from '../../shared/i18n/core.js';
 import React, { useRef, useState } from 'react';
 import { Button, Modal } from '../../shared/ui/components.jsx';
 import { usePlusResource, plusError } from '../../plus/usePlusAccount.js';
 import { getCosmetic } from '../../plus/catalog.js';
 import { MenuGameIcon } from '../../platform/MenuGameIcon.jsx';
 import { ProfileAvatar } from '../ProfileAvatar.jsx';
+import { PlayerName } from '../PlayerIdentity.jsx';
+import { getBadgeArt } from '../../shared/brand/playful-identity.js';
+import { getPlayfulSceneArt } from '../../shared/brand/playful-scenes.js';
 import { getProgressionFrame, PROGRESSION_FRAMES } from '../progression-catalog.js';
 import { ProgressionCatalog, ProgressionPortrait, ProgressionProfile, ProgressionStyles, progressionNumber } from './ProgressionProfile.jsx';
 
@@ -18,8 +21,8 @@ const image = (profile, framed = false) => <ProfileAvatar user={framed ? profile
   ...profile, cosmetics: { ...profile.cosmetics, frameId: null },
 }} size={220} />;
 
-export function AccountProgressionProfile({ profile, profiles, owner, title, featured, onCustomize, cover }) {
-  const progress = profile.progression;
+export function AccountProgressionProfile({ profile, profiles, owner, title, featured, onCustomize, cover, identityMeta, presence, summary, actions, onStart, afterBadges }) {
+  const progress = profile.progression || {};
   const [dialog, setDialog] = useState(null);
   const [chosen, setChosen] = useState(null);
   const [previousFrame, setPreviousFrame] = useState(undefined);
@@ -42,11 +45,12 @@ export function AccountProgressionProfile({ profile, profiles, owner, title, fea
   const badges = featured.map(badge => ({
     ...badge,
     art: badgeArt[badge.id] || 'ornament-gem',
+    artSrc: getBadgeArt(badge.id),
     detail: owner ? badge.description : null,
   }));
-  const mastery = (progress.mastery || []).map(track => track.game === 'ersomha'
-    ? { ...track, artNode: <span className="pc-track-art pc-track-existing"><MenuGameIcon id="ersomha" /></span> }
-    : track);
+  const mastery = (progress.mastery || []).map(track => ({
+    ...track, artNode: <span className="pc-track-art">{track.game==='ersomha'?<img src={getPlayfulSceneArt('drawing-pencil',40)} width="40" height="40" alt="" loading="lazy"/>:<MenuGameIcon id={track.game} />}</span>,
+  }));
   const openWardrobe = item => {
     if (!owner) return;
     setChosen(item?.id || item?.itemId || null);
@@ -84,8 +88,8 @@ export function AccountProgressionProfile({ profile, profiles, owner, title, fea
 
   return <>
     <ProgressionStyles />
-    <ProgressionProfile name={profile.name} bio={profile.bio} title={title} cover={cover} portrait={unframedPortrait} layeredPortrait={layeredPortrait}
-      frameId={equippedProgression?.id} level={progress.level} xpIntoLevel={progress.xpIntoLevel}
+    <ProgressionProfile nameNode={<PlayerName user={profile} card />} identityMeta={identityMeta} presence={presence} summary={summary} actions={actions} onStart={onStart} afterBadges={afterBadges} name={profile.name} bio={profile.bio} title={title} cover={cover} portrait={unframedPortrait} layeredPortrait={layeredPortrait}
+      frameId={equippedProgression?.id} level={progress.level} levelArtSrc={profile.cosmetics?.profileSkinId==='sahra.profileSkin'?getPlayfulSceneArt('sahra-level',64):undefined} xpIntoLevel={progress.xpIntoLevel}
       xpForNextLevel={progress.xpForNextLevel} owner={owner} achievements={badges}
       mastery={owner ? mastery : []} nextReward={nextReward && { ...nextReward, itemId: nextReward.id }}
       onCatalog={() => openWardrobe()} onReward={openWardrobe} onCustomize={onCustomize}
@@ -97,17 +101,17 @@ export function AccountProgressionProfile({ profile, profiles, owner, title, fea
       <div hidden={Boolean(selected)}><ProgressionCatalog items={items} portrait={unframedPortrait} onSelect={item => setChosen(item.id)} /></div>
       {selected && <div className="stack pc-wardrobe-preview">
         <ProgressionPortrait className="pc-catalog-art" name={profile.name} portrait={unframedPortrait} frameId={selected.id} />
-        <strong>{selected.label}</strong>
+        <strong>{tr(selected.label)}</strong>
         <p>{tr("المستوى ")}{progressionNumber(selected.level)}{tr(" · مكافأة دائمة من اللعب")}</p>
         <p>{selected.state === 'locked' ? (selected.level === 1 ? tr("مقفل حتى أول جلسة مؤهلة") : tr("مقفل حتى الوصول إلى المستوى ") + progressionNumber(selected.level)) : selected.state === 'equipped' ? tr("مجهّز الآن") : tr("مملوك")}</p>
-        {selected.grantedAt && <time dateTime={new Date(selected.grantedAt).toISOString()}>{tr("تاريخ الحصول ")}{new Date(selected.grantedAt).toLocaleDateString('ar-JO')}</time>}
+        {selected.grantedAt && <time dateTime={new Date(selected.grantedAt).toISOString()}>{tr("تاريخ الحصول ")}{new Date(selected.grantedAt).toLocaleDateString(getUiLocale())}</time>}
         {selected.state === 'owned' && <Button variant="accent" disabled={!wardrobe.data || saving} loading={saving} onClick={() => apply(selected.id)}>{tr("تجهيز الإطار")}</Button>}
         <Button variant="ghost" disabled={saving} onClick={() => setChosen(null)}>{tr("العودة إلى المقتنيات")}</Button>
       </div>}
       {previousFrame !== undefined && previousFrame !== equippedId && <Button disabled={!wardrobe.data || saving} variant="ghost" onClick={() => apply(previousFrame, true)}>{tr("إعادة الإطار السابق")}</Button>}
     </Modal>}
-    {dialog?.kind === 'achievement' && <Modal title={dialog.item.label} onClose={close} placement="bottom">
-      <p>{dialog.item.description}</p>
+    {dialog?.kind === 'achievement' && <Modal title={tr(dialog.item.label)} onClose={close} placement="bottom">
+      <p>{tr(dialog.item.description)}</p>
       <p>{tr("إنجاز مكتسب")}</p>
       {owner && <Button onClick={() => { close(); onCustomize?.(); }}>{tr("ترتيب الشارات واختيار اللقب")}</Button>}
     </Modal>}

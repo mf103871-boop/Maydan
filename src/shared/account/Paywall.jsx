@@ -3,7 +3,7 @@ import { tr } from '../i18n/core.js';
 // ما يفتحه الاشتراك، ثم الخطط المتاحة بأسعار المتجر، ثم الشروط بوضوح.
 import React, { useEffect, useRef, useState } from 'react';
 import { Sheet, Button } from '../ui/components.jsx';
-import { ClayStage, TrophyArtwork } from '../brand/art.jsx';
+import plusArt from '../brand/assets/playful-cosmetics/plus.webp';
 import { useAccount } from './context.js';
 import { accountErrorText } from './errors.js';
 import { catalogSupportText } from './catalog-diagnostics.js';
@@ -82,7 +82,7 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
   return (
     <Sheet open={open} onClose={onClose} title={null}>
       <section data-design-screen="account.paywall" className="paywall" aria-label={tr("اشتراك {v0}", {v0: tr(PLUS_NAME)})} data-reason={reason} data-pack={pack || undefined}>
-        <ClayStage className="paywall-hero clay-idle" aria-hidden="true"><TrophyArtwork /></ClayStage>
+        <img src={plusArt} className="paywall-hero" width="640" height="427" alt="" decoding="async"/>
         <h2 className="paywall-title">{tr("خلّي لك بصمة مع ")}{tr(PLUS_NAME)}</h2>
         {account.platform !== 'ios' && account.billing?.paddle?.environment === 'sandbox' && (
           <p className="online-notice" role="status">{tr("الدفع في وضع الاختبار؛ لا تُخصم مبالغ حقيقية. الاشتراك الناتج تجريبي.")}</p>

@@ -1,19 +1,21 @@
 // Shared cosmetic and achievement rules: clients may choose earned rewards, never grant them.
 export const PROFILE_THEMES = [
-  { id: 'teal', label: 'فيروز ميدان', color: '#126d70', accent: '#a4ddd5', gradient: 'linear-gradient(125deg,#155e65,#469d94 62%,#b4ddbc)' },
-  { id: 'violet', label: 'ليالي البنفسج', color: '#72509b', accent: '#d8c0ec', gradient: 'linear-gradient(125deg,#50377f,#9173b7 62%,#d9b6dc)' },
-  { id: 'sunset', label: 'غروب دافئ', color: '#a65d43', accent: '#f3c3a0', gradient: 'linear-gradient(125deg,#934c4f,#d98961 62%,#f2cc86)' },
-  { id: 'ocean', label: 'موج أزرق', color: '#306b96', accent: '#b6d8eb', gradient: 'linear-gradient(125deg,#244776,#548faf 62%,#a1d6d1)' },
-  { id: 'forest', label: 'ظل الزيتون', color: '#526e48', accent: '#c4d5a4', gradient: 'linear-gradient(125deg,#385344,#7c9462 62%,#d3d2a1)' },
-  { id: 'rose', label: 'ورد الشام', color: '#a25377', accent: '#efd0db', gradient: 'linear-gradient(125deg,#7b3f68,#bc7998 62%,#f1c8c6)' },
-  { id: 'gold', label: 'رمل وذهب', color: '#907035', accent: '#e7d79f', gradient: 'linear-gradient(125deg,#7b5b35,#baa06a 62%,#ece0ae)' },
-  { id: 'midnight', label: 'ليل ونجوم', color: '#465175', accent: '#c2cce9', gradient: 'linear-gradient(125deg,#26324c,#515d83 62%,#9c9fbd)' },
+  { id: 'teal', label: 'فيروز ميدان', color: '#126d70', accent: '#a4ddd5', gradient: 'linear-gradient(160deg,#4ae0cf,#09b4a5 62%,#079689)' },
+  { id: 'violet', label: 'ليالي البنفسج', color: '#72509b', accent: '#d8c0ec', gradient: 'linear-gradient(160deg,#cf96e5,#b374cf 62%,#965bb5)' },
+  { id: 'sunset', label: 'غروب دافئ', color: '#a65d43', accent: '#f3c3a0', gradient: 'linear-gradient(160deg,#ffac90,#ff8a70 62%,#ee785f)' },
+  { id: 'ocean', label: 'موج أزرق', color: '#306b96', accent: '#b6d8eb', gradient: 'linear-gradient(160deg,#91d8f7,#55b7e9 62%,#419bd1)' },
+  { id: 'forest', label: 'ظل الزيتون', color: '#526e48', accent: '#c4d5a4', gradient: 'linear-gradient(160deg,#a9c588,#85a569 62%,#6d8d55)' },
+  { id: 'rose', label: 'ورد الشام', color: '#a25377', accent: '#efd0db', gradient: 'linear-gradient(160deg,#ffa4c5,#f774a5 62%,#df5d91)' },
+  { id: 'gold', label: 'رمل وذهب', color: '#907035', accent: '#e7d79f', gradient: 'linear-gradient(160deg,#ffda85,#ffc35c 62%,#edab3c)' },
+  { id: 'midnight', label: 'ليل ونجوم', color: '#465175', accent: '#c2cce9', gradient: 'linear-gradient(160deg,#6384b0,#365b8a 62%,#29466d)' },
 ];
 export const AVATAR_PRESETS = [
   { id: 'spark', label: 'نجمة', emoji: '✨' }, { id: 'falcon', label: 'صقر', emoji: '🦅' },
   { id: 'lion', label: 'أسد', emoji: '🦁' }, { id: 'fox', label: 'ثعلب', emoji: '🦊' },
   { id: 'owl', label: 'بومة', emoji: '🦉' }, { id: 'cat', label: 'قط', emoji: '🐱' },
   { id: 'rocket', label: 'صاروخ', emoji: '🚀' }, { id: 'controller', label: 'لاعب', emoji: '🎮' },
+  { id: 'human-01', label: 'ليان' }, { id: 'human-02', label: 'عمر' },
+  { id: 'human-03', label: 'سارة' }, { id: 'human-04', label: 'نور' },
 ];
 export const PROFILE_GAME_IDS = ['badeeha', 'beep', 'mamnoo', 'jabeen', 'fabraka', 'meenfina', 'ersomha'];
 export const EMPTY_STATS = Object.freeze({ localSessions: 0, onlineMatches: 0, onlineWins: 0, onlineDraws: 0, distinctGames: 0 });

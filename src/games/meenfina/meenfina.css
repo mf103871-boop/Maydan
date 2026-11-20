@@ -1,108 +1,266 @@
-.meenfina { --game-accent: #A67A21; display: grid; gap: 14px; }
-/* العبارة: بطاقة مرفوعة تنقلب عند الظهور، وتطير جانبًا عند «لا أحد» */
-.meen-statement { padding: 26px 20px; border-radius: 26px; background: var(--top-light), linear-gradient(160deg, rgba(46,216,163,.18), var(--surface) 68%); border: 1px solid rgba(46,216,163,.45); box-shadow: var(--shadow-lift-1); text-align: center; font-size: clamp(26px, 7vw, 36px); font-weight: 900; line-height: 1.5; text-wrap: balance; transform-origin: 50% 0; animation: ui-flip-in .4s var(--ease-out) both; }
-.meen-statement.is-leaving { animation: ui-fly-bad .3s var(--ease-snap, cubic-bezier(.6, 0, .2, 1)) forwards; }
-.meen-count { position: fixed; inset: 0; z-index: 320; display: grid; grid-template-rows: auto minmax(0, 1fr); align-content: center; justify-items: center; gap: 14px; overflow: auto; padding: calc(18px + var(--safe-top)) 16px calc(18px + var(--safe-bottom)); background: radial-gradient(circle, rgba(46,216,163,.25), var(--bg) 70%); }
-.meenfina .meen-count { animation: ui-fade .2s ease-out both; }   /* غطاء ثابت: شفافية فقط، لا transform */
-.meen-count .meen-statement { width: min(100%, 560px); }
-.meen-count-num { display: grid; place-items: center; min-height: 0; }
-.meen-count .num { font-size: clamp(72px, 26vw, 140px); font-weight: 900; color: var(--game-accent); line-height: 1; animation: meen-pop .95s var(--ease-out) both; }
-.meen-count .go { display: inline-block; font-size: clamp(44px, 12vw, 76px); font-weight: 900; color: #fff; animation: ui-pop-in .5s var(--ease-spring) both, ui-bounce .5s var(--ease-spring) .5s; }
-/* آخر إطار = الراحة (الرقم لا يبقى باهتًا تحت تقليل الحركة) */
-@keyframes meen-pop { 0% { transform: scale(2.2); opacity: 0; } 30%, 100% { transform: none; opacity: 1; } }
-.meen-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-@media (min-width: 520px) { .meen-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-/* بلاطات الاختيار: حافة صلصالية تنضغط، وتنبض بلون اللاعب عند الاختيار؛ الشخصية على حامل صامت */
-.meen-pick { display: grid; justify-items: center; gap: 6px; padding: 14px 8px; border-radius: 18px; background: var(--top-light), var(--surface); border: 1px solid var(--stroke); box-shadow: var(--shadow-tile); font-weight: 800; min-height: 96px; transition: transform .2s var(--ease-spring), box-shadow .2s var(--ease-spring), background-color .18s, border-color .18s; position: relative; overflow: hidden; animation: ui-pop-in .4s var(--ease-spring) both; animation-delay: calc(150ms + var(--i, 0) * 40ms); }
-.meen-pick:active { transform: translateY(var(--ledge, 3px)); transition-duration: .08s; box-shadow: var(--shadow-press); }
-.meen-pick span { font-size: 34px; }
-.meen-pick > .clay-stage { --contact-inset: 18%; --contact-y: -2px; }
-.meen-pick.selected { background: var(--top-light), color-mix(in srgb, var(--pick-color) 26%, var(--surface)); border-color: var(--pick-color); box-shadow: inset 0 2px 1px #fff, 0 3px 0 color-mix(in srgb, var(--pick-color) 55%, #5B3D24), 0 8px 14px color-mix(in srgb, var(--pick-color) 22%, transparent); animation: ui-pop-select .3s var(--ease-spring); }
-.meen-pick.selected > .clay-stage > .clay-lift { animation: clay-squash .42s var(--ease-spring); }
-.meen-pick .count { position: absolute; top: 6px; inset-inline-end: 8px; min-width: 22px; height: 22px; border-radius: 999px; background: var(--pick-color); color: #0B0E1A; font-size:14px; font-weight: 900; display: grid; place-items: center; animation: ui-pop-in .35s var(--ease-spring) both; }
-/* النتيجة: أشرطة تتمدد بالتحويل من جهة البداية (‎--w-frac‎ نسبة 0..1) */
-.meen-bars { display: grid; gap: 8px; }
-.meen-bar { display: flex; align-items: center; gap: 10px; }
-.meen-bar .who { width: 92px; flex: 0 0 auto; font-weight: 800; font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.meen-bar .track { flex: 1; height: 30px; border-radius: 10px; background: var(--surface); border: 1px solid var(--stroke); box-shadow: var(--shadow-row); overflow: hidden; }
-.meen-bar .fill { display: block; height: 100%; width: 100%; border-radius: 9px; background: var(--bar-color); transform: scaleX(var(--w-frac, 0)); transform-origin: calc(50% - var(--flow, -1) * 50%) 50%; animation: ui-grow-x .7s var(--ease-out) both; animation-delay: var(--delay, 0ms); }
-.meen-bar b { width: 26px; text-align: center; font-variant-numeric: tabular-nums; }
-/* الفائزون: الوجوه تهبط بالتتابع ثم تقفز معًا؛ الاسم يرتفع والنقطة تنبثق */
-.meen-winner { display: grid; justify-items: center; gap: 10px; text-align: center; padding: 14px; }
-.meen-winner .faces { display: flex; gap: 8px; }
-.meen-winner .faces > .clay-stage { width: 78px; height: 78px; --contact-inset: 16%; }
-.meen-winner .faces > .clay-stage > .clay-lift { animation: clay-drop .6s var(--ease-spring) calc(var(--i, 0) * 120ms) both, clay-jump .6s var(--ease-out) .9s both; }
-.meen-winner .faces > .clay-stage::after { animation: clay-shadow-land .6s var(--ease-spring) calc(var(--i, 0) * 120ms) both, clay-shadow-react .6s ease-out .9s both; }
-.meen-winner h2 { font-size: clamp(24px, 6.5vw, 32px); font-weight: 900; animation: ui-lift-in .4s var(--ease-out) .25s both; }
-.meen-winner .point { animation: ui-pop-in .4s var(--ease-spring) .7s both; }
-.meen-titles { display: grid; gap: 6px; }
-.meen-titles div { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 14px; background: var(--top-light), var(--surface); border: 1px solid var(--stroke); box-shadow: var(--shadow-row); animation: ui-row-in .35s var(--ease-out) both; animation-delay: calc(900ms + var(--i, 0) * 70ms); }
-.meen-titles .grow { flex: 1; min-width: 0; }
-.meen-titles small { color: var(--game-accent); font-weight: 800; font-size:14px; display: block; }
-/* المقدمة: الرسم على حامل يهبط ويطفو، والنصوص تدخل متدرّجة */
-.meen-intro { display: grid; justify-items: center; gap: 12px; text-align: center; padding: 20px 12px; }
-.meen-intro .big { font-size: 70px; --contact-inset: 18%; }
-.meen-intro > :not(.big) { animation: ui-lift-in .4s var(--ease-out) both; }
-.meen-intro > :nth-child(2) { animation-delay: 150ms; }
-.meen-intro > :nth-child(3) { animation-delay: 220ms; }
-.meen-intro > :nth-child(4) { animation-delay: 300ms; }
-.meen-intro > :nth-child(n + 5) { animation-delay: 360ms; }
+:is(.meenfina, .meen-setup, .online-meenfina) {
+  --game-accent: #08796d;
+  color: #352139;
+}
 
-.meen-vote-hint { text-align: center; color: var(--muted); font-size: 14px; line-height: 1.7; margin: 0; }
+.meenfina { display: grid; align-content: start; gap: 12px; }
 
-.game-frame:has(.meenfina,.meen-setup) > .game-bar { background: linear-gradient(105deg,#392446,#462b56); }
-.game-frame:has(.meenfina,.meen-setup) > .game-bar .title { color: #fff8ec; }
-.meen-setup .card:not(.resume-card) { border-color: #e4d6c4; background: transparent; box-shadow: none; }
-.meenfina .meen-statement { padding: 17px 12px; border-radius: 18px; border-color: #e5d2bb; background: #f8ebd9; color: #32194b; box-shadow: none; animation-duration: .18s; }
-.meen-phase-heading { font-size: clamp(26px, 8vw, 37px); font-weight: 900; color: #39194e; text-align: center; }
-.meen-round-pill { margin-inline: auto; width: fit-content; padding: 4px 15px; border-radius: 999px; background: #ebd6f4; color: #3d2051; font-weight: 800; }
-.meen-intro { padding: 8px 0; }
-.meen-intro-guide { display: grid; width: 100%; justify-items: center; gap: 8px; padding: 14px 11px; border-radius: 16px; background: #f8ebd9; color: #502f60; }
-.meen-intro-guide .clay-art { width: 70px; height: 70px; }
-.meen-intro-guide strong { font-size: 22px; color: #36194f; }
-.meen-intro-guide p { font-size: 14px; }
-.meen-intro .scoreboard { width: 100%; }
-.meen-count { grid-template-rows: none; align-content: center; background: #fbf3e7; }
+.game-frame[data-creator-game="meenfina"] .game-body > div:has(> .meenfina) {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.game-frame[data-creator-game="meenfina"] .game-body .screen.meenfina {
+  flex: 1;
+  min-height: 0;
+}
+
+:is(.meenfina, .meen-setup, .online-meenfina) :is(h1, h2, h3, p) { margin: 0; }
+
+:is(.meenfina, .meen-setup, .online-meenfina) .stack { gap: 10px; }
+
+.meen-setup-art, .meen-count-art {
+  width: min(55%, 208px);
+  height: clamp(100px, 37vw, 158px);
+  margin-inline: auto;
+  border-radius: 50% 50% 42% 42%;
+  background: radial-gradient(ellipse at 50% 79%, #eee1f5 0 46%, transparent 47%);
+}
+
+.meen-count .meen-count-art {
+  width: min(100%, 350px);
+  height: clamp(170px, 32dvh, 290px);
+  aspect-ratio: auto;
+}
+.meen-count .meen-count-art > img { object-fit: contain; }
+@media (orientation: portrait) {
+  .meenfina:has(.meen-count) { align-content: stretch; }
+  .meen-count { align-content: space-evenly; }
+  .meenfina:has(> .meen-pick-stage) { align-content: stretch; }
+  .meenfina > .meen-pick-stage { display: flex; flex-direction: column; }
+  .meen-pick-stage > [data-design-id="submit"] { margin-block-start: auto; }
+}
+
+.meen-setup-options .field {
+  background: #eee3f5;
+  border-radius: 19px;
+  padding: 7px;
+  gap: 6px;
+  text-align: center;
+}
+.meen-setup-options .field > span { color: #352139; font-size: 1rem; }
+.meen-setup-options .segment button { min-height: 50px; white-space: normal; }
+.meen-setup-options .segment button.selected { color: #fff; background: #08796d; }
+
+.meen-count, .meen-intro { display: grid; gap: 14px; text-align: center; }
+@container choice-game (max-width: 14rem) {
+  .meen-count { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 6px; }
+  .meen-count > * { grid-column: 1 / -1; }
+  .meen-count .meen-count-art { grid-area: 4 / 1; align-self: center; width: 100%; height: 56px; }
+  .meen-count .meen-count-num { grid-area: 4 / 2; }
+  .meen-count .meen-count-beads span { width: clamp(48px, 14vw, 64px); }
+  .meen-count :is(.meen-section-title, .meen-round-pill, .meen-info-note) { padding-block: 4px; }
+}
+.meen-count-num { display: grid; place-items: center; }
 .meen-count-beads { display: flex; gap: 12px; align-items: center; justify-content: center; }
-.meen-count-beads span { display: grid; place-items: center; width: clamp(42px,13vw,64px); aspect-ratio: 1; border-radius: 50%; background: #e9d7f2; color: #56366b; font-size: clamp(21px,6vw,34px); font-weight: 900; }
-.meen-count-beads .current { background: #723897; color: #fff; }
-.meen-count .go { color: #381b4f; font-size: 39px; }
-.meen-info-note { display: flex; align-items: center; justify-content: center; gap: 6px; text-align: center; padding: 8px 9px; border-radius: 12px; color: #43285b; background: #e4efe6; font-size: 14px; }
-.meen-info-note svg { width: 17px; height: 17px; flex: none; }
-.meenfina .meen-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
-.meenfina .meen-pick { min-width: 0; gap: 4px; padding: 8px 4px; border-radius: 14px; background: #fff9ef; box-shadow: none; animation: none; overflow-wrap: anywhere; }
-.meenfina .meen-pick .clay-avatar { width: clamp(40px,13vw,68px); height: clamp(40px,13vw,68px); }
-.meenfina .meen-pick.selected { background: #ecd2f4; border-color: #8b47b4; box-shadow: inset 0 0 0 1px #8b47b4; }
-.meen-pick-mark { display: grid; place-items: center; width: 18px; height: 18px; border: 1.5px solid #5c4371; border-radius: 5px; color: #fff; }
-.meen-pick-mark svg { width: 13px; height: 13px; }
-.meen-pick.selected .meen-pick-mark { border-color: #723897; background: #723897; }
-.meenfina .meen-bars { gap: 0; overflow: hidden; border-radius: 13px; border: 1px solid #e4d4c1; }
-.meenfina .meen-bar { padding: 6px 9px; background: #fcf5e9; }
-.meenfina .meen-bar + .meen-bar { border-top: 1px solid #eadfcd; }
-.meenfina .meen-bar.is-winner { background: #fff0c6; }
-.meenfina .meen-bar .who { width: clamp(85px,31%,124px); }
-.meenfina .meen-bar .track { height: 12px; border: 0; background: #e6dfe0; box-shadow: none; }
-.meenfina .meen-bar .fill { background: #8d49b0; }
-.meen-result-ribbon { padding: 7px 11px; border-radius: 12px; background: #f5e5b9; color: #563b22; text-align: center; font-weight: 800; }
-.meen-result-title { color: #4a2a5e; font-size: 15px; font-weight: 850; }
-.meen-score-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.meen-score-chips span { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 12px; background: #eee7ea; color: #493157; overflow-wrap: anywhere; }
-.meen-score-chips .is-winner { background: #f9e2a0; color: #503315; }
-.meenfina .meen-titles div { animation: none; box-shadow: none; }
-@media (max-width: 345px) { .meenfina .meen-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
-/* Playful Studio: selected players retain their identity and vote counts. */
-.meenfina { --game-accent: #08796D; }
-.game-frame:has(.meenfina,.meen-setup) > .game-bar { background: #FFF8F0; }
-.game-frame:has(.meenfina,.meen-setup) > .game-bar .title { color: #352139; }
-.meenfina .meen-statement { border-radius: 24px; border-color: #D8CAD9; background: #EEE3F5; color: #352139; padding: 20px 16px; }
-.meenfina .meen-intro-guide { background: #FFFDF9; border: 1px solid #DFD1DC; border-radius: 24px; color: #352139; padding: 16px; }
-.meenfina .meen-pick { border-radius: 20px; background: #FFFDF9; border-color: #DFD1DC; gap: 8px; padding: 12px 8px; }
-.meenfina .meen-pick.selected { background: #DDF2EA; border-color: #08796D; box-shadow: inset 0 0 0 1px #08796D; }
-.meenfina .meen-pick.selected .meen-pick-mark { background: #08796D; border-color: #08796D; }
-.meenfina .meen-count { background: #FFF8F0; }
-.meenfina .meen-count-beads span { background: #EEE3F5; color: #352139; }
-.meenfina .meen-count-beads .current { background: #08796D; color: #FFF; }
-.meenfina .meen-bars { border-radius: 20px; border-color: #DFD1DC; }
-.meenfina .meen-bar { background: #FFFDF9; padding: 10px 12px; }
-.meenfina .meen-bar .fill { background: #76518D; }
-.meenfina .meen-bar.is-winner { background: #DDF2EA; }
+.meen-count-beads span {
+  display: grid; place-items: center;
+  width: clamp(48px, 20vw, 78px); aspect-ratio: 1;
+  border-radius: 50%; background: #eee3f5; color: #705f70;
+  font-size: clamp(1.8rem, 10vw, 3rem); font-weight: 800;
+  box-shadow: 0 2px 0 #d8bfdf;
+}
+.meen-count-beads .current, .meen-count .go { background: #08796d; color: #fff; }
+.meen-count .go { padding: 10px 22px; border-radius: 30px; font-size: 2rem; font-weight: 800; }
+
+.meen-phase-heading { font-size: 1.65rem; text-align: center; }
+.meen-section-title, .meen-info-note, .meen-vote-hint, .meen-round-pill, .meen-result-ribbon {
+  padding: 8px 12px;
+  border-radius: 18px;
+  background: #eee3f5;
+  color: #352139;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+:is(.meenfina, .online-meenfina) .meen-round-pill { justify-self: center; width: fit-content; margin-inline: auto; font-weight: 800; }
+.meen-section-title, .meen-result-ribbon { background: #cdece3; font-size: 1.25rem; font-weight: 800; line-height: 1.4; }
+.meen-info-note, .meen-vote-hint { font-size: .925rem; line-height: 1.45; }
+
+.meen-intro-guide, .meen-statement {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 9px;
+  padding: 16px 14px;
+  border: 1px solid #e8d5d4;
+  border-radius: 23px;
+  background: linear-gradient(145deg, #fffdf9, #fff2e9);
+  box-shadow: 0 2px 0 #ead8d5, 0 5px 15px #8b60731a;
+  text-align: center;
+}
+.meen-intro-guide .clay-art { width: min(65%, 170px); height: 138px; }
+.meen-intro-guide strong { font-size: 1.3rem; }
+.meen-intro .scoreboard { width: 100%; }
+.meen-statement { font-size: clamp(1.35rem, 6.3vw, 2rem); line-height: 1.4; text-wrap: balance; overflow-wrap: anywhere; }
+.meen-statement.is-leaving { animation: ui-fly-bad .3s var(--ease-snap) forwards; }
+.meen-statement.with-art { grid-template-columns: minmax(0, 1fr) minmax(64px, 35%); background: linear-gradient(145deg, #f6e9f7, #eedbf4); font-size: clamp(1.15rem, 5.6vw, 1.7rem); }
+.meen-statement .clay-art { width: 100%; height: 91px; }
+
+.meen-grid, .online-meenfina .online-vote-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, max(134px, 8em)), 1fr));
+  gap: 8px;
+}
+.meen-pick, .online-meenfina .meen-pick {
+  display: grid;
+  position: relative;
+  justify-items: center;
+  align-content: center;
+  gap: 2px;
+  min-width: 0;
+  min-height: 48px;
+  padding: 10px 6px;
+  border: 2px solid #e8d5d4;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #fffdf9, #fff2e9);
+  color: #352139;
+  box-shadow: 0 2px 0 #e8d5d4;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  animation: none;
+}
+.meen-pick b, .online-meenfina .meen-pick b {
+  max-width: 100%;
+  min-width: 66%;
+  padding: 1px 7px;
+  border-radius: 13px;
+  background: #eee3f5;
+  font-size: 1rem;
+  line-height: 1.4;
+  text-align: center;
+}
+.meen-pick.selected, .online-meenfina .meen-pick.selected {
+  background: #ddf2ea;
+  border-color: #08796d;
+  box-shadow: 0 2px 0 #08796d;
+}
+.meen-pick-mark {
+  position: absolute; inset-block-start: 3px; inset-inline-end: 4px;
+  display: grid; place-items: center;
+  width: 30px; height: 30px;
+  border: 2px solid #fffdf9; border-radius: 50%;
+  background: #08796d; color: white;
+}
+.meen-pick-mark svg { width: 16px; height: 16px; }
+.meen-pick .choice-portrait { max-width: 100%; flex: none; }
+.meen-pick:active:not(:disabled) { transform: var(--interaction-transform, translateY(1px)); }
+
+.meenfina .pass-screen {
+  position: relative;
+  inset: auto;
+  z-index: auto;
+  min-height: 0;
+  overflow: visible;
+  background: transparent;
+  padding: 0;
+  border: 0;
+}
+.meenfina .pass-panel {
+  grid-template-columns: minmax(0, 1fr);
+  align-content: space-between;
+  gap: 14px;
+  min-height: min(620px, calc(100dvh - 110px));
+  padding: 0 0 12px;
+  background: #fffdf9;
+  border: 1px solid #e8d5d4;
+  border-radius: 23px;
+  text-align: center;
+  box-shadow: 0 2px 0 #ead8d5;
+}
+.meenfina .pass-panel .pass-lock {
+  grid-row: auto;
+  width: 100%;
+  height: clamp(125px, 40vw, 170px);
+  margin: 0;
+  background: var(--meen-lock) center / contain no-repeat, radial-gradient(ellipse at 50% 100%, #eee3f5 0 50%, transparent 51%);
+  border-radius: 22px 22px 0 0;
+}
+.meenfina .pass-panel .pass-lock svg { visibility: hidden; }
+.meenfina .pass-panel .pass-title { margin-inline: 12px; background: transparent; padding: 0; color: #352139; font-size: clamp(1.35rem, 7vw, 2rem); }
+.meenfina .pass-panel .pass-avatar { display: grid; width: 178px; height: 178px; order: 0; }
+.meenfina .pass-panel .pass-avatar .clay-avatar { width: 178px; height: 178px; background-color: #eee3f5; border-radius: 50%; }
+.meenfina .pass-panel .pass-hint { order: 1; padding-inline: 14px; color: #352139; font-size: .95rem; }
+.meenfina .pass-panel .btn { order: 2; width: calc(100% - 24px); }
+
+.meen-bars, .meen-titles { display: grid; gap: 6px; }
+.meen-bar, .meen-titles > div {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(24px, 1fr) auto;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 9px;
+  border: 1px solid #ead8d5;
+  border-radius: 16px;
+  background: #fffdf9;
+  box-shadow: 0 1px 0 #ead8d5;
+}
+.meen-bar.is-winner { background: #e7f5ef; }
+.meen-bar .who, .meen-titles b { min-width: 0; font-weight: 800; overflow-wrap: anywhere; }
+.meen-bar .track { height: 15px; border-radius: 999px; background: #eee3f5; overflow: hidden; }
+.meen-bar .fill { display: block; height: 100%; border-radius: inherit; background: #08796d; }
+.meen-bar > b { min-width: 22px; font-variant-numeric: tabular-nums; text-align: center; }
+.meen-totals { background: #eee3f5; border-radius: 19px; padding: 7px; text-align: center; }
+.meen-result-title { margin: 0 0 5px; font-size: .95rem; font-weight: 800; }
+.meen-score-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.meen-score-chips div { flex: 1 1 max(58px, 4.75em); min-width: 0; padding: 5px 3px; display: grid; border-radius: 12px; background: #fffdf9; overflow-wrap: anywhere; }
+.meen-score-chips div b { font-size: .875rem; }
+.meen-score-chips strong { font-size: 1.05rem; }
+
+.meen-titles > div { grid-template-columns: auto minmax(32px, 1fr) auto minmax(75px, 1.45fr); }
+.meen-titles > div > span:last-child { padding: 4px 6px; border-radius: 10px; background: #eee3f5; text-align: center; font-weight: 700; overflow-wrap: anywhere; }
+.meen-titles .badge { color: #fff; background: #352139; justify-content: center; }
+[data-design-screen="online.meenfina.over"] .meen-titles > div {
+  grid-template-columns: auto minmax(min-content,1fr) auto minmax(75px,1.45fr);
+  container-type: inline-size;
+}
+[data-design-screen="online.meenfina.over"] .meen-titles b { max-inline-size: 40cqi; overflow-wrap: break-word; }
+
+.online-meenfina-header { padding: 6px 9px; border-radius: 16px; background: #eee3f5; color: #352139; flex-wrap: wrap; }
+.online-meenfina { gap: 8px; }
+.online-meenfina .meen-statement.with-art {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2px; padding: 7px 12px 3px;
+  background: #fff4ed;
+  font-size: clamp(1.55rem, calc(1rem + 3.4vw), 2.1rem);
+  line-height: 1.24;
+}
+.online-meenfina .meen-statement strong { max-width: 17ch; }
+.online-meenfina .meen-statement strong:dir(ltr) { max-width: 100%; }
+.online-meenfina .meen-statement .clay-art { width: min(60%,154px); height: 110px; }
+.online-meenfina .meen-statement .clay-art img { object-fit: cover; }
+.online-meenfina .meen-pick { min-height: 104px; padding-block: 1px; }
+.online-meenfina .meen-info-note { padding-block: 5px; line-height: 1.3; }
+.online-meenfina .meen-vote-panel { gap: 6px; border: 0; background: transparent; padding: 0; box-shadow: none; }
+.online-meenfina [data-design-id="abstain"][aria-pressed="true"] { --btn-bg: #ddf2ea; --btn-border: #08796d; }
+.online-meenfina .meen-abstain-mark { inset-block-start: 50%; inset-inline: 12px auto; transform: translateY(-50%); }
+.online-meenfina .meen-abstain-mark:not(.selected) { background: transparent; border-color: #aa93a5; }
+.online-meenfina .online-footnote { text-align: center; }
+.online-meenfina .meen-winner-title { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; }
+.online-meenfina .meen-bar { container-type: inline-size; grid-template-columns: auto minmax(min-content,1fr) minmax(24px,1fr) auto; }
+.online-meenfina .meen-bar .who { max-inline-size: 40cqi; overflow-wrap: break-word; }
+.online-meenfina .meen-bar .meen-bar-tally { display: grid; justify-items: end; font-weight: 800; }
+.online-meenfina .meen-bar .meen-bar-tally small { color: #08796d; }
+
+@media (min-width: 510px) {
+  .meen-grid, .online-meenfina .online-vote-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, max(141px, 8em)), 1fr)); }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .meen-count .meen-count-art { height: 105px; }
+  .meenfina .pass-panel { min-height: 0; }
+  .meenfina .pass-panel .pass-lock { height: 90px; }
+  .meenfina .pass-panel .pass-avatar, .meenfina .pass-panel .pass-avatar .clay-avatar { width: 92px; height: 92px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .meen-statement.is-leaving { animation: none; }
+  .meen-pick:active:not(:disabled) { transform: none; }
+}

@@ -14,6 +14,11 @@ import { gameEntryPolicyState, localEntryRecovery } from '../game-entry.mjs';
 import { getGameModeSupport } from '../../shared/game-mode-support.mjs';
 import { GameModeSheet } from './Home.jsx';
 import homeStyles from './home-rebuild.css';
+import entryStyles from '../../shared/account/rewarded-entry.css';
+import { MenuGameIcon } from '../MenuGameIcon.jsx';
+import { getPlayfulSceneArt } from '../../shared/brand/playful-scenes.js';
+import { useI18n } from '../../shared/i18n/react.jsx';
+import { gameName } from '../../shared/i18n/core.js';
 
 const readyAccess = new Set(['plus', 'trial', 'ticket']);
 const visible = () => typeof document === 'undefined' || !document.hidden;
@@ -29,6 +34,7 @@ export function GameEntry({ id }) {
 }
 
 function Entry({ id, account, policy, unusedGuestTrial }) {
+  const { locale } = useI18n();
   const game = getGame(id), offer = gameplayEntryOffer(id);
   const { sound, haptics } = usePlatform();
   const [selecting, setSelecting] = useState(false);
@@ -104,20 +110,21 @@ function Entry({ id, account, policy, unusedGuestTrial }) {
       }
     }
   };
-  return <Screen data-design-screen="game.entry" data-maydan-game-entry={id} dir={getDirection()} className="stack game-entry-screen" aria-label={tr("دخول {v0}", {v0: game?.name || tr("اللعبة")})}>
-    <style>{homeStyles}</style>
-    <TopBar title={game?.name || tr("اللعبة غير متاحة")} start={<IconButton label={tr("رجوع")} onClick={back} disabled={busy}><IconBack /></IconButton>} />
+  const joinAction = getGameModeSupport(id)?.online ? <Button data-design-id="join-room" className="game-entry-join" variant="ghost" full disabled={busy} onClick={() => navigate(`/online/${id}?mode=online&joinOnly=1`)}>{tr("انضم إلى غرفة")}</Button> : null;
+  return <Screen data-design-screen="game.entry" data-maydan-game-entry={id} dir={getDirection()} className="stack game-entry-screen" aria-label={tr("دخول {v0}", {v0: game ? gameName(game, locale) : tr("اللعبة")})}>
+    <style>{homeStyles}{entryStyles}</style>
+    <TopBar data-design-id="topbar" title={game ? tr("دخول {v0}", {v0:gameName(game,locale)}) : tr("اللعبة غير متاحة")} start={<IconButton data-design-id="back" label={tr("رجوع")} onClick={back} disabled={busy}><IconBack /></IconButton>} />
     {!game || !offer ? <p role="status">{tr("هذه اللعبة غير متاحة.")}</p> : <>
-      {recovery && <section className="game-entry-recovery" aria-label={tr("متابعة المباراة المحلية")}>
+      {recovery && <section data-design-id="local-recovery" className="game-entry-recovery" aria-label={tr("متابعة المباراة المحلية")}>
+        <div className="game-entry-recovery-art" aria-hidden="true"><img src={getPlayfulSceneArt('resume',128)} width="128" height="128" alt=""/><MenuGameIcon id={game.id}/></div>
         <strong>{recovery.kind === 'active' ? tr("مباراتك المحفوظة جاهزة للمتابعة") : tr("لديك بداية مباراة قيد الاستعادة")}</strong>
         <p>{recovery.kind === 'active' ? tr("تابع نفس المباراة من دون تذكرة جديدة، حتى دون اتصال.") : tr("ارجع إلى نفس إعداد المباراة للتحقّق من بدايتها، دون طلب إعلان جديد.")}</p>
-        <Button variant="ghost" disabled={busy} onClick={() => navigate(recovery.path)}>{tr("متابعة المباراة المحلية")}</Button>
+        <Button data-design-id="resume-local" variant="primary" full disabled={busy} onClick={() => navigate(recovery.path)}>{tr("متابعة المباراة المحلية")}</Button>
       </section>}
-      {policy === 'pending' || !account.ready || account.signedIn && !account.user?.id ? <p role="status">{tr("جارٍ التحقق من أهلية المباراة…")}</p> :
-        <RewardedOffer key={`${generation}:${desiredMode || 'entry'}`} offer={offer.id} surface="game-entry" requiredMode={desiredMode} onAccess={onAccess} onBusy={onBusy}
+      {policy === 'pending' || !account.ready || account.signedIn && !account.user?.id ? <><p role="status">{tr("جارٍ التحقق من أهلية المباراة…")}</p>{joinAction}</> :
+        <RewardedOffer key={`${generation}:${desiredMode || 'entry'}`} offer={offer.id} surface="game-entry" compact={Boolean(recovery)} joinAction={joinAction} requiredMode={desiredMode} onAccess={onAccess} onBusy={onBusy}
           onReady={() => { if (maySelect && !busy && visible()) setSelecting(true); }}
           onFree={() => navigate('/')} canPresent={() => !picker} />}
-      {getGameModeSupport(id)?.online && <Button variant="ghost" disabled={busy} onClick={() => navigate(`/online/${id}?mode=online&joinOnly=1`)}>{tr("انضم إلى غرفة")}</Button>}
       <GameModeSheet game={picker ? game : null} disabled={busy} onClose={() => navigate('/')} onSelect={select} />
     </>}
   </Screen>;

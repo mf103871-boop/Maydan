@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { NULL_ACCOUNT, useAccount } from '../account/context.js';
 import { request, resolveAccountServer } from '../account/api.js';
 import { useI18n } from '../i18n/react.jsx';
@@ -10,7 +10,7 @@ import { readLocalTermsAcceptance, saveLocalTermsAcceptance, getGuestTermsReceip
 
 // Management and safety remain reachable without accepting service terms.
 const MANAGEMENT = new Set(['terms','privacy','settings','about','auth','moderation','friends','friend-group','profile']);
-export function TermsBoundary({ route, children }) {
+export function TermsBoundary({ route, children, onDestinationReady }) {
   const account = useAccount();
   const {ready,signedIn,requestAuthenticated}=account;
   const isolated=account===NULL_ACCOUNT;
@@ -18,6 +18,7 @@ export function TermsBoundary({ route, children }) {
   const platform=usePlatform();
   const owner = account.signedIn ? account.user?.id || 'auth-pending' : 'guest';
   const ownerRef = useRef(owner); ownerRef.current = owner;
+  const reconnecting = useRef(false);
   const requestId = useRef(0);
   const [local, setLocal] = useState(readLocalTermsAcceptance);
   const [state, setState] = useState({owner:null,loading:false,accepted:false,error:null});
@@ -39,14 +40,14 @@ export function TermsBoundary({ route, children }) {
       setState({owner,loading:true,accepted:false,error:null});
       request('/api/legal/accept',{method:'POST',body:localTermsAcceptPayload(local),server:base})
         .then(result => { if(owns()) { saveGuestTermsReceipt(base,result); setState({owner,loading:false,accepted:!!getGuestTermsReceipt(base),error:null}); } })
-        .catch(error => { if(owns()) setState({owner,loading:false,accepted:false,error:error.code||'network'}); });
+        .catch(error => { if(owns()) setState({owner,loading:false,accepted:false,error:{code:error.code||'network',phase:'connection'}}); });
       return () => { disposed=true; };
     }
     if (verifiedCached) { setState({owner,loading:false,accepted:true,error:null}); return undefined; }
     setState({owner,loading:true,accepted:false,error:null});
     requestAuthenticated('/api/legal/status')
       .then(result => { if(owns()) setState({owner,loading:false,accepted:result?.required===false && isCurrentTermsAcceptance(result?.acceptance),error:null}); })
-      .catch(() => { if(owns()) setState({owner,loading:false,accepted:false,error:'network'}); });
+      .catch(() => { if(owns()) setState({owner,loading:false,accepted:false,error:{code:'network',phase:'connection'}}); });
     return () => { disposed=true; };
   },[ready,signedIn,requestAuthenticated,owner,verifiedCached,online,local,base,attempt,isolated]);
   const accept = async payload => {
@@ -77,14 +78,41 @@ export function TermsBoundary({ route, children }) {
         setState({owner,loading:false,accepted:true,error:null});
       }
     } catch (error) {
-      if (ownerRef.current===claimedOwner && requestId.current===current) setState({owner,loading:false,accepted:false,error:error.code||'network'});
+      if (ownerRef.current===claimedOwner && requestId.current===current) setState({owner,loading:false,accepted:false,error:{code:error.code||'network',phase:'save'}});
     }
   };
+  const ownsState = state.owner === owner;
+  // A restored session can be offline before its profile has ever been
+  // cached. Account initialization has finished in that case. Offer the
+  // existing connection recovery without authorizing consent for an unknown user.
+  const identityUnavailable = ready && owner === 'auth-pending';
+  const pending = !identityUnavailable && (!ready || !ownsState || state.loading);
+  const destinationReady = isolated || management || !pending;
+  useLayoutEffect(() => {
+    if (destinationReady) return onDestinationReady?.();
+  }, [destinationReady, onDestinationReady, route.path, owner, state.accepted]);
   if (account===NULL_ACCOUNT || management) return children;
-  if (state.owner===owner && state.accepted && (!online || account.signedIn || getGuestTermsReceipt(base))) return children;
-  const en=locale==='en';
-  return <><TermsConsent key={owner} locale={locale} pending={!account.ready || state.loading || owner==='auth-pending'}
-    error={state.error ? state.error==='TERMS_VERSION_CHANGED' ? en ? 'The terms have changed. Update Maydan and review the current version before playing.' : 'تغيّرت الشروط. حدّث ميدان واقرأ النسخة الحالية قبل اللعب.' : en ? 'Could not confirm acceptance. Check your connection and try again.' : 'تعذّر تأكيد الموافقة. تحقق من الاتصال وأعد المحاولة.' : null}
-    onAccept={accept} onBack={() => navigate('/settings')} onReadTerms={() => navigate('/terms')} onReadPrivacy={() => navigate('/privacy')} />
-    {state.error && <div style={{padding:20,textAlign:'center'}}><button className="btn" type="button" onClick={() => setAttempt(n=>n+1)}>{en?'Retry connection':'إعادة الاتصال'}</button></div>}</>;
+  if (ownsState && state.accepted && (!online || account.signedIn || getGuestTermsReceipt(base))) return children;
+  const en = locale === 'en';
+  const failure = ownsState ? state.error : null;
+  const changedVersion = failure?.code === 'TERMS_VERSION_CHANGED';
+  const retryConnection = identityUnavailable || failure?.phase === 'connection';
+  const reconnect = async () => {
+    if (!identityUnavailable) { setAttempt(n => n + 1); return; }
+    if (reconnecting.current) return;
+    reconnecting.current = true;
+    try { await account.refresh(); } finally { reconnecting.current = false; }
+  };
+  let error = '';
+  if (changedVersion) {
+    error = en ? 'The terms have changed. Update Maydan and review the current version before playing.' : 'تغيّرت الشروط. حدّث ميدان واقرأ النسخة الحالية قبل اللعب.';
+  } else if (identityUnavailable) {
+    error = en ? 'Could not load your account. Check your connection and try again.' : 'تعذّر تحميل حسابك. تحقّق من الاتصال وأعد المحاولة.';
+  } else if (retryConnection) {
+    error = en ? 'Could not confirm acceptance. Check your connection and try again.' : 'تعذّر تأكيد الموافقة. تحقق من الاتصال وأعد المحاولة.';
+  }
+  return <TermsConsent key={owner} locale={locale} pending={pending}
+    error={error} saveFailed={failure?.phase === 'save' && !changedVersion}
+    onRetryConnection={retryConnection ? reconnect : undefined}
+    onAccept={identityUnavailable ? undefined : accept} onBack={() => navigate('/settings')} onReadTerms={() => navigate('/terms')} onReadPrivacy={() => navigate('/privacy')} />;
 }

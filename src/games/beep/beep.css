@@ -1,148 +1,78 @@
-/* «قبل ما يطق!» — أنماط اللعبة. تُحقن داخل الشاشة، وbrand.css (المحقون آخرًا) يملك ألوان القرص .beep-bomb وشاشة الانفجار.
-   align-content: start ضروري: الشاشة min-height 100dvh وصفوف grid كانت تتمدد لملء الفراغ فتطول الرقائق وأزرار الحكم. */
-.beep { --game-accent: #8650B5; display: grid; gap: 14px; align-content: start; }
-
-/* ── صف الدور: مسطّح بحافة صفّ، يدخل من الجانب مع كل دور (key=turn)؛ الرسم على حامل بظل تلامس بلون اللاعب ── */
-.beep-turn { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 18px; background: var(--top-light), color-mix(in srgb, var(--p-color) 18%, var(--surface)); border: 1px solid color-mix(in srgb, var(--p-color) 50%, transparent); box-shadow: var(--shadow-row); animation: ui-row-in .3s var(--ease-out) both; }
-.beep-turn .avatar { width: 52px; height: 52px; --contact-inset: 16%; --contact-y: -6%; }
-.beep-turn b { font-size: 20px; }
-.beep-turn small { display: block; color: var(--muted); font-size:14px; }
-
-/* ── بطاقة الطلب: تنقلب من الأعلى عند كل طلب جديد (key=prompt.id)؛ عند انتهاء الوقت تُنكز ── */
-.beep-prompt { min-height: 150px; display: grid; place-items: center; text-align: center; padding: 22px 18px; border-radius: 24px; background: var(--top-light), linear-gradient(160deg, color-mix(in srgb, var(--game-accent) 16%, var(--surface)), var(--surface) 70%); border: 1px solid color-mix(in srgb, var(--game-accent) 40%, var(--stroke)); box-shadow: var(--shadow-lift-1); color: var(--plum); font-size: clamp(24px, 6.5vw, 34px); font-weight: 900; line-height: 1.4; text-wrap: balance; transform-origin: 50% 0; animation: ui-flip-in .45s var(--ease-out) both; }
-.beep-prompt.is-timeout { animation: ui-nudge .4s ease-out both; }
-.beep-prompt small { display: block; font-size:14px; color: var(--muted); font-weight: 700; margin-top: 8px; }
-.screen.beep > .timer:not(:has(.timer-resume)) { animation: ui-pop-in .4s var(--ease-spring) .12s both; }
-
-/* ── التمهيد: الرسم يهبط ويطفو (clay-stage clay-idle)، ثم النصوص والزر بتدرّج، والزر مسلّح ── */
-.beep-intro { display: grid; justify-items: center; gap: 14px; text-align: center; padding: 28px 12px; }
-.beep-intro.is-after-bad { animation: ui-lift-in .36s var(--ease-out) both, ui-nudge .4s ease-out .3s; }
-.beep-intro .big { --contact-inset: 16%; --contact-y: -3%; }
-/* بعد حكم «صح»: هبوط ثم قفزة ثم الطفو المعتاد (الصنف من verdict في JSX؛ لا يستعمل .clay-jump كي لا يلغي الهبوط والطفو) */
-.beep-intro .big.is-after-ok > .clay-lift { animation: clay-drop .7s var(--ease-spring) both, clay-jump .6s var(--ease-out) .75s both, clay-float 3.4s ease-in-out 1.5s infinite; }
-.beep-intro .big.is-after-ok::after { animation: clay-shadow-land .7s var(--ease-spring) both, clay-shadow-react .6s ease-out .75s both, clay-shadow-breathe 3.4s ease-in-out 1.5s infinite; }
-.beep-intro h2 { font-size: clamp(26px, 7vw, 36px); font-weight: 900; animation: ui-lift-in .35s var(--ease-out) .15s both; }
-.beep-intro p { animation: ui-lift-in .35s var(--ease-out) .22s both; }
-.beep-intro .btn { animation: ui-lift-in .35s var(--ease-out) .3s both; }
-.beep-intro .btn.is-armed:not(:disabled) { animation: ui-lift-in .35s var(--ease-out) .3s both, ui-breathe 1.8s ease-in-out .9s 3; }
-
-/* ── رقائق اللاعبين: تدخل بتدرّج (--i من JSX، سقفه 9)، رقاقة الدور تنبض، المُقصى يبهت ويصغر ── */
-.beep-players { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; justify-content: center; }
-.beep-chip { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px; background: var(--top-light), var(--surface); border: 1px solid var(--stroke); box-shadow: var(--shadow-row); font-size:14px; font-weight: 800; transition: opacity .4s ease, transform .4s var(--ease-out), background-color .2s ease, border-color .2s ease; animation: ui-lift-in .3s var(--ease-out) both; animation-delay: calc(var(--i, 0) * 40ms); }
-.beep-chip.is-out { opacity: .4; text-decoration: line-through; transform: scale(.94); }
-.beep-chip.is-turn { border-color: var(--game-accent); background: var(--top-light), color-mix(in srgb, var(--game-accent) 18%, var(--surface)); animation: ui-lift-in .3s var(--ease-out) calc(var(--i, 0) * 40ms) both, ui-pop-select .32s var(--ease-spring) calc(var(--i, 0) * 40ms + .3s); }
-.beep-chip.is-bumped { animation: ui-lift-in .3s var(--ease-out) calc(var(--i, 0) * 40ms) both, ui-bounce .4s var(--ease-spring) calc(var(--i, 0) * 40ms + .3s); }
-.beep-chip b { display: inline-block; min-width: 1.1em; text-align: center; animation: ui-punch .35s var(--ease-spring) calc(var(--i, 0) * 40ms + .3s); }
-.beep-lives { display: flex; gap: 4px; font-size: 16px; }
-.beep-lives span { display: inline-block; }
-.beep-lives .is-broken { animation: heart-break .5s var(--ease-spring) .4s both; }
-.beep-lives .is-lost { opacity: .7; }
-@keyframes heart-break { 0%, 100% { transform: none; } 50% { transform: scale(1.4) rotate(20deg); } }
-
-/* القنبلة تنبض بإيقاع ثابت طوال الفتيل المخفي، دون علامة مرتبطة بالوقت المتبقي. */
-.beep-bomb { --contact-inset: 24%; --contact-y: 14px; --contact-h: 12px; animation: beep-tick 1s ease-in-out infinite; }
-.beep-bomb > .clay-lift { position: relative; z-index: 1; }
-@keyframes beep-tick { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-
-/* ── الانفجار: الجذر ثابت بلا حركة (ui.css يستثنيه)؛ الاهتزاز على .inner، الوميض الأبيض من flashScreen، والمحتوى يرتفع بتدرّج ── */
-.beep-boom { position: fixed; inset: 0; z-index: 330; display: grid; place-items: center; text-align: center; padding: 24px; background: radial-gradient(circle, #FFD3AB, #FBE5E0); }
-.beep-boom .inner { display: grid; gap: 10px; justify-items: center; animation: flash-bad .6s ease-out both; }
-.beep-boom .big { position: relative; line-height: 1; --contact-inset: 18%; --contact-y: -2%; }
-.beep-boom .big .clay-art { width: 150px; height: 150px; }
-.beep-boom .big::before { content: ""; position: absolute; z-index: -2; inset: -30%; border-radius: 50%; background: radial-gradient(circle, #FFE08A, #FF8A5B 40%, #FF8A5B00 70%); animation: beep-burst .55s var(--ease-out) both; }
-@keyframes beep-burst { 0% { opacity: 0; transform: scale(.2); } 60% { opacity: 1; transform: scale(1.1); } 100% { opacity: .9; transform: scale(1); } }
-.beep-boom .big > .clay-lift { animation: clay-drop .5s var(--ease-spring) both; }
-.beep-boom h2 { font-size: clamp(28px, 8vw, 40px); font-weight: 900; color: var(--plum); animation: ui-lift-in .35s var(--ease-out) .2s both; }
-.beep-boom p { color: var(--plum); font-weight: 700; animation: ui-lift-in .35s var(--ease-out) .28s both; }
-.beep-boom .beep-lives { font-size: 30px; gap: 8px; animation: ui-lift-in .35s var(--ease-out) .36s both; }
-.beep-boom .btn { animation: ui-lift-in .35s var(--ease-out) .44s both; }
-
-/* ── الحكم ── */
-.beep-judge { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.beep-judge .btn { min-height: 92px; font-size: 22px; flex-direction: column; gap: 4px; }
-.beep-judge .btn span { font-size: 34px; }
-.beep-actions { display: grid; gap: 10px; }
-
-/* Timed requests are readable on their first frame; animation belongs to preparation.
-   Bomb appearance is constant throughout the hidden fuse. */
-.screen.beep > .beep-prompt.is-live { animation: none !important; transform: none; opacity: 1; }
-.screen.beep > .timer { animation: none !important; }
-.beep:has(.beep-bomb) { gap: 10px; }
-.beep:has(.beep-bomb) .beep-bomb { width: 96px; height: 96px; justify-self: center; }
-.beep:has(.beep-bomb) .beep-prompt { min-height: 120px; padding: 16px; }
-.beep:has(.beep-bomb) > [data-design-id=continue] { position: sticky; bottom: calc(10px + env(safe-area-inset-bottom, 0px)); z-index: 3; }
-@media (orientation: landscape) and (max-height: 520px) {
-  .beep:has(.beep-bomb) { grid-template-columns: minmax(110px,.45fr) minmax(0,1fr); align-items: center; }
-  .beep:has(.beep-bomb) .beep-turn, .beep:has(.beep-bomb) .beep-players { grid-column: 1 / -1; }
-  .beep:has(.beep-bomb) .beep-bomb { grid-column: 1; grid-row: 2; }
-  .beep:has(.beep-bomb) .beep-prompt { grid-column: 2; grid-row: 2; }
-  .beep:has(.beep-bomb) > [data-design-id=continue] { grid-column: 1 / -1; }
+.beep-setup-help { padding: 10px; border-radius: 16px; background: var(--party-lavender); text-align: center; }
+.beep .beep-intro, .beep .beep-boom { display: grid; gap: 10px; justify-items: center; text-align: center; }
+.beep-hero { width: min(100%,275px); height: 179px; display: grid; place-items: center; background: radial-gradient(ellipse at 50% 66%,#e4c7ee 0 56%,transparent 57%); }
+.beep .beep-hero .clay-avatar { width: 175px; height: 175px; border-radius: 50%; }
+.beep-hero.is-after-ok .clay-lift { animation: ui-pop-select .32s var(--ease-spring) both; }
+.beep-intro.is-after-bad { animation: ui-nudge .32s var(--ease-out) both; }
+.beep-hero-bell .clay-art, .beep-prompt-art .clay-art { width: 218px; height: 218px; margin-block: -20px; }
+.beep-prompt-art { width: min(100%,255px); height: 191px; display: grid; place-items: center; margin-inline: auto; }
+.beep :is(.beep-player-ribbon,.beep-round-label) { display: block; border-radius: 999px; background: var(--party-lavender); padding: 4px 18px; min-width: min(100%,150px); font-weight: 800; overflow-wrap: anywhere; }
+.beep-player-ribbon { font-size: 1.3rem; }
+.beep .beep-round-label { font-size: .9375rem; }
+.beep-instruction, .beep-prompt, .beep-boom-bell, .beep-victim { width: 100%; border: 1px solid var(--party-line); border-radius: 24px; background: var(--party-paper); box-shadow: var(--party-shadow); }
+.beep-instruction { padding: 9px 12px; text-align: center; }
+.beep-instruction strong { font-size: 1.25rem; }
+.beep-instruction p { font-size: .9375rem; line-height: 1.45; }
+.beep-rules { width: 100%; padding: 9px 14px; border-radius: 22px; background: var(--party-lavender); font-weight: 700; }
+.beep-turn { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 10px; }
+.beep-active-player { min-width: 0; display: flex; flex-wrap: wrap; justify-content: start; align-items: center; gap: 6px 8px; padding: 4px 9px; border-radius: 24px; background: var(--party-lavender); font-size: 1.15rem; }
+.beep .beep-active-player .clay-avatar { width: clamp(66px,22vw,92px); height: clamp(66px,22vw,92px); flex: none; border-radius: 50%; }
+.beep-turn-timed .beep-active-player { direction: ltr; }
+.beep-turn-bomb .beep-active-player { background: var(--party-mint); }
+.beep-turn-bomb, .beep-players.beep-roster-rows, .beep-victim { direction: ltr; }
+.beep-bomb { display: grid; place-items: center; width: min(29vw,112px); height: 90px; animation: party-beep-pulse 1s ease-in-out infinite; }
+.beep-bomb .clay-art { width: 100%; height: 100%; }
+@keyframes party-beep-pulse { 0%,100% { transform: none; } 50% { transform: scale(1.04); } }
+.beep .timer { flex: none; }
+.beep .timer-num { color: var(--party-ink); font-size: 1.65rem; }
+.beep .timer-sub { color: var(--party-ink); font-size: .8125rem; }
+.beep-prompt { min-height: 120px; padding: 12px 15px; display: grid; justify-items: center; align-content: center; gap: 8px; text-align: center; }
+.beep-prompt strong { font-size: clamp(1.55rem,8vw,2.25rem); line-height: 1.22; text-wrap: balance; }
+.beep-three-prompt .beep-prompt { min-height: min(230px,32svh); }
+.beep-prompt small { padding: 3px 14px; border-radius: 999px; background: var(--party-lavender); font-size: .9375rem; font-weight: 800; }
+.beep .beep-prompt-status { display: flex; justify-content: center; align-items: center; gap: 6px; max-width: 100%; width: fit-content; margin-inline: auto; padding: 5px 15px; border-radius: 999px; background: var(--party-mint); font-weight: 800; }
+.beep .beep-prompt-status.is-timeout { background: var(--party-coral); }
+.beep-prompt-status svg { width: 20px; height: 20px; flex: none; color: #08796d; }
+.beep-judgment { padding: 9px 12px; border-radius: 22px; background: var(--party-lavender); text-align: center; font-size: 1.3rem; font-weight: 800; line-height: 1.35; }
+.beep-judge { display: grid; grid-template-columns: minmax(0,1.3fr) minmax(0,1fr); gap: 8px; }
+.beep-judge .btn { min-height: 60px; font-size: 1.25rem; }
+.beep-score-panel { width: 100%; display: grid; gap: 5px; padding: 5px; border: 1px solid var(--party-line); border-radius: 18px; background: var(--party-paper); }
+.beep-score-panel h3 { font-size: .9375rem; }
+.beep-players { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 4px; }
+.beep-chip { min-width: 0; display: grid; justify-items: center; gap: 2px; padding: 3px; text-align: center; font-size: .875rem; font-weight: 800; border: 1px solid var(--party-line); border-radius: 14px; background: #fff8f0; overflow-wrap: anywhere; }
+.beep .beep-chip .clay-avatar { width: min(100%,55px); height: 55px; border-radius: 50%; }
+.beep-chip.is-turn { background: var(--party-mint); border-color: #a2d3c2; }
+.beep-chip.is-out { background: #f2eaf3; }
+.beep-chip.is-out .clay-avatar { filter: grayscale(.65); }
+.beep-chip.is-bumped b { animation: ui-punch .32s var(--ease-spring) both; }
+.beep-chip b { font-size: 1.125rem; }
+.beep-players.beep-roster-rows { grid-template-columns: minmax(0,1fr); }
+.beep-roster-rows .beep-chip { grid-template-columns: 40px minmax(0,1fr) auto; align-items: center; justify-items: start; gap: 8px; text-align: start; padding: 3px 9px; }
+.beep-roster-name { display: flex; align-items: center; flex-wrap: wrap; gap: 4px; min-width: 0; }
+.beep-roster-name small { padding: 2px 7px; border-radius: 999px; background: var(--party-coral); font-size: .8125rem; font-weight: 800; }
+.beep .beep-roster-rows .clay-avatar { width: 40px; height: 40px; }
+.beep-lives { display: flex; width: fit-content; gap: 3px; color: #b52d43; flex: none; }
+.beep-lives svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.7; }
+.beep-lives svg.is-live { fill: #ee6c60; }
+.beep-lives :is(.is-lost,.is-broken) { color: #5b3d60; }
+.beep-lives .is-broken { animation: ui-punch .4s var(--ease-spring) both; }
+.beep-boom-bell { padding: 4px 9px 9px; }
+.beep-victim { padding: 6px 12px; display: flex; align-items: center; gap: 12px; font-size: 1.15rem; text-align: start; }
+.beep-victim .clay-avatar { width: 66px; height: 66px; border-radius: 50%; flex: none; }
+.beep-victim .beep-lives { margin-block-start: 4px; }
+.beep-victim .beep-lives svg { width: 26px; height: 26px; }
+.beep-bomb-winner { display: grid; justify-items: center; text-align: center; }
+.beep-bomb-winner .beep-hero { position: relative; }
+.beep-laurel { position: absolute; top: 23%; left: 1%; width: min(18%, 48px); height: auto; fill: #f3aa16; pointer-events: none; }
+.beep-laurel.is-mirrored { left: auto; right: 1%; transform: scaleX(-1); }
+.beep-laurel-stem { fill: none; stroke: #e09a17; stroke-width: 1.5; stroke-linecap: round; }
+.beep-actions { display: grid; gap: 8px; }
+@media (max-width: 370px) {
+  .beep-turn .timer .ring { max-width: 92px; max-height: 92px; }
 }
-
-/* Bounded, readable phase layouts shared by the two variants. */
-.beep-setup .card:not(.resume-card) { background: transparent; box-shadow: none; border-color: #e6d7c4; }
-.beep-setup .segment { gap: 6px; }
-.beep-phase-heading { display: flex; align-items: center; justify-content: center; gap: 8px; padding-block: 4px 9px; color: #35174d; font-size: clamp(24px, 6vw, 33px); font-weight: 900; text-align: center; }
-.beep-phase-heading svg { width: 25px; height: 25px; color: #9269ad; }
-.beep-intro { gap: 10px; padding: 8px 0 14px; }
-.beep-intro .big .clay-avatar, .beep-intro .big .clay-art { width: clamp(86px, 23vw, 122px); height: clamp(86px, 23vw, 122px); }
-.beep-player-ribbon, .beep-round-label { background: #e9d6ed; color: #39194f; border-radius: 999px; padding: 4px 14px; overflow-wrap: anywhere; }
-.beep-player-ribbon { font-size: 20px; }
-.beep-round-label { font-size:14px; background: #f0e4ef; }
-.beep-instruction { width: 100%; background: #faf0f0; border: 1px solid #d7bce3; border-radius: 15px; padding: 13px; }
-.beep-instruction strong { display: block; font-size: 24px; line-height: 1.25; color: #37174f; }
-.beep-instruction p { margin-top: 6px; color: #624c66; font-size: 14px; }
-.beep-turn-timed, .beep-turn-bomb { border: 0; box-shadow: none; background: #f0e5f2; animation: none; padding: 7px 11px; }
-.beep-turn-timed b { min-width: 0; overflow-wrap: anywhere; }
-.beep-turn-timed .timer { margin-inline-start: auto; flex: none; }
-.beep-turn-timed .timer-num { font-size: 23px; }
-.beep-turn-timed .timer-sub { font-size:14px; }
-.screen.beep .beep-turn-bomb .beep-bomb { width: 54px; height: 54px; margin: 0; margin-inline-start: auto; background: none; border: 0; box-shadow: none; flex: none; }
-.screen.beep .beep-turn-bomb .beep-bomb .clay-art { width: 54px; height: 54px; }
-.beep-turn-bomb .beep-bomb::after { display: none; }
-.screen.beep .beep-prompt { border-radius: 17px; padding: 17px 14px; background: #fcf3f8; border-color: #d8b8e6; box-shadow: none; line-height: 1.4; }
-.screen.beep .beep-prompt.is-live { min-height: clamp(155px, 32svh, 248px); }
-.beep-prompt small { justify-self: center; background: #f0e1ef; color: #523563; border-radius: 999px; padding: 2px 10px; }
-.beep-judgment { color: #34174c; font-size: clamp(23px, 5.3vw, 30px); text-align: center; text-wrap: balance; font-weight: 900; }
-.beep-judge .btn { min-height: 75px; flex-direction: row; border-radius: 15px; }
-.beep-judge .btn span { display: none; }
-.beep-score-panel { width: 100%; padding: 10px; border: 1px solid #e4d6c8; border-radius: 16px; background: #fff9ef; }
-.beep-score-panel h3 { text-align: center; margin: 0 0 7px; font-size: 14px; font-weight: 900; color: #422253; }
-.beep-score-panel .beep-players { display: grid; grid-template-columns: repeat(auto-fit, minmax(87px, 1fr)); gap: 6px; }
-.beep-score-panel .beep-chip { display: grid; justify-items: center; gap: 3px; padding: 5px; min-width: 0; border-radius: 12px; box-shadow: none; overflow-wrap: anywhere; text-align: center; }
-.beep-chip .clay-avatar, .beep-victim .clay-avatar { width: 34px; height: 34px; }
-.beep-score-panel .beep-roster-rows { grid-template-columns: 1fr; }
-.beep-roster-rows .beep-chip { display: flex; gap: 8px; text-align: start; }
-.beep-roster-rows .beep-lives, .beep-victim .beep-lives { margin-inline-start: auto; }
-.beep-lives { color: #bf344f; font-size: 20px; }
-.beep-lives .is-lost, .beep-lives .is-broken { color: #785465; }
-.beep-rules { display: grid; gap: 5px; width: 100%; }
-.beep-rules p { display: flex; align-items: center; justify-content: center; gap: 7px; padding: 7px 8px; border-radius: 12px; background: #eee2f0; color: #452755; font-size: 14px; }
-.beep-rules svg { width: 18px; height: 18px; flex: none; }
-.screen.beep .beep-boom { position: static; z-index: auto; display: grid; gap: 14px; padding: 8px 0; background: transparent; }
-.beep-boom .inner { width: 100%; animation: none; }
-.beep-boom .inner h2 { font-size: clamp(25px, 6vw, 34px); }
-.beep-boom .big .clay-art { width: 110px; height: 110px; }
-.beep-boom .inner p { width: 100%; border-radius: 11px; background: #f1e5ef; padding: 7px; }
-.beep-victim { display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px 11px; border: 1px solid #dcb47a; border-radius: 13px; background: #fff4df; }
-.beep-victim strong { overflow-wrap: anywhere; }
-.beep-boom .beep-victim .beep-lives { font-size: 23px; }
-.beep-bomb-winner { display: grid; justify-items: center; gap: 8px; padding: 12px; }
-.beep-bomb-winner .clay-avatar { width: 125px; height: 125px; background: #ffe9ae; border-radius: 50%; }
-.beep-bomb-winner strong { width: min(260px, 100%); background: #ffdfa1; border: 1px solid #d7a047; border-radius: 12px; color: #59380c; padding: 8px; text-align: center; font-size: 27px; overflow-wrap: anywhere; }
 @media (orientation: landscape) and (max-height: 520px) {
-  .screen.beep.beep-bomb-prompt { display: grid; grid-template-columns: minmax(0, 1fr) minmax(158px, .58fr); align-items: start; }
-  .screen.beep.beep-bomb-prompt .beep-turn { grid-column: 1 / -1; }
-  .screen.beep.beep-bomb-prompt .beep-prompt { grid-column: 1; grid-row: auto; min-height: 98px; }
-  .screen.beep.beep-bomb-prompt .beep-score-panel { grid-column: 2; }
-  .screen.beep.beep-bomb-prompt .beep-bomb { grid-column: auto; grid-row: auto; }
+  .beep-three-prompt, .beep-bomb-prompt { grid-template-columns: minmax(0,1.3fr) minmax(0,1fr); }
+  .beep-prompt { grid-column: 1; grid-row: 2; }
+  .beep-turn, .beep > [data-design-id="continue"] { grid-column: 1/-1; }
+  .beep-bomb-prompt .beep-score-panel, .beep-prompt-art { grid-column: 2; grid-row: 2; }
 }
-/* Playful Studio: quiet surfaces keep the hidden fuse visually constant. */
-.beep { --game-accent: #76518D; }
-.game-frame:has(.beep,.beep-setup) > .game-bar { background: #FFF8F0; }
-.game-frame:has(.beep,.beep-setup) > .game-bar .title { color: #352139; }
-.beep .beep-prompt { border-radius: 24px; border-color: #D8CAD9; background: #EEE3F5; color: #352139; box-shadow: 0 5px 18px #3521390A; }
-.beep :is(.beep-score-panel,.beep-victim) { background: #FFFDF9; border-color: #DFD1DC; border-radius: 20px; }
-.beep .beep-rules p { background: #EEE3F5; color: #352139; border-radius: 16px; padding: 10px 12px; }
-.beep .beep-judge .btn { border-radius: 20px; }
-.beep .beep-victim { background: #FFE5DB; }

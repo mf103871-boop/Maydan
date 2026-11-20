@@ -1,4 +1,6 @@
 // Values shared by the browser and the authoritative room server.
+import { validateServerUrl } from './server-url.js';
+export { validateServerUrl };
 export const PROTOCOL = 1;
 export const FABRAKA_PROTOCOL = 3;
 export const ERSOMHA_PROTOCOL = 1;
@@ -9,7 +11,7 @@ export const GAME_PROTOCOLS = Object.freeze({ meenfina: PROTOCOL, fabraka: FABRA
 // بَديهة أونلاين: جوال لكل فريق (من فريقين إلى أربعة)، والمؤقت كما في اللعبة على جهاز واحد.
 export const BADEEHA_MAX_TEAMS = 4;
 export const BADEEHA_TIMERS = Object.freeze([30, 60, 90]);
-export const ROOM_CAPABILITIES = Object.freeze({ ersomha: ERSOMHA_PROTOCOL, badeeha: BADEEHA_PROTOCOL, mafia: MAFIA_PROTOCOL, mafiaRulesets:Object.freeze([1,2]), gameplayAccess: 2, localizedContent: 1 });
+export const ROOM_CAPABILITIES = Object.freeze({ ersomha: ERSOMHA_PROTOCOL, ersomhaPalette: 2, badeeha: BADEEHA_PROTOCOL, mafia: MAFIA_PROTOCOL, mafiaRulesets:Object.freeze([1,2]), gameplayAccess: 2, localizedContent: 1 });
 // تفاعلات سريعة داخل الغرفة: طقم رموز ثابت بلا نص حر، يُبث للحاضرين ولا يُحفظ.
 // رسالة `reaction` جديدة لا تكسر عميلًا أقدم (يتجاهل الأنواع التي لا يعرفها)، فلا يُرفع البروتوكول.
 export const ROOM_REACTIONS = Object.freeze(['😂', '👏', '😮', '🔥', '😅', '❤️']);
@@ -73,15 +75,6 @@ export function normalizeCode(value) {
   return String(value ?? '').replace(/[٠-٩۰-۹]/g, (c) => String(c.charCodeAt(0) - (c <= '٩' ? 0x660 : 0x6f0))).replace(/\s/g, '');
 }
 export function validCode(value) { return /^\d{6}$/.test(value); }
-export function validateServerUrl(value) {
-  if (!value) return '';
-  try {
-    const url = new URL(value);
-    if (url.username || url.password || url.search || url.hash || !['', '/'].includes(url.pathname)) return '';
-    if (url.protocol !== 'https:' && !(url.protocol === 'http:' && ['localhost', '127.0.0.1', '[::1]'].includes(url.hostname))) return '';
-    return url.origin;
-  } catch { return ''; }
-}
 export function resolveServerUrl(value, pageOrigin = '') {
   return validateServerUrl(value === 'same-origin' ? pageOrigin : value);
 }

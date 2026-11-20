@@ -13,6 +13,12 @@ export function PlayersSetup({ roster, setRoster, min = 2, max = 10, accent, onS
   const [name, setName] = useState('');
   const [emoji, setEmoji] = useState(null);
   const [error, setError] = useState('');
+  const closeAdd = () => {
+    setAdding(false);
+    setName('');
+    setEmoji(null);
+    setError('');
+  };
 
   const toggle = (id) => {
     setError('');
@@ -24,7 +30,7 @@ export function PlayersSetup({ roster, setRoster, min = 2, max = 10, accent, onS
     const next = [...roster, result.player];
     setRoster(next);
     if (selected.length < max) setSelected((list) => [...list, result.player.id]);
-    setName(''); setEmoji(null); setAdding(false); setError('');
+    closeAdd();
     api && api.sound.play('pop');
   };
   const submitKeys = useSubmitKey(submitAdd);
@@ -57,12 +63,11 @@ export function PlayersSetup({ roster, setRoster, min = 2, max = 10, accent, onS
         {players.length < min && <p className="setup-error" style={{ marginTop: 10 }}>{tr("اختر ")}{min}{tr(" لاعبين على الأقل")}</p>}
       </Card>
       {children}
-      {error && <p className="setup-error" role="alert">{tr(error)}</p>}
       <div data-design-id="actions" className="setup-sticky">
         <Button variant="accent" size="lg" full disabled={!canStart} data-design-id="start" data-design-required="true" onClick={() => onStart(players)}>{startLabel} · {players.length === 1 ? tr("لاعب واحد") : <>{players.length}{tr(" لاعبين")}</>}</Button>
       </div>
       {adding && (
-        <Modal data-design-screen="setup.add-player" title={tr("لاعب جديد")} onClose={() => { setAdding(false); setError(''); }} footer={<Button variant="primary" size="lg" full data-design-id="add-player" onClick={submitAdd}>{tr("إضافة")}</Button>}>
+        <Modal data-design-screen="setup.add-player" placement="bottom" className="player-editor-sheet" title={tr("لاعب جديد")} onClose={closeAdd} footer={<Button variant="primary" size="lg" full data-design-id="add-player" onClick={submitAdd}>{tr("إضافة")}</Button>}>
           <label className="field"><span>{tr("الاسم")}</span><input data-design-id="name-input" className="input" value={name} maxLength={20} autoFocus onChange={(e) => { setName(e.target.value); setError(''); }} {...submitKeys} placeholder={tr("مثال: نورة")} /></label>
           <div className="field"><span>{tr("اختر شخصيتك")}</span>
             <AvatarPicker value={emoji} onChange={setEmoji} />

@@ -7,6 +7,8 @@ import http from 'node:http';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { PLUS_CATALOG_VERSION } from '../../src/plus/catalog.js';
+import { termsIdentity } from '../../src/shared/legal/terms.js';
+import { acceptTermsIfShown } from '../helpers/terms-consent.mjs';
 
 const me = { id: 'me', userId: 'me', name: 'عمر', code: 'MDN-OMAR', avatarPreset: 'falcon' };
 const peers = Array.from({ length: 28 }, (_, index) => ({ id: `person-${index + 1}`, userId: `person-${index + 1}`, name: ['أحمد', 'ليان', 'سارة', 'خالد', 'نور', 'لينا', 'كريم', 'ريم', 'سامي', 'جود', 'رنا'][index] || `صديق ${index + 1}`, avatarPreset: ['lion', 'cat', 'falcon'][index % 3], online: index % 2 === 0, conversationId: `direct-${index + 1}` }));
@@ -18,6 +20,7 @@ let unread = true;
 async function api(url, method, body, owner) {
   if (url === '/api/fixture/unread') { unread = body.enabled; return {}; }
   const owned = owner === 'me';
+  if (url === '/api/legal/status') return { required: false, acceptance: termsIdentity('ar') };
   if (url === '/api/cosmetics/catalog') return { version: PLUS_CATALOG_VERSION, serverTime: Date.now() };
   if (url === '/api/me/cosmetics' || url === '/api/me/cosmetics/inventory') {
     assert.equal(method, 'GET', 'navigation never writes cosmetic preferences or inventory');
@@ -136,7 +139,7 @@ async function run(browser, name) {
     const nativeBefore = await page.evaluate(() => nativeLog.filter(event => /socialCall(Connect|End)/.test(event.type)).length);
     await shot(page, name, 'games'); await noOverflow(page, 'games');
     await page.evaluate(() => window.scrollTo(0, 420)); await page.waitForFunction(() => scrollY > 200); const homeScroll = await page.evaluate(() => scrollY);
-    await select(page, 'المتجر', '/store'); await page.getByRole('heading', { name: 'تصفح المظهر والإطارات', exact: true }).waitFor();
+    await select(page, 'المتجر', '/store'); await page.locator('[data-design-screen="store"] [data-design-id="collections"]').waitFor();
     assert.ok(await page.locator('[data-design-id="store-product"]').count() > 0, 'the real store exposes its catalogue without purchasing during navigation');
     await callAboveMenu(page, 'store'); await shot(page, name, 'store');
     await select(page, 'العب', '/'); await page.waitForFunction(value => Math.abs(scrollY - value) < 2, homeScroll);
@@ -167,7 +170,7 @@ async function run(browser, name) {
     await page.getByRole('button', { name: 'محادثة مع أحمد', exact: true }).click(); assert.equal(await page.getByRole('textbox', { name: 'اكتب رسالة', exact: true }).inputValue(), 'مسودة لا تضيع 🎮');
     await page.goBack(); await page.waitForFunction(() => location.hash === '#/friends'); await nav(page).waitFor();
     await search.fill(''); await filters.getByRole('button', { name: 'الكل', exact: true }).click();
-    await page.getByRole('navigation', { name: 'أقسام اللّمة', exact: true }).getByRole('button', { name: /الشِّلل/ }).click(); await page.getByRole('button', { name: /شلّة الخميس/ }).click();
+    await page.getByRole('navigation', { name: 'أقسام اللّمة', exact: true }).getByRole('button', { name: /الشِّلل/ }).click(); await page.locator('[data-design-id="group-row"]').filter({ hasText: 'شلّة الخميس' }).click();
     await page.waitForFunction(() => location.hash === '#/friends/group/group-1'); await page.getByText('جاهزين نلعب مع بعض؟', { exact: true }).waitFor(); assert.equal(await nav(page).isVisible(), false);
     await page.getByRole('textbox', { name: 'اكتب رسالة', exact: true }).fill('مسودة للشلّة'); await page.getByRole('button', { name: 'العودة للأصدقاء', exact: true }).first().click(); await nav(page).waitFor();
     await select(page, 'المتجر', '/store'); await route(page, '/friends/group/group-1'); assert.equal(await page.getByRole('textbox', { name: 'اكتب رسالة', exact: true }).inputValue(), 'مسودة للشلّة', 'group deep link shares the same draft store');
@@ -204,6 +207,7 @@ async function run(browser, name) {
     await page.getByRole('button', { name: 'العودة للأصدقاء', exact: true }).first().click(); await select(page, 'المتجر', '/store');
     assert.equal(await page.evaluate(() => nativeLog.filter(event => /socialCall(Connect|End)/.test(event.type)).length), nativeBefore, 'all menu and conversation navigation keeps media connection intact');
     await page.evaluate(() => window.fixture.setOwner(null)); await page.waitForFunction(() => !window.fixture.getCall()); assert.equal(await page.getByTestId('call-dock').count(), 0);
+    await acceptTermsIfShown(page);
     await select(page, 'الأصدقاء', '/friends'); await page.getByRole('heading', { name: 'الجمعة تبدأ بأصحابك', exact: true }).waitFor(); assert.equal(await page.locator('.menu-navigation-badge,.menu-navigation-dot').count(), 0); assert.equal(await page.getByRole('button', { name: 'محادثة مع أحمد', exact: true }).count(), 0);
     await page.evaluate(() => window.fixture.setOwner('other-account')); await page.getByRole('button', { name: 'أضف صديقًا', exact: true }).first().waitFor();
     assert.deepEqual(await page.evaluate(() => window.fixture.getUI().drafts), {}); assert.deepEqual(await page.evaluate(() => window.fixture.getUI().listState), {}); assert.equal(await page.getByTestId('call-dock').count(), 0, 'account switch cannot inherit the previous call');

@@ -1,5 +1,8 @@
+import MEDIA_STUDIO from "./media-studio.css?sheet";
+import { PresentationStyles } from "../../shared/ui/PresentationStyles.jsx";
 import { tr } from '../../shared/i18n/core.js';
 import React from "../../design/react.js";
+import { IconVolume, IconPlay, IconPause, IconRotate, IconCloudAlert, IconClose, IconMaximize } from "../../shared/ui/icons.jsx";
 import { wait } from "../../shared/fx/index.js";
 import { socialInterruption } from "../../social/interruption.js";
 import { mulberry32 } from "../../shared/lib/rng.js";
@@ -23,26 +26,27 @@ export function MediaBox({ url, kind, className, alt, children }) {
     setState(mediaIsLoaded(url) ? "ready" : mediaHasFailed(url) ? "error" : "loading");
   }, [url]);
   if (!url) {
-    return hBeta("div", { className: "m-media-box is-error" }, hBeta("p", null, "لا ملف لهذا السؤال"));
+    return hBeta("div", { className: "m-media-box is-error" }, hBeta("p", null, tr("لا ملف لهذا السؤال")));
   }
   return hBeta(
     "div",
     { "data-design-id": "question-media", className: `m-media-box ${className || ""} ${state === "loading" ? "is-loading" : ""}` },
+    hBeta(PresentationStyles, {sheet:MEDIA_STUDIO}),
     state === "error"
       ? hBeta(
           "div",
           { className: "m-media-error", role: "status" },
-          hBeta("span", { "aria-hidden": "true" }, "📡"),
-          hBeta("b", null, "تعذّر تحميل الملف"),
-          hBeta("small", null, navigator.onLine === false ? "لا يوجد اتصال بالإنترنت" : "تحقق من الاتصال ثم أعد المحاولة"),
+          hBeta(IconCloudAlert, { className:"m-media-error-icon", width:64, height:64 }),
+          hBeta("b", null, tr("تعذّر تحميل الملف")),
+          hBeta("small", null, navigator.onLine === false ? tr("لا يوجد اتصال بالإنترنت") : tr("تحقق من الاتصال ثم أعد المحاولة")),
           hBeta(
             "button",
             { "data-design-id": "media-retry", type: "button", className: "m-secondary m-small", onClick: () => { setState("loading"); preloadMedia([url]).then((r) => setState(r.failed === 0 ? "ready" : "error")); } },
-            "أعد المحاولة",
+            tr("أعد المحاولة"),
           ),
         )
       : children({ onReady: () => setState("ready"), onError: () => setState("error") }),
-    state === "loading" && hBeta("span", { className: "m-media-spinner", "aria-label": "جارٍ التحميل" }),
+    state === "loading" && hBeta("span", { className: "m-media-spinner", "aria-label": tr("جارٍ التحميل") }),
   );
 }
 
@@ -86,7 +90,7 @@ export function MediaImage({ question, url, effect, revealed, onSfx }) {
   const crossfade = effect === "blur" || effect === "silhouette" || effect === "shadow";
   return hBeta(
     MediaBox,
-    { url, className: `fx-frame-${effect}`, alt: question.q || "صورة السؤال" },
+    { url, className: `fx-frame-${effect}`, alt: question.q || tr("صورة السؤال") },
     ({ onReady, onError }) =>
       hBeta(
         React.Fragment,
@@ -100,12 +104,14 @@ export function MediaImage({ question, url, effect, revealed, onSfx }) {
           role: canEnlarge ? "button" : undefined,
           tabIndex: canEnlarge ? 0 : undefined,
           onKeyDown: canEnlarge ? (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); event.currentTarget.click(); } } : undefined,
-          "aria-label": canEnlarge ? "تكبير الصورة" : undefined,
+          "aria-label": canEnlarge ? tr("تكبير الصورة") : undefined,
         },
         hBeta("img", {
           src: url,
-          alt: revealed ? question.a || "صورة السؤال" : "صورة السؤال",
+          alt: revealed ? question.a || tr("صورة السؤال") : tr("صورة السؤال"),
           className: jumbled ? `${cls} is-hidden-src` : cls,
+          // The approved landmark thumbnail has its own framing. The lightbox always uses the full photo.
+          "data-facade-preview": question.media?.src === "placefinder-400-902.webp" && effect === "none" ? "" : undefined,
           style: effect === "zoom" ? { transformOrigin: question.origin || "50% 50%" } : null,
           onLoad: (event) => {
             const img = event.currentTarget;
@@ -115,6 +121,7 @@ export function MediaImage({ question, url, effect, revealed, onSfx }) {
           onError,
           draggable: false,
         }),
+        canEnlarge && hBeta("span", {className:"m-image-enlarge-label", "aria-hidden":"true"}, hBeta(IconMaximize), tr("تكبير الصورة")),
         crossfade &&
           hBeta("img", {
             src: url,
@@ -147,7 +154,7 @@ export function MediaImage({ question, url, effect, revealed, onSfx }) {
               // بحساب واحد، بلا اختلاف دلالة scrollLeft بين الاتجاهين.
               dir: "ltr",
               role: "dialog",
-              "aria-label": "الصورة مكبّرة — اضغط خارج الصورة للإغلاق",
+              "aria-label": tr("الصورة مكبّرة — اضغط خارج الصورة للإغلاق"),
               onClick: (e) => { e.stopPropagation(); setEnlarged(false); setZoomed(false); },
             },
             hBeta(
@@ -157,17 +164,17 @@ export function MediaImage({ question, url, effect, revealed, onSfx }) {
                 "data-design-id": "media-close",
                 "data-design-required": "true",
                 className: "m-icon-btn m-lightbox-close",
-                "aria-label": "إغلاق الصورة",
+                "aria-label": tr("إغلاق الصورة"),
                 onClick: (e) => { e.stopPropagation(); setEnlarged(false); setZoomed(false); },
               },
-              "✕",
+              hBeta(IconClose),
             ),
             hBeta(
               "div",
               { className: "m-lightbox-stage" },
               hBeta("img", {
                 src: url,
-                alt: revealed ? question.a || "صورة السؤال" : "صورة السؤال",
+                alt: revealed ? question.a || tr("صورة السؤال") : tr("صورة السؤال"),
                 className: zoomed ? "is-zoomed" : "is-fit",
                 draggable: false,
                 // الضغط على الصورة نفسها يبدّل بين ملء الشاشة وتكبير ٣× قابل للسحب،
@@ -183,7 +190,7 @@ export function MediaImage({ question, url, effect, revealed, onSfx }) {
                         (box.scrollTop = (box.scrollHeight - box.clientHeight) / 2));
                     });
                 },
-                "aria-label": zoomed ? "إرجاع الصورة إلى ملء الشاشة" : "تكبير الصورة ثلاث مرات",
+                "aria-label": zoomed ? tr("إرجاع الصورة إلى ملء الشاشة") : tr("تكبير الصورة ثلاث مرات"),
               }),
             ),
           ),
@@ -318,6 +325,7 @@ export function MediaAudio({ url, revealed, soundOn = true, volume = .75, sound 
       hBeta(
         "div",
         { className: `m-audio ${spent ? "is-spent" : ""}` },
+        hBeta(IconVolume, { className:"m-audio-illustration", width:64, height:64 }),
         hBeta("audio", {
           ref: attach,
           muted: !soundOn,
@@ -338,22 +346,22 @@ export function MediaAudio({ url, revealed, soundOn = true, volume = .75, sound 
             className: `m-audio-btn ${playing ? "is-playing" : ""}`,
             onClick: toggle,
             disabled: !soundOn || (spent && !playing && !midway),
-            "aria-label": playing ? "إيقاف" : "تشغيل",
+            "aria-label": playing ? tr("إيقاف") : tr("تشغيل"),
           },
-          hBeta("span", { "aria-hidden": "true" }, playing ? "⏸" : "▶"),
+          hBeta(playing ? IconPause : IconPlay), hBeta("span", null, playing ? tr("إيقاف") : tr("اضغط للاستماع")),
         ),
         hBeta(
           "div",
           { className: "m-audio-meta" },
-          hBeta("b", null, !soundOn ? "الصوت مكتوم — فعّله من زر الصوت" : playing ? "يعمل الآن" : spent ? "انتهت مرات السماع" : "اضغط للاستماع"),
+          (!soundOn || playing || spent) && hBeta("b", null, !soundOn ? tr("الصوت مكتوم — فعّله من زر الصوت") : playing ? tr("يعمل الآن") : tr("انتهت مرات السماع")),
           hBeta(
             "small",
             null,
             revealed
-              ? "بعد الكشف يمكنكم إعادة السماع بلا حدّ"
+              ? tr("بعد الكشف يمكنكم إعادة السماع بلا حدّ")
               : spent
-                ? "اكشفوا الإجابة لإعادة السماع"
-                : tr("{v0} من {v1}", {v0: left === 1 ? "مرة واحدة متبقية" : left === 2 ? "مرتان متبقيتان" : `${left} مرات متبقية`, v1: MAX_AUDIO_PLAYS}),
+                ? tr("اكشفوا الإجابة لإعادة السماع")
+                : tr("{v0} من {v1}", {v0: left === 1 ? tr("مرة واحدة متبقية") : left === 2 ? tr("مرتان متبقيتان") : tr("{count} مرات متبقية", {count:left}), v1: MAX_AUDIO_PLAYS}),
           ),
         ),
         hBeta(
@@ -365,7 +373,7 @@ export function MediaAudio({ url, revealed, soundOn = true, volume = .75, sound 
             disabled: spent || !soundOn,
             onClick: () => start(true),
           },
-          "↻ من البداية",
+          hBeta(IconRotate), tr("من البداية"),
         ),
       ),
   );

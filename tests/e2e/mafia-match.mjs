@@ -164,12 +164,12 @@ test('one browser player plays a whole public Mafia match through the real UI', 
       for (const id of alive.filter((id) => id !== seatId && r.roleStates[id].faction === 'mafia')) await botOf(id).command('mafia_vote', { targetId: target });
       if (me.alive) {
         if (me.faction === 'mafia') {
-          await page.locator('[data-design-id="player-seat"].is-target').first().click();
+          await page.locator('[data-design-id="target"]').first().click();
           await page.locator('[data-design-id="mafia-vote"]').first().click();
           await until(() => room().killVotes[seatId] !== undefined, 'the browser Mafia vote reached the server');
         } else if (await page.locator('[data-design-id="ability-submit"]').count()) {
-          await page.locator('[data-design-id="player-seat"].is-target').first().click();
-          if (mine().roleId === 'analyst') await page.locator('[data-design-id="player-seat"].is-target').nth(1).click();
+          await page.locator('[data-design-id="target"]').first().click();
+          if (mine().roleId === 'analyst') await page.locator('[data-design-id="target"]').nth(1).click();
           await page.locator('[data-design-id="ability-submit"]').click();
           await until(() => Boolean(room().nightActions[seatId]), 'the browser night ability reached the server');
         } else {
@@ -257,7 +257,7 @@ for (const uiLocale of ['ar', 'en']) test(`real host lobby controls remain hit-t
     await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
     const values = await page.evaluate(hostControls => {
       const result = { width: innerWidth, height: innerHeight, overflow: document.documentElement.scrollWidth > innerWidth + 1, notice: document.documentElement.hasAttribute('data-startup-background-visible'), floatingLauncherVisible: [...document.querySelectorAll('.lamma-launcher')].some(element => getComputedStyle(element).display !== 'none'), controls: [] };
-      for (const id of ['message-input', 'send', 'ready', ...(hostControls ? ['start', 'content-language'] : []), 'exit']) {
+      for (const id of ['message-input', 'send', 'ready', ...(hostControls ? ['start'] : []), 'exit']) {
         const element = document.querySelector(`[data-design-id="${id}"]`), rect = element.getBoundingClientRect();
         const points = [[.5,.5],[.25,.25],[.75,.75]].map(([x,y]) => { const hit = document.elementFromPoint(rect.x + rect.width*x, rect.y + rect.height*y); return hit === element || element.contains(hit) || element.disabled && getComputedStyle(element).pointerEvents === 'none' && hit === element.parentElement; });
         result.controls.push({ id, x: rect.x, y: rect.y, width: rect.width, height: rect.height, bottom: rect.bottom, disabled: !!element.disabled, hit: points.every(Boolean), hits: points });
@@ -266,11 +266,11 @@ for (const uiLocale of ['ar', 'en']) test(`real host lobby controls remain hit-t
       const copyBox = copy.getBoundingClientRect(), badgeBox = badge.getBoundingClientRect(), rtl = getComputedStyle(heading).direction === 'rtl';
       result.headerCopyClear = rtl ? copyBox.left >= badgeBox.right - .5 : copyBox.right <= badgeBox.left + .5;
       result.kickerClippedWithinCell = getComputedStyle(copy.querySelector('.mafia-kicker')).display === 'block';
-      const language = document.querySelector('.mafia-lobby-language select');
+      const language = document.querySelector('.mafia-lobby-language strong[data-design-id="content-language"]');
       if (language) {
         const style = getComputedStyle(language), measure = document.createElement('canvas').getContext('2d');
         measure.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
-        result.languageText = { text: language.selectedOptions[0].text, measuredWidth: measure.measureText(language.selectedOptions[0].text).width, availableWidth: language.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight) - 26 };
+        result.languageText = { text: language.textContent, measuredWidth: measure.measureText(language.textContent).width, availableWidth: language.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight) };
       }
       return result;
     }, hostControls);
@@ -301,8 +301,8 @@ for (const uiLocale of ['ar', 'en']) test(`real host lobby controls remain hit-t
     await acceptTermsIfShown(page);
     await page.locator('[data-design-screen="online.mafia.lobby"]').waitFor();
     await page.waitForFunction(locale => document.documentElement.lang === locale, uiLocale);
-    assert.equal(await page.locator('.mafia-lobby-language select').inputValue(), uiLocale);
-    assert.equal(await page.locator('.mafia-lobby-language select').getAttribute('aria-label'), uiLocale === 'en' ? 'Match language' : 'لغة المباراة');
+    assert.equal(await page.locator('.mafia-lobby-language strong[data-design-id="content-language"]').getAttribute('lang'), uiLocale);
+    assert.equal(await page.locator('.mafia-lobby-language .online-field-label').innerText(), uiLocale === 'en' ? 'Match language' : 'لغة المباراة');
     await until(() => bots.every(client => client.state?.members.every(member => member.connected && member.ready)), 'layout host and bots ready');
     await page.waitForFunction(() => document.documentElement.hasAttribute('data-startup-background-visible'));
     for (const [width, height] of [[320,568],[390,844],[430,932],[844,390]]) { await page.setViewportSize({ width, height }); await page.evaluate(() => document.activeElement?.blur()); await controls('notice-visible', width, height); }

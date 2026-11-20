@@ -1,22 +1,27 @@
 import { fail } from './room-model.mjs';
 
-export const ERSOMHA_PALETTE = ['#35224a', '#ffffff', '#118d96', '#9250bd', '#ed6a5a', '#f4b942', '#64a66f', '#3b72b8', '#f08db4', '#8a563d', '#ef8a38', '#83929b'];
+import { drawingPaletteVersion, drawingPalette } from '../src/games/ersomha/palette.js';
+export { ERSOMHA_PALETTE } from '../src/games/ersomha/palette.js';
+const versionOf = board => { const version = drawingPaletteVersion(board.paletteVersion); if (version === null) fail('ERSOMHA_PALETTE_UNSUPPORTED', 409); return version; };
 export const ERSOMHA_MAX_POINTS = 8192;
 export const ERSOMHA_MAX_STROKES = 200;
 const HEAD = 'ersomha:board';
 const MAX_LOG = 64;
 const PART_SIZE = 28_000;
 export const ersomhaBoardId = room => `${room.matchId}:${room.round}`;
-export function emptyErsomhaDrawing(room) {
-  return { boardId: ersomhaBoardId(room), epoch: 1, seq: 0, strokes: [], undoneIds: [], pointCount: 0, receipts: [] };
+export function emptyErsomhaDrawing(room, paletteVersion = 1) {
+  if (drawingPaletteVersion(paletteVersion) === null) fail('ERSOMHA_PALETTE_UNSUPPORTED', 409);
+  return { boardId: ersomhaBoardId(room), paletteVersion, epoch: 1, seq: 0, strokes: [], undoneIds: [], pointCount: 0, receipts: [] };
 }
 const keyOf = (board, suffix) => `ersomha:board:${board.boardId}:${suffix}`;
-const metaOf = board => ({ epoch: board.epoch, seq: board.seq });
+const metaOf = board => ({ epoch: board.epoch, seq: board.seq, paletteVersion: versionOf(board) });
 export const ersomhaDrawingMeta = metaOf;
 async function erase(storage, keys) {
   for (const key of keys || []) if (storage.delete) await storage.delete(key); else await storage.put(key, null);
 }
 function apply(board, event) {
+  if (versionOf(board) !== versionOf(event)) fail('ERSOMHA_PALETTE_UNSUPPORTED', 409);
+  if (event.op && !drawingPalette(board.paletteVersion).includes(event.op.color)) fail('ERSOMHA_CANVAS_UNAVAILABLE', 503);
   if (event.kind === 'append') {
     if (event.closedStrokeId) { const closed = board.strokes.find(s => s.strokeId === event.closedStrokeId); if (closed) closed.end = true; }
     const op = event.op; let stroke = board.strokes.find(s => s.strokeId === op.strokeId);
@@ -40,6 +45,8 @@ export async function loadErsomhaDrawing(storage, room) {
   if (!head || head.boardId !== ersomhaBoardId(room)) return { board: emptyErsomhaDrawing(room), head: null };
   const parts = await Promise.all((head.parts || []).map(key => storage.get(key)));
   const board = parts.length ? JSON.parse(parts.join('')) : emptyErsomhaDrawing(room);
+  const version = versionOf(head);
+  if (board.boardId !== head.boardId || versionOf(board) !== version || board.strokes.some(s => !drawingPalette(version).includes(s.color))) fail('ERSOMHA_CANVAS_UNAVAILABLE', 503);
   const events = await Promise.all((head.log || []).map(key => storage.get(key)));
   for (const event of events) { if (!event) fail('ERSOMHA_CANVAS_UNAVAILABLE', 503); apply(board, event); }
   if (board.epoch !== head.epoch || board.seq !== head.seq) fail('ERSOMHA_CANVAS_UNAVAILABLE', 503);
@@ -48,6 +55,7 @@ export async function loadErsomhaDrawing(storage, room) {
 // Called inside the same transaction as a new room/turn state, or periodically
 // to compact the delta journal. Splitting the checkpoint bounds each DO value.
 export async function checkpointErsomhaDrawing(storage, board, previousHead) {
+  versionOf(board);
   const serialized = JSON.stringify(board), parts = [];
   for (let offset = 0, n = 0; offset < serialized.length; offset += PART_SIZE, n++) {
     const key = keyOf(board, `checkpoint:${board.epoch}:${board.seq}:${n}`); parts.push(key);
@@ -76,16 +84,18 @@ export async function persistErsomhaDrawing(storage, board, event, previousHead,
 export function prepareErsomhaDrawing(room, current, actorId, command) {
   if (command.matchId !== room.matchId || command.round !== room.round) fail('STALE', 409);
   if (current.boardId !== ersomhaBoardId(room)) fail('ERSOMHA_CANVAS_STALE', 409);
+  const paletteVersion = versionOf(current);
   if (command.type === 'drawing_sync') return { sync: true };
+  if (command.paletteVersion !== undefined && drawingPaletteVersion(command.paletteVersion) !== paletteVersion) fail('ERSOMHA_PALETTE_UNSUPPORTED', 409);
   if (room.phase !== 'draw' || room.draw.pauseUntil) fail('PHASE', 409);
   if (room.draw.drawerId !== actorId) fail('ERSOMHA_DRAWER_ONLY', 403);
   if (command.epoch !== current.epoch) fail('ERSOMHA_CANVAS_STALE', 409);
   if (current.receipts.includes(command.requestId)) return { duplicate: true };
-  const event = { type: 'drawing', matchId: room.matchId, round: room.round, epoch: current.epoch, seq: current.seq + 1, requestId: command.requestId };
+  const event = { type: 'drawing', paletteVersion, matchId: room.matchId, round: room.round, epoch: current.epoch, seq: current.seq + 1, requestId: command.requestId };
   if (command.type === 'drawing_batch') {
     const { strokeId, tool, width } = command, color = typeof command.color === 'string' ? command.color.toLowerCase() : '';
     if (typeof strokeId !== 'string' || !/^[A-Za-z0-9_-]{1,80}$/.test(strokeId) || !['pen', 'eraser'].includes(tool)
-      || ![2, 6, 12].includes(width) || !ERSOMHA_PALETTE.includes(color) || typeof command.end !== 'boolean'
+      || ![2, 6, 12].includes(width) || !drawingPalette(paletteVersion).includes(color) || typeof command.end !== 'boolean'
       || !Array.isArray(command.points) || command.points.length > 32) fail('INVALID');
     const points = command.points.map(point => {
       if (!Array.isArray(point) || point.length !== 2 || point.some(n => typeof n !== 'number' || !Number.isFinite(n) || n < 0 || n > 1)) fail('INVALID');

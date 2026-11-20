@@ -53,26 +53,29 @@ export function BottomNavigation({ route }) {
   const account = useAccount();
   const social = useSocial(); const lamma = useLamma(); const ui = useSocialUI();
   const { sound, haptics } = usePlatform();
-  const previousSection = useRef('games');
-  const active = menuSection(route, previousSection.current);
-  useEffect(() => { previousSection.current = active; }, [active]);
+  const active = menuSection(route, account.user?.id);
   const { keyboard, modal } = useMenuObstructions();
   const visible = menuRouteVisible(route, ui) && !keyboard && !modal;
   const nav = useRef(null);
   const badges = menuBadges(social, lamma, account.ready && account.signedIn);
   useLayoutEffect(() => {
     const root = document.documentElement;
+    let frame = null;
     const measure = () => {
+      frame = null;
       const space = visible ? nav.current?.getBoundingClientRect().height || 0 : 0;
       const value = `${space}px`;
       if (root.style.getPropertyValue('--menu-nav-space') !== value) root.style.setProperty('--menu-nav-space', value);
       root.toggleAttribute('data-menu-nav-visible', visible);
     };
     measure();
-    const observer = new ResizeObserver(measure);
+    // A root padding change can resize descendants in the same observer
+    // delivery. Coalesce subsequent measurements into the next frame.
+    const schedule = () => { if (frame === null) frame = requestAnimationFrame(measure); };
+    const observer = new ResizeObserver(schedule);
     if (nav.current) observer.observe(nav.current);
-    window.addEventListener('resize', measure);
-    return () => { observer.disconnect(); window.removeEventListener('resize', measure); };
+    window.addEventListener('resize', schedule);
+    return () => { observer.disconnect(); window.removeEventListener('resize', schedule); if (frame !== null) cancelAnimationFrame(frame); };
   }, [visible]);
   useEffect(() => () => { document.documentElement.style.removeProperty('--menu-nav-space'); document.documentElement.removeAttribute('data-menu-nav-visible'); }, []);
   const select = (event, item) => {
