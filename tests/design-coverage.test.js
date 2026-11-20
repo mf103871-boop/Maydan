@@ -16,9 +16,9 @@ test('coverage inventory preserves every node and exact conditional explanation 
   // A deliberate coverage/content change must update this semantic baseline;
   // whitespace, constant names and sharing structure do not affect it.
   const semantics = JSON.stringify({ DESIGN_CONDITIONAL_NODE_REASONS, DESIGN_RENDERED_NODE_IDS });
-  // Existing IDs remain stable. The incoming-call actions are now exposed
-  // with metadata for when each real action is available.
-  assert.equal(createHash('sha256').update(semantics).digest('hex'), '9d2175a81a9a31de2111701252ec1bb147cd00bb6ca1d144385dc75491afe9be');
+  assert.equal(DESIGN_RENDERED_NODE_IDS.settings.includes('plus-store'), false);
+  assert.equal(getNodeDefinition('online.mafia.lobby','content-language')?.kind, 'text');
+  assert.equal(createHash('sha256').update(semantics).digest('hex'), '115ccd8b2f93f9af2a06f08fb5c699ce2df3fb8c1e04b36438aef3245cc1f600');
 });
 
 test('room return, recovery and the visible invite URL retain their conditional semantics', () => {

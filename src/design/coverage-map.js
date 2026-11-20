@@ -96,7 +96,7 @@ export const DESIGN_RENDERED_NODE_IDS = Object.freeze({
   "home.game-mode": Object.freeze(["close","content","header","local-mode","online-mode","sheet-drag-handle"]),
   "game-details": Object.freeze(["actions","back","facts","game-description","game-icon","game-name","hero","skip-instructions","steps","title","topbar"]),
   "players": Object.freeze(["add-player","back","friends","player-edit","player-remove","player-row","players","title","topbar"]),
-  "settings": Object.freeze(["ui-language","about","back","clear-data","credits-open","home","manage-roster","music-volume","plus-store","pricing-link","privacy-link","refunds-link","segment-option","setting","setting-toggle","settings-account","settings-audio","settings-experience","settings-index-return","settings-local","settings-privacy","settings-section-jump","settings-support","share-reports","sound-test","sound-volume","support-link","terms-link","title","topbar"]),
+  "settings": Object.freeze(["ui-language","about","back","clear-data","credits-open","home","manage-roster","music-volume","pricing-link","privacy-link","refunds-link","segment-option","setting","setting-toggle","settings-account","settings-audio","settings-experience","settings-index-return","settings-local","settings-privacy","settings-section-jump","settings-support","share-reports","sound-test","sound-volume","support-link","terms-link","title","topbar"]),
   "account.card": Object.freeze(["account-delete","account-signin","account-signout","continue","profile","purchase","restore","title"]),
   "store": Object.freeze(["back","artwork","collections","item-preview","item-use","plus-details","plus-retry","profile","store-membership","store-navigation","store-product","store-reset","store-tab-collections","store-tab-library","store-tab-membership","title","topbar"]),
   "store.preview": Object.freeze(["header","close","content","product-preview","item-use","collection-use","store-detail-actions"]),
@@ -312,7 +312,7 @@ const conditionalNodeReasons = {
   },
   "settings": {
     "creator-analytics":"Displayed only after the authenticated account response grants the server creator capability; layout customization cannot grant analytics access or hide this owner's management action.",
-    "plus-transition-open":"The active subscriber's existing transition notice links to the Store; ordinary guest and unsubscribed settings fixtures do not mount that notice.",
+    "plus-transition-open":"Saved design compatibility: the subscription transition and offers now live in the Store.",
     "pricing-link":"The pricing link is visible in help for a web billing account; the standard account fixture models an iPhone.",
     "share-reports":"The help section offers report sharing only when this device has saved reports to share."
   },
@@ -379,7 +379,7 @@ const conditionalNodeReasons = {
     "title": reasonHome
   },
   "online.lobby": {
-    "content-language": "The host can change content language only in the editable lobby settings; changes reset readiness and regenerate content before play.",
+    "content-language": "All players see the match language fixed by the room; the interface language is set in Settings.",
     "host-handover": "Shown only to a Mafia host while another seat is connected; the waiting-room fixture is an Ersomha room.",
     "invite":"The actual room invitation opens in a dialog; the lobby keeps this legacy styling key for saved designs.",
     "invite-code":"The actual room invitation opens in a dialog; the lobby keeps this legacy styling key for saved designs.",

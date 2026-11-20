@@ -55,7 +55,7 @@ import{BrandFonts}from'./src/shared/brand/art.jsx';import css from'./src/shared/
 window.interruption=socialInterruption;
 const platform={sound:{play(){},setDucking(){}},toast(){},settings:{},roster:[],haptics:{vibrate(){}},storage:{get(){},set(){}}};
 const request=async(path,options={})=>{const r=await fetch(path,{method:options.method||'GET',headers:{'content-type':'application/json'},body:options.body===undefined?undefined:JSON.stringify(options.body)});if(options.raw)return r;const data=await r.json();if(data.error)throw Object.assign(new Error(data.error),{code:data.error});return data};
-function Screen(){const route=useRoute(),ui=useSocialUI();window.fixture={...window.fixture,navigate,show:ui.show,chat:ui.openChat,group:ui.openGroup,close:ui.close,reset:ui.resetSection,state:()=>({open:ui.open,presentation:ui.presentation,view:ui.view,drafts:ui.drafts,listState:ui.listState})};useEffect(()=>{socialInterruption.setContext({local:route.name==='play'});return()=>socialInterruption.setContext({local:false})},[route.name]);return <>{['friends','friend-group'].includes(route.name)?<div data-social-page-slot/>:<main><h1>{route.name}</h1><button onClick={()=>ui.show()}>افتح الأصدقاء</button></main>}<nav aria-label="التنقل التجريبي"><button onClick={()=>navigate('/')}>الألعاب</button><button onClick={()=>navigate('/friends')}>الأصدقاء</button><button onClick={()=>navigate('/store')}>المتجر</button><button onClick={()=>navigate('/settings')}>الإعدادات</button></nav></>}
+function Screen(){const route=useRoute(),ui=useSocialUI();window.fixture={...window.fixture,navigate,show:ui.show,chat:ui.openChat,group:ui.openGroup,close:ui.close,reset:ui.resetSection,offset:tab=>ui.listOffsets?.get(tab),state:()=>({open:ui.open,presentation:ui.presentation,view:ui.view,drafts:ui.drafts,listState:ui.listState})};useEffect(()=>{socialInterruption.setContext({local:route.name==='play'});return()=>socialInterruption.setContext({local:false})},[route.name]);return <>{['friends','friend-group'].includes(route.name)?<div data-social-page-slot/>:<main><h1>{route.name}</h1><button onClick={()=>ui.show()}>افتح الأصدقاء</button></main>}<nav aria-label="التنقل التجريبي"><button onClick={()=>navigate('/')}>الألعاب</button><button onClick={()=>navigate('/friends')}>الأصدقاء</button><button onClick={()=>navigate('/store')}>المتجر</button><button onClick={()=>navigate('/settings')}>الإعدادات</button></nav></>}
 function App(){const[owner,setOwner]=useState('me'),[ready,setReady]=useState(!new URLSearchParams(location.search).has('hydrate'));useEffect(()=>{if(!ready){const timer=setTimeout(()=>setReady(true),60);return()=>clearTimeout(timer)}},[ready]);window.fixture={...window.fixture,setOwner};const account={...NULL_ACCOUNT,ready,signedIn:!!owner,user:owner?{id:owner,name:'عمر'}:null,requestAuthenticated:request,refresh:async()=>{},markTrial(){}};return <AccountContext.Provider value={account}><PlatformContext.Provider value={platform}><BrandFonts/><style>{tokens}</style><style>{css}</style><style>{brand}</style><SocialProvider><LammaProvider><SocialUIProvider><ProfileProvider><Screen/><SocialHost/></ProfileProvider></SocialUIProvider></LammaProvider></SocialProvider></PlatformContext.Provider></AccountContext.Provider>};createRoot(document.getElementById('root')).render(<App/>);`, loader: 'jsx', resolveDir: process.cwd() }, bundle: true, write: false, format: 'iife', jsx: 'automatic', loader: { '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl' }, logLevel: 'silent' });
 const html = `<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><div id="root"></div><script>${bundle.outputFiles[0].text}</script></html>`;
 const server = http.createServer(async (req, res) => {
@@ -91,7 +91,7 @@ try {
   const scrollRange=await panel.locator('.lamma-list-scroll').evaluate(el=>el.scrollHeight-el.clientHeight);
   assert.ok(scrollRange>100,'the fixture must contain enough friends to verify scroll restoration');
   await panel.locator('.lamma-list-scroll').evaluate(el=>el.scrollTop=el.scrollHeight);
-  await page.waitForFunction(()=>window.fixture.state().listState.friends?.scrollTop>10);
+  await page.waitForFunction(()=>window.fixture.offset('friends')>10);
   const scrollTop=await panel.locator('.lamma-list-scroll').evaluate(el=>el.scrollTop);
   await page.evaluate(()=>window.fixture.navigate('/store'));
   await panel.waitFor({state:'detached'});
@@ -108,18 +108,18 @@ try {
   await page.getByRole('button',{name:'عرض بروفايل أحمد',exact:true}).click();
   await page.getByRole('button',{name:'دعوة للعبة',exact:true}).waitFor();
   assert.equal(await page.evaluate(()=>location.hash),'#/friends/friend');
-  await page.getByRole('button',{name:'العودة للّمة',exact:true}).click();
+  await page.getByRole('button',{name:'العودة',exact:true}).click();
   assert.equal(await page.getByRole('textbox',{name:'اكتب رسالة'}).inputValue(),'مسودة الصفحة تبقى معي');
   await page.evaluate(()=>window.fixture.navigate('/settings'));
   await page.evaluate(()=>window.fixture.chat('friend'));
   assert.equal(await page.getByRole('textbox',{name:'اكتب رسالة'}).inputValue(),'مسودة الصفحة تبقى معي');
-  await page.getByRole('button',{name:'العودة للّمة',exact:true}).click();
-  await page.getByRole('navigation',{name:'أقسام اللّمة'}).getByRole('button',{name:'اللّمات',exact:false}).click();
+  await page.getByRole('button',{name:'العودة للأصدقاء',exact:true}).click();
+  await page.getByRole('navigation',{name:'أقسام اللّمة'}).locator('[data-design-id="tab.groups"]').click();
   await page.getByRole('button',{name:/شلّة الخميس/}).first().click();
   await page.getByText('أهلًا بالشلّة!',{exact:true}).waitFor();
   assert.equal(await page.evaluate(()=>location.hash),'#/friends/group/group-1');
   await page.reload();await page.getByText('أهلًا بالشلّة!',{exact:true}).waitFor();
-  await page.getByRole('button',{name:'العودة للّمة',exact:true}).click();
+  await page.getByRole('button',{name:'العودة للأصدقاء',exact:true}).click();
   await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:path.join(out,'friends-page.png')});
   await page.evaluate(()=>window.fixture.navigate('/play/fabraka'));
   await page.getByRole('heading',{name:'play',exact:true}).waitFor();
@@ -150,7 +150,7 @@ try {
   await page.goto(origin+'/#/settings');
   await page.evaluate(()=>window.fixture.chat('friend'));
   await page.getByRole('textbox',{name:'اكتب رسالة'}).waitFor();
-  await page.getByRole('button',{name:'العودة للّمة',exact:true}).click();
+  await page.getByRole('button',{name:'العودة للأصدقاء',exact:true}).click();
   await page.getByRole('textbox',{name:'البحث في اللّمة'}).waitFor();
   await page.goBack();await page.getByRole('heading',{name:'settings',exact:true}).waitFor();
   assert.deepEqual(errors,[]);

@@ -88,12 +88,38 @@ async function setupGame(page, game, locale) {
   await page.goto(`${origin}/?locale=${locale}#/play/${game}?mode=local`);
   const options = screen(page,`setup.${game}`);
   await options.waitFor();
-  if (locale === 'en') {
-    await page.locator('#local-content-locale').selectOption('en');
-    await options.waitFor();
-  }
+  assert.equal(await page.locator('#local-content-locale').count(), 0);
   assert.equal(await page.locator('html').getAttribute('dir'), locale === 'ar' ? 'rtl' : 'ltr');
 }
+
+test('WebKit resumes an older Arabic board after changing the interface to English', { timeout: 60000 }, async () => {
+  const browser = await webkit.launch({headless:true});
+  try {
+    const page = await browser.newPage({viewport, reducedMotion:'reduce'});
+    await setupGame(page, 'beep', 'ar');
+    await screen(page,'play-setup').locator(byId('start')).click();
+    const ready = screen(page,'beep.three.intro');
+    await ready.waitFor();
+    await ready.locator(byId('start')).click();
+    const prompt = screen(page,'beep.three.prompt').locator(byId('prompt'));
+    const original = await prompt.innerText();
+    await page.waitForFunction(() => JSON.parse(localStorage.getItem('maydan:beep:session-v1'))?.state?.phase === 'prompt');
+    // Simulate a board saved by the pre-localization client, then reopen the
+    // same origin using an English UI. Never edit the reducer or the prompt.
+    await page.goto(origin);
+    await page.evaluate(() => {
+      const key = 'maydan:beep:session-v1', board = JSON.parse(localStorage.getItem(key));
+      delete board.contentLocale; delete board.contentPackVersion; delete board.contentVersion;
+      if (board.profileSession) { delete board.profileSession.contentLocale; delete board.profileSession.contentVersion; }
+      localStorage.setItem(key, JSON.stringify(board));
+    });
+    await setupGame(page, 'beep', 'en');
+    await page.locator(byId('resume')).click();
+    assert.equal(await prompt.innerText(), original);
+    assert.equal(await page.locator('html').getAttribute('lang'), 'en');
+    assert.equal(await page.evaluate(() => localStorage.getItem('maydan:beep:en:new-en:session-v1')), null);
+  } finally { await browser.close(); }
+});
 
 function watchPage(page) {
   const errors = [];

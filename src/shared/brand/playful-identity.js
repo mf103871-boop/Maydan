@@ -53,8 +53,19 @@ import human_03Large from './assets/playful-identity/avatar-human-03.webp';
 import human_04Small from './assets/playful-identity/avatar-human-04-128.webp';
 import human_04Medium from './assets/playful-identity/avatar-human-04-256.webp';
 import human_04Large from './assets/playful-identity/avatar-human-04.webp';
-import sahraFrame from './assets/playful-identity/frame-sahra.webp';
-import artistFrame from './assets/playful-identity/frame-artist.webp';
+import sahraFrame from './assets/playful-cosmetics/sahra.webp';
+import artistFrame from './assets/playful-cosmetics/artist.webp';
+import noirFrame from './assets/playful-cosmetics/noir.webp';
+import signatureFrame from './assets/playful-cosmetics/signature.webp';
+import oliveFrame from './assets/playful-cosmetics/olive.webp';
+import starlightFrame from './assets/playful-cosmetics/starlight.webp';
+import level1Frame from './assets/playful-cosmetics/level-1.webp';
+import level10Frame from './assets/playful-cosmetics/level-10.webp';
+import level20Frame from './assets/playful-cosmetics/level-20.webp';
+import level30Frame from './assets/playful-cosmetics/level-30.webp';
+import level40Frame from './assets/playful-cosmetics/level-40.webp';
+import level50Frame from './assets/playful-cosmetics/level-50.webp';
+import level60Frame from './assets/playful-cosmetics/level-60.webp';
 import trophyBadge from './assets/playful-identity/badge-trophy.webp';
 import starBadge from './assets/playful-identity/badge-star.webp';
 import compassBadge from './assets/playful-identity/badge-compass.webp';
@@ -74,7 +85,13 @@ const avatars = {
 };
 const badgeSizes = {identity:[identityBadge128,identityBadge256,identityBadge],friends:[friendsBadge128,friendsBadge256,friendsBadge],hosting:[hostingBadge128,hostingBadge256,hostingBadge],online:[onlineBadge128,onlineBadge256,onlineBadge],trophy:[trophyBadge128,trophyBadge256,trophyBadge],star:[starBadge128,starBadge256,starBadge],compass:[compassBadge128,compassBadge256,compassBadge]};
 const badges = { identity:badgeSizes.identity, 'first-friend':badgeSizes.friends, circle:badgeSizes.friends, host:badgeSizes.hosting, gatherings:badgeSizes.hosting, 'online-start':badgeSizes.online, 'online-ten':badgeSizes.online, welcome: badgeSizes.star, 'first-win': badgeSizes.trophy, 'five-wins': badgeSizes.star, 'twenty-five-wins': badgeSizes.trophy, explorer: badgeSizes.compass, 'all-games': badgeSizes.compass };
-const frames = { 'sahra.frame': sahraFrame, 'artist.frame': artistFrame };
+const frames = {
+  'sahra.frame': sahraFrame, 'artist.frame': artistFrame, 'noir.frame': noirFrame,
+  'plus.signature.frame': signatureFrame, 'olive.frame': oliveFrame, 'starlight.frame': starlightFrame,
+  'progression.frame.1': level1Frame, 'progression.frame.10': level10Frame,
+  'progression.frame.20': level20Frame, 'progression.frame.30': level30Frame,
+  'progression.frame.40': level40Frame, 'progression.frame.50': level50Frame, 'progression.frame.60': level60Frame,
+};
 const backgrounds = {
   spark:'#B9E4D8', falcon:'#E4CFEA', lion:'#F7B2A3', fox:'#B9E4D8',
   owl:'#E4CFEA', cat:'#F6B89E', rocket:'#B9E4D8', controller:'#E4CFEA',

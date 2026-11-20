@@ -53,7 +53,8 @@ for(const[name,engine]of[['chromium',chromium],['webkit',webkit]])for(const loca
     assert.equal(await root.locator('[data-design-id="member-remove"]').count(),3);
     assert.equal(await root.locator('.is-self [data-design-id="member-remove"]').count(),0,'host has no self-removal control');
     assert.equal(await root.locator('.online-lobby-heading h2').innerText(),'رسمة ولمّة','room names are not translated by UI locale');
-    assert.equal(await root.locator('[data-design-id="content-language"] option[value="en"]').evaluate(option=>option.disabled),true);
+    assert.equal(await root.locator('strong[data-design-id="content-language"]').getAttribute('lang'), 'ar');
+    assert.equal(await root.locator('select[data-design-id="content-language"]').count(), 0);
     assert.equal(await start.isEnabled(),true);
     for(const[width,height]of[[390,844],[360,800],[430,932],[844,390]]){
       await page.setViewportSize({width,height});await settle(page);

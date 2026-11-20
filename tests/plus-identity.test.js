@@ -1,6 +1,6 @@
 import test, { after } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, rm } from 'node:fs/promises';
+import { mkdtemp, mkdir, rm, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { build } from 'esbuild';
@@ -12,6 +12,7 @@ after(() => rm(dir, { recursive: true, force: true }));
 await build({ stdin: { contents: `import React from 'react';import{renderToStaticMarkup}from'react-dom/server';import{ProfileAvatar,frameDetail}from'./src/profiles/ProfileAvatar.jsx';import{PlayerName,PlayerIdentity,MembershipBadge}from'./src/profiles/PlayerIdentity.jsx';import{ProductPreview}from'./src/plus/ProductPreview.jsx';export{frameDetail};export{cosmeticPosterSources}from'./src/profiles/identity-assets.js';const render=(C,p)=>renderToStaticMarkup(React.createElement(C,p));export const avatar=p=>render(ProfileAvatar,p),name=p=>render(PlayerName,p),identity=p=>render(PlayerIdentity,p),badge=p=>render(MembershipBadge,p),preview=p=>render(ProductPreview,p);`, resolveDir: root, loader: 'jsx' }, outfile: path.join(dir, 'render.mjs'), bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic', loader: { '.webp': 'dataurl' }, define: { __MAYDAN_ROOMS_URL__: JSON.stringify('https://identity.invalid') }, logLevel: 'silent' });
 const view = await import(pathToFileURL(path.join(dir, 'render.mjs')));
 const photo = 'https://identity.invalid/api/profiles/member/images/avatar/' + 'a'.repeat(64);
+const level20Art = (await readFile(path.join(root,'src/shared/brand/assets/playful-cosmetics/level-20.webp'))).toString('base64');
 const user = { id: 'member', name: 'أحمد', avatarUrl: photo, theme: 'teal', avatarPreset: 'fox', cosmetics: { frameId: 'sahra.frame', badge: false } };
 
 test('an equipped frame keeps the uploaded portrait inside its own crop and the decorative art outside it', () => {
@@ -41,7 +42,7 @@ test('living decoration is selected by a Plus frame ID and leaves earned progres
   assert.match(signature, /player-avatar-live-sparks"><i><\/i><i><\/i><i><\/i><i><\/i>/);
   for (const frameId of ['progression.frame.20', null]) {
     const html = view.avatar({ user: { ...user, cosmetics: { frameId } }, size: 100 });
-    if (frameId) assert.match(html, /\/assets\/progression\/v1\/frame-20\.webp/);
+    if (frameId) assert.ok(html.includes('data:image/webp;base64,' + level20Art));
     assert.doesNotMatch(html, /data-frame-theme|player-avatar-frame-light|player-avatar-live-halo|player-avatar-live-sparks/);
   }
 });
@@ -82,6 +83,6 @@ test('current Plus preview contains only profile presentation and preserves the 
   const html=view.preview({user,items:[{id:'sahra.profileSkin',kind:'profileSkin'}]});
   assert.match(html,/معاينة بروفايلك/);assert.ok(html.includes(photo));
   assert.match(html,/data-profile-skin="sahra"/);
-  assert.match(html,/--profile-skin-garland:url\(/);
+  assert.match(html,/--profile-skin-panorama:url\(/);
   assert.doesNotMatch(html,/assets\/council|council-scene|مقعد اللعب|RoomLook|plus-room-entrance/);
 });

@@ -95,7 +95,8 @@ async function createFixture(locale) {
   const creatorOnly = await user('Creator only', true);
   const moderatorOnly = await user('Moderator only');
   const accounts = { dual, creatorOnly, moderatorOnly };
-  env.MODERATOR_USER_IDS = dual.id + ',' + moderatorOnly.id;
+  env.MODERATOR_USER_IDS = moderatorOnly.id;
+  env.PROFILE_IMAGE_REVIEWER_USER_IDS = dual.id;
   const profile = async (endpoint = '/me', method = 'GET', body) => {
     const response = await routeProfiles(requestAt('https://fixture.test/api/profiles' + endpoint, player.token, method, body), env);
     const result = await response.json();
@@ -103,7 +104,7 @@ async function createFixture(locale) {
     return result.profile;
   };
   const moderator = async (endpoint, method = 'GET', body) => {
-    const response = await routeModeration(requestAt('https://fixture.test/api/moderation' + endpoint, dual.token, method, body), env);
+    const response = await routeModeration(requestAt('https://fixture.test/api/moderation' + endpoint, moderatorOnly.token, method, body), env);
     assert.ok(response.ok, 'moderator fixture response ' + response.status);
     return response.json();
   };
@@ -133,6 +134,12 @@ async function createFixture(locale) {
   };
   const forbidden = await routeModeration(requestAt('https://fixture.test' + avatar.previewUrl, creatorOnly.token), env);
   assert.equal(forbidden.status, 403, 'creator analytics permission alone does not authorize private previews');
+  const scoped = (path, method = 'GET', body) => routeModeration(requestAt('https://fixture.test/api/moderation' + path, dual.token, method, body), env);
+  assert.deepEqual(await (await scoped('/me')).json(), { moderator: false, imageReviewer: true });
+  for (const endpoint of ['/reports', '/audit', '/reports/report-1/audio']) assert.equal((await scoped(endpoint)).status, 403);
+  assert.equal((await scoped('/actions', 'POST', { action: 'suspend_user' })).status, 403);
+  assert.equal((await scoped('/actions', 'POST', { action: 'approve_image', reportId: 'report-1' })).status, 403);
+  assert.equal((await scoped(old.previewUrl.replace('/api/moderation', ''))).status, 404, 'image reviewer only sees pending versions');
   const gates = { role: null, list: null, preview: null, failPreview: false, failReports: false, ambiguousPost: false };
   const server = createServer(async (req, res) => {
     try {
@@ -236,6 +243,7 @@ async function run(browser, engine, locale) {
   const frame = kind => queue(page).locator('.moderation-image-card[data-kind="' + kind + '"]');
   const clickId = (root, id) => root.locator('[data-design-id="' + id + '"]').click();
   const scrollQueue = () => queue(page).evaluate(node => node.scrollIntoView({ block: 'start' }));
+  const reviewEntry = page.getByRole('button', { name: locale === 'ar' ? 'مراجعة الصور والأغلفة' : 'Review photos and covers', exact: true });
   try {
     await page.goto(f.origin + '/?locale=' + locale + '#/creator');
     await page.locator('.creator-dashboard').waitFor();
@@ -247,6 +255,8 @@ async function run(browser, engine, locale) {
     await select('creatorOnly');
     await permissionDenied;
     await settle(page);
+    await reviewEntry.click();
+    assert.match(await page.locator('#creator-photo-review').innerText(), locale === 'ar' ? /غير مخوّل/ : /does not have access/);
     assert.deepEqual(moderationRequests(), [{ actor: 'creatorOnly', path: '/api/moderation/me', method: 'GET' }]);
     assert.equal(await queue(page).count(), 0);
     await select('moderatorOnly', 'dual');
@@ -257,6 +267,8 @@ async function run(browser, engine, locale) {
     await select('dual');
     assert.equal(await queue(page).count(), 0);
     assert.ok(moderationRequests().every(request => request.path === '/api/moderation/me'));
+    assert.ok((await reviewEntry.boundingBox()).y < 300, 'photo queue entry is near the top of the creator dashboard');
+    await reviewEntry.click();
     f.gates.role.release(); f.gates.role = null;
     await queue(page).waitFor();
     assert.ok(await queue(page).locator('[aria-busy=true]').isVisible());
@@ -372,6 +384,7 @@ async function run(browser, engine, locale) {
     await page.setViewportSize({ width: 390, height: 844 });
     await go('/creator');
     await select('dual');
+    await reviewEntry.click();
     await frame('avatar').locator('img').waitFor();
     await clickId(frame('avatar'), 'approve-image');
     await dialog(page).waitFor();
@@ -400,10 +413,8 @@ async function run(browser, engine, locale) {
     assert.ok(afterApproval.avatarUrl.endsWith(f.avatar.version));
     assert.equal(afterApproval.coverUrl, f.prior.coverUrl);
 
-    await go('/moderation');
-    await page.getByRole('button', { name: imageLabel, exact: true }).click();
     await frame('cover').locator('img').waitFor();
-    await shot('moderation-cover');
+    await shot('creator-cover');
     await clickId(frame('cover'), 'reject-image');
     const rejectionReason = locale === 'ar' ? 'الغلاف لا يناسب هوية ميدان.' : 'Cover does not suit Maydan.';
     await dialog(page).getByRole('textbox').fill(rejectionReason);
@@ -411,10 +422,10 @@ async function run(browser, engine, locale) {
     await clickId(dialog(page), 'save-decision');
     await dialog(page).waitFor({ state: 'detached' });
     await queue(page).locator('.moderation-photo-empty').waitFor();
-    await shot('moderation-empty');
+    await shot('creator-empty');
     await clickId(queue(page), 'image-queue-refresh');
     await queue(page).locator('.moderation-photo-empty').waitFor();
-    await shot('moderation-empty-refreshed');
+    await shot('creator-empty-refreshed');
     assert.equal(f.submitted[2].version, f.cover.version);
     assert.equal(f.submitted[2].targetId, f.cover.id);
     assert.equal(f.submitted[2].reason, rejectionReason);

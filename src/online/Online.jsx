@@ -1,6 +1,6 @@
 import { errorText, arabicNumber } from './format.js';
 import { getUiLocale, tr } from '../shared/i18n/core.js';
-import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import QRCode from 'qrcode';
 import { createOnlineMatchAudio } from '../shared/fx/match-audio.js';
 import { createRoomAudioAdapter, bindRoomAudioCommands, emitRoomReceipt } from '../shared/fx/room-audio.js';
@@ -55,11 +55,11 @@ import { RewardedEntry, RewardedOffer } from '../shared/account/RewardedOffer.js
 import { REWARDED_PREVIEW, ROOM_REWARDED_OFFER, rewardEvent } from '../shared/account/rewarded.js';
 import { ticketPolicyEnabled, gameplayOffer, gameplayOfferById, badeehaFreeSelection } from '../shared/account/gameplay-policy.mjs';
 import { gameEntryPath } from '../platform/game-entry.mjs';
-import { ContentLocaleControl } from './ContentLocaleControl.jsx';
+import { MatchLanguage } from './ContentLocaleControl.jsx';
 import { contentVersionFor } from '../shared/content-locale.mjs';
 import { contentSettings } from './content-settings.js';
 import { useContentPack } from './useContentPack.js';
-import { getCategories } from '../data/game-content.js';
+import { getCategories, hasEnglishContentPack } from '../data/game-content.js';
 
 const SERVER = resolveServerUrl(typeof __MAYDAN_ROOMS_URL__ !== 'undefined' && __MAYDAN_ROOMS_URL__ || config.serverUrl, typeof location === 'undefined' ? '' : location.origin);
 const arabic = arabicNumber;
@@ -73,19 +73,42 @@ export function Entry(props) {
 function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver = false, initialView = 'public', rewarded = false, onJoined, onGameChange, onTutorial, joinOnly = false }) {
   const account = useAccount();
   const platform = usePlatform();
-  const [contentLocale, setContentLocale] = useState('ar');
-  const [contentCapabilities, setContentCapabilities] = useState({});
-  useEffect(() => {const controller=new AbortController();getContentCapabilities(SERVER,{signal:controller.signal}).then(value=>{if(!controller.signal.aborted)setContentCapabilities(value);}).catch(()=>{});return()=>controller.abort();},[]);
+  const preferredLocale = platform?.settings?.uiLocale || getUiLocale();
+  const [contentCapabilities, setContentCapabilities] = useState(null);
+  useEffect(() => {
+    if (preferredLocale !== 'en') return;
+    const controller = new AbortController();
+    getContentCapabilities(SERVER, { signal: controller.signal }).then(value => {
+      if (!controller.signal.aborted) setContentCapabilities(value);
+    }).catch(() => { if (!controller.signal.aborted) setContentCapabilities({}); });
+    return () => controller.abort();
+  }, [preferredLocale]);
   const fallback = initialCode && account.user?.id ? readSaved(SERVER, socialJoinFallbackKey(account.user.id, initialCode)) : null;
   const [mode, setMode] = useState(initialCode ? 'join' : joinOnly ? 'public' : ['public','create','join'].includes(initialView)?initialView:'public');
   // The public list is only a default. A player who picks a view keeps it.
   const viewPicked = useRef(Boolean(initialCode) || initialView !== 'public');
   const game = ONLINE_GAMES[initialGame] ? initialGame : 'meenfina';
+  const englishAvailable = contentCapabilities?.localizedContent === 1
+    && contentCapabilities.contentVersions?.en === contentVersionFor('en')
+    && (['mafia', 'ersomha'].includes(game) || hasEnglishContentPack(game));
+  const contentLocale = preferredLocale === 'en' && englishAvailable ? 'en' : 'ar';
+  const entryPack = useContentPack({ game, contentLocale, contentVersion: contentVersionFor(contentLocale) });
+  const roomContentReady = (preferredLocale !== 'en' || contentCapabilities !== null) && entryPack.ready;
   useMafiaAmbience(platform?.sound,game==='mafia');
   useEffect(()=>{onGameChange?.(game);},[game,onGameChange]);
-  const [fabrakaSettings, setFabrakaSettings] = useState(() => normalizeContentOptions(contentSettings(readSaved(SERVER, 'fabrakaSettings'))));
+  const [fabrakaDraft, setFabrakaSettings] = useState(() => readSaved(SERVER, 'fabrakaSettings'));
+  const fabrakaSettings = useMemo(() => {
+    if (game !== 'fabraka' || !roomContentReady) return null;
+    const draft = fabrakaDraft || {};
+    return normalizeContentOptions(contentSettings((draft.contentLocale || 'ar') === contentLocale ? draft : {...draft, categories: []}, contentLocale));
+  }, [game, roomContentReady, fabrakaDraft, contentLocale]);
   const [ersomhaSettings, setErsomhaSettings] = useState(() => normalizeErsomhaOptions(readSaved(SERVER, 'ersomhaSettings')));
-  const [badeehaSettings, setBadeehaSettings] = useState(() => normalizeBadeehaOptions(contentSettings(readSaved(SERVER, 'badeehaSettings'))));
+  const [badeehaDraft, setBadeehaSettings] = useState(() => readSaved(SERVER, 'badeehaSettings'));
+  const badeehaSettings = useMemo(() => {
+    if (game !== 'badeeha' || !roomContentReady) return null;
+    const draft = badeehaDraft || {};
+    return normalizeBadeehaOptions(contentSettings((draft.contentLocale || 'ar') === contentLocale ? draft : {...draft, categories: []}, contentLocale));
+  }, [game, roomContentReady, badeehaDraft, contentLocale]);
   const [mafiaSettings, setMafiaSettings] = useState(() => normalizeMafiaSettings({visibility:'public',...(readSaved(SERVER, 'mafiaSettings') || {})}));
   const [directoryState, setDirectory] = useState({ rooms: [], enabled: null, loading: false, error: '' });
   const [historyOpen,setHistoryOpen] = useState(false);
@@ -179,14 +202,14 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
   const mafiaChecking = mafiaCreation && Boolean(account.user?.id) && (directory.loading || (directory.enabled == null && !directory.error));
   const mafiaCreationBlocked = mafiaCreation && (mafiaChecking || Boolean(directory.error) || directory.enabled !== true);
   // The server rejects these settings with QUESTIONS; keep the button honest instead.
-  const topicsReady = mode !== 'create' || (game === 'fabraka' ? fabrakaTopics(contentSettings(fabrakaSettings,contentLocale)).enough : game === 'ersomha' ? enoughErsomhaCategories(ersomhaSettings) : game === 'badeeha' ? badeehaSettings.categories.length === 6 && badeehaReady(contentSettings(badeehaSettings,contentLocale)).ok : true);
+  const topicsReady = mode !== 'create' || roomContentReady && (game === 'fabraka' ? fabrakaTopics(contentSettings(fabrakaSettings,contentLocale)).enough : game === 'ersomha' ? enoughErsomhaCategories(ersomhaSettings) : game === 'badeeha' ? badeehaSettings.categories.length === 6 && badeehaReady(contentSettings(badeehaSettings,contentLocale)).ok : true);
   async function submit(event) {
-    event.preventDefault(); if (busy) return;
+    event.preventDefault(); if (busy || mode === 'create' && !topicsReady) return;
     if (joinOnly && mode === 'create') { navigate(gameEntryPath(game)); return; }
     setError('');
     if (!name.trim()) { setError('NAME'); return; }
     const policyHost = ticketPolicyEnabled(account.gameplayPolicy) && gameplayOffer(game, 'online') &&
-      !(game === 'badeeha' && badeehaFreeSelection(badeehaSettings.categories, account.gameplayPolicy));
+      !(game === 'badeeha' && badeehaFreeSelection(badeehaSettings?.categories || [], account.gameplayPolicy));
     if (mode === 'create' && (rewarded || policyHost || ['ersomha','mafia'].includes(game)) && !account.user?.id) { setError('AUTH_REQUIRED'); return; }
     // A pending/failed availability read is not evidence that the feature is off.
     if (mafiaCreationBlocked) return;
@@ -232,7 +255,7 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
     finally { if(requestCurrent(submitOwner,generation))setBusy(false); }
   }
   async function joinPublicRoom(roomCode, observe = false) {
-    if (busy) return;
+    if (busy || !roomCode && !roomContentReady) return;
     if (!account.user?.id) { setError('AUTH_REQUIRED'); return; }
     if(game!=='mafia'&&(!roomCode||observe)){setError('GAME');return;}
     const owner = account.user.id; const pendingKey = `pendingPublic${observe ? 'Observe' : 'Join'}:${game}:${owner}:${roomCode || directoryMode}:${directoryVoice}`;
@@ -252,7 +275,7 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
   const helpActions=game==='mafia'?<div className="online-directory-help-actions">
     {historyOwner&&<Button size="sm" data-design-id="my-history" onClick={()=>setHistoryOpen(true)}>{tr("سجل مجالسي ونتائجي")}</Button>}
     {account.ready&&account.signedIn&&<Button size="sm" onClick={()=>setReportsOpen(true)}>{tr("بلاغاتي في مافيا")}</Button>}
-    {directory.capabilities?.ranked===true&&<Button size="sm" onClick={()=>setRankedOpen(true)}>{tr("المنافسة الموسمية التجريبية")}</Button>}
+    {directory.capabilities?.ranked===true&&<Button size="sm" disabled={!roomContentReady} onClick={()=>setRankedOpen(true)}>{tr("المنافسة الموسمية التجريبية")}</Button>}
     {directory.capabilities?.mafiaCommunity===true&&<Button size="sm" onClick={()=>setCommunityOpen(true)}>{tr("الموسم والأندية والبطولات")}</Button>}
   </div>:null;
   const gameInfo = ONLINE_GAMES[game];
@@ -276,8 +299,8 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
         {!joinOnly && <Button data-design-id="entry-create" disabled={busy} variant={mode === 'create' ? 'primary' : 'ghost'} aria-pressed={mode === 'create'} onClick={() => { viewPicked.current = true; openCreate(); }}>{tr("إنشاء غرفة")}</Button>}
         <Button data-design-id="entry-join" disabled={busy} variant={mode === 'join' ? 'primary' : 'ghost'} aria-pressed={mode === 'join'} onClick={() => { viewPicked.current = true; setMode('join'); setError(''); credentialsRef.current = null; }}>{tr("دخول برمز")}</Button>
       </div>}
-      {mode === 'public' && game==='mafia' && <ContentLocaleControl englishAvailable={contentCapabilities.localizedContent===1&&contentCapabilities.contentVersions?.en===contentVersionFor('en')} game={game} value={contentLocale} disabled={busy} onChange={value=>{setContentLocale(value);setDirectoryPages(['']);}}/>}
-      {mode === 'public' ? <>{game==='mafia'?<MafiaDirectory onTutorial={onTutorial} {...directory} mode={directoryMode} voiceMode={directoryVoice} status={directoryStatus} onMode={value=>changeFilter(setDirectoryMode,value)} onVoiceMode={value=>changeFilter(setDirectoryVoice,value)} onStatus={value=>changeFilter(setDirectoryStatus,value)} hasPrevious={directoryPages.length>1} onNext={()=>directory.nextCursor&&setDirectoryPages(pages=>[...pages,directory.nextCursor])} onPrevious={()=>setDirectoryPages(pages=>pages.slice(0,-1))} onRefresh={() => setDirectoryRefresh(n => n+1)} onQuickJoin={() => joinPublicRoom()} onJoin={joinPublicRoom} onObserve={roomCode=>joinPublicRoom(roomCode,true)} onCreate={joinOnly ? undefined : ()=>openCreate('public')} onCode={()=>{setMode('join');setError('');credentialsRef.current=null;}} helpActions={helpActions} disabled={busy||!account.user?.id}/>:<OnlineDirectoryView game={game} {...directory} disabled={busy}
+      {mode === 'public' && game === 'mafia' && roomContentReady && <MatchLanguage value={contentLocale} compact />}
+      {mode === 'public' ? <>{game==='mafia'?<MafiaDirectory onTutorial={onTutorial} {...directory} mode={directoryMode} voiceMode={directoryVoice} status={directoryStatus} onMode={value=>changeFilter(setDirectoryMode,value)} onVoiceMode={value=>changeFilter(setDirectoryVoice,value)} onStatus={value=>changeFilter(setDirectoryStatus,value)} hasPrevious={directoryPages.length>1} onNext={()=>directory.nextCursor&&setDirectoryPages(pages=>[...pages,directory.nextCursor])} onPrevious={()=>setDirectoryPages(pages=>pages.slice(0,-1))} onRefresh={() => setDirectoryRefresh(n => n+1)} onQuickJoin={() => joinPublicRoom()} onJoin={joinPublicRoom} onObserve={roomCode=>joinPublicRoom(roomCode,true)} onCreate={joinOnly ? undefined : ()=>openCreate('public')} onCode={()=>{setMode('join');setError('');credentialsRef.current=null;}} helpActions={helpActions} disabled={busy||!roomContentReady||!account.user?.id}/>:<OnlineDirectoryView game={game} {...directory} disabled={busy}
         heading={<header className="online-directory-heading"><h2>{tr("الغرف العامة")}</h2><span>{arabic(gameInfo.min)}{tr(" إلى ")}{arabic(gameInfo.max)} {directoryUnit}</span></header>}
         onCreate={joinOnly ? undefined : ()=>openCreate()} onCode={()=>{setMode('join');setError('');credentialsRef.current=null;}} emptyText={joinOnly ? tr("لا غرف متاحة الآن. حدّث القائمة أو ادخل برمز.") : undefined}
         onRefresh={()=>setDirectoryRefresh(n=>n+1)} hasPrevious={directoryPages.length>1} onPrevious={()=>setDirectoryPages(pages=>pages.slice(0,-1))} onNext={()=>directory.nextCursor&&setDirectoryPages(pages=>[...pages,directory.nextCursor])}
@@ -290,8 +313,9 @@ function EntryView({ initialCode = '', initialGame = 'meenfina', initialObserver
         {mafiaCreation&&<div className="mafia-create-heading"><h2>{tr("إنشاء مجلس")}</h2><p>{mafiaSettings.visibility==='public'?tr("غرفتك تظهر في القائمة، ويستطيع أي لاعب مسجّل الانضمام ما دامت فيها مقاعد."):tr("غرفتك لا تظهر في القائمة. شارك الرمز أو الدعوة مع من تريد.")}</p></div>}
         <label className="online-field">{tr("اسمك في الغرفة")}<input data-design-id="name-input" autoComplete="nickname" maxLength={20} value={name} onChange={(e) => setName(e.target.value)} placeholder={tr("اكتب اسمك")} required /></label>
         {game!=='mafia' && <details data-design-id="avatar-picker"><summary>{tr("تغيير الشخصية")}</summary><AvatarPicker value={AVATARS[avatar]} onChange={(emoji) => setAvatar(AVATARS.indexOf(emoji))} /></details>}
-        {mode === 'create' && <ContentLocaleControl englishAvailable={contentCapabilities.localizedContent===1&&contentCapabilities.contentVersions?.en===contentVersionFor('en')} game={game} value={contentLocale} disabled={busy} onChange={value=>{if(game==='badeeha')setBadeehaSettings(previous=>normalizeBadeehaOptions(contentSettings({...previous,categories:[]},value)));if(game==='fabraka')setFabrakaSettings(previous=>normalizeContentOptions(contentSettings({...previous,categories:[]},value)));setContentLocale(value);credentialsRef.current=null;}}/>}
+        {mode === 'create' && roomContentReady && <MatchLanguage value={contentLocale} compact />}
         {mode === 'join' ? <label className="online-field">{tr("رمز الغرفة")}<input data-design-id="room-code" className="online-code-input" dir="ltr" inputMode="numeric" autoComplete="off" maxLength={8} value={code} onChange={(e) => { setCode(normalizeCode(e.target.value)); credentialsRef.current = null; }} placeholder="123456" required /></label>
+          : !roomContentReady ? <div role={entryPack.error ? 'alert' : 'status'}>{entryPack.error ? tr('تعذّر تحميل حزمة اللغة.') : tr('جارٍ تحميل حزمة اللغة…')}{entryPack.error && <Button onClick={entryPack.retry}>{tr('إعادة المحاولة')}</Button>}</div>
           : game === 'fabraka' ? <FabrakaSettings value={contentSettings(fabrakaSettings,contentLocale)} disabled={busy} onChange={(next) => { setFabrakaSettings(next); save(SERVER, 'fabrakaSettings', next); }} />
           : game === 'ersomha' ? <ErsomhaSettings value={ersomhaSettings} disabled={busy} onChange={(next) => { setErsomhaSettings(next); save(SERVER, 'ersomhaSettings', next); }} />
           : game === 'badeeha' ? <BadeehaSettings value={contentSettings(badeehaSettings,contentLocale)} disabled={busy} onChange={(next) => { setBadeehaSettings(next); save(SERVER, 'badeehaSettings', next); }} />
@@ -366,7 +390,7 @@ export function Lobby({ state, me, isHost, disabled, startDisabled = false, act,
   const [inviteOpen, setInviteOpen] = useState(false);
   const [handover, setHandover] = useState(false);
   const successors = state.game === 'mafia' && isHost ? players.filter((m) => m.id !== me?.id && m.connected) : [];
-  const languageControl=<ContentLocaleControl compact={state.game!=='mafia'} englishAvailable={state.capabilities?.localizedContent===1&&state.capabilities.newEnglishContent!==false} game={state.game||'meenfina'} value={state.contentLocale||'ar'} disabled={disabled} readOnly={!isHost||!!state.ranked} onChange={value=>{const identity={contentLocale:value,contentVersion:contentVersionFor(value)};let settings;if(state.game==='badeeha'){const categories=getCategories(value);settings=buildBadeehaRoom({...state.settings,...identity,categories:categories.slice(0,6).map(c=>c.id)});}act('content_locale',{...identity,...(settings?{settings}:{})});}}/>;
+  const languageControl = <MatchLanguage value={state.contentLocale || 'ar'} compact={state.game !== 'mafia'} />;
   if(state.game==='mafia') return <MafiaLobby languageControl={languageControl} state={state} me={me} accountId={account.user?.id} isHost={isHost} disabled={disabled} startDisabled={startDisabled} act={act} voice={voice} onSafety={onSafety} invite={<Invite code={state.code}/>}/>;
   return <OnlineLobbyFrame game={state.game||'meenfina'} footer={<>
     <Button data-design-id="ready" data-sound="none" full disabled={disabled} variant={me?.ready ? 'secondary' : 'primary'} onClick={() => act('ready', { ready: !me?.ready })}>{me?.ready ? tr("جاهز ✓ · إلغاء") : tr("أنا جاهز")}</Button>

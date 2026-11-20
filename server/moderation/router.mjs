@@ -1,7 +1,7 @@
 import { fail } from '../room-model.mjs';
 import { requireSession, withRotation } from '../accounts/session.mjs';
 import { readJson,json,errorResponse } from '../protocol.mjs';
-import { isModerator, assertModeratorSession } from './access.mjs';
+import { isModerator, canReviewProfileImages, assertModeratorSession } from './access.mjs';
 import * as db from './db.mjs';
 import { base64ToBytes } from '../profiles/images.mjs';
 import { friendIds,chargeUser } from '../social/db.mjs';
@@ -20,14 +20,18 @@ export async function routeModeration(request,env,url=new URL(request.url),charg
   try {
     const path=url.pathname.slice('/api/moderation'.length);
     const moderator=isModerator(env,auth.user.id);
-    if(path==='/me' && request.method==='GET')return withRotation(json({moderator}),auth.rotated);
-    if(!moderator)fail('FORBIDDEN',403);
+    const imageReviewer=canReviewProfileImages(env,auth.user.id);
+    if(path==='/me' && request.method==='GET')return withRotation(json({moderator,imageReviewer}),auth.rotated);
+    const image=/^\/images\/([A-Za-z0-9_-]{1,100})\/([a-f0-9]{64})$/.exec(path);
+    const imageRead=request.method==='GET' && (path==='/images' || !!image);
+    const actionRequest=request.method==='POST' && path==='/actions';
+    if(!moderator && !(imageReviewer && (imageRead || actionRequest)))fail('FORBIDDEN',403);
     const actor = { userId: auth.user.id, sessionId: auth.rotated?.id || auth.session.id };
     const finish = async response => {
       // Storage or a database read can outlive the moderator's authorization.
       // Recheck the exact verified session before exposing private evidence.
       if (request.method === 'GET') {
-        try { await assertModeratorSession(env, actor); }
+        try { await assertModeratorSession(env, actor, Date.now(), imageRead); }
         catch (error) { try { await response.body?.cancel(); } catch { /* release the private stream */ } throw error; }
       }
       return withRotation(response, auth.rotated);
@@ -38,7 +42,7 @@ export async function routeModeration(request,env,url=new URL(request.url),charg
     else if(path==='/audit' && request.method==='GET')response=json(await db.auditOf(env,db.pageOf(url.searchParams)));
     else if(path==='/actions' && request.method==='POST') {
       await chargeUser(env,auth.user.id,'write');
-      const result=await db.performAction(env,{userId:auth.user.id,sessionId:auth.rotated?.id||auth.session.id},await readJson(request,8192));
+      const result=await db.performAction(env,actor,await readJson(request,8192));
       if(result.action==='suspend_user')await recheckMafiaAuthorization(env,result.subjectUserId);
       try {
         if(result.action==='suspend_user')await forgetSocialUser(env,result.subjectUserId);
@@ -57,9 +61,8 @@ export async function routeModeration(request,env,url=new URL(request.url),charg
       if(drawing&&request.method==='GET')return await finish(await drawingReportEvidence(env,drawing[1]));
       const audio=/^\/reports\/([A-Za-z0-9_-]{1,100})\/audio$/.exec(path);
       if(audio&&request.method==='GET')return await finish(await reportAudioResponse(env,audio[1]));
-      const image=/^\/images\/([A-Za-z0-9_-]{1,100})\/([a-f0-9]{64})$/.exec(path);
       if(!image||request.method!=='GET')fail('NOT_FOUND',404);
-      const found=await db.reviewImage(env,image[1],image[2]);if(!found)fail('NOT_FOUND',404);
+      const found=await db.reviewImage(env,image[1],image[2],!moderator);if(!found)fail('NOT_FOUND',404);
       response=new Response(base64ToBytes(found.data_base64),{headers:{'content-type':'image/jpeg','cache-control':'no-store',
         'x-content-type-options':'nosniff','content-security-policy':"default-src 'none'; sandbox"}});
     }

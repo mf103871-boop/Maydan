@@ -1,7 +1,7 @@
 import { tr, numberForLocale, getUiLocale, localeDirection } from '../../shared/i18n/core.js';
 import React, { useId, useState } from 'react';
 import { PresentationStyles } from '../../shared/ui/PresentationStyles.jsx';
-import { getAvatarArt } from '../../shared/brand/playful-identity.js';
+import { getAvatarArt, getFrameArt } from '../../shared/brand/playful-identity.js';
 import stylesheet from './progression.css?sheet';
 
 const ROOT = './assets/progression/v1/';
@@ -11,10 +11,7 @@ const typeNames = { frame: 'إطارات', collectible: 'مقتنيات', badge:
 const integer = value => Math.max(0, Math.floor(Number.isFinite(value) ? value : 0));
 export const progressionNumber = value => numberForLocale(integer(value), getUiLocale(), { useGrouping:false });
 export const progressionArt = key => typeof key === 'string' && /^[a-z0-9-]+$/.test(key) ? ROOT + key + '.webp' : undefined;
-export const progressionFrameArt = id => {
-  const level = typeof id === 'string' ? /^progression\.frame\.(1|10|20|30|40|50|60)$/.exec(id)?.[1] : null;
-  return progressionArt(level ? 'frame-' + level : null);
-};
+export const progressionFrameArt = id => typeof id === 'string' && id.startsWith('progression.frame.') ? getFrameArt(id) : null;
 const masteryArtwork = { badeeha: 'mastery-badeeha', mafia: 'mastery-mafia' };
 const masteryNames = { badeeha: 'بديهة', mafia: 'مافيا', ersomha: 'ارسمها', meenfina: 'مين فينا؟', fabraka: 'فبركة', beep: 'قبل ما يطق!', mamnoo: 'ممنوع!', jabeen: 'على جبينك' };
 const levelText = level => tr("المستوى ") + progressionNumber(level);

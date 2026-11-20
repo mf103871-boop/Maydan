@@ -19,7 +19,7 @@ export const moderationError = (error, operation) => {
   if (code !== 'NETWORK' && Object.hasOwn(MODERATION_ERRORS, code)) return MODERATION_ERRORS[code];
   return readErrors[operation] || MODERATION_ERRORS.NETWORK;
 };
-export const emptyModeration = () => ({ userId: null, ready: false, moderator: false, loading: false, saving: false,
+export const emptyModeration = () => ({ userId: null, ready: false, moderator: false, imageReviewer: false, loading: false, saving: false,
   reports: [], images: [], actions: [], nextBefore: null, section: 'reports', status: 'open', accessUnconfirmed: false, error: '' });
 const denied = code => ['FORBIDDEN', 'AUTH_REQUIRED', 'AUTH_EXPIRED', 'ACCOUNT_SUSPENDED'].includes(code);
 
@@ -44,11 +44,11 @@ export class ModerationClient {
     const epoch = ++this.epoch;
     this.update({ ...emptyModeration(), userId, ready: !userId });
     if (!userId) return;
-    try { const result = await this.call('/me'); this.current(epoch); this.update({ ready: true, moderator: result.moderator === true }); }
+    try { const result = await this.call('/me'); this.current(epoch); this.update({ ready: true, moderator: result.moderator === true, imageReviewer: result.imageReviewer === true || result.moderator === true }); }
     catch (error) { if (epoch === this.epoch) this.update({ ready: true, accessUnconfirmed: !denied(error?.code), error: moderationError(error, 'access') }); }
   }
   async load(section = this.state.section, status = this.state.status, older = false) {
-    if (!this.state.moderator || this.state.loading || this.state.saving) return;
+    if (!(this.state.moderator || (section === 'images' && this.state.imageReviewer)) || this.state.loading || this.state.saving) return;
     const epoch = this.epoch;
     const before = older ? this.state.nextBefore : null;
     const key = section === 'audit' ? 'actions' : section;
@@ -64,7 +64,8 @@ export class ModerationClient {
     finally { if (epoch === this.epoch) this.update({ loading: false }); }
   }
   async act(body) {
-    if (!this.state.moderator || this.state.saving) throw Object.assign(new Error(), { code: 'FORBIDDEN' });
+    const imageDecision = this.state.imageReviewer && ['approve_image', 'reject_image'].includes(body?.action) && body.reportId === undefined;
+    if (!(this.state.moderator || imageDecision) || this.state.saving) throw Object.assign(new Error(), { code: 'FORBIDDEN' });
     const epoch = this.epoch; this.update({ saving: true, error: '' });
     try { const result = await this.call('/actions', { method: 'POST', body }); this.current(epoch); return result; }
     finally { if (epoch === this.epoch) this.update({ saving: false }); }

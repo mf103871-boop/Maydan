@@ -19,8 +19,14 @@ const source = `import React,{useState}from'react';import{createRoot}from'react-
 import{ProfileAvatar}from'./src/profiles/ProfileAvatar.jsx';import{PlayerName}from'./src/profiles/PlayerIdentity.jsx';import identity from'./src/profiles/identity.css';
 const initial={id:'member',name:'أحمد',theme:'teal',avatarUrl:'/api/profiles/member/images/avatar/'+'a'.repeat(64),cosmetics:{frameId:'sahra.frame',nameColorId:'noir.nameColor',coverId:'artist.cover',badge:false}};
 function Harness(){const[user,setUser]=useState(initial),[room,setRoom]=useState({code:'123456',game:'mafia',phase:'lobby',members:[{id:'host',name:'المضيف',profile:initial}]}),[status,setStatus]=useState('connected');window.identityTest={user:patch=>setUser(u=>({...u,...patch,cosmetics:{...u.cosmetics,...patch.cosmetics}})),join:(id)=>setRoom(r=>({...r,members:[...r.members,{id,name:'ضيف '+id,profile:{...initial,name:'ضيف '+id,cosmetics:{...initial.cosmetics,entranceId:'sahra.entrance'}}}]})),phase:phase=>setRoom(r=>({...r,phase})),status:setStatus,roomCode:code=>setRoom(r=>({...r,code}))};return <><style>{identity}</style><style>{'body{margin:0;padding:25px;background:#fff6e5;color:#30203f;font-family:Arial}*{box-sizing:border-box}.cases{display:flex;align-items:center;gap:34px;flex-wrap:wrap;padding:24px}.status-wrap{position:relative;display:inline-flex}.fixture-status{position:absolute;right:-3px;bottom:-3px;width:9px;height:9px;border:2px solid white;border-radius:50%;background:rgb(0,140,90);z-index:4}.room{position:relative;min-height:180px;border:1px solid #ccc;margin-top:30px}.spacer{height:1200px}.offscreen{padding:30px}.long{max-width:100%;margin-top:20px}'}</style><h1>اختبار هوية محلي</h1><div className='cases'>{[24,40,100].map(size=><span className='status-wrap' data-case={size} key={size}><ProfileAvatar user={user} size={size}/><i className='fixture-status'/></span>)}</div><div id='name'><PlayerName user={user} card/></div><div className='long'><PlayerName user={{...user,name:'اسم طويل جدًا للاعب الميدان من دون قص معلومة مهمة'}} card/></div><div className='spacer'/><div className='offscreen'><ProfileAvatar user={user} size={40}/></div></>};createRoot(document.getElementById('root')).render(<React.StrictMode><Harness/></React.StrictMode>);`;
-const built = await build({ stdin: { contents: source, resolveDir: root, loader: 'jsx' }, bundle: true, write: false, format: 'iife', jsx: 'automatic', loader: { '.css': 'text', '.webp': 'dataurl' }, define: { __MAYDAN_ROOMS_URL__: JSON.stringify('same-origin'), 'process.env.NODE_ENV': JSON.stringify('production') }, logLevel: 'silent' });
-const approvedFrameData = 'data:image/webp;base64,' + (await readFile(path.join(root, 'src/shared/brand/assets/playful-identity/frame-sahra.webp'))).toString('base64');
+const studioNoir = '/fixture-assets/noir.webp';
+const serveNoir = { name: 'serve-studio-noir', setup(builder) {
+  builder.onLoad({filter:/[\\/]playful-cosmetics[\\/]noir\.webp$/}, () => ({
+    contents: 'export default ' + JSON.stringify(studioNoir), loader:'js',
+  }));
+} };
+const built = await build({ plugins:[serveNoir], stdin: { contents: source, resolveDir: root, loader: 'jsx' }, bundle: true, write: false, format: 'iife', jsx: 'automatic', loader: { '.css': 'text', '.webp': 'dataurl' }, define: { __MAYDAN_ROOMS_URL__: JSON.stringify('same-origin'), 'process.env.NODE_ENV': JSON.stringify('production') }, logLevel: 'silent' });
+const approvedFrameData = 'data:image/webp;base64,' + (await readFile(path.join(root, 'src/shared/brand/assets/playful-cosmetics/sahra.webp'))).toString('base64');
 const testImage = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="#06768b"/><circle cx="50" cy="40" r="22" fill="#fff6e5"/><path d="M12 100a38 38 0 0 1 76 0" fill="#fff6e5"/></svg>');
 const testFrame = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx="50" cy="50" r="39" fill="none" stroke="#ffbf36" stroke-width="12"/><path d="M50 0 58 12 50 20 42 12Z" fill="#06768b"/></svg>');
 
@@ -30,6 +36,7 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
     const url = new URL(req.url, 'http://local');
     if (broken.has(url.pathname)) { res.writeHead(404, { 'cache-control': 'no-store' }); res.end(); return; }
     if (url.pathname === '/bundle.js') { res.setHeader('content-type', 'text/javascript'); res.end(built.outputFiles[0].contents); return; }
+    if (url.pathname === studioNoir) { res.setHeader('content-type', 'image/webp'); res.end(await readFile(path.join(root,'src/shared/brand/assets/playful-cosmetics/noir.webp'))); return; }
     if (url.pathname.startsWith('/assets/plus/')) {
       const target = path.resolve(root, 'public', '.' + url.pathname);
       assert.ok(target.startsWith(path.resolve(root, 'public/assets/plus') + path.sep));
@@ -137,7 +144,7 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
     // decoded/in-flight artist image. Toggling a server to404 does not evict a
     // resource already held by the first browser context.
     const fallbackFrame = getCosmetic('noir.frame');
-    for (const pathname of Object.values(fallbackFrame.frameAssets)) broken.add(pathname);
+    for (const pathname of [studioNoir, ...Object.values(fallbackFrame.frameAssets)]) broken.add(pathname);
     stage = 'v2-frame-fallback';
     const legacyContext = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'no-preference' });
     const legacyPage = await legacyContext.newPage();
@@ -150,7 +157,7 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) test(
       Object.values(expected).includes(new URL(image.src).pathname) && image.complete && image.naturalWidth > 0), fallbackFrame.fallbackFrameAssets);
     await legacyContext.close();
     observations.checks.push('Unavailable v3 artwork uses the corresponding existing v2 size.');
-    const failedPaths = [...Object.values(fallbackFrame.frameAssets), ...Object.values(fallbackFrame.fallbackFrameAssets),
+    const failedPaths = [studioNoir, ...Object.values(fallbackFrame.frameAssets), ...Object.values(fallbackFrame.fallbackFrameAssets),
       '/assets/plus/v2/artist-avatar.webp', '/assets/plus/v1/artist.webp'];
     for (const pathname of failedPaths) broken.add(pathname);
     stage = 'fresh-failure-context';

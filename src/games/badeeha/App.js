@@ -10,8 +10,8 @@ import { flashScreen, stampScreen, vignette, wait, burstConfetti, confetti as co
 // ومفاتيح التخزين تحت النطاق maydan:badeeha (انظر keys.js).
 import React from "../../design/react.js";
 import { socialInterruption } from '../../social/interruption.js';
-import { getCategories } from "../../data/game-content.js";
-import { normalizeContentIdentity } from '../../shared/content-locale.mjs';
+import { getCategories, loadGameContent } from "../../data/game-content.js";
+import { normalizeContentIdentity, contentVersionFor } from '../../shared/content-locale.mjs';
 import MAYDAN_BETA_CSS from "./styles.css?sheet";
 import { PresentationStyles } from "../../shared/ui/PresentationStyles.jsx";
 import MaydanLogicBeta, {
@@ -49,9 +49,8 @@ var hBeta = React.createElement;
 
 
 
-function MaydanBeta({ api, matchLanguage, entry = 'home' } = {}) {
+function MaydanBeta({ api, savedSession = null, entry = 'home' } = {}) {
   const requestedLocale = api?.contentLocale, requestedVersion = api?.contentVersion;
-  const reportContentSetup = api?.setContentSetupActive;
   const identity = useMemo(() => normalizeContentIdentity({contentLocale:requestedLocale,contentVersion:requestedVersion}), [requestedLocale, requestedVersion]);
   const CATS = useMemo(() => getCategories(identity.contentLocale, identity.contentVersion), [identity]);
   const TOTAL_Q = CATS.reduce((sum, category) => sum + category.qs.length, 0);
@@ -61,8 +60,8 @@ function MaydanBeta({ api, matchLanguage, entry = 'home' } = {}) {
   const landingScreen = entry === 'setup' && !isDesignPreview ? 'setup' : 'home';
   const rewarded = REWARDED_PREVIEW ? api?.rewarded : null;
   const scope = rewarded?.owner;
-  const storageKey = useCallback((key) => {
-    const localizedKey = identity.contentLocale === 'ar' ? key : `${key}:${identity.contentLocale}:${identity.contentVersion}`;
+  const storageKey = useCallback((key, locale = identity.contentLocale) => {
+    const localizedKey = locale === 'ar' ? key : `${key}:${locale}:${contentVersionFor(locale)}`;
     return scope ? rewardedStorageKey(scope, localizedKey) : localizedKey;
   }, [scope, identity]);
   const saveKey = useCallback((key, value) => isDesignPreview ? Promise.resolve() : saveBadeehaKey(storageKey(key), value), [isDesignPreview, storageKey]);
@@ -283,6 +282,28 @@ function MaydanBeta({ api, matchLanguage, entry = 'home' } = {}) {
       toast(tr("تعذرت المشاركة على هذا الجهاز"));
     }
   }
+  const [alternateBoard, setAlternateBoard] = useState(null);
+  const recoveryStarted = useRef(false), recoveryPlayed = useRef(false);
+  useEffect(() => {
+    if (isDesignPreview || !hydrated || savedActive || !api?.resumeBadeehaBoard) return;
+    const locale = identity.contentLocale === 'ar' ? 'en' : 'ar';
+    const getItem = key => localStorage.getItem(storageKey(key, locale));
+    try { if (!getItem(MAYDAN_BETA_KEYS.active)) return; } catch { return; }
+    let active = true;
+    loadGameContent('badeeha', locale, contentVersionFor(locale)).then(() => {
+      if (active) setAlternateBoard(readBadeehaState(getCategories(locale), {getItem}).active);
+    }).catch(() => {});
+    return () => { active = false; };
+  }, [isDesignPreview, hydrated, savedActive, storageKey, identity, api?.resumeBadeehaBoard]);
+  useEffect(() => {
+    if (!savedSession || !hydrated) return;
+    if (!recoveryStarted.current && savedActive) {
+      recoveryStarted.current = true;
+      void resumeGame();
+    } else if (screen === 'board' || screen === 'question') recoveryPlayed.current = true;
+    else if (recoveryPlayed.current && (screen === 'home' || screen === 'setup')) api?.finishBadeehaRecovery?.();
+  }, [savedSession, hydrated, savedActive, screen]);
+
   (useEffect(() => {
     if (isDesignPreview) return undefined;
     let cancelled = !1;
@@ -398,10 +419,6 @@ function MaydanBeta({ api, matchLanguage, entry = 'home' } = {}) {
       scope,
       identity,
     ]),
-    useLayoutEffect(() => {
-      reportContentSetup?.(screen === 'setup' || screen === 'home');
-      return () => reportContentSetup?.(false);
-    }, [reportContentSetup, screen]),
     useEffect(() => {
       // شاشة اللعب تفترض inGame=true لألعاب setup:'self'، فكان تأكيد الخروج يظهر
       // على الشاشة الأولى قبل بدء أي مباراة. اللعبة وحدها تعرف متى بدأت المباراة.
@@ -721,7 +738,10 @@ function MaydanBeta({ api, matchLanguage, entry = 'home' } = {}) {
       setRewardBusy(true);
       const allowed = await api.authorizeMatch({ categories: savedActive.selectedCategories, resume: savedActive });
       if (mounted.current) setRewardBusy(false);
-      if (!allowed || !mounted.current) return;
+      if (!allowed || !mounted.current) {
+        if (mounted.current && savedSession) api?.finishBadeehaRecovery?.();
+        return;
+      }
     }
     openSavedMatch(savedActive);
   }
@@ -1095,17 +1115,18 @@ function MaydanBeta({ api, matchLanguage, entry = 'home' } = {}) {
   // الإجابة «معروضة» فقط حين كُشفت ولم يخفها المضيف؛ الوسائط والتلميحات تتبع الحالة نفسها.
   const answerShown = revealed && !answerHidden;
   function SavedMatchCard() {
-    if (!savedActive) return null;
-    const savedProgress = savedActive ? Object.keys(savedActive.used || {}).length : 0;
+    const board = savedActive || alternateBoard;
+    if (!board) return null;
+    const savedProgress = Object.keys(board.used || {}).length;
     return hBeta(
       "div", { className: "m-saved-card" },
       hBeta("div", null,
         hBeta("b", null, tr("مباراة محفوظة")),
-        hBeta("small", null, tr("{v0} من {v1} سؤالًا", {v0: savedProgress, v1: savedActive.roundSize})),
+        hBeta("small", null, tr("{v0} من {v1} سؤالًا", {v0: savedProgress, v1: board.roundSize})),
         hBeta("span", { className: "m-saved-progress", "aria-hidden": "true" },
-          hBeta("i", { style: { width: `${Math.min(100, (savedProgress / savedActive.roundSize) * 100)}%` } }))),
-      hBeta("button", { "data-design-id": "resume", "data-design-required": "true", type: "button", className: "m-primary", disabled: rewardBusy, onClick: resumeGame }, tr("متابعة")),
-      (!scope || savedActive.rewardedConfirmed) && hBeta("button", { "data-design-id": "discard-save", type: "button", className: "m-link", disabled: rewardBusy, onClick: discardSavedGame }, tr("حذفها")),
+          hBeta("i", { style: { width: `${Math.min(100, (savedProgress / board.roundSize) * 100)}%` } }))),
+      hBeta("button", { "data-design-id": "resume", "data-design-required": "true", type: "button", className: "m-primary", disabled: rewardBusy, onClick: savedActive ? resumeGame : () => api.resumeBadeehaBoard(board) }, tr("متابعة")),
+      savedActive && (!scope || savedActive.rewardedConfirmed) && hBeta("button", { "data-design-id": "discard-save", type: "button", className: "m-link", disabled: rewardBusy, onClick: discardSavedGame }, tr("حذفها")),
     );
   }
   function HomeScreen() {
@@ -1336,7 +1357,6 @@ function MaydanBeta({ api, matchLanguage, entry = 'home' } = {}) {
           ),
         ),
       ),
-      matchLanguage,
       hBeta(
         "div",
         { className: "m-panel m-setup-panel", "data-setup-section": "categories", tabIndex: -1 },

@@ -65,6 +65,15 @@ test('Badeeha v2 match admission never turns individual packs into paid locks',(
   assert.equal(lockedPack('not-a-basic-pack',false,TICKET_POLICY),true);
 });
 
+test('entry recovery preserves English content slots across an interface language change', () => {
+  for (const [game, key] of [['beep','maydan:beep:en:new-en:session-v1'], ['badeeha','maydan:badeeha:active-game-v2:en:new-en']]) {
+    const backend = memory();
+    store(backend, key, {contentLocale:'en', profileSession:{ownerUserId:'owner-a'}});
+    assert.deepEqual(localEntryRecovery(account, game, backend), {kind:'active', path:`/play/${game}?mode=local`});
+    assert.equal(localEntryRecovery({...account, user:{id:'owner-b'}}, game, backend), null);
+  }
+});
+
 test('same-owner pre-policy saved board stays reachable without inventing a new grant',()=>{
   const backend=memory();store(backend,'maydan:beep:session-v1',{profileSession:{ownerUserId:'owner-a'}});
   assert.deepEqual(localEntryRecovery(account,'beep',backend),{kind:'active',path:'/play/beep?mode=local'});

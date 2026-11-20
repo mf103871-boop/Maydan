@@ -3,8 +3,7 @@
 
 /* ── الجدار ───────────────────────────────────────────────────────── */
 .paywall { display: grid; gap: 14px; justify-items: stretch; text-align: center; }
-.paywall-hero { display: block; margin-inline: auto; --contact-inset: 20%; --contact-y: -2px; }
-.paywall-hero .clay-trophy { width: clamp(108px, 34vw, 148px); height: auto; }
+.paywall-hero { display:block; width:100%; height:clamp(102px,20vh,180px); object-fit:contain; background:#fff8ef; border-radius:20px; }
 .paywall-title { font-size: clamp(1.35rem, 5.6vw, 1.75rem); font-weight: 900; line-height: 1.45; color: var(--text); text-wrap: balance; margin: 0; }
 .paywall-reason { margin: 0; font-size: .95rem; line-height: 1.75; color: #6c4f8a; background: var(--top-light), #F5E7FA; border: 1px solid #DCC3EA; border-radius: 18px; padding: 11px 14px; box-shadow: var(--shadow-row, inset 0 1px 0 #fff, 0 2px 0 #E3D3BE); }
 
@@ -21,7 +20,7 @@
   box-shadow: inset 0 2px 1px #fff9, 0 var(--ledge, 3px) 0 var(--clay-ledge, #E3D3BE), 0 6px 12px #63432F14;
   transition: border-color .2s ease, background-color .2s ease, transform .12s ease; }
 .paywall-plan:active { transform: var(--interaction-transform, translateY(var(--ledge, 3px))); transition-duration: .08s; }
-.paywall-plan.is-selected { border-color: var(--purple, #9250BD); background: var(--top-light), #F4E6FB; animation: ui-pop-select .3s var(--ease-spring); }
+.paywall-plan.is-selected { border-color:#08796d; background:var(--top-light),#e4f3eb; animation:ui-pop-select .3s var(--ease-spring); }
 .paywall-plan-name { display: flex; align-items: center; gap: 6px; font-weight: 900; font-size: 1rem; }
 .paywall-plan-price { font-size: 1.15rem; font-weight: 900; color: #663385; font-variant-numeric: tabular-nums; line-height: 1.4; }
 .paywall-plan-period { font-size: .8rem; color: var(--muted); font-weight: 700; }

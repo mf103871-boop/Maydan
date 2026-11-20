@@ -463,3 +463,47 @@ for (const [engineName, engine] of [['chromium', chromium], ['webkit', webkit]])
     }
   });
 }
+for (const locale of ['ar', 'en']) {
+  test('webkit/' + locale + ' friends scroll is native through refresh and navigation', { timeout: 45000 }, async () => {
+    resetState(locale);
+    state.friends.push(...Array.from({ length: 36 }, (_, i) => ({
+      ...state.friends[2], id: 'scroll-' + i, conversationId: 'direct-scroll-' + i,
+      name: (locale === 'ar' ? 'صديق ' : 'Friend ') + i,
+    })));
+    const browser = await webkit.launch();
+    try {
+      const page = await browser.newPage({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
+      await page.route('**/*', route => new URL(route.request().url()).origin === origin ? route.continue() : route.abort());
+      await page.goto(origin + '/?locale=' + locale + '#/friends');
+      await node(page, 'friend-chat').last().waitFor();
+      await settle(page);
+      const list = page.locator('.lamma-list-scroll');
+      await list.evaluate(el => {
+        const original = Object.getOwnPropertyDescriptor(Element.prototype, 'scrollTop');
+        window.listMeasurements = { writes: [], scrolls: [] };
+        Object.defineProperty(el, 'scrollTop', {
+          configurable: true, get() { return original.get.call(this); },
+          set(value) { window.listMeasurements.writes.push(value); original.set.call(this, value); },
+        });
+        el.addEventListener('scroll', () => window.listMeasurements.scrolls.push(el.scrollTop));
+      });
+      await list.evaluate(el => el.scrollBy({ top: 330, behavior: 'smooth' }));
+      await page.waitForFunction(() => document.querySelector('.lamma-list-scroll').scrollTop >= 329, undefined, { timeout: 2200 }).catch(async error => { throw new Error('Scroll stopped early: ' + JSON.stringify(await page.evaluate(() => ({ ...window.listMeasurements, offset: document.querySelector('.lamma-list-scroll').scrollTop, height: document.querySelector('.lamma-list-scroll').clientHeight, scrollHeight: document.querySelector('.lamma-list-scroll').scrollHeight }))), { cause: error }); });
+      await settle(page);
+      await page.evaluate(() => window.refreshSocial());
+      await list.evaluate(el => el.scrollBy({ top: -170, behavior: 'smooth' }));
+      await page.waitForFunction(() => document.querySelector('.lamma-list-scroll').scrollTop <= 161);
+      await settle(page);
+      const result = await page.evaluate(() => ({ ...window.listMeasurements, offset: document.querySelector('.lamma-list-scroll').scrollTop }));
+      await writeFile(path.join(output, 'webkit-' + locale + '-friends-scroll.json'), JSON.stringify(result, null, 2));
+      assert.ok(result.scrolls.length >= 2 && result.offset > 60);
+      assert.deepEqual(result.writes, [], 'native list scrolling must not be written back by React during gestures');
+      // Leave with the tab bar visible; the destination restores this exact native offset.
+      await list.evaluate(el => el.querySelector('[data-design-id="friend-chat"]').click());
+      await page.locator('.social-composer').waitFor();
+      await page.goBack();
+      await list.waitFor();
+      await page.waitForFunction(expected => Math.abs(document.querySelector('.lamma-list-scroll').scrollTop - expected) < 2, result.offset);
+    } finally { await browser.close(); }
+  });
+}

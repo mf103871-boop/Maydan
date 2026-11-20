@@ -607,6 +607,8 @@ export const EN_SOCIAL = {
   "إزالة الاسم والنبذة": "Remove name and bio",
   "لم تُنشر بعد": "Not published yet",
   "الصور الجديدة للمراجعة": "New images to review",
+  "مراجعة الصور والأغلفة": "Review photos and covers",
+  "حسابك غير مخوّل بمراجعة صور اللاعبين وأغلفتهم.": "Your account does not have access to review player photos and covers.",
   "نشر الغلاف الجديد للحساب «{v0}» بدل غلافه الحالي.": "Publish the new cover for “{v0}” in place of their current cover.",
   "نشر الصورة الشخصية الجديدة للحساب «{v0}» بدل صورته الحالية.": "Publish the new profile photo for “{v0}” in place of their current photo.",
   "رفض الغلاف الجديد. يبقى الغلاف المعتمد السابق إن وُجد، ويظهر سبب الرفض لصاحب الحساب.": "Reject the new cover. Any approved cover stays in place, and the account owner can see the reason.",

@@ -80,6 +80,7 @@ export function CreatorDashboard({ onBack, fetchAnalytics }) {
   return <Screen className="creator-dashboard" data-design-screen="platform.creator"><PresentationStyles sheet={styles} /><div dir={dir} className="creator-content">
     <header className="creator-heading"><IconButton label={copy.back} onClick={navigateBack} data-design-id="creator-back"><IconMotion data-directional="back" /></IconButton><h1>{copy.title}</h1><p>{copy.intro}</p></header>
     {!account.ready ? <p className="creator-message" role="status">{copy.loading}</p> : !enabled || accessError ? <p className="creator-message" role={accessError ? 'alert' : 'status'}>{accessError && !['FORBIDDEN', 'CREATOR_FORBIDDEN'].includes(error) ? copy.authError : copy.restricted}</p> : <>
+      <CreatorProfileImageReview />
       <div className="creator-refresh-row"><div className="creator-status" role="status"><span className={`creator-status-badge${stale || error ? ' is-stale' : ''}`}>{loading ? copy.refreshing : stale || error ? copy.stale : data ? copy.live : copy.loading}</span><span>{hidden ? copy.paused : copy.polling}</span></div><button type="button" className="creator-refresh" data-design-id="creator-refresh" onClick={refresh} disabled={loading} aria-busy={loading || undefined}><IconRotate />{copy.refresh}</button></div>
       {error && <p className="creator-message creator-error" role="alert">{copy.error}</p>}
       {!data && loading && <p className="creator-message" role="status">{copy.loading}</p>}
@@ -100,7 +101,6 @@ export function CreatorDashboard({ onBack, fetchAnalytics }) {
         </div>
         <div className="creator-registration"><div><span>{copy.registered}</span><strong>{number(data.summary.registeredAccountsTotal)}</strong></div><div><span>{copy.registeredToday}</span><strong>{number(data.summary.registeredAccountsToday)}</strong></div></div>
       </>}
-      <CreatorProfileImageReview />
       {data && <>
         <div className="creator-charts"><HistoryChart rows={hourly} kind="hourly" copy={copy} locale={locale} number={number} /><HistoryChart rows={daily} kind="daily" copy={copy} locale={locale} number={number} /></div>
         <p className="creator-note">{copy.partial}</p>

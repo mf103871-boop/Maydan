@@ -24,6 +24,8 @@ function AccountSocialUI({ children, accountKey }) {
   const [listTab, setListTab] = useState('friends');
   const [surface, setSurface] = useState({ path: route.path, view: socialPageView(route) || { type: 'list', tab: 'friends' }, history: [], drawerOpen: false });
   const [listState, setListState] = useState({});
+  // Native scroll events update this account-local map without rendering the shell.
+  const [listOffsets, setListOffsets] = useState(() => new Map());
   // Deliberately memory-only: drafts disappear on sign-out and never leak to a
   // later account or to another player using browser storage on this device.
   const [drafts, setDrafts] = useState({});
@@ -40,6 +42,7 @@ function AccountSocialUI({ children, accountKey }) {
     return pageView || drawerOpen ? surface.view : { type: 'list', tab: listTab };
   }, [owned, pageView, drawerOpen, surface.path, surface.view, route.path, listTab]);
   useEffect(() => {
+    setListOffsets(new Map());
     setSurface({ path: '', view: { type: 'list', tab: 'friends' }, history: [], drawerOpen: false }); setListTab('friends'); setListState({}); setDrafts({}); setInvite(null); setFavorites(loadFavorites(accountKey)); setStateOwner(accountKey);
     // A direct link belongs to the session that opened it. A new account starts
     // at its own friend list rather than reusing a previous account's selection.
@@ -97,14 +100,14 @@ function AccountSocialUI({ children, accountKey }) {
   const shareRoom = useCallback(detail => { setInvite(detail); show({ type: 'list', tab: 'friends' }); }, [show]);
   const clearInvite = useCallback(() => setInvite(null), []);
   const updateListState = useCallback((tab, patch) => setListState(current => ({ ...current, [tab]: { ...current[tab], ...patch } })), []);
-  const resetSection = useCallback(() => { setListState({}); show({ type: 'list', tab: 'friends' }); }, [show]);
+  const resetSection = useCallback(() => { setListOffsets(new Map()); setListState({}); show({ type: 'list', tab: 'friends' }); }, [show]);
   useEffect(() => { if (!drawerOpen) return undefined; socialInterruption.open(); return () => socialInterruption.close(); }, [drawerOpen]);
   useEffect(() => {
     const handler = event => { if (event.detail?.roomCode) shareRoom(event.detail); };
     window.addEventListener('maydan-invite-friends', handler);
     return () => window.removeEventListener('maydan-invite-friends', handler);
   }, [shareRoom]);
-  const value = useMemo(() => ({ open: presentation !== null, drawerOpen, presentation, view, show, push, close, back, openChat, openGroup, openProfile, drafts: owned ? drafts : {}, setDraft, listState: owned ? listState : {}, updateListState, resetSection, favorites: owned ? favorites : [], toggleFavorite, invite: owned ? invite : null, shareRoom, clearInvite }), [presentation, drawerOpen, view, show, push, close, back, openChat, openGroup, openProfile, owned, drafts, setDraft, listState, updateListState, resetSection, favorites, toggleFavorite, invite, shareRoom, clearInvite]);
+  const value = useMemo(() => ({ open: presentation !== null, drawerOpen, presentation, view, show, push, close, back, openChat, openGroup, openProfile, drafts: owned ? drafts : {}, setDraft, listState: owned ? listState : {}, listOffsets: owned ? listOffsets : null, updateListState, resetSection, favorites: owned ? favorites : [], toggleFavorite, invite: owned ? invite : null, shareRoom, clearInvite }), [presentation, drawerOpen, view, show, push, close, back, openChat, openGroup, openProfile, owned, drafts, setDraft, listState, listOffsets, updateListState, resetSection, favorites, toggleFavorite, invite, shareRoom, clearInvite]);
   return <SocialUIContext.Provider value={value}>{children}</SocialUIContext.Provider>;
 }
 

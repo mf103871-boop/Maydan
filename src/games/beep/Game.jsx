@@ -1,3 +1,4 @@
+import { useSavedMatch } from '../../shared/ui/useSavedMatch.js';
 import { tr } from '../../shared/i18n/core.js';
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 // واجهة «قبل ما يطق!» — تعتمد على logic.js للحالة وعلى المكونات المشتركة للمؤقت والنتائج.
@@ -12,7 +13,7 @@ import { getGameContent } from '../../data/game-content.js';
 import { PresentationStyles } from '../../shared/ui/PresentationStyles.jsx';
 import css from './beep.css?sheet';
 import { initialState, reduce, currentPlayer, standings, createPromptSource, normalizeOptions, nextBombSeconds, bombPromptArgs, restoreSession, sessionSnapshot, SECONDS, ROUNDS, LIVES } from './logic.js';
-import { loadSession } from '../../shared/lib/session.js';
+import { loadSession, SESSION_KEY } from '../../shared/lib/session.js';
 import { useSessionSave } from '../../shared/ui/useSessionSave.js';
 import { useGameMusicScene } from '../../shared/fx/useGameMusicScene.js';
 import { PartyPodium, PartyStyles } from './StudioParty.jsx';
@@ -22,9 +23,11 @@ const SEEN_KEY = 'seen';
 // نافذة قصيرة يبقى فيها أثر آخر حكم (قفزة/اهتزاز على شاشة التمهيد التالية)
 const verdictFresh = (v) => !!v && Date.now() - v.at < 1200;
 
+const readMatch = slot => loadSession(slot, restoreSession);
+
 export function SetupOptions({ storage, api }) {
   const [opts, setOpts] = useState(() => normalizeOptions(storage.get(OPTIONS_KEY)));
-  const [resume] = useState(() => loadSession(storage, restoreSession));
+  const resume = useSavedMatch('beep', storage, api.contentLocale, SESSION_KEY, readMatch);
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
     <div data-design-screen="setup.beep" data-design-id="options" className="stack beep-setup party-setup">

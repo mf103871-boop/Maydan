@@ -6,7 +6,7 @@ import identityCss from './identity.css?sheet';
 import skinCss from './profile-skin.css?sheet';
 import { useI18n } from '../shared/i18n/react.jsx';
 import { PresentationStyles } from '../shared/ui/PresentationStyles.jsx';
-import { profileSkin, profileSkinStyle } from './profile-skin.js';
+import { profileSkin, profileSkinArt, profileSkinStyle } from './profile-skin.js';
 import { PlayerName } from './PlayerIdentity.jsx';
 import { cosmeticPosterSources } from './identity-assets.js';
 import { getBadgeArt, getFrameArt } from '../shared/brand/playful-identity.js';
@@ -246,7 +246,7 @@ export function ProfileIdentityLibrary({ profile, onNavigate = navigate }) {
   const equipped = ['profileSkinId','frameId'].map(key => getCosmetic(profile?.cosmetics?.[key])).filter(Boolean);
   return <section data-design-id="profile-library" className="profile-library-card" aria-label={tr("بروفايلي وإطار صورتي")}>
     <details><summary data-design-id="profile-library-toggle"><Icon name="collection" size={20} />{tr("مقتنياتي")}<span className="profile-library-chevron" aria-hidden="true">⌃</span></summary><div className="profile-identity-library-head"><div><h2>{tr("بروفايلك وإطارك")}</h2><p>{tr("بلس يخصّص شكل ملفك وإطار صورتك. صورتك الشخصية ومقتنياتك السابقة تبقى محفوظة.")}</p></div></div>
-    {equipped.length > 0 && <div className="profile-equipped-pieces" aria-label={tr("مظهري المجهّز")}><h3>{tr("مظهري المجهّز")}</h3>{equipped.map(item => <span key={item.id}><img src={getFrameArt(item.id) || cosmeticPosterSources(item)[0]} width="48" height="48" alt="" loading="lazy" /><strong>{tr(item.label)}</strong></span>)}</div>}
+    {equipped.length > 0 && <div className="profile-equipped-pieces" aria-label={tr("مظهري المجهّز")}><h3>{tr("مظهري المجهّز")}</h3>{equipped.map(item => <span key={item.id}><img src={getFrameArt(item.id) || profileSkinArt(item.id) || cosmeticPosterSources(item)[0]} width="48" height="48" alt="" loading="lazy" /><strong>{tr(item.label)}</strong></span>)}</div>}
     <div className="profile-identity-links"><Button data-design-id="plus-store" size="sm" onClick={() => onNavigate('/store?tab=library')}>{tr("مقتنياتي")}</Button><Button data-design-id="profile-store" size="sm" variant="ghost" onClick={() => onNavigate('/store')}>{tr("المظهر والإطارات")}</Button></div>
     <p>{tr("الصور والثيمات الأساسية مجانية دائمًا. تفاصيل كل قطعة توضّح مدة إتاحتها.")}</p></details>
   </section>;
@@ -310,16 +310,18 @@ export function ProfileView({ account, profiles, social, profileId, onNavigate =
     {isOwnView ? hasProgression ? <>
       <div className="profile-owner-tools"><button type="button" data-design-id="profile-stats-toggle" className="profile-stats-toggle" aria-expanded={statsExpanded} onClick={() => setStatsExpanded(value => !value)}><Icon name="stats" size={20} />{tr("الإحصاءات")}</button><ProfileIdentityLibrary profile={profile} onNavigate={onNavigate} /></div>
       {statsExpanded && <div className="profile-expanded-stats">{statsTabs}{selectedDetails}</div>}
-    </> : <><ProfileStats profile={profile} compact /><ProfileIdentityLibrary profile={profile} onNavigate={onNavigate} /></>
+    </> : equippedProfileSkin
+      ? <><ProfileIdentityLibrary profile={profile} onNavigate={onNavigate} /><ProfileStats profile={profile} compact /></>
+      : <><ProfileStats profile={profile} compact /><ProfileIdentityLibrary profile={profile} onNavigate={onNavigate} /></>
       : <>{statsTabs}{selectedDetails}<div className="profile-page-actions">{shareAction}</div></>}
   </div>;
-  return <main data-design-screen="profile" className={"profile-screen" + (!isOwnView ? " is-visitor" : hasProgression ? " has-progression" : " has-no-progression")} data-profile-skin={equippedProfileSkin ? 'sahra' : 'base'} dir={dir} style={{...themeStyle(profile?.theme),...profileSkinStyle(profile?.cosmetics)}} aria-label={tr("ملف ميدان الشخصي")}><PresentationStyles sheet={profileCss}/><PresentationStyles sheet={plusCss}/><PresentationStyles sheet={identityCss}/><PresentationStyles sheet={skinCss}/><header data-design-id="header" className="profile-page-head"><div className="profile-page-heading"><IconButton label={tr("العودة")} icon="back" onClick={() => onBack ? onBack() : onNavigate(profileId && !owner ? '/friends' : '/')} /><div><span>{owner || !profileId ? tr("هويتك في الميدان") : tr("أهل الميدان")}</span><h1 data-design-id="title" style={{ color: equippedProfileSkin ? '#fff2d5' : undefined, transitionProperty: 'none' }}>{owner || !profileId ? tr("ملفي الشخصي") : tr("الملف الشخصي")}</h1></div></div>{(owner || !profileId) && <button type="button" data-design-id="profile-settings" className="studio-profile-settings" aria-label={t('الإعدادات')} onClick={() => onNavigate('/settings')}><Icon name="settings" size={24} /></button>}</header>
+  return <main data-design-screen="profile" className={"profile-screen" + (!isOwnView ? " is-visitor" : hasProgression ? " has-progression" : " has-no-progression")} data-profile-skin={equippedProfileSkin ? 'sahra' : 'base'} dir={dir} style={{...themeStyle(profile?.theme),...profileSkinStyle(profile?.cosmetics)}} aria-label={tr("ملف ميدان الشخصي")}><PresentationStyles sheet={profileCss}/><PresentationStyles sheet={plusCss}/><PresentationStyles sheet={identityCss}/><PresentationStyles sheet={skinCss}/><header data-design-id="header" className="profile-page-head"><div className="profile-page-heading"><IconButton label={tr("العودة")} icon="back" onClick={() => onBack ? onBack() : onNavigate(profileId && !owner ? '/friends' : '/')} /><div><span>{owner || !profileId ? tr("هويتك في الميدان") : tr("أهل الميدان")}</span><h1 data-design-id="title" style={{ transitionProperty: 'none' }}>{owner || !profileId ? tr("ملفي الشخصي") : tr("الملف الشخصي")}</h1></div></div>{(owner || !profileId) && <button type="button" data-design-id="profile-settings" className="studio-profile-settings" aria-label={t('الإعدادات')} onClick={() => onNavigate('/settings')}><Icon name="settings" size={24} /></button>}</header>
     {notice && <Notice error={notice.error} onClose={() => setNotice(null)}>{notice.text}</Notice>}
     {!account.ready ? <LoadingProfile /> : !account.signedIn ? <EmptyState title={tr("لك هوية في الميدان")} action={<Button data-design-id="account-signin" variant="primary" onClick={() => setSignIn(true)}>{tr("تسجيل الدخول")}</Button>}>{tr("سجّل الدخول لتعرض ملفك، وتكتشف إنجازاتك، وتتعرّف على أصحابك.")}</EmptyState> : error ? <EmptyState title={tr("تعذّر عرض الملف")} action={<Button data-design-id="retry" variant="secondary" onClick={load}>{tr("إعادة المحاولة")}</Button>}>{error}</EmptyState> : !profile ? <LoadingProfile /> : <>
       <AccountProgressionProfile key={profile.id + ':' + visitorPreview} profile={profile} profiles={profiles}
         owner={owner && !visitorPreview} featured={featured} title={selectedTitle} onCustomize={() => setEditing(true)}
         identityMeta={codeRow} presence={presenceRow} summary={summary} actions={identityActions} afterBadges={afterBadges} onStart={() => onNavigate('/')}
-        cover={profile.coverUrl || profile.cosmetics?.coverId ? <Cover profile={profile} label={false} /> : null} />
+        cover={equippedProfileSkin || profile.coverUrl || profile.cosmetics?.coverId ? <Cover profile={profile} label={false} /> : null} />
       <div className="profile-content">
         {canTryFrames && <Button variant="secondary" full onClick={() => setFramePreview('plus.signature.frame')}>{tr("جرّب الإطارات الحيّة")}</Button>}
         {isOwnView && !hasProgression && <details className="profile-extra-details"><summary data-design-id="profile-achievements-toggle">{tr("الإنجازات")}</summary><Achievements profile={profile} owner /></details>}

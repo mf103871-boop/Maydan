@@ -17,6 +17,7 @@ import { PresentationStyles } from '../../shared/ui/PresentationStyles.jsx';
 import { useAcceptedFeedback } from '../../shared/fx/accepted-feedback.js';
 import { ProfileAvatar } from '../../profiles/ProfileAvatar.jsx';
 import { getFrameArt } from '../../shared/brand/playful-identity.js';
+import plusArt from '../../shared/brand/assets/playful-cosmetics/plus.webp';
 import { ticketPolicyEnabled } from '../../shared/account/gameplay-policy.mjs';
 
 const TABS = [['collections', 'تخصيص'], ['membership', 'ميدان بلس']];
@@ -98,7 +99,7 @@ function StoreAccount() {
     <PlusStyles/><PresentationStyles sheet={css}/><PresentationStyles sheet={studioCss}/><TopBar data-design-id="topbar" title={tr("المتجر")} start={<IconButton data-design-id="back" label={tr("رجوع")} onClick={back}><IconBack /></IconButton>} />
     <nav data-design-id="store-navigation" className="studio-store-tabs" role="tablist" aria-label={tr("المتجر")}>{TABS.map(([id,label]) => <button data-design-id={'store-tab-'+id} key={id} type="button" role="tab" aria-selected={tab === id || (tab === 'library' && id === 'collections')} onClick={() => switchTab(id)}>{tr(label)}</button>)}</nav>
     {tab === 'membership' ? <>
-      <section data-design-id="store-membership" className="store-membership"><div><strong>{tr("ما هو ميدان بلس؟")}</strong><small>{ticketPolicyEnabled(account.gameplayPolicy) ? tr("ابدأ المباريات دون تذاكر إعلانات، وخصّص بروفايلك وإطار صورتك.") : tr("اشتراك اختياري يضيف مظهرًا لبروفايلك وإطارًا لصورتك.")}</small></div></section>
+      <section data-design-id="store-membership" className="store-membership studio-membership-hero"><img src={plusArt} width="640" height="427" alt="" decoding="async"/><div><strong>{tr("ما هو ميدان بلس؟")}</strong><small>{ticketPolicyEnabled(account.gameplayPolicy) ? tr("ابدأ المباريات دون تذاكر إعلانات، وخصّص بروفايلك وإطار صورتك.") : tr("اشتراك اختياري يضيف مظهرًا لبروفايلك وإطارًا لصورتك.")}</small></div></section>
       <ul className="store-membership-perks"><li><b>{tr("مظهر كامل لبروفايلك")}</b><small>{tr("ألوان وخامات متناسقة لبروفايلك وبطاقاته.")}</small></li><li><b>{tr("إطار ذهبي حول صورتك")}</b><small>{tr("تظل صورتك الشخصية كما اخترتها.")}</small></li><li><b>{ticketPolicyEnabled(account.gameplayPolicy) ? tr("مباريات دون تذاكر إعلانات") : tr("اللعب مجاني للجميع")}</b><small>{ticketPolicyEnabled(account.gameplayPolicy) ? tr("بلس يغطي بدء مبارياتك؛ ضيوف غرفتك يدخلون مجانًا.") : tr("الألعاب والغرف والمحادثات متاحة دون اشتراك.")}</small></li></ul>
       <Button data-design-id="plus-details" variant="accent" full onClick={() => account.openPaywall({ reason: 'cosmetics' })}>{plus ? tr("إدارة بلس") : tr("عرض خيارات الاشتراك")}</Button>
     </> : <>

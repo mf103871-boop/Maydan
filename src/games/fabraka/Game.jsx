@@ -1,3 +1,4 @@
+import { useSavedMatch } from '../../shared/ui/useSavedMatch.js';
 import { tr } from '../../shared/i18n/core.js';
 import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import { useGameMusicScene } from '../../shared/fx/useGameMusicScene.js';
@@ -16,7 +17,7 @@ import { pictures, getFabrakaContent, categoryCount, normalizeContentOptions } f
 import { stampContentIdentity } from '../../shared/lib/content-storage.js';
 import { Illustration } from './Illustration.jsx';
 import { OPTIONS_KEY, SEEN_KEY, loadSession, loadResult, saveSession, hasRetiredSession } from './persistence.js';
-import { initialState, reduce, currentActor, currentHost, standings, validateLie, votersFor, TRUTH_ID, ROUNDS, buildDeck, questionPool, turnKey, isSecret, multiplier, canVoteFor, restoreSession, awards, bestLies, factId } from './logic.js';
+import { SAVE_KEY, initialState, reduce, currentActor, currentHost, standings, validateLie, votersFor, TRUTH_ID, ROUNDS, buildDeck, questionPool, turnKey, isSecret, multiplier, canVoteFor, restoreSession, awards, bestLies, factId } from './logic.js';
 import css from './fabraka.css?sheet';
 import choiceCss from '../meenfina/choice-studio.css?sheet';
 
@@ -27,7 +28,7 @@ const names = (state, ids) => state.players.filter((p) => ids.includes(p.id)).ma
 export function SetupOptions({ storage, api }) {
   const { questions, categories } = useMemo(() => getFabrakaContent(api.contentLocale, api.contentVersion), [api.contentLocale, api.contentVersion]);
   const [opts, setOpts] = useState(() => normalizeContentOptions(storage.get(OPTIONS_KEY), api.contentLocale, api.contentVersion));
-  const [resume] = useState(() => loadSession(storage));
+  const resume = useSavedMatch('fabraka', storage, api.contentLocale, SAVE_KEY, loadSession);
   const [retiredSession] = useState(() => hasRetiredSession(storage));
   const [lastResult] = useState(() => loadResult(storage));
   const [showResult, setShowResult] = useState(false);

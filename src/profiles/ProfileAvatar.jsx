@@ -24,7 +24,8 @@ export function ProfileAvatar({ user, size = 44, className = '', previewFrameId,
     ? getCosmetic(previewFrameId, { kind: 'frame', now: Number.MAX_SAFE_INTEGER }) : null;
   const frame = preview?.motionKind === 'living-frame' ? preview : getCosmetic(user?.cosmetics?.frameId, { kind: 'frame' });
   const detail = frameDetail(size);
-  const frameUrl = [getFrameArt(frame?.id), ...[detail, 'large', 'medium', 'small'].flatMap(variant => [
+  const studioFrame = getFrameArt(frame?.id);
+  const frameUrl = [studioFrame, ...[detail, 'large', 'medium', 'small'].flatMap(variant => [
     frame?.frameAssets?.[variant], frame?.fallbackFrameAssets?.[variant],
   ])].find(value => value && !failed.includes(value));
   const poster = cosmeticPosterSources(avatar).find(value => !failed.includes(value));
@@ -41,7 +42,9 @@ export function ProfileAvatar({ user, size = 44, className = '', previewFrameId,
   const portraitBackground = url === presetArt && (!user?.theme || user.theme === 'teal')
     ? getAvatarBackground(avatarPreset(user?.avatarPreset).id) : theme.accent;
   const legacyFrame = frameUrl && Object.values(frame?.fallbackFrameAssets || {}).includes(frameUrl);
-  const innerScale = frame ? Math.min(1, Math.max(0.5, (!legacyFrame && Number(frame.innerScale)) || 0.82)) : 1;
+  // The clay rings surround a 56–71% opening on artwork painted at 132% of the avatar.
+  const innerScale = frameUrl && frameUrl === studioFrame ? .96 :
+    frame ? Math.min(1, Math.max(0.5, (!legacyFrame && Number(frame.innerScale)) || 0.82)) : 1;
   const liveFrame = frame?.motionKind === 'living-frame' && detail !== 'small' && Boolean(frameUrl);
   const showSparks = liveFrame && detail === 'large';
   const layers = poster && url === poster ? Object.entries(avatar?.layerAssets || {}).filter(([kind, value]) => ['foreground', 'glow', 'sparkle'].includes(kind) && typeof value === 'string' && !failed.includes(value)) : [];

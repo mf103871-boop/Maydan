@@ -1,3 +1,4 @@
+import { useSavedMatch } from '../../shared/ui/useSavedMatch.js';
 import { tr } from '../../shared/i18n/core.js';
 import { Avatar } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
@@ -10,7 +11,7 @@ import { getGameContent } from '../../data/game-content.js';
 import { PresentationStyles } from '../../shared/ui/PresentationStyles.jsx';
 import css from './jabeen.css?sheet';
 import { initialState, reduce, currentEntrant, standings, createItemSource, normalizeOptions, restoreSession, sessionSnapshot, SECONDS } from './logic.js';
-import { loadSession } from '../../shared/lib/session.js';
+import { loadSession, SESSION_KEY } from '../../shared/lib/session.js';
 import { useSessionSave } from '../../shared/ui/useSessionSave.js';
 import { useGameMusicScene } from '../../shared/fx/useGameMusicScene.js';
 import { useTilt } from './useTilt.js';
@@ -33,10 +34,12 @@ const CATEGORY_SCENES = {
 const CATEGORY_ART = { acting: actingArt, food: foodArt, home: homeArt, jobs: jobsArt, proverbs: proverbsArt };
 const CATEGORY_DISPLAY_ORDER = ['animals', 'acting', 'food', 'figures', 'jobs', 'home', 'proverbs', 'places'];
 
+const readMatch = (slot, locale) => loadSession(slot, raw => restoreSession(raw, getGameContent('jabeen', locale)));
+
 export function SetupOptions({ storage, api }) {
   const categories = useMemo(() => getGameContent('jabeen', api.contentLocale, api.contentVersion), [api.contentLocale, api.contentVersion]);
   const [opts, setOpts] = useState(() => normalizeOptions(storage.get(OPTIONS_KEY), categories));
-  const [resume] = useState(() => loadSession(storage, (raw) => restoreSession(raw, categories)));
+  const resume = useSavedMatch('jabeen', storage, api.contentLocale, SESSION_KEY, readMatch);
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }, categories); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
     <div data-design-screen="setup.jabeen" data-design-id="options" className="stack jabeen-setup party-setup">

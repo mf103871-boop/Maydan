@@ -35,9 +35,8 @@ for(const [name,engine]of engines){
       await page.locator('[data-design-id="create-public-room"]').waitFor();
     }
     await host.locator('[data-design-id="create-public-room"]').click();
-    await host.locator('select[data-design-id="content-language"] option[value="en"]').waitFor({state:'attached'});
-    await host.waitForFunction(()=>!document.querySelector('[data-design-id="content-language"] option[value="en"]').disabled);
-    await host.locator('select[data-design-id="content-language"]').selectOption('en');
+    await host.locator('strong[data-design-id="content-language"][lang="en"]').waitFor();
+    assert.equal(await host.locator('select[data-design-id="content-language"]').count(),0);
     await host.locator('[data-design-id="name-input"]').fill('Host EN');
     await host.locator('form [data-design-id="start"]').click();
     await host.locator('[data-design-screen="online.lobby"]').waitFor();

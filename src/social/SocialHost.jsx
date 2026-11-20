@@ -330,10 +330,14 @@ export function SocialHost() {
   const friends = social.friends || EMPTY; const groups = lamma.groups || EMPTY; const invites = lamma.groupInvites || EMPTY;
   const view = ui.view;
   const filter = ui.listState[view.tab]?.filter || '';
-  const listScrollTop = ui.listState[view.tab]?.scrollTop || 0;
   const friendFilter = ui.listState.friends?.friendFilter || 'all';
-  const setFilter = value => ui.updateListState(view.tab, { filter: value, scrollTop: 0 });
-  const setFriendFilter = value => ui.updateListState('friends', { friendFilter: value, scrollTop: 0 });
+  const updateFilter = patch => {
+    ui.listOffsets?.set(view.tab, 0);
+    if (listScroll.current) listScroll.current.scrollTop = 0;
+    ui.updateListState(view.tab, patch);
+  };
+  const setFilter = value => updateFilter({ filter: value });
+  const setFriendFilter = value => updateFilter({ friendFilter: value });
   const friend = view.type === 'direct' ? friends.find(item => item.id === view.id) : null;
   const group = view.type === 'group' ? groups.find(item => item.id === view.id) : null;
   const groupChat = lamma.groupConversations?.[view.id];
@@ -397,8 +401,8 @@ export function SocialHost() {
     return () => observer.disconnect();
   }, [route.path, ui.presentation]);
   useLayoutEffect(() => {
-    if (panelOpen && view.type === 'list' && listScroll.current) listScroll.current.scrollTop = listScrollTop;
-  }, [panelOpen, ui.presentation, view.type, view.tab, pageHost, listScrollTop]);
+    if (panelOpen && view.type === 'list' && listScroll.current) listScroll.current.scrollTop = ui.listOffsets?.get(view.tab) || 0;
+  }, [panelOpen, ui.presentation, view.type, view.tab, pageHost, ui.listOffsets]);
   useEffect(() => {
     if (!drawerOpen || !host || communicationLocked) return undefined;
     return activateDialog({node:panel.current,host,close:closePanel,priority:10});
@@ -503,7 +507,7 @@ export function SocialHost() {
         {view.type === 'profile' ? <ProfilePreview id={view.id} onBack={ui.back} onInvite={setInviteTarget} run={run} /> : view.type === 'direct' || view.type === 'group' ? friend || group ? <Conversation compactHeader onClose={drawerOpen ? ui.close : undefined} designScreen={null} key={view.type + view.id} friend={friend || { ...group, online: false }} conversation={friend ? social.conversations?.[friend.id] : groupChat} account={account} social={friend ? social : groupSocial} onBack={ui.back} onProfile={() => friend ? ui.openProfile(friend.id) : setGroupEditor(group)} onMenu={() => setMenu(friend || group)} onAction={next => setAction(group ? { ...next, groupId: group.id, user: groupChat?.members?.find(member => (member.userId || member.id) === next.message?.senderId) || { id: next.message?.senderId, name: tr("عضو اللّمة") } } : next)} notify={notify} subtitle={busy === 'call' ? <span role="status">{tr("جارٍ الاتصال…")}</span> : group ? tr("{v0} من الأصحاب{v1}", {v0: groupMemberCount(group), v1: ongoingGroupCall ? tr(" · مكالمة جارية") : ''}) : undefined} draftValue={ui.drafts[conversationDraftKey(view.type, view.id)] || ''} onDraftChange={text => ui.setDraft(conversationDraftKey(view.type, view.id), text)} renderContent={content} headerActions={<>
           <Button data-design-id="game-invite" variant="primary" icon={<LammaIcon name="game" />} disabled={!targetId || social.offline || lamma.offline} onClick={() => setInviteTarget({ targetType, targetId })}>{tr("يلا نلعب")}</Button>
           <Button data-design-id="call" variant="secondary" icon={<LammaIcon name="phone" />} title={!lamma.capabilities?.liveCalls ? tr("المكالمات غير متاحة في هذه النسخة") : undefined} disabled={!lamma.capabilities?.liveCalls || !!lamma.activeCall || busy === 'call' || !targetId || social.offline} onClick={startCall}>{ongoingGroupCall ? tr("انضم للمكالمة الجارية") : tr("مكالمة صوتية")}</Button>
-        </>} composerExtras={<VoiceRecorder key={view.type + view.id} disabled={social.offline || lamma.offline || !!lamma.activeCall} unavailableReason={!lamma.capabilities?.voiceMessages ? tr("الرسائل الصوتية غير متاحة في هذه النسخة.") : lamma.activeCall ? tr("أنهِ المكالمة قبل تسجيل رسالة صوتية.") : ''} onError={text => notify(text, true)} onSend={sendVoice} />} /> : <Empty title={tr("هذه المحادثة غير متاحة")} action={<Button data-design-id="back" variant="secondary" onClick={ui.back}>{tr("العودة للأصدقاء")}</Button>}>{tr("قد تكون الصداقة أو عضويتك في اللّمة تغيّرت.")}</Empty> : <div className="lamma-people-view"><div ref={listScroll} className="lamma-list-content lamma-list-scroll" onScroll={event => ui.updateListState(view.tab, { scrollTop: event.currentTarget.scrollTop })}>
+        </>} composerExtras={<VoiceRecorder key={view.type + view.id} disabled={social.offline || lamma.offline || !!lamma.activeCall} unavailableReason={!lamma.capabilities?.voiceMessages ? tr("الرسائل الصوتية غير متاحة في هذه النسخة.") : lamma.activeCall ? tr("أنهِ المكالمة قبل تسجيل رسالة صوتية.") : ''} onError={text => notify(text, true)} onSend={sendVoice} />} /> : <Empty title={tr("هذه المحادثة غير متاحة")} action={<Button data-design-id="back" variant="secondary" onClick={ui.back}>{tr("العودة للأصدقاء")}</Button>}>{tr("قد تكون الصداقة أو عضويتك في اللّمة تغيّرت.")}</Empty> : <div className="lamma-people-view"><div key={view.tab} ref={listScroll} className="lamma-list-content lamma-list-scroll" onScroll={event => ui.listOffsets?.set(view.tab, event.currentTarget.scrollTop)}>
 
           <SocialTabs activeTab={view.tab} onSelect={tab => ui.show({ type: 'list', tab })} options={[['friends', tr("الأصدقاء"), 0], ['chats', tr("المحادثات"), social.unreadCount || 0], ['groups', tr("الشِّلل"), groupUnread], ['requests', tr("الطلبات"), totalRequests]]} />
           {view.tab !== 'requests' && <label data-design-id="search" className="lamma-search"><LammaIcon name="search" size={18} /><input data-design-id="search-input" value={filter} placeholder={view.tab === 'groups' ? tr("ابحث في لمّاتك") : tr("دوّر على صاحبك")} aria-label={tr("البحث في اللّمة")} onChange={event => setFilter(event.target.value)} /></label>}

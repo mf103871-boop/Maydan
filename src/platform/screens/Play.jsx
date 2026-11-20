@@ -26,7 +26,7 @@ import { gameplayOffer } from '../../shared/account/gameplay-policy.mjs';
 import { RewardedOffer } from '../../shared/account/RewardedOffer.jsx';
 import { contentStorage, readSavedContentIdentity } from '../../shared/lib/content-storage.js';
 import { contentVersionFor } from '../../shared/content-locale.mjs';
-import { gameName } from '../../shared/i18n/core.js';
+import { gameName, getUiLocale } from '../../shared/i18n/core.js';
 import { loadGameContent } from '../../data/game-content.js';
 
 // طبقات التأثير المشتركة تُمرَّر للألعاب عبر api.fx (اختصار؛ الاستيراد المباشر من shared/fx هو العقد).
@@ -35,8 +35,8 @@ const FX = { flash: flashScreen, stamp: stampScreen, vignette, reduced: prefersR
 export function Play({ id, rewarded = false }) {
   const game = getGame(id);
   const platform = usePlatform();
-  const preferences = useMemo(() => createStorage(id), [id]);
-  const [contentLocale, setContentLocale] = useState(() => preferences.get('match-content-locale', 'ar') === 'en' ? 'en' : 'ar');
+  const [resumedLocale, setResumedLocale] = useState(null);
+  const contentLocale = resumedLocale || platform.settings?.uiLocale || getUiLocale();
   const contentVersion = contentVersionFor(contentLocale);
   const contentKey = `${id}:${contentLocale}:${contentVersion}`;
   const [pack, setPack] = useState({key:contentKey,ready:contentLocale==='ar',error:false});
@@ -131,7 +131,7 @@ export function Play({ id, rewarded = false }) {
     matchOwner.current = owner;
     if (!accountRef.current.gameplayPolicy) return;
     cancelAccess(); access.clear();
-    setInGame(false); setSavedSession(null); setGameOptions(null);
+    setInGame(false); setSavedSession(null); setResumedLocale(null); setGameOptions(null);
     setStage(game?.setup === 'self' ? 'play' : 'setup'); setSession(value => value + 1);
   }, [owner, access, cancelAccess, game]);
   const matchAudio = useMemo(() => createLocalMatchAudio(platform.sound, id, `${owner || 'guest'}:${session}`), [platform.sound, id, owner, session]);
@@ -146,7 +146,6 @@ export function Play({ id, rewarded = false }) {
   const [savedSession, setSavedSession] = useState(null);
   const [gameOptions, setGameOptions] = useState(null);
   const [setupValid, setSetupValid] = useState(true);
-  const [selfSetupActive, setContentSetupActive] = useState(false);
   const [exitMessage, setExitMessage] = useState(null);
   const [beforeExit, setBeforeExit] = useState(null);
   // وهج أطراف عند البدء/الإعادة: لا يغطي اللعب ولا يُصيَّر تحت تقليل الحركة.
@@ -196,16 +195,20 @@ export function Play({ id, rewarded = false }) {
     navigate,
     setInGame,
     setSetupValid,
-    setContentSetupActive,
     setGameOptions,
     setExitMessage,
     setBeforeExit: (handler) => setBeforeExit(() => handler),
+    resumeBadeehaBoard: (saved) => {
+      const identity = readSavedContentIdentity(saved);
+      setSavedSession(saved); setResumedLocale(identity.contentLocale);
+    },
+    finishBadeehaRecovery: () => { setSavedSession(null); setResumedLocale(null); },
     resumeGame: async (saved) => {
       let identity;
       try { identity = readSavedContentIdentity(saved); await loadGameContent(id,identity.contentLocale,identity.contentVersion); }
       catch { platform.toast(tr('نسخة محتوى هذه المباراة غير متاحة.')); return; }
       if (!await authorizeMatch({ resume: saved })) return;
-      setContentLocale(identity.contentLocale);
+      setResumedLocale(identity.contentLocale);
       access.activate();
       recorder.resume(saved.profileSession, id);
       // ممنوع تُلعب بفرق: اللقطة تحمل teams بدل players، والنمط يعود إلى «فرق».
@@ -217,10 +220,10 @@ export function Play({ id, rewarded = false }) {
     requestExit: () => { setInGame(false); navigate('/', { replace: true }); },
     restart: () => {
       access.complete();
-      if (accountRef.current.gameplayPolicy) { setInGame(false); setSavedSession(null); setStage('setup'); setSetupValid(true); raiseCurtain(); return; }
+      if (accountRef.current.gameplayPolicy) { setInGame(false); setSavedSession(null); setResumedLocale(null); setStage('setup'); setSetupValid(true); raiseCurtain(); return; }
       recorder.start(id); setSavedSession(null); setSession((s) => s + 1); raiseCurtain();
     },
-    backToSetup: () => { setInGame(false); setSavedSession(null); setStage('setup'); setSetupValid(true); raiseCurtain(); },
+    backToSetup: () => { setInGame(false); setSavedSession(null); setResumedLocale(null); setStage('setup'); setSetupValid(true); raiseCurtain(); },
   }), [platform, storage, raiseCurtain, account, id, recorder, matchAudio, demo, owner, access, authorizeMatch, contentLocale, contentVersion]);
 
   const start = useCallback(async (list) => {
@@ -245,11 +248,9 @@ export function Play({ id, rewarded = false }) {
     <Button onClick={() => navigate('/play/badeeha?mode=local', { replace: true })}>{tr("العب بديهة المجانية")}</Button>
   </Screen>;
   const Component = game.Component;
-  const matchLanguage = ready && (stage === 'setup' || game.setup === 'self' && selfSetupActive) && !inGame && !accessPrompt && <section className="studio-local-language"><label htmlFor="local-content-locale">{tr('لغة المباراة')}</label><select id="local-content-locale" value={contentLocale} disabled={accessBusy} onChange={event => { const next = event.target.value; preferences.set('match-content-locale', next); setContentLocale(next); setSavedSession(null); setGameOptions(null); }}><option value="ar" lang="ar">{tr("العربية")}</option><option value="en" lang="en">English</option></select><small>{tr('لغة القوائم مستقلة عن لغة المباراة.')}</small></section>;
 
   return (
     <GameFrame game={game} inGame={ready && contentReady && inGame} exitMessage={exitMessage || game.exitMessage} beforeExit={beforeExit}>
-      {id !== "badeeha" && matchLanguage}
       <div inert={interruption.paused || Boolean(accessPrompt) || accessBusy || undefined} aria-hidden={interruption.paused || Boolean(accessPrompt) || undefined} style={interruption.paused || accessPrompt ? { visibility: 'hidden', pointerEvents: 'none' } : undefined}>
       {!ready ? <GameLoading game={game} progress={progress} /> : !contentReady ? <section className="stack" style={{padding:24}}><p role={pack.error?'alert':'status'}>{pack.key===contentKey&&pack.error?tr('تعذّر تحميل محتوى المباراة. محفوظاتك لم تتغير.'):tr('جارٍ تحميل محتوى المباراة…')}</p>{pack.key===contentKey&&pack.error&&<Button onClick={()=>{setPack({key:contentKey,ready:false,error:false});setPackAttempt(value=>value+1);}}>{tr('إعادة المحاولة')}</Button>}</section> : stage === 'setup' ? (
         <Screen dir={getDirection()} className="stack" style={{ '--game-accent': game.accent }} aria-label={tr('إعداد {game}', {game:gameName(game)})}>
@@ -268,7 +269,7 @@ export function Play({ id, rewarded = false }) {
           )}
         </Screen>
       ) : (
-        <><Component key={`${contentLocale}:${demo || account.gameplayPolicy ? `${owner}:${session}` : session}`} api={api} matchLanguage={id === "badeeha" ? matchLanguage : undefined} players={players} teams={teams} mode={mode} savedSession={savedSession} gameOptions={gameOptions} onExit={api.requestExit} />
+        <><Component key={`${contentLocale}:${demo || account.gameplayPolicy ? `${owner}:${session}` : session}`} api={api} players={players} teams={teams} mode={mode} savedSession={savedSession} gameOptions={gameOptions} onExit={api.requestExit} />
           {progressionReceipt && progressionReceipt.ownerId === owner && progressionReceipt.key === recorder.marker()?.key &&
             <MatchProgression key={progressionReceipt.eventId} {...progressionReceipt} />}</>
       )}

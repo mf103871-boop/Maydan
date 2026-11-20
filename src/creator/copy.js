@@ -1,6 +1,6 @@
 export const CREATOR_COPY = {
   ar: {
-    title: 'لوحة الصانع', back: 'العودة إلى الإعدادات', intro: 'صورة مجمّعة عن نشاط ميدان، بلا بيانات شخصية.',
+    title: 'لوحة الصانع', back: 'العودة إلى الإعدادات', intro: 'تعرض إحصاءات النشاط أعداد اللاعبين والألعاب والغرف بصورة مجمّعة.',
     refresh: 'تحديث الآن', refreshing: 'جارٍ التحديث…', loading: 'جارٍ تحميل الإحصاءات…', restricted: 'هذه اللوحة متاحة لحساب الصانع المخوّل فقط.',
     error: 'تعذّر تحديث الإحصاءات. حاول مجددًا.', authError: 'انتهت صلاحية الوصول. عُد إلى الإعدادات وسجّل الدخول مجددًا.',
     updated: 'آخر تحديث', live: 'بيانات حديثة', stale: 'بيانات قديمة', paused: 'التحديث متوقف أثناء إخفاء الصفحة', polling: 'تحديث تلقائي كل ١٥ ثانية',
@@ -19,7 +19,7 @@ export const CREATOR_COPY = {
     none: 'خارج اللعب', localMode: 'على جهاز واحد', onlineMode: 'أونلاين',
   },
   en: {
-    title: 'Creator dashboard', back: 'Back to Settings', intro: 'An aggregate view of Maydan activity, without personal data.',
+    title: 'Creator dashboard', back: 'Back to Settings', intro: 'Activity statistics show aggregate player, game and room counts.',
     refresh: 'Refresh now', refreshing: 'Refreshing…', loading: 'Loading analytics…', restricted: 'This dashboard is available only to the authorized creator account.',
     error: 'Could not refresh analytics. Please try again.', authError: 'Your access has expired. Return to Settings and sign in again.',
     updated: 'Last updated', live: 'Up to date', stale: 'Out of date', paused: 'Updates pause while this page is hidden', polling: 'Refreshes every 15 seconds',

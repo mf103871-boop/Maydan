@@ -81,7 +81,7 @@ const onlineNodes = [
   node('resume-room', 'العودة إلى غرفتي', 'button', { required: true, editableText: false, editableIcon: false }),
   node('room-recovery', 'استعادة الاتصال بالغرفة', 'container', { required: true }),
   node('invite-link-preview', 'معاينة رابط دعوة الغرفة', 'text', { required: true, editableText: false }),
-  node('content-language', 'لغة محتوى المباراة', 'input', { editableText:false, editableIcon:false }),
+  node('content-language', 'لغة محتوى المباراة', 'text', { editableText:false, editableIcon:false }),
   node('toolbar', 'إجراءات دليل الغرف', 'container', { required: true }),
   node('directory-options', 'خيارات دليل الغرف والمساعدة', 'button', { required: true, editableText: false }),
   node('directory-filter', 'تصفية الغرف', 'button', { editableText: false }),

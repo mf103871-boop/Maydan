@@ -1,3 +1,4 @@
+import { useSavedMatch } from '../../shared/ui/useSavedMatch.js';
 import { tr } from '../../shared/i18n/core.js';
 import { Avatar } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
@@ -10,7 +11,7 @@ import { getGameContent } from '../../data/game-content.js';
 import { PresentationStyles } from '../../shared/ui/PresentationStyles.jsx';
 import css from './mamnoo.css?sheet';
 import { initialState, reduce, currentTeam, opponentLabel, standings, createCardSource, normalizeOptions, restoreSession, sessionSnapshot, SECONDS, ROUNDS, MAX_SKIPS } from './logic.js';
-import { loadSession } from '../../shared/lib/session.js';
+import { loadSession, SESSION_KEY } from '../../shared/lib/session.js';
 import { useSessionSave } from '../../shared/ui/useSessionSave.js';
 import { useGameMusicScene } from '../../shared/fx/useGameMusicScene.js';
 import { IconStar } from '../../shared/ui/icons.jsx';
@@ -27,9 +28,11 @@ const PRESETS = [
   { value: 'long', label: 'مطوّل', seconds: 90, rounds: 4 },
 ];
 
+const readMatch = slot => loadSession(slot, restoreSession);
+
 export function SetupOptions({ storage, api }) {
   const [opts, setOpts] = useState(() => normalizeOptions(storage.get(OPTIONS_KEY)));
-  const [resume] = useState(() => loadSession(storage, restoreSession));
+  const resume = useSavedMatch('mamnoo', storage, api.contentLocale, SESSION_KEY, readMatch);
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); };
   const activePreset = PRESETS.find(preset => preset.seconds === opts.seconds && preset.rounds === opts.rounds);
   return (

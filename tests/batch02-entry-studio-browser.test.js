@@ -54,7 +54,30 @@ for(const[name,engine]of[['chromium',chromium],['webkit',webkit]])for(const loca
  });for(const id of data.entryNodes)assert.ok(getNodeDefinition('game.entry',id),'entry semantic control registered: '+id);assert.ok(data.scrollWidth<=data.width+1,label+' horizontal overflow '+JSON.stringify(data));for(const c of data.controls)assert.ok(c.width>=47.9&&c.height>=47.9,label+' target '+JSON.stringify(c));for(const c of data.contrast)assert.ok(c.ratios.every(r=>r>=4.5),label+' contrast '+JSON.stringify(c));for(const c of data.primaries)assert.ok(c.height>=51.9,label+' primary52 '+JSON.stringify(c));states.push({label,...data});return data;};
  try{
   await page.goto(origin+'/?locale='+locale);await page.locator('.home-game-row').first().waitFor();
-  for(const width of[360,390,430]){await page.setViewportSize({width,height:844});const m=await inspect('home-'+width);assert.equal(m.cards.length,8);const draw=m.cards.find(c=>c.game==='ersomha'),b=m.cards.find(c=>c.game==='badeeha'),mafia=m.cards.find(c=>c.game==='mafia');assert.ok(draw.width>b.width*1.8);assert.ok(Math.abs(b.y-mafia.y)<1);assert.ok(b.y>=draw.y+draw.height);assert.ok(locale==='ar'?b.x>mafia.x:b.x<mafia.x,'game cards follow logical direction');}
+  for (const width of [360,390,430]) {
+   await page.setViewportSize({width,height:844});
+   const {cards} = await inspect('home-'+width);
+   assert.equal(cards.length,8);
+   const draw=cards.find(c=>c.game==='ersomha'), b=cards.find(c=>c.game==='badeeha'), mafia=cards.find(c=>c.game==='mafia');
+   assert.ok(draw.width>b.width*1.8 && Math.abs(b.y-mafia.y)<1 && b.y>=draw.y+draw.height);
+   assert.ok(locale==='ar'?b.x>mafia.x:b.x<mafia.x,'game cards follow logical direction');
+   const artwork = await page.locator('.home-game-row').evaluateAll(rows => rows.map(row => {
+    const card=row.getBoundingClientRect(), copy=row.querySelector('.home-game-copy').getBoundingClientRect();
+    const img=row.querySelector('img'), art=img.getBoundingClientRect();
+    const start=getComputedStyle(row).direction==='rtl'?card.right-copy.right:copy.left-card.left;
+    return {game:row.dataset.game, loaded:img.naturalWidth>0, start,
+     belowText:art.top>=copy.bottom-1, inside:art.left>=card.left-1 && art.right<=card.right+1 &&
+      art.top>=card.top-1 && art.bottom<=card.bottom+1};
+   }));
+   for (const item of artwork) {
+    assert.ok(item.loaded,'artwork loaded for '+item.game);
+    if (item.game==='ersomha' || item.game==='meenfina') {
+     assert.ok(item.start>=0 && item.start<=28,'banner copy aligned to the start: '+item.game);
+    } else {
+     assert.ok(item.inside && item.belowText,'artwork fits below the title: '+item.game+' at '+width);
+    }
+   }
+  }
   await page.setViewportSize({width:390,height:844});await save('home');
   assert.equal(await page.locator('.studio-home-friends button').count(),3);await page.locator('[data-design-id="online-friend"]').first().click();await page.getByTestId('destination').waitFor();assert.equal(new URL(page.url()).hash,'#/friends/friend1');await page.evaluate(()=>fixture.go('/'));
   await page.locator('[data-design-id="requests-open"]').click();await page.getByTestId('destination').waitFor();assert.equal(new URL(page.url()).hash,'#/friends');await page.evaluate(()=>fixture.go('/'));

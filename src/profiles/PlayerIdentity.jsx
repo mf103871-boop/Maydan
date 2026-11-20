@@ -6,7 +6,7 @@ import { ProfileAvatar } from './ProfileAvatar.jsx';
 export function MembershipBadge({ user, compact = false }) {
   // Effective server projection; never infer membership from a purchase or frame.
   if (user?.cosmetics?.badge !== true) return null;
-  return <span className={'player-membership-badge' + (compact ? ' is-compact' : '')} aria-label={tr("عضو ميدان بلس")}><span aria-hidden="true">✦</span><span>{tr("بلس")}</span></span>;
+  return <span className={'player-membership-badge' + (compact ? ' is-compact' : '')} aria-label={tr("عضو ميدان بلس")}><span className="membership-plus-mark" aria-hidden="true"/><span>{tr("بلس")}</span></span>;
 }
 
 export function NameCard({ user, children, className = '', enabled = true }) {

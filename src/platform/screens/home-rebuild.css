@@ -30,21 +30,35 @@
 .home-screen .home-game-copy { display:grid; align-content:start; gap:6px; position:relative; min-width:0; z-index:1; }
 .home-screen .home-game-capability { display:block; color:#513a55; font-size:.875rem; font-weight:600; line-height:1.4; overflow-wrap:anywhere; }
 .menu-game-art { display:grid; place-items:center; min-width:0; background:none; }
-.home-screen .menu-game-art { position:relative; width:100%; height:104px; flex:0 0 104px; border-radius:0; }
+.home-screen .menu-game-art {
+  --art-height: 116px;
+  position:relative;
+  display:block;
+  width:100%;
+  max-width:calc(var(--art-height) * 1.2);
+  height:var(--art-height);
+  flex:0 0 var(--art-height);
+  align-self:center;
+  margin-inline:auto;
+  border-radius:0;
+}
+.home-game-row .menu-game-art > .playful-game-art { position:absolute; inset:0; }
+.home-game-row .menu-game-art img { object-fit:cover; }
 .menu-game-art > .playful-game-art { display:block; width:100%; height:100%; aspect-ratio:auto; }
 .menu-game-art .game-artwork,.menu-game-art img { display:block; width:100%; height:100%; max-width:100%; object-fit:contain; }
 .home-screen .home-game-row[data-game=ersomha],.home-screen .home-game-row[data-game=meenfina] { grid-column:1/-1; display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); align-items:center; min-height:150px; gap:8px; padding:14px 18px; }
 .home-screen .home-game-row[data-game=ersomha] { display:grid; grid-template-columns:minmax(0,1fr); background:linear-gradient(125deg,#f0dafa,#e4bff5); }
-.home-screen .home-game-row[data-game=ersomha] .home-game-copy { width:62%; min-height:122px; padding-bottom:24px; }
+.home-screen .home-game-row[data-game=ersomha] .home-game-copy { width:57%; justify-self:start; min-height:122px; padding-bottom:24px; }
 .home-screen .home-game-row[data-game=ersomha] .name { font-size:2rem; }
-.home-screen .home-game-row[data-game=ersomha] .menu-game-art { position:absolute; inset-inline-end:8px; top:50%; width:calc(100% - 16px); height:auto; aspect-ratio:1; transform:translateY(-50%); pointer-events:none; }
+.home-screen .home-game-row[data-game=ersomha] .menu-game-art { position:absolute; inset-inline-end:8px; top:50%; width:calc(100% - 16px); max-width:360px; height:auto; aspect-ratio:1; transform:translateY(-50%); pointer-events:none; }
 html[dir=ltr] .home-screen .home-game-row[data-game=ersomha] .menu-game-art img { transform:scaleX(-1); }
 .home-screen .home-game-row[data-game=mafia],.home-screen .home-game-row[data-game=beep] { background:linear-gradient(145deg,#ffe2d8,#ffc7b7); }
 .home-screen .home-game-row[data-game=badeeha],.home-screen .home-game-row[data-game=mamnoo] { background:linear-gradient(145deg,#ffedca,#ffdda4); }
 .home-screen .home-game-row[data-game=jabeen] { background:#ebd7f1; }
 .home-screen .home-game-row[data-game=fabraka] { background:#fbd6d5; }
 .home-screen .home-game-row[data-game=meenfina] { min-height:136px; background:#d5efdf; }
-.home-screen .home-game-row[data-game=meenfina] .menu-game-art { height:108px; }
+.home-screen .home-game-row[data-game=meenfina] .home-game-copy { justify-self:start; }
+.home-screen .home-game-row[data-game=meenfina] .menu-game-art { --art-height:108px; }
 .home-no-games { padding:20px 12px; color:var(--muted); text-align:center; font-size:1rem; }
 .home-screen .home-footer { margin:0; padding:0; font-size:.875rem; line-height:1.6; color:var(--muted); text-align:center; }
 .home-screen .home-footer > span { font-size:.875rem; }
@@ -113,7 +127,7 @@ html[dir=ltr] .instruction-hero:has([data-game=ersomha]) .menu-game-art img { tr
 .game-instructions-screen .setup-sticky { position:static; margin:0; padding:0; background:none; box-shadow:none; }
 .game-instructions-screen .setup-sticky .btn { min-height:52px; border-radius:20px; font-size:1.25rem; color:var(--accent-ink); background:var(--accent); }
 .game-instructions-screen .selected-game-mode { color:#963c48; font-weight:800; }
-@media(min-width:600px) { .home-screen .home-game-row { min-height:220px; }.home-screen .menu-game-art { height:132px; flex-basis:132px; } }
+@media(min-width:600px) { .home-screen .home-game-row { min-height:220px; }.home-screen .menu-game-art { --art-height:144px; } }
 @media(max-width:374px) { .home-screen.screen,.game-instructions-screen.screen { padding-inline:16px; }.studio-wordmark strong { font-size:1.75rem; }.home-head-tools { gap:0; }.home-screen .home-game-row { padding-inline:10px; }.home-screen .home-game-row .name { font-size:1.375rem; }.home-screen .home-game-row[data-game=ersomha] .name { font-size:1.75rem; } }
 /* Let card titles keep whole words when text grows independently of the viewport. */
 .home-game-list > .home-game-row { flex:1 1 max(9.5rem,calc((100% - 12px)/2)); width:auto; min-inline-size:min-content; max-inline-size:100%; }

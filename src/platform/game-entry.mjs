@@ -1,5 +1,7 @@
 import { getGameModeSupport } from '../shared/game-mode-support.mjs';
 import { createStorage } from '../shared/lib/storage.js';
+import { contentStorage } from '../shared/lib/content-storage.js';
+import { contentVersionFor } from '../shared/content-locale.mjs';
 import { environmentStorageKey } from '../shared/lib/environment.js';
 import { entryPolicyEnabled, gameplayOffer, TICKET_POLICY } from '../shared/account/gameplay-policy.mjs';
 
@@ -35,16 +37,21 @@ export function localEntryRecovery(account, game, backend) {
   const pending = storage.get(`pending:${owner}`);
   if (valid(pending) && !storage.get(`match:${pending.matchId}`)?.completed) return { kind: 'pending', path };
   const key = game === 'badeeha' ? 'active-game-v2' : game === 'fabraka' ? 'session-v2' : 'session-v1';
-  const board = createStorage(game, backend).get(key);
-  const marker = board?.profileSession?.gameplayAccess;
-  // Existing pre-policy boards and a free-pack match stay resumable. This
-  // only exposes Play's resume path, whose own validator owns compatibility.
-  if ((board?.profileSession?.ownerUserId === owner && !marker) || (marker?.version === 1 &&
-    marker.owner === owner && marker.offer === offer.id && ['legacy', 'free-packs'].includes(marker.source))) {
-    return { kind: 'active', path };
-  }
-  if (!valid(marker)) return null;
-  const recorded = storage.get(`match:${marker.matchId}`);
-  return valid(recorded) && recorded.completed !== true && recorded.source === marker.source &&
-    ['trial', 'ticket', 'plus'].includes(recorded.source) ? { kind: 'active', path } : null;
+  const candidates = [
+    createStorage(game, backend).get(key),
+    game === 'badeeha'
+      ? createStorage(game, backend).get(`${key}:en:${contentVersionFor('en')}`)
+      : contentStorage(game, {contentLocale: 'en'}, backend).get(key),
+  ];
+  const resumable = candidates.some(board => {
+    const marker = board?.profileSession?.gameplayAccess;
+    if (!marker) return board?.profileSession?.ownerUserId === owner;
+    if (marker.version === 1 && marker.owner === owner && marker.offer === offer.id
+      && ['legacy', 'free-packs'].includes(marker.source)) return true;
+    if (!valid(marker)) return false;
+    const recorded = storage.get(`match:${marker.matchId}`);
+    return valid(recorded) && recorded.completed !== true && recorded.source === marker.source &&
+      ['trial', 'ticket', 'plus'].includes(recorded.source);
+  });
+  return resumable ? { kind: 'active', path } : null;
 }

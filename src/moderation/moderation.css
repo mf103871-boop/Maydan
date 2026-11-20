@@ -24,7 +24,6 @@
 
 .moderation-photo-queue { display: grid; grid-template-columns: minmax(0, 1fr); gap: 9px; min-width: 0; color: #352139; }
 .moderation-photo-heading { display: flex; justify-content: center; align-items: center; gap: 8px; min-height: 42px; margin: 0; padding: 5px 10px; border-radius: 18px; background: #f0e2f5; color: #352139; text-align: center; font-size: 1rem; font-weight: 800; line-height: 1.4; }
-.is-creator-review .moderation-photo-heading { font-size: 1.125rem; }
 .moderation-photo-heading > svg { flex-shrink: 0; }
 .moderation-photo-refresh.btn { justify-self: center; min-width: min(12rem,100%); min-height: 48px; padding: 6px 15px; border: 0; border-radius: 999px; background: linear-gradient(155deg,#08796d,#05695f); color: #fff; box-shadow: 0 2px 0 #35213915; white-space: normal; }
 .moderation-photo-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; min-width: 0; }

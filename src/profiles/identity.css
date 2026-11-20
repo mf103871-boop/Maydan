@@ -67,8 +67,11 @@
 .profile-identity-top>.plus-avatar-shell{margin-inline:4px}
 .mafia-seat-copy .player-identity-name{flex-wrap:nowrap;gap:2px}.mafia-seat-copy .player-name-card-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mafia-seat-copy .player-membership-badge.is-compact{font-size:8px;padding:1px 3px}
 .call-dock-person.is-speaking .player-avatar-frame{filter:drop-shadow(0 0 3px #64f19a)}
-.player-membership-badge{display:inline-flex;align-items:center;justify-content:center;gap:3px;flex:0 0 auto;white-space:nowrap;padding:3px 7px;border:1px solid #d2ac55;border-radius:9px;background:linear-gradient(145deg,#fff3be,#e6ce8a);color:#493417;font-size:11px;font-weight:900;line-height:1.35;box-shadow:0 1px 0 #986b2b33}
-.player-membership-badge>span:first-child{color:#80601c;font-size:12px}.player-membership-badge.is-compact{font-size:9px;padding:2px 5px;gap:2px}
+.player-membership-badge{display:inline-flex;align-items:center;justify-content:center;gap:.32em;flex:0 0 auto;white-space:nowrap;padding:3px 7px;border:1px solid #09695f;border-radius:9px;background:#08796d;color:#fff;font-size:11px;font-weight:900;line-height:1.35;box-shadow:inset 0 1px #ffffff24,0 1px #06594f}
+.membership-plus-mark{position:relative;width:.86em;height:.86em;display:inline-block}
+.membership-plus-mark::before,.membership-plus-mark::after{content:'';position:absolute;inset:34% 0;border-radius:2px;background:#ffdc8e}
+.membership-plus-mark::after{transform:rotate(90deg)}
+.player-membership-badge.is-compact{font-size:9px;padding:2px 5px;gap:2px}
 .profile-name-row .player-name-card.is-equipped{padding:5px 24px;font-size:24px;min-height:42px}
 .profile-identity-library{display:grid;gap:13px;padding:18px 20px;border:1px solid #dfccac;border-radius:20px;background:linear-gradient(120deg,#fff9e9,#f0f8f3);margin-top:16px}
 .profile-identity-library h2{font-size:17px;margin:0;color:#42304f}.profile-identity-library p{font-size:12px;color:#6d5c74;line-height:1.7;margin:0}

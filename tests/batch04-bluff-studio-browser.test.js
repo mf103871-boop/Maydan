@@ -174,11 +174,9 @@ function Harness() {
   } else {
     const Views = game.id === 'fabraka' ? {Game:Fabraka,Options:FabSetup,fixtures:fabStates} : {Game:Meen,Options:MeenSetup,fixtures:meenStates};
     const phase = scene.id.slice(scene.id.indexOf('-')+1);
-    const languageLabel = isEnglish ? 'Game language' : 'لغة المباراة';
     const state = Views.fixtures[phase];
     content = <GameFrame game={game} inGame={inGame} onExit={noop}>
       {phase === 'setup' ? <>
-        <section className="studio-local-language"><label htmlFor="fixture-lang">{languageLabel}</label><select id="fixture-lang" defaultValue={locale}><option value="ar">العربية</option><option value="en">English</option></select></section>
         <Screen><PlayersSetup roster={people} setRoster={noop} min={3} max={game.players.max} api={api} onStart={noop}>
           <Views.Options storage={api.storage} api={api} />
         </PlayersSetup></Screen>

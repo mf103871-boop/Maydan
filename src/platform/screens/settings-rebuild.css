@@ -71,10 +71,9 @@ html[dir=ltr] .settings-screen .settings-row-arrow[data-directional] { transform
 .settings-screen [data-design-id="settings-account"] > .settings-group-heading { padding-bottom:6px; border-bottom:1px solid #e5d4e7; }
 .settings-screen .account-card.has-guest-art { display:grid; grid-template-columns:minmax(64px,90px) minmax(0,1fr); align-content:start; align-items:center; justify-items:stretch; gap:6px 10px; min-width:0; padding:0; border:0; text-align:start; background:none; }
 .settings-screen .account-card.has-guest-art > .row { display:none; }
-.settings-guest-art { grid-column:1; grid-row:1/span 4; position:relative; align-self:center; display:block; max-width:96px; padding-bottom:28%; }
+.settings-guest-art { grid-column:1; grid-row:1/span 4; position:relative; align-self:center; display:block; max-width:96px; }
 .settings-guest-art img { display:block; width:100%; height:auto; aspect-ratio:1; border-radius:50%; background:#fbb8a7; }
 .settings-guest-art > span { position:absolute; inset-inline:15% -2%; inset-block-end:6%; display:flex; justify-content:center; align-items:center; gap:4px; min-height:36px; border-radius:11px; color:#583253; background:linear-gradient(145deg,#e7c2f4,#cea0ee); box-shadow:0 4px 5px #5735693d; transform:rotate(-9deg); font-size:1.2rem; font-weight:800; }
-.settings-guest-art svg { width:21px; height:21px; color:#624126; fill:#ffc961; }
 .settings-screen .account-card.has-guest-art > :is(h3,p,.btn) { grid-column:2; min-width:0; overflow-wrap:anywhere; }
 .settings-screen .account-card.has-guest-art > h3 { margin:2px 0; font-size:1.13rem; line-height:1.4; }
 .settings-screen .account-card.has-guest-art > .btn { min-height:48px; padding:6px 10px; border-radius:24px; white-space:normal; }
@@ -91,8 +90,6 @@ html[dir=ltr] .settings-screen .settings-row-arrow[data-directional] { transform
 .settings-account-member .account-subscription { display:grid; gap:8px; padding:12px; border:1px solid #e6d5e9; border-radius:22px; background:linear-gradient(155deg,#f8eef7,#eee0f0); }
 .settings-account-member .account-plan-row { display:flex; align-items:center; gap:12px; }
 .settings-account-member .account-plan-row p { flex:1; padding:4px 6px; background:none; color:#352139; font-size:1.08rem; font-weight:800; overflow-wrap:anywhere; }
-.settings-member-crest { display:flex; align-items:center; justify-content:center; flex:0 0 62px; gap:4px; min-height:39px; border-radius:12px; background:linear-gradient(145deg,#e7c2f4,#cea0ee); color:#442d51; box-shadow:0 4px 5px #57356936; transform:rotate(-9deg); font-weight:800; }
-.settings-member-crest svg { width:24px; height:24px; color:#624126; fill:#ffc961; }
 .settings-account-member .plus-transition { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:6px; padding:6px 10px; border:1px solid #e6d5e9; border-radius:20px; background:#f2e5f3; color:#605064; }
 .settings-account-member .plus-transition button { flex:1 0 auto; max-width:100%; }
 .settings-account-member .btn { min-height:48px; height:auto; white-space:normal; overflow-wrap:anywhere; }

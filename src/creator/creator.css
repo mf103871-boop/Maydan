@@ -8,6 +8,10 @@
 .creator-heading p{grid-column:1/-1;font-size:.93rem;color:#5c475f}
 .creator-content button,.creator-content a,.creator-content summary{font:inherit;font-size:.93rem;min-height:48px;touch-action:manipulation}
 .creator-content button,.creator-content a{border-radius:16px}
+.creator-review-entry > button{display:flex;width:100%;align-items:center;gap:10px;padding:8px 16px;border:1px solid #c7aed7;background:#eee3f5;color:#352139;text-align:start;cursor:pointer}
+.creator-review-entry > button > svg{width:22px;height:22px;flex:none}
+.creator-review-entry > button > span{margin-inline-start:auto;font-size:1.35rem}
+.creator-review-entry > div:not([hidden]){padding-block-start:10px}
 .creator-content button:focus-visible,.creator-content a:focus-visible,.creator-content summary:focus-visible{outline:3px solid var(--accent,#08796d);outline-offset:3px}
 .creator-refresh-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 12px;border:1px solid #efdfd9;border-radius:20px;background:#fffaf4;box-shadow:0 2px 3px #56323f16}
 .creator-status{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:.88rem;color:#605064}

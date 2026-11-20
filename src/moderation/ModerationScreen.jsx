@@ -122,7 +122,6 @@ function ProfileImageQueue({ state, client, isCreator = false }) {
   const busy = loading || state.saving;
   const refresh = () => { setNotice(''); client.load('images'); };
   return <section data-design-screen={isCreator ? 'creator.images' : 'moderation.images'} className={'moderation-photo-queue' + (isCreator ? ' is-creator-review' : '')} aria-label={tr("الصور الجديدة للمراجعة")}>
-    {isCreator && <h2 className="moderation-photo-heading"><IconFlag />{tr("الصور الجديدة للمراجعة")}</h2>}
     <Button data-design-id="image-queue-refresh" className="moderation-photo-refresh" variant="primary" icon={<IconRotate />} disabled={busy} onClick={refresh}>{tr("تحديث القائمة")}</Button>
     {notice && <p role="status" className="online-notice">{notice}</p>}
     {state.error && <p role="alert" className="online-notice error">{tr(state.error)}</p>}
@@ -141,10 +140,21 @@ function ProfileImageQueue({ state, client, isCreator = false }) {
 
 function CreatorImageReviewSession({ userId }) {
   const { state, client } = useModeration();
-  const authorized = state.userId === userId && state.moderator;
-  useEffect(() => { if (authorized) client.load('images'); }, [authorized, client]);
-  if (!authorized) return null;
-  return <><PresentationStyles sheet={css} /><ProfileImageQueue state={state} client={client} isCreator /></>;
+  const [open, setOpen] = useState(false);
+  const authorized = state.userId === userId && state.imageReviewer;
+  useEffect(() => { if (authorized && open) client.load('images'); }, [authorized, open, client]);
+  return <div className="creator-review-entry">
+    <button type="button" aria-expanded={open} aria-controls="creator-photo-review" onClick={() => setOpen(!open)}>
+      <IconFlag aria-hidden="true" /><strong>{tr("مراجعة الصور والأغلفة")}</strong><span aria-hidden="true">{open ? '−' : '+'}</span>
+    </button>
+    <div id="creator-photo-review" hidden={!open}>{open && (authorized
+      ? <><PresentationStyles sheet={css} /><ProfileImageQueue state={state} client={client} isCreator /></>
+      : <Card className="stack">
+    {!state.ready ? <p role="status">{tr("جارٍ التحقق من صلاحية المراجعة…")}</p> : <>
+      {state.error ? <p role="alert">{tr(state.error)}</p> : <p className="card-muted">{tr("حسابك غير مخوّل بمراجعة صور اللاعبين وأغلفتهم.")}</p>}
+      <Button variant="secondary" onClick={() => client.start(userId)}>{tr("إعادة التحقق")}</Button>
+    </>}
+  </Card>)}</div></div>;
 }
 
 export function CreatorProfileImageReview() {

@@ -7,7 +7,7 @@ import { useLamma } from '../../social/LammaProvider.jsx';
 // الإعدادات: الصوت، الموسيقى، الاهتزاز، تقليل الحركة، مسح البيانات، الإصدار، وبلاغات أسئلة بَديهة.
 import React, { useState } from 'react';
 import { Screen, TopBar, Button, Card, ConfirmModal, IconButton, Segment } from '../../shared/ui/components.jsx';
-import { IconBack, IconVolume, IconMusic, IconVibrate, IconMotion, IconTrash, IconFlag, IconShare, IconInfo, IconUsers, IconSettings, IconLock, IconBook, IconRotate, IconPlay, IconTag, IconTrophy, IconStar } from '../../shared/ui/icons.jsx';
+import { IconBack, IconVolume, IconMusic, IconVibrate, IconMotion, IconTrash, IconFlag, IconShare, IconInfo, IconUsers, IconSettings, IconLock, IconBook, IconRotate, IconPlay, IconTag, IconStar } from '../../shared/ui/icons.jsx';
 import { createStorage } from '../../shared/lib/storage.js';
 import { AccountCard } from '../../shared/account/AccountCard.jsx';
 import { useAccount } from '../../shared/account/context.js';
@@ -61,7 +61,6 @@ export function Settings() {
   const [audioCandidates, setAudioCandidates] = useState(false);
   const [confirmClear, setConfirmClear] = useState(false);
   const reports = createStorage('badeeha').get('question-reports-v1', []) || [];
-  const storeAction = <button className="settings-row" data-design-id="plus-store" type="button" onClick={() => navigate('/store')}><span className="settings-row-icon" aria-hidden="true"><IconTag /></span><span>{tr("تخصيص مظهري ومتجر بلس")}</span><IconBack className="settings-row-arrow" /></button>;
   const returnToSettings = () => {
     if (getPreviousPath() === '/settings') back();
     else navigate('/settings', { replace: true });
@@ -81,14 +80,14 @@ export function Settings() {
           <span className="settings-languages-art" aria-hidden="true"><span lang="ar">ع</span><span lang="en">A</span></span>
           <label htmlFor="ui-locale">{t('لغة الواجهة')}</label>
           <div className="settings-language-select"><select data-design-id="ui-language" id="ui-locale" value={settings.uiLocale} onChange={event => setSettings({ uiLocale:event.target.value })}><option value="ar" lang="ar">العربية</option><option value="en" lang="en">English</option></select><IconBack aria-hidden="true" /></div>
-          <p>{t('لغة القوائم مستقلة عن لغة المباراة.')}</p>
+          <p>{t('تستخدم المباريات الجديدة هذه اللغة عند توفرها. وتحتفظ الغرف والمباريات المحفوظة بلغتها.')}</p>
           {localeStatus.loading && <p role="status" lang="en">Loading English…</p>}
           {localeStatus.error && <p role="alert">تعذّر تحميل اللغة · Could not load English <button type="button" className="btn" data-design-id="retry" onClick={()=>setUiLocale(settings.uiLocale)}>إعادة المحاولة · Retry</button></p>}
         </section>
         <nav className="settings-index" aria-label={tr("مجموعات الإعدادات")}>
           {sections.map(({ key, label, icon }) => <button className="settings-row" key={key} type="button" data-settings-section={key} data-design-id={key === 'account' ? 'settings-account' : 'settings-section-jump'} data-design-required={key === 'account' ? 'true' : undefined} onClick={() => navigate('/settings?section=' + key)}><span className="settings-row-icon" aria-hidden="true">{icon}</span><span>{tr(label)}</span><IconBack className="settings-row-arrow" /></button>)}
         </nav>
-        {account.ready && account.me?.creator?.enabled === true && <Button data-design-id="creator-analytics" variant="secondary" icon={<IconInfo />} onClick={() => navigate('/creator')}>{locale === 'en' ? 'Creator dashboard · live activity' : 'لوحة الصانع · النشاط المباشر'}</Button>}
+        {account.ready && account.me?.creator?.enabled === true && <Button data-design-id="creator-analytics" variant="secondary" icon={<IconInfo />} onClick={() => navigate('/creator')}>{locale === 'en' ? 'Creator dashboard · Activity and photo review' : 'لوحة الصانع · النشاط ومراجعة الصور'}</Button>}
         <section className="settings-account-status" aria-labelledby="settings-account-status-title">
           <img src={getAvatarArt('controller', 64)} alt="" width="64" height="64" decoding="async" />
           <h2 id="settings-account-status-title">{tr("حالة الحساب")}</h2>
@@ -97,9 +96,8 @@ export function Settings() {
         </section>
         <Button data-design-id="home" className="settings-return" variant="accent" full onClick={() => navigate('/')}>{tr("العودة إلى ميدان")}</Button>
       </>}
-      {section?.key === 'account' && <SettingsGroup id="settings-account" title={account.signedIn ? tr("الحساب") : tr("حسابك وميدان بلس")} icon={<IconUsers />}>
-        <AccountCard settingsStoreAction={storeAction} guestArtwork={<span className="settings-guest-art" aria-hidden="true"><img src={getAvatarArt('human-01', 96)} alt="" width="96" height="96" decoding="async" /><span><IconTrophy />+</span></span>} />
-        {!account.user && storeAction}
+      {section?.key === 'account' && <SettingsGroup id="settings-account" title={tr("الحساب")} icon={<IconUsers />}>
+        <AccountCard inSettings guestArtwork={<span className="settings-guest-art" aria-hidden="true"><img src={getAvatarArt('human-01', 96)} alt="" width="96" height="96" decoding="async" /></span>} />
       </SettingsGroup>}
       {section?.key === 'audio' && <SettingsGroup id="settings-audio" title={tr("الصوت والموسيقى")} icon={<IconVolume />}>
         <div className="settings-sound-card">

@@ -37,6 +37,11 @@ const social={offline,sendRequest:async id=>{window.events.push({type:'send',id}
 return <PlatformContext.Provider value={platform}><AccountContext.Provider value={account}><BrandFonts/><style>{tokens}</style><style>{ui}</style><div className="call-game-viewport"><ProfileView key={scenario} account={account} profiles={profiles} social={social} profileId={owner?null:'visitor'} onNavigate={route=>window.events.push({type:'navigate',route})}/></div><BottomNavigation route={{name:'profile',path:owner?'/profile':'/profile/visitor',params:owner?{}:{id:'visitor'}}}/><style>{brand}</style><style>{studio}</style></AccountContext.Provider></PlatformContext.Provider>;
 }setUiLocale(lang).then(()=>createRoot(document.getElementById('root')).render(<App/>));`;
 const fileAssets = process.env.PROFILE_STUDIO_FILES === '1';
+const artSource = async name => {
+  const bytes = await readFile(path.join(root, 'src/shared/brand/assets/playful-cosmetics', name + '.webp'));
+  return fileAssets ? name + '-' : 'data:image/webp;base64,' + bytes.toString('base64');
+};
+const [level1Art, panoramaArt] = await Promise.all(['level-1','panorama'].map(artSource));
 const filesOut = path.join(output,'site');
 const productionOptions = esbuildOptions({assets:'files',outdir:filesOut,roomsUrl:'same-origin'});
 const built = await build(fileAssets ? {...productionOptions,entryPoints:undefined,stdin:{contents:source,resolveDir:root,loader:'jsx'},format:'esm'} : { stdin: { contents: source, resolveDir: root, loader: 'jsx' }, bundle: true, write: false, format: 'esm', jsx: 'automatic', loader: { '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl' }, define: { __MAYDAN_ROOMS_URL__: JSON.stringify('same-origin') }, logLevel: 'silent' });
@@ -269,7 +274,7 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) for (
     const equip = (await page.evaluate(() => window.events)).find(event => event.type === 'account' && event.method === 'PATCH');
     assert.deepEqual(equip.body, { selection: { frameId: 'progression.frame.1' }, revision: 4 });
     await page.keyboard.press('Escape'); await wardrobe.waitFor({ state: 'detached' });
-    await page.waitForFunction(() => document.querySelector('.pc-identity .pc-portrait-frame')?.getAttribute('src')?.endsWith('frame-1.webp'));
+    await page.waitForFunction(expected => document.querySelector('.pc-identity .pc-portrait-frame')?.getAttribute('src')?.includes(expected),level1Art);
     const framed = await page.locator('.pc-identity').evaluate(node => ({ slot: node.querySelector('.pc-portrait').getBoundingClientRect().toJSON(), photo: node.querySelector('.player-avatar').getBoundingClientRect().toJSON(), overflow: document.documentElement.scrollWidth > innerWidth }));
     assert.equal(framed.overflow, false); assert.ok(framed.photo.width < framed.slot.width, 'earned frame has its own layer around the retained photo');
     await page.evaluate(() => window.fixture.profile({ name: 'Alexandria Montgomery Riverside', bio: 'A long biography stays complete, including spaces and punctuation. '.repeat(2) }));
@@ -283,15 +288,21 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) for (
     assert.equal(await page.locator('.pc-portrait .player-avatar-frame').count(), 1, 'effective paid frame remains around the real photo');
     const skin = await page.locator('.profile-screen').evaluate(root => ({ colors: [...root.querySelectorAll('h1,.pc-identity-copy h2,.pc-xp > strong,.pc-section-title,.pc-track strong')].map(node => ({ selector: node.className || node.tagName, color: getComputedStyle(node).color, text: getComputedStyle(node).getPropertyValue('--text'), ink: getComputedStyle(node).getPropertyValue('--pc-ink') })), cover: root.querySelector('.profile-cover')?.getBoundingClientRect().toJSON() || null, masthead: root.querySelector('.pc-profile-masthead')?.getBoundingClientRect().toJSON() || null }));
     await writeFile(path.join(output, `${name}-${locale}-skin-colors.json`), JSON.stringify(skin, null, 2) + '\n');
-    for (const copy of skin.colors) assert.ok(contrast(copy.color, copy.selector==='pc-xp-badge'?levelBackground:'rgb(48, 68, 84)') >= 4.5, `equipped skin text ${copy.selector} remains readable over its actual surface after switching`);
+    for (const copy of skin.colors) {
+      const surfaces = copy.selector === 'pc-xp-badge' ? [levelBackground] : ['rgb(237,247,240)','rgb(255,253,248)','rgb(244,248,239)'];
+      for (const surface of surfaces) assert.ok(contrast(copy.color,surface) >= 4.5, `equipped skin text ${copy.selector} remains readable over its actual surface after switching`);
+    }
     const levelBadge=await page.locator('.pc-xp-badge').evaluate(node=>({slot:node.getBoundingClientRect().toJSON(),image:node.querySelector('img').getBoundingClientRect().toJSON(),text:node.querySelector('span').getBoundingClientRect().toJSON()}));
     assert.ok(Math.abs(levelBadge.image.x+levelBadge.image.width/2-levelBadge.slot.x-levelBadge.slot.width/2)<.5,'level image is centered behind the real number');
     assert.ok(levelBadge.image.width>levelBadge.slot.width*1.5,'level art accounts for its intrinsic transparent margin');
     assert.ok(await page.locator('[data-design-id="edit"]').evaluate(node=>node.getBoundingClientRect().height)>=52,'equipped skin does not shrink the owner primary action');
-    assert.equal(skin.cover,null,'equipping Sahra does not invent a separate photo cover');
+    assert.ok(skin.cover.width > 0 && skin.cover.height > 0, 'the Sahra panorama is visible in the profile');
+    assert.ok((await page.locator('.profile-cover-art').evaluate(node=>getComputedStyle(node).backgroundImage)).includes(panoramaArt));
+    assert.ok((await page.locator('.profile-equipped-pieces img').first().getAttribute('src')).includes(panoramaArt), 'the equipped item thumbnail uses the same panorama');
+    assert.equal(await page.locator('.profile-cover > img').count(),0,'the artwork belongs to the skin and leaves the saved cover slot empty');
     await page.evaluate(()=>window.fixture.profile({coverUrl:'/api/profiles/demo/images/cover/'+'b'.repeat(64)})); await settle(page);
     const retainedCover=await page.locator('.profile-cover').evaluate(node=>({width:node.getBoundingClientRect().width,masthead:node.parentElement.getBoundingClientRect().width,src:node.querySelector('img')?.getAttribute('src')}));
-    assert.ok(Math.abs(retainedCover.width-retainedCover.masthead)<.5,'explicitly selected cover remains full width');
+    assert.ok(Math.abs(retainedCover.width-retainedCover.masthead)<=2,'explicitly selected cover fills the bordered masthead');
     assert.equal(retainedCover.src,'/api/profiles/demo/images/cover/'+'b'.repeat(64));
     await page.evaluate(()=>window.fixture.profile({coverUrl:null})); await settle(page);
     evidence.push({ scenario: 'equipped-skin', ...skin });
@@ -313,9 +324,9 @@ for (const [name, engine] of [['chromium', chromium], ['webkit', webkit]]) for (
       await page.evaluate(value => window.fixture.profile({ cosmetics: value ? { profileSkinId: 'sahra.profileSkin', frameId: 'sahra.frame' } : {} }), equipped);
       await page.waitForFunction(value => document.querySelector('.profile-screen').dataset.profileSkin === (value ? 'sahra' : 'base'), equipped);
       const observed = await page.locator('[data-design-id="title"]').evaluate(node => ({ text:node.textContent, color:getComputedStyle(node).color, inlineColor:node.style.color, transitionProperty:getComputedStyle(node).transitionProperty, transitionDuration:getComputedStyle(node).transitionDuration, animations:node.getAnimations().map(animation=>({type:animation.constructor.name,property:animation.transitionProperty,currentTime:animation.currentTime})) }));
-      assert.equal(observed.color,equipped ? 'rgb(255, 242, 213)' : baseTitleColor,'heading color follows every completed equip/remove render without waiting for a color retry');
+      assert.equal(observed.color,equipped ? 'rgb(53, 33, 57)' : baseTitleColor,'heading color follows every completed equip/remove render without waiting for a color retry');
       assert.deepEqual(observed.animations,[],'changing an unanimated heading does not create a transient color transition under reduced motion');
-      if(equipped) assert.ok(contrast(observed.color,'rgb(48, 68, 84)')>=4.5);
+      if(equipped) assert.ok(contrast(observed.color,'rgb(237, 247, 240)')>=4.5);
       skinTransitions.push({cycle,equipped,...observed});
     }
     evidence.push({scenario:'skin-title-transitions',transitions:skinTransitions});

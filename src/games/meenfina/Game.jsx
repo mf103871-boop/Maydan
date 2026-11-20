@@ -1,3 +1,4 @@
+import { useSavedMatch } from '../../shared/ui/useSavedMatch.js';
 import { tr, getUiLocale } from '../../shared/i18n/core.js';
 import { GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
@@ -14,7 +15,7 @@ import lockArt from './meenfina-lock-v1-320.webp';
 import { PresentationStyles } from '../../shared/ui/PresentationStyles.jsx';
 import { stampScreen, wait } from '../../shared/fx/index.js';
 import { initialState, reduce, currentVoter, standings, createStatementSource, normalizeOptions, tallyVotes, statementsLabel, restoreSession, sessionSnapshot, ROUNDS } from './logic.js';
-import { loadSession } from '../../shared/lib/session.js';
+import { loadSession, SESSION_KEY } from '../../shared/lib/session.js';
 import { useSessionSave } from '../../shared/ui/useSessionSave.js';
 import { useGameMusicScene } from '../../shared/fx/useGameMusicScene.js';
 import { ChoicePortrait, MeenChoice, MeenFinal, MeenQuestion, MeenScoreTotals } from './Studio.jsx';
@@ -22,9 +23,11 @@ import { ChoicePortrait, MeenChoice, MeenFinal, MeenQuestion, MeenScoreTotals } 
 const OPTIONS_KEY = 'options';
 const SEEN_KEY = 'seen';
 
+const readMatch = slot => loadSession(slot, restoreSession);
+
 export function SetupOptions({ storage, api }) {
   const [opts, setOpts] = useState(() => normalizeOptions(storage.get(OPTIONS_KEY)));
-  const [resume] = useState(() => loadSession(storage, restoreSession));
+  const resume = useSavedMatch('meenfina', storage, api.contentLocale, SESSION_KEY, readMatch);
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }); setOpts(next); storage.set(OPTIONS_KEY, next); };
   return (
     <div data-design-screen="setup.meenfina" data-design-id="options" className="stack meen-setup">
